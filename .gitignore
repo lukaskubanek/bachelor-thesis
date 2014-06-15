@@ -30,6 +30,9 @@
 ## Texpad Temporary Output
 .texpadtmp/
 
+## tudsrc Latex Templates
+!tudsrc/**/*
+
 ## Auxiliary and intermediate files from other packages:
 
 # algorithms
