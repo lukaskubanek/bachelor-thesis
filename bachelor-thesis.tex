@@ -1,0 +1,66 @@
+\documentclass[ngerman]{tudscrreprt}
+
+% encoding & language
+\usepackage{selinput}
+\SelectInputMappings{adieresis={ä},germandbls={ß}}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{isodate}
+
+% bibliography
+\usepackage{natbib}
+
+% other packages
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+\begin{document}
+
+% title page
+
+\faculty{Fakultät}
+\department{Fachrichtung}
+\institute{Institut}
+\chair{Lehrstuhl}
+
+\subject{bachelor}
+\degree[B.Sc.]{Bachelor of Science}
+\date{1.1.2000}
+\matriculationyear{2010}
+\supervisor{Dagobert Duck \and Mac Moneysac}
+\professor{Prof. Dr. Kater Karlo}
+
+\title{
+  Title of the Thesis
+}
+
+\author{
+  Johny English
+  \matriculationnumber{12345678}
+  \dateofbirth{1.1.1990}
+}
+
+\maketitle
+
+% table of contents
+
+\tableofcontents
+
+\chapter{First Chapter}
+
+\section{Section}
+
+\subsection{Subsection}
+
+Lorem ipsum\footnote{Eine Fußnote hier unter \url{http://www.loremipsum.de}.} dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est \ref{chapter:second-chapter}. Lorem ipsum dolor sit amet \cite{Mai12}.
+
+\chapter{Second Chapter}
+\label{chapter:second-chapter}
+
+\bibliographystyle{alpha}
+\bibliography{bibliography}
+
+\confirmation
+
+\end{document}
