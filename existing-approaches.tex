@@ -145,14 +145,27 @@ Sehr trivial, aber dennoch nützlich ist die Funktion der Einstellung von gleich
 
 \subsection{Verknüpfungspunkte für Verbindungen}
 
-% Positionierung der Verbindungspunkte für Linien
-% Keynote nutzt den Mittelpunkt für Verbindungen (Standard-Einstellung)
-% OmniGraffle auch
-% "Adding and adjusting connections with the Magnet tool"
-% Sobald ein Magnet -> dann werden sie genutzt
-% Magnetwerkzeug
-% Mittelpunkt vs. vordefiniert vs. manuell
-% konkreter vs. der nächste Verknüpfungspunkt
+% TODO: Verweis auf die Grundlagen (graph-basierte Diagramme)
+
+Die bisher diskutierten Hilfsfunktionen haben sich ausschließlich mit der Positionierung und Bestimmung der Größe der Objekte auseinandergesetzt. Für die graph-basierten Diagramme sind neben der Knoten auch Kanten von Interesse, die in der Regel durch Verbindungslinien dargestellt werden. Wenn 2 Objekte mit einer Verbindungslinie verbunden werden, bleiben sie auch dann verbunden, wenn sich die Position oder Größe der Objekte ändert \cite{11Keynote}. In vielen Programmen (unter anderem in Keynote und OmniGraffle) werden die Verknüpfungspunkte der Verbindungslinie standardmäßig an die Stellen positioniert, an den eine gedachte Strecke, die die Mittelpunkte beider Objekte verbindet, die Kanten der Objekte schneidet (siehe Abbildung \ref{fig:omnigraffle-default-connection-points}) \cite{08OmniGraffle}.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics{resources/omnigraffle-default-connection-points.png}
+    \caption{Verknüpfungspunkte einer Verbindung in OmniGraffle (links) mit Darstellung der Berechnung (rechts)}
+    \label{fig:omnigraffle-default-connection-points}
+\end{figure}
+
+OmniGraffle bietet die Möglichkeit, mit Hilfe des Magnetwerkzeugs manuell die Verknüpfungspunkte zu definieren. Dies funktioniert auf zwei verschiedene Arten. Entweder kann der Nutzer die Verknüpfungspunkte beliebig in dem Objekt positionieren oder er wählt eine vordefinierte Anordnung aus. Dazu gehören u.a. die gleichmäßige Verteilung einer festen Anzahl an Verknüpfungspunkten entlang allen Kanten oder die Positionierung eines Verknüpfungspunktes an jedem Eckpunkt. Ein Beispiel der Darstellung von Verknüpfungspunkten ist in Abbildung \ref{fig:omnigraffle-magnets-example} zu finden.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics{resources/omnigraffle-magnets-example.png}
+    \caption{Beispiel der manuellen Verknüpfungspunkte in OmniGraffle: Magnete an den Eckpunkten (links), 3 Magnete pro Kante (Mitte), ein manuell positionierter Magnet (rechts)}
+    \label{fig:omnigraffle-magnets-example}
+\end{figure}
+
+Sobald mindestens ein Magnet dem Objekt hinzugefügt wurde, wird nicht mehr der Verknüpfungspunkt mit Hilfe des Mittelpunktes berechnet wie oben beschrieben, sondern die Verbindungslinie wird immer von dem nächsten Verknüpfungspunkt angezogen (siehe Abbildung \ref{fig:omnigraffle-magnets-example}). Alternativ kann der Nutzer ein Ende der Verbindungslinie an einen konkreten Verknüpfungspunkt binden. In dem Fall bleibt die Verbindungslinie an den gewählten Verknüpfungspunkt gebunden, auch wenn ein anderer Verknüpfungspunkt näher ist.
 
 \subsection{Zusammenfassung der Eigenschaften}
 
