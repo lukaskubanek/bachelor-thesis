@@ -8,6 +8,9 @@
 In Anwendungen zum Erstellen von Diagrammen wie z.B. Vektorgrafik-Software, Präsentationsprogramme oder CASE-Tools wird in der Regel ausschließlich das manuelle Layout unterstützt. Das bedeutet, dass der Nutzer die Diagrammbestandteile im Canvas frei verschieben kann und somit einen großen Einfluss auf das resultierende Layout des Diagramms hat. Um einige manuellen Schritte während der Erstellung eines Diagramms zu sparen, bieten die Anwendungen eine Reihe an Funktionen an, mit deren Hilfe sich das Layout besser gestalten lässt. Diese werden im Detail in diesem Abschnitt beschrieben.
 
 % TODO: Temporäre Layout-Funktionen, es werden keine Regeln gebildet
+% flexibel
+% direkte Interaktion mit dem Diagramm -> intuitiv
+% der Nutzer muss sich mit dem Layout viel auseinandersetzen -> Inhalt der Diagramme soll im Vordergrund stehen
 
 % TODO: Beschreibung der Apps (OmniGraffle, Keynote, ConceptDraw und Visual Paradigm), an den die Funktionen gezeigt werden
 % OmniGraffle ("die folgenden Erkenntnisse wurden durch die Arbeit mit OmniGraffle 5 gewonnen")
@@ -17,9 +20,10 @@ In Anwendungen zum Erstellen von Diagrammen wie z.B. Vektorgrafik-Software, Prä
 
 Viele Visualisierungsprogramme (unter anderem alle 4 erwähnten) unterstützen die Aufteilung des Canvas in einen gleichmäßigen Raster, der durch Rasterlinien dargestellt wird. Diese Linien können zum Ausrichten von Objekten im Canvas verwendet werden. Dies ist vor allem für die Diagramme nützlich, in der die Größen der Objekte eine wichtige Rolle spielen wie z.B. Grundrisse \cite{08OmniGraffle, Olsen10OmniGraffle, 11Keynote, 14Visual}.
 
+% TODO: Diese Figur entfernen!
+
 \begin{figure}[hbt]
     \centering
-    % TODO: Neuer Screenshot mit aktiviertem Snap-to-Grid
     \includegraphics[width=0.5\textwidth]{resources/omnigraffle-grid-settings.png}
     \caption{Informationsfenster zur Einstellung des Rasters in OmniGraffle}
     \label{fig:omnigraffle-grid-settings}
@@ -166,3 +170,15 @@ Sobald mindestens ein Magnet dem Objekt hinzugefügt wurde, wird nicht mehr der 
 \subsection{Zusammenfassung der Eigenschaften}
 
 % Mit dieser Funktion (manuelle Hilfslinien) ist der Nutzer in der Lage das Layout präziser zu steuern.
+% keine Unterstützung für Diagrammtypen
+% Klassenelement = Zusammenbauen von mehreren Rechtecken und Textfeldern
+% kein Metamodell hinter der graphischen Notation
+% ohne jegliche semantische Unter
+% Struktur und Semantik wird von den Vektorgrafikprogrammen (Zeichentools) nicht berücksichtigt
+% Struktur- und Semantikregeln
+% die Layout-Operationen sind nicht persistent
+% mögliche Verletzung durch manuelle Aktionen
+% Unterscheidung zwischen CASE-Tools und anderen Diagrammprogrammen
+% interaktiv
+% temporär -> nicht persistent
+% nur Tools -> der Nutzer muss die ästhetischen Prinzipien "selber einhalten"
