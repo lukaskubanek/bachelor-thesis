@@ -2,7 +2,7 @@
 % Manual Layout Functions
 %%%
 
-\section{Hilfefunktionen für manuelles Layout}
+\section{Manuelles Layout}
 \label{sec:manual-layout}
 
 In Anwendungen zum Erstellen von Diagrammen wie z.B. Vektorgrafik-Software, Präsentationsprogramme oder CASE-Tools wird in der Regel ausschließlich das manuelle Layout unterstützt. Das bedeutet, dass der Nutzer die Diagrammbestandteile im Canvas frei verschieben kann und somit einen großen Einfluss auf das resultierende Layout des Diagramms hat. Um einige manuellen Schritte während der Erstellung eines Diagramms zu sparen, bieten die Anwendungen eine Reihe an Funktionen an, mit deren Hilfe sich das Layout besser gestalten lässt. Diese werden im Detail in diesem Abschnitt beschrieben.
@@ -15,12 +15,15 @@ In Anwendungen zum Erstellen von Diagrammen wie z.B. Vektorgrafik-Software, Prä
 % TODO: Beschreibung der Apps (OmniGraffle, Keynote, ConceptDraw und Visual Paradigm), an den die Funktionen gezeigt werden
 % OmniGraffle ("die folgenden Erkenntnisse wurden durch die Arbeit mit OmniGraffle 5 gewonnen")
 
-\subsection{Raster}
-\label{sec:grid}
+\subsection{Hilfefunktionen für manuelles Layout}
+\label{subsec:help-functions-for-manual-layout}
+
+\subsubsection{Raster}
+\label{subsec:grid}
 
 Viele Visualisierungsprogramme (unter anderem alle 4 erwähnten) unterstützen die Aufteilung des Canvas in einen gleichmäßigen Raster, der durch Rasterlinien dargestellt wird. Diese Linien können zum Ausrichten von Objekten im Canvas verwendet werden. Dies ist vor allem für die Diagramme nützlich, in der die Größen der Objekte eine wichtige Rolle spielen wie z.B. Grundrisse \cite{08OmniGraffle, Olsen10OmniGraffle, 11Keynote, 14Visual}.
 
-% TODO: Diese Figur entfernen!
+% TODO: Diese Figur entfernen und Text umschreiben!
 
 \begin{figure}[hbt]
     \centering
@@ -31,7 +34,7 @@ Viele Visualisierungsprogramme (unter anderem alle 4 erwähnten) unterstützen d
 
 In Abbildung \ref{fig:omnigraffle-grid-settings} wird ein Informationsfenster aus OmniGraffle dargestellt, in dem die Einstellungen des Rasters für das bearbeitete Diagramm vorgenommen werden können. Neben der Einstellung der Rastergröße können an dieser Stelle die Rasterlinien ein- und ausgeblendet, die Funktion \textit{Snap-to-Grid} aktiviert und die Funktion \textit{Ausrichten im Raster} ausgeführt werden \cite{08OmniGraffle}.
 
-\subsubsection{Snap-to-Grid}
+\paragraph{Snap-to-Grid}
 
 Die reguläre Verschiebungsoperation von Objekten im Diagramm funktioniert in der Regel wie folgt: Der Nutzer wählt mit dem Mauszeiger ein Objekt aus und schiebt das Objekt mit gedrückter Maustaste auf seine neue Position. Wenn die Funktion \textit{Snap-to-Grid} nicht aktiviert ist, kann die Zielposition beliebig sein. Während der Verschiebung wird die Position des Objekts kontinuierlich angepasst, so dass der Nutzer einen visuellen Feedback bekommt. Dieser Vorgang ist in Abbildung X dargestellt.
 
@@ -43,34 +46,34 @@ Wenn die Funktion \textit{Snap-to-Grid} nun aktiviert ist, wird im Unterschied z
 
 Neben der Verschiebungsoperation wird auch die Operation der Größenänderung eingeschränkt, indem das manipulierte Objekt nur so eine Größe annehmen kann, die die Ausrichtung an die Rasterlinien nicht verletzt.
 
-\subsubsection{Ausrichten im Raster}
+\paragraph{Ausrichten im Raster}
 
 Das Ausrichten an die Rasterlinien kann auch nachträglich bewirkt werden. Dies passiert durch die Auswahl des zu ausgerichteten Objekts und dem Ausführen der Funktion \textit{Ausrichten im Raster}. Danach wird die Position und Größe des Objekts so angepasst, dass das Objekt an die Rasterlinien ausgerichtet wird (siehe Abbildung X).  
 
 % TODO: Abbildung: Funktion \textit{Ausrichten im Raster} in OmniGraffle
 
-\subsection{Ausrichten und Verteilen von Objekten in Relation zueinander}
+\subsubsection{Ausrichten und Verteilen von Objekten in Relation zueinander}
 
-Ähnlich wie der Raster (Abschnitt \ref{sec:grid}) werden die Funktionen zum Ausrichten und Verteilen von ausgewählten Objekten häufig in Visualisierungsprogrammen eingesetzt. Sie funktionieren wie folgt: Der Nutzer wählt im Diagramm Objekte aus, an die die Funktion angewendet werden soll. Nachher wählt er eine konkrete Form der Funktion aus, die anschließend auf die ausgewählten Objekt angewendet wird \cite{11Keynote}.
+Ähnlich wie der Raster (Abschnitt \ref{subsec:grid}) werden die Funktionen zum Ausrichten und Verteilen von ausgewählten Objekten häufig in Visualisierungsprogrammen eingesetzt. Sie funktionieren wie folgt: Der Nutzer wählt im Diagramm Objekte aus, an die die Funktion angewendet werden soll. Nachher wählt er eine konkrete Form der Funktion aus, die anschließend auf die ausgewählten Objekt angewendet wird \cite{11Keynote}.
 
-\subsubsection{Ausrichten}
+\paragraph{Ausrichten}
 
 Die ausgewählten Objekte können in Relation zueinander ausgerichtet werden. Dafür muss nach der Auswahl von mindestens 2 Objekten die Form der Ausrichtung angegeben werden. Die Objekte können entweder vertikal (linke Kanten, Mittelpunkte oder rechte Kanten) oder horizontal (obere Kanten, Mittelpunkte oder untere Kanten) ausgerichtet werden. Nach dem Ausführen dieser Funktion werden die Positionen der ausgewählten Objekte so angepasst, dass die gewünschte Ausrichtung erfüllt ist \cite{11Keynote, 08OmniGraffle}. Ein Beispiel ist in Abbildung X zu finden.
 
 % TODO: Abbildung: Anwendung der horizontalen Ausrichtung in Keynote
 
-\subsubsection{Verteilen}
+\paragraph{Verteilen}
 
 Wenn mindestens 3 Objekte ausgewählt werden, kann die Funktion zum gleichmäßigen Verteilen der Objekte angewendet werden. Dabei wird die Position der äußeren Objekte fixiert und die Position von umschlossenen Objekten wird so angepasst, dass die vertikalen bzw. horizontalen Abstände zwischen den Objekten gleich sind \cite{11Keynote}.
 
 % TODO: Abbildung: Anwendung der horizontalen Verteilung in Keynote
 
-\subsection{Smart Guides}
-\label{subsec:smart-guides}
+\subsubsection{Smart Guides}
+\label{subsubsec:smart-guides}
 
 Eine sehr hilfreiche Funktion, die in den meisten Grafik- und Präsentationsprogrammen unterstützt wird, sind Hilfslinien für Ausrichtung und relative Positionierung (engl. \textit{Smart Guides}) \cite{11Keynote}. Wenn diese Funktion aktiviert ist, werden während der Manipulation des ausgewählten Objekts farbige Linien im Canvas eingeblendet. Diese Linien geben dem Nutzer einen visuellen Feedback zur geeigneten Ausrichtung des manipulierten Objekts relativ zu anderen Objekten im Diagramm. Außerdem wird ähnlich wie bei der Funktion \textit{Snap-to-Grid} die freie Manipulation eingeschränkt, das in der Regel zu besseren Layout-Ergebnissen führt. Die Hilfslinien werden nach der Beendigung der Operation wieder ausgeblendet und die Position bzw. Größe des manipulierten Objektes wird angepasst. Genauso wie auch bei allen anderen Hilfsfunktionen für das manuelle Layout handelt es sich bei den Hilfslinien um eine temporäre Layout-Funktion. Somit wird die Ausrichtung der Objekte nur in den Eigenschaften der Objekte (Position und Größe) ausgedrückt und es wird keine explizite Regel erstellt.
 
-\subsubsection{Hilfslinien zur Ausrichtung (Alignment Guides)}
+\paragraph{Hilfslinien zur Ausrichtung (Alignment Guides)}
 
 Die erste Art der Hilfslinien ist für die Ausrichtung des verschobenen Objekts an die Kanten bzw. Mittelachsen von anderen Objekten in Diagram nützlich. Die Linien werden während der Verschiebungsoperation eingeblendet, wenn das verschobene Objekt an ein anderes Objekt ausgerichtet wird \cite{11Keynote}. In Abbildung X wird ein Beispiel der Hilfslinien zur Ausrichtung der unteren Kanten von 2 Objekten während der Verschiebungsoperation gezeigt.
 
@@ -91,7 +94,7 @@ Solche Bereiche werden für alle Kanten und Mittelachsen von nicht ausgewählten
 
 Eine Veranschaulichung dieser Funktion bietet in Form einer JavaScript-Anwendung\footnote{\url{http://mrflix.github.io/Alignment-Guides/}} das Open-Source Projekt \textit{Alignment-Guides}\footnote{\url{https://github.com/mrflix/Alignment-Guides}}.
 
-\subsubsection{Abstandshilfslinien (Distance Guides)}
+\paragraph{Abstandshilfslinien (Distance Guides)}
 
 Die zweite Art der Hilfslinien dient dazu, die Abstände zwischen 3 Objekten in einer horizontalen oder vertikalen Reihe gleich zu halten. Während der Verschiebung eines der 3 Objekten wird ein Bereich gebildet, in dem das Objekt zu der Position hinspringt, in der die Abstände zwischen den einzelnen Objektpaaren gleich sind. Zusätzlich zu den Hilfslinien wird auch der Abstand eingeblendet \cite{11Keynote, Olsen10OmniGraffle}.
 
@@ -102,7 +105,7 @@ Die zweite Art der Hilfslinien dient dazu, die Abstände zwischen 3 Objekten in 
     \label{fig:omnigraffle-distance-guides}
 \end{figure}
 
-\subsubsection{Größenhilfslinien (Sizing Guides)}
+\paragraph{Größenhilfslinien (Sizing Guides)}
 
 Im Unterschied zu den zwei vorigen Arten der Hilfslinien wird die letzte Art durch die Operation der Größenänderung eines Objektes hervorgerufen. Wenn sich die Größe des manipulierten Objekts der Größe eines anderen Objekts im Diagramm nähert und die Differenz unter einer bestimmten Grenze liegt, wird die Größe des anderen Objekts übernommen. Dies funktioniert getrennt für die Breite und Höhe (siehe Abbildung \ref{fig:omnigraffle-sizing-guides}).
 
@@ -113,7 +116,7 @@ Im Unterschied zu den zwei vorigen Arten der Hilfslinien wird die letzte Art dur
     \label{fig:omnigraffle-sizing-guides}
 \end{figure}
 
-\subsection{Manuelle Hilfslinien}
+\subsubsection{Manuelle Hilfslinien}
 
 Weiterhin bieten OmniGraffle und Keynote die Funktion der Erstellung von manuellen Hilfslinien an \cite{08OmniGraffle, 11Keynote}. Diese Funktion ist sehr ähnlich zu \textit{Smart Guides}, unterscheidet sich aber wie folgt:
 
@@ -123,7 +126,7 @@ Weiterhin bieten OmniGraffle und Keynote die Funktion der Erstellung von manuell
     \item Die Hilfslinien sind permanent sichtbar, auch wenn keine Verschiebungsoperation stattfindet.\footnote{Die Anzeige der manuellen Hilfslinien kann sowohl in OmniGraffle als auch in Keynote global aus- und eingeschaltet werden.}
 \end{itemize}
 
-Die Gemeinsamkeit besteht darin, dass das Ausrichten an die Hilfslinien identisch wie bei den \textit{Smart Guides} funktioniert (siehe Abschnitt \ref{subsec:smart-guides}). Ein Bespiel der manuellen Hilfslinie in OmniGraffle wird in Abbildung \ref{fig:omnigraffle-manual-guides} dargestellt.
+Die Gemeinsamkeit besteht darin, dass das Ausrichten an die Hilfslinien identisch wie bei den \textit{Smart Guides} funktioniert (siehe Abschnitt \ref{subsubsec:smart-guides}). Ein Bespiel der manuellen Hilfslinie in OmniGraffle wird in Abbildung \ref{fig:omnigraffle-manual-guides} dargestellt.
 
 \begin{figure}[hbt]
     \centering
@@ -132,7 +135,7 @@ Die Gemeinsamkeit besteht darin, dass das Ausrichten an die Hilfslinien identisc
     \label{fig:omnigraffle-manual-guides}
 \end{figure}
 
-\subsection{Gleiche Größe der Objekte}
+\subsubsection{Gleiche Größe der Objekte}
 
 Sehr trivial, aber dennoch nützlich ist die Funktion der Einstellung von gleichen Größen für ausgewählte Objekte. Nach der Auswahl von 2 oder mehreren Objekten im Diagramm hat der Nutzer die Möglichkeit, die Breite, die Höhe oder beide Dimensionen gleichzeitig auf die Werte des zuerst ausgewählten Objektes zu setzen (siehe Abbildung \ref{fig:omnigraffle-make-same-size}). Diese Funktion wird in OmniGraffle unterstützt \cite{Olsen10OmniGraffle}.
 
@@ -143,7 +146,7 @@ Sehr trivial, aber dennoch nützlich ist die Funktion der Einstellung von gleich
     \label{fig:omnigraffle-make-same-size}
 \end{figure}
 
-\subsection{Verknüpfungspunkte für Verbindungen}
+\subsubsection{Verknüpfungspunkte für Verbindungen}
 
 % TODO: Verweis auf die Grundlagen (graph-basierte Diagramme)
 
@@ -167,7 +170,7 @@ OmniGraffle bietet die Möglichkeit, mit Hilfe des Magnetwerkzeugs manuell die V
 
 Sobald mindestens ein Magnet dem Objekt hinzugefügt wurde, wird nicht mehr der Verknüpfungspunkt mit Hilfe des Mittelpunktes berechnet wie oben beschrieben, sondern die Verbindungslinie wird immer von dem nächsten Verknüpfungspunkt angezogen (siehe Abbildung \ref{fig:omnigraffle-magnets-example}). Alternativ kann der Nutzer ein Ende der Verbindungslinie an einen konkreten Verknüpfungspunkt binden. In dem Fall bleibt die Verbindungslinie an den gewählten Verknüpfungspunkt gebunden, auch wenn ein anderer Verknüpfungspunkt näher ist.
 
-\subsection{Zusammenfassung der Eigenschaften}
+\subsection{Eigenschaften und Vergleich}
 
 % Mit dieser Funktion (manuelle Hilfslinien) ist der Nutzer in der Lage das Layout präziser zu steuern.
 % keine Unterstützung für Diagrammtypen
@@ -182,3 +185,11 @@ Sobald mindestens ein Magnet dem Objekt hinzugefügt wurde, wird nicht mehr der 
 % interaktiv
 % temporär -> nicht persistent
 % nur Tools -> der Nutzer muss die ästhetischen Prinzipien "selber einhalten"
+
+% Vorteile:
+%% ermöglicht eine direkte Interaktion des Nutzers mit dem Diagramm
+%% flexibel -> Nutzer kann viel beeinflussen
+%% intuitiv
+
+% Nachteile:
+%% viel an manueller Arbeit

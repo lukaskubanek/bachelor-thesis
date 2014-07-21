@@ -8,20 +8,39 @@
 % Was bedeutet automatisches Layout?
 % Algorithmen zum Layout von Diagrammen
 % Algorithmus, das auf ein Diagramm angewendet wird und das die Layout-Eigenschaften berechnet
+% Layout-Eigenschaften: Position, Größe der Knoten und Routing der Kanten [Arvo02]
 % mit einem Knopfdruck im Nachhinein
 % die Interaktion mit dem Diagramm fehlt
 % kein direkter Einfluss auf das Ergebnis des Layout-Prozesses
 % nicht geeignet für Änderungen im Diagramm -> muss nochmal gestartet werden
 % (deutet darauf hin, dass) -> nicht intuitiv
-% textbasiert auf textuelle Sprache vs. graphisch auf graphische Sprache
+% textbasiert: Anwendung auf textuelle Sprache vs. graphisch: Anwendung auf graphische Sprache
  
 \subsection{Textbasierte Ansätze}
 
+Unter den textbasierten Ansätzen für das automatische Layout sind Layout-Algorithmen zu verstehen, die als Eingabe eine Beschreibung des Diagramms in Textform erfordern und als Ausgabe eine graphische Repräsentation des Diagramms liefern. Intern wird in der Regel das eingelesene textuelle Modell in ein graphisches Modell transformiert, auf das die Layout-Funktion angewendet wird. Das Resultat besitzt einen statischen Charakter und somit vermisst dieser Ansatz jegliche Möglichkeit der Interaktion. Nachträglich ändern lässt sich das Diagramm nur durch Veränderung der Quelldatei und einen wiederholten Aufruf des Layout-Algorithmus.
+
+\subsubsection{Graphviz}
+
+% Graphzeichnen
+
+Eines der bekanntesten Beispiele für den textbasierten Ansatz für das automatische Layout ist die Umgebung Graphviz\footnote{http://graphviz.org} zur Visualisierung von Graphen. Sie besteht aus folgenden Komponenten:
+
+\begin{itemize}
+    \item \textbf{Beschreibungssprache Dot} — eine domänenspezifische Sprache für die Beschreibung von Graphen. % TODO: Verweis auf Code-Beispiel in Dot
+    \item \textbf{Set von Layout-Algorithmen} — \dots
+    \item \textbf{Kommandenzeilentools} — \dots
+    \item \textbf{Bibliothek} — \dots
+\end{itemize}
+
+
 % Graphviz Dot DSL
-%% Code-Ausschnitt
+%% Code-Ausschnitt und entsprechende Grafik
 %% Layout-Eigenschaften (Parameter...)
-%% textuell
 %% mathematische Algorithmen für Layout von Graphen
+%% Beschreibung von Graphviz an dieser Stelle und Erklären der Möglichkeiten der Anbindung in graphischen Ansätzen
+
+\subsubsection{yUML}
 
 % yUML.me, planttext.com
 % Text-Notation in Form einer DSL
@@ -31,14 +50,33 @@
 
 \subsection{Graphische Ansätze}
 
+Die graphischen Ansätze für das automatische Layout unterscheiden sich von den textbasierten darin, dass der Layout-Algorithmus auf eine graphische Sprache angewendet wird.
+
+% unmittelbare Bearbeitung des Diagramms
+% Ausführen des Diagramms im Nachhinein
+% kein direkter Einfluss auf das Layout
+
+% ---
+
+% Graphviz
+
 % Unterstützung des automatischen Layouts in OmniGraffle
 % Interaktion mit dem Diagramm wird von dem Layout-Algorithmus nicht berücksichtigt => Zerstören des mentalen Modells
 % Zusatzfunktion in OmniGraffle und CASE-Tools (Visual Paradigm anschauen)
-%% Graphviz Layout Engine
+% Graphviz Layout Engine
+
+% Graphviz in Visual Paradigm
+
+% ---
 
 % SugiBib - ein Framework, das auf dem Sugiyama Algorithmus basiert und die Semantik und Strukturregeln berücksichtigt
+% https://wwwi2.informatik.uni-wuerzburg.de/SugiBib
 
-\subsection{Zusammenfassung der Eigenschaften}
+% ---
+
+% Kandinsky (Eiglsperger)
+
+\subsection{Eigenschaften und Vergleich}
 
 % Zusammenfassung
 %% Verletzung der Semantik- und Strukturregeln durch die mathematischen Algorithmen
@@ -46,4 +84,21 @@
 %% nicht geeignet für den Prozess des Zeichnens
 %% Unterstützung der Diagrammtypen und deren Strukturregeln
 
+%% Zerstören des mentalen Modells [Eiglsperger03 zitieren]
+%% bei allgemeinen Algorithmen werden die Semantik- und Strukturregeln nicht berücksichtigt
+
 %% Neuordnung des Layouts -> Zerstören der sekundären Notation [Seybold]
+
+% Vorteile:
+%% gute Ergebnisse für kleine und einfache Diagramme
+
+% Nachteile:
+%% fehlende Interaktion: Knopfdruck
+%% Nutzer kann wenig beeinflussen
+%% nicht für Änderungen geeignet -> Neustart
+%% Semantik und Struktur...
+%% berücksichtigen nicht die anwendugspezifische Einschränkungen [Gladisch]
+%% Mangel an Möglichkeit der Kontrolle des Ergebnisses [Gladisch]
+
+
+
