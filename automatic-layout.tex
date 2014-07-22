@@ -29,8 +29,9 @@ Ein bekanntes Beispiel der Tools für die Visualisierung von Graphen ist das urs
 
 \begin{itemize}
     \item Domänenspezifische \textbf{Sprache Dot}\footnote{\url{http://www.graphviz.org/content/dot-language}} für die Beschreibung von Graphen.
-    \item Ein Satz von \textbf{Layout-Algorithmen}.
-    \item Ein Satz von \textbf{Kommandozeilen-Tools}\footnote{\url{http://www.graphviz.org/content/command-line-invocation}} für die Anwendung der Layout-Algorithmen und ihre grafische Ausgabe.
+    % TODO: Bessere Beschreibung von verfügbaren Algorithmen
+    \item Ein Satz von \textbf{Layout-Algorithmen}: unter anderem \textit{dot}, \textit{neato}, \textit{fdp} oder \textit{circo} \cite{Gansner14Using, NorthGansner14Dot-Manual}
+    \item Ein Satz von \textbf{Kommandozeilen-Tools} für die Anwendung der Layout-Algorithmen und ihre grafische Ausgabe \cite{NorthGansner14Dot-Manual}.
     \item Eine \textbf{Software-Bibliothek}, die die Funktionalität der Layout-Algorithmen und der graphischen Ausgabe bereitstellt und sich in andere Programme einbauen lässt \cite{Gansner14Using}.
 \end{itemize}
 
@@ -41,7 +42,7 @@ Um einen Layout-Algorithmus auf einen Graph mit Hilfe der Komandozeilen-Tools an
     label={lst:graphviz-dot-example-dot}
 ]{resources/graphviz-dot-example.dot}
 
-Mit dem Aufruf des Befehls aus dem Quelltext \ref{lst:grapviz-dot-example-sh} wird die oben aufgelistete Dot-Datei \lstinline{graphviz-dot-example.dot} eingelesen, der beschriebene Graph wird in ein internes Modell importiert, auf das der Layout-Algorithmus \lstinline{dot} angewendet wird. Anschließend wird mit dem Renderer \lstinline{png} ein Resultat in der PNG-Datei \lstinline{graphviz-dot-example.png} erzeugt, das in Abbildung \ref{fig:graphviz-dot-example} dargestellt ist \cite{Gansner14Using}.
+Mit dem Aufruf des Befehls aus dem Quelltext \ref{lst:grapviz-dot-example-sh} wird die oben aufgelistete Dot-Quelldatei \lstinline{graphviz-dot-example.dot} eingelesen, der beschriebene Graph wird in ein internes Modell importiert, auf das der Layout-Algorithmus \lstinline{dot} angewendet wird. Anschließend wird mit dem Renderer \lstinline{png} ein Resultat in der PNG-Datei \lstinline{graphviz-dot-example.png} erzeugt, das in Abbildung \ref{fig:graphviz-dot-example} dargestellt ist \cite{Gansner14Using}.
 
 \lstinputlisting[
     caption={Aufruf des Kommandozeilen-Tools \lstinline{dot}},
@@ -50,16 +51,14 @@ Mit dem Aufruf des Befehls aus dem Quelltext \ref{lst:grapviz-dot-example-sh} wi
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[scale=0.8]{resources/graphviz-dot-example.png}
-    \caption{Resultat des Aufrufes des Kommandozeilen-Tools \lstinline{dot}}
+    \includegraphics[scale=0.75]{resources/graphviz-dot-example.png}
+    \caption{Resultat des Aufrufs des Kommandozeilen-Tools \lstinline{dot}}
     \label{fig:graphviz-dot-example}
 \end{figure}
 
+In dem diskutierten Beispiel wird sichtbar gemacht, dass das Resultat nicht interaktiv ist. Eine Änderung des Graphen ist somit nur in der Quelldatei möglich und ist mit einem wiederholten Aufruf des Komandozeilen-Tools verbunden. Aus diesem Grund ist dieser Ansatz eher für das Einbinden in automatisierte Prozesse (z.B. Generieren von Diagrammen in der automatisierten Dokumentation mit Doxygen\footnote{\url{http://www.stack.nl/~dimitri/doxygen/manual/diagrams.html}}) oder Wiki-Seiten geeignet, als für die Nutzung in einer interaktiven Umgebung.
 
-%% Layout-Eigenschaften (Parameter...)
-%% etwas zu den Algorithmen
-%% mathematische Algorithmen für Layout von Graphen
-
+Trotz der fehlenden Interaktivität kann das Layout von dem Nutzer beeinflusst werden, indem der Layout-Algorithmus gewählt wird bzw. seine Eigenschaften angepasst werden. Der Algorithmus kann durch die Wahl des Komandozeilen-Tools spezifiziert werden und seine Eigenschaften können zusätzlich zu der Beschreibung des Graphen in der Quelldatei angegeben werden \cite{NorthGansner14Dot-Manual}. Im oben genannten Beispiel wurde der Layout-Algorithmus \lstinline{dot} verwendet und die Richtung des Graphen in der Dot-Quelldatei mit dem Befehl \lstinline{rankdir = LR} angepasst, so dass der Graph von links nach rechts gezeichnet wird.
 
 % TODO: Titel Generalisieren
 \subsubsection{yUML}
