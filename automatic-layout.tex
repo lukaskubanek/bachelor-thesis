@@ -60,14 +60,19 @@ In dem diskutierten Beispiel wird sichtbar gemacht, dass das Resultat nicht inte
 
 Trotz der fehlenden Interaktivität kann das Layout von dem Nutzer beeinflusst werden, indem der Layout-Algorithmus gewählt wird bzw. seine Eigenschaften angepasst werden. Der Algorithmus kann durch die Wahl des Komandozeilen-Tools spezifiziert werden und seine Eigenschaften können zusätzlich zu der Beschreibung des Graphen in der Quelldatei angegeben werden \cite{NorthGansner14Dot-Manual}. Im oben genannten Beispiel wurde der Layout-Algorithmus \lstinline{dot} verwendet und die Richtung des Graphen in der Dot-Quelldatei mit dem Befehl \lstinline{rankdir = LR} angepasst, so dass der Graph von links nach rechts gezeichnet wird.
 
-% TODO: Titel Generalisieren
-\subsubsection{yUML}
+\subsubsection{Textbasierte UML-Tools}
 
-% yUML.me, planttext.com, UMLGraph
-% Text-Notation in Form einer DSL
-% fehlende Interaktion des Nutzers mit dem Diagramm
-% Veränderungen an einer anderen Stelle, keine unmittelbare Bearbeitung des Diagramms
-% kein Einfluss auf das Layout
+Neben allgemeinen textbasierten Tools für das Graphzeichnen gibt es Tools, die für spezifische Domänen ausgelegt sind. Im Folgenden werden 2 textbasierte UML-Tools kurz vorgestellt, die aus einer textuellen Beschreibung in einer speziellen Sprache grafische UML-Diagramme erzeugen. Für die Berechnung des Layouts benutzen beide Tools intern die oben genannte Bibliothek Graphviz.
+
+\paragraph{PlantUML}
+
+\hyphenation{PlantUML}
+
+PlantUML\footnote{\url{http://plantuml.sourceforge.net}} ist eine Java-Bibliothek, die für die Beschreibung von UML-Diagrammen die gleichnamige Sprache verwendet. Diese Sprache wird näher in \cite{Roques10Drawing} behandelt. Neben den vielen Anwendungen\footnote{Die bekannten Anwendungen sind unter \url{http://plantuml.sourceforge.net/running.html} aufgelistet.} bietet PlantUML einen Online-Editor\footnote{PlantUML Server: \url{http://www.plantuml.com/plantuml}} an, der es ermöglicht, UML-Diagramme direkt im Browser zu erzeugen und als Bilder zu exportieren.
+
+\paragraph{yUML}
+
+yUML\footnote{\url{http://yuml.me}} ist ein Online-Editor zum Erstellen von UML-Diagrammen im Browser. Im Unterschied zu PlantUML verwendet yUML eine anschauliche zeichenbasierte Sprache\footnote{Beispiele der Sprache für Klassendiagramme: \url{http://yuml.me/diagram/scruffy/class/samples}} und ist nicht in Form einer Bibliothek verfügbar. Es stellt dagegen eine HTTP-Schnittstelle bereit, so dass die Beschreibung des Diagramms direkt in eine URL-Adresse eingebettet werden kann.
 
 \subsection{Graphische Ansätze}
 \label{subsec:automatic-layout-graphical-approaches}
@@ -80,7 +85,9 @@ Die graphischen Ansätze für das automatische Layout unterscheiden sich von den
 
 % ---
 
-% Graphviz
+\subsubsection{Graphzeichnen in graphischen Editoren}
+
+Wie im Abschnitt X beschrieben, bietet Graphviz eine Software-Bibliothek an, die in andere Tools eingebaut werden kann. Im Abschnitt X wurden bereits textbasierte Tools vorgestellt, die sich die Layout-Algorithmen von Graphviz zur Nutze machen. 
 
 % Unterstützung des automatischen Layouts in OmniGraffle
 % Interaktion mit dem Diagramm wird von dem Layout-Algorithmus nicht berücksichtigt => Zerstören des mentalen Modells
@@ -123,4 +130,10 @@ Die graphischen Ansätze für das automatische Layout unterscheiden sich von den
 %% Mangel an Möglichkeit der Kontrolle des Ergebnisses [Gladisch]
 %% Nicht für interaktive Umgebung geeignet [Maier 2.4.1]
 
+% Nachteile Textbasierte Ansätze:
+% - fehlende Interaktion des Nutzers mit dem Diagramm
+% - Veränderungen an einer anderen Stelle, keine unmittelbare Bearbeitung des Diagramms
+% - geringer Einfluss auf das Layout
+
+% textuelle Ansätze: Durch Tools interaktiv, aber an 2 Stellen!
 
