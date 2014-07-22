@@ -1,0 +1,6 @@
+graph DotExampleGraph {
+    rankdir = LR
+    A -- C
+    B -- C
+    C -- D
+}

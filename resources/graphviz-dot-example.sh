@@ -1,0 +1,1 @@
+dot -Tpng graphviz-dot-example.dot -o graphviz-dot-example.png
