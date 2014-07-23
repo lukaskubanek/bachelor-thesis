@@ -5,18 +5,30 @@
 \section{Automatisches Layout}
 \label{sec:automatic-layout}
 
-% Was bedeutet automatisches Layout?
-% Algorithmen zum Layout von Diagrammen
-% Algorithmus, das auf ein Diagramm angewendet wird und das die Layout-Eigenschaften berechnet
-% Layout-Eigenschaften: Position, Größe der Knoten und Routing der Kanten [Arvo02]
-% mit einem Knopfdruck im Nachhinein
-% die Interaktion mit dem Diagramm fehlt
-% kein direkter Einfluss auf das Ergebnis des Layout-Prozesses
-% nicht geeignet für Änderungen im Diagramm -> muss nochmal gestartet werden
-% (deutet darauf hin, dass) -> nicht intuitiv
-% textbasiert: Anwendung auf textuelle Sprache vs. graphisch: Anwendung auf graphische Sprache
+% TODO: Verweis auf "graph-basierte Diagramme" in Begriffsklärung
+Den graph-basierten Softwarediagrammen unterliegt die abstrakte Struktur des Graphen (siehe Abschnitt X). Mit der graphischen Darstellung von Graphen beschäftigt sich die mathematische Disziplin des Graphzeichnens. Ihre Aufgabe besteht darin, Layout-Algorithmen zu entwerfen, die optimale Layouts in Hinsicht auf ästhetische Regeln erzeugen, d.h. die Layout-Eigenschaften wie Position der Knoten und Routen der Kanten berechnen \cite{Eichelberger05Aesthetics, Arvo02Techniques, Siebenhaller03Automatisches}.
+
+Unter dem automatischen Layout für graph-basierte Diagramme sind daher vollautomatische Algorithmen zu verstehen, die für ein gegebenes Diagramm die optimalen Layout-Eigenschaften berechnen und das Diagramm entsprechend anpassen.
+
+Um während der Erstellung des Diagramms immer ein optimales Layout zu erhalten, muss der Layout-Algorithmus kontinuierlich nach jeder Änderung aufgerufen werden. Dies kann entweder automatisch oder manuell passieren.
+
+Eine weitere Eigenschaft der Ansätze für das automatische Layout ist ein geringer Einfluss des Nutzers auf das Ergebnis des Layout-Prozesses. Oft können die Parameter des Algorithmus angepasst werden. Wenn aber die Interaktion mit dem resultierenden Diagramm unterstützt wird, hat sie keinerlei Einwirkung auf den Algorithmus und wird bei dem nächsten Aufruf des Algorithmus nicht beachtet.
+
+Die Ansätze lassen sich in zwei Kategorien nach der Art der Sprache unterteilen, die als Eingabe für den Layout-Algorithmus verwendet wird\footnote{In der Literatur werden Ansätze für das automatische Layout meistens nach den Layout-Algorithmen kategorisiert. In dieser Arbeit richtet sich die Kategorisierung danach, wie die Ansätze zu bedienen sind und welche Art der Interaktion sie unterstützen.}. Zu einem aus einer Beschreibung eines Diagramms in einer \textbf{textuellen Sprache} unter Anwendung des Layout-Algorithmus eine graphische Repräsentation erzeugen. Weiterhin gibt es Ansätze, die auf Diagramme angewendet werden, die in einer \textbf{visuellen Sprache} modelliert sind. Diese Ansätze verändern die Layout-Eigenschaften der Diagrammelementen direkt. Beide Kategorien werden im Folgenden behandelt.
+
+\endinput
+
+
+
+
+
+
+
+
  
 \subsection{Textbasierte Ansätze}
+
+% Eingabe != Ausgabe
 
 Unter den textbasierten Ansätzen für das automatische Layout sind Layout-Algorithmen zu verstehen, die als Eingabe eine Beschreibung des Diagramms in Textform erfordern und als Ausgabe eine graphische Repräsentation des Diagramms liefern. Intern wird in der Regel das eingelesene textuelle Modell in ein graphisches Modell transformiert, auf das die Layout-Funktion angewendet wird. Das Resultat besitzt einen statischen Charakter und somit vermisst dieser Ansatz jegliche Möglichkeit der Interaktion. Nachträglich ändern lässt sich das Diagramm nur durch Veränderung des Quelltexts und einen wiederholten Aufruf des Layout-Algorithmus.
 
@@ -77,11 +89,15 @@ yUML\footnote{\url{http://yuml.me}} ist ein Online-Editor zum Erstellen von UML-
 \subsection{Graphische Ansätze}
 \label{subsec:automatic-layout-graphical-approaches}
 
-Die graphischen Ansätze für das automatische Layout unterscheiden sich von den textbasierten darin, dass der Layout-Algorithmus auf eine graphische Sprache angewendet wird.
+% Eingabe == Ausgabe
+
+Die graphischen Ansätze für das automatische Layout unterscheiden sich von den textbasierten darin, dass der Layout-Algorithmus auf eine graphische Sprache angewendet wird. Das bedeutet, dass 
 
 % unmittelbare Bearbeitung des Diagramms
 % Ausführen des Diagramms im Nachhinein
 % kein direkter Einfluss auf das Layout
+
+%Der Layout-Algorithmus wird in der Regel erst nach der vollständigen Beschreibung des Diagramms manuell ausgeführt.
 
 % ---
 
@@ -136,4 +152,18 @@ Wie im Abschnitt X beschrieben, bietet Graphviz eine Software-Bibliothek an, die
 % - geringer Einfluss auf das Layout
 
 % textuelle Ansätze: Durch Tools interaktiv, aber an 2 Stellen!
+
+%Die automatischen Layout-Algorithmen sind nicht für eine interaktive Umgebung geeignet. [Maier]
+
+% nicht geeignet für Änderungen im Diagramm -> muss nochmal gestartet werden
+
+% (deutet darauf hin, dass) -> nicht intuitiv
+
+% im Unterschied zu [Eichelberger] beschäftigt sich diese Arbeit mit interaktiven Ansätzen, da automatisches Layout gegen Agile Modeling verstößt
+
+% die Interaktion mit dem Diagramm fehlt (textbasierte und teilweise auch grafische)
+
+% statisch, nicht dynamisch, nicht interaktiv
+
+% herrausstellen
 
