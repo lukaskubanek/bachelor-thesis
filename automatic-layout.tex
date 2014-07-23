@@ -22,155 +22,21 @@ Die textbasierten Ansätze für das automatische Layout erfordern als Eingabe ei
 
 \subsubsection{Graphviz}
 
-Beschreibung von Graphviz. Sprache Dot, Layout-Algorithmen, Kommandozeilen-Tools, Bibliothek, 3rd Party Web- und Desktop-Apps.
+\textit{Beschreibung von Graphviz. Sprache Dot, Layout-Algorithmen, Kommandozeilen-Tools, Bibliothek, 3rd Party Web- und Desktop-Apps.}
 
 \subsubsection{Textbasierte UML-Tools}
 
-Beschreibung von textbasierten UML-Tools.
-
-\paragraph{PlantUML} Beschreibung von PlantUML.
-
-\paragraph{yUML} Beschreibung von yUML.
-
-\subsection{Visuelle Ansätze}
-
-\subsection{Zusammenfassung und Vergleich}
-
-%%%%%%%%%
-\endinput
-%%%%%%%%%
-
-\subsubsection{Graphzeichnen}
-
-Diese Algorithmen werden in Tools und Bibliotheken implementiert, die entweder allein stehend genutzt (siehe unten) oder in andere Programme eingebaut (siehe Abschnitt \ref{subsec:automatic-layout-graphical-approaches}) werden können.
-
-Ein bekanntes Beispiel der Tools für die Visualisierung von Graphen ist das ursprünglich von AT\&T entwickelte Softwarepaket Graphviz\footnote{\url{http://graphviz.org}}, das in diesem Abschnitt näher beschrieben wird. Es besteht aus folgenden Komponenten:
-
-\begin{itemize}
-    \item Domänenspezifische \textbf{Sprache Dot}\footnote{\url{http://www.graphviz.org/content/dot-language}} für die Beschreibung von Graphen.
-    % TODO: Bessere Beschreibung von verfügbaren Algorithmen
-    \item Ein Satz von \textbf{Layout-Algorithmen}: unter anderem \textit{dot}, \textit{neato}, \textit{fdp} oder \textit{circo} \cite{Gansner14Using, NorthGansner14Dot-Manual}
-    \item Ein Satz von \textbf{Kommandozeilen-Tools} für die Anwendung der Layout-Algorithmen und ihre grafische Ausgabe \cite{NorthGansner14Dot-Manual}.
-    \item Eine \textbf{Software-Bibliothek}, die die Funktionalität der Layout-Algorithmen und der graphischen Ausgabe bereitstellt und sich in andere Programme einbauen lässt \cite{Gansner14Using}.
-\end{itemize}
-
-Um einen Layout-Algorithmus auf einen Graph mit Hilfe der Komandozeilen-Tools anwenden zu können, muss der Graph in der Dot Sprache beschrieben werden. Ein Beispiel eines einfachen Graphen mit 4 Knoten und 3 Kanten ist im Quelltext \ref{lst:graphviz-dot-example-dot} gegeben.
-
-\lstinputlisting[
-    caption={Beschreibung eines Graphen in Dot (\lstinline{graphviz-dot-example.dot})},
-    label={lst:graphviz-dot-example-dot}
-]{resources/graphviz-dot-example.dot}
-
-Mit dem Aufruf des Befehls aus dem Quelltext \ref{lst:grapviz-dot-example-sh} wird die oben aufgelistete Dot-Quelldatei \lstinline{graphviz-dot-example.dot} eingelesen, der beschriebene Graph wird in ein internes Modell importiert, auf das der Layout-Algorithmus \lstinline{dot} angewendet wird. Anschließend wird mit dem Renderer \lstinline{png} ein Resultat in der PNG-Datei \lstinline{graphviz-dot-example.png} erzeugt, das in Abbildung \ref{fig:graphviz-dot-example} dargestellt ist \cite{Gansner14Using}.
-
-\lstinputlisting[
-    caption={Aufruf des Kommandozeilen-Tools \lstinline{dot}},
-    label={lst:grapviz-dot-example-sh}
-]{resources/graphviz-dot-example.sh}
-
-\begin{figure}[hbt]
-    \centering
-    \includegraphics[scale=0.75]{resources/graphviz-dot-example.png}
-    \caption{Resultat des Aufrufs des Kommandozeilen-Tools \lstinline{dot}}
-    \label{fig:graphviz-dot-example}
-\end{figure}
-
-In dem diskutierten Beispiel wird sichtbar gemacht, dass das Resultat nicht interaktiv ist. Eine Änderung des Graphen ist somit nur in der Quelldatei möglich und ist mit einem wiederholten Aufruf des Komandozeilen-Tools verbunden. Aus diesem Grund ist dieser Ansatz eher für das Einbinden in automatisierte Prozesse (z.B. Generieren von Diagrammen in der automatisierten Dokumentation mit Doxygen\footnote{\url{http://www.stack.nl/~dimitri/doxygen/manual/diagrams.html}}) oder Wiki-Seiten geeignet, als für die Nutzung in einer interaktiven Umgebung.
-
-Trotz der fehlenden Interaktivität kann das Layout von dem Nutzer beeinflusst werden, indem der Layout-Algorithmus gewählt wird bzw. seine Eigenschaften angepasst werden. Der Algorithmus kann durch die Wahl des Komandozeilen-Tools spezifiziert werden und seine Eigenschaften können zusätzlich zu der Beschreibung des Graphen in der Quelldatei angegeben werden \cite{NorthGansner14Dot-Manual}. Im oben genannten Beispiel wurde der Layout-Algorithmus \lstinline{dot} verwendet und die Richtung des Graphen in der Dot-Quelldatei mit dem Befehl \lstinline{rankdir = LR} angepasst, so dass der Graph von links nach rechts gezeichnet wird.
-
-\subsubsection{Textbasierte UML-Tools}
-
-Neben allgemeinen textbasierten Tools für das Graphzeichnen gibt es Tools, die für spezifische Domänen ausgelegt sind. Im Folgenden werden 2 textbasierte UML-Tools kurz vorgestellt, die aus einer textuellen Beschreibung in einer speziellen Sprache grafische UML-Diagramme erzeugen. Für die Berechnung des Layouts benutzen beide Tools intern die oben genannte Bibliothek Graphviz.
+\textit{Beschreibung von textbasierten UML-Tools.}
 
 \paragraph{PlantUML}
 
-\hyphenation{PlantUML}
-
-PlantUML\footnote{\url{http://plantuml.sourceforge.net}} ist eine Java-Bibliothek, die für die Beschreibung von UML-Diagrammen die gleichnamige Sprache verwendet. Diese Sprache wird näher in \cite{Roques10Drawing} behandelt. Neben den vielen Anwendungen\footnote{Die bekannten Anwendungen sind unter \url{http://plantuml.sourceforge.net/running.html} aufgelistet.} bietet PlantUML einen Online-Editor\footnote{PlantUML Server: \url{http://www.plantuml.com/plantuml}} an, der es ermöglicht, UML-Diagramme direkt im Browser zu erzeugen und als Bilder zu exportieren.
+\textit{Beschreibung von PlantUML.}
 
 \paragraph{yUML}
 
-yUML\footnote{\url{http://yuml.me}} ist ein Online-Editor zum Erstellen von UML-Diagrammen im Browser. Im Unterschied zu PlantUML verwendet yUML eine anschauliche zeichenbasierte Sprache\footnote{Beispiele der Sprache für Klassendiagramme: \url{http://yuml.me/diagram/scruffy/class/samples}} und ist nicht in Form einer Bibliothek verfügbar. Es stellt dagegen eine HTTP-Schnittstelle bereit, so dass die Beschreibung des Diagramms direkt in eine URL-Adresse eingebettet werden kann.
+\textit{Beschreibung von yUML.}
 
-\subsection{Graphische Ansätze}
-\label{subsec:automatic-layout-graphical-approaches}
+\subsection{Visuelle Ansätze}
+\label{subsec:visual-approaches}
 
-% Eingabe == Ausgabe
-
-Die graphischen Ansätze für das automatische Layout unterscheiden sich von den textbasierten darin, dass der Layout-Algorithmus auf eine graphische Sprache angewendet wird. Das bedeutet, dass 
-
-% unmittelbare Bearbeitung des Diagramms
-% Ausführen des Diagramms im Nachhinein
-% kein direkter Einfluss auf das Layout
-
-%Der Layout-Algorithmus wird in der Regel erst nach der vollständigen Beschreibung des Diagramms manuell ausgeführt.
-
-% ---
-
-\subsubsection{Graphzeichnen in graphischen Editoren}
-
-Wie im Abschnitt X beschrieben, bietet Graphviz eine Software-Bibliothek an, die in andere Tools eingebaut werden kann. Im Abschnitt X wurden bereits textbasierte Tools vorgestellt, die sich die Layout-Algorithmen von Graphviz zur Nutze machen. 
-
-% Unterstützung des automatischen Layouts in OmniGraffle
-% Interaktion mit dem Diagramm wird von dem Layout-Algorithmus nicht berücksichtigt => Zerstören des mentalen Modells
-% Zusatzfunktion in OmniGraffle und CASE-Tools (Visual Paradigm anschauen)
-% Graphviz Layout Engine
-
-% Graphviz in Visual Paradigm
-
-% ---
-
-% Algorithmen für UML Klassendiagramme
-
-% SugiBib - ein Framework, das auf dem Sugiyama Algorithmus basiert und die Semantik und Strukturregeln berücksichtigt
-% https://wwwi2.informatik.uni-wuerzburg.de/SugiBib
-
-% Kandinsky (Eiglsperger)
-
-\subsection{Eigenschaften und Vergleich}
-
-% Zusammenfassung
-%% Verletzung der Semantik- und Strukturregeln durch die mathematischen Algorithmen
-%% Interaktion im Vordergrund ist gewünscht
-%% nicht geeignet für den Prozess des Zeichnens
-%% Unterstützung der Diagrammtypen und deren Strukturregeln
-
-%% Zerstören des mentalen Modells [Eiglsperger03 zitieren]
-%% bei allgemeinen Algorithmen werden die Semantik- und Strukturregeln nicht berücksichtigt
-
-%% Neuordnung des Layouts -> Zerstören der sekundären Notation [Seybold]
-
-% Vorteile:
-%% gute Ergebnisse für kleine und einfache Diagramme
-
-% Nachteile:
-%% fehlende Interaktion: Knopfdruck
-%% Nutzer kann wenig beeinflussen
-%% nicht für Änderungen geeignet -> Neustart
-%% Semantik und Struktur...
-%% berücksichtigen nicht die anwendugspezifische Einschränkungen [Gladisch]
-%% Mangel an Möglichkeit der Kontrolle des Ergebnisses [Gladisch]
-%% Nicht für interaktive Umgebung geeignet [Maier 2.4.1]
-
-% Nachteile Textbasierte Ansätze:
-% - fehlende Interaktion des Nutzers mit dem Diagramm
-% - Veränderungen an einer anderen Stelle, keine unmittelbare Bearbeitung des Diagramms
-% - geringer Einfluss auf das Layout
-
-% textuelle Ansätze: Durch Tools interaktiv, aber an 2 Stellen!
-
-%Die automatischen Layout-Algorithmen sind nicht für eine interaktive Umgebung geeignet. [Maier]
-
-% nicht geeignet für Änderungen im Diagramm -> muss nochmal gestartet werden
-
-% (deutet darauf hin, dass) -> nicht intuitiv
-
-% im Unterschied zu [Eichelberger] beschäftigt sich diese Arbeit mit interaktiven Ansätzen, da automatisches Layout gegen Agile Modeling verstößt
-
-% die Interaktion mit dem Diagramm fehlt (textbasierte und teilweise auch grafische)
-
-% statisch, nicht dynamisch, nicht interaktiv
-
-% herrausstellen
-
+\subsection{Zusammenfassung und Vergleich}
