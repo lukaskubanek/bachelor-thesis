@@ -6,7 +6,7 @@
 \label{sec:automatic-layout}
 
 % TODO: Verweis auf "graph-basierte Diagramme" in Begriffsklärung
-Den graph-basierten Softwarediagrammen unterliegt die abstrakte Struktur des Graphen (siehe Abschnitt X). Mit der graphischen Darstellung von Graphen beschäftigt sich die mathematische Disziplin des Graphzeichnens. Ihre Aufgabe besteht darin, Layout-Algorithmen zu entwerfen, die optimale Layouts in Hinsicht auf ästhetische Regeln erzeugen, d.h. die Layout-Eigenschaften wie Position der Knoten und Routen der Kanten berechnen \cite{Eichelberger05Aesthetics, Arvo02Techniques, Siebenhaller03Automatisches}.
+Den graph-basierten Softwarediagrammen unterliegt die abstrakte Struktur des Graphen (siehe Abschnitt X). Mit der graphischen Darstellung von Graphen beschäftigt sich die mathematische Disziplin des Graphzeichnens. Ihre Aufgabe besteht darin, Layout-Algorithmen zu entwerfen, die optimale Layouts in Hinsicht auf ästhetische Regeln erzeugen, d.h. die Layout-Eigenschaften wie Position der Knoten und Routen der Kanten berechnen \cite{Eichelberger05Aesthetics, Arvo02Techniques, Siebenhaller03Automatisches, Maier12A-Pattern-based}.
 
 Unter dem automatischen Layout für graph-basierte Diagramme sind daher vollautomatische Algorithmen zu verstehen, die für ein gegebenes Diagramm die optimalen Layout-Eigenschaften berechnen und das Diagramm entsprechend anpassen.
 
@@ -16,26 +16,33 @@ Eine weitere Eigenschaft der Ansätze für das automatische Layout ist ein gerin
 
 Die Ansätze lassen sich in zwei Kategorien nach der Art der Sprache unterteilen, die als Eingabe für den Layout-Algorithmus verwendet wird\footnote{In der Literatur werden Ansätze für das automatische Layout meistens nach den Layout-Algorithmen kategorisiert. In dieser Arbeit richtet sich die Kategorisierung danach, wie die Ansätze zu bedienen sind und welche Art der Interaktion sie unterstützen.}. Zu einem aus einer Beschreibung eines Diagramms in einer \textbf{textuellen Sprache} unter Anwendung des Layout-Algorithmus eine graphische Repräsentation erzeugen. Weiterhin gibt es Ansätze, die auf Diagramme angewendet werden, die in einer \textbf{visuellen Sprache} modelliert sind. Diese Ansätze verändern die Layout-Eigenschaften der Diagrammelementen direkt. Beide Kategorien werden im Folgenden behandelt.
 
-\endinput
-
-
-
-
-
-
-
-
- 
 \subsection{Textbasierte Ansätze}
 
-% Eingabe != Ausgabe
+Die textbasierten Ansätze für das automatische Layout erfordern als Eingabe eine textuelle Beschreibung des Diagramms, die meistens in einer domänenspezifischen Sprache formuliert wird. Diese Beschreibung wird eingelesen und intern in ein abstraktes Modell umgewandelt, auf das der Layout-Algorithmus angewendet wird. Als Ausgabe wird eine statische Repräsentation des Diagramms in Form eines Bilds geliefert, die jegliche Möglichkeit der Interaktion vermisst. Durch die Entkopplung der Eingabe von der Ausgabe lässt sich das Diagramm nur durch eine Änderung des Quelltexts und einen wiederholten Aufruf des Layout-Algorithmus ändern.
 
-Unter den textbasierten Ansätzen für das automatische Layout sind Layout-Algorithmen zu verstehen, die als Eingabe eine Beschreibung des Diagramms in Textform erfordern und als Ausgabe eine graphische Repräsentation des Diagramms liefern. Intern wird in der Regel das eingelesene textuelle Modell in ein graphisches Modell transformiert, auf das die Layout-Funktion angewendet wird. Das Resultat besitzt einen statischen Charakter und somit vermisst dieser Ansatz jegliche Möglichkeit der Interaktion. Nachträglich ändern lässt sich das Diagramm nur durch Veränderung des Quelltexts und einen wiederholten Aufruf des Layout-Algorithmus.
+\subsubsection{Graphviz}
+
+Beschreibung von Graphviz. Sprache Dot, Layout-Algorithmen, Kommandozeilen-Tools, Bibliothek, 3rd Party Web- und Desktop-Apps.
+
+\subsubsection{Textbasierte UML-Tools}
+
+Beschreibung von textbasierten UML-Tools.
+
+\paragraph{PlantUML} Beschreibung von PlantUML.
+
+\paragraph{yUML} Beschreibung von yUML.
+
+\subsection{Visuelle Ansätze}
+
+\subsection{Zusammenfassung und Vergleich}
+
+%%%%%%%%%
+\endinput
+%%%%%%%%%
 
 \subsubsection{Graphzeichnen}
 
-% TODO: Verweis auf "graph-basierte Diagramme"
-Wie bereits im Abschnitt X beschrieben wurde, bilden Graphen eine Basis für viele Typen der Softwarediagrammen. Mit der graphischen Darstellung von Graphen beschäftigt sich die mathematische Disziplin des Graphzeichnens, deren Aufgabe es ist, Layout-Algorithmen zu entwerfen, die optimale Layouts in Hinsicht auf die ästhetischen Regeln zu erzeugen \cite{Maier12A-Pattern-based}. Diese Algorithmen werden in Tools und Bibliotheken implementiert, die entweder allein stehend genutzt (siehe unten) oder in andere Programme eingebaut (siehe Abschnitt \ref{subsec:automatic-layout-graphical-approaches}) werden können.
+Diese Algorithmen werden in Tools und Bibliotheken implementiert, die entweder allein stehend genutzt (siehe unten) oder in andere Programme eingebaut (siehe Abschnitt \ref{subsec:automatic-layout-graphical-approaches}) werden können.
 
 Ein bekanntes Beispiel der Tools für die Visualisierung von Graphen ist das ursprünglich von AT\&T entwickelte Softwarepaket Graphviz\footnote{\url{http://graphviz.org}}, das in diesem Abschnitt näher beschrieben wird. Es besteht aus folgenden Komponenten:
 
