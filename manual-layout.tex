@@ -5,15 +5,29 @@
 \section{Manuelles Layout}
 \label{sec:manual-layout}
 
-In Anwendungen zum Erstellen von Diagrammen wie z.B. Vektorgrafik-Software, Präsentationsprogramme oder CASE-Tools wird in der Regel ausschließlich das manuelle Layout unterstützt. Das bedeutet, dass der Nutzer die Diagrammbestandteile im Canvas frei verschieben kann und somit einen großen Einfluss auf das resultierende Layout des Diagramms hat. Um einige manuellen Schritte während der Erstellung eines Diagramms zu sparen, bieten die Anwendungen eine Reihe an Funktionen an, mit deren Hilfe sich das Layout besser gestalten lässt. Diese werden im Detail in diesem Abschnitt beschrieben.
+In Anwendungen zum Erstellen von Diagrammen wie z.B. Vektorgrafik-Software, Präsentationsprogramme oder CASE-Tools wird ausschließlich das manuelle Layout unterstützt, d.h. die einzelnen Bestandteile können im Diagramm frei positioniert werden. Somit kann der Nutzer ein gewünschtes Layout erreichen, muss dafür aber viele manuellen Schritte tätigen \cite{Eichelberger05Aesthetics}. Da sich der Inhalt des Diagramms während der Erstellung ständig ändert, können die manuellen Anpassungen des Layouts zur Frustration des Nutzers führen. Um einige Hürden des manuellen Layouts zu überwinden, bieten die Anwendungen eine Reihe an Funktionen, die dem Nutzer diese Tätigkeit bequemer machen.
 
-% TODO: Temporäre Layout-Funktionen, es werden keine Regeln gebildet
-% flexibel
-% direkte Interaktion mit dem Diagramm -> intuitiv
-% der Nutzer muss sich mit dem Layout viel auseinandersetzen -> Inhalt der Diagramme soll im Vordergrund stehen
+Da das manuelle Layout auf direkter Interaktion des Nutzers mit dem Diagramm basiert, haben auch die Hilfefunktionen einen interaktiven Charakter. Außerdem weisen sie ein temporäres Verhalten auf, d.h. bei ihrer Nutzung werden keinerlei Regeln oder Constraints erstellt, wie das meistens bei den halbautomatischen Ansätzen der Fall ist (siehe Abschnitt \ref{sec:interactive-user-controlled-layout}). Im Detail werden die Hilfefunktionen im Abschnitt \ref{subsec:help-functions-for-manual-layout} beschrieben.
 
-% TODO: Beschreibung der Apps (OmniGraffle, Keynote, ConceptDraw und Visual Paradigm), an den die Funktionen gezeigt werden
-% OmniGraffle ("die folgenden Erkenntnisse wurden durch die Arbeit mit OmniGraffle 5 gewonnen")
+% TODO: Namen besser formulieren
+\subsection{Anwendungen}
+
+Im Folgenden werden drei Anwendungen vorgestellt, an den die Hilfefunktionen für das manuelle Layout gezeigt werden.
+
+\subsubsection{OmniGraffle}
+\label{subsubsec:omnigraffle}
+
+Die von OmniGroup\footnote{\url{http://omnigroup.com}} entwickelte kommerzielle Anwendung OmniGraffle ist eins der einfachsten Tools zum Erstellen von Diagrammen unter Mac OS X \cite{Olsen10OmniGraffle}. OmniGraffle ist sehr flexibel und lässt sich für viele verschiedene Aufgaben einsetzen, z.B. von einem grafischen Entwurf einer Webseite bis zum Zeichnen von Klassendiagrammen. Das liegt vor allem daran, dass für die gezeichneten Diagramme kein semantisches Modell vorliegt und dass die Diagrammbestandteile als reine vektorgrafische Objekte repräsentiert werden. Detaillierte Information zu OmniGraffle können in \cite{08OmniGraffle}, \cite{Olsen10OmniGraffle} oder auf der offiziellen Webseite\footnote{\url{http://omnigroup.com/omnigraffle}} gefunden werden.
+
+% TODO: Referenz auf Abschnitt über OmniGraffle und Auto Layout
+Die meisten im Abschnitt \ref{subsec:help-functions-for-manual-layout} beschriebenen Hilfefunktionen für das manuelle Layout werden anhand von OmniGraffle 5\footnote{Die aktuelle Version von OmniGraffle ist 6 (\url{http://www.omnigroup.com/blog/omnigraffle-6-is-here}), die Erkenntnisse für diese Arbeit wurden allerdings mit der Version 5 gewonnen.} gezeigt. OmniGraffle bietet auch eine Unterstützung für automatisches Layout, die näher im Abschnitt X beschrieben wird.
+
+\subsubsection{Keynote}
+\label{subsubsec:keynote}
+
+\subsubsection{Visual Paradigm}
+\label{subsubsec:visual-paradigm}
+
 
 \subsection{Hilfefunktionen für manuelles Layout}
 \label{subsec:help-functions-for-manual-layout}
@@ -60,7 +74,7 @@ Wenn mindestens 3 Objekte ausgewählt werden, kann die Funktion zum gleichmäßi
 \subsubsection{Smart Guides}
 \label{subsubsec:smart-guides}
 
-Eine sehr hilfreiche Funktion, die in den meisten Grafik- und Präsentationsprogrammen unterstützt wird, sind Hilfslinien für Ausrichtung und relative Positionierung (engl. \textit{Smart Guides}) \cite{11Keynote}. Wenn diese Funktion aktiviert ist, werden während der Manipulation des ausgewählten Objekts farbige Linien im Canvas eingeblendet. Diese Linien geben dem Nutzer einen visuellen Feedback zur geeigneten Ausrichtung des manipulierten Objekts relativ zu anderen Objekten im Diagramm. Außerdem wird ähnlich wie bei der Funktion \textit{Snap-to-Grid} die freie Manipulation eingeschränkt, das in der Regel zu besseren Layout-Ergebnissen führt. Die Hilfslinien werden nach der Beendigung der Operation wieder ausgeblendet und die Position bzw. Größe des manipulierten Objektes wird angepasst. Genauso wie auch bei allen anderen Hilfsfunktionen für das manuelle Layout handelt es sich bei den Hilfslinien um eine temporäre Layout-Funktion. Somit wird die Ausrichtung der Objekte nur in den Eigenschaften der Objekte (Position und Größe) ausgedrückt und es wird keine explizite Regel erstellt.
+Eine sehr hilfreiche Funktion, die in den meisten Grafik- und Präsentationsprogrammen unterstützt wird, sind Hilfslinien für Ausrichtung und relative Positionierung (engl. \textit{Smart Guides}) \cite{11Keynote}. Wenn diese Funktion aktiviert ist, werden während der Manipulation des ausgewählten Objekts farbige Linien im Canvas eingeblendet. Diese Linien geben dem Nutzer einen visuellen Feedback zur geeigneten Ausrichtung des manipulierten Objekts relativ zu anderen Objekten im Diagramm. Außerdem wird ähnlich wie bei der Funktion \textit{Snap-to-Grid} die freie Manipulation eingeschränkt, das in der Regel zu besseren Layout-Ergebnissen führt. Die Hilfslinien werden nach der Beendigung der Operation wieder ausgeblendet und die Position bzw. Größe des manipulierten Objektes wird angepasst. Genauso wie auch bei allen anderen Hilfefunktionen für das manuelle Layout handelt es sich bei den Hilfslinien um eine temporäre Layout-Funktion. Somit wird die Ausrichtung der Objekte nur in den Eigenschaften der Objekte (Position und Größe) ausgedrückt und es wird keine explizite Regel erstellt.
 
 \paragraph{Hilfslinien zur Ausrichtung (Alignment Guides)}
 
@@ -139,7 +153,7 @@ Sehr trivial, aber dennoch nützlich ist die Funktion der Einstellung von gleich
 
 % TODO: Verweis auf die Grundlagen (graph-basierte Diagramme)
 
-Die bisher diskutierten Hilfsfunktionen haben sich ausschließlich mit der Positionierung und Bestimmung der Größe der Objekte auseinandergesetzt. Für die graph-basierten Diagramme sind neben der Knoten auch Kanten von Interesse, die in der Regel durch Verbindungslinien dargestellt werden. Wenn 2 Objekte mit einer Verbindungslinie verbunden werden, bleiben sie auch dann verbunden, wenn sich die Position oder Größe der Objekte ändert \cite{11Keynote}. In vielen Programmen (unter anderem in Keynote und OmniGraffle) werden die Verknüpfungspunkte der Verbindungslinie standardmäßig an die Stellen positioniert, an den eine gedachte Strecke, die die Mittelpunkte beider Objekte verbindet, die Kanten der Objekte schneidet (siehe Abbildung \ref{fig:omnigraffle-default-connection-points}) \cite{08OmniGraffle}.
+Die bisher diskutierten Hilfefunktionen haben sich ausschließlich mit der Positionierung und Bestimmung der Größe der Objekte auseinandergesetzt. Für die graph-basierten Diagramme sind neben der Knoten auch Kanten von Interesse, die in der Regel durch Verbindungslinien dargestellt werden. Wenn 2 Objekte mit einer Verbindungslinie verbunden werden, bleiben sie auch dann verbunden, wenn sich die Position oder Größe der Objekte ändert \cite{11Keynote}. In vielen Programmen (unter anderem in Keynote und OmniGraffle) werden die Verknüpfungspunkte der Verbindungslinie standardmäßig an die Stellen positioniert, an den eine gedachte Strecke, die die Mittelpunkte beider Objekte verbindet, die Kanten der Objekte schneidet (siehe Abbildung \ref{fig:omnigraffle-default-connection-points}) \cite{08OmniGraffle}.
 
 \begin{figure}[hbt]
     \centering
@@ -182,3 +196,6 @@ Sobald mindestens ein Magnet dem Objekt hinzugefügt wurde, wird nicht mehr der 
 
 % Nachteile:
 %% viel an manueller Arbeit
+
+%großen Einfluss auf das resultierende Layout des Diagramms hat
+% der Nutzer muss sich mit dem Layout viel auseinandersetzen -> Inhalt der Diagramme soll im Vordergrund stehen
