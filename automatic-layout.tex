@@ -8,7 +8,7 @@
 % TODO: Verweis auf "graph-basierte Diagramme" in Begriffsklärung
 Den graph-basierten Softwarediagrammen unterliegt die abstrakte Struktur des Graphen (siehe Abschnitt X). Mit der graphischen Darstellung von Graphen beschäftigt sich die mathematische Disziplin des Graphzeichnens. Ihre Aufgabe besteht darin, Layout-Algorithmen zu entwerfen, die optimale Layouts in Hinsicht auf ästhetische Regeln erzeugen, d.h. die Layout-Eigenschaften wie Position der Knoten und Routen der Kanten berechnen \cite{Eichelberger05Aesthetics, Arvo02Techniques, Siebenhaller03Automatisches, Maier12A-Pattern-based}.
 
-Unter dem automatischen Layout für graph-basierte Diagramme sind daher vollautomatische Algorithmen zu verstehen, die für ein gegebenes Diagramm die optimalen Layout-Eigenschaften berechnen und das Diagramm entsprechend anpassen.
+Unter dem automatischen Layout für graph-basierte Diagramme sind daher vollautomatische Algorithmen zu verstehen, die für ein gegebenes Diagramm die optimalen Layout-Eigenschaften berechnen und das Diagramm entsprechend anpassen \cite{Fuhrmann11On-the-Pragmatics}.
 
 Um während der Erstellung des Diagramms immer ein optimales Layout zu erhalten, muss der Layout-Algorithmus kontinuierlich nach jeder Änderung aufgerufen werden. Dies kann entweder automatisch oder manuell passieren.
 
@@ -20,9 +20,15 @@ Die Ansätze lassen sich in zwei Kategorien nach der Art der Sprache unterteilen
 
 Die textbasierten Ansätze für das automatische Layout erfordern als Eingabe eine textuelle Beschreibung des Diagramms, die meistens in einer domänenspezifischen Sprache formuliert wird. Diese Beschreibung wird eingelesen und intern in ein abstraktes Modell umgewandelt, auf das der Layout-Algorithmus angewendet wird. Als Ausgabe wird eine statische Repräsentation des Diagramms in Form eines Bilds geliefert, die jegliche Möglichkeit der Interaktion vermisst. Durch die Entkopplung der Eingabe von der Ausgabe lässt sich das Diagramm nur durch eine Änderung des Quelltexts und einen wiederholten Aufruf des Layout-Algorithmus ändern.
 
+% Live-Preview vs. Kommandozeilen-Tools
+
 \subsubsection{Graphviz}
 
 \textit{Beschreibung von Graphviz. Sprache Dot, Layout-Algorithmen, Kommandozeilen-Tools, Bibliothek, 3rd Party Web- und Desktop-Apps.}
+
+% [Fuhrmann]
+% Algorithmen aufzählen?
+% http://webgraphviz.com
 
 \subsubsection{Textbasierte UML-Tools}
 
@@ -36,7 +42,26 @@ Die textbasierten Ansätze für das automatische Layout erfordern als Eingabe ei
 
 \textit{Beschreibung von yUML.}
 
+% [Fuhrmann]
+
 \subsection{Visuelle Ansätze}
 \label{subsec:visual-approaches}
 
-\subsection{Zusammenfassung und Vergleich}
+Die visuellen Ansätze für das automatische Layout unterscheiden sich von den textbasierten darin, dass der Layout-Algorithmus auf eine visuelle Sprache angewendet wird.
+
+% Eingabe == Ausgabe
+% Ausgabe interaktiv, geänderte Stellen werden aber beim nächsten Aufruf nicht beachtet => kein direkter Einfluss auf das Layout
+% unmittelbare Bearbeitung des Diagramms
+% in der Regel manuelle Ausführung
+
+% in Diagramm-Editoren eingebaut
+
+% OmniGraffle: Graphviz Layout Engine
+% Zusatzfunktion in OmniGraffle und CASE-Tools (Visual Paradigm anschauen)
+
+% Unterstützung des automatischen Layouts in OmniGraffle
+% Interaktion mit dem Diagramm wird von dem Layout-Algorithmus nicht berücksichtigt => Zerstören des mentalen Modells
+
+\subsection{Eigenschaften und Vergleich}
+
+test: \cite{Fowler03UML-as-Sketch}
