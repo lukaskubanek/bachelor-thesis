@@ -16,11 +16,7 @@ Eine weitere Eigenschaft der Ansätze für das automatische Layout ist ein gerin
 
 Die Ansätze lassen sich in zwei Kategorien nach der Art der Sprache unterteilen, die als Eingabe für den Layout-Algorithmus verwendet wird\footnote{In der Literatur werden Ansätze für das automatische Layout meistens nach den Layout-Algorithmen kategorisiert. In dieser Arbeit richtet sich die Kategorisierung danach, wie die Ansätze zu bedienen sind und welche Art der Interaktion sie unterstützen.}. Zu einem aus einer Beschreibung eines Diagramms in einer \textbf{textuellen Sprache} unter Anwendung des Layout-Algorithmus eine graphische Repräsentation erzeugen. Weiterhin gibt es Ansätze, die auf Diagramme angewendet werden, die in einer \textbf{visuellen Sprache} modelliert sind. Diese Ansätze verändern die Layout-Eigenschaften der Diagrammelementen direkt. Beide Kategorien werden im Folgenden behandelt.
 
-\subsection{Textbasierte Ansätze}
-
-Die textbasierten Ansätze für das automatische Layout erfordern als Eingabe eine textuelle Beschreibung des Diagramms, die meistens in einer domänenspezifischen Sprache formuliert wird. Diese Beschreibung wird eingelesen und intern in ein abstraktes Modell umgewandelt, auf das der Layout-Algorithmus angewendet wird. Als Ausgabe wird eine statische Repräsentation des Diagramms in Form eines Bilds geliefert, die jegliche Möglichkeit der Interaktion vermisst. Durch die Entkopplung der Eingabe von der Ausgabe lässt sich das Diagramm nur durch eine Änderung des Quelltexts und einen wiederholten Aufruf des Layout-Algorithmus ändern.
-
-% Live-Preview vs. Kommandozeilen-Tools
+\subsection{Anwendungen und Technologien}
 
 \subsubsection{Graphviz}
 
@@ -30,19 +26,22 @@ Die textbasierten Ansätze für das automatische Layout erfordern als Eingabe ei
 % Algorithmen aufzählen?
 % http://webgraphviz.com
 
-\subsubsection{Textbasierte UML-Tools}
-
-\textit{Beschreibung von textbasierten UML-Tools.}
-
-\paragraph{PlantUML}
-
-\textit{Beschreibung von PlantUML.}
-
-\paragraph{yUML}
+\subsubsection{yUML}
 
 \textit{Beschreibung von yUML.}
 
 % [Fuhrmann]
+
+\subsection{Textbasierte Ansätze}
+
+Die textbasierten Ansätze für das automatische Layout erfordern als Eingabe eine textuelle Beschreibung des Diagramms, die meistens in einer domänenspezifischen Sprache formuliert wird. Diese Beschreibung wird eingelesen und intern in ein abstraktes Modell umgewandelt, auf das der Layout-Algorithmus angewendet wird. Als Ausgabe wird eine statische Repräsentation des Diagramms in Form eines Bilds geliefert, die jegliche Möglichkeit der Interaktion vermisst. Durch die Entkopplung der Eingabe von der Ausgabe lässt sich das Diagramm nur durch eine Änderung des Quelltexts und einen wiederholten Aufruf des Layout-Algorithmus ändern.
+
+% Live-Preview vs. Kommandozeilen-Tools
+
+%\subsubsection{Textbasierte UML-Tools}
+%\textit{Beschreibung von textbasierten UML-Tools.}
+%\paragraph{PlantUML}
+%\textit{Beschreibung von PlantUML.}
 
 \subsection{Visuelle Ansätze}
 \label{subsec:visual-approaches}
@@ -57,7 +56,8 @@ Die visuellen Ansätze für das automatische Layout unterscheiden sich von den t
 % in Diagramm-Editoren eingebaut
 
 % OmniGraffle: Graphviz Layout Engine
-% Zusatzfunktion in OmniGraffle und CASE-Tools (Visual Paradigm anschauen)
+% Zusatzfunktion in OmniGraffle und CASE-Tools
+% Zusatzfunktion in Visual Paradigm
 
 % Unterstützung des automatischen Layouts in OmniGraffle
 % Interaktion mit dem Diagramm wird von dem Layout-Algorithmus nicht berücksichtigt => Zerstören des mentalen Modells
