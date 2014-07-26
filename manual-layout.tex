@@ -11,13 +11,14 @@ Da das manuelle Layout auf direkter Interaktion des Nutzers mit dem Diagramm bas
 
 % TODO: Namen besser formulieren
 \subsection{Anwendungen}
+\label{subsec:applications-for-manual-layout}
 
 Im Folgenden werden drei Anwendungen vorgestellt, an den die Hilfefunktionen für das manuelle Layout gezeigt werden.
 
 \subsubsection{OmniGraffle}
 \label{subsubsec:omnigraffle}
 
-Die von OmniGroup\footnote{\url{http://omnigroup.com}} entwickelte kommerzielle Anwendung OmniGraffle ist eins der einfachsten Tools zum Erstellen von Diagrammen unter Mac OS X \cite{Olsen10OmniGraffle}. OmniGraffle ist sehr flexibel und lässt sich für viele verschiedene Aufgaben einsetzen, z.B. von einem grafischen Entwurf einer Webseite bis zum Zeichnen von Klassendiagrammen. Das liegt vor allem daran, dass für die gezeichneten Diagramme kein semantisches Modell vorliegt und dass die Diagrammbestandteile als reine vektorgrafische Objekte repräsentiert werden. Detaillierte Information zu OmniGraffle können in \cite{08OmniGraffle}, \cite{Olsen10OmniGraffle} oder auf der offiziellen Webseite\footnote{\url{http://omnigroup.com/omnigraffle}} gefunden werden.
+Die von OmniGroup\footnote{\url{http://omnigroup.com}} entwickelte kommerzielle Anwendung OmniGraffle ist eins der einfachsten Tools zur Erstellung von Diagrammen unter Mac OS X \cite{Olsen10OmniGraffle}. OmniGraffle ist sehr flexibel und lässt sich für viele verschiedene Aufgaben einsetzen, z.B. von einem grafischen Entwurf einer Webseite bis zum Zeichnen von Klassendiagrammen. Das liegt vor allem daran, dass für die gezeichneten Diagramme kein semantisches Modell vorliegt und dass die Diagrammbestandteile als reine vektorgrafische Objekte repräsentiert werden. Detaillierte Information zu OmniGraffle können in \cite{08OmniGraffle}, \cite{Olsen10OmniGraffle} oder auf der offiziellen Webseite\footnote{\url{http://omnigroup.com/omnigraffle}} gefunden werden.
 
 % TODO: Referenz auf Abschnitt über OmniGraffle und Auto Layout
 Die meisten im Abschnitt \ref{subsec:help-functions-for-manual-layout} beschriebenen Hilfefunktionen für das manuelle Layout werden anhand von OmniGraffle 5\footnote{Die aktuelle Version von OmniGraffle ist 6 (\url{http://www.omnigroup.com/blog/omnigraffle-6-is-here}), die Erkenntnisse für diese Arbeit wurden allerdings mit der Version 5 gewonnen.} gezeigt. OmniGraffle bietet auch eine Unterstützung für automatisches Layout, die näher im Abschnitt X beschrieben wird.
@@ -25,17 +26,23 @@ Die meisten im Abschnitt \ref{subsec:help-functions-for-manual-layout} beschrieb
 \subsubsection{Keynote}
 \label{subsubsec:keynote}
 
+Apple Keynote ist eine Anwendung zur Erstellung von Präsentationen für Mac OS X und iOS. Es bietet ähnliche Funktionen wie Microsoft PowerPoint\footnote{\url{http://office.microsoft.com/en-us/powerpoint/}} und bildet somit eine Alternative zu dem bekannten Präsentationsprogramm. Neben den Achsendiagrammen zur Visualisierung von Werten wie Linien- oder Balkendiagramme ermöglicht Keynote mit Hilfe von vektorgrafischen Objekten einfache graph-basierte Diagramme zu erstellen. Weitere Informationen sind in \cite{11Keynote} oder auf der offiziellen Webseite\footnote{\url{http://www.apple.com/de/mac/keynote/}} zu finden. 
+
+Keynote besitzt ähnliche oder sogar identische Hilfefunktionen für das manuelle Layout wie OmniGraffle. Einige im Abschnitt \ref{subsec:help-functions-for-manual-layout} werden an Keynote 6 gezeigt. Das automatische Layout wird in Keynote nicht unterstützt.
+
 \subsubsection{Visual Paradigm}
 \label{subsubsec:visual-paradigm}
 
+Visual Paradigm ist ein plattformunabhängiges CASE-Tool von der gleichnamigen Firma und unterstützt neben UML-Diagrammen auch weitere visuellen Sprachen \cite{14Visual}. Das Tool basiert auf einer Freihandbearbeitung und bietet neben Hilfefunktionen für das manuelle Layout (siehe Abschnitt \ref{subsec:help-functions-for-manual-layout}) auch Unterstützung für automatische Layout-Algorithmen (siehe Abschnitt \ref{subsec:visual-approaches}) \cite{Fuhrmann11On-the-Pragmatics}. Mit näheren Beschreibung von Visual Paradigm beschäftigen sich \cite{14Visual}, \cite[S. 313-314]{Fuhrmann11On-the-Pragmatics} und die offizielle Webseite\footnote{\url{http://www.visual-paradigm.com}}.
 
+% TODO: Bezug auf Anwendungen und Abschnitt 3.1.1 überprüfen
 \subsection{Hilfefunktionen für manuelles Layout}
 \label{subsec:help-functions-for-manual-layout}
 
 \subsubsection{Raster}
 \label{subsubsec:grid}
 
-Viele Visualisierungsprogramme (unter anderem alle 4 erwähnten) unterstützen die Aufteilung des Canvas in einen gleichmäßigen Raster, der durch Rasterlinien dargestellt werden kann. Diese Linien können zum Ausrichten von Objekten im Canvas verwendet werden, das vor allem für die Diagramme nützlich ist, in den die Größen der Objekte eine wichtige Rolle spielen wie z.B. Grundrisse \cite{08OmniGraffle, Olsen10OmniGraffle, 11Keynote, 14Visual}.
+Viele Visualisierungsprogramme (unter anderem alle drei im Abschnitt \ref{subsec:applications-for-manual-layout} erwähnten) unterstützen die Aufteilung des Canvas in einen gleichmäßigen Raster, der durch Rasterlinien dargestellt werden kann. Diese Linien können zum Ausrichten von Objekten im Canvas verwendet werden, das vor allem für die Diagramme nützlich ist, in den die Größen der Objekte eine wichtige Rolle spielen wie z.B. Grundrisse \cite{08OmniGraffle, Olsen10OmniGraffle, 11Keynote, 14Visual}.
 
 \paragraph{Snap-to-Grid}
 
