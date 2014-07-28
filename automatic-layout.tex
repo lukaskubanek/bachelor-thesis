@@ -10,11 +10,12 @@ Den graph-basierten Softwarediagrammen unterliegt die abstrakte Struktur des Gra
 
 Um während der Erstellung des Diagramms immer ein optimales Layout zu erhalten, muss der Layout-Algorithmus kontinuierlich nach jeder Änderung entweder automatisch oder manuell aufgerufen werden. Wenn eine Interaktion mit dem resultierenden Diagramm unterstützt wird, hat sie keinerlei Einwirkung auf den Algorithmus und wird bei dem nächsten Aufruf nicht berücksichtigt. In der Regel kann der Nutzer nur bestimmte Parameter des Algorithmus\footnote{z.B. minimale Länge der Kanten im zirkulären Layout-Algorithmus \lstinline{circo} aus der Bibliothek Graphviz \cite{NorthGansner14Dot-Manual}.} anpassen und hat somit nur einen geringen Einfluss auf das Ergebnis des Layout-Prozesses.
 
-Die Ansätze lassen sich in zwei Kategorien nach der Art der Sprache unterteilen, die als Eingabe für den Layout-Algorithmus verwendet wird\footnote{In der Literatur werden Ansätze für das automatische Layout meistens nach den Layout-Algorithmen kategorisiert. In dieser Arbeit richtet sich die Kategorisierung danach, wie die Ansätze zu bedienen sind und welche Art der Interaktion sie unterstützen.}. Zu einem gibt es Ansätze, die aus einer Beschreibung des Diagramms in einer \textbf{textuellen Sprache} unter Anwendung des Layout-Algorithmus eine graphische Repräsentation erzeugen. Weiterhin gibt es Ansätze, die auf Diagramme angewendet werden, die in einer \textbf{visuellen Sprache} modelliert sind. Diese Ansätze verändern die Layout-Eigenschaften der Diagrammelementen direkt. Im Folgenden werden beide Kategorien behandelt.
+Die Ansätze lassen sich in zwei Kategorien nach der Art der Sprache unterteilen, die als Eingabe für den Layout-Algorithmus verwendet wird\footnote{In der Literatur werden Ansätze für das automatische Layout meistens nach den Layout-Algorithmen kategorisiert \cite[S.39ff]{Fuhrmann11On-the-Pragmatics}. In dieser Arbeit richtet sich die Kategorisierung danach, wie die Ansätze zu bedienen sind und welche Art der Interaktion sie unterstützen.}. Zu einem gibt es Ansätze, die aus einer Beschreibung des Diagramms in einer \textbf{textuellen Sprache} unter Anwendung des Layout-Algorithmus eine graphische Repräsentation erzeugen. Weiterhin gibt es Ansätze, die auf Diagramme angewendet werden, die in einer \textbf{visuellen Sprache} modelliert sind. Diese Ansätze verändern die Layout-Eigenschaften der Diagrammelementen direkt. Im Folgenden werden beide Kategorien behandelt.
 
 % TODO: Visuelle Sprachen erklären, da [Fuhrmann] sagt, dass textuelle Sprachen auch visuelle Sprachen sind (S. 48)
 
 \subsection{Textbasierte Ansätze}
+\label{subsec:text-based-approaches}
 
 Die textbasierten Ansätze für das automatische Layout erfordern als Eingabe eine textuelle Beschreibung des Diagramms, die in einer allgemeinen Auszeichnungssprache oder einer domänenspezifischen Sprache formuliert werden kann. Diese Beschreibung wird eingelesen und intern in ein abstraktes Modell umgewandelt, auf das der Layout-Algorithmus angewendet wird. Als Ausgabe wird eine statische Repräsentation des Diagramms in Form eines Bilds geliefert, die jegliche Möglichkeit der Interaktion vermisst. Durch die Entkopplung der Eingabe von der Ausgabe lässt sich das Diagramm nur durch eine Änderung des Quelltexts und einen wiederholten Aufruf des Layout-Algorithmus verändern.
 
@@ -81,19 +82,34 @@ yUML\footnote{\url{http://yuml.me}} ist ein Online-Editor zum Erstellen von UML-
 
 % TODO: Speziellen Algorithmen ergänzen!
 
+% SugiBib - ein Framework, das auf dem Sugiyama Algorithmus basiert und die Semantik und Strukturregeln berücksichtigt
+% https://wwwi2.informatik.uni-wuerzburg.de/SugiBib
+
+% Kandinsky (Eiglsperger)
+
 \subsection{Visuelle Ansätze}
 \label{subsec:visual-approaches}
 
-Die visuellen Ansätze für das automatische Layout unterscheiden sich von den textbasierten darin, dass der Layout-Algorithmus auf eine visuelle Sprache angewendet wird.
+Die visuellen Ansätze für das automatische Layout unterscheiden sich von den textbasierten darin, dass der Layout-Algorithmus auf eine visuelle Sprache angewendet wird und dass das berechnete Layout direkt die Eingabe verändert. Diese Ansätze werden in der Regel in visuellen Editoren eingesetzt, die eine unmittelbare Bearbeitung des Diagramms unterstützen.
 
-% Eingabe == Ausgabe
-% Ausgabe interaktiv, geänderte Stellen werden aber beim nächsten Aufruf nicht beachtet => kein direkter Einfluss auf das Layout
-% unmittelbare Bearbeitung des Diagramms
-% in der Regel manuelle Ausführung
+Der Ablauf ist wie folgt: Zunächst wird ein Diagramm in einer bestimmten visuellen Sprache (z.B. ein Klassendiagramm in der Sprache UML) modelliert. Dann wird ein Layout-Algorithmus (in der Regel manuell) ausgeführt, der das neue Layout für alle Diagrammbestandteile berechnet. Anschließend wird das modellierte Diagramm dermaßen angepasst, so dass es das berechnete Layout annimmt.
 
-% in Diagramm-Editoren eingebaut
+Die Entkoppelung der Ein- und Ausgabe, wodurch sich die textuellen Ansätze auszeichnen (siehe Abschnitt \ref{subsec:text-based-approaches}), entfällt an dieser Stelle und da das resultierende Diagramm interaktiv bleibt, kann es durch den Nutzer weiterhin verändert bzw. erweitert werden. Um nach jeder Änderung des Diagramms ein automatisch berechnetes Layout zu erhalten, muss allerdings der Layout-Algorithmus jedesmal erneut gestartet werden.
 
-% OmniGraffle: Graphviz Layout Engine
+% TODO: Das "mentale Modell" erklären oder verweisen
+Die Algorithmen für das automatische Layout sind im Allgemeinen nicht ideal und die Nutzer neigen dazu, das berechnete Layout für persönliche Präferenzen anzupassen, um ein mentales Modell bzw. eine sekundäre Notation\footnote{Unter der sekundären Notation ist eine zusätzliche Bedeutung des Diagramms zu verstehen, die durch das Layout geschaffen wird \cite{SeyboldGlinz03An-Effective}.} zu verwalten. Alle nachträglich manuell getätigten Layout-Änderungen werden bei einem erneuten Aufruf des Layout-Algorithmus verworfen und somit steht der Nutzer vor der Entscheidung, ob er nach jedem Aufruf des Algorithmus die Anpassungen wiederholt durchführt oder auf das automatische Layout komplett verzichtet \cite[S.119ff]{Eiglsperger04Automatic}.
+
+
+
+
+
+
+
+
+
+
+
+% OmniGraffle: Graphviz Layout Engine, Animation
 % Zusatzfunktion in OmniGraffle und CASE-Tools
 % Zusatzfunktion in Visual Paradigm
 
@@ -104,3 +120,6 @@ Die visuellen Ansätze für das automatische Layout unterscheiden sich von den t
 
 % TEXTBASIERT
 %Aus diesem Grund ist dieser Ansatz eher für das Einbinden in automatisierte Prozesse (z.B. Generieren von Diagrammen in der automatisierten Dokumentation mit Doxygen\footnote{\url{http://www.stack.nl/~dimitri/doxygen/manual/diagrams.html}}) oder Wiki-Seiten geeignet, als für die Nutzung in einer interaktiven Umgebung.
+
+%Die Layout-Algorithmen berücksichtigen keine Layout-Präferenzen der Nutzer und 
+
