@@ -82,8 +82,11 @@ yUML\footnote{\url{http://yuml.me}} ist ein Online-Editor zum Erstellen von UML-
 
 % TODO: Speziellen Algorithmen ergänzen!
 
+% Traditionelle Kriterien für Graphzeichnen sind für Klassendiagramme nicht ausreichend [Eichelberger S.79]
+
 % SugiBib - ein Framework, das auf dem Sugiyama Algorithmus basiert und die Semantik und Strukturregeln berücksichtigt
 % https://wwwi2.informatik.uni-wuerzburg.de/SugiBib
+% XMI
 
 % Kandinsky (Eiglsperger)
 
@@ -99,22 +102,23 @@ Die Entkoppelung der Ein- und Ausgabe, wodurch sich die textuellen Ansätze ausz
 % TODO: Das "mentale Modell" erklären oder verweisen
 Die Algorithmen für das automatische Layout sind im Allgemeinen nicht ideal und die Nutzer neigen dazu, das berechnete Layout für persönliche Präferenzen anzupassen, um ein mentales Modell bzw. eine sekundäre Notation\footnote{Unter der sekundären Notation ist eine zusätzliche Bedeutung des Diagramms zu verstehen, die durch das Layout geschaffen wird \cite{SeyboldGlinz03An-Effective}.} zu verwalten. Alle nachträglich manuell getätigten Layout-Änderungen werden bei einem erneuten Aufruf des Layout-Algorithmus verworfen und somit steht der Nutzer vor der Entscheidung, ob er nach jedem Aufruf des Algorithmus die Anpassungen wiederholt durchführt oder auf das automatische Layout komplett verzichtet \cite[S.119ff]{Eiglsperger04Automatic}.
 
+\subsubsection{Automatisches Layout in OmniGraffle}
 
+% Graphviz Layout Engine (siehe Webseite)
+% Automatisches Layout aktivieren, Auswahl des Algorithmus, Einstellung der Parameter
+% Aufruf manuelle oder nach Hinzufügen/Löschen einer Kante
+% Animation
 
+% Wie im Abschnitt \ref{subsubsec:graphviz} beschrieben, bietet Graphviz eine Software-Bibliothek an, die in andere Tools eingebunden werden kann.
 
+\subsubsection{Automatisched Layout in Visual Paradigm}
 
+% Zusatzfunktion
+% semantische Unterstützung fehlt
+% manueller Aufruf [Fuhrmann]
+% verschiedene Algorithmen -> nur Verbindungen vs. alles
 
-
-
-
-
-
-% OmniGraffle: Graphviz Layout Engine, Animation
-% Zusatzfunktion in OmniGraffle und CASE-Tools
-% Zusatzfunktion in Visual Paradigm
-
-% Unterstützung des automatischen Layouts in OmniGraffle
-% Interaktion mit dem Diagramm wird von dem Layout-Algorithmus nicht berücksichtigt => Zerstören des mentalen Modells
+% yEd?
 
 \subsection{Eigenschaften und Vergleich}
 
@@ -123,3 +127,47 @@ Die Algorithmen für das automatische Layout sind im Allgemeinen nicht ideal und
 
 %Die Layout-Algorithmen berücksichtigen keine Layout-Präferenzen der Nutzer und 
 
+% Interaktion mit dem Diagramm wird von dem Layout-Algorithmus nicht (berücksichtigt) => Zerstören des mentalen Modells
+
+% Zusammenfassung
+%% Verletzung der Semantik- und Strukturregeln durch die mathematischen Algorithmen
+%% Interaktion im Vordergrund ist gewünscht
+%% nicht geeignet für den Prozess des Zeichnens
+%% Unterstützung der Diagrammtypen und deren Strukturregeln
+
+%% Zerstören des mentalen Modells [Eiglsperger03 zitieren]
+%% bei allgemeinen Algorithmen werden die Semantik- und Strukturregeln nicht berücksichtigt
+
+%% Neuordnung des Layouts -> Zerstören der sekundären Notation [Seybold]
+
+% Vorteile:
+%% gute Ergebnisse für kleine und einfache Diagramme
+
+% Nachteile:
+%% fehlende Interaktion: Knopfdruck
+%% Nutzer kann wenig beeinflussen
+%% nicht für Änderungen geeignet -> Neustart
+%% Semantik und Struktur...
+%% berücksichtigen nicht die anwendugspezifische Einschränkungen [Gladisch]
+%% Mangel an Möglichkeit der Kontrolle des Ergebnisses [Gladisch]
+%% Nicht für interaktive Umgebung geeignet [Maier 2.4.1]
+
+% Nachteile Textbasierte Ansätze:
+% - fehlende Interaktion des Nutzers mit dem Diagramm
+% - Veränderungen an einer anderen Stelle, keine unmittelbare Bearbeitung des Diagramms
+% - geringer Einfluss auf das Layout
+
+% textuelle Ansätze: Durch Tools interaktiv, aber an 2 Stellen!
+
+%Die automatischen Layout-Algorithmen sind nicht für eine interaktive Umgebung geeignet. [Maier]
+
+% nicht geeignet für Änderungen im Diagramm -> muss nochmal gestartet werden
+
+% (deutet darauf hin, dass) -> nicht intuitiv
+
+% im Unterschied zu [Eichelberger] beschäftigt sich diese Arbeit mit interaktiven Ansätzen, da automatisches Layout gegen Agile Modeling verstößt
+
+% die Interaktion mit dem Diagramm fehlt (textbasierte und teilweise auch grafische)
+% statisch, nicht dynamisch, nicht interaktiv
+
+% herrausstellen
