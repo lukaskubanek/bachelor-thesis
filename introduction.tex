@@ -4,31 +4,76 @@
 
 \chapter{Einleitung}
 
-% Agile Modeling
-% Papier/Whiteboard vs. Zeichentools vs. CASE-Tools
+\section{Motivation}
 
-% Zielstellung (interaktiv -> Visual Language Editors)
+Der Einsatz von Agilität in der Softwareentwicklung, bekannt unter dem Begriff \textit{agile Softwareentwicklung}, erfreut sich heutzutage einer großen Beliebtheit. In der Umfrage \textit{State of Agile} der Firma VersionOne aus dem Jahr 2013 haben 88\% der befragten Personen aus nordamerikanischen und europäischen Softwareenwicklungsfirmen bestätigt, dass in ihren Organisationen agile Softwareentwicklung eingesetzt wird. Die Umfrage zeigt weiterhin, dass dieser Anteil in den letzten 3 Jahren eine steigende Tendenz hat \cite{VersionOne148th-Annual}.
+
+Agile Softwareentwicklung basiert auf den Grundsätzen aus \cite{BeckBeedle01Manifest} und die agilen Softwareentwicklungsprozesse sind im Vergleich zu den traditionellen und schwergewichtigen (wie z.B. Unified Process oder Wasserfallmodell) schlanker, flexibler und für die Bedürfnisse der heutigen Zeit angepasst. Des Weiteren steht bei der agilen Softwareentwicklung der Code im Fokus, das durch zahlreiche Praktiken wie z.B. testgetriebene Entwicklung, Code-Refactoring oder Code-Reviews unterstützt wird. Insbesondere bei kleinen Entwickler-Teams und Einzelentwicklern, die Anwendungen für moderne Plattformen entwickeln\footnote{mobile Apps, Webanwendungen, Desktop-Anwendungen im begrenzten Umfang}, wird während der Entwicklung in der Regel auf Modellierung und umfassende Dokumentation mit Hilfe von UML-Diagrammen verzichtet.
+
+Der agile Ansatz lässt sich jedoch auch in die Softwaremodellierung übertragen. Die Grundlage dafür bildet die in \cite{Ambler02Agile} von Scott W. Ambler präsentierte Methodik \textit{Agile Modeling}. Diese auf Praktiken basierte Methodik beschreibt einen effektiven Weg für den Einsatz der Softwaremodellierung in einem agilen Umfeld. Die Methodik empfiehlt, mit den einfachsten Tools leichtgewichtige Modelle zu erstellen, die einen Zweck erfüllen, z.B. einen Sachverhalt  veranschaulichen oder die Kommunikation zwischen mehreren Team-Mitgliedern verbessern. Weiterhin soll nur eine einfache Notation verwendet werden. Wenn der Inhalt der Modelle bereits im Code umgesetzt ist und die Modelle dem Projekt keinen Mehrwert mehr geben, sollen sie verworfen werden \cite{Ambler02Agile}.
+
+
+
+% in Form von Skizzen
+% Dies erfolgt in der Regel auf Papier, Whiteboard oder in einfachen Zeichenprogrammen.
+
+
+
+% dennoch vorteilhaft
+% Skizzen, einfache Modelle werden erstellt
+% Papier, Whiteboard, Zeichenprogramme
+
+% vereinfachte Syntax, nur Teilmenge von UML, weitere Notation
+% eine hilfreiche Teilmenge der UML-Notation
+
+% Software-Tools nicht dafür ausgelegt, keine Unterstützung
+% wenn in Software, dann müssen die Tools einfache Modellerstellung unterstützen, gleichzeitig aber die syntaktischen und semantischen Aspekte, nicht wie in Zeichentools
+
+
+
+% Änderungen → vollständiges UML und MDD spielt keine Rolle (Desktop, iOS, mobil, web) -> UML veraltet → Skizzen → Agile Modellierung → Papier/vs. Software → Vorteile/Nachteile
+
+
+% Agile Modeling
+%fehlt in CASE-Tools
+%entweder wirklich Zeichnen bzw. komplexe mächtige Tools
 
 % Klassendiagramme meistens weniger als 10 Klassen (Graph zitieren + Rat von Scott Ambler)
 
-%Motivation
-%	agile Softwareentwicklung → Änderungen → MDD spielt keine Rolle (Desktop, iOS, mobil, web) → Skizzen → Agile Modellierung → Papier/Whiteboard vs. Software → Vorteile/Nachteile
-%	Agile Modeling
-%		fehlt in CASE-Tools
-%		entweder wirklich Zeichnen bzw. komplexe mächtige Tools
-%	Informationen aus dem EXIST-Antrag
-%	Warum eingeschränkt?
-%	Warum nutzergesteuert und nicht automatisch?
+%Papier vs. Software
+% Papier/Whiteboard vs. Zeichentools vs. CASE-Tools
+% Vorteile/Nachteile
+
+% Warum eingeschränkt?
+% Warum nutzergesteuert und nicht automatisch?
+
+% diese Software müsste neben der Unterstützung der Prinzipien aus [AgileModeling]
+% um den Fokus auf den Inhalt und die Interaktion mit den Diagramm zu fördern, wäre von Vorteil, wenn die Software eine Layout-Unterstützung anbieten würde 
+
+\section{Zielstellung}
+
+% Zielstellung (interaktiv -> Visual Language Editors)
+% die Arbeit soll eine mögliche Richtung für die Unterstützung der Interaktion in leichtgewichtigen Modellierungswerkzeugen zeigen
+%im Desktop-Bereich (Mauszeiger & Fenster - keine Multi-Touch Ansätze)
+
+\section{Aufbau der Arbeit}
+
+% im Kapitel 3 werden bestehende Ansätze kategorisiert und im Detail vorgestellt (Kommerzielle Anwendungen, Code-Bibliotheken, Forschungsprojekte)
+
+
+
+
+
+
+
 %Begriffsklärung “Layout”, “graph-basierte Softwarediagramme”, “interaktiv” (“diagrammspezifisch”)
 
-%Papier vs. Software
-%	Vorteile/Nachteile
-%im Desktop-Bereich (Mauszeiger & Fenster - keine Multi-Touch Ansätze)
-%Struktur der Arbeit
+
+
+
 %Beispiele und Apps: Mac OS X
 
-% Agile Modeling
-% UML & MDD -> agile Softwareentwicklung
 
-% Aus dem Antrag:
-%Agile Softwareentwicklung, die sich nach den Grundsätzen aus dem Agile Manifesto4 richtet, freut sich heutzutage einer großen Beliebtheit. Der Grund dafür ist, dass sie im Vergleich zu den traditionellen Soft- wareentwicklungsprozessen (wie z.B. Unified Process oder Wasserfallmodell) schlanker und wesentlich flexibler ist. Desweiteren steht der Code im Fokus, das durch zahlreiche Praktiken wie z.B. Code-Refac- toring und Code-Reviews unterstützt wird.%Der agile Ansatz wurde auch in die Softwaremodellierung übertragen und in der Methodik Agile Model- ing5 veröffentlicht. Diese auf Praktiken basierte Methodik wurde von Scott Ambler entwickelt und ver- sucht einen effektiven Weg für die Softwaremodellierung zu finden.%Die Konzepte aus Agile Modeling sind an sich nicht revolutionär. Weil wir bisher noch keine Model- lierungssoftware gefunden haben, die diese Konzepte umsetzt, sehen wir auch an dieser Stelle ein Po- tential für Innovation. Somit wird Cases z.B. eine Archivierungsfunktion besitzen (als Unterstützung der Praktik “Discard Temporary Models”) oder nur eine hilfreiche Teilmenge der UML-Notation anbieten (als Unterstützung der Praktik “Depict Models Simply”).
+
+
+
