@@ -6,55 +6,26 @@
 
 \section{Motivation}
 
-Der Einsatz von Agilität in der Softwareentwicklung, bekannt unter dem Begriff \textit{agile Softwareentwicklung}, erfreut sich heutzutage einer großen Beliebtheit. In der Umfrage \textit{State of Agile} der Firma VersionOne aus dem Jahr 2013 haben 88\% der befragten Personen aus nordamerikanischen und europäischen Softwareenwicklungsfirmen bestätigt, dass in ihren Organisationen agile Softwareentwicklung eingesetzt wird. Die Umfrage zeigt weiterhin, dass dieser Anteil in den letzten 3 Jahren eine steigende Tendenz hat \cite{VersionOne148th-Annual}.
+Der Einsatz von Agilität in der Softwareentwicklung, bekannt unter dem Begriff \textit{agile Softwareentwicklung}, erfreut sich heutzutage einer großen Beliebtheit. In der Umfrage \textit{State of Agile} der Firma VersionOne aus dem Jahr 2013 haben 88\% der befragten Personen aus nordamerikanischen und europäischen Softwareentwicklungsfirmen bestätigt, dass in ihren Organisationen agile Softwareentwicklung eingesetzt wird. Die Umfrage zeigt weiterhin, dass dieser Anteil in den letzten 3 Jahren eine steigende Tendenz hat \cite{VersionOne148th-Annual}.
 
 Agile Softwareentwicklung basiert auf den Grundsätzen aus \cite{BeckBeedle01Manifest} und die agilen Softwareentwicklungsprozesse sind im Vergleich zu den traditionellen und schwergewichtigen (wie z.B. Unified Process oder Wasserfallmodell) schlanker, flexibler und für die Bedürfnisse der heutigen Zeit angepasst. Des Weiteren steht bei der agilen Softwareentwicklung der Code im Fokus, das durch zahlreiche Praktiken wie z.B. testgetriebene Entwicklung, Code-Refactoring oder Code-Reviews unterstützt wird. Insbesondere bei kleinen Entwickler-Teams und Einzelentwicklern, die Anwendungen für moderne Plattformen entwickeln\footnote{mobile Apps, Webanwendungen, Desktop-Anwendungen im begrenzten Umfang}, wird während der Entwicklung in der Regel auf Modellierung und umfassende Dokumentation mit Hilfe von UML-Diagrammen verzichtet.
 
-Der agile Ansatz lässt sich jedoch auch in die Softwaremodellierung übertragen. Die Grundlage dafür bildet die in \cite{Ambler02Agile} von Scott W. Ambler präsentierte Methodik \textit{Agile Modeling}. Diese auf Praktiken basierte Methodik beschreibt einen effektiven Weg für den Einsatz der Softwaremodellierung in einem agilen Umfeld. Die Methodik empfiehlt, mit den einfachsten Tools leichtgewichtige Modelle zu erstellen, die einen Zweck erfüllen, z.B. einen Sachverhalt  veranschaulichen oder die Kommunikation zwischen mehreren Team-Mitgliedern verbessern. Weiterhin soll nur eine einfache Notation verwendet werden. Wenn der Inhalt der Modelle bereits im Code umgesetzt ist und die Modelle dem Projekt keinen Mehrwert mehr geben, sollen sie verworfen werden \cite{Ambler02Agile}.
+Der agile Ansatz lässt sich jedoch auch in die Softwaremodellierung übertragen. Die Grundlage dafür bildet die in \cite{Ambler02Agile} von Scott W. Ambler präsentierte Methodik \textit{Agile Modeling}. Diese auf Praktiken basierte Methodik zeigt, dass effektive Softwaremodellierung auch im agilen Umfeld Vorteile bringt. Die Methodik empfiehlt, mit den einfachsten Tools leichtgewichtige Modelle zu erstellen, die einen bestimmten Zweck erfüllen, z.B. einen Sachverhalt  veranschaulichen oder die Kommunikation zwischen mehreren Team-Mitgliedern verbessern. Weiterhin soll keine zu komplizierte Notation\footnote{Der Autor rät dazu, eine hilfreiche Teilmenge der UML-Notation aber auch weitere Diagrammtypen und deren Notationen wie z.B. Flowcharts zu verwenden.} verwendet werden. Wenn der Inhalt der Modelle bereits im Code umgesetzt ist und die Modelle dem Projekt keinen Mehrwert mehr geben, sollen sie verworfen werden \cite{Ambler02Agile}.
 
+Zu einem können die Modelle in Form von Skizzen auf Papier oder Whiteboards gezeichnet werden. Dies ist eine schnelle, praktische und unmittelbare Lösung. Leider ist sie für nachträgliche Änderungen und Korrekturen nicht geeignet, erschwert die Lesbarkeit und verfügt über keine syntaktische und semantische Unterstützung. Eine weitere Art der Werkzeuge, die zur Erstellung von Modellen verwendet werden können, sind Zeichentools\footnote{Beispiel eines Zeichentools ist OmniGraffle, das näher im Abschnitt \ref{subsubsec:omnigraffle} behandelt wird.}. Die Zeichentools beheben die Probleme mit dem statischen Charakter von Papier und bieten zusätzlich einen Vorteil durch die digitale Version. Jedoch unterstützen sie in der Regel keine Semantik und oft ist auch die Unterstützung der Syntax mangelhaft\footnote{So muss z.B. in einigen Zeichentools das Klassenelement für Klassendiagramme mit einem Rechteck und mehreren Textfeldern zusammengebaut werden.}. Schließlich bietet sich der Einsatz von CASE-Tools, die für Softwaremodellierung konzipiert sind und sowohl die Syntax als auch die Semantik der Modellierungssprache unterstützen. Obwohl die Nutzung von CASE-Tools in der Methodik Agile Modeling nicht untersagt ist, sind diese Werkzeuge für Erzeugung von eifachen Modellen in der Regel sehr komplex und schwergewichtig.
 
-
-% in Form von Skizzen
-% Dies erfolgt in der Regel auf Papier, Whiteboard oder in einfachen Zeichenprogrammen.
-
-
-
-% dennoch vorteilhaft
-% Skizzen, einfache Modelle werden erstellt
-% Papier, Whiteboard, Zeichenprogramme
-
-% vereinfachte Syntax, nur Teilmenge von UML, weitere Notation
-% eine hilfreiche Teilmenge der UML-Notation
-
-% Software-Tools nicht dafür ausgelegt, keine Unterstützung
-% wenn in Software, dann müssen die Tools einfache Modellerstellung unterstützen, gleichzeitig aber die syntaktischen und semantischen Aspekte, nicht wie in Zeichentools
-
-
-
-% Änderungen → vollständiges UML und MDD spielt keine Rolle (Desktop, iOS, mobil, web) -> UML veraltet → Skizzen → Agile Modellierung → Papier/vs. Software → Vorteile/Nachteile
-
-
-% Agile Modeling
-%fehlt in CASE-Tools
-%entweder wirklich Zeichnen bzw. komplexe mächtige Tools
-
-% Klassendiagramme meistens weniger als 10 Klassen (Graph zitieren + Rat von Scott Ambler)
-
-%Papier vs. Software
-% Papier/Whiteboard vs. Zeichentools vs. CASE-Tools
-% Vorteile/Nachteile
-
-% Warum eingeschränkt?
-% Warum nutzergesteuert und nicht automatisch?
-
-% diese Software müsste neben der Unterstützung der Prinzipien aus [AgileModeling]
-% um den Fokus auf den Inhalt und die Interaktion mit den Diagramm zu fördern, wäre von Vorteil, wenn die Software eine Layout-Unterstützung anbieten würde 
+Es stellt sich heraus, dass verfügbare Software-Tools nur eine unbefriedigende Unterstützung für die agile Modellierung bieten. Ein für die agile Modellierung geeignetes Tools soll neben einer einfachen Modellerstellung und den Prinzipien aus \cite{Ambler02Agile} auch die syntaktischen und semantischen Aspekte der Modellierungssprache unterstützen. Weiterhin soll der Inhalt des Diagramms im Fokus stehen. Schließlich soll die Interaktion mit dem Diagramm gefördert werden, unter anderem durch eine intelligente Layout-Unterstützung, die den Gegenstand dieser Arbeit bildet.
 
 \section{Zielstellung}
+
+% In dieser Arbeit soll...
+
+% ein Konzept für das Layout für ein Tool untersucht werden
 
 % Zielstellung (interaktiv -> Visual Language Editors)
 % die Arbeit soll eine mögliche Richtung für die Unterstützung der Interaktion in leichtgewichtigen Modellierungswerkzeugen zeigen
 %im Desktop-Bereich (Mauszeiger & Fenster - keine Multi-Touch Ansätze)
+% halbautomatisches Layout
 
 \section{Aufbau der Arbeit}
 
@@ -66,14 +37,15 @@ Der agile Ansatz lässt sich jedoch auch in die Softwaremodellierung übertragen
 
 
 
-%Begriffsklärung “Layout”, “graph-basierte Softwarediagramme”, “interaktiv” (“diagrammspezifisch”)
+% Begriffsklärung “Layout”, “graph-basierte Softwarediagramme”, “interaktiv” (“diagrammspezifisch”)
+% Warum eingeschränkt?
+% Warum nutzergesteuert und nicht automatisch?
 
 
 
+% Beispiele und Apps: Mac OS X
 
-%Beispiele und Apps: Mac OS X
-
-
+% Klassendiagramme meistens weniger als 10 Klassen (Rat von Scott Ambler?)
 
 
 
