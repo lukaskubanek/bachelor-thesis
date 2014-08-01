@@ -10,7 +10,7 @@ Den graph-basierten Softwarediagrammen unterliegt die abstrakte Struktur des Gra
 
 Um während der Erstellung des Diagramms immer ein optimales Layout zu erhalten, muss der Layout-Algorithmus kontinuierlich nach jeder Änderung entweder automatisch oder manuell aufgerufen werden. Wenn eine Interaktion mit dem resultierenden Diagramm unterstützt wird, hat sie keinerlei Einwirkung auf den Algorithmus und wird bei dem nächsten Aufruf nicht berücksichtigt. In der Regel kann der Nutzer nur bestimmte Parameter des Algorithmus\footnote{z.B. minimale Länge der Kanten im zirkulären Layout-Algorithmus \lstinline{circo} aus der Bibliothek Graphviz \cite{NorthGansner14Dot-Manual}.} anpassen und hat somit nur einen geringen Einfluss auf das Ergebnis des Layout-Prozesses.
 
-Die Ansätze lassen sich in zwei Kategorien nach der Art der Sprache unterteilen, die als Eingabe für den Layout-Algorithmus verwendet wird\footnote{In der Literatur werden Ansätze für das automatische Layout meistens nach den Layout-Algorithmen kategorisiert \cite[S.39ff]{Fuhrmann11On-the-Pragmatics}. In dieser Arbeit richtet sich die Kategorisierung danach, wie die Ansätze zu bedienen sind und welche Art der Interaktion sie unterstützen.}. Zu einem gibt es Ansätze, die aus einer Beschreibung des Diagramms in einer \textbf{textuellen Sprache} unter Anwendung des Layout-Algorithmus eine graphische Repräsentation erzeugen. Weiterhin gibt es Ansätze, die auf Diagramme angewendet werden, die in einer \textbf{visuellen Sprache} modelliert sind. Diese Ansätze verändern die Layout-Eigenschaften der Diagrammelementen direkt. Im Folgenden werden beide Kategorien behandelt.
+Die Ansätze lassen sich in zwei Kategorien nach der Art der Sprache unterteilen, die als Eingabe für den Layout-Algorithmus verwendet wird\footnote{In der Literatur werden Ansätze für das automatische Layout meistens nach den Layout-Algorithmen kategorisiert \cite[S.39ff]{Fuhrmann11On-the-Pragmatics} \cite[S.32ff]{Eichelberger05Aesthetics}. In dieser Arbeit richtet sich die Kategorisierung danach, wie die Ansätze zu bedienen sind und welche Art der Interaktion sie unterstützen.}. Zu einem gibt es Ansätze, die aus einer Beschreibung des Diagramms in einer \textbf{textuellen Sprache} unter Anwendung des Layout-Algorithmus eine graphische Repräsentation erzeugen. Weiterhin gibt es Ansätze, die auf Diagramme angewendet werden, die in einer \textbf{visuellen Sprache} modelliert sind. Diese Ansätze verändern die Layout-Eigenschaften der Diagrammelementen direkt. Im Folgenden werden beide Kategorien behandelt.
 
 % TODO: Visuelle Sprachen erklären, da [Fuhrmann] sagt, dass textuelle Sprachen auch visuelle Sprachen sind (S. 48)
 
@@ -19,10 +19,12 @@ Die Ansätze lassen sich in zwei Kategorien nach der Art der Sprache unterteilen
 
 Die textbasierten Ansätze für das automatische Layout erfordern als Eingabe eine textuelle Beschreibung des Diagramms, die in einer allgemeinen Auszeichnungssprache oder einer domänenspezifischen Sprache formuliert werden kann. Diese Beschreibung wird eingelesen und intern in ein abstraktes Modell umgewandelt, auf das der Layout-Algorithmus angewendet wird. Als Ausgabe wird eine statische Repräsentation des Diagramms in Form eines Bilds geliefert, die jegliche Möglichkeit der Interaktion vermisst. Durch die Entkopplung der Eingabe von der Ausgabe lässt sich das Diagramm nur durch eine Änderung des Quelltexts und einen wiederholten Aufruf des Layout-Algorithmus verändern.
 
-\subsubsection{Graphviz}
-\label{subsubsec:graphviz}
+\subsubsection{Graphzeichnen-Tools}
+\label{subsubsec:graph-drawing-tools}
 
 Es existiert eine Menge an Bibliotheken, die verschiedene Algorithmen für das Graphzeichnen implementieren\footnote{Insbesondere handelt es sich um hierarchische, kräftebasierte und orthogonale Algorithmen. \cite{Maier12A-Pattern-based}} und diese Funktionalität für andere Programme bereitstellen. Beispiele für solche Bibliotheken sind Graphviz\footnote{\url{http://graphviz.org}}, yFiles\footnote{\url{http://www.yworks.com/en/products_yfiles_about.html}} oder Kieler\footnote{\url{http://www.informatik.uni-kiel.de/en/rtsys/kieler/}} \cite{Maier12A-Pattern-based}. In dieser Arbeit wird Graphviz näher vorgestellt und insbesondere werden seine Aspekte des textbasierten und visuellen Ansatzes gezeigt.
+
+\paragraph{Graphviz}
 
 Graphviz ist ein in der Programmiersprache C geschriebenes Tool für die Visualisierung von Graphen und wurde ursprünglich von AT\&T entwickelt. Es besteht aus folgenden Komponenten:
 
@@ -109,7 +111,9 @@ Die Algorithmen für das automatische Layout sind im Allgemeinen nicht ideal und
 % Aufruf manuelle oder nach Hinzufügen/Löschen einer Kante
 % Animation
 
-% Wie im Abschnitt \ref{subsubsec:graphviz} beschrieben, bietet Graphviz eine Software-Bibliothek an, die in andere Tools eingebunden werden kann.
+% Wie im Abschnitt \ref{subsubsec:graph-drawing-tools} beschrieben, bietet Graphviz eine Software-Bibliothek an, die in andere Tools eingebunden werden kann.
+
+% \cite[S.43]{Wybrow08Using}
 
 \subsubsection{Automatisched Layout in Visual Paradigm}
 
@@ -121,6 +125,8 @@ Die Algorithmen für das automatische Layout sind im Allgemeinen nicht ideal und
 % yEd?
 
 \subsection{Eigenschaften und Vergleich}
+
+% statisch
 
 % TEXTBASIERT
 %Aus diesem Grund ist dieser Ansatz eher für das Einbinden in automatisierte Prozesse (z.B. Generieren von Diagrammen in der automatisierten Dokumentation mit Doxygen\footnote{\url{http://www.stack.nl/~dimitri/doxygen/manual/diagrams.html}}) oder Wiki-Seiten geeignet, als für die Nutzung in einer interaktiven Umgebung.
@@ -171,3 +177,5 @@ Die Algorithmen für das automatische Layout sind im Allgemeinen nicht ideal und
 % statisch, nicht dynamisch, nicht interaktiv
 
 % herrausstellen
+
+% die statischen automatischen Algorithmen in visuellen Editoren sind nicht geeignet [DwyerMarriot08Inter, S.4]
