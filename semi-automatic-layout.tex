@@ -20,6 +20,7 @@ Die erste Kategorie der Ansätze für das interaktive halbautomatische Layout bi
 Die Struktur-basierten Nutzer-gesteuerten Ansätze lassen sich in zwei Gruppen unterteilen: in Constraint-basierte und Pattern-basierte Ansätze. Beide Gruppen werden im Folgenden vorgestellt.
 
 \subsubsection{Constraint-basierte Ansätze}
+\label{subsubsec:constraint-based-approaches}
 
 Die Strukturregeln können mit Hilfe von Constraints umgesetzt werden. Ein valides Layout wird dadurch berechnet, in dem alle Constraints im Diagramm mit einem Constraintlöser ausgewertet werden.
 
@@ -38,15 +39,23 @@ Die Strukturregeln können mit Hilfe von Constraints umgesetzt werden. Ein valid
 
 \subsubsection{Pattern-basierter Ansatz}
 
-%\cite{Maier12A-Pattern-based}
-%\cite{MaierMinas13A-Pattern-based}
+Der in \cite{Maier12A-Pattern-based} und \cite{MaierMinas10Combination} präsentierte Pattern-basierte Ansatz für das Layout von Diagrammen drückt die Strukturregeln in Form von Layout-Patterns aus. Der Ansatz kann für beliebige visuellen Sprachen eingesetzt werden, die mit Meta-Modellen beschrieben werden können. Dabei besteht das sprachenspezifische Meta-Modell aus zwei Teilen, nämlich der Meta-Modelle für die abstrakte und konkrete Syntax. Das zuletzt genannte Meta-Modell beschreibt die visuellen Eigenschaften der Sprache und wird daher durch die Berechnung des Layouts beeinflusst.
 
-% DiaGen, DiaMeta: http://www.unibw.de/inf2/DiaGen/
+Die Beschreibung der Layout-Patterns erfolgt allerdings nicht mit Hilfe der sprachenspezifischen Meta-Modellen, sondern mit sprachenunabhängigen Pattern-spezifischen Meta-Model\-len\footnote{In \cite{Maier12A-Pattern-based} werden u.a. Pattern-spezifische Meta-Modelle für Mengen von Elementen, geordnete Liste von Elementen oder Graphen vorgestellt.}. Bei der Instanziierung eines Layout-Patterns wird das sprachenspezifische Modell auf ein Pattern-spezifisches Modell abgebildet\footnote{Dieses Sachverhalt wird mit Hilfe eines Beispiels in \cite[S.59ff]{Maier12A-Pattern-based} anschaulich gemacht.}. Dadurch wird eine mögliche Wiederverwendung der Layout-Patterns für diverse visuellen Sprachen gewährleistet. Weiterhin zeichnet sich der Pattern-basierte Ansatz dadurch aus, dass die Layout-Patterns verschiedene Ansätze zum Layout von Diagrammen u.a. Algorithmen zum Graphenzeichnen (siehe Abschnitt \ref{subsubsec:graph-drawing-tools}) und Constraints-basierte Algorithmen (siehe Abschnitt \ref{subsubsec:constraint-based-approaches}) kombinieren und sich zu Nutze machen.
 
-% http://www.unibw.de/inf2/Personen/Wissen_Mitarbeiter/sonja/research/layoutframework
+
+% Auflistung der Layout-Patterns: tree layout, layered layout, equal distance, alignment…
+
+%Kontroll-Algorithmus läuft im Hintergrund nach jeder Änderung des Diagramms bzw. der Instanziierung eines Layout-Patterns
+
+%nutzer-gesteuert, nicht eingeschränkt in Interaktion
+
+%Wie bereits erwähnt, ist dieser Ansatz für interaktive
+
+
 % Videos: http://www.sonjamaier.de/dyndraw/screencasts/graphEditor.mov & http://www.sonjamaier.de/dyndraw/screencasts/ecoreEditor.mov
 
-% Tool, Framework ist noch nicht veröffentlich
+Dieser Ansatz wurde in Form eines Layout-Frameworks\footnote{\url{http://www.unibw.de/inf2/Personen/Wissen_Mitarbeiter/sonja/research/layoutframework}} implementiert, das bisher noch nicht veröffentlicht wurde. Dennoch wurde es in visuellen Editoren eingesetzt, die mit Hilfe von DiaMeta\footnote{Ein Framework zur Generierung von Editoren für visuelle Sprachen basierend auf Spezifikationen mittels Meta-Modelle. \url{http://www.unibw.de/inf2/DiaGen/}} bzw. Graphical Editing Framework\footnote{\url{http://www.eclipse.org/gef/}} erzeugt wurden \cite{Maier12A-Pattern-based}.
 
 \subsection{Anwendungsspezifische Ansätze}
 
@@ -70,7 +79,7 @@ Die Strukturregeln können mit Hilfe von Constraints umgesetzt werden. Ein valid
 % Nutzer entwickeln ein mentales Modell des Diagramms, das soll bei den inkrementellen Updates berücksichtigt werden [Gladisch]
 
 % Der Nutzer kann das Diagramm unmittelbar bearbeiten
-% das mentale Modell bleibt beibehalten
+% das mentale Modell bleibt beibehalten [preserving the mental map (in dynamic context) instead of aesthetics (in static context)]
 % ästhetische Regeln werden nicht eingehalten
 
 
