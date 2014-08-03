@@ -40,16 +40,17 @@
     belowskip=10pt
 }
 
-% bibliography
-\usepackage[numbers, square]{natbib}
-
 % URLs
 \usepackage[hyphens]{url}
 \usepackage{hyperref}
 
-% graphics
+% figures
 \usepackage{graphicx}
-\usepackage{subcaption}
+\usepackage[labelformat=simple]{subcaption}
+\renewcommand\thesubfigure{(\alph{subfigure})}
 
 % footnotes
 \interfootnotelinepenalty=10000
+
+% bibliography
+\usepackage[numbers, square]{natbib}
