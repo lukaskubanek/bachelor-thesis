@@ -24,12 +24,10 @@
 		<dict/>
 		<dict/>
 		<dict/>
-		<dict/>
 	</array>
 	<key>ImageList</key>
 	<array>
 		<string>image5.jpeg</string>
-		<string>image4.jpeg</string>
 		<string>image2.tiff</string>
 		<string>image1.tiff</string>
 	</array>
@@ -40,7 +38,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2014-07-28 10:53:36 +0000</string>
+	<string>2014-08-03 13:47:18 +0000</string>
 	<key>Modifier</key>
 	<string>Lukas Kubanek</string>
 	<key>NotesVisible</key>
@@ -132,28 +130,16 @@
 			<array>
 				<dict>
 					<key>Bounds</key>
-					<string>{{53.897545337677002, 141}, {451.48492431640625, 207}}</string>
+					<string>{{144, 119.05511856079102}, {39.685039520263672, 39.685039520263672}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
-					<integer>3</integer>
-					<key>ImageID</key>
-					<integer>4</integer>
+					<integer>5</integer>
 					<key>Shape</key>
 					<string>Rectangle</string>
 					<key>Style</key>
 					<dict>
-						<key>fill</key>
-						<dict>
-							<key>Draws</key>
-							<string>NO</string>
-						</dict>
 						<key>shadow</key>
-						<dict>
-							<key>Draws</key>
-							<string>NO</string>
-						</dict>
-						<key>stroke</key>
 						<dict>
 							<key>Draws</key>
 							<string>NO</string>
@@ -162,7 +148,14 @@
 				</dict>
 			</array>
 			<key>GridInfo</key>
-			<dict/>
+			<dict>
+				<key>GridSpacing</key>
+				<real>19.842519760131836</real>
+				<key>MajorGridSpacing</key>
+				<integer>5</integer>
+				<key>ShowsGrid</key>
+				<string>YES</string>
+			</dict>
 			<key>HPages</key>
 			<integer>1</integer>
 			<key>KeepToScale</key>
@@ -1973,8 +1966,8 @@
 					<integer>41</integer>
 					<key>Points</key>
 					<array>
-						<string>{230.6325074723203, 421.94500727475332}</string>
-						<string>{230.61471684769253, 456.94500762686897}</string>
+						<string>{230.64728184888082, 421.94500732421875}</string>
+						<string>{230.64644542707126, 456.94500732421864}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -2016,8 +2009,8 @@
 					<integer>37</integer>
 					<key>Points</key>
 					<array>
-						<string>{295.18295364751566, 325.89037884724132}</string>
-						<string>{313.09772006058347, 360.99972698685696}</string>
+						<string>{295.18759458105859, 325.89035128997762}</string>
+						<string>{313.10771285427688, 360.99966760053928}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -2059,8 +2052,8 @@
 					<integer>34</integer>
 					<key>Points</key>
 					<array>
-						<string>{264.11306781398008, 325.89037884724132}</string>
-						<string>{246.19830140092259, 360.99972698685696}</string>
+						<string>{264.10842688042862, 325.89035128997762}</string>
+						<string>{246.18830860721084, 360.99966760053928}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -2162,7 +2155,7 @@
 	<key>WindowInfo</key>
 	<dict>
 		<key>CurrentSheet</key>
-		<integer>9</integer>
+		<integer>0</integer>
 		<key>ExpandedCanvases</key>
 		<array/>
 		<key>Frame</key>
@@ -2182,9 +2175,9 @@
 		<key>SmallIcons</key>
 		<true/>
 		<key>VisibleRegion</key>
-		<string>{{-257, -53}, {1074.2857325806913, 888.57144370371009}}</string>
+		<string>{{-96, 0}, {752, 623}}</string>
 		<key>Zoom</key>
-		<real>0.69999998807907104</real>
+		<real>1</real>
 		<key>ZoomValues</key>
 		<array>
 			<array>

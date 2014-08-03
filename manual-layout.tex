@@ -42,25 +42,63 @@ Visual Paradigm ist ein plattformunabhängiges CASE-Tool von der gleichnamigen F
 \subsubsection{Raster}
 \label{subsubsec:grid}
 
-Viele Visualisierungsprogramme (unter anderem alle drei im Abschnitt \ref{subsec:applications-for-manual-layout} erwähnten) unterstützen die Aufteilung des Canvas in einen gleichmäßigen Raster, der durch Rasterlinien dargestellt werden kann. Diese Linien können zum Ausrichten von Objekten im Canvas verwendet werden, das vor allem für die Diagramme nützlich ist, in den die Größen der Objekte eine wichtige Rolle spielen wie z.B. Grundrisse \cite{08OmniGraffle, Olsen10OmniGraffle, 11Keynote, 14Visual}.
+Viele Visualisierungsprogramme (unter anderem alle drei im Abschnitt \ref{subsec:applications-for-manual-layout} erwähnten) unterstützen die Aufteilung des Diagramms in einen gleichmäßigen Raster, der durch Rasterlinien dargestellt werden kann. Diese Linien können zum Ausrichten von Objekten im Diagramm verwendet werden, das vor allem dann nützlich ist, wenn die Größen der Objekte eine wichtige Rolle spielen wie z.B. Grundrisse \cite{08OmniGraffle, Olsen10OmniGraffle, 11Keynote, 14Visual}.
 
 \paragraph{Snap-to-Grid}
 
-Die reguläre Verschiebungsoperation von Objekten im Diagramm funktioniert in der Regel wie folgt: Der Nutzer wählt mit dem Mauszeiger ein Objekt aus und schiebt das Objekt mit gedrückter Maustaste auf seine neue Position. Wenn die Funktion \textit{Snap-to-Grid} nicht aktiviert ist, kann die Zielposition beliebig sein. Während der Verschiebung wird die Position des Objekts kontinuierlich angepasst, so dass der Nutzer einen visuellen Feedback bekommt. Dieser Vorgang ist in Abbildung X dargestellt.
+Die reguläre Verschiebungsoperation von Objekten im Diagramm funktioniert in der Regel wie folgt: Der Nutzer wählt mit dem Mauszeiger ein Objekt aus und schiebt das Objekt mit gedrückter Maustaste auf seine neue Position. Wenn die Funktion \enquote{Snap-to-Grid} nicht aktiviert ist, kann die Zielposition beliebig sein. Während der Verschiebung wird die Position des Objekts kontinuierlich angepasst, so dass der Nutzer einen visuellen Feedback bekommt. Dieser Vorgang ist in Abbildung \ref{fig:omnigraffle-snap-to-grid-off} dargestellt.
 
-% TODO: Abbildung: Verschiebungsoperation mit nicht aktivierter Funktion \textit{Snap-to-Grid} in OmniGraffle
+\begin{figure}[hbt]
+    \newcommand{\subfigurewidth}{0.33\textwidth}
+    \newcommand{\graphicswidth}{0.95\linewidth}
+    \begin{subfigure}{\subfigurewidth}
+        \centering
+        \includegraphics[width=\graphicswidth]{resources/omnigraffle-snap-to-grid-off-a}
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}{\subfigurewidth}
+        \centering
+        \includegraphics[width=\graphicswidth]{resources/omnigraffle-snap-to-grid-off-b}
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}{\subfigurewidth}
+        \centering
+        \includegraphics[width=\graphicswidth]{resources/omnigraffle-snap-to-grid-off-c}
+        \caption{}
+    \end{subfigure}
+    \caption{Verschiebungsoperation mit nicht aktivierter Funktion \enquote{Snap-to-Grid} in OmniGraffle}
+    \label{fig:omnigraffle-snap-to-grid-off}
+\end{figure}
 
-Wenn die Funktion \textit{Snap-to-Grid} nun aktiviert ist, wird im Unterschied zu dem vorigen Vorgang die Zielposition so eingeschränkt, dass das verschobene Objekt an die Rasterlinien ausgerichtet wird. Der Mauszeiger kann dabei frei positioniert werden, das Objekt nimmt aber immer die nächste ausgerichtete Position an. Dieser Vorgang ist in Abbildung X dargestellt.
+Wenn die Funktion \enquote{Snap-to-Grid} nun aktiviert ist, wird im Unterschied zu dem vorigen Vorgang die Zielposition so eingeschränkt, dass das verschobene Objekt an die Rasterlinien ausgerichtet wird. Der Mauszeiger kann dabei frei positioniert werden, das Objekt nimmt aber immer die nächste ausgerichtete Position an. Dieser Vorgang ist in Abbildung \ref{fig:omnigraffle-snap-to-grid-on} dargestellt.
 
-% TODO: Abbildung: Verschiebungsoperation mit aktivierter Funktion \textit{Snap-to-Grid} in OmniGraffle
+\begin{figure}[hbt]
+    \newcommand{\subfigurewidth}{0.33\textwidth}
+    \newcommand{\graphicswidth}{0.95\linewidth}
+    \begin{subfigure}{\subfigurewidth}
+        \centering
+        \includegraphics[width=\graphicswidth]{resources/omnigraffle-snap-to-grid-on-a}
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}{\subfigurewidth}
+        \centering
+        \includegraphics[width=\graphicswidth]{resources/omnigraffle-snap-to-grid-on-b}
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}{\subfigurewidth}
+        \centering
+        \includegraphics[width=\graphicswidth]{resources/omnigraffle-snap-to-grid-on-c}
+        \caption{}
+    \end{subfigure}
+    \caption{Verschiebungsoperation mit aktivierter Funktion \enquote{Snap-to-Grid} in OmniGraffle}
+    \label{fig:omnigraffle-snap-to-grid-on}
+\end{figure}
 
 Neben der Verschiebungsoperation wird auch die Operation der Größenänderung eingeschränkt, indem das manipulierte Objekt nur so eine Größe annehmen kann, die die Ausrichtung an die Rasterlinien nicht verletzt.
 
 \paragraph{Ausrichten im Raster}
 
-Das Ausrichten an die Rasterlinien kann auch nachträglich bewirkt werden. Dies passiert durch die Auswahl des zu ausgerichteten Objekts und dem Ausführen der Funktion \textit{Ausrichten im Raster}. Danach wird die Position und Größe des Objekts so angepasst, dass das Objekt an die Rasterlinien ausgerichtet wird (siehe Abbildung X).  
-
-% TODO: Abbildung: Funktion \textit{Ausrichten im Raster} in OmniGraffle
+Das Ausrichten an die Rasterlinien kann auch nachträglich bewirkt werden. Dies passiert durch die Auswahl des zu ausgerichteten Objekts und dem Ausführen der Funktion \textit{Ausrichten im Raster}. Die Position und Größe des Objekts werden so angepasst, dass das Objekt an die Rasterlinien ausgerichtet wird.
 
 \subsubsection{Ausrichten und Verteilen von Objekten in Relation zueinander}
 \label{subsubsec:alignment-and-distribution}

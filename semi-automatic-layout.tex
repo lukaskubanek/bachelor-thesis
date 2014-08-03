@@ -86,21 +86,23 @@ In Abbildung \ref{fig:mindnode-smart-layout} wird die Funktionsweise der Funktio
 
 % TODO: Mauszeiger hinzufügen
 \begin{figure}[hbt]
-    \begin{subfigure}{\textwidth}
+    \newcommand{\subfigurewidth}{\textwidth}
+    \newcommand{\graphicswidth}{0.8\linewidth}
+    \begin{subfigure}{\subfigurewidth}
         \centering
-        \includegraphics[width=0.8\linewidth]{resources/mindnode-smart-layout-a}
+        \includegraphics[width=\graphicswidth]{resources/mindnode-smart-layout-a}
         \caption{Auswahl des Knotens}
         \label{fig:mindnode-smart-layout-a}
     \end{subfigure}
-    \begin{subfigure}{\textwidth}
+    \begin{subfigure}{\subfigurewidth}
         \centering
-        \includegraphics[width=0.8\linewidth]{resources/mindnode-smart-layout-b}
+        \includegraphics[width=\graphicswidth]{resources/mindnode-smart-layout-b}
         \caption{Verschiebung des ausgewählten Knoten}
         \label{fig:mindnode-smart-layout-b}
     \end{subfigure}
-    \begin{subfigure}{\textwidth}
+    \begin{subfigure}{\subfigurewidth}
         \centering
-        \includegraphics[width=0.8\linewidth]{resources/mindnode-smart-layout-c}
+        \includegraphics[width=\graphicswidth]{resources/mindnode-smart-layout-c}
         \caption{Neue Positionen der Knoten}
         \label{fig:mindnode-smart-layout-c}
     \end{subfigure}
