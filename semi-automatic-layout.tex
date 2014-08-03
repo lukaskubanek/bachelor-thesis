@@ -14,6 +14,7 @@ Diese Ansätze sind für Nutzer-bedingte Änderungen ausgelegt und ermöglichen 
 % Nutzer kann einige Aspekte des Layouts beeinflussen, z.B. durch direkte Positionierung der Knoten bzw. Kanten oder durch eine Form von Feedback [Arvo02]
 
 \subsection{Struktur-basierte Nutzer-gesteuerte Ansätze}
+\label{structure-based-user-controlled-approaches}
 
 Die erste Kategorie der Ansätze für das interaktive halbautomatische Layout bilden die Struktur-basierten Nutzer-gesteuerten Ansätze, die dem Nutzer ermöglichen, das Layout des Diagramms durch Erstellung und Verwaltung von Strukturregeln\footnote{Ein Beispiel für eine solche Strukturregel ist die im Abschnitt \ref{subsubsec:alignment-and-distribution} beschriebene gleichmäßige Verteilung der ausgewählten Objekte in Relation zueinander.} zu beeinflussen. Diese Strukturregeln erinnern an die Hilfefunktionen für das manuelle Layout (siehe Abschnitt \ref{subsec:help-functions-for-manual-layout}), sind aber dahingegen persistent \cite{Wybrow08Using}. Sie werden bei der Berechnung des Layouts durch einen dynamischen Layout-Algorithmus berücksichtigt und eingehalten.
 
@@ -59,16 +60,53 @@ Dieser Ansatz wurde in Form eines Layout-Frameworks\footnote{\url{http://www.uni
 
 \subsection{Anwendungsspezifische Ansätze}
 
+Die Struktur-basierten Nutzer-gesteuerten Ansätze für das halbautomatische Layout, die im Abschnitt \ref{structure-based-user-controlled-approaches} beschrieben wurden, sind sehr universell und können in Editoren für verschiedene visuellen Sprachen eingesetzt werden. 
+
 \subsubsection{Smart Layout in MindNode}
 
-% anwendungspezifisch
-% Mindmaps 
-% Screenshot der Funktion
-% Möglich, weil spezifisch für die visuelle Sprache für Mindmaps (Bäume)
+MindNode\footnote{\url{https://mindnode.com}} ist ein benutzerfreundliche Desktop-Anwendung zur Erstellung von Mind-Maps für Mac OS X. Die Mind-Maps haben eine baumbasierte Struktur mit einem oder mehreren zentralen Knoten. Weiterhin gilt, dass jeder Knoten mehrere Unterknoten besitzen kann und alle Knoten außer den zentralen Knoten haben genau einen Oberknoten. Die hierarchischen Relationen werden mit farbigen Zweigen dargestellt. Zusätzlich bietet MindNode die Möglichkeit der Querverbindungen zwischen Knoten aus unterschiedlichen Teilen der Mind-Map, die mit gestrichelten Pfeilen gekennzeichnet werden \cite{14MindNode}. In Abbildung \ref{fig:mindnode-example} ist ein Beispiel einer Mind-Map zu sehen.
 
-\subsubsection{EditLens}
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[
+        width=\textwidth,
+        trim={0 1.5cm 0 1.5cm},
+        clip
+    ]{resources/mindnode-example}
+    \caption{Beispiel einer Mind-Map in MindNode}
+    \label{fig:mindnode-example}
+\end{figure}
 
-% Multi-Touch Layout Techniques (Alignment Guides) TUD ?
+MindNode stellt eine interaktive Funktion für eine halbautomatische Layout-Unterstützung namens \enquote{Smart Layout} bereit \cite{14MindNode}. Wenn diese Funktion ausgeschaltet ist, können einzelne Knoten der Mind-Map frei positioniert werden. Dahingegen, wenn die Funktion eingeschaltet ist, nimmt die Mind-Map eine vorgerechnete Baumstruktur an und die Verschiebungsoperation eines Knotens drückt in diesem Fall die Absicht einer Layout-Modifikation aus.
+
+In Abbildung \ref{fig:mindnode-smart-layout} wird die Funktionsweise der Funktion \enquote{Smart Layout} anhand von Screenshots gezeigt. Zunächst wird in \ref{fig:mindnode-smart-layout-a} ein Knoten angeklickt, dessen Position angepasst werden soll. Mit \enquote{Drag an Drop} wird in \ref{fig:mindnode-smart-layout-b} der Knoten auf die gewünschte Position verschoben. Die Verbindung zu dem Oberknoten wird dabei mit einem heller gemachten Zweig veranschaulicht. Nach dem Loslassen der Maustaste in \ref{fig:mindnode-smart-layout-c} wird die gewünschte Position der verschobenen Knotens ausgewertet, ein neues Layout der Mind-Map anhand des Hinweises durch die Verschiebungsoperation berechnet und anschließend auf die Mind-Map angewendet, indem alle beeinflussten Knoten von ihren aktuellen Position zu ihren neuen Position animiert werden. Somit kann der Nutzer das Layout beeinflussen, wird aber in den Möglichkeiten eingeschränkt. Dies führt in der Regel zu einem optimalen Layout und ist vor allem durch die Struktur der visuellen Sprache für Mind-Maps möglich.
+
+% Unterknoten des zentralen Knotens können auf die linke bzw. rechte Seite verschoben werden
+% initiales Layout
+
+% TODO: Mauszeiger hinzufügen
+\begin{figure}[hbt]
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.8\linewidth]{resources/mindnode-smart-layout-a}
+        \caption{Auswahl des Knotens}
+        \label{fig:mindnode-smart-layout-a}
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.8\linewidth]{resources/mindnode-smart-layout-b}
+        \caption{Verschiebung des ausgewählten Knoten}
+        \label{fig:mindnode-smart-layout-b}
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.8\linewidth]{resources/mindnode-smart-layout-c}
+        \caption{Neue Positionen der Knoten}
+        \label{fig:mindnode-smart-layout-c}
+    \end{subfigure}
+    \caption{Eine Verschiebungsoperation mit der eingeschalteten Funktion \enquote{Smart Layout} in MindNode}
+    \label{fig:mindnode-smart-layout}
+\end{figure}
 
 \subsection{Eigenschaften und Vergleich}
 
