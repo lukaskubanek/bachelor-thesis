@@ -38,7 +38,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2014-08-03 13:47:18 +0000</string>
+	<string>2014-08-03 14:07:23 +0000</string>
 	<key>Modifier</key>
 	<string>Lukas Kubanek</string>
 	<key>NotesVisible</key>
@@ -1277,7 +1277,7 @@
 							<key>Class</key>
 							<string>LineGraphic</string>
 							<key>ID</key>
-							<integer>90</integer>
+							<integer>100</integer>
 							<key>Points</key>
 							<array>
 								<string>{441.70301008224487, 134.25}</string>
@@ -1287,6 +1287,8 @@
 							<dict>
 								<key>stroke</key>
 								<dict>
+									<key>Cap</key>
+									<integer>2</integer>
 									<key>Color</key>
 									<dict>
 										<key>a</key>
@@ -1313,7 +1315,7 @@
 							<key>Class</key>
 							<string>LineGraphic</string>
 							<key>ID</key>
-							<integer>91</integer>
+							<integer>101</integer>
 							<key>Points</key>
 							<array>
 								<string>{428.45301103591919, 134}</string>
@@ -1323,6 +1325,8 @@
 							<dict>
 								<key>stroke</key>
 								<dict>
+									<key>Cap</key>
+									<integer>2</integer>
 									<key>Color</key>
 									<dict>
 										<key>a</key>
@@ -1347,7 +1351,7 @@
 						</dict>
 					</array>
 					<key>ID</key>
-					<integer>89</integer>
+					<integer>99</integer>
 				</dict>
 				<dict>
 					<key>Class</key>
@@ -1358,7 +1362,7 @@
 							<key>Class</key>
 							<string>LineGraphic</string>
 							<key>ID</key>
-							<integer>87</integer>
+							<integer>103</integer>
 							<key>Points</key>
 							<array>
 								<string>{395.45301008224487, 141}</string>
@@ -1368,6 +1372,8 @@
 							<dict>
 								<key>stroke</key>
 								<dict>
+									<key>Cap</key>
+									<integer>2</integer>
 									<key>Color</key>
 									<dict>
 										<key>a</key>
@@ -1394,7 +1400,7 @@
 							<key>Class</key>
 							<string>LineGraphic</string>
 							<key>ID</key>
-							<integer>88</integer>
+							<integer>104</integer>
 							<key>Points</key>
 							<array>
 								<string>{382.20301103591919, 140.75}</string>
@@ -1404,6 +1410,8 @@
 							<dict>
 								<key>stroke</key>
 								<dict>
+									<key>Cap</key>
+									<integer>2</integer>
 									<key>Color</key>
 									<dict>
 										<key>a</key>
@@ -1428,7 +1436,7 @@
 						</dict>
 					</array>
 					<key>ID</key>
-					<integer>86</integer>
+					<integer>102</integer>
 				</dict>
 				<dict>
 					<key>Class</key>
@@ -1451,6 +1459,8 @@
 					<dict>
 						<key>stroke</key>
 						<dict>
+							<key>Cap</key>
+							<integer>2</integer>
 							<key>Color</key>
 							<dict>
 								<key>a</key>
@@ -1657,7 +1667,7 @@
 			<key>RowSpacing</key>
 			<real>36</real>
 			<key>SheetTitle</key>
-			<string>3.1.6 omnigraffle-default-connection-points</string>
+			<string>3.1.6 omnigraffle-connection-points</string>
 			<key>UniqueID</key>
 			<integer>6</integer>
 			<key>VPages</key>
@@ -2155,7 +2165,7 @@
 	<key>WindowInfo</key>
 	<dict>
 		<key>CurrentSheet</key>
-		<integer>0</integer>
+		<integer>7</integer>
 		<key>ExpandedCanvases</key>
 		<array/>
 		<key>Frame</key>
@@ -2175,7 +2185,7 @@
 		<key>SmallIcons</key>
 		<true/>
 		<key>VisibleRegion</key>
-		<string>{{-96, 0}, {752, 623}}</string>
+		<string>{{-96, 3}, {752, 623}}</string>
 		<key>Zoom</key>
 		<real>1</real>
 		<key>ZoomValues</key>
@@ -2206,7 +2216,7 @@
 				<real>1</real>
 			</array>
 			<array>
-				<string>3.1.6 omnigraffle-default-connection-points</string>
+				<string>3.1.6 omnigraffle-connection-points</string>
 				<real>1</real>
 				<real>4</real>
 			</array>

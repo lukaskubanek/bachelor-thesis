@@ -150,7 +150,7 @@ Die zweite Art der Hilfslinien dient dazu, die Abstände zwischen 3 Objekten in 
 \begin{figure}[hbt]
     \centering
     \includegraphics{resources/omnigraffle-distance-guides.png}
-    \caption{Abstandshilflinien in OmniGraffle}
+    \caption{Abstandshilfslinien in OmniGraffle}
     \label{fig:omnigraffle-distance-guides}
 \end{figure}
 
@@ -199,13 +199,25 @@ Sehr trivial, aber dennoch nützlich ist die Funktion der Einstellung von gleich
 
 % TODO: Verweis auf die Grundlagen (graph-basierte Diagramme)
 
-Die bisher diskutierten Hilfefunktionen haben sich ausschließlich mit der Positionierung und Bestimmung der Größe der Objekte auseinandergesetzt. Für die graph-basierten Diagramme sind neben der Knoten auch Kanten von Interesse, die in der Regel durch Verbindungslinien dargestellt werden. Wenn 2 Objekte mit einer Verbindungslinie verbunden werden, bleiben sie auch dann verbunden, wenn sich die Position oder Größe der Objekte ändert \cite{11Keynote}. In vielen Programmen (unter anderem in Keynote und OmniGraffle) werden die Verknüpfungspunkte der Verbindungslinie standardmäßig an die Stellen positioniert, an den eine gedachte Strecke, die die Mittelpunkte beider Objekte verbindet, die Kanten der Objekte schneidet (siehe Abbildung \ref{fig:omnigraffle-default-connection-points}) \cite{08OmniGraffle}.
+Die bisher diskutierten Hilfefunktionen haben sich ausschließlich mit der Positionierung und Bestimmung der Größe der Objekte auseinandergesetzt. Für die graph-basierten Diagramme sind neben der Knoten auch Kanten von Interesse, die in der Regel durch Verbindungslinien dargestellt werden. Wenn 2 Objekte mit einer Verbindungslinie verbunden werden, bleiben sie auch dann verbunden, wenn sich die Position oder Größe der Objekte ändert \cite{11Keynote}. In vielen Programmen (unter anderem in Keynote und OmniGraffle) werden die Verknüpfungspunkte der Verbindungslinie standardmäßig an die Stellen positioniert, an den eine gedachte Strecke, die die Mittelpunkte beider Objekte verbindet, die Kanten der Objekte schneidet (siehe Abbildung \ref{fig:omnigraffle-connection-points}) \cite{08OmniGraffle}.
 
 \begin{figure}[hbt]
-    \centering
-    \includegraphics{resources/omnigraffle-default-connection-points.png}
-    \caption{Verknüpfungspunkte einer Verbindung in OmniGraffle (links) mit Darstellung der Berechnung (rechts)}
-    \label{fig:omnigraffle-default-connection-points}
+    \newcommand{\subfigurewidth}{0.5\textwidth}
+    \newcommand{\graphicswidth}{0.8\linewidth}
+    \begin{subfigure}{\subfigurewidth}
+        \centering
+        \includegraphics[width=\graphicswidth]{resources/omnigraffle-connection-points-a}
+        \caption{}
+        \label{fig:omnigraffle-connection-points-a}
+    \end{subfigure}
+    \begin{subfigure}{\subfigurewidth}
+        \centering
+        \includegraphics[width=\graphicswidth]{resources/omnigraffle-connection-points-b}
+        \caption{}
+        \label{fig:omnigraffle-connection-points-b}
+    \end{subfigure}
+    \caption{Verknüpfungspunkte einer Verbindung in OmniGraffle \subref{fig:omnigraffle-connection-points-a} mit Veranschaulichung der Berechnung \subref{fig:omnigraffle-connection-points-b}}
+    \label{fig:omnigraffle-connection-points}
 \end{figure}
 
 OmniGraffle bietet die Möglichkeit, mit Hilfe des Magnetwerkzeugs manuell die Verknüpfungspunkte zu definieren. Dies funktioniert auf zwei verschiedene Arten. Entweder kann der Nutzer die Verknüpfungspunkte beliebig in dem Objekt positionieren oder er wählt eine vordefinierte Anordnung aus. Dazu gehören u.a. die gleichmäßige Verteilung einer festen Anzahl an Verknüpfungspunkten entlang allen Kanten oder die Positionierung eines Verknüpfungspunktes an jedem Eckpunkt. Ein Beispiel der Darstellung von Verknüpfungspunkten ist in Abbildung \ref{fig:omnigraffle-magnets-example} zu finden.
