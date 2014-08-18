@@ -4,6 +4,8 @@
 
 \chapter{Prototyp-Implementierung}
 
+% Das Layout-Framework von Sonja Maier konnte nicht als Grundlage verwendet werden, da nicht veröffentlicht
+
 % kurze Beschreibung des Prototypen
 % unterstützte Operationen
 
@@ -11,3 +13,20 @@
 % - implizite Core Animation Animation
 % - Überführen von mehreren Animationen mit POP
 
+% IDLLayoutEngine besitzt intern Referenzen auf den Inhalt des Diagramms und muss daher mit dem Diagramm synchronisiert werden (manuell) mit s.g. Layout-Events
+% Layout-Events auflisten und mit Bildern erklären
+
+% Löschen eines (oder mehreren Elementen) im Prototypen nicht unterstützt, nur hinzufügen und "rausfahren"
+
+% aus zeitlichen Gründen wurde die Semantik nicht tiefgründig ausgearbeitet und wurde der weiteren Forschung überlassen
+% IDLEdge -> gerichtete Kanten mit max. einem Elternknoten (z.B. Vererbung in Klassendiagrammen) -> Diagramm ist also azyklisch
+
+% Liste der unterstützten ästhetischen Kriterien
+
+% Beschreibung der App, Komponenten, genutzte API's, unterstützte Layout-Methoden, Koordinaten (Umrechnung), Drag and Drop
+
+% Schwachstellen
+% ==============
+% manchmal Probleme mit Animation bei D&D
+% Pattern-Abhängigkeiten müssen manuell verwaltet werden
+% IDLPatternsSolver mit einem Constraint Solver
