@@ -68,29 +68,17 @@ Trotz der fehlenden Interaktivität des resultierenden Diagramms kann das Layout
 
 \subsubsection{Textbasierte UML-Tools}
 
-Neben den textbasierten Tools für das Graphzeichnen gibt es Tools, die für spezifische Domänen ausgelegt sind. Im Folgenden werden 2 textbasierte UML-Tools kurz vorgestellt, die aus einer textuellen Beschreibung in einer speziellen Sprache grafische UML-Diagramme erzeugen. Für die Berechnung des Layouts benutzen beide Tools intern die oben genannte Bibliothek Graphviz.
+Neben den textbasierten Tools für das Graphzeichnen gibt es Tools, die für spezifische Domänen ausgelegt sind. Im Folgenden werden 2 textbasierte UML-Tools kurz vorgestellt, die aus einer textuellen Beschreibung in einer speziellen Sprache grafische UML-Diagramme erzeugen. Für die Berechnung des Layouts benutzen beide Tools intern die oben vorgestellte Bibliothek Graphviz.
 
 \paragraph{PlantUML}
 
 \hyphenation{PlantUML}
 
-PlantUML\footnote{\url{http://plantuml.sourceforge.net}} ist eine Java-Bibliothek, die für die Beschreibung von UML-Diagrammen die gleichnamige Sprache verwendet. Diese Sprache wird näher in \cite{Roques10Drawing} behandelt. Neben den vielen Anwendungen\footnote{Die bekannten Anwendungen sind unter \url{http://plantuml.sourceforge.net/running.html} aufgelistet.} bietet PlantUML einen Online-Editor\footnote{PlantUML Server: \url{http://www.plantuml.com/plantuml}} an, der es ermöglicht, UML-Diagramme direkt im Browser zu erzeugen und als Bilder zu exportieren.
+PlantUML\footnote{\url{http://plantuml.sourceforge.net}} ist eine Java-Bibliothek, die für die Beschreibung von UML-Diagrammen die gleichnamige Sprache verwendet. Diese Sprache wird näher in \cite{Roques10Drawing} behandelt. Neben den vielen Anwendungen\footnote{Die bekannten Anwendungen sind unter \url{http://plantuml.sourceforge.net/running.html} aufgelistet.} bietet PlantUML einen Online-Editor\footnote{PlantUML Server: \url{http://www.plantuml.com/plantuml}} an, der es ermöglicht, UML-Diagramme direkt im Browser zu erstellen und als Bilder zu exportieren.
 
 \paragraph{yUML}
 
-yUML\footnote{\url{http://yuml.me}} ist ein Online-Editor zum Erstellen von UML-Diagrammen im Browser. Im Unterschied zu PlantUML verwendet yUML eine anschauliche zeichenbasierte Sprache\footnote{Eine Übersicht der Syntax für Klassendiagramme: \url{http://yuml.me/diagram/scruffy/class/samples}}. Die Eingabe erfolgt über ein Textfeld und wird kontinuierlich in ein Bild übersetzt, das jederzeit exportiert werden kann. Alternativ wird eine URL-Adresse auf das Diagramm generiert \cite{Fuhrmann11On-the-Pragmatics}.
-
-\subsubsection{Spezielle Algorithmen für Klassendiagramme}
-
-% TODO: Speziellen Algorithmen ergänzen!
-
-% Traditionelle Kriterien für Graphzeichnen sind für Klassendiagramme nicht ausreichend [Eichelberger S.79]
-
-% SugiBib - ein Framework, das auf dem Sugiyama Algorithmus basiert und die Semantik und Strukturregeln berücksichtigt
-% https://wwwi2.informatik.uni-wuerzburg.de/SugiBib
-% XMI (Input siehe Eichelberger 47ff)
-
-% Kandinsky (Eiglsperger)
+yUML\footnote{\url{http://yuml.me}} ist ein Online-Editor zum Erstellen von UML-Diagrammen im Browser. Im Unterschied zu PlantUML verwendet yUML eine anschauliche zeichenbasierte Sprache\footnote{Eine Übersicht der Syntax für Klassendiagramme: \url{http://yuml.me/diagram/scruffy/class/samples}}. Die Eingabe erfolgt über ein Textfeld und wird kontinuierlich in ein Bild übersetzt, das jederzeit exportiert werden kann. Alternativ kann eine URL-Adresse generiert \cite{Fuhrmann11On-the-Pragmatics} werden, unter der das gezeichnete Diagramm online verfügbar ist.
 
 \subsection{Visuelle Ansätze}
 \label{subsec:visual-approaches}
@@ -124,6 +112,22 @@ Die Algorithmen für das automatische Layout sind im Allgemeinen nicht ideal und
 % verschiedene Algorithmen -> nur Verbindungen vs. alles
 
 % yEd?
+
+\subsection{Spezielle Algorithmen für Klassendiagramme}
+
+%Eine weitere Gruppe der Ansätze wird durch Algorithmen gebildet, die für das automatische Layout von Klassendiagrammen spezialisiert sind.
+
+%Ähnlich wie die Algorithmen zum Graphzeichnen lassen sich diese Algorithmen in visuelle Editoren einbauen, sind allerdings für eine interaktive Nutzung nicht geeignet. % Eiglsperger beschreibt, wie der Algorithmus zu erweitern ist, um ihn interaktiv einsetzen zu können
+
+% TODO: Speziellen Algorithmen ergänzen!
+
+% Traditionelle Kriterien für Graphzeichnen sind für Klassendiagramme nicht ausreichend [Eichelberger S.79]
+
+% SugiBib - ein Framework, das auf dem Sugiyama Algorithmus basiert und die Semantik und Strukturregeln berücksichtigt
+% https://wwwi2.informatik.uni-wuerzburg.de/SugiBib
+% XMI (Input siehe Eichelberger 47ff)
+
+% Kandinsky (Eiglsperger)
 
 \subsection{Eigenschaften und Vergleich}
 
