@@ -4,70 +4,67 @@
 
 \chapter{Konzept für das interaktive Layout von graph-basierten Softwarediagrammen}
 
-% Was kann der Nutzer verändern?
-% Was kann er tun?
-% Arten der Manipulation auflisten
-% Was ist neu an dem Ansatz?
-
-% Drag&Drop-Technik (neue Elemente aus einer Palette bzw. Änderung des Layout im Diagramm)
-
-% absolutes Layout:
-% - alle mögliche Layout berechnen
-% - Bereiche für alle Layouts berechnen
-% - Layout des Diagramms ändern, wenn der Mauszeiger in einen der Bereiche übergeht
-% > Berechnung der Bereiche einmal am Anfang einer Verschiebungsoperation für das gesamte Diagramm
-% > keine Änderung der Bereiche nach einem Layout-Übergang
-% > Möglichkeit von Cache des Layout-Mappings für den zuletzt manipulierten Knoten
-% > Probleme mit der Ungültigkeit nach dem ersten Layout-Übergang
-
-% relative Layout-Berechnung
-% > Berechnung des Layout-Mappings nach jedem Layout-Übergang und zwar nut relativ für den manipulierten Knoten (z.B. nur die benachbarten Bereiche im horizontalen Layout-Algorithmus)
-% > kein Caching
-% > nach einem Layout-Übergang muss sich das Layout-Mapping in einem stabilen Zustand befinden
-
-% Layout-Engine speziell für Diagrammtypen
-% IDLLayoutEngine & Subclasses (bzw. unterstützte Engines)
-% berechnet Layouts = Positionen für Knoten, Routen für Kanten (nicht implementiert), Animationen/Übergangsparameter für die Transitionen (nicht implementiert)
-% Eingabe für den Algorithmus: Layout-Event, Inhalt des Diagramms, instanziierte Patterns
-
-% Möglichkeit in den initialen Zustand zu übergehen
-% bei Knotenverschiebung nicht nach dem Drag sofort einen Layout-Übergang ausführen
-
-%Algorithmus-Beschreibung
-%Layout-Patterns
-%	implizite und explizite
-%	detaillierte Beschreibung der expliziten Layout-Patterns mit Bezug auf Arbeiten
-%Worin unterscheidet sich mein Ansatz zu dem von Sonja Maier?
-%Für welche Diagramme geeignet? (Klassendiagramme, Objektdiagramme, Komponentendiagramme, Graphen, Bäume)
-%Vergleich zu bestehenden Ansätzen im Kapitel 3
-
+% Vereinfachung der Diagramme (Agile Modeling) -> Möglichkeiten der Umsetzung von Algorithmen, die nicht so flexible sein müssen (REQ_COMPL_UML Eichelberger)
+% Einschränkung der Möglichkeiten, Berücksichtigung der Syntax und Semantik der Diagramme
+% Freihand-Edietieren -> D&D + Layout-Übergänge
+% interaktiv
+% Mauszeiger, GUI
+% die Eingabe ist mit der Ausgabe gekoppelt \footnote{Aus der Sicht der HCI ist die Nutzung der Maus als Eingabegerät von der Ausgabe am Monitor entkoppelt.}
+% immediate feedback vs. delayed feedback [Wybrow S.69]
 % kombiniert Vorteile der freien Positionierung der Elemente im Diagramm und der automatischen Layout-Algorithmen miteinander
 
-% immediate feedback vs. delayed feedback [Wybrow S.69]
+% Drag&Drop-Technik (neue Elemente aus einer Palette bzw. Änderung des Layout im Diagramm)
+% Platzhalter-Objekte, Animation
+% Mentales Modell [Maier, Wybrow?]
 
-% Unterschied Top vs. Center Horizontal Alignment Pattern (mit einem Bild erklärt)
+\section{Funktionsweise}
 
-% IDLPattern, IDLAlignmentPattern, IDLTShapePattern -> Klassendiagramm
-% Beschreibung der Patterns mit Bildern (geometrische Parameter erläutern)
-% Bild mit Instanzen von Patterns in einem Beispiel-Diagramm (kann ein Screenshot sein)
+% Grobe Beschreibung der Funktionalität mit Hinweisen auf kommende Kapitel
 
-% Layout-Komposition mit Hilfe von Sublayouts
+% Layout-Engine
+% 
+% Eingabe für den Algorithmus: Layout-Ereignis, Inhalt des Diagramms, instanziierte Patterns
+% berechnete Layouts = Positionen für Knoten, Routen für Kanten (nicht implementiert), Animationen/Übergangsparameter für die Transitionen (nicht implementiert)
 
-% die Eingabe ist mit der Angabe gekoppelt (footnote: Aus der Sicht der HCI ist die Nutzung der Maus als Eingabegerät von der Ausgabe am Monitor entkoppelt.)
+% Erreichbare Layouts werden berechnet und mit Hilfe der Layout-Ereignisse wird geprüft, ob ein Layout-Übergang stattfinden soll (z.B. nur die benachbarten Bereiche im horizontalen Layout-Algorithmus)
+% nach einem Layout-Übergang wird die Berechnung wiederholt
 
-% Explizite absolute vs. implizite relative Berechnung der Layout-Bereiche
-% In Rahmen der Entwicklung wurde mit expliziten absoluten Bereichen experimentiert (absolut für das gesamte Diagramm)
+% Layout-Engine soll für spezielle Diagrammtypen unterschiedliches Verhalten aufweisen
+% Neu-Berechnung nach jedem Layout-Übergang -> Performance?
+% Stabilität -> Ausführen eines Layout-Übergangs nach einer deutlichen Aktion des Nutzers
+% Erreichbarkeit des Ausgangslayouts
 
-% Vereinfachung der Diagramme (Agile Modeling) -> Möglichkeiten der Umsetzung von Algorithmen, die nicht so flexible sein müssen (REQ_COMPL_UML)
+% \footnote{In Rahmen der Konzeption und Entwicklung wurde zunächst ein Algorithmus entworfen, der für die Manipulation eines Knotens alle möglichen Layouts und die entsprechenden Diagramm-Bereiche für das gesamte Diagramm explizit berechnet hat. Durch eine Bewegung des Mauszeigers in einen anderen Bereich wurde jeweils ein Layout-Übergang ausgelöst. Die Berechnung wurde jedoch nicht nach jedem Layout-Übergang wiederholt und die Abbildung war oft nach dem ersten Layout-Übergang ungültig. Später wurde festgelegt, dass dieser Algorithmus nicht hinreichend ist.}
 
-% Patterns
-% ========
-% Patterns-Variierung
-% z.B. Reihenfolge der Knoten kann von Nutzer festgelegt werden, das endgültige Layout wird durch die Geometrie bestimmt
+\section{Layout-Patterns}
+
+% Abgrenzung des Begriffs zu dem von [Maier]
+% implizite vs. explizite Layout-Patterns (siehe Mappe)
+% Patterns-Variierung (z.B. Reihenfolge der Knoten kann von Nutzer festgelegt werden, das endgültige Layout wird durch die Geometrie bestimmt)
 % instanziiert in der Layout-Engine, referenzieren den Diagramm-Inhalt
 % Wiederverwendung möglich (mehrere Instanzen in der Layout-Engine bzw. Komposition von Patterns wie T-Shape-Pattern)
 % Nur während Drag&Drop sichtbar -> Möglichkeit der Interaktivität der Patterns
+% interne Berechnung des relativen Layouts für enthaltene Diagramm-Objekte (Knoten)
 
-% Mentales Modell -> Animation, Platzhalter
+% konkrete Pattens:
+% - detaillierte Beschreibung der expliziten Layout-Patterns mit Bezug auf Arbeiten
+% - Erläutern der geometrischen Parametern mit Bildern
+% - Bild mit Instanzen von Patterns in einem Beispiel-Diagramm (kann ein Screenshot sein)
+% - IDLPattern, IDLAlignmentPattern, IDLTShapePattern -> Klassendiagramm
 
-% Insbesondere haben die Syntax und Semantik der Diagramme keinen Einfluss auf das Layout
+% Instanziierung durch den Nutzer wie in [Maier] ist denkbar
+
+\section{Layout-Ereignisse}
+
+% Was kann der Nutzer verändern? Was kann er tun?
+% Operationen/Aktionen/Arten der Manipulation auflisten
+
+\section{Abgrenzung zu bestehenden Ansätzen}
+
+% Was ist neu an dem Ansatz?
+% Vergleich zu bestehenden Ansätzen im Kapitel 3
+% Worin unterscheidet sich mein Ansatz zu dem von Sonja Maier?
+% - Drag&Drop mit Visualisierung der Aktion
+% - Kein Freihand-Editieren, sondern implizite Bereiche und Layout-Übergänge
+% - Patterns unterstützen Variierung
+% - Starke Vereinfachung der Möglichkeiten (Anpassung der Patterns aus [Maier])
