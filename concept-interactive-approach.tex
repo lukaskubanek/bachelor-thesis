@@ -1,26 +1,66 @@
 %%%
-% Interactive Diagram-Specific Approach for Layout of Graph-based Software Diagrams
+% Approach for Interactive Diagram-Specific Layout of Graph-based Software Diagrams
 %%%
 
 \chapter{Ansatz für das interaktive und diagrammspezifische Layout von graph-basierten Softwarediagrammen}
 \label{chapter:interactive-approach}
 
-Dieses Kapitel 
+In diesem Kapitel wird ein Ansatz für das interaktive Layout von Diagrammen vorgestellt.
+
+%Ein Überblick über
 
 \section{Überblick}
 
-% Vereinfachung der Diagramme (Agile Modeling) -> Möglichkeiten der Umsetzung von Algorithmen, die nicht so flexibel sein müssen (REQ_COMPL_UML Eichelberger)
+%Das grundlegende Kriterium beim Entwurf war die Unterstützung der Interaktivität
+
+%gleichzeitig aber auch die Einschränkung der Operationen, die der Nutzer ausführen kann um sich ausschließlich auf den Inhalt der erstellten Diagramms zu konzentrieren (Ambler)
+
+%direkte Interaktion
+
+%Abnehmen der Layout-Arbeit durch Einschränkung der Flexibilität
+
+%optimales Verhältnis zwischen flexiblen Modifizierungen der Layout-Eigenschaften und 
+
+%ausgelegt für Änderungen im Diagramm
+
+%Nutzer hat Einfluss auf das Layout, aber nur zu einem bestimmten Grad
+
+%die Vorteile der freien Positionierung der Elemente im Diagramm und der automatischen Layout-Algorithmen miteinander kombiniert. Unter Berücksichtigung des Diagrammtyps werden durch einen Algorithmus mögliche Layouts berechnet. Der Nutzer wird in der Lage sein, durch Interaktion mit dem Diagramm das passende Layout auszuwählen und neue Elemente zu dem Diagramm hinzuzufügen.
+
+%%%%%%%%%
+
+% Spezialisierung, Einschränkung, Interaktivität
+
+%Durch die Spezialisierung auf konkrete Diagramm-Typen und den Einsatz von verschiedenen Vereinfachungsmaßnahmen wie etwa Einschränkung der unterstützten Notation \cite[S.56ff]{Ambler02Agile} lassen sich Algorithmen für das Layout von Softwarediagrammen entwerfen, die zwar nicht so flexibel wie z.B. \cite{Maier12A-Pattern-based} oder \cite{Eichelberger05Aesthetics} sind, aber dafür...
+
+
+
+
+
+
+
+
+
 % Einschränkung der Möglichkeiten, Berücksichtigung der Syntax und Semantik der Diagramme
-% Freihand-Bearbeitung -> D&D + Layout-Übergänge
-% interaktiv
+% Freihand-Bearbeitung --> D&D + Layout-Übergänge
+% Interaktivität
 % Mauszeiger, GUI
 % die Eingabe ist mit der Ausgabe gekoppelt \footnote{Aus der Sicht der HCI ist die Nutzung der Maus als Eingabegerät von der Ausgabe am Monitor entkoppelt.}
-% unmittelbares vs. verzögertes feedback [Wybrow S.69]
+% unmittelbares vs. verzögertes Feedback [Wybrow S.69]
 % kombiniert Vorteile der freien Positionierung der Elemente im Diagramm und der automatischen Layout-Algorithmen miteinander
 
 % Drag&Drop-Technik (neue Elemente aus einer Palette bzw. Änderung des Layout im Diagramm)
 % Platzhalter-Objekte, Animation
 % Mentales Modell [Maier, Wybrow?]
+
+%Der Ansatz macht sich sich folgende GUI-Techniken zur Nutze:
+%
+%\begin{itemize}
+%    \item D\&D
+%    \item Platzhalter-Objekte im Canvas
+%    \item Animation
+%\end{itemize}
+
 
 \section{Definitionen}
 
@@ -35,7 +75,7 @@ Dieses Kapitel
 
 % Layout-Engine
 % =============
-% Eingabe für den Algorithmus: Layout-Ereignis, Inhalt des Diagramms, instanziierte Patterns
+% Eingabe für den Algorithmus: Layout-Ereignis, Inhalt des Diagramms, instanziierte Patterns, der Layout-Zustand (mögliche Layout-Übergänge vom aktuellen Zustand abhängig, nicht alle erreichbar)
 % berechnete Layouts = Positionen für Knoten, Routen für Kanten (nicht implementiert), Animationen/Übergangsparameter für die Transitionen (nicht implementiert)
 % initialer Zustand
 
@@ -43,6 +83,8 @@ Dieses Kapitel
 % nach einem Layout-Übergang wird die Berechnung wiederholt
 
 % Layout-Engine soll für spezielle Diagrammtypen unterschiedliches Verhalten aufweisen
+% Jeder Diagrammtyp (z.B. Klassendiagramm, Zustandsdiagramm, Flowchart usw.) hat aufgrund der Semantik- und Strukturregeln spezielle Anforderungen an das ästhetische Layout
+% automatische Instanziierung von Patterns nach Layout-Ereignissen
 % Neu-Berechnung nach jedem Layout-Übergang -> Performance?
 % Stabilität -> Ausführen eines Layout-Übergangs nach einer deutlichen Aktion des Nutzers
 % Erreichbarkeit des Ausgangslayouts
@@ -66,6 +108,29 @@ Dieses Kapitel
 % - IDLPattern, IDLAlignmentPattern, IDLTShapePattern -> Klassendiagramm
 
 % Instanziierung durch den Nutzer wie in [Maier] ist denkbar
+
+\subsection{Implizite Layout-Patterns}
+
+\subsubsection{Größe der Knoten}
+\subsubsection{Zentrierung des Inhalts}
+\subsubsection{Gleiche Abstände}
+\subsubsection{Verhinderung der Knoten-Überlappung}
+
+\subsection{Explizite Layout-Patterns}
+
+% TODO: Verweis auf die implementierten Patterns im Prototypen (Kapitel 5) hinzufügen
+% Variationen der expliziten Layout-Patterns
+
+\subsubsection{Ausrichtung}
+
+% siehe manuelles Layout bzw. Pattern-basierter Ansatz (Kapitel 3)
+% gleichmäßige Verteilung (Abstände gleich groß)
+% Variationen: Reihenfolge der Knoten
+
+\subsubsection{T-Shape}
+
+% Variationen: Reihenfolge der Knoten im Ausrichtungs-Pattern
+% interne Wiederverwendung eines Ausrichtung-Patterns
 
 \section{Layout-Ereignisse}
 
