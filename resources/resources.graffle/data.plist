@@ -34,7 +34,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2014-08-19 10:59:28 +0000</string>
+	<string>2014-08-19 18:34:54 +0000</string>
 	<key>Modifier</key>
 	<string>Lukas Kubanek</string>
 	<key>NotesVisible</key>
@@ -196,6 +196,131 @@
 			<string>3.1.1 omnigraffle-snap-to-grid</string>
 			<key>UniqueID</key>
 			<integer>8</integer>
+			<key>VPages</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>ActiveLayerIndex</key>
+			<integer>0</integer>
+			<key>AutoAdjust</key>
+			<true/>
+			<key>BackgroundGraphic</key>
+			<dict>
+				<key>Bounds</key>
+				<string>{{0, 0}, {559.28001499176025, 782.8900146484375}}</string>
+				<key>Class</key>
+				<string>SolidGraphic</string>
+				<key>ID</key>
+				<integer>2</integer>
+				<key>Style</key>
+				<dict>
+					<key>shadow</key>
+					<dict>
+						<key>Draws</key>
+						<string>NO</string>
+					</dict>
+					<key>stroke</key>
+					<dict>
+						<key>Draws</key>
+						<string>NO</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>BaseZoom</key>
+			<integer>0</integer>
+			<key>CanvasOrigin</key>
+			<string>{0, 0}</string>
+			<key>ColumnAlign</key>
+			<integer>1</integer>
+			<key>ColumnSpacing</key>
+			<real>36</real>
+			<key>DisplayScale</key>
+			<string>1.000 cm = 1.000 cm</string>
+			<key>GraphicsList</key>
+			<array>
+				<dict>
+					<key>Bounds</key>
+					<string>{{102.99996280670166, 131}, {53, 55}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>ID</key>
+					<integer>6</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+					</dict>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{171, 153}, {53, 33}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>ID</key>
+					<integer>5</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+					</dict>
+				</dict>
+			</array>
+			<key>GridInfo</key>
+			<dict/>
+			<key>HPages</key>
+			<integer>1</integer>
+			<key>KeepToScale</key>
+			<false/>
+			<key>Layers</key>
+			<array>
+				<dict>
+					<key>Lock</key>
+					<string>NO</string>
+					<key>Name</key>
+					<string>Layer 1</string>
+					<key>Print</key>
+					<string>YES</string>
+					<key>View</key>
+					<string>YES</string>
+				</dict>
+			</array>
+			<key>LayoutInfo</key>
+			<dict>
+				<key>Animate</key>
+				<string>NO</string>
+				<key>circoMinDist</key>
+				<real>18</real>
+				<key>circoSeparation</key>
+				<real>0.0</real>
+				<key>layoutEngine</key>
+				<string>dot</string>
+				<key>neatoSeparation</key>
+				<real>0.0</real>
+				<key>twopiSeparation</key>
+				<real>0.0</real>
+			</dict>
+			<key>Orientation</key>
+			<integer>2</integer>
+			<key>PrintOnePage</key>
+			<false/>
+			<key>RowAlign</key>
+			<integer>1</integer>
+			<key>RowSpacing</key>
+			<real>36</real>
+			<key>SheetTitle</key>
+			<string>3.1.3 omnigraffle-smart-guides</string>
+			<key>UniqueID</key>
+			<integer>11</integer>
 			<key>VPages</key>
 			<integer>1</integer>
 		</dict>
@@ -499,16 +624,6 @@
 							<string>NO</string>
 						</dict>
 					</dict>
-					<key>Text</key>
-					<dict>
-						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
-{\colortbl;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
-
-\f0\fs18 \cf0 B}</string>
-					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -527,16 +642,6 @@
 							<string>NO</string>
 						</dict>
 					</dict>
-					<key>Text</key>
-					<dict>
-						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
-{\colortbl;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
-
-\f0\fs18 \cf0 A}</string>
-					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -554,16 +659,6 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
-					</dict>
-					<key>Text</key>
-					<dict>
-						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
-{\colortbl;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
-
-\f0\fs18 \cf0 X}</string>
 					</dict>
 				</dict>
 			</array>
@@ -1848,8 +1943,8 @@
 					<integer>41</integer>
 					<key>Points</key>
 					<array>
-						<string>{230.6478526881229, 421.94500732421875}</string>
-						<string>{230.64767132773869, 456.94500732421875}</string>
+						<string>{230.64799477379501, 421.94500732421875}</string>
+						<string>{230.64799477379501, 456.94500732421875}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -1891,8 +1986,8 @@
 					<integer>37</integer>
 					<key>Points</key>
 					<array>
-						<string>{295.18777216500143, 325.89035019754061}</string>
-						<string>{313.1080952665547, 360.99966532671141}</string>
+						<string>{295.18781874249095, 325.89034993505641}</string>
+						<string>{313.10819555451928, 360.9996647570328}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -1934,8 +2029,8 @@
 					<integer>34</integer>
 					<key>Points</key>
 					<array>
-						<string>{264.10824929648544, 325.89035019754061}</string>
-						<string>{246.18792619493226, 360.99966532671141}</string>
+						<string>{264.10820271899587, 325.89034993505641}</string>
+						<string>{246.18782590696753, 360.9996647570328}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -2037,7 +2132,7 @@
 	<key>WindowInfo</key>
 	<dict>
 		<key>CurrentSheet</key>
-		<integer>6</integer>
+		<integer>1</integer>
 		<key>ExpandedCanvases</key>
 		<array/>
 		<key>Frame</key>
@@ -2053,11 +2148,11 @@
 		<key>Sidebar</key>
 		<true/>
 		<key>SidebarWidth</key>
-		<integer>294</integer>
+		<integer>327</integer>
 		<key>SmallIcons</key>
 		<true/>
 		<key>VisibleRegion</key>
-		<string>{{-96, 0}, {752, 623}}</string>
+		<string>{{-80, 7}, {719, 623}}</string>
 		<key>Zoom</key>
 		<real>1</real>
 		<key>ZoomValues</key>
@@ -2111,6 +2206,11 @@
 				<string>3.2.2.1 omnigraffle-automatic-layout</string>
 				<real>0.69999998807907104</real>
 				<real>0.5</real>
+			</array>
+			<array>
+				<string>3.1.3 omnigraffle-smart-guides</string>
+				<real>1</real>
+				<real>1</real>
 			</array>
 		</array>
 	</dict>

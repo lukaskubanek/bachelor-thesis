@@ -141,7 +141,7 @@ Die ausgewählten Objekte können in Relation zueinander ausgerichtet werden. Da
 
 \paragraph{Verteilen}
 
-Wenn mindestens 3 Objekte ausgewählt werden, kann die Funktion zum gleichmäßigen Verteilen der Objekte angewendet werden. Dabei wird die Position der äußeren Objekte fixiert und die Position von umschlossenen Objekten wird so angepasst, dass die vertikalen bzw. horizontalen Abstände zwischen den Objekten gleich sind \cite{11Keynote}.
+Wenn mindestens 3 Objekte ausgewählt werden, kann die Funktion zum gleichmäßigen Verteilen der Objekte angewendet werden. Dabei wird die Position der äußeren Objekte fixiert und die Position von umschlossenen Objekten wird so angepasst, dass die vertikalen bzw. horizontalen Abstände zwischen den Objekten gleich sind (siehe Abbildung \ref{fig:keynote-horizontal-distribution}) \cite{11Keynote}.
 
 \begin{figure}[hbt]
     \newcommand{\subfigurewidth}{0.5\textwidth}
@@ -166,11 +166,41 @@ Eine sehr hilfreiche Funktion, die in den meisten Grafik- und Präsentationsprog
 
 \paragraph{Hilfslinien zur Ausrichtung (Alignment Guides)}
 
-Die erste Art der Hilfslinien ist für die Ausrichtung des verschobenen Objekts an die Kanten bzw. Mittelachsen von anderen Objekten in Diagram nützlich. Die Linien werden während der Verschiebungsoperation eingeblendet, wenn das verschobene Objekt an ein anderes Objekt ausgerichtet wird \cite{11Keynote}. In Abbildung X wird ein Beispiel der Hilfslinien zur Ausrichtung der unteren Kanten von 2 Objekten während der Verschiebungsoperation gezeigt.
+Die erste Art der Hilfslinien ist für die Ausrichtung des verschobenen Objekts an die Kanten bzw. Mittelachsen von anderen Objekten in Diagram nützlich. Die Linien werden während der Verschiebungsoperation eingeblendet, wenn das verschobene Objekt an ein anderes Objekt ausgerichtet wird \cite{11Keynote}.
 
-% TODO: Abbildung: Hilfslinien zur Ausrichtung während der Verschiebungsoperation in OmniGraffle
+\begin{figure}[hbt]
+    \newcommand{\subfigurewidth}{0.5\textwidth}
+    \begin{subfigure}{\subfigurewidth}
+        \centering
+        \includegraphics{resources/omnigraffle-smart-guides-a}
+        \caption{}
+        \label{fig:omnigraffle-smart-guides-a}
+    \end{subfigure}
+    \begin{subfigure}{\subfigurewidth}
+        \centering
+        \includegraphics{resources/omnigraffle-smart-guides-b}
+        \caption{}
+        \label{fig:omnigraffle-smart-guides-b}
+    \end{subfigure}
+    \begin{subfigure}{\subfigurewidth}
+        \centering
+        \includegraphics{resources/omnigraffle-smart-guides-c}
+        \caption{}
+        \label{fig:omnigraffle-smart-guides-c}
+    \end{subfigure}
+    \begin{subfigure}{\subfigurewidth}
+        \centering
+        \includegraphics{resources/omnigraffle-smart-guides-d}
+        \caption{}
+        \label{fig:omnigraffle-smart-guides-d}
+    \end{subfigure}
+    \caption{Hilfslinien zur Ausrichtung während der Verschiebungsoperation in OmniGraffle}
+    \label{fig:omnigraffle-smart-guides}
+\end{figure}
 
-Aus der Abbildung X kann man entnehmen, dass sich um die untere Kante des inaktiven Objekts ein Bereich bildet, in dem das verschobene Objekt auf die ausgerichtete Position hinspringt. Dies passiert wenn die Gerade, die durch eine Kante oder Mittelachse des verschobenen Objektes gebildet wird, in der Nähe einer anderen Geraden, die durch eine Kante oder Mittelachse eines anderen Objektes im Diagramm gebildet wird, befindet und der Abstand unter einer bestimmten Schwelle liegt. Dieses Verhalten wird in Abbildung X visualisiert.
+In Abbildung \ref{fig:omnigraffle-smart-guides} wird ein Beispiel der Hilfslinien zur Ausrichtung der unteren Kanten von 2 Objekten während einer Verschiebungsoperation veranschaulicht. Zunächst wird in \ref{fig:omnigraffle-smart-guides-a} das rechte Objekt ausgewählt und nach unten verschoben. Wenn sich die untere Kante des verschobenen Objekts der unteren Kante des inaktiven Objekts nähert, so wie es in \ref{fig:omnigraffle-smart-guides-b} der Fall ist, wird eine Hilfslinie eingeblendet und das verschobene Objekt springt auf eine ausgerichtete Position hin. In \ref{fig:omnigraffle-smart-guides-c} wird die Verschiebung weitergeführt, das anhand der Position des Mauszeigers erkannt werden kann. Das Objekt bleibt so lange ausgerichtet, bis der Abstand der Kanten eine bestimmte Schwelle in \ref{fig:omnigraffle-smart-guides-d} überschreitet. Danach wird die Hilfslinie ausgeblendet und eine freie Positionierung ist wieder möglich.
+
+Aus dem vorgestellten Beispiel folgt, dass sich um die untere Kante des inaktiven Objekts ein Bereich bildet, in dem das verschobene Objekt auf die ausgerichtete Position hinspringt. Dies passiert, wenn sich die Geraden in der Nähe befinden und der Abstand unter einer bestimmten Schwelle liegt. Dieser Bereich wird in Abbildung X visualisiert.
 
 % TODO: Abbildung: Visualisierung des Bereichs für die Hilfslinien zur Ausrichtung
 
