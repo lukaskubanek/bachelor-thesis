@@ -200,11 +200,16 @@ Die erste Art der Hilfslinien ist für die Ausrichtung des verschobenen Objekts 
 
 In Abbildung \ref{fig:omnigraffle-smart-guides} wird ein Beispiel der Hilfslinien zur Ausrichtung der unteren Kanten von 2 Objekten während einer Verschiebungsoperation veranschaulicht. Zunächst wird in \ref{fig:omnigraffle-smart-guides-a} das rechte Objekt ausgewählt und nach unten verschoben. Wenn sich die untere Kante des verschobenen Objekts der unteren Kante des inaktiven Objekts nähert, so wie es in \ref{fig:omnigraffle-smart-guides-b} der Fall ist, wird eine Hilfslinie eingeblendet und das verschobene Objekt springt auf eine ausgerichtete Position hin. In \ref{fig:omnigraffle-smart-guides-c} wird die Verschiebung weitergeführt, das anhand der Position des Mauszeigers erkannt werden kann. Das Objekt bleibt so lange ausgerichtet, bis der Abstand der Kanten eine bestimmte Schwelle in \ref{fig:omnigraffle-smart-guides-d} überschreitet. Danach wird die Hilfslinie ausgeblendet und eine freie Positionierung ist wieder möglich.
 
-Aus dem vorgestellten Beispiel folgt, dass sich um die untere Kante des inaktiven Objekts ein Bereich bildet, in dem das verschobene Objekt auf die ausgerichtete Position hinspringt. Dies passiert, wenn sich die Geraden in der Nähe befinden und der Abstand unter einer bestimmten Schwelle liegt. Dieser Bereich wird in Abbildung X visualisiert.
+Aus dem vorgestellten Beispiel folgt, dass sich um die untere Kante des inaktiven Objekts ein Bereich bildet, in dem das verschobene Objekt auf die ausgerichtete Position hinspringt. Dies passiert, wenn sich die Geraden in der Nähe befinden und der Abstand unter einer bestimmten Schwelle liegt. Dieser Bereich wird in Abbildung \ref{fig:omnigraffle-smart-guides-snap-area} visualisiert.
 
-% TODO: Abbildung: Visualisierung des Bereichs für die Hilfslinien zur Ausrichtung
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[scale=0.85]{resources/omnigraffle-smart-guides-snap-area}
+    \caption{Visualisierung des Bereichs für die Ausrichtung an die untere Kante des linken Objekts}
+    \label{fig:omnigraffle-smart-guides-snap-area}
+\end{figure}
 
-Solche Bereiche werden für alle Kanten und Mittelachsen von nicht ausgewählten Objekten in der horizontalen und vertikalen Richtung identifiziert. Wenn der Nutzer ein Objekt verschiebt und eine der Kanten oder die Mittelachse des verschobenen Objekts sich in einem der Bereichen befindet, wird das verschobene Objekt an die ausgerichtete Position positioniert, ohne den Mauszeiger zu beeinflussen. Das kann auch gleichzeitig für die horizontale und vertikale Richtung der Fall sein. Somit kann z.B. ein Objekt in einem anderen Objekt zentriert werden (siehe Abbildung \ref{fig:omnigraffle-alignment-guides-centering}).
+Solche Bereiche werden für alle Kanten und Mittelachsen von nicht ausgewählten Objekten in der horizontalen und vertikalen Richtung gebildet. Wenn der Nutzer ein Objekt verschiebt und eine der Kanten oder die Mittelachse des verschobenen Objekts sich in einem der Bereichen befindet, wird seine Position ausgerichtet, ohne den Mauszeiger zu beeinflussen. Das kann auch gleichzeitig für die horizontale und vertikale Richtung der Fall sein. Somit kann z.B. ein Objekt in einem anderen Objekt zentriert werden (siehe Abbildung \ref{fig:omnigraffle-alignment-guides-centering}).
 
 \begin{figure}[hbt]
     \centering
