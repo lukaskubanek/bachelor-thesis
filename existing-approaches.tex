@@ -121,15 +121,43 @@ Das Ausrichten an die Rasterlinien kann auch nachträglich bewirkt werden. Dies 
 
 \paragraph{Ausrichten}
 
-Die ausgewählten Objekte können in Relation zueinander ausgerichtet werden. Dafür muss nach der Auswahl von mindestens 2 Objekten die Form der Ausrichtung angegeben werden. Die Objekte können entweder vertikal (linke Kanten, Mittelpunkte oder rechte Kanten) oder horizontal (obere Kanten, Mittelpunkte oder untere Kanten) ausgerichtet werden. Nach dem Ausführen dieser Funktion werden die Positionen der ausgewählten Objekte so angepasst, dass die gewünschte Ausrichtung erfüllt ist \cite{11Keynote, 08OmniGraffle}. Ein Beispiel ist in Abbildung X zu finden.
+Die ausgewählten Objekte können in Relation zueinander ausgerichtet werden. Dafür muss nach der Auswahl von mindestens 2 Objekten die Form der Ausrichtung angegeben werden. Die Objekte können entweder vertikal (linke Kanten, Mittelpunkte oder rechte Kanten) oder horizontal (obere Kanten, Mittelpunkte oder untere Kanten) ausgerichtet werden. Nach dem Ausführen dieser Funktion werden die Positionen der ausgewählten Objekte so angepasst, dass die gewünschte Ausrichtung erfüllt ist \cite{11Keynote, 08OmniGraffle}. Ein Beispiel ist in Abbildung \ref{fig:keynote-horizontal-alignment} zu finden.
 
-% TODO: Abbildung: Anwendung der horizontalen Ausrichtung in Keynote
+\begin{figure}[hbt]
+    \newcommand{\subfigurewidth}{0.5\textwidth}
+    \begin{subfigure}{\subfigurewidth}
+        \centering
+        \includegraphics{resources/keynote-horizontal-alignment-a}
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}{\subfigurewidth}
+        \centering
+        \includegraphics{resources/keynote-horizontal-alignment-b}
+        \caption{}
+    \end{subfigure}
+    \caption{Anwendung der horizontalen zentrierten Ausrichtung in Keynote}
+    \label{fig:keynote-horizontal-alignment}
+\end{figure}
 
 \paragraph{Verteilen}
 
 Wenn mindestens 3 Objekte ausgewählt werden, kann die Funktion zum gleichmäßigen Verteilen der Objekte angewendet werden. Dabei wird die Position der äußeren Objekte fixiert und die Position von umschlossenen Objekten wird so angepasst, dass die vertikalen bzw. horizontalen Abstände zwischen den Objekten gleich sind \cite{11Keynote}.
 
-% TODO: Abbildung: Anwendung der horizontalen Verteilung in Keynote
+\begin{figure}[hbt]
+    \newcommand{\subfigurewidth}{0.5\textwidth}
+    \begin{subfigure}{\subfigurewidth}
+        \centering
+        \includegraphics{resources/keynote-horizontal-distribution-a}
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}{\subfigurewidth}
+        \centering
+        \includegraphics{resources/keynote-horizontal-distribution-b}
+        \caption{}
+    \end{subfigure}
+    \caption{Anwendung der horizontalen Verteilung in Keynote}
+    \label{fig:keynote-horizontal-distribution}
+\end{figure}
 
 \subsubsection{Smart Guides}
 \label{subsubsec:smart-guides}
@@ -224,9 +252,7 @@ Sehr trivial, aber dennoch nützlich ist die Funktion der Einstellung von gleich
 
 \subsubsection{Verknüpfungspunkte für Verbindungen}
 
-% TODO: Verweis auf die Grundlagen (graph-basierte Diagramme)
-
-Die bisher diskutierten Hilfefunktionen haben sich ausschließlich mit der Positionierung und Bestimmung der Größe der Objekte auseinandergesetzt. Für die graph-basierten Diagramme sind neben der Knoten auch Kanten von Interesse, die in der Regel durch Verbindungslinien dargestellt werden. Wenn 2 Objekte mit einer Verbindungslinie verbunden werden, bleiben sie auch dann verbunden, wenn sich die Position oder Größe der Objekte ändert \cite{11Keynote}. In vielen Programmen (unter anderem in Keynote und OmniGraffle) werden die Verknüpfungspunkte der Verbindungslinie standardmäßig an die Stellen positioniert, an den eine gedachte Strecke, die die Mittelpunkte beider Objekte verbindet, die Kanten der Objekte schneidet (siehe Abbildung \ref{fig:omnigraffle-connection-points}) \cite{08OmniGraffle}.
+Die bisher diskutierten Hilfefunktionen haben sich ausschließlich mit der Positionierung und Bestimmung der Größe der Objekte auseinandergesetzt. Für die graph-basierten Diagramme (siehe Abschnitt \ref{subsec:graph-based-diagrams}) sind neben der Knoten auch Kanten von Interesse, die in der Regel durch Verbindungslinien dargestellt werden. Wenn 2 Objekte mit einer Verbindungslinie verbunden werden, bleiben sie auch dann verbunden, wenn sich die Position oder Größe der Objekte ändert \cite{11Keynote}. In vielen Programmen (unter anderem in Keynote und OmniGraffle) werden die Verknüpfungspunkte der Verbindungslinie standardmäßig an die Stellen positioniert, an den eine gedachte Strecke, die die Mittelpunkte beider Objekte verbindet, die Kanten der Objekte schneidet (siehe Abbildung \ref{fig:omnigraffle-connection-points}) \cite{08OmniGraffle}.
 
 \begin{figure}[hbt]
     \newcommand{\subfigurewidth}{0.5\textwidth}
@@ -289,7 +315,7 @@ Sobald mindestens ein Magnet dem Objekt hinzugefügt wurde, wird nicht mehr der 
 \section{Automatisches Layout}
 \label{sec:automatic-layout}
 
-Den graph-basierten Softwarediagrammen unterliegt die abstrakte Struktur des Graphen (siehe Abschnitt \ref{graph-based-diagrams}). Mit der graphischen Darstellung von Graphen beschäftigt sich die mathematische Disziplin des Graphzeichnens. Ihre Aufgabe besteht darin, Layout-Algorithmen zu entwerfen, die optimale Layouts in Hinsicht auf ästhetische Regeln erzeugen, d.h. die Layout-Eigenschaften wie Position der Knoten und Routen der Kanten berechnen \cite{Eichelberger05Aesthetics, Arvo02Techniques, Siebenhaller03Automatisches, Maier12A-Pattern-based}. Unter dem automatischen Layout für graph-basierte Diagramme sind daher vollautomatische Algorithmen zu verstehen, die für ein gegebenes Diagramm die optimalen Layout-Eigenschaften berechnen und das Diagramm entsprechend anpassen \cite{Fuhrmann11On-the-Pragmatics}.
+Den graph-basierten Softwarediagrammen unterliegt die abstrakte Struktur des Graphen (siehe Abschnitt \ref{subsec:graph-based-diagrams}). Mit der graphischen Darstellung von Graphen beschäftigt sich die mathematische Disziplin des Graphzeichnens. Ihre Aufgabe besteht darin, Layout-Algorithmen zu entwerfen, die optimale Layouts in Hinsicht auf ästhetische Regeln erzeugen, d.h. die Layout-Eigenschaften wie Position der Knoten und Routen der Kanten berechnen \cite{Eichelberger05Aesthetics, Arvo02Techniques, Siebenhaller03Automatisches, Maier12A-Pattern-based}. Unter dem automatischen Layout für graph-basierte Diagramme sind daher vollautomatische Algorithmen zu verstehen, die für ein gegebenes Diagramm die optimalen Layout-Eigenschaften berechnen und das Diagramm entsprechend anpassen \cite{Fuhrmann11On-the-Pragmatics}.
 
 Um während der Erstellung des Diagramms immer ein optimales Layout zu erhalten, muss der Layout-Algorithmus kontinuierlich nach jeder Änderung entweder automatisch oder manuell aufgerufen werden. Wenn eine Interaktion mit dem resultierenden Diagramm unterstützt wird, hat sie keinerlei Einwirkung auf den Algorithmus und wird bei dem nächsten Aufruf nicht berücksichtigt. In der Regel kann der Nutzer nur bestimmte Parameter des Algorithmus\footnote{z.B. minimale Länge der Kanten im zirkulären Layout-Algorithmus \lstinline{circo} aus der Bibliothek Graphviz \cite{NorthGansner14Dot-Manual}.} anpassen und hat somit nur einen geringen Einfluss auf das Ergebnis des Layout-Prozesses.
 
