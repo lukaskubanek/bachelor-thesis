@@ -22,14 +22,10 @@
 	<key>ImageLinkBack</key>
 	<array>
 		<dict/>
-		<dict/>
-		<dict/>
 	</array>
 	<key>ImageList</key>
 	<array>
 		<string>image5.jpeg</string>
-		<string>image2.tiff</string>
-		<string>image1.tiff</string>
 	</array>
 	<key>LinksVisible</key>
 	<string>NO</string>
@@ -38,7 +34,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2014-08-03 14:07:23 +0000</string>
+	<string>2014-08-19 10:59:28 +0000</string>
 	<key>Modifier</key>
 	<string>Lukas Kubanek</string>
 	<key>NotesVisible</key>
@@ -945,130 +941,6 @@
 			<array>
 				<dict>
 					<key>Bounds</key>
-					<string>{{263, 386.5}, {21, 25}}</string>
-					<key>Class</key>
-					<string>ShapedGraphic</string>
-					<key>FitText</key>
-					<string>YES</string>
-					<key>Flow</key>
-					<string>Resize</string>
-					<key>FontInfo</key>
-					<dict>
-						<key>Color</key>
-						<dict>
-							<key>b</key>
-							<string>0.999428</string>
-							<key>g</key>
-							<string>0.883484</string>
-							<key>r</key>
-							<string>0.824371</string>
-						</dict>
-						<key>Font</key>
-						<string>LucidaGrande</string>
-						<key>Size</key>
-						<real>17</real>
-					</dict>
-					<key>ID</key>
-					<integer>12</integer>
-					<key>Shape</key>
-					<string>Rectangle</string>
-					<key>Style</key>
-					<dict>
-						<key>fill</key>
-						<dict>
-							<key>Draws</key>
-							<string>NO</string>
-						</dict>
-						<key>shadow</key>
-						<dict>
-							<key>Draws</key>
-							<string>NO</string>
-						</dict>
-						<key>stroke</key>
-						<dict>
-							<key>Draws</key>
-							<string>NO</string>
-						</dict>
-					</dict>
-					<key>Text</key>
-					<dict>
-						<key>Pad</key>
-						<integer>2</integer>
-						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
-{\colortbl;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
-
-\f0\fs34 \cf0 \uc0\u8594 }</string>
-						<key>VerticalPad</key>
-						<integer>2</integer>
-					</dict>
-					<key>Wrap</key>
-					<string>NO</string>
-				</dict>
-				<dict>
-					<key>Bounds</key>
-					<string>{{293, 353}, {199, 91}}</string>
-					<key>Class</key>
-					<string>ShapedGraphic</string>
-					<key>ID</key>
-					<integer>10</integer>
-					<key>ImageID</key>
-					<integer>2</integer>
-					<key>Shape</key>
-					<string>Rectangle</string>
-					<key>Style</key>
-					<dict>
-						<key>fill</key>
-						<dict>
-							<key>Draws</key>
-							<string>NO</string>
-						</dict>
-						<key>shadow</key>
-						<dict>
-							<key>Draws</key>
-							<string>NO</string>
-						</dict>
-						<key>stroke</key>
-						<dict>
-							<key>Draws</key>
-							<string>NO</string>
-						</dict>
-					</dict>
-				</dict>
-				<dict>
-					<key>Bounds</key>
-					<string>{{72, 354}, {175, 90}}</string>
-					<key>Class</key>
-					<string>ShapedGraphic</string>
-					<key>ID</key>
-					<integer>9</integer>
-					<key>ImageID</key>
-					<integer>1</integer>
-					<key>Shape</key>
-					<string>Rectangle</string>
-					<key>Style</key>
-					<dict>
-						<key>fill</key>
-						<dict>
-							<key>Draws</key>
-							<string>NO</string>
-						</dict>
-						<key>shadow</key>
-						<dict>
-							<key>Draws</key>
-							<string>NO</string>
-						</dict>
-						<key>stroke</key>
-						<dict>
-							<key>Draws</key>
-							<string>NO</string>
-						</dict>
-					</dict>
-				</dict>
-				<dict>
-					<key>Bounds</key>
 					<string>{{72, 217}, {75.186042785644531, 61}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
@@ -1092,7 +964,7 @@
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\fs18 \cf0 A}</string>
+\f0\fs18 \cf0 1}</string>
 					</dict>
 				</dict>
 				<dict>
@@ -1120,7 +992,7 @@
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\fs18 \cf0 X}</string>
+\f0\fs18 \cf0 2}</string>
 					</dict>
 				</dict>
 				<dict>
@@ -1148,7 +1020,7 @@
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\fs18 \cf0 A}</string>
+\f0\fs18 \cf0 1}</string>
 					</dict>
 				</dict>
 				<dict>
@@ -1176,7 +1048,7 @@
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\fs18 \cf0 X}</string>
+\f0\fs18 \cf0 2}</string>
 					</dict>
 				</dict>
 			</array>
@@ -1976,8 +1848,8 @@
 					<integer>41</integer>
 					<key>Points</key>
 					<array>
-						<string>{230.64728184888082, 421.94500732421875}</string>
-						<string>{230.64644542707126, 456.94500732421864}</string>
+						<string>{230.6478526881229, 421.94500732421875}</string>
+						<string>{230.64767132773869, 456.94500732421875}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -2019,8 +1891,8 @@
 					<integer>37</integer>
 					<key>Points</key>
 					<array>
-						<string>{295.18759458105859, 325.89035128997762}</string>
-						<string>{313.10771285427688, 360.99966760053928}</string>
+						<string>{295.18777216500143, 325.89035019754061}</string>
+						<string>{313.1080952665547, 360.99966532671141}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -2062,8 +1934,8 @@
 					<integer>34</integer>
 					<key>Points</key>
 					<array>
-						<string>{264.10842688042862, 325.89035128997762}</string>
-						<string>{246.18830860721084, 360.99966760053928}</string>
+						<string>{264.10824929648544, 325.89035019754061}</string>
+						<string>{246.18792619493226, 360.99966532671141}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -2165,7 +2037,7 @@
 	<key>WindowInfo</key>
 	<dict>
 		<key>CurrentSheet</key>
-		<integer>7</integer>
+		<integer>6</integer>
 		<key>ExpandedCanvases</key>
 		<array/>
 		<key>Frame</key>
@@ -2185,7 +2057,7 @@
 		<key>SmallIcons</key>
 		<true/>
 		<key>VisibleRegion</key>
-		<string>{{-96, 3}, {752, 623}}</string>
+		<string>{{-96, 0}, {752, 623}}</string>
 		<key>Zoom</key>
 		<real>1</real>
 		<key>ZoomValues</key>
