@@ -50,7 +50,6 @@ Visual Paradigm ist ein plattformunabhängiges CASE-Tool von der gleichnamigen F
 
 % TODO: Bezug auf Anwendungen und Abschnitt 3.1.1 überprüfen
 % TODO: Unterstützte Anwendungen aus Abschnitt 3.1.1 erwähnen
-% TODO: One-Way Constraints für Guides in Visio/ConceptDraw [Wybrow, Maier]
 \subsection{Hilfefunktionen für manuelles Layout}
 \label{subsec:help-functions-for-manual-layout}
 
@@ -199,6 +198,8 @@ Die Gemeinsamkeit besteht darin, dass das Ausrichten an die Hilfslinien identisc
     \label{fig:omnigraffle-manual-guides}
 \end{figure}
 
+Wie bereits erwähnt, ist das Ausrichten an die manuellen Hilfslinien nicht persistent und eine Verschiebung der Hilfslinie verursacht keine Verschiebung der ausgerichteten Objekte. Dieses Verhalten wird allerdings in den Tool Microsoft Visio\footnote{\url{http://visio.microsoft.com}} und ConceptDraw\footnote{\url{http://conceptdraw.com}} unterstützt und wird mit Hilfe von Einweg-Constraints realisiert \cite[S.20]{Maier12A-Pattern-based}.
+
 \subsubsection{Gleiche Größe der Objekte}
 
 Sehr trivial, aber dennoch nützlich ist die Funktion der Einstellung von gleichen Größen für ausgewählte Objekte. Nach der Auswahl von 2 oder mehreren Objekten im Diagramm hat der Nutzer die Möglichkeit, die Breite, die Höhe oder beide Dimensionen gleichzeitig auf die Werte des zuerst ausgewählten Objektes zu setzen (siehe Abbildung \ref{fig:omnigraffle-make-same-size}). Diese Funktion wird in OmniGraffle unterstützt \cite{Olsen10OmniGraffle}.
@@ -288,8 +289,7 @@ Sobald mindestens ein Magnet dem Objekt hinzugefügt wurde, wird nicht mehr der 
 \section{Automatisches Layout}
 \label{sec:automatic-layout}
 
-% TODO: Verweis auf "graph-basierte Diagramme" in der Begriffsklärung
-Den graph-basierten Softwarediagrammen unterliegt die abstrakte Struktur des Graphen (siehe Abschnitt X). Mit der graphischen Darstellung von Graphen beschäftigt sich die mathematische Disziplin des Graphzeichnens. Ihre Aufgabe besteht darin, Layout-Algorithmen zu entwerfen, die optimale Layouts in Hinsicht auf ästhetische Regeln erzeugen, d.h. die Layout-Eigenschaften wie Position der Knoten und Routen der Kanten berechnen \cite{Eichelberger05Aesthetics, Arvo02Techniques, Siebenhaller03Automatisches, Maier12A-Pattern-based}. Unter dem automatischen Layout für graph-basierte Diagramme sind daher vollautomatische Algorithmen zu verstehen, die für ein gegebenes Diagramm die optimalen Layout-Eigenschaften berechnen und das Diagramm entsprechend anpassen \cite{Fuhrmann11On-the-Pragmatics}.
+Den graph-basierten Softwarediagrammen unterliegt die abstrakte Struktur des Graphen (siehe Abschnitt \ref{graph-based-diagrams}). Mit der graphischen Darstellung von Graphen beschäftigt sich die mathematische Disziplin des Graphzeichnens. Ihre Aufgabe besteht darin, Layout-Algorithmen zu entwerfen, die optimale Layouts in Hinsicht auf ästhetische Regeln erzeugen, d.h. die Layout-Eigenschaften wie Position der Knoten und Routen der Kanten berechnen \cite{Eichelberger05Aesthetics, Arvo02Techniques, Siebenhaller03Automatisches, Maier12A-Pattern-based}. Unter dem automatischen Layout für graph-basierte Diagramme sind daher vollautomatische Algorithmen zu verstehen, die für ein gegebenes Diagramm die optimalen Layout-Eigenschaften berechnen und das Diagramm entsprechend anpassen \cite{Fuhrmann11On-the-Pragmatics}.
 
 Um während der Erstellung des Diagramms immer ein optimales Layout zu erhalten, muss der Layout-Algorithmus kontinuierlich nach jeder Änderung entweder automatisch oder manuell aufgerufen werden. Wenn eine Interaktion mit dem resultierenden Diagramm unterstützt wird, hat sie keinerlei Einwirkung auf den Algorithmus und wird bei dem nächsten Aufruf nicht berücksichtigt. In der Regel kann der Nutzer nur bestimmte Parameter des Algorithmus\footnote{z.B. minimale Länge der Kanten im zirkulären Layout-Algorithmus \lstinline{circo} aus der Bibliothek Graphviz \cite{NorthGansner14Dot-Manual}.} anpassen und hat somit nur einen geringen Einfluss auf das Ergebnis des Layout-Prozesses.
 
