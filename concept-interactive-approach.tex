@@ -1,30 +1,43 @@
 %%%
-% Concept for an Interactive Approach
+% Interactive Diagram-Specific Approach for Layout of Graph-based Software Diagrams
 %%%
 
-\chapter{Konzept für das interaktive Layout von graph-basierten Softwarediagrammen}
+\chapter{Ansatz für das interaktive und diagrammspezifische Layout von graph-basierten Softwarediagrammen}
+\label{chapter:interactive-approach}
 
-% Vereinfachung der Diagramme (Agile Modeling) -> Möglichkeiten der Umsetzung von Algorithmen, die nicht so flexible sein müssen (REQ_COMPL_UML Eichelberger)
+Dieses Kapitel 
+
+\section{Überblick}
+
+% Vereinfachung der Diagramme (Agile Modeling) -> Möglichkeiten der Umsetzung von Algorithmen, die nicht so flexibel sein müssen (REQ_COMPL_UML Eichelberger)
 % Einschränkung der Möglichkeiten, Berücksichtigung der Syntax und Semantik der Diagramme
-% Freihand-Edietieren -> D&D + Layout-Übergänge
+% Freihand-Bearbeitung -> D&D + Layout-Übergänge
 % interaktiv
 % Mauszeiger, GUI
 % die Eingabe ist mit der Ausgabe gekoppelt \footnote{Aus der Sicht der HCI ist die Nutzung der Maus als Eingabegerät von der Ausgabe am Monitor entkoppelt.}
-% immediate feedback vs. delayed feedback [Wybrow S.69]
+% unmittelbares vs. verzögertes feedback [Wybrow S.69]
 % kombiniert Vorteile der freien Positionierung der Elemente im Diagramm und der automatischen Layout-Algorithmen miteinander
 
 % Drag&Drop-Technik (neue Elemente aus einer Palette bzw. Änderung des Layout im Diagramm)
 % Platzhalter-Objekte, Animation
 % Mentales Modell [Maier, Wybrow?]
 
+\section{Definitionen}
+
+% Layout
+% Layout-Übergang
+% Layout-Pattern
+% Layout-Ereignis
+
 \section{Funktionsweise}
 
 % Grobe Beschreibung der Funktionalität mit Hinweisen auf kommende Kapitel
 
 % Layout-Engine
-% 
+% =============
 % Eingabe für den Algorithmus: Layout-Ereignis, Inhalt des Diagramms, instanziierte Patterns
 % berechnete Layouts = Positionen für Knoten, Routen für Kanten (nicht implementiert), Animationen/Übergangsparameter für die Transitionen (nicht implementiert)
+% initialer Zustand
 
 % Erreichbare Layouts werden berechnet und mit Hilfe der Layout-Ereignisse wird geprüft, ob ein Layout-Übergang stattfinden soll (z.B. nur die benachbarten Bereiche im horizontalen Layout-Algorithmus)
 % nach einem Layout-Übergang wird die Berechnung wiederholt
