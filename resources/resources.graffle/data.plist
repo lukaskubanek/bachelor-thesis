@@ -36,7 +36,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2014-08-19 20:36:50 +0000</string>
+	<string>2014-08-20 17:39:28 +0000</string>
 	<key>Modifier</key>
 	<string>Lukas Kubanek</string>
 	<key>NotesVisible</key>
@@ -2119,8 +2119,8 @@
 					<integer>37</integer>
 					<key>Points</key>
 					<array>
-						<string>{295.18782091538048, 325.89034993451639}</string>
-						<string>{313.10820021175556, 360.99966471392111}</string>
+						<string>{295.18782099854508, 325.89034993451639}</string>
+						<string>{313.10820039082483, 360.99966471392111}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -2162,8 +2162,8 @@
 					<integer>34</integer>
 					<key>Points</key>
 					<array>
-						<string>{264.10820054610633, 325.89034993451639}</string>
-						<string>{246.18782124973123, 360.99966471392111}</string>
+						<string>{264.10820046294174, 325.89034993451639}</string>
+						<string>{246.18782107066198, 360.99966471392111}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -2265,11 +2265,11 @@
 	<key>WindowInfo</key>
 	<dict>
 		<key>CurrentSheet</key>
-		<integer>8</integer>
+		<integer>6</integer>
 		<key>ExpandedCanvases</key>
 		<array/>
 		<key>Frame</key>
-		<string>{{19, 0}, {1061, 778}}</string>
+		<string>{{19, 4}, {834, 774}}</string>
 		<key>ListView</key>
 		<true/>
 		<key>OutlineWidth</key>
@@ -2285,7 +2285,7 @@
 		<key>SmallIcons</key>
 		<true/>
 		<key>VisibleRegion</key>
-		<string>{{-80, 0}, {719, 623}}</string>
+		<string>{{0, 0}, {492, 619}}</string>
 		<key>Zoom</key>
 		<real>1</real>
 		<key>ZoomValues</key>
