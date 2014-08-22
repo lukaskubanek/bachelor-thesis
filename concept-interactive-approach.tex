@@ -5,21 +5,40 @@
 \chapter{Ansatz für das interaktive und diagrammspezifische Layout von graph-basierten Softwarediagrammen}
 \label{chapter:interactive-approach}
 
-In diesem Kapitel wird ein Ansatz für das interaktive Layout von Diagrammen vorgestellt.
+In diesem Kapitel wird ein Ansatz für das interaktive und diagrammspezifische Layout von Diagrammen präsentiert. Zunächst werden im Abschnitt \ref{sec:requirements-analysis} die Kriterien aufgestellt. Die grundlegende Funktionsweise wird im Abschnitt \ref{sec:interactive-approach-functionality} erklärt. Eine detaillierte Beschreibung der Layout-Patterns und deren Rolle in dem präsentierten Ansatz folgt im Abschnitt \ref{sec:layout-patterns}.
+% TODO: Aufbau des Kapitels ergänzen!
 
-%Ein Überblick über
+\section{Kriterien}
+\label{sec:requirements-analysis}
 
-\section{Überblick}
+Im Folgenden werden Kriterien für den präsentierten Ansatz aufgestellt. Die Wahl der Kriterien stützt sich in erster Linie auf die Prinzipien für die agile Modellierung aus \cite{Ambler02Agile}. Weiterhin orientieren sich die Kriterien an den im Kapitel \ref{chapter:existing-approaches} vorgestellten Ansätzen, deren positiven Eigenschaften in die Auswahl einfließen.   Schließlich haben auch die ästhetischen Prinzipien (siehe Abschnitt \ref{sec:aesthetics-criteria}) sowie die Rahmenbedingungen dieser Arbeit (siehe Abschnitt \ref{sec:conditions}) einen Einfluss auf die gewählten Kriterien.
 
-%Das grundlegende Kriterium beim Entwurf war die Unterstützung der Interaktivität
+\begin{enumerate}[label={K.\arabic*}]
+    \item \label{req:gui} \textbf{GUI} Wie bereits im Abschnitt \ref{sec:conditions} erwähnt, beschäftigt sich diese Arbeit ausschließlich mit Mechanismen für das Layout von Diagrammen, die in Tools für klassische grafische Benutzeroberflächen eingesetzt werden. Daher soll der Ansatz für klassische grafische Benutzeroberflächen ausgelegt sein und von üblichen GUI-basierten Bedientechniken wie z.B. \enquote{Drag and Drop} Gebrauch machen.
+    \item \label{req:interactivity} \textbf{Interaktivität} Die Manipulation mit dem Diagramm soll interaktiv erfolgen. Der Nutzer soll in der Lage sein, mit dem Diagramm unmittelbar interagieren zu können und die Layout-Anpassungen sollen eine direkte Auswirkung auf das manipulierte Diagramm haben. Demzufolge soll die Eingabe mit der Ausgabe fest gekoppelt sein.
+    \item \label{req:editing-support} \textbf{Förderung des Prozesses der Diagramm-Erstellung} Der Nutzer soll den Inhalt des Diagramms bearbeiten und inkrementell modifizieren können \cite{GladischSchumann14Semi-Automatic}. Dabei soll das Layout nach jeder Änderung des Inhalts angepasst werden. Weiterhin soll es möglich sein, das Layout des Diagramms bis zu einem bestimmten Grad nach den Präferenzen des Nutzers beeinflussen zu können.
+    \item \textbf{Erhaltung des mentalen Modells} Die Layout-Änderungen im Diagramm sollen möglichst intuitiv erfolgen, insbesondere soll das mentale Modell erhalten werden (siehe Abschnitt \ref{subsec:mental-map}).
+    
+    \item \label{req:focus-on-the-content} \textbf{Förderung der Konzentration auf den Inhalt} Der Inhalt eines Diagramms soll eine wichtigere Rolle als seine Repräsentation haben \cite[S.38ff]{Ambler02Agile}. Diese Tatsache soll in dem Ansatz berücksichtigt werden, indem der Aufwand für das Erzeugen des Layouts verringert wird. Außerdem sollen die Operationen zur Anpassung der visuellen Eigenschaften möglichst eingeschränkt sein.
+    \item \label{req:aesthetics-criteria} \textbf{Berücksichtigung der ästhetischen Prinzipien} Die Layout-Berechnung soll unter Berücksichtigung der im Abschnitt \ref{sec:aesthetics-criteria} beschriebenen ästhetischen Prinzipien für graph-basierte Softwarediagramme erfolgen.
+    \item \textbf{Berücksichtigung der Syntax und Semantik} Die Syntax- und Semantikregeln der einzelnen Diagrammtypen sollen berücksichtigt werden und es sollte nicht möglich sein, diese Regeln zu verletzen.    
+%    \item \label{req:user-friendly} \textbf{Benutzerfreundlichkeit} Der Ansatz soll möglichst benutzerfreundlich sein. Insbesondere ist wichtig, dass die Einschränkungen bzgl. des Layouts nicht zur Frustration des Nutzers führen.
+\end{enumerate}
+    
+\section{Funktionsweise}
+\label{sec:interactive-approach-functionality}
+
+
+
+
+
 
 %gleichzeitig aber auch die Einschränkung der Operationen, die der Nutzer ausführen kann um sich ausschließlich auf den Inhalt der erstellten Diagramms zu konzentrieren (Ambler)
 
-%direkte Interaktion
-
 %Abnehmen der Layout-Arbeit durch Einschränkung der Flexibilität
 
-%optimales Verhältnis zwischen flexiblen Modifizierungen der Layout-Eigenschaften und 
+% Herausforderung bei der Kombination von mehreren Kriterien (z.B. interaktive Bedienung aber gleichzeitig eine Einschränkung der Möglichkeiten)
+% optimales Verhältnis zwischen flexiblen Modifizierungen der Layout-Eigenschaften und ...
 
 %ausgelegt für Änderungen im Diagramm
 
@@ -62,14 +81,14 @@ In diesem Kapitel wird ein Ansatz für das interaktive Layout von Diagrammen vor
 %\end{itemize}
 
 
-\section{Definitionen}
+%\section{Definitionen}
 
 % Layout
 % Layout-Übergang
 % Layout-Pattern
 % Layout-Ereignis
 
-\section{Funktionsweise}
+%\section{Funktionsweise}
 
 % Grobe Beschreibung der Funktionalität mit Hinweisen auf kommende Kapitel
 
@@ -89,9 +108,10 @@ In diesem Kapitel wird ein Ansatz für das interaktive Layout von Diagrammen vor
 % Stabilität -> Ausführen eines Layout-Übergangs nach einer deutlichen Aktion des Nutzers
 % Erreichbarkeit des Ausgangslayouts
 
-% \footnote{In Rahmen der Konzeption und Entwicklung wurde zunächst ein Algorithmus entworfen, der für die Manipulation eines Knotens alle möglichen Layouts und die entsprechenden Diagramm-Bereiche für das gesamte Diagramm explizit berechnet hat. Durch eine Bewegung des Mauszeigers in einen anderen Bereich wurde jeweils ein Layout-Übergang ausgelöst. Die Berechnung wurde jedoch nicht nach jedem Layout-Übergang wiederholt und die Abbildung war oft nach dem ersten Layout-Übergang ungültig. Später wurde festgelegt, dass dieser Algorithmus nicht hinreichend ist.}
+% In Rahmen der Konzeption und Entwicklung wurde zunächst ein Algorithmus entworfen, der für die Manipulation eines Knotens alle möglichen Layouts und die entsprechenden Diagramm-Bereiche für das gesamte Diagramm explizit berechnet hat. Durch eine Bewegung des Mauszeigers in einen anderen Bereich wurde jeweils ein Layout-Übergang ausgelöst. Die Berechnung wurde jedoch nicht nach jedem Layout-Übergang wiederholt und die Abbildung war oft nach dem ersten Layout-Übergang ungültig. Später wurde festgelegt, dass dieser Algorithmus nicht hinreichend ist.
 
 \section{Layout-Patterns}
+\label{sec:layout-patterns}
 
 % Abgrenzung des Begriffs zu dem von [Maier]
 % implizite vs. explizite Layout-Patterns (siehe Mappe)
