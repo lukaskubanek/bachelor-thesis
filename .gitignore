@@ -33,6 +33,9 @@
 ## tudsrc Latex Templates
 !tudsrc/**/*
 
+## Resources
+!resources/**/*.pdf
+
 ## Auxiliary and intermediate files from other packages:
 
 # algorithms
