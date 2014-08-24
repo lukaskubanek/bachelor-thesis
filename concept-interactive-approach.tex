@@ -16,11 +16,9 @@ Im Folgenden werden Kriterien für den präsentierten Ansatz aufgestellt. Die Wa
 \begin{enumerate}[label={K.\arabic*}]
     \item \label{req:gui} \textbf{GUI} Wie bereits im Abschnitt \ref{sec:conditions} erwähnt, beschäftigt sich diese Arbeit ausschließlich mit Mechanismen für das Layout von Diagrammen, die in Tools für klassische grafische Benutzeroberflächen eingesetzt werden. Daher soll der Ansatz für klassische grafische Benutzeroberflächen ausgelegt sein und von üblichen GUI-basierten Bedientechniken wie z.B. \enquote{Drag and Drop} Gebrauch machen.
     \item \label{req:interactivity} \textbf{Interaktivität} Die Manipulation mit dem Diagramm soll interaktiv erfolgen. Der Nutzer soll in der Lage sein, mit dem Diagramm unmittelbar interagieren zu können und die Layout-Anpassungen sollen eine direkte Auswirkung auf das manipulierte Diagramm haben. Demzufolge soll die Eingabe mit der Ausgabe fest gekoppelt sein\footnote{Dies bezieht sich auf das GUI-Tool, das den Ansatz implementiert. Aus der Sicht der Mensch-Computer-Interaktion ist die Nutzung der Maus als Eingabegerät von der Ausgabe am Monitor stets entkoppelt.}.
+    \item \label{req:immediate-feedback} \textbf{Unmittelbares Feedback} \cite[S.69]{Wybrow08Using}
     \item \label{req:editing-support} \textbf{Förderung des Prozesses der Diagramm-Erstellung} Der Nutzer soll den Inhalt des Diagramms bearbeiten und inkrementell modifizieren können \cite{GladischSchumann14Semi-Automatic}. Dabei soll das Layout nach jeder Änderung des Inhalts angepasst werden. Weiterhin soll es möglich sein, das Layout des Diagramms bis zu einem bestimmten Grad nach den Präferenzen des Nutzers beeinflussen zu können.
     \item \label{req:mental-map} \textbf{Erhaltung des mentalen Modells} Die Layout-Änderungen im Diagramm sollen möglichst intuitiv erfolgen, insbesondere soll das mentale Modell erhalten werden (siehe Abschnitt \ref{subsec:mental-map}).
-    
-    \item \label{req:immediate-feedback} \textbf{Unmittelbares Feedback} \cite[S.69]{Wybrow08Using}
-    
     \item \label{req:focus-on-the-content} \textbf{Förderung der Konzentration auf den Inhalt} Der Inhalt eines Diagramms soll eine wichtigere Rolle als seine Repräsentation haben \cite[S.38ff]{Ambler02Agile}. Diese Tatsache soll in dem Ansatz berücksichtigt werden, indem der Aufwand für das Erzeugen des Layouts verringert wird. Außerdem sollen die Aktionen zur Anpassung der visuellen Eigenschaften möglichst eingeschränkt sein.
     \item \label{req:aesthetics-criteria} \textbf{Berücksichtigung der ästhetischen Prinzipien} Die Layout-Berechnung soll unter Berücksichtigung der im Abschnitt \ref{sec:aesthetics-criteria} beschriebenen ästhetischen Prinzipien für graph-basierte Softwarediagramme erfolgen.
     \item \textbf{Berücksichtigung der Syntax und Semantik} Die Syntax- und Semantikregeln der einzelnen Diagrammtypen sollen berücksichtigt werden und es sollte nicht möglich sein, diese Regeln zu verletzen. 
@@ -32,11 +30,22 @@ Im Folgenden werden Kriterien für den präsentierten Ansatz aufgestellt. Die Wa
 \section{Funktionsweise}
 \label{sec:interactive-approach-functionality}
 
+\subsection{Übersicht}
+
+Der präsentierte Ansatz versucht ein optimales Verhältnis zwischen flexiblen Modifizierungen der Layout-Eigenschaften und einer automatisierten Layout-Berechnung zu finden und kombiniert dabei die Vorteile beider Herangehensweisen. Somit lässt sich der Ansatz zu den interaktiven halbautomatischen Layout-Ansätzen einordnen (siehe Abschnitt \ref{sec:interactive-semi-automatic-layout}).
+
+Die Berechnung des Layouts erfolgt unter Berücksichtigung des Diagrammtyps. Weiterhin wird die Wahl des passenden Layouts durch die Interaktion des Nutzers mit dem Diagramm beeinflusst. An dieser Stelle wird eine neuer Bedienungsmechanismus eingesetzt, der die Grundlage des Ansatzes bildet und im Abschnitt X erläutert wird.
+
+In folgenden Abschnitten werden einzelne Bestandteile des Ansatzes vorgestellt und in Bezug zu den im Abschnitt \ref{sec:requirements-analysis} aufgestellten Kriterien gesetzt.
+
 \subsection{Bearbeitungsaktionen}
+\label{subsec:edit-actions}
 
 Alle interaktiven Ansätze für das Layout von Diagrammen aus dem Kapitel \ref{chapter:existing-approaches} bis auf das \enquote{Smart Layout} in MindNode (siehe Abschnitt \ref{subsubsec:smart-layout-in-mindnode}) unterstützen die \textbf{freie Positionierung} der Objekte im Diagramm. Diese Art der Bedienung wird im manuellen Layout zusätzlich um temporäre Hilfefunktionen (siehe Abschnitt \ref{sec:manual-layout}) und in Struktur-basierten benutzergesteuerten Ansätzen um Möglichkeit der Erzeugung von Strukturregeln (siehe Abschnitt \ref{subsec:structure-based-user-controlled-approaches}) erweitert. Durch diese Erweiterungen wird die freie Positionierung eingeschränkt, dass in der Regel zu einem besseren Layout des Diagramms führt. Dahingegen ist die freie Positionierung in \enquote{Smart Layout} in MindNode und dem in dieser Arbeit präsentierten Ansatz \textbf{nicht gestattet}. Somit bewirkt die Verschiebung eines Objekts im Diagramm keine direkte Anpassung seiner Position, sondern wird als eine Äußerung der gewünschten Position interpretiert.
 
 Die Kriterien \ref{req:interactivity} und \ref{req:editing-support} erfordern eine interaktive Bearbeitung des Diagramms. Dies wird in dem Ansatz durch die Unterstützung von \textbf{Bearbeitungsaktionen} gewährleistet, die durch den Nutzer ausgeführt werden können. Diese lassen sich in zwei Gruppen unterteilen. Zu einem sind das Aktionen, die den Inhalt des Diagramms modifizieren (z.B. Hinzufügen oder Löschen eines Objekts) und zu anderem sind das Aktionen, die das Layout des Diagramms modifizieren, ohne den Inhalt zu verändern (z.B. Verschiebung eines Objekts).
+
+Nach dem Ausführen einer Bearbeitungsaktion (siehe Abschnitt \ref{subsec:edit-actions}) bzw. ihres Teils durch den Nutzer wird ein Layout-Ereignis erzeugt, das neben der Information über die manipulierten Objekte auch Parameter der Interaktion wie z.B. die Position des Mauszeigers besitzt. Jedes Layout-Ereignis wird intern ausgewertet und dadurch das Layout des Diagramms eventuell angepasst.
 
 %\subsection{Grundlegender Bedienungsmechanismus}
 %\subsection{Mechanismus der Auslagerung in zweite Schicht}
@@ -110,9 +119,11 @@ In der ersten Phase wird ein Objekt im Canvas angeklickt, das in Abbildung \ref{
 
 In der zweiten Phase findet eine Bewegung des Mauszeigers statt. Da die temporäre Schicht an den Mauszeiger gebunden ist, wird die ausgelagerte Darstellung des Objekts frei mit dem Mauszeiger bewegt, währenddessen das Platzhalter-Objekt im Canvas seine Position zunächst nicht ändert. Dies ist in Abbildung \ref{fig:movement-action-example-c} illustriert.
 
-Durch die Positionierung des Mauszeigers wird die gewünschte Position des verschobenen Objekts geäußert, die nach jeder Bewegung intern ausgewertet wird. Sobald sich der Mauszeiger in einem bestimmten Bereich befindet, für den das Layout des Diagramms geändert werden soll, wird das Layout im unterliegenden Canvas animiert angepasst. Dabei wird die Änderung der Layout-Eigenschaften des verschobenen Objekts auf das Platzhalter-Objekt angewendet, so wie es in Abbildung \ref{fig:movement-action-example-d} dargestellt ist. Durch die Anpassung des Layouts während der Interaktion wird ein unmittelbaren Feedback erreicht (Kriterium \ref{req:immediate-feedback}) und die Animation sorgt für die Erhaltung des mentalen Modells (Kriterium \ref{req:mental-map}). Wie die Auswahl des Layouts intern konkret funktioniert wird im Abschnitt X beschrieben.
+Durch die Positionierung des Mauszeigers wird die gewünschte Position des verschobenen Objekts geäußert, die nach jeder Bewegung intern ausgewertet wird. Sobald sich der Mauszeiger in einem bestimmten Bereich befindet, für den das Layout des Diagramms geändert werden soll, wird das Layout im unterliegenden Canvas animiert angepasst. Dabei wird die Änderung der Layout-Eigenschaften des verschobenen Objekts auf das Platzhalter-Objekt angewendet, so wie es in Abbildung \ref{fig:movement-action-example-d} dargestellt ist. Durch die Anpassung des Layouts während der Interaktion wird ein unmittelbares Feedback erreicht (Kriterium \ref{req:immediate-feedback}) und die Animation sorgt für die Erhaltung des mentalen Modells (Kriterium \ref{req:mental-map}). Wie die Auswahl des Layouts intern konkret funktioniert wird im Abschnitt X beschrieben.
 
-Nach dem Loslassen der Maustaste springt das verschobene Objekt auf die Zielposition hin, die durch die Position des Platzhalter-Objekts bestimmt ist. Anschließend werden das Platzhalter-Objekt sowie die zweite Schicht entfernt und die Verschiebungsaktion wird beendet. In Abbildung \ref{fig:movement-action-example-e} ist der Endzustand zu finden.
+Nach dem Loslassen der Maustaste springt das verschobene Objekt auf die Zielposition hin, die durch die Position des Platzhalter-Objekts bestimmt ist. Anschließend werden das Platzhalter-Objekt sowie die temporäre Schicht entfernt und die Verschiebungsaktion wird beendet. Die Abbildung \ref{fig:movement-action-example-e} zeigt den Endzustand.
+
+% Im Unterschied wird das Layout in MindNode erst nach dem Loslassen der Maustaste angepasst und stellt damit ein verzögertes Feedback dar.
 
 % TODO: Zusammenfassung schreiben
 % Der Mechanismus ist für klassische grafische Benutzeroberflächen ausgelegt und erfüllt damit das Kriterium \ref{req:gui}.
@@ -120,15 +131,14 @@ Nach dem Loslassen der Maustaste springt das verschobene Objekt auf die Zielposi
 
 \subsection{Layout-Engine}
 
+Nach dem Ausführen einer Bearbeitungsaktion (siehe Abschnitt \ref{subsec:edit-actions}) bzw. ihres Teils durch den Nutzer wird ein Layout-Ereignis erzeugt, das neben der Information über die manipulierten Objekte auch Parameter der Interaktion wie z.B. die Position des Mauszeigers besitzt.
+
+
+
 % operiert auf dem CSM, verändert die Layout-Eigenschaften
 % graph-basierte Diagramme: Knoten und Kanten
 
-% Für jede Bearbeitungsaktion wird ein Layout-Ereignis erzeugt, das neben der Information über die manipulierten Objekte auch Parameter der Interaktion besitzt.
-% Auswertung der Layout-Ereignissen durch die Layout-Engine und eventuelle Anpassung des Layouts
-
 % Layout-Übergänge
-
-\subsubsection{Auswertung der Verschiebungsaktion}
 
 % Auswertung der Verschiebungsaktion
 % ursprünglicher Ansatz
@@ -144,29 +154,23 @@ Nach dem Loslassen der Maustaste springt das verschobene Objekt auf die Zielposi
 % Abnehmen der Layout-Arbeit durch Einschränkung der Flexibilität
 
 % Herausforderung bei der Kombination von mehreren Kriterien (z.B. interaktive Bedienung aber gleichzeitig eine Einschränkung der Möglichkeiten)
-% optimales Verhältnis zwischen flexiblen Modifizierungen der Layout-Eigenschaften und ...
 
 
 
-%die Vorteile der freien Positionierung der Elemente im Diagramm und der automatischen Layout-Algorithmen miteinander kombiniert. Unter Berücksichtigung des Diagrammtyps werden durch einen Algorithmus mögliche Layouts berechnet. Der Nutzer wird in der Lage sein, durch Interaktion mit dem Diagramm das passende Layout auszuwählen und neue Elemente zu dem Diagramm hinzuzufügen.
+
+
 
 %%%%%%%%%
 
 %Durch die Spezialisierung auf konkrete Diagramm-Typen und den Einsatz von verschiedenen Vereinfachungsmaßnahmen wie etwa Einschränkung der unterstützten Notation \cite[S.56ff]{Ambler02Agile} lassen sich Algorithmen für das Layout von Softwarediagrammen entwerfen, die zwar nicht so flexibel wie z.B. \cite{Maier12A-Pattern-based} oder \cite{Eichelberger05Aesthetics} sind, aber dafür...
 
 
-
-
 % Einschränkung der Möglichkeiten, Berücksichtigung der Syntax und Semantik der Diagramme
 
 
 
-% kombiniert Vorteile der freien Positionierung der Elemente im Diagramm und der automatischen Layout-Algorithmen miteinander
-
-
-
-%\section{Definitionen}
-
+% Definitionen
+% ============
 % Layout
 % Layout-Übergang
 % Layout-Pattern
@@ -233,16 +237,12 @@ Nach dem Loslassen der Maustaste springt das verschobene Objekt auf die Zielposi
 % Variationen: Reihenfolge der Knoten im Ausrichtungs-Pattern
 % interne Wiederverwendung eines Ausrichtung-Patterns
 
-
-
-
-
 \section{Abgrenzung zu bestehenden Ansätzen}
 
 % Was ist neu an dem Ansatz?
 % Vergleich zu bestehenden Ansätzen im Kapitel 3
 % Worin unterscheidet sich mein Ansatz zu dem von Sonja Maier?
-% - Drag&Drop mit Visualisierung der Aktion
+% - \enquote{Drag and Drop} mit Visualisierung der Aktion
 % - Kein Freihand-Editieren, sondern implizite Bereiche und Layout-Übergänge
 % - Patterns unterstützen Variierung
 % - Starke Vereinfachung der Möglichkeiten (Anpassung der Patterns aus [Maier])
