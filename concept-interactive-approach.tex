@@ -11,18 +11,17 @@ In diesem Kapitel wird ein Ansatz für das interaktive und diagrammspezifische L
 \section{Kriterien}
 \label{sec:requirements-analysis}
 
-Im Folgenden werden Kriterien für den präsentierten Ansatz aufgestellt. Die Wahl der Kriterien stützt sich in erster Linie auf die Prinzipien für die agile Modellierung aus \cite{Ambler02Agile}. Weiterhin orientieren sich die Kriterien an den im Kapitel \ref{chapter:existing-approaches} vorgestellten Ansätzen, deren positiven Eigenschaften in die Auswahl einfließen.   Schließlich haben auch die ästhetischen Prinzipien (siehe Abschnitt \ref{sec:aesthetics-criteria}) sowie die Rahmenbedingungen dieser Arbeit (siehe Abschnitt \ref{sec:conditions}) einen Einfluss auf die gewählten Kriterien.
+Im Folgenden werden Kriterien für den präsentierten Ansatz aufgestellt. Die Wahl der Kriterien stützt sich in erster Linie auf die Prinzipien für die agile Modellierung aus \cite{Ambler02Agile}. Weiterhin orientieren sich die Kriterien an den im Kapitel \ref{chapter:existing-approaches} vorgestellten Ansätzen, deren positiven Eigenschaften in die Auswahl einfließen.   Schließlich haben auch die ästhetischen Prinzipien (siehe Abschnitt \ref{sec:aesthetics-criteria}) sowie die Rahmenbedingungen dieser Arbeit (siehe Abschnitt \ref{sec:thesis-conditions}) einen Einfluss auf die gewählten Kriterien.
 
 \begin{enumerate}[label={K.\arabic*}]
-    \item \label{req:gui} \textbf{GUI} Wie bereits im Abschnitt \ref{sec:conditions} erwähnt, beschäftigt sich diese Arbeit ausschließlich mit Mechanismen für das Layout von Diagrammen, die in Tools für klassische grafische Benutzeroberflächen eingesetzt werden. Daher soll der Ansatz für klassische grafische Benutzeroberflächen ausgelegt sein und von üblichen GUI-basierten Bedientechniken wie z.B. \enquote{Drag and Drop} Gebrauch machen.
+    \item \label{req:gui} \textbf{GUI} Wie bereits im Abschnitt \ref{sec:thesis-conditions} erwähnt, beschäftigt sich diese Arbeit ausschließlich mit Mechanismen für das Layout von Diagrammen, die in Tools für klassische grafische Benutzeroberflächen eingesetzt werden. Daher soll der Ansatz für klassische grafische Benutzeroberflächen ausgelegt sein und von üblichen GUI-basierten Bedientechniken wie z.B. \enquote{Drag and Drop} Gebrauch machen.
     \item \label{req:interactivity} \textbf{Interaktivität} Die Manipulation mit dem Diagramm soll interaktiv erfolgen. Der Nutzer soll in der Lage sein, mit dem Diagramm unmittelbar interagieren zu können und die Layout-Anpassungen sollen eine direkte Auswirkung auf das manipulierte Diagramm haben. Demzufolge soll die Eingabe mit der Ausgabe fest gekoppelt sein\footnote{Dies bezieht sich auf das GUI-Tool, das den Ansatz implementiert. Aus der Sicht der Mensch-Computer-Interaktion ist die Nutzung der Maus als Eingabegerät von der Ausgabe am Monitor stets entkoppelt.}.
     \item \label{req:immediate-feedback} \textbf{Unmittelbares Feedback} \cite[S.69]{Wybrow08Using}
     \item \label{req:editing-support} \textbf{Förderung des Prozesses der Diagramm-Erstellung} Der Nutzer soll den Inhalt des Diagramms bearbeiten und inkrementell modifizieren können \cite{GladischSchumann14Semi-Automatic}. Dabei soll das Layout nach jeder Änderung des Inhalts angepasst werden. Weiterhin soll es möglich sein, das Layout des Diagramms bis zu einem bestimmten Grad nach den Präferenzen des Nutzers beeinflussen zu können.
     \item \label{req:mental-map} \textbf{Erhaltung des mentalen Modells} Die Layout-Änderungen im Diagramm sollen möglichst intuitiv erfolgen, insbesondere soll das mentale Modell erhalten werden (siehe Abschnitt \ref{subsec:mental-map}).
     \item \label{req:focus-on-the-content} \textbf{Förderung der Konzentration auf den Inhalt} Der Inhalt eines Diagramms soll eine wichtigere Rolle als seine Repräsentation haben \cite[S.38ff]{Ambler02Agile}. Diese Tatsache soll in dem Ansatz berücksichtigt werden, indem der Aufwand für das Erzeugen des Layouts verringert wird. Außerdem sollen die Aktionen zur Anpassung der visuellen Eigenschaften möglichst eingeschränkt sein.
     \item \label{req:aesthetics-criteria} \textbf{Berücksichtigung der ästhetischen Prinzipien} Die Layout-Berechnung soll unter Berücksichtigung der im Abschnitt \ref{sec:aesthetics-criteria} beschriebenen ästhetischen Prinzipien für graph-basierte Softwarediagramme erfolgen.
-    \item \textbf{Berücksichtigung der Syntax und Semantik} Die Syntax- und Semantikregeln der einzelnen Diagrammtypen sollen berücksichtigt werden und es sollte nicht möglich sein, diese Regeln zu verletzen. 
-    % TODO: Meta-Modell erwähnen, Verletzen der Regeln
+    \item \textbf{Berücksichtigung der Syntax und Semantik} Die Syntax- und Semantikregeln der einzelnen Diagrammtypen sollen berücksichtigt werden und die Möglichkeit der Verletzung der Regeln sollte verhindert werden.
        
 %    \item \label{req:user-friendly} \textbf{Benutzerfreundlichkeit} Der Ansatz soll möglichst benutzerfreundlich sein. Insbesondere ist wichtig, dass die Einschränkungen bzgl. des Layouts nicht zur Frustration des Nutzers führen.
 \end{enumerate}
@@ -147,8 +146,6 @@ Nach dem Ausführen einer Bearbeitungsaktion (siehe Abschnitt \ref{subsec:edit-a
 
 
 
-
-
 % Einschränkung der Aktionen, die der Nutzer ausführen kann
 
 % Abnehmen der Layout-Arbeit durch Einschränkung der Flexibilität
@@ -158,14 +155,11 @@ Nach dem Ausführen einer Bearbeitungsaktion (siehe Abschnitt \ref{subsec:edit-a
 
 
 
-
-
 %%%%%%%%%
 
-%Durch die Spezialisierung auf konkrete Diagramm-Typen und den Einsatz von verschiedenen Vereinfachungsmaßnahmen wie etwa Einschränkung der unterstützten Notation \cite[S.56ff]{Ambler02Agile} lassen sich Algorithmen für das Layout von Softwarediagrammen entwerfen, die zwar nicht so flexibel wie z.B. \cite{Maier12A-Pattern-based} oder \cite{Eichelberger05Aesthetics} sind, aber dafür...
-
-
-% Einschränkung der Möglichkeiten, Berücksichtigung der Syntax und Semantik der Diagramme
+% Meta-Modell
+% Klassendiagramme meistens weniger als 10 Klassen (Rat von Scott Ambler?)
+% Durch die Spezialisierung auf konkrete Diagramm-Typen und den Einsatz von verschiedenen Vereinfachungsmaßnahmen wie etwa Einschränkung der unterstützten Notation \cite[S.56ff]{Ambler02Agile} lassen sich Algorithmen für das Layout von Softwarediagrammen entwerfen, die zwar nicht so flexibel wie z.B. \cite{Maier12A-Pattern-based} oder \cite{Eichelberger05Aesthetics} sind, aber dafür...
 
 
 
