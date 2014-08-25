@@ -8,6 +8,10 @@
 In diesem Kapitel wird ein Ansatz für das interaktive und diagrammspezifische Layout von Diagrammen präsentiert. Zunächst werden im Abschnitt \ref{sec:criteria} die Kriterien aufgestellt. Die grundlegende Funktionsweise wird im Abschnitt \ref{sec:interactive-approach-functionality} erklärt. Eine detaillierte Beschreibung der Layout-Patterns und deren Rolle in dem präsentierten Ansatz folgt im Abschnitt \ref{sec:layout-patterns}.
 % TODO: Aufbau des Kapitels ergänzen!
 
+%Folgende Abschnitte beschäftigen sich mit einzelnen Bestandteilen des Ansatzes im Detail. Im Abschnitt \ref{sec:interaction-mechanisms}
+%Die Mechanismen der Interaktion werden näher im Abschnitt  erläutert.
+%In folgenden Abschnitten werden einzelne Bestandteile des Ansatzes vorgestellt und in Bezug zu den im Abschnitt \ref{sec:criteria} aufgestellten Kriterien gesetzt.
+
 %%%%%%%%%%%
 % Critera %
 %%%%%%%%%%%
@@ -20,6 +24,8 @@ Im Folgenden werden Kriterien für den präsentierten Ansatz aufgestellt. Die Wa
 \begin{enumerate}[label={K.\arabic*}]
     \item \label{req:gui} \textbf{GUI} Wie bereits im Abschnitt \ref{sec:thesis-conditions} erwähnt, beschäftigt sich diese Arbeit ausschließlich mit Mechanismen für das Layout von Diagrammen, die in Tools für klassische grafische Benutzeroberflächen eingesetzt werden. Daher soll der Ansatz für klassische grafische Benutzeroberflächen ausgelegt sein und von üblichen GUI-basierten Bedientechniken wie z.B. \enquote{Drag and Drop} Gebrauch machen.
     \item \label{req:interactivity} \textbf{Interaktivität} Die Manipulation mit dem Diagramm soll interaktiv erfolgen. Der Nutzer soll in der Lage sein, mit dem Diagramm unmittelbar interagieren zu können und die Layout-Anpassungen sollen eine direkte Auswirkung auf das manipulierte Diagramm haben. Demzufolge soll die Eingabe mit der Ausgabe fest gekoppelt sein\footnote{Dies bezieht sich auf das GUI-Tool, das den Ansatz implementiert. Aus der Sicht der Mensch-Computer-Interaktion ist die Nutzung der Maus als Eingabegerät von der Ausgabe am Monitor stets entkoppelt.}.
+    % TODO: Fußnote verbessern!
+    
     \item \label{req:immediate-feedback} \textbf{Unmittelbares Feedback} \cite[S.69]{Wybrow08Using}
     \item \label{req:editing-support} \textbf{Förderung des Prozesses der Diagramm-Erstellung} Der Nutzer soll den Inhalt des Diagramms bearbeiten und inkrementell modifizieren können \cite{GladischSchumann14Semi-Automatic}. Dabei soll das Layout nach jeder Änderung des Inhalts angepasst werden. Weiterhin soll es möglich sein, das Layout des Diagramms bis zu einem bestimmten Grad nach den Präferenzen des Nutzers beeinflussen zu können.
     \item \label{req:mental-map} \textbf{Erhaltung des mentalen Modells} Die Layout-Änderungen im Diagramm sollen möglichst intuitiv erfolgen, insbesondere soll das mentale Modell erhalten werden (siehe Abschnitt \ref{subsec:mental-map}).
@@ -36,6 +42,10 @@ Im Folgenden werden Kriterien für den präsentierten Ansatz aufgestellt. Die Wa
 
 \section{Funktionsweise}
 \label{sec:functionality}
+
+Der präsentierte Ansatz operiert auf dem Modell der konkreten Syntax einer graph-basierten visuellen Sprache und berechnet die Layout-Eigenschaften für Knoten und Kanten eines Diagramms (siehe Abschnitt \ref{subsec:graph-based-diagrams}). Die Berechnung erfolgt \textbf{halbautomatisch}, denn der Nutzer kann den Layout-Prozess durch die Interaktion mit dem Diagramm beeinflussen. Dabei wird versucht, ein optimales Verhältnis zwischen der Möglichkeit der flexiblen Modifizierung der Layout-Eigenschaften durch den Nutzer und einer automatisierten Layout-Berechnung zu erreichen. Der Ansatz kombiniert die Vorteile des manuellen und automatischen Layouts und lässt sich daher in die Gruppe der Ansätze für das interaktive halbautomatische Layout einordnen (siehe Abschnitt \ref{sec:interactive-semi-automatic-layout}).
+
+Die Interaktion des Nutzers mit dem Diagramm erfolgt durch die Ausführung von \textbf{Bearbeitungsaktionen}, die mit Hilfe von \textbf{Bedienungsmechanismen} im Diagram realisiert und veranschaulicht werden. Für jede Bearbeitungsaktion werden ein oder mehrere \textbf{Layout-Ereignisse} erzeugt, die Informationen über die manipulierten Objekte sowie über die Parameter der Interaktion wie z.B. Position des Mauszeigers kapseln. Die erzeugten Layout-Ereignisse werden durch eine \textbf{Layout-Engine} ausgewertet, die für den Typ des Diagramms speziell angepasst ist. Intern verwaltet sie Instanzen von \textbf{Layout-Patterns}, die die Struktur des Diagramms beschreiben. Anhand des aktuellen Inhalts und Layouts des Diagramms und der instanziierten Layout-Patterns wird eine Anpassung des Layouts berechnet, die auf das Diagramm angewendet wird, wobei der Layout-Übergang visualisiert wird.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % Interaction Mechanisms %
@@ -86,19 +96,8 @@ Im Folgenden werden Kriterien für den präsentierten Ansatz aufgestellt. Die Wa
 \label{sec:current-approaches-comparison}
 
 %%%%%%%%%
-\endinput
+\endinput 
 %%%%%%%%%
-    
-\section{Funktionsweise}
-\label{sec:interactive-approach-functionality}
-
-\subsection{Übersicht}
-
-Der präsentierte Ansatz versucht ein optimales Verhältnis zwischen flexiblen Modifizierungen der Layout-Eigenschaften und einer automatisierten Layout-Berechnung zu finden und kombiniert dabei die Vorteile beider Herangehensweisen. Somit lässt sich dieser Ansatz in die Gruppe der Ansätze für das interaktive halbautomatische Layout einordnen (siehe Abschnitt \ref{sec:interactive-semi-automatic-layout}).
-
-Die Berechnung des Layouts erfolgt unter Berücksichtigung des Diagrammtyps. Weiterhin wird die Wahl des passenden Layouts durch die Interaktion des Nutzers mit dem Diagramm beeinflusst. An dieser Stelle wird ein neuer Bedienungsmechanismus eingesetzt, der die Grundlage des Ansatzes bildet und im Abschnitt X erläutert wird.
-
-In folgenden Abschnitten werden einzelne Bestandteile des Ansatzes vorgestellt und in Bezug zu den im Abschnitt \ref{sec:criteria} aufgestellten Kriterien gesetzt.
 
 \subsection{Bearbeitungsaktionen}
 \label{subsec:edit-actions}
