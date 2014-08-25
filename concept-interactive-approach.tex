@@ -50,11 +50,30 @@ Die Interaktion des Nutzers mit dem Diagramm erfolgt durch die Ausführung von \
 \section{Mechanismen der Interaktion}
 \label{sec:interaction-mechanisms}
 
+Das Kriterium \ref{req:editing-support} erfordert eine Möglichkeit der Bearbeitung des Diagramms. Der Nutzer soll in der Lage sein, neue Knoten und Kanten hinzuzufügen und bestehende Knoten und Kanten zu manipulieren bzw. zu löschen. Durch das Kriterium \ref{req:interactivity} wird gefördert, dass die Bearbeitung interaktiv erfolgt. Dies wird durch die Unterstützung von \textbf{Bearbeitungsaktionen} gewährleistet, die die Grundlage der Interaktion bilden. Die Bearbeitungsaktionen werden im Abschnitt \ref{subsec:edit-actions} im Detail beschrieben.
+
+Weiterhin sollen die Möglichkeiten der Interaktion eingeschränkt werden, um das Ablenken durch die Layout-Anpassungen zu minimieren (Kriterium \ref{req:focus-on-the-content}). Dies wird durch die Einschränkung der freien Positionierung der Knoten und den Einsatz eines \textbf{neuen Bedienungsmechanismus} für die Verschiebungsoperation erreicht, dem sich der Abschnitt \ref{subsec:temporary-layer-mechanism} widmet.
+
+Die Erhaltung des mentalen Modells (Kriterium \ref{req:mental-map}) wird durch eine \textbf{Animation der Layout-Übergänge} gefördert, das im Abschnitt \ref{subsec:animation-interaction} behandelt wird.
+
+% TODO: Die Einführung nochmal nach dem Fertigstellen der Bearbeitungsaktionen überprüfen
+
 \subsection{Bearbeitungsaktionen}
 \label{subsec:edit-actions}
 
+% Diese lassen sich in zwei Gruppen unterteilen. Zu einem sind das Aktionen, die den Inhalt des Diagramms modifizieren (z.B. Hinzufügen oder Löschen eines Objekts) und zu anderem sind das Aktionen, die das Layout des Diagramms modifizieren, ohne den Inhalt zu verändern (z.B. Verschiebung eines Objekts).
+
+% Die unterstützten Bearbeitungsaktionen sind hauptsächlich
+
+\subsubsection{Bearbeitungsaktionen zur Modifizierung des Inhalts}
+\subsubsection{Bearbeitungsaktionen zur Modifizierung des Layouts}
+
 \subsection{Mechanismus der temporären Schicht}
 \label{subsec:temporary-layer-mechanism}
+
+\subsection{Animation der Layout-Übergänge}
+\label{subsec:animation-interaction}
+% \ref{req:mental-map}
 
 %%%%%%%%%%%%%%%%%%%
 % Layout Patterns %
@@ -99,10 +118,6 @@ Die Interaktion des Nutzers mit dem Diagramm erfolgt durch die Ausführung von \
 \label{subsec:edit-actions}
 
 Alle interaktiven Ansätze für das Layout von Diagrammen aus dem Kapitel \ref{chapter:existing-approaches} bis auf das \enquote{Smart Layout} in MindNode (siehe Abschnitt \ref{subsubsec:smart-layout-in-mindnode}) unterstützen die \textbf{freie Positionierung} der Objekte im Diagramm. Diese Art der Bedienung wird im manuellen Layout zusätzlich um temporäre Hilfefunktionen (siehe Abschnitt \ref{sec:manual-layout}) und in Struktur-basierten benutzergesteuerten Ansätzen um Möglichkeit der Erzeugung von Strukturregeln (siehe Abschnitt \ref{subsec:structure-based-user-controlled-approaches}) erweitert. Durch diese Erweiterungen wird die freie Positionierung eingeschränkt, dass in der Regel zu einem besseren Layout des Diagramms führt. Dahingegen ist die freie Positionierung in \enquote{Smart Layout} in MindNode und dem in dieser Arbeit präsentierten Ansatz \textbf{nicht gestattet}. Somit bewirkt die Verschiebung eines Objekts im Diagramm keine direkte Anpassung seiner Position, sondern wird als eine Äußerung der gewünschten Position interpretiert.
-
-Die Kriterien \ref{req:interactivity} und \ref{req:editing-support} erfordern eine interaktive Bearbeitung des Diagramms. Dies wird in dem Ansatz durch die Unterstützung von \textbf{Bearbeitungsaktionen} gewährleistet, die durch den Nutzer ausgeführt werden können. Diese lassen sich in zwei Gruppen unterteilen. Zu einem sind das Aktionen, die den Inhalt des Diagramms modifizieren (z.B. Hinzufügen oder Löschen eines Objekts) und zu anderem sind das Aktionen, die das Layout des Diagramms modifizieren, ohne den Inhalt zu verändern (z.B. Verschiebung eines Objekts).
-
-Nach dem Ausführen einer Bearbeitungsaktion (siehe Abschnitt \ref{subsec:edit-actions}) bzw. ihres Teils durch den Nutzer wird ein Layout-Ereignis erzeugt, das neben der Information über die manipulierten Objekte auch Parameter der Interaktion wie z.B. die Position des Mauszeigers besitzt. Jedes Layout-Ereignis wird intern ausgewertet und dadurch das Layout des Diagramms eventuell angepasst.
 
 \subsection{Mechanismus der temporären Schicht}
 
