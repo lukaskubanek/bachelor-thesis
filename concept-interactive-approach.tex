@@ -61,12 +61,27 @@ Die Erhaltung des mentalen Modells (Kriterium \ref{req:mental-map}) wird durch e
 \subsection{Bearbeitungsaktionen}
 \label{subsec:edit-actions}
 
-% Diese lassen sich in zwei Gruppen unterteilen. Zu einem sind das Aktionen, die den Inhalt des Diagramms modifizieren (z.B. Hinzufügen oder Löschen eines Objekts) und zu anderem sind das Aktionen, die das Layout des Diagramms modifizieren, ohne den Inhalt zu verändern (z.B. Verschiebung eines Objekts).
+Die interaktiven Ansätze werden in Editoren eingesetzt, die in der Regel über einen \enquote{Canvas} verfügen. Der Canvas ist ein rechteckiger Bereich des Editor-Fensters, in dem das Diagramm dargestellt wird und in dem die Interaktion mit dem Diagramm stattfindet. Die Interaktion setzt sich aus Bearbeitungsaktionen zusammen, die durch den Nutzer ausgeführt werden. Um das Kriterium \ref{req:gui} zu erfüllen, sollen alle Bearbeitungsaktionen auf GUI-Techniken basieren.
 
-% Die unterstützten Bearbeitungsaktionen sind hauptsächlich
+In dieser Arbeit werden die grundlegenden Bearbeitungsaktionen präsentiert, die insbesondere für die Entwicklung des Prototyps (siehe Kapitel \ref{chapter:prototype}) eine wichtige Rolle spielen. Natürlich ist eine Erweiterung der unterstützten Bearbeitungsaktionen möglich.
+
+Je nach der Art der Modifizierung lassen sich die Bearbeitungsaktionen in zwei Gruppen unterteilen. Zu einem sind das Aktionen, die den Inhalt des Diagramms modifizieren (z.B. Hinzufügen oder Löschen eines Knotens) und zu anderem sind das Aktionen, die das Layout des Diagramms modifizieren, ohne den Inhalt zu verändern (z.B. Verschiebung eines Knotens). Beide Gruppen und deren Vertreter werden in den Abschnitten \ref{subsubsec:edit-actions-content-modification} und \ref{subsubsec:edit-actions-layout-modification} vorgestellt.
 
 \subsubsection{Bearbeitungsaktionen zur Modifizierung des Inhalts}
+\label{subsubsec:edit-actions-content-modification}
+
+%\paragraph{Hinzufügen einer Kante}
+
+%Eine Kante in graph-basierten Diagrammen verbindet genau zwei Knoten, wobei es sich entweder um eine Verbindung zwischen zwei unterschiedlichen Knoten oder von einen Knoten mit sich selbst handelt. 
+
+% verzögertes Feedback?
+
 \subsubsection{Bearbeitungsaktionen zur Modifizierung des Layouts}
+\label{subsubsec:edit-actions-layout-modification}
+
+% freie Positionierung
+% Verschiebungsaktion -> gewünschte Position
+% unmittelbares Feedback?
 
 \subsection{Mechanismus der temporären Schicht}
 \label{subsec:temporary-layer-mechanism}
