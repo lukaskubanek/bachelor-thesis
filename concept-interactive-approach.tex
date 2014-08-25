@@ -31,9 +31,9 @@ Im Folgenden werden Kriterien für den präsentierten Ansatz aufgestellt. Die Wa
 
 \subsection{Übersicht}
 
-Der präsentierte Ansatz versucht ein optimales Verhältnis zwischen flexiblen Modifizierungen der Layout-Eigenschaften und einer automatisierten Layout-Berechnung zu finden und kombiniert dabei die Vorteile beider Herangehensweisen. Somit lässt sich der Ansatz zu den interaktiven halbautomatischen Layout-Ansätzen einordnen (siehe Abschnitt \ref{sec:interactive-semi-automatic-layout}).
+Der präsentierte Ansatz versucht ein optimales Verhältnis zwischen flexiblen Modifizierungen der Layout-Eigenschaften und einer automatisierten Layout-Berechnung zu finden und kombiniert dabei die Vorteile beider Herangehensweisen. Somit lässt sich dieser Ansatz in die Gruppe der Ansätze für das interaktive halbautomatische Layout einordnen (siehe Abschnitt \ref{sec:interactive-semi-automatic-layout}).
 
-Die Berechnung des Layouts erfolgt unter Berücksichtigung des Diagrammtyps. Weiterhin wird die Wahl des passenden Layouts durch die Interaktion des Nutzers mit dem Diagramm beeinflusst. An dieser Stelle wird eine neuer Bedienungsmechanismus eingesetzt, der die Grundlage des Ansatzes bildet und im Abschnitt X erläutert wird.
+Die Berechnung des Layouts erfolgt unter Berücksichtigung des Diagrammtyps. Weiterhin wird die Wahl des passenden Layouts durch die Interaktion des Nutzers mit dem Diagramm beeinflusst. An dieser Stelle wird ein neuer Bedienungsmechanismus eingesetzt, der die Grundlage des Ansatzes bildet und im Abschnitt X erläutert wird.
 
 In folgenden Abschnitten werden einzelne Bestandteile des Ansatzes vorgestellt und in Bezug zu den im Abschnitt \ref{sec:requirements-analysis} aufgestellten Kriterien gesetzt.
 
@@ -46,8 +46,6 @@ Die Kriterien \ref{req:interactivity} und \ref{req:editing-support} erfordern ei
 
 Nach dem Ausführen einer Bearbeitungsaktion (siehe Abschnitt \ref{subsec:edit-actions}) bzw. ihres Teils durch den Nutzer wird ein Layout-Ereignis erzeugt, das neben der Information über die manipulierten Objekte auch Parameter der Interaktion wie z.B. die Position des Mauszeigers besitzt. Jedes Layout-Ereignis wird intern ausgewertet und dadurch das Layout des Diagramms eventuell angepasst.
 
-%\subsection{Grundlegender Bedienungsmechanismus}
-%\subsection{Mechanismus der Auslagerung in zweite Schicht}
 \subsection{Mechanismus der temporären Schicht}
 
 Die interaktiven Ansätze werden in Editoren eingesetzt, die in der Regel über einen \enquote{Canvas} verfügen. Der Canvas ist ein rechteckiger Bereich des Editor-Fensters, in dem das Diagramm dargestellt wird und in dem die Interaktion mit dem Diagramm stattfindet. Obwohl in den meisten Editoren die Reihenfolge der Objekte im Canvas festgelegt werden kann und der Canvas somit mehrschichtig erscheint, handelt es sich aus der Sicht der Interaktion lediglich um \textbf{eine Schicht}, in der die Bearbeitungsaktionen ausgeführt werden. Dies ist der Fall für alle im Kapitel \ref{chapter:existing-approaches} vorgestellten interaktiven Ansätze und deren Implementierungen\footnote{Eine Ausnahme bildet das Hinzufügen von Objekten durch Verschiebung aus einer Palette in Programmen wie z.B. Keynote und Visual Paradigm.}.
@@ -98,6 +96,7 @@ Bevor die Verschiebung beginnen kann, müssen sich im Canvas einige Objekte befi
 
 In der ersten Phase wird ein Objekt im Canvas angeklickt, das in Abbildung \ref{fig:movement-action-example-b} durch einen Mauszeiger gekennzeichnet ist. Dabei wird das angeklickte Objekt in eine neu eingefügte \textbf{temporäre Schicht} ausgelagert, die vor dem Canvas positioniert ist. Eine Visualisierung der Schichten ist in Abbildung \ref{fig:temporary-layer-visualization} nachzuschauen. Im Canvas wird die ursprüngliche Darstellung des verschobenen Objekts durch ein \textbf{temporäres Platzhalter-Objekt} ausgetauscht, das dem Nutzer die Zielposition des verschobenen Objekts andeutet. Das Platzhalter-Objekt ist in Abbildung \ref{fig:movement-action-example-c} durch ein Rechteck repräsentiert, das mit einer grauen gestrichelten Linie umrandet ist.
 
+% TODO: Mauszeiger hinzufügen
 \begin{figure}[hbt]
     \newcommand{\subfigurewidth}{0.35\textwidth}
     \newcommand{\graphicsscale}{1.2}
@@ -133,10 +132,6 @@ Nach dem Loslassen der Maustaste springt das verschobene Objekt auf die Zielposi
 Nach dem Ausführen einer Bearbeitungsaktion (siehe Abschnitt \ref{subsec:edit-actions}) bzw. ihres Teils durch den Nutzer wird ein Layout-Ereignis erzeugt, das neben der Information über die manipulierten Objekte auch Parameter der Interaktion wie z.B. die Position des Mauszeigers besitzt.
 
 
-
-% operiert auf dem CSM, verändert die Layout-Eigenschaften
-% graph-basierte Diagramme: Knoten und Kanten
-
 % Layout-Übergänge
 
 % Auswertung der Verschiebungsaktion
@@ -161,14 +156,6 @@ Nach dem Ausführen einer Bearbeitungsaktion (siehe Abschnitt \ref{subsec:edit-a
 % Klassendiagramme meistens weniger als 10 Klassen (Rat von Scott Ambler?)
 % Durch die Spezialisierung auf konkrete Diagramm-Typen und den Einsatz von verschiedenen Vereinfachungsmaßnahmen wie etwa Einschränkung der unterstützten Notation \cite[S.56ff]{Ambler02Agile} lassen sich Algorithmen für das Layout von Softwarediagrammen entwerfen, die zwar nicht so flexibel wie z.B. \cite{Maier12A-Pattern-based} oder \cite{Eichelberger05Aesthetics} sind, aber dafür...
 
-
-
-% Definitionen
-% ============
-% Layout
-% Layout-Übergang
-% Layout-Pattern
-% Layout-Ereignis
 
 
 % Layout-Engine
@@ -206,6 +193,9 @@ Nach dem Ausführen einer Bearbeitungsaktion (siehe Abschnitt \ref{subsec:edit-a
 % - Bild mit Instanzen von Patterns in einem Beispiel-Diagramm (kann ein Screenshot sein)
 % - IDLPattern, IDLAlignmentPattern, IDLTShapePattern -> Klassendiagramm
 
+% Offene Fragen
+% =============
+% Visualisierung
 % Instanziierung durch den Nutzer wie in [Maier] ist denkbar
 
 \subsection{Implizite Layout-Patterns}
