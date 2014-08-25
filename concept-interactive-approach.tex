@@ -5,11 +5,15 @@
 \chapter{Ansatz für das interaktive und diagrammspezifische Layout von graph-basierten Softwarediagrammen}
 \label{chapter:interactive-approach}
 
-In diesem Kapitel wird ein Ansatz für das interaktive und diagrammspezifische Layout von Diagrammen präsentiert. Zunächst werden im Abschnitt \ref{sec:requirements-analysis} die Kriterien aufgestellt. Die grundlegende Funktionsweise wird im Abschnitt \ref{sec:interactive-approach-functionality} erklärt. Eine detaillierte Beschreibung der Layout-Patterns und deren Rolle in dem präsentierten Ansatz folgt im Abschnitt \ref{sec:layout-patterns}.
+In diesem Kapitel wird ein Ansatz für das interaktive und diagrammspezifische Layout von Diagrammen präsentiert. Zunächst werden im Abschnitt \ref{sec:criteria} die Kriterien aufgestellt. Die grundlegende Funktionsweise wird im Abschnitt \ref{sec:interactive-approach-functionality} erklärt. Eine detaillierte Beschreibung der Layout-Patterns und deren Rolle in dem präsentierten Ansatz folgt im Abschnitt \ref{sec:layout-patterns}.
 % TODO: Aufbau des Kapitels ergänzen!
 
+%%%%%%%%%%%
+% Critera %
+%%%%%%%%%%%
+
 \section{Kriterien}
-\label{sec:requirements-analysis}
+\label{sec:criteria}
 
 Im Folgenden werden Kriterien für den präsentierten Ansatz aufgestellt. Die Wahl der Kriterien stützt sich in erster Linie auf die Prinzipien für die agile Modellierung aus \cite{Ambler02Agile}. Weiterhin orientieren sich die Kriterien an den im Kapitel \ref{chapter:existing-approaches} vorgestellten Ansätzen, deren positiven Eigenschaften in die Auswahl einfließen.   Schließlich haben auch die ästhetischen Prinzipien (siehe Abschnitt \ref{sec:aesthetics-criteria}) sowie die Rahmenbedingungen dieser Arbeit (siehe Abschnitt \ref{sec:thesis-conditions}) einen Einfluss auf die gewählten Kriterien.
 
@@ -25,6 +29,65 @@ Im Folgenden werden Kriterien für den präsentierten Ansatz aufgestellt. Die Wa
        
 %    \item \label{req:user-friendly} \textbf{Benutzerfreundlichkeit} Der Ansatz soll möglichst benutzerfreundlich sein. Insbesondere ist wichtig, dass die Einschränkungen bzgl. des Layouts nicht zur Frustration des Nutzers führen.
 \end{enumerate}
+
+%%%%%%%%%%%%%%%%%
+% Functionality %
+%%%%%%%%%%%%%%%%%
+
+\section{Funktionsweise}
+\label{sec:functionality}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Interaction Mechanisms %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Mechanismen der Interaktion}
+\label{sec:interaction-mechanisms}
+
+\subsection{Bearbeitungsaktionen}
+\label{subsec:edit-actions}
+
+\subsection{Mechanismus der temporären Schicht}
+\label{subsec:temporary-layer-mechanism}
+
+%%%%%%%%%%%%%%%%%%%
+% Layout Patterns %
+%%%%%%%%%%%%%%%%%%%
+
+\section{Layout-Patterns}
+\label{sec:layout-patterns}
+
+\subsection{Implizite Layout-Patterns}
+\label{subsec:implicit-layout-patterns}
+
+\subsubsection{Größe der Knoten}
+\subsubsection{Zentrierung des Inhalts}
+\subsubsection{Gleiche Abstände}
+\subsubsection{Verhinderung der Knoten-Überlappung}
+
+\subsection{Explizite Layout-Patterns}
+\label{subsec:explicit-layout-patterns}
+
+\subsubsection{Ausrichtungspattern}
+\subsubsection{T-Shape-Pattern}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Layout Calculation %
+%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Berechnung des Layouts}
+\label{sec:layout-calculation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Current Approaches Comparison %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Abgrenzung zu bestehenden Ansätzen}
+\label{sec:current-approaches-comparison}
+
+%%%%%%%%%
+\endinput
+%%%%%%%%%
     
 \section{Funktionsweise}
 \label{sec:interactive-approach-functionality}
@@ -35,7 +98,7 @@ Der präsentierte Ansatz versucht ein optimales Verhältnis zwischen flexiblen M
 
 Die Berechnung des Layouts erfolgt unter Berücksichtigung des Diagrammtyps. Weiterhin wird die Wahl des passenden Layouts durch die Interaktion des Nutzers mit dem Diagramm beeinflusst. An dieser Stelle wird ein neuer Bedienungsmechanismus eingesetzt, der die Grundlage des Ansatzes bildet und im Abschnitt X erläutert wird.
 
-In folgenden Abschnitten werden einzelne Bestandteile des Ansatzes vorgestellt und in Bezug zu den im Abschnitt \ref{sec:requirements-analysis} aufgestellten Kriterien gesetzt.
+In folgenden Abschnitten werden einzelne Bestandteile des Ansatzes vorgestellt und in Bezug zu den im Abschnitt \ref{sec:criteria} aufgestellten Kriterien gesetzt.
 
 \subsection{Bearbeitungsaktionen}
 \label{subsec:edit-actions}
