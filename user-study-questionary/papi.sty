@@ -1,0 +1,250 @@
+% !TEX encoding = UTF-8 Unicode
+\NeedsTeXFormat{LaTeX2e}
+
+\ProvidesPackage{papi}[2009/09/02 v1.0]
+
+\usepackage[latin1]{inputenc}
+\RequirePackage[ngerman]{babel}
+\RequirePackage[latin1]{inputenc}
+\RequirePackage{amssymb,latexsym,amsmath}
+\RequirePackage{stmaryrd}
+\RequirePackage{paralist}
+\RequirePackage{longtable}
+\RequirePackage{framed}
+\RequirePackage{color}
+\RequirePackage{array,booktabs,calc}
+\RequirePackage{dingbat}
+\RequirePackage{scrpage2}
+
+\definecolor{myColor}{rgb}{0.9,0.9,0.9} 
+\definecolor{shadecolor}{rgb}{0.9,0.9,0.9}
+\definecolor{framecolor}{rgb}{0,0,0}
+\setlength{\fboxrule}{0.3mm}
+
+\parindent0cm 
+\pagestyle{scrheadings}
+
+%%%%%%%%%%%%%%%%Projektnummer%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\projectnumber}[1]{\ohead{Weiter mit\\#1\hfill $\big\Downarrow$\hspace{0.5cm}\vspace{-1cm}}\cfoot{\pagemark}}
+%%%%%%%%%%%%%%%%Projektnummer%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%Fragebogenumgebung%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{questionnaire}{\thispagestyle{plain}\begin{flushright}Weiter mit\end{flushright} \vspace{-0.4cm} \hfill$\big\Downarrow$\hspace{0.5cm}\vspace{-0.3cm}
+\begin{longtable}{|rp{15.5cm}|c|}\hline&&\\}{&&\\\hline\end{longtable}}
+%%%%%%%%%%%%%%%%Fragebogenumgebung%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%Anfangszeit%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\interviewtime}{& \leftpointright\quad {\bf\em Beginn des Interviews eintragen!}\qquad $\Rightarrow$\qquad     \framebox[3cm]{\rule{0cm}{0.5cm}} Uhr&\\}
+%%%%%%%%%%%%%%%%Anfangszeit%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%Frage%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\question}[2]{#1 & #2\bigskip &\\}
+%%%%%%%%%%%%%%%%Frage%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\separator}{&&\\\hline&&\\}
+\newcommand{\answer}[1]{&\begin{tabular}{p{6.4cm}p{7.5cm}c} & #1\dotfill\vspace{0.1cm} & {\large $\square$}\\\end{tabular}&\\}
+\newcommand{\answerwithfilter}[2]{&\begin{tabular}{p{6.4cm}p{7.5cm}c} & #1\dotfill\vspace{0.1cm} & {\large $\square$}\\
+\end{tabular}&#2\\}
+\newcommand{\hybridanswer}[1]{&\begin{tabular}{p{6.4cm}p{7.5cm}c} & #1\vspace{0.1cm} & \\\end{tabular}&\\}
+\newcommand{\pageseparator}{&&\\\hline\newpage\hline&&\\}
+\newcommand{\answerseparator}{& \hspace{7cm}\hrulefill&\hrulefill \\[0.2cm]}
+\newcommand{\answeropenone}[1]{&\begin{tabular}{p{6.4cm}p{7.5cm}c} & #1 & {\large $\square$}\\[0.25cm]&\hrulefill&\\[0.25cm]
+\end{tabular}&\\}
+\newcommand{\answeropentwo}[1]{&\begin{tabular}{p{6.4cm}p{7.5cm}c} & #1 & {\large $\square$}\\[0.25cm] &\hrulefill&\\[0.3cm] &\hrulefill&\\[0.25cm]\end{tabular}&\\}
+\newcommand{\bulletanswer}[1]{&\begin{tabular}{p{6.4cm}cp{6.9cm}c}&{\large $\bullet$}&#1\dotfill\vspace{0.1cm}&{\large $\square$}\\\end{tabular}&\\}
+\newcommand{\bulletanswerwithfilter}[2]{&\begin{tabular}{p{6.4cm}cp{6.9cm}c}&{\large $\bullet$}&#1\dotfill\vspace{0.1cm}&{\large $\square$}\\\end{tabular}&#2\\}
+\newcommand{\instruction}[1]{\leftpointright\quad {\bf\em #1}}
+
+\newcommand{\longanswer}[1]{&\begin{tabular}{p{3.9cm}p{10cm}c} & #1\dotfill\vspace{0.1cm} & {\large $\square$}\\\end{tabular}&\\}
+\newcommand{\longanswerwithfilter}[2]{&\begin{tabular}{p{3.9cm}p{10cm}c} & #1\dotfill\vspace{0.1cm} & {\large $\square$}\\
+\end{tabular}&#2\\}
+\newcommand{\hybridlonganswer}[1]{&\begin{tabular}{p{3.9cm}p{10cm}c} & #1\vspace{0.1cm} & \\\end{tabular}&\\}
+\newcommand{\longanswerseparator}{& \hspace{4.5cm}\hrulefill&\hrulefill \\[0.2cm]}
+\newcommand{\longansweropenone}[1]{&\begin{tabular}{p{3.9cm}p{10cm}c} & #1 & {\large $\square$}\\[0.25cm]&\hrulefill&\\[0.25cm]
+\end{tabular}&\\}
+\newcommand{\longansweropentwo}[1]{&\begin{tabular}{p{3.9cm}p{10cm}c} & #1 & {\large $\square$}\\[0.25cm] &\hrulefill&\\[0.3cm] &\hrulefill&\\[0.25cm]\end{tabular}&\\}
+\newcommand{\bulletlonganswer}[1]{&\begin{tabular}{p{3.9cm}cp{9.4cm}c}&{\large $\bullet$}&#1\dotfill\vspace{0.1cm}&{\large $\square$}\\\end{tabular}&\\}
+\newcommand{\bulletlonganswerwithfilter}[2]{&\begin{tabular}{p{3.9cm}cp{9.4cm}c}&{\large $\bullet$}&#1\dotfill\vspace{0.1cm}&{\large $\square$}\\\end{tabular}&#2\\}
+
+\newcommand{\shortanswer}[1]{&\begin{tabular}{p{8.9cm}p{5cm}c} & #1\dotfill\vspace{0.1cm} & {\large $\square$}\\\end{tabular}&\\}
+\newcommand{\shortanswerwithfilter}[2]{&\begin{tabular}{p{8.9cm}p{5cm}c} & #1\dotfill\vspace{0.1cm} & {\large $\square$}\\
+\end{tabular}&#2\\}
+\newcommand{\hybridshortanswer}[1]{&\begin{tabular}{p{8.9cm}p{5cm}c} & #1\vspace{0.1cm} & \\\end{tabular}&\\}
+\newcommand{\shortanswerseparator}{& \hspace{9.5cm}\hrulefill&\hrulefill \\[0.2cm]}
+\newcommand{\shortansweropenone}[1]{&\begin{tabular}{p{8.9cm}p{5cm}c} & #1 & {\large $\square$}\\[0.25cm]&\hrulefill&\\[0.25cm]
+\end{tabular}&\\}
+\newcommand{\shortansweropentwo}[1]{&\begin{tabular}{p{8.9cm}p{5cm}c} & #1 & {\large $\square$}\\[0.25cm] &\hrulefill&\\[0.3cm] &\hrulefill&\\[0.25cm]\end{tabular}&\\}
+\newcommand{\bulletshortanswer}[1]{&\begin{tabular}{p{8.9cm}cp{4.4cm}c}&{\large $\bullet$}&#1\dotfill\vspace{0.1cm}&{\large $\square$}\\\end{tabular}&\\}
+\newcommand{\bulletshortanswerwithfilter}[2]{&\begin{tabular}{p{8.9cm}cp{4.4cm}c}&{\large $\bullet$}&#1\dotfill\vspace{0.1cm}&{\large $\square$}\\\end{tabular}&#2\\}
+%%%%%%%%%%%%%%%%BlockA%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\blockAtwo}[3]{& \vspace{0.5cm}\begin{tabular}{cp{9.8cm}p{1.7cm}p{1.7cm}p{0.000001cm}}
+&& \centering{\bf #1}\vspace{0.2cm} & \centering{\bf #2}\vspace{0.2cm} & \\ #3\end{tabular} & \\}
+\newcommand{\textAtwo}[2]{#1&#2\dotfill\vspace{0.2cm}&\centering{\large $\square$}&\centering{\large $\square$} &\\[0.2cm]}
+\newcommand{\numbersAtwo}{&& \centering{\bf 1}\vspace{0.2cm} & \centering{\bf 2}\vspace{0.2cm}& \\}
+
+\newcommand{\blockAthree}[4]{& \vspace{0.5cm}\begin{tabular}{cp{8.2cm}p{1.7cm}p{1.7cm}p{1.7cm}p{0.000001cm}}
+&& \centering{\bf #1}\vspace{0.2cm} & \centering{\bf #2}\vspace{0.2cm} & \centering {\bf #3}\vspace{0.2cm} & \\ #4\end{tabular} & \\}
+\newcommand{\textAthree}[2]{#1&#2\dotfill\vspace{0.2cm}&\centering{\large $\square$}&\centering{\large $\square$} &\centering{\large $\square$}&\\[0.2cm]}
+\newcommand{\numbersAthree}{&& \centering{\bf 1}\vspace{0.2cm} & \centering{\bf 2}\vspace{0.2cm} & \centering{\bf 3}\vspace{0.2cm}& \\}
+
+\newcommand{\blockAfour}[5]{& \vspace{0.5cm}\begin{tabular}{cp{7cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{0.000001cm}}
+&& \centering{\bf #1}\vspace{0.2cm} & \centering{\bf #2}\vspace{0.2cm}& \centering {\bf #3}\vspace{0.2cm} & \centering {\bf #4}\vspace{0.2cm} & \\ #5\end{tabular} & \\}
+\newcommand{\textAfour}[2]{#1&#2\dotfill\vspace{0.2cm}&\centering{\large $\square$}&\centering{\large $\square$}&\centering{\large $\square$} &\centering{\large $\square$}&\\[0.2cm]}
+\newcommand{\numbersAfour}{&& \centering{\bf 1}\vspace{0.2cm} & \centering{\bf 2}\vspace{0.2cm}& \centering{\bf 3}\vspace{0.2cm} & \centering{\bf 4}\vspace{0.2cm} & \\}
+
+\newcommand{\blockAfive}[6]{& \vspace{0.5cm}\begin{tabular}{cp{6.5cm}p{1.2cm}p{1.2cm}p{1.2cm}p{1.2cm}p{1.2cm}p{0.000001cm}}
+&& \centering{\bf #1}\vspace{0.2cm} & \centering{\bf #2}\vspace{0.2cm}& \centering {\bf #3}\vspace{0.2cm} &\centering {\bf #4}\vspace{0.2cm} & \centering {\bf #5} & \\ #6\end{tabular} & \\}
+\newcommand{\textAfive}[2]{#1&#2\dotfill\vspace{0.2cm}&\centering{\large $\square$}&\centering{\large $\square$}&\centering{\large $\square$} &\centering{\large $\square$} &\centering{\large $\square$}&\\[0.2cm]}
+\newcommand{\numbersAfive}{&& \centering{\bf 1}\vspace{0.2cm} & \centering{\bf 2}\vspace{0.2cm}& \centering{\bf 3}\vspace{0.2cm}& \centering{\bf 4}\vspace{0.2cm} & \centering{\bf 5}\vspace{0.2cm}& \\}
+
+\newcommand{\blockAsix}[7]{& \vspace{0.5cm}\begin{tabular}{cp{5.5cm}p{1.1cm}p{1.1cm}p{1.1cm}p{1.1cm}p{1.1cm}p{1cm}p{0.000001cm}}
+&& \centering{\bf #1}\vspace{0.2cm} & \centering{\bf #2}\vspace{0.2cm}& \centering {\bf #3}\vspace{0.2cm} &\centering {\bf #4}\vspace{0.2cm} &\centering {\bf #5}\vspace{0.2cm} & \centering {\bf #6} & \\ #7\end{tabular} & \\}
+\newcommand{\textAsix}[2]{#1&#2\dotfill\vspace{0.2cm}&\centering{\large $\square$}&\centering{\large $\square$}&\centering{\large $\square$} &\centering{\large $\square$} &\centering{\large $\square$} &\centering{\large $\square$}&\\[0.2cm]}
+\newcommand{\numbersAsix}{&& \centering{\bf 1}\vspace{0.2cm} & \centering{\bf 2}\vspace{0.2cm}& \centering{\bf 3}\vspace{0.2cm}& \centering{\bf 4}\vspace{0.2cm}& \centering{\bf 5}\vspace{0.2cm} & \centering{\bf 6}\vspace{0.2cm}& \\}
+
+\newcommand{\blockAseven}[8]{& \vspace{0.5cm}\begin{tabular}{cp{4.8cm}p{1cm}p{1cm}p{1cm}p{1cm}p{1cm}p{1cm}p{1cm}p{0.000001cm}}
+&& \centering{\bf #1}\vspace{0.2cm} & \centering{\bf #2}\vspace{0.2cm}& \centering {\bf #3}\vspace{0.2cm} &\centering {\bf #4}\vspace{0.2cm} &\centering {\bf #5}\vspace{0.2cm}&\centering {\bf #6}\vspace{0.2cm} & \centering {\bf #7} & \\ #8\end{tabular} & \\}
+\newcommand{\textAseven}[2]{#1&#2\dotfill\vspace{0.2cm}&\centering{\large $\square$}&\centering{\large $\square$}&\centering{\large $\square$}&\centering{\large $\square$} &\centering{\large $\square$} &\centering{\large $\square$} &\centering{\large $\square$}&\\[0.2cm]}
+\newcommand{\numbersAseven}{&& \centering{\bf 1}\vspace{0.2cm} & \centering{\bf 2}\vspace{0.2cm}& \centering{\bf 3}\vspace{0.2cm}& \centering{\bf 4}\vspace{0.2cm}& \centering{\bf 5}\vspace{0.2cm}& \centering{\bf 6}\vspace{0.2cm} & \centering{\bf 7}\vspace{0.2cm}& \\}
+%%%%%%%%%%%%%%%%BlockA%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%BlockB%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\blockBtwo}[3]{& \vspace{0.5cm}\begin{tabular}{cp{8.4cm}p{1.7cm}p{1.7cm}|p{1.5cm}p{0.000001cm}}
+&& \centering{\bf #1}\vspace{0.2cm} & \centering{\bf #2}\vspace{0.2cm} & \centering Weiﬂ nicht & \\ #3\end{tabular} & \\}
+\newcommand{\textBtwo}[2]{#1&#2\dotfill\vspace{0.2cm}&\centering{\large $\square$}&\centering{\large $\square$} &\centering{\large $\square$}&\\[0.2cm]}
+\newcommand{\numbersBtwo}{&& \centering{\bf 1}\vspace{0.2cm} & \centering{\bf 2}\vspace{0.2cm} & & \\}
+
+\newcommand{\blockBthree}[4]{& \vspace{0.5cm}\begin{tabular}{cp{7cm}p{1.6cm}p{1.6cm}p{1.6cm}|p{1.3cm}p{0.000001cm}}
+&& \centering{\bf #1}\vspace{0.2cm} & \centering{\bf #2}\vspace{0.2cm}& \centering {\bf #3}\vspace{0.2cm} & \centering Weiﬂ nicht & \\ #4\end{tabular} & \\}
+\newcommand{\textBthree}[2]{#1&#2\dotfill\vspace{0.2cm}&\centering{\large $\square$}&\centering{\large $\square$}&\centering{\large $\square$} &\centering{\large $\square$}&\\[0.2cm]}
+\newcommand{\numbersBthree}{&& \centering{\bf 1}\vspace{0.2cm} & \centering{\bf 2}\vspace{0.2cm}& \centering{\bf 3}\vspace{0.2cm} & & \\}
+
+\newcommand{\blockBfour}[5]{& \vspace{0.5cm}\begin{tabular}{cp{6.5cm}p{1.2cm}p{1.2cm}p{1.2cm}p{1.2cm}|p{1.2cm}p{0.000001cm}}
+&& \centering{\bf #1}\vspace{0.2cm} & \centering{\bf #2}\vspace{0.2cm}& \centering {\bf #3}\vspace{0.2cm} &\centering {\bf #4}\vspace{0.2cm} & \centering Weiﬂ nicht & \\ #5\end{tabular} & \\}
+\newcommand{\textBfour}[2]{#1&#2\dotfill\vspace{0.2cm}&\centering{\large $\square$}&\centering{\large $\square$}&\centering{\large $\square$} &\centering{\large $\square$} &\centering{\large $\square$}&\\[0.2cm]}
+\newcommand{\numbersBfour}{&& \centering{\bf 1}\vspace{0.2cm} & \centering{\bf 2}\vspace{0.2cm}& \centering{\bf 3}\vspace{0.2cm}& \centering{\bf 4}\vspace{0.2cm} & & \\}
+
+\newcommand{\blockBfive}[6]{& \vspace{0.5cm}\begin{tabular}{cp{5.5cm}p{1.1cm}p{1.1cm}p{1.1cm}p{1.1cm}p{1.1cm}|p{1.1cm}p{0.000001cm}}
+&& \centering{\bf #1}\vspace{0.2cm} & \centering{\bf #2}\vspace{0.2cm}& \centering {\bf #3}\vspace{0.2cm} &\centering {\bf #4}\vspace{0.2cm} &\centering {\bf #5}\vspace{0.2cm} & \centering Weiﬂ nicht & \\ #6\end{tabular} & \\}
+\newcommand{\textBfive}[2]{#1&#2\dotfill\vspace{0.2cm}&\centering{\large $\square$}&\centering{\large $\square$}&\centering{\large $\square$} &\centering{\large $\square$} &\centering{\large $\square$} &\centering{\large $\square$}&\\[0.2cm]}
+\newcommand{\numbersBfive}{&& \centering{\bf 1}\vspace{0.2cm} & \centering{\bf 2}\vspace{0.2cm}& \centering{\bf 3}\vspace{0.2cm}& \centering{\bf 4}\vspace{0.2cm}& \centering{\bf 5}\vspace{0.2cm} & & \\}
+
+\newcommand{\blockBsix}[7]{& \vspace{0.5cm}\begin{tabular}{cp{4.8cm}p{1cm}p{1cm}p{1cm}p{1cm}p{1cm}p{1cm}|p{1cm}p{0.000001cm}}
+&& \centering{\bf #1}\vspace{0.2cm} & \centering{\bf #2}\vspace{0.2cm}& \centering {\bf #3}\vspace{0.2cm} &\centering {\bf #4}\vspace{0.2cm} &\centering {\bf #5}\vspace{0.2cm}&\centering {\bf #6}\vspace{0.2cm} & \centering Weiﬂ nicht & \\ #7\end{tabular} & \\}
+\newcommand{\textBsix}[2]{#1&#2\dotfill\vspace{0.2cm}&\centering{\large $\square$}&\centering{\large $\square$}&\centering{\large $\square$}&\centering{\large $\square$} &\centering{\large $\square$} &\centering{\large $\square$} &\centering{\large $\square$}&\\[0.2cm]}
+\newcommand{\numbersBsix}{&& \centering{\bf 1}\vspace{0.2cm} & \centering{\bf 2}\vspace{0.2cm}& \centering{\bf 3}\vspace{0.2cm}& \centering{\bf 4}\vspace{0.2cm}& \centering{\bf 5}\vspace{0.2cm}& \centering{\bf 6}\vspace{0.2cm} & & \\}
+
+\newcommand{\blockBseven}[8]{& \vspace{0.5cm}\begin{tabular}{cp{3.4cm}p{1cm}p{1cm}p{1cm}p{1cm}p{1cm}p{1cm}p{1cm}|p{1cm}p{0.000001cm}}
+&& \centering{\bf #1}\vspace{0.2cm} & \centering{\bf #2}\vspace{0.2cm}& \centering {\bf #3}\vspace{0.2cm} &\centering {\bf #4}\vspace{0.2cm} &\centering {\bf #5}\vspace{0.2cm}&\centering {\bf #6}\vspace{0.2cm}&\centering {\bf #7}\vspace{0.2cm} & \centering Weiﬂ nicht & \\ #8\end{tabular} & \\}
+\newcommand{\textBseven}[2]{#1&#2\dotfill\vspace{0.2cm}&\centering{\large $\square$}&\centering{\large $\square$}&\centering{\large $\square$}&\centering{\large $\square$}&\centering{\large $\square$} &\centering{\large $\square$} &\centering{\large $\square$} &\centering{\large $\square$}&\\[0.2cm]}
+\newcommand{\numbersBseven}{&& \centering{\bf 1}\vspace{0.2cm} & \centering{\bf 2}\vspace{0.2cm}& \centering{\bf 3}\vspace{0.2cm}& \centering{\bf 4}\vspace{0.2cm}& \centering{\bf 5}\vspace{0.2cm}& \centering{\bf 6}\vspace{0.2cm}& \centering{\bf 7}\vspace{0.2cm} & & \\}
+%%%%%%%%%%%%%%%%BlockB%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%BlockC%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\blockCtwo}[3]{& \vspace{0.5cm}\begin{tabular}{cp{9.8cm}p{1.7cm}|p{1.7cm}p{0.000001cm}}
+&& \centering{\bf #1}\vspace{0.2cm} & \centering{\bf #2}\vspace{0.2cm} & \\ #3\end{tabular} & \\}
+\newcommand{\textCtwo}[2]{#1&#2\dotfill\vspace{0.2cm}&\centering{\large $\square$}&\centering{\large $\square$} &\\[0.2cm]}
+\newcommand{\numbersCtwo}{&& \centering{\bf 1}\vspace{0.2cm} & \centering{\bf 2}\vspace{0.2cm}& \\}
+
+\newcommand{\blockCthree}[4]{& \vspace{0.5cm}\begin{tabular}{cp{8.2cm}p{1.7cm}|p{1.7cm}|p{1.7cm}p{0.000001cm}}
+&& \centering{\bf #1}\vspace{0.2cm} & \centering{\bf #2}\vspace{0.2cm} & \centering {\bf #3} & \\ #4\end{tabular} & \\}
+\newcommand{\textCthree}[2]{#1&#2\dotfill\vspace{0.2cm}&\centering{\large $\square$}&\centering{\large $\square$} &\centering{\large $\square$}&\\[0.2cm]}
+\newcommand{\numbersCthree}{&& \centering{\bf 1}\vspace{0.2cm} & \centering{\bf 2}\vspace{0.2cm} & \centering{\bf 3}\vspace{0.2cm}& \\}
+
+\newcommand{\blockCfour}[5]{& \vspace{0.5cm}\begin{tabular}{cp{7cm}p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}p{0.000001cm}}
+&& \centering{\bf #1}\vspace{0.2cm} & \centering{\bf #2}\vspace{0.2cm}& \centering {\bf #3}\vspace{0.2cm} & \centering {\bf #4} & \\ #5\end{tabular} & \\}
+\newcommand{\textCfour}[2]{#1&#2\dotfill\vspace{0.2cm}&\centering{\large $\square$}&\centering{\large $\square$}&\centering{\large $\square$} &\centering{\large $\square$}&\\[0.2cm]}
+\newcommand{\numbersCfour}{&& \centering{\bf 1}\vspace{0.2cm} & \centering{\bf 2}\vspace{0.2cm}& \centering{\bf 3}\vspace{0.2cm} & \centering{\bf 4}\vspace{0.2cm} & \\}
+
+\newcommand{\blockCfive}[6]{& \vspace{0.5cm}\begin{tabular}{cp{6.5cm}p{1.2cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}p{0.000001cm}}
+&& \centering{\bf #1}\vspace{0.2cm} & \centering{\bf #2}\vspace{0.2cm}& \centering {\bf #3}\vspace{0.2cm} &\centering {\bf #4}\vspace{0.2cm} & \centering {\bf #5} & \\ #6\end{tabular} & \\}
+\newcommand{\textCfive}[2]{#1&#2\dotfill\vspace{0.2cm}&\centering{\large $\square$}&\centering{\large $\square$}&\centering{\large $\square$} &\centering{\large $\square$} &\centering{\large $\square$}&\\[0.2cm]}
+\newcommand{\numbersCfive}{&& \centering{\bf 1}\vspace{0.2cm} & \centering{\bf 2}\vspace{0.2cm}& \centering{\bf 3}\vspace{0.2cm}& \centering{\bf 4}\vspace{0.2cm} & \centering{\bf 5}\vspace{0.2cm}& \\}
+
+\newcommand{\blockCsix}[7]{& \vspace{0.5cm}\begin{tabular}{cp{5.5cm}p{1.1cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}|p{1.1cm}p{0.000001cm}}
+&& \centering{\bf #1}\vspace{0.2cm} & \centering{\bf #2}\vspace{0.2cm}& \centering {\bf #3}\vspace{0.2cm} &\centering {\bf #4}\vspace{0.2cm} &\centering {\bf #5}\vspace{0.2cm} & \centering {\bf #6} & \\ #7\end{tabular} & \\}
+\newcommand{\textCsix}[2]{#1&#2\dotfill\vspace{0.2cm}&\centering{\large $\square$}&\centering{\large $\square$}&\centering{\large $\square$} &\centering{\large $\square$} &\centering{\large $\square$} &\centering{\large $\square$}&\\[0.2cm]}
+\newcommand{\numbersCsix}{&& \centering{\bf 1}\vspace{0.2cm} & \centering{\bf 2}\vspace{0.2cm}& \centering{\bf 3}\vspace{0.2cm}& \centering{\bf 4}\vspace{0.2cm}& \centering{\bf 5}\vspace{0.2cm} & \centering{\bf 6}\vspace{0.2cm}& \\}
+
+\newcommand{\blockCseven}[8]{& \vspace{0.5cm}\begin{tabular}{cp{4.8cm}p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}p{0.000001cm}}
+&& \centering{\bf #1}\vspace{0.2cm} & \centering{\bf #2}\vspace{0.2cm}& \centering {\bf #3}\vspace{0.2cm} &\centering {\bf #4}\vspace{0.2cm} &\centering {\bf #5}\vspace{0.2cm}&\centering {\bf #6}\vspace{0.2cm} & \centering {\bf #7} & \\ #8\end{tabular} & \\}
+\newcommand{\textCseven}[2]{#1&#2\dotfill\vspace{0.2cm}&\centering{\large $\square$}&\centering{\large $\square$}&\centering{\large $\square$}&\centering{\large $\square$} &\centering{\large $\square$} &\centering{\large $\square$} &\centering{\large $\square$}&\\[0.2cm]}
+\newcommand{\numbersCseven}{&& \centering{\bf 1}\vspace{0.2cm} & \centering{\bf 2}\vspace{0.2cm}& \centering{\bf 3}\vspace{0.2cm}& \centering{\bf 4}\vspace{0.2cm}& \centering{\bf 5}\vspace{0.2cm}& \centering{\bf 6}\vspace{0.2cm} & \centering{\bf 7}\vspace{0.2cm}& \\}
+%%%%%%%%%%%%%%%%BlockC%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\bbox}{\framebox[0.6cm]{\rule{0cm}{0.6cm}}\ }
+\newcommand{\onebox}{\bbox}
+\newcommand{\twoboxes}{\bbox\bbox}
+\newcommand{\threeboxes}{\bbox\bbox\bbox}
+\newcommand{\fourboxes}{\bbox\bbox\bbox\bbox}
+
+\newcommand{\longline}{&\hrulefill&\\&&\\}
+\newcommand{\centertext}[1]{&\centering{#1}&\\}
+\newcommand{\righttext}[1]{&\hfill#1&\\}
+\newcommand{\lefttext}[1]{&#1&\\}
+
+\newcommand{\framing}[1]{&\begin{framed}#1\end{framed}&\\}
+
+\newcommand{\papibullet}{{\large $\bullet$}}
+
+%%%%%%%%%%%%%%%%%%%%VTHERMO%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\vthermoten}[2]{ & \begin{center}#1\smallskip
+
+\begin{tabular}{|p{0.4cm}|}\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\end{tabular}\smallskip 
+
+#2\end{center} & \\}
+\newcommand{\vthermonine}[2]{&\begin{center}#1\smallskip
+
+\begin{tabular}{|p{0.4cm}|}\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\end{tabular}\smallskip
+
+#2\end{center} & \\}
+\newcommand{\vthermoeight}[2]{& \begin{center}#1\smallskip
+
+\begin{tabular}{|p{0.4cm}|}\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline \end{tabular}\smallskip
+
+#2\end{center}&\\}
+\newcommand{\vthermoseven}[2]{&\begin{center}#1\smallskip
+
+\begin{tabular}{|p{0.4cm}|}\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\end{tabular}\smallskip
+
+#2\end{center}&\\}
+\newcommand{\vthermosix}[2]{&\begin{center}#1\smallskip
+
+\begin{tabular}{|p{0.4cm}|}\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\end{tabular}\smallskip
+
+#2\end{center}&\\}
+\newcommand{\vthermofive}[2]{&\begin{center}#1\smallskip
+
+\begin{tabular}{|p{0.4cm}|}\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\end{tabular}\smallskip
+
+#2\end{center}&\\}
+\newcommand{\vthermofour}[2]{&\begin{center}#1\smallskip
+
+\begin{tabular}{|p{0.4cm}|}\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\end{tabular}\smallskip
+
+#2\end{center}&\\}
+\newcommand{\vthermothree}[2]{&\begin{center}#1\smallskip
+
+\begin{tabular}{|p{0.4cm}|}\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline\phantom{\Huge A}\\\hline \end{tabular}\smallskip
+
+#2\end{center}&\\}
+%%%%%%%%%%%%%%%%%%%%VTHERMO%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\lastpage}{\newpage\thispagestyle{plain}
+\begin{longtable}{|l|}
+\hline \\[7cm]
+\hspace{1.5cm} \framebox[3.5cm]{\rule{0cm}{0.7cm}}\qquad\framebox[3cm]{\rule{0cm}{0.7cm}}\qquad\framebox[2cm]{\rule{0cm}{0.7cm}}\qquad \framebox[3.5cm]{\rule{0cm}{0.7cm}}\phantom{xxxxxxxxx}\\
+\hspace{2.5cm}{\em Listen-Nr.}\hspace{2.5cm} {\em Lfd. Nr.}\hspace{2cm} {\em Welle}\hspace{1.9cm}{\em Abrechnungs-Nr.}\phantom{xxxxxxxxxxx}\\\\\\\\\\\\
+
+\hspace{5.7cm}\parbox{5cm}{\hrule\strut \centering{\em Ort}}\hspace{1cm}\parbox{4cm}{\hrule\strut \centering{\em Datum des Interviews}}\phantom{xxxx}\\\\\\\\
+
+{\em Ich best‰tige die korrekte}\\
+{\em Durchf¸hrung des Interviews}\\
+{\em und die ‹bergabe der}\\
+{\em "Erkl‰rung zum Datenschutz":}\hspace{1cm}\raisebox{-4.5mm}{\parbox{10cm}{\hrule\strut \centering{\em Unterschrift des Interviewers}}}\\[10cm]
+\hline
+\end{longtable}}
+
+
+
+\endinput
