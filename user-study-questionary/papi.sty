@@ -20,10 +20,9 @@
 \parindent0cm 
 \pagestyle{scrheadings}
 
-\newcommand{\projectnumber}[1]{\ohead{Weiter mit\\#1\hfill $\big\Downarrow$\hspace{0.5cm}\vspace{-1cm}}\cfoot{\pagemark}}
+\newcommand{\projectnumber}[1]{\ohead{\hspace{0.5cm}#1\hfill\vspace{-1cm}}}
 
-\newenvironment{questionnaire}{\thispagestyle{plain}\begin{flushright}Weiter mit\end{flushright} \vspace{-0.4cm} \hfill$\big\Downarrow$\hspace{0.5cm}\vspace{-0.3cm}
-\begin{longtable}{|rp{15.5cm}|c|}\hline&&\\}{&&\\\hline\end{longtable}}
+\newenvironment{questionnaire}{\begin{longtable}{|rp{15.5cm}|c|}\hline&&\\}{&&\\\hline\end{longtable}}
 
 \newcommand{\interviewtime}{& \leftpointright\quad {\bf\em Beginn des Interviews eintragen!}\qquad $\Rightarrow$\qquad     \framebox[3cm]{\rule{0cm}{0.5cm}} Uhr&\\}
 
