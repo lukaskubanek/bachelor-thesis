@@ -15,6 +15,11 @@
 \usepackage{papi}
 \usepackage[top=2.5cm,bottom=2.5cm,left=1.5cm,right=1.5cm]{geometry}
 
+% questions counter
+\newcounter{QuestionsCounter}
+\newcommand{\questionnumber}{\stepcounter{QuestionsCounter}\arabic{QuestionsCounter}}
+\newcommand{\numberedquestion}[1]{\question{\questionnumber.}{#1}}
+
 \begin{document}
 
 \begin{center}
@@ -23,20 +28,20 @@
 
 \begin{questionnaire}
 
-\question{1.}{Geben Sie bitte Ihr Alter an.}
+\numberedquestion{Geben Sie bitte Ihr Alter an.}
 
 \hybridshortanswer{Ich bin \twoboxes Jahre alt.}
 
 \separator
 
-\question{2.}{Geben Sie bitte Ihr Geschlecht an.}
+\numberedquestion{Geben Sie bitte Ihr Geschlecht an.}
 
 \shortanswer{Männlich}
 \shortanswer{Weiblich}
 
 \separator
 
-\question{3.}{Geben Sie bitte Ihren derzeitigen Berufsstatus an.}
+\numberedquestion{Geben Sie bitte Ihren derzeitigen Berufsstatus an.}
 
 \shortanswer{Berufstätig}
 \shortanswer{Student}
@@ -44,13 +49,13 @@
 
 \separator
 
-\question{4.}{Geben Sie ggf. Ihr Beruf bzw. Studiengang an.}
+\numberedquestion{Geben Sie ggf. Ihr Beruf bzw. Studiengang an.}
 
 \longline
 
 \separator
 
-\question{5.}{Haben Sie bereits Kenntnisse über Klassendiagramme?}
+\numberedquestion{Haben Sie bereits Kenntnisse über Klassendiagramme?}
 
 \shortanswer{Ja}
 \shortanswer{Nein}
