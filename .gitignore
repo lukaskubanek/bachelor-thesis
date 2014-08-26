@@ -31,10 +31,10 @@
 .texpadtmp/
 
 ## tudsrc Latex Templates
-!tudsrc/**/*
+!tud-koma-script/**/*
 
 ## Resources
-!resources/**/*.pdf
+!bachelor-thesis/resources/**/*.pdf
 
 ## Auxiliary and intermediate files from other packages:
 
