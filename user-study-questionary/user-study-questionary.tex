@@ -9,13 +9,51 @@
 \SelectInputMappings{}
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
+\usepackage[babel, german=quotes]{csquotes}
 
 % questionary 
 \usepackage{papi}
 \usepackage[top=2.5cm,bottom=2.5cm,left=1.5cm,right=1.5cm]{geometry}
 
 \begin{document}
-\begin{questionnaire}
+
+\begin{center}
+{\huge Nutzerstudie zur Bachelor-Arbeit \enquote{Entwicklung eines Konzeptes für das interaktive und diagrammspezifische Layout von graph-basierten Softwarediagrammen}}
+\end{center}
+
+\begin{questionnaire}
+
+\question{1.}{Geben Sie bitte Ihr Alter an.}
+
+\hybridshortanswer{Ich bin \twoboxes Jahre alt.}
+
+\separator
+
+\question{2.}{Geben Sie bitte Ihr Geschlecht an.}
+
+\shortanswer{Männlich}
+\shortanswer{Weiblich}
+
+\separator
+
+\question{3.}{Geben Sie bitte Ihren derzeitigen Berufsstatus an.}
+
+\shortanswer{Berufstätig}
+\shortanswer{Student}
+\shortanswer{Sonstiges}
+
+\separator
+
+\question{4.}{Geben Sie ggf. Ihr Beruf bzw. Studiengang an.}
+
+\longline
+
+\separator
+
+\question{5.}{Haben Sie bereits Kenntnisse über Klassendiagramme?}
+
+\shortanswer{Ja}
+\shortanswer{Nein}
 
 \end{questionnaire}
 
