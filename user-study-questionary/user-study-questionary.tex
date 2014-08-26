@@ -2,7 +2,7 @@
 % User Study Questionary
 %%%
 
-\documentclass[10pt,fleqn]{scrreprt}
+\documentclass[12pt,fleqn]{scrreprt}
 
 % encoding & language
 \usepackage{selinput}
@@ -12,13 +12,8 @@
 \usepackage[babel, german=quotes]{csquotes}
 
 % questionary 
-\usepackage{papi}
+\usepackage{paperandpencil}
 \usepackage[top=2.5cm,bottom=2.5cm,left=1.5cm,right=1.5cm]{geometry}
-
-% questions counter
-\newcounter{QuestionsCounter}
-\newcommand{\questionnumber}{\stepcounter{QuestionsCounter}\arabic{QuestionsCounter}}
-\newcommand{\numberedquestion}[1]{\question{\questionnumber.}{#1}}
 
 \begin{document}
 
@@ -26,40 +21,45 @@
 {\huge Nutzerstudie zur Bachelor-Arbeit \enquote{Entwicklung eines Konzeptes für das interaktive und diagrammspezifische Layout von graph-basierten Softwarediagrammen}}
 \end{center}
 
-\begin{questionnaire}
+\vspace{2cm}
 
-\numberedquestion{Geben Sie bitte Ihr Alter an.}
+\begin{coloredfilter}
 
-\hybridshortanswer{Ich bin \twoboxes Jahre alt.}
+\question{\bf Geben Sie bitte Ihr Alter an.}
 
-\separator
+\hfill\xxbox\hspace{6cm}
 
-\numberedquestion{Geben Sie bitte Ihr Geschlecht an.}
+\line
 
-\shortanswer{Männlich}
-\shortanswer{Weiblich}
+\question{\bf Geben Sie bitte Ihr Geschlecht an.}
 
-\separator
+\begin{answersA}
+\item \pbox{Männlich}
+\item \pbox{Weiblich}
+\end{answersA}
 
-\numberedquestion{Geben Sie bitte Ihren derzeitigen Berufsstatus an.}
+\line
 
-\shortanswer{Berufstätig}
-\shortanswer{Student}
-\shortanswer{Sonstiges}
+\question{\bf Geben Sie bitte Ihren derzeitigen Berufsstatus an.}
 
-\separator
+\begin{answersA}
+\item \pbox{Berufstätig}
+\item Beruf?\linetext{}
+\item \pbox{Student}
+\item Studiengang?\linetext{}
+\item \pbox{Sonstiges}
+\end{answersA}
 
-\numberedquestion{Geben Sie ggf. Ihr Beruf bzw. Studiengang an.}
+\vspace{0.5cm}
 
-\longline
+\end{coloredfilter}
 
-\separator
+\question{\bf Verfügen Sie bereits über Kenntnisse von Klassendiagrammen der Notationssprache UML?}
 
-\numberedquestion{Haben Sie bereits Kenntnisse über Klassendiagramme?}
-
-\shortanswer{Ja}
-\shortanswer{Nein}
-
-\end{questionnaire}
+\begin{answersA}
+\item \pbox{Keine Kenntnisse}
+\item \pbox{Grundkenntnisse}
+\item \pbox{Gute Kenntnisse}
+\end{answersA}
 
 \end{document}
