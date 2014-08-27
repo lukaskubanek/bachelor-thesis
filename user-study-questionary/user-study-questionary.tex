@@ -23,43 +23,73 @@
 
 \vspace{2cm}
 
-\begin{coloredfilter}
-
 \question{\bf Geben Sie bitte Ihr Alter an.}
 
 \hfill\xxbox\hspace{6cm}
 
-\line
-
 \question{\bf Geben Sie bitte Ihr Geschlecht an.}
 
-\begin{answersA}
-\item \pbox{Männlich}
-\item \pbox{Weiblich}
-\end{answersA}
-
-\line
+\begin{answersB}
+\item Männlich
+\item Weiblich
+\end{answersB}
 
 \question{\bf Geben Sie bitte Ihren derzeitigen Berufsstatus an.}
 
-\begin{answersA}
-\item \pbox{Berufstätig}
-\item Beruf?\linetext{}
-\item \pbox{Student}
-\item Studiengang?\linetext{}
-\item \pbox{Sonstiges}
-\end{answersA}
+\begin{answersB}
+\item Berufstätig, Beruf: \linetext{}
+\item Student, Studiengang: \linetext{}
+\item Sonstiges
+\end{answersB}
 
-\vspace{0.5cm}
+\line
 
-\end{coloredfilter}
+\question{\bf Haben Sie Erfahrung mit dem Betriebssystem Mac OS X?}
 
-\question{\bf Verfügen Sie bereits über Kenntnisse von Klassendiagrammen der Notationssprache UML?}
+\begin{answersB}
+\item Ja, ich nutze es täglich
+\item Ja, ich habe es bereits benutzt
+\item Nein
+\end{answersB}
 
-\begin{answersA}
-\item \pbox{Keine Kenntnisse}
-\item \pbox{Grundkenntnisse}
-\item \pbox{Gute Kenntnisse}
-\end{answersA}
+\question{\bf Verfügen Sie über Kenntnisse der objekt-orientierten Programmierung? Verstehen Sie Begriffe wie Klasse, Vererbung, Unterklasse und Oberklasse?}
+
+\begin{answersB}
+\item Ja
+\item Nein
+\end{answersB}
+
+\question{\bf Haben Sie Erfahrung mit Klassendiagrammen der Notationssprache UML? Kennen Sie die Notation für Klassen und Vererbung in UML?}
+
+\begin{answersB}
+\item Ja
+\item Nein
+\end{answersB}
+
+\question{\bf Wie oft zeichnen Sie (Software-)Diagramme?}
+
+\begin{answersB}
+\item Sehr Oft
+\item Oft
+\item Selten
+\item Gar nicht
+\end{answersB}
+
+\question{\bf Welche Tools verwenden Sie zum Erstellen von (Software-)Diagrammen und in welchem Maß?}
+
+\vertikalblockfive{trifft stark zu}{trifft zu}{halb und halb}{trifft nicht zu}{trifft überhaupt nicht zu}{
+    \blocktextfive{\textbf{Diagramm-Programme} \\ (Microsoft Visio, OmniGraffle, ConceptDraw)}
+    \blocktextfive{\textbf{Präsentationsprogramme} \\ (Apple Keynote, Microsoft PowerPoint)}
+    \blocktextfive{\textbf{Online-Tools} \\ (draw.io, yUML.me, Lucidchart)}
+    \blocktextfive{\textbf{UML-Editoren} \\ (Visual Paradigm, Magic\-Draw, ArgoUML)}
+    \blocktextfive{\textbf{Andere Programme}\vspace{1cm}}
+    \blocktextfive{\textbf{Stift und Papier}}
+    \blocktextfive{\textbf{Whiteboard}\vspace{1cm}}
+    \blocktextfive{\textbf{Sonstiges}}
+}
+
+\question{\bf Falls Sie andere als in der vorhergehenden Frage aufgelisteten Tools zum Erstellen von (Software-)Diagrammen verwenden, welche?}
+
+\opentwo
 
 \end{document}
