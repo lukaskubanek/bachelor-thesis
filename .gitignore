@@ -35,6 +35,7 @@
 
 ## Resources
 !bachelor-thesis/resources/**/*.pdf
+!user-study-exercises/**/*.pdf
 
 ## Auxiliary and intermediate files from other packages:
 
