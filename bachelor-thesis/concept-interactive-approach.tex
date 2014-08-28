@@ -56,7 +56,7 @@ Das Kriterium \ref{req:editing-support} erfordert eine Möglichkeit der Bearbeit
 
 Weiterhin sollen die Möglichkeiten der Interaktion eingeschränkt werden, um das Ablenken durch die Layout-Anpassungen zu minimieren (Kriterium \ref{req:focus-on-the-content}). Dies wird durch die Einschränkung der freien Positionierung der Knoten und den Einsatz eines \textbf{neuen Bedienungsmechanismus} für die Verschiebungsoperation erreicht, dem sich der Abschnitt \ref{subsec:temporary-layer-mechanism} widmet.
 
-Die Erhaltung des mentalen Modells (Kriterium \ref{req:mental-map}) wird durch eine \textbf{Animation der Layout-Übergänge} gefördert, das im Abschnitt \ref{subsec:animation-interaction} behandelt wird.
+Die Erhaltung des mentalen Modells (Kriterium \ref{req:mental-map}) wird durch eine \textbf{Animation der Layout-Übergänge} gefördert, das im Abschnitt \ref{subsec:layout-transition} behandelt wird.
 
 % TODO: Die Einführung nochmal nach dem Fertigstellen der Bearbeitungsaktionen überprüfen
 
@@ -148,15 +148,15 @@ In der ersten Phase wird ein Knoten im Canvas angeklickt, das in Abbildung \ref{
 
 In der zweiten Phase findet eine Bewegung des Mauszeigers statt. Da die temporäre Schicht an den Mauszeiger gebunden ist, wird die ausgelagerte Darstellung des Knotens frei mit dem Mauszeiger bewegt, währenddessen der Platzhalter im Canvas seine Position zunächst nicht ändert. Dies ist in Abbildung \ref{fig:movement-action-example-c} illustriert.
 
-Die Position des Mauszeigers wird nach jeder Bewegung ausgewertet und sobald sich der Mauszeiger in einem bestimmten Bereich des Diagramms befindet, für den das Layout geändert werden soll, wird das Layout im unterliegenden Canvas mit Hilfe einer Animation (siehe Abschnitt \ref{subsec:animation-interaction}) angepasst. Dabei wird die Änderung der Layout-Eigenschaften des verschobenen Knotens auf den Platzhalter angewendet, so wie es in Abbildung \ref{fig:movement-action-example-d} dargestellt ist. Durch die Anpassung des Layouts während der Interaktion wird ein unmittelbares Feedback erreicht (Kriterium \ref{req:immediate-feedback}). Dieser Abschnitt beschäftigt sich ausschließlich mit der Beschreibung der Interaktion, die konkrete Funktionsweise der Layout-Berechnung kann in Abschnitt X nachgelesen werden.
+Die Position des Mauszeigers wird nach jeder Bewegung ausgewertet und sobald sich der Mauszeiger in einem bestimmten Bereich des Diagramms befindet, für den das Layout geändert werden soll, wird das Layout im unterliegenden Canvas mit Hilfe einer Animation (siehe Abschnitt \ref{subsec:layout-transition}) angepasst. Dabei wird die Änderung der Layout-Eigenschaften des verschobenen Knotens auf den Platzhalter angewendet, so wie es in Abbildung \ref{fig:movement-action-example-d} dargestellt ist. Durch die Anpassung des Layouts während der Interaktion wird ein unmittelbares Feedback erreicht (Kriterium \ref{req:immediate-feedback}). Dieser Abschnitt beschäftigt sich ausschließlich mit der Beschreibung der Interaktion, die konkrete Funktionsweise der Layout-Berechnung kann in Abschnitt X nachgelesen werden.
 % TODO: Referenz Layout-Berechnung
 
 Die dritte Phase beginnt mit dem Loslassen der Maustaste. Danach springt der verschobene Knoten auf seine Zielposition hin, nämlich die Position des Platzhalters. Anschließend werden der Platzhalter sowie die temporäre Schicht entfernt und die Verschiebungsaktion wird beendet. Die Abbildung \ref{fig:movement-action-example-e} zeigt den Endzustand.
 
-\subsection{Animation der Layout-Übergänge}
-\label{subsec:animation-interaction}
-% \ref{req:mental-map}
-% und die Animation sorgt für die Erhaltung des mentalen Modells (Kriterium \ref{req:mental-map})
+\subsection{Layout-Übergänge}
+\label{subsec:layout-transition}
+
+In vorhergehenden Abschnitten wurde beschrieben, dass nach der Änderung des Inhaltes bzw. währen der Verschiebung eines Knotens das Layout angepasst wird. Konkret handelt es sich um einen Übergang vom aktuellen zu einem neu berechneten Layout. Um diese Übergänge für den Nutzer nachvollziehbar zu machen, wird eine Animation eingesetzt, die insbesondere für die Erhaltung des mentalen Modells sorgt (Kriterium \ref{req:mental-map}).
 
 %%%%%%%%%%%%%%%%%%%
 % Layout Patterns %
