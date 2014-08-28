@@ -23,6 +23,8 @@ Im Folgenden werden Kriterien für den präsentierten Ansatz aufgestellt. Die Wa
     % TODO: Fußnote verbessern!
     
     \item \label{req:immediate-feedback} \textbf{Unmittelbares Feedback} \cite[S.69]{Wybrow08Using}
+    % TODO: Nur wenn direkte Manipulation
+    
     \item \label{req:editing-support} \textbf{Förderung des Prozesses der Diagramm-Erstellung} Der Nutzer soll den Inhalt des Diagramms bearbeiten und inkrementell modifizieren können \cite{GladischSchumann14Semi-Automatic}. Dabei soll das Layout nach jeder Änderung des Inhalts angepasst werden. Weiterhin soll es möglich sein, das Layout des Diagramms bis zu einem bestimmten Grad nach den Präferenzen des Nutzers beeinflussen zu können.
     \item \label{req:mental-map} \textbf{Erhaltung des mentalen Modells} Die Layout-Änderungen im Diagramm sollen möglichst intuitiv erfolgen, insbesondere soll das mentale Modell erhalten werden (siehe Abschnitt \ref{subsec:mental-map}).
     \item \label{req:focus-on-the-content} \textbf{Förderung der Konzentration auf den Inhalt} Der Inhalt eines Diagramms soll eine wichtigere Rolle als seine Repräsentation haben \cite[S.38ff]{Ambler02Agile}. Diese Tatsache soll in dem Ansatz berücksichtigt werden, indem der Aufwand für das Erzeugen des Layouts verringert wird. Außerdem sollen die Aktionen zur Anpassung der visuellen Eigenschaften möglichst eingeschränkt sein.
@@ -64,24 +66,17 @@ Die Erhaltung des mentalen Modells (Kriterium \ref{req:mental-map}) wird durch e
 Die interaktiven Ansätze werden in Editoren eingesetzt, die in der Regel über einen \enquote{Canvas} verfügen. Der Canvas ist ein rechteckiger Bereich des Editor-Fensters, in dem das Diagramm dargestellt wird und in dem die Interaktion mit dem Diagramm stattfindet. Die Interaktion setzt sich aus Bearbeitungsaktionen zusammen, die durch den Nutzer ausgeführt werden. Um das Kriterium \ref{req:gui} zu erfüllen, sollen alle Bearbeitungsaktionen auf GUI-Techniken basieren.
 
 In dieser Arbeit werden die grundlegenden Bearbeitungsaktionen präsentiert, die insbesondere für die Entwicklung des Prototyps (siehe Kapitel \ref{chapter:prototype}) eine wichtige Rolle spielen. Natürlich ist eine Erweiterung der unterstützten Bearbeitungsaktionen möglich.
+% TODO: Hinweis auf die unterstützten Aktionen im Prototypen
 
-Je nach der Art der Modifizierung lassen sich die Bearbeitungsaktionen in zwei Gruppen unterteilen. Zu einem sind das Aktionen, die den Inhalt des Diagramms modifizieren (z.B. Hinzufügen oder Löschen eines Knotens) und zu anderem sind das Aktionen, die das Layout des Diagramms modifizieren, ohne den Inhalt zu verändern (z.B. Verschiebung eines Knotens). Beide Gruppen und deren Vertreter werden in den Abschnitten \ref{subsubsec:edit-actions-content-modification} und \ref{subsubsec:edit-actions-layout-modification} vorgestellt.
+Je nach der Art der Modifizierung lassen sich die Bearbeitungsaktionen in zwei Gruppen unterteilen. Zu einem sind das Aktionen, die den Inhalt des Diagramms modifizieren und zu anderem sind das Aktionen, die das Layout des Diagramms modifizieren, ohne den Inhalt zu verändern.
 
-\subsubsection{Bearbeitungsaktionen zur Modifizierung des Inhalts}
-\label{subsubsec:edit-actions-content-modification}
+\paragraph{Bearbeitungsaktionen zur Modifizierung des Inhalts}
 
-%\paragraph{Hinzufügen einer Kante}
+Zu den Bearbeitungsaktionen, die den Inhalt verändern, gehört das Hinzufügen und Löschen von Knoten bzw. Kanten und die Veränderung ihrer Eigenschaften wie z.B. das Umbenennen der Knoten. Da die Intention für die Ausführung dieser Aktionen nicht die Anpassung des Layouts ist, weisen diese Aktionen ein verzögertes Feedback auf, d.h. das Layout wird erst nach der Beendigung der Bearbeitung angepasst\footnote{Eine Ausnahme bildet das Hinzufügen eines neuen Knoten, das sich ähnlich wie die Verschiebungsaktion verhält.}.
 
-%Eine Kante in graph-basierten Diagrammen verbindet genau zwei Knoten, wobei es sich entweder um eine Verbindung zwischen zwei unterschiedlichen Knoten oder von einen Knoten mit sich selbst handelt. 
+\paragraph{Bearbeitungsaktionen zur Modifizierung des Layouts}
 
-% verzögertes Feedback?
-
-\subsubsection{Bearbeitungsaktionen zur Modifizierung des Layouts}
-\label{subsubsec:edit-actions-layout-modification}
-
-% freie Positionierung
-% Verschiebungsaktion -> gewünschte Position
-% unmittelbares Feedback?
+Ein einziger Vertreter der Bearbeitungsaktionen, die das Layout modifizieren, ist die Verschiebung eines Knotens. Jedoch ist die freie Positionierung der Knoten eingeschränkt und durch die Verschiebung wird eine Empfehlung für die Position geäußert. Diese Aktion macht sich einen neuen Bedienungsmechanismus zunutze, der ein unmittelbares Feedback bietet und näher im Abschnitt \ref{subsec:temporary-layer-mechanism} beschrieben wird.
 
 \subsection{Mechanismus der temporären Schicht}
 \label{subsec:temporary-layer-mechanism}
