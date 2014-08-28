@@ -70,11 +70,12 @@ In dieser Arbeit werden die grundlegenden Bearbeitungsaktionen präsentiert, die
 
 Je nach der Art der Modifizierung lassen sich die Bearbeitungsaktionen in zwei Gruppen unterteilen. Zu einem sind das Aktionen, die den Inhalt des Diagramms modifizieren und zu anderem sind das Aktionen, die das Layout des Diagramms modifizieren, ohne den Inhalt zu verändern.
 
-\paragraph{Bearbeitungsaktionen zur Modifizierung des Inhalts}
+\subsubsection{Bearbeitungsaktionen zur Modifizierung des Inhalts}
 
-Zu den Bearbeitungsaktionen, die den Inhalt verändern, gehört das Hinzufügen und Löschen von Knoten bzw. Kanten und die Veränderung ihrer Eigenschaften wie z.B. das Umbenennen der Knoten. Da die Intention für die Ausführung dieser Aktionen nicht die Anpassung des Layouts ist, weisen diese Aktionen ein verzögertes Feedback auf, d.h. das Layout wird erst nach der Beendigung der Bearbeitung angepasst\footnote{Eine Ausnahme bildet das Hinzufügen eines neuen Knoten, das sich ähnlich wie die Verschiebungsaktion verhält.}.
+Zu den Bearbeitungsaktionen, die den Inhalt verändern, gehört das Hinzufügen und Löschen von Knoten bzw. Kanten und die Veränderung ihrer Eigenschaften wie z.B. das Umbenennen der Knoten. Da die Intention für die Ausführung dieser Aktionen nicht die Anpassung des Layouts ist, weisen diese Aktionen ein verzögertes Feedback auf, d.h. das Layout wird erst nach der Beendigung der Bearbeitung angepasst\footnote{Eine Ausnahme bildet das Hinzufügen eines neuen Knoten, das sich ähnlich wie die Verschiebungsaktion aus dem Abschnitt \ref{subsubsec:edit-action-for-modifying-layout} verhält.}.
 
-\paragraph{Bearbeitungsaktionen zur Modifizierung des Layouts}
+\subsubsection{Bearbeitungsaktionen zur Modifizierung des Layouts}
+\label{subsubsec:edit-action-for-modifying-layout}
 
 Ein einziger Vertreter der Bearbeitungsaktionen, die das Layout modifizieren, ist die Verschiebung eines Knotens. Jedoch ist die freie Positionierung der Knoten eingeschränkt und durch die Verschiebung wird eine Empfehlung für die Position geäußert. Diese Aktion macht sich einen neuen Bedienungsmechanismus zunutze, der ein unmittelbares Feedback bietet und näher im Abschnitt \ref{subsec:temporary-layer-mechanism} beschrieben wird. Dieser Mechanismus bildet die Grundlage des gesamten Ansatzes.
 
@@ -148,7 +149,9 @@ In der ersten Phase wird ein Knoten im Canvas angeklickt, das in Abbildung \ref{
 
 In der zweiten Phase findet eine Bewegung des Mauszeigers statt. Da die temporäre Schicht an den Mauszeiger gebunden ist, wird die ausgelagerte Darstellung des Knotens frei mit dem Mauszeiger bewegt, währenddessen der Platzhalter im Canvas seine Position zunächst nicht ändert. Dies ist in Abbildung \ref{fig:movement-action-example-c} illustriert.
 
-Die Position des Mauszeigers wird nach jeder Bewegung ausgewertet und sobald sich der Mauszeiger in einem bestimmten Bereich des Diagramms befindet, für den das Layout geändert werden soll, wird das Layout im unterliegenden Canvas mit Hilfe einer Animation (siehe Abschnitt \ref{subsec:layout-transition}) angepasst. Dabei wird die Änderung der Layout-Eigenschaften des verschobenen Knotens auf den Platzhalter angewendet, so wie es in Abbildung \ref{fig:movement-action-example-d} dargestellt ist. Durch die Anpassung des Layouts während der Interaktion wird ein unmittelbares Feedback erreicht (Kriterium \ref{req:immediate-feedback}). Dieser Abschnitt beschäftigt sich ausschließlich mit der Beschreibung der Interaktion, die konkrete Funktionsweise der Layout-Berechnung kann in Abschnitt X nachgelesen werden.
+Die Position des Mauszeigers wird nach jeder Bewegung ausgewertet und sobald sich der Mauszeiger in einem bestimmten Bereich des Diagramms befindet, für den das Layout geändert werden soll, wird das Layout im unterliegenden Canvas mit Hilfe einer Animation (siehe Abschnitt \ref{subsec:layout-transition}) angepasst. Dabei wird die Änderung der Layout-Eigenschaften des verschobenen Knotens auf den Platzhalter angewendet, so wie es in Abbildung \ref{fig:movement-action-example-d} dargestellt ist. Durch die Anpassung des Layouts während der Interaktion wird ein unmittelbares Feedback erreicht (Kriterium \ref{req:immediate-feedback}). Dagegen wird das Layout in MindNode (siehe Abschnitt \ref{subsubsec:smart-layout-in-mindnode}) erst nach dem Loslassen der Maustaste angepasst und damit das Feedback verzögert.
+
+Dieser Abschnitt beschäftigt sich ausschließlich mit der Beschreibung der Interaktion, die konkrete Funktionsweise der Layout-Berechnung kann in Abschnitt X nachgelesen werden.
 % TODO: Referenz Layout-Berechnung
 
 Die dritte Phase beginnt mit dem Loslassen der Maustaste. Danach springt der verschobene Knoten auf seine Zielposition hin, nämlich die Position des Platzhalters. Anschließend werden der Platzhalter sowie die temporäre Schicht entfernt und die Verschiebungsaktion wird beendet. Die Abbildung \ref{fig:movement-action-example-e} zeigt den Endzustand.
@@ -197,57 +200,6 @@ In vorhergehenden Abschnitten wurde beschrieben, dass nach der Änderung des Inh
 \endinput 
 %%%%%%%%%
 
-
-% Im Unterschied wird das Layout in MindNode erst nach dem Loslassen der Maustaste angepasst und stellt damit ein verzögertes Feedback dar.
-
-% TODO: Zusammenfassung schreiben
-% Der Mechanismus ist für klassische grafische Benutzeroberflächen ausgelegt und erfüllt damit das Kriterium \ref{req:gui}.
-
-
-\subsection{Layout-Engine}
-
-Nach dem Ausführen einer Bearbeitungsaktion (siehe Abschnitt \ref{subsec:edit-actions}) bzw. ihres Teils durch den Nutzer wird ein Layout-Ereignis erzeugt, das neben der Information über die manipulierten Objekte auch Parameter der Interaktion wie z.B. die Position des Mauszeigers besitzt.
-
-% Layout-Übergänge
-% Auswertung der Verschiebungsaktion
-% ursprünglicher Ansatz
-
-
-% Einschränkung der Aktionen, die der Nutzer ausführen kann
-
-% Abnehmen der Layout-Arbeit durch Einschränkung der Flexibilität
-
-% Herausforderung bei der Kombination von mehreren Kriterien (z.B. interaktive Bedienung aber gleichzeitig eine Einschränkung der Möglichkeiten)
-
-
-
-
-%%%%%%%%%
-
-% Meta-Modell
-% Klassendiagramme meistens weniger als 10 Klassen (Rat von Scott Ambler?)
-% Durch die Spezialisierung auf konkrete Diagramm-Typen und den Einsatz von verschiedenen Vereinfachungsmaßnahmen wie etwa Einschränkung der unterstützten Notation \cite[S.56ff]{Ambler02Agile} lassen sich Algorithmen für das Layout von Softwarediagrammen entwerfen, die zwar nicht so flexibel wie z.B. \cite{Maier12A-Pattern-based} oder \cite{Eichelberger05Aesthetics} sind, aber dafür...
-
-
-
-% Layout-Engine
-% =============
-% Eingabe für den Algorithmus: Layout-Ereignis, Inhalt des Diagramms, instanziierte Patterns, der Layout-Zustand (mögliche Layout-Übergänge vom aktuellen Zustand abhängig, nicht alle erreichbar)
-% berechnete Layouts = Positionen für Knoten, Routen für Kanten (nicht implementiert), Animationen/Übergangsparameter für die Transitionen (nicht implementiert)
-% initialer Zustand
-
-% Erreichbare Layouts werden berechnet und mit Hilfe der Layout-Ereignisse wird geprüft, ob ein Layout-Übergang stattfinden soll (z.B. nur die benachbarten Bereiche im horizontalen Layout-Algorithmus)
-% nach einem Layout-Übergang wird die Berechnung wiederholt
-
-% Layout-Engine soll für spezielle Diagrammtypen unterschiedliches Verhalten aufweisen
-% Jeder Diagrammtyp (z.B. Klassendiagramm, Zustandsdiagramm, Flowchart usw.) hat aufgrund der Semantik- und Strukturregeln spezielle Anforderungen an das ästhetische Layout
-% automatische Instanziierung von Patterns nach Layout-Ereignissen
-% Neu-Berechnung nach jedem Layout-Übergang -> Performance?
-% Stabilität -> Ausführen eines Layout-Übergangs nach einer deutlichen Aktion des Nutzers
-% Erreichbarkeit des Ausgangslayouts
-
-% In Rahmen der Konzeption und Entwicklung wurde zunächst ein Algorithmus entworfen, der für die Manipulation eines Knotens alle möglichen Layouts und die entsprechenden Diagramm-Bereiche für das gesamte Diagramm explizit berechnet hat. Durch eine Bewegung des Mauszeigers in einen anderen Bereich wurde jeweils ein Layout-Übergang ausgelöst. Die Berechnung wurde jedoch nicht nach jedem Layout-Übergang wiederholt und die Abbildung war oft nach dem ersten Layout-Übergang ungültig. Später wurde festgelegt, dass dieser Algorithmus nicht hinreichend ist.
-
 \section{Layout-Patterns}
 \label{sec:layout-patterns}
 
@@ -292,6 +244,57 @@ Nach dem Ausführen einer Bearbeitungsaktion (siehe Abschnitt \ref{subsec:edit-a
 
 % Variationen: Reihenfolge der Knoten im Ausrichtungs-Pattern
 % interne Wiederverwendung eines Ausrichtung-Patterns
+
+
+%%%%%%%%
+
+% TODO: Zusammenfassung schreiben
+% Der Mechanismus ist für klassische grafische Benutzeroberflächen ausgelegt und erfüllt damit das Kriterium \ref{req:gui}.
+
+
+\subsection{Layout-Engine}
+
+Nach dem Ausführen einer Bearbeitungsaktion (siehe Abschnitt \ref{subsec:edit-actions}) bzw. ihres Teils durch den Nutzer wird ein Layout-Ereignis erzeugt, das neben der Information über die manipulierten bzw. geänderten Objekte auch Parameter der Interaktion wie z.B. die Position des Mauszeigers besitzt.
+
+% Layout-Übergänge
+% Auswertung der Verschiebungsaktion
+% ursprünglicher Ansatz
+
+
+% Einschränkung der Aktionen, die der Nutzer ausführen kann
+
+% Abnehmen der Layout-Arbeit durch Einschränkung der Flexibilität
+
+% Herausforderung bei der Kombination von mehreren Kriterien (z.B. interaktive Bedienung aber gleichzeitig eine Einschränkung der Möglichkeiten)
+
+
+
+
+%%%%%%%%%
+
+% Meta-Modell
+% Klassendiagramme meistens weniger als 10 Klassen (Rat von Scott Ambler?)
+% Durch die Spezialisierung auf konkrete Diagramm-Typen und den Einsatz von verschiedenen Vereinfachungsmaßnahmen wie etwa Einschränkung der unterstützten Notation \cite[S.56ff]{Ambler02Agile} lassen sich Algorithmen für das Layout von Softwarediagrammen entwerfen, die zwar nicht so flexibel wie z.B. \cite{Maier12A-Pattern-based} oder \cite{Eichelberger05Aesthetics} sind, aber dafür...
+
+
+
+% Layout-Engine
+% =============
+% Eingabe für den Algorithmus: Layout-Ereignis, Inhalt des Diagramms, instanziierte Patterns, der Layout-Zustand (mögliche Layout-Übergänge vom aktuellen Zustand abhängig, nicht alle erreichbar)
+% berechnete Layouts = Positionen für Knoten, Routen für Kanten (nicht implementiert), Animationen/Übergangsparameter für die Transitionen (nicht implementiert)
+% initialer Zustand
+
+% Erreichbare Layouts werden berechnet und mit Hilfe der Layout-Ereignisse wird geprüft, ob ein Layout-Übergang stattfinden soll (z.B. nur die benachbarten Bereiche im horizontalen Layout-Algorithmus)
+% nach einem Layout-Übergang wird die Berechnung wiederholt
+
+% Layout-Engine soll für spezielle Diagrammtypen unterschiedliches Verhalten aufweisen
+% Jeder Diagrammtyp (z.B. Klassendiagramm, Zustandsdiagramm, Flowchart usw.) hat aufgrund der Semantik- und Strukturregeln spezielle Anforderungen an das ästhetische Layout
+% automatische Instanziierung von Patterns nach Layout-Ereignissen
+% Neu-Berechnung nach jedem Layout-Übergang -> Performance?
+% Stabilität -> Ausführen eines Layout-Übergangs nach einer deutlichen Aktion des Nutzers
+% Erreichbarkeit des Ausgangslayouts
+
+% In Rahmen der Konzeption und Entwicklung wurde zunächst ein Algorithmus entworfen, der für die Manipulation eines Knotens alle möglichen Layouts und die entsprechenden Diagramm-Bereiche für das gesamte Diagramm explizit berechnet hat. Durch eine Bewegung des Mauszeigers in einen anderen Bereich wurde jeweils ein Layout-Übergang ausgelöst. Die Berechnung wurde jedoch nicht nach jedem Layout-Übergang wiederholt und die Abbildung war oft nach dem ersten Layout-Übergang ungültig. Später wurde festgelegt, dass dieser Algorithmus nicht hinreichend ist.
 
 \section{Abgrenzung zu bestehenden Ansätzen}
 
