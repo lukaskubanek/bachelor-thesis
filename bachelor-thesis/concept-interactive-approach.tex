@@ -168,19 +168,66 @@ In vorhergehenden Abschnitten wurde beschrieben, dass nach der Änderung des Inh
 \section{Layout-Patterns}
 \label{sec:layout-patterns}
 
+Die Layout-Patterns dienen der Beschreibung der Struktur des Layouts eines Diagramms. Die Auffassung der Layout-Patterns in dieser Arbeit ist im Vergleich zu dem Konzept aus \cite{Maier12A-Pattern-based} sehr vereinfacht. Das liegt daran, dass sich diese Arbeit hauptsächlich mit der Interaktion beschäftigt. Zwecks Vereinfachung werden die Layout-Patterns nicht an einem separaten Meta-Modell definiert, sondern direkt auf dem Meta-Modell der konkreten Syntax des gewählten Beispiels. Dennoch stellt die Arbeit neue Konzepte für die Erweiterung der Layout-Patterns vor, wie z.B. die Aufteilung auf implizite und explizite Patterns und das Konzept der Variierung der Layout-Patterns.
+
 \subsection{Implizite Layout-Patterns}
 \label{subsec:implicit-layout-patterns}
 
+Die impliziten Layout-Patterns beschreiben allgemeine Eigenschaften für die Layout-Berechnung. Dafür werden keine expliziten Strukturregeln erzeugt, wie das der Fall bei den expliziten Layout-Patterns (siehe Abschnitt \ref{subsec:explicit-layout-patterns}) ist, sondern sie werden von dem Algorithmus der Layout-Berechnung einfach angenommen.
+
 \subsubsection{Größe der Knoten}
+
 \subsubsection{Zentrierung des Inhalts}
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics{resources/layout-pattern-centered-content}
+    \caption{}
+    \label{fig:alignment-pattern-centered-content}
+\end{figure}
+
 \subsubsection{Gleiche Abstände}
+
 \subsubsection{Verhinderung der Knoten-Überlappung}
+
+% Patterns-Variierung (z.B. Reihenfolge der Knoten kann von Nutzer festgelegt werden, das endgültige Layout wird durch die Geometrie bestimmt)
+% instanziiert in der Layout-Engine, referenzieren den Diagramm-Inhalt
+% Wiederverwendung möglich (mehrere Instanzen in der Layout-Engine bzw. Komposition von Patterns wie T-Shape-Pattern)
+% Nur während Drag&Drop sichtbar -> Möglichkeit der Interaktivität der Patterns
+% interne Berechnung des relativen Layouts für enthaltene Diagramm-Objekte (Knoten)
+
+% konkrete Patterns:
+% - detaillierte Beschreibung der expliziten Layout-Patterns mit Bezug auf Arbeiten
+% - Erläutern der geometrischen Parametern mit Bildern
+% - Bild mit Instanzen von Patterns in einem Beispiel-Diagramm (kann ein Screenshot sein)
 
 \subsection{Explizite Layout-Patterns}
 \label{subsec:explicit-layout-patterns}
 
 \subsubsection{Ausrichtungspattern}
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics{resources/layout-pattern-alignment-center}
+    \caption{}
+    \label{fig:layout-pattern-alignment-center}
+\end{figure}
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics{resources/layout-pattern-alignment-top}
+    \caption{}
+    \label{fig:layout-pattern-alignment-top}
+\end{figure}
+
 \subsubsection{T-Shape-Pattern}
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics{resources/layout-pattern-t-shape}
+    \caption{}
+    \label{fig:layout-pattenr-t-shape}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%
 % Layout Calculation %
@@ -188,6 +235,16 @@ In vorhergehenden Abschnitten wurde beschrieben, dass nach der Änderung des Inh
 
 \section{Berechnung des Layouts}
 \label{sec:layout-calculation}
+
+%%%%%%%%%%%%%%%%%%
+% Open Questions %
+%%%%%%%%%%%%%%%%%%
+
+\section{Offene Fragen}
+\label{sec:open-questions}
+
+% Visualisierung der Patterns
+% Instanziierung durch den Nutzer wie in [Maier] ist denkbar
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Current Approaches Comparison %
@@ -203,24 +260,7 @@ In vorhergehenden Abschnitten wurde beschrieben, dass nach der Änderung des Inh
 \section{Layout-Patterns}
 \label{sec:layout-patterns}
 
-% Abgrenzung des Begriffs zu dem von [Maier]
-% implizite vs. explizite Layout-Patterns (siehe Mappe)
-% Patterns-Variierung (z.B. Reihenfolge der Knoten kann von Nutzer festgelegt werden, das endgültige Layout wird durch die Geometrie bestimmt)
-% instanziiert in der Layout-Engine, referenzieren den Diagramm-Inhalt
-% Wiederverwendung möglich (mehrere Instanzen in der Layout-Engine bzw. Komposition von Patterns wie T-Shape-Pattern)
-% Nur während Drag&Drop sichtbar -> Möglichkeit der Interaktivität der Patterns
-% interne Berechnung des relativen Layouts für enthaltene Diagramm-Objekte (Knoten)
 
-% konkrete Pattens:
-% - detaillierte Beschreibung der expliziten Layout-Patterns mit Bezug auf Arbeiten
-% - Erläutern der geometrischen Parametern mit Bildern
-% - Bild mit Instanzen von Patterns in einem Beispiel-Diagramm (kann ein Screenshot sein)
-% - IDLPattern, IDLAlignmentPattern, IDLTShapePattern -> Klassendiagramm
-
-% Offene Fragen
-% =============
-% Visualisierung
-% Instanziierung durch den Nutzer wie in [Maier] ist denkbar
 
 \subsection{Implizite Layout-Patterns}
 
