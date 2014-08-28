@@ -76,14 +76,87 @@ Zu den Bearbeitungsaktionen, die den Inhalt verändern, gehört das Hinzufügen 
 
 \paragraph{Bearbeitungsaktionen zur Modifizierung des Layouts}
 
-Ein einziger Vertreter der Bearbeitungsaktionen, die das Layout modifizieren, ist die Verschiebung eines Knotens. Jedoch ist die freie Positionierung der Knoten eingeschränkt und durch die Verschiebung wird eine Empfehlung für die Position geäußert. Diese Aktion macht sich einen neuen Bedienungsmechanismus zunutze, der ein unmittelbares Feedback bietet und näher im Abschnitt \ref{subsec:temporary-layer-mechanism} beschrieben wird.
+Ein einziger Vertreter der Bearbeitungsaktionen, die das Layout modifizieren, ist die Verschiebung eines Knotens. Jedoch ist die freie Positionierung der Knoten eingeschränkt und durch die Verschiebung wird eine Empfehlung für die Position geäußert. Diese Aktion macht sich einen neuen Bedienungsmechanismus zunutze, der ein unmittelbares Feedback bietet und näher im Abschnitt \ref{subsec:temporary-layer-mechanism} beschrieben wird. Dieser Mechanismus bildet die Grundlage des gesamten Ansatzes.
 
 \subsection{Mechanismus der temporären Schicht}
 \label{subsec:temporary-layer-mechanism}
 
+Alle interaktiven Ansätze für das Layout von Diagrammen aus dem Kapitel \ref{chapter:existing-approaches} bis auf das \enquote{Smart Layout} in MindNode (siehe Abschnitt \ref{subsubsec:smart-layout-in-mindnode}) unterstützen \textbf{freie Positionierung} der Objekte im Diagramm. Diese Art der Bedienung wird im manuellen Layout zusätzlich um temporäre Hilfefunktionen (siehe Abschnitt \ref{sec:manual-layout}) und in Struktur-basierten benutzergesteuerten Ansätzen um Möglichkeit der Erzeugung von Strukturregeln (siehe Abschnitt \ref{subsec:structure-based-user-controlled-approaches}) erweitert. Durch diese Erweiterungen wird die freie Positionierung eingeschränkt, wodurch in der Regel ein besseres Layout des Diagramms erreicht werden kann. Dahingegen ist die freie Positionierung in \enquote{Smart Layout} in MindNode und dem in dieser Arbeit präsentierten Ansatz \textbf{nicht gestattet}. Stattdessen wird durch die Verschiebung der Objekte ihre ungefähre Position angegeben, die intern ausgewertet wird und eine Anpassung des Layouts bewirkt.
+
+Dieses Verhalten wird für die Verschiebungsaktion der Knoten eingesetzt, indem bei der Verschiebung eines Knotens eine temporäre Schicht erzeugt wird, in der sich der Knoten frei positionieren lässt. Im Diagramm wird der manipulierte Knoten durch einen Platzhalter repräsentiert, der nur erlaubte Positionen annehmen kann. Dieser Mechanismus basiert auf der Technik \textbf{\enquote{Drag and Drop}} und ist in drei Phasen aufgeteilt. Im Folgendem wird er an einem Beispiel detailliert erklärt.
+
+Bevor die Verschiebungsaktion beginnen kann, müssen sich im Canvas einige Knoten befinden, so wie es der Fall in Abbildung \ref{fig:movement-action-example-a} ist.
+
+In der ersten Phase wird ein Knoten im Canvas angeklickt, das in Abbildung \ref{fig:movement-action-example-b} durch einen Mauszeiger gekennzeichnet ist. Dabei wird der angeklickte Knoten in eine neu eingefügte \textbf{temporäre Schicht} ausgelagert, die vor dem Canvas positioniert ist, so wie es in Abbildung \ref{fig:temporary-layer-visualization} skizziert ist. Im Canvas wird die ursprüngliche Darstellung des verschobenen Knotens durch einen \textbf{temporären Platzhalter} ersetzt, das dem Nutzer die Zielposition des Knotens andeutet. Der Platzhalter ist in Abbildungen \ref{fig:movement-action-example-c} und \ref{fig:temporary-layer-visualization} durch ein Rechteck repräsentiert, das mit einer grauen gestrichelten Linie umrandet ist.
+
+\begin{figure}[hbt]
+    \newcommand{\subfigurewidth}{0.28\textwidth}
+    \newcommand{\graphicsscale}{1.2}
+    \centering
+    \begin{subfigure}{\subfigurewidth}
+        \centering
+        \includegraphics[scale=\graphicsscale]{resources/movement-action-example-a}
+        \caption{}
+        \label{fig:movement-action-example-a}
+    \end{subfigure}
+    \begin{subfigure}{\subfigurewidth}
+        \centering
+        \includegraphics[scale=\graphicsscale]{resources/movement-action-example-b}
+        \caption{}
+        \label{fig:movement-action-example-b}
+    \end{subfigure}
+    \begin{subfigure}{\subfigurewidth}
+        \centering
+        \includegraphics[scale=\graphicsscale]{resources/movement-action-example-c}
+        \caption{}
+        \label{fig:movement-action-example-c}
+    \end{subfigure}
+    \begin{subfigure}{\subfigurewidth}
+        \centering
+        \includegraphics[scale=\graphicsscale]{resources/movement-action-example-d}
+        \caption{}
+        \label{fig:movement-action-example-d}
+    \end{subfigure}
+    \begin{subfigure}{\subfigurewidth}
+        \centering
+        \includegraphics[scale=\graphicsscale]{resources/movement-action-example-e}
+        \caption{}
+        \label{fig:movement-action-example-e}
+    \end{subfigure}
+    \caption{Beispiel einer Verschiebungsaktion}
+    \label{fig:movement-action-example}
+\end{figure}
+
+% TODO: Mauszeiger hinzufügen
+\begin{figure}[hbt]
+    \newcommand{\subfigurewidth}{0.35\textwidth}
+    \newcommand{\graphicsscale}{1.2}
+    \centering
+    \begin{subfigure}{\subfigurewidth}
+        \centering
+        \includegraphics[scale=\graphicsscale]{resources/temporary-layer-visualization-a}
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}{\subfigurewidth}
+        \centering
+        \includegraphics[scale=\graphicsscale]{resources/temporary-layer-visualization-b}
+        \caption{}
+    \end{subfigure}
+    \caption{Darstellung der temporären Schicht vor dem Canvas}
+    \label{fig:temporary-layer-visualization}
+\end{figure}
+
+In der zweiten Phase findet eine Bewegung des Mauszeigers statt. Da die temporäre Schicht an den Mauszeiger gebunden ist, wird die ausgelagerte Darstellung des Knotens frei mit dem Mauszeiger bewegt, währenddessen der Platzhalter im Canvas seine Position zunächst nicht ändert. Dies ist in Abbildung \ref{fig:movement-action-example-c} illustriert.
+
+Die Position des Mauszeigers wird nach jeder Bewegung ausgewertet und sobald sich der Mauszeiger in einem bestimmten Bereich des Diagramms befindet, für den das Layout geändert werden soll, wird das Layout im unterliegenden Canvas mit Hilfe einer Animation (siehe Abschnitt \ref{subsec:animation-interaction}) angepasst. Dabei wird die Änderung der Layout-Eigenschaften des verschobenen Knotens auf den Platzhalter angewendet, so wie es in Abbildung \ref{fig:movement-action-example-d} dargestellt ist. Durch die Anpassung des Layouts während der Interaktion wird ein unmittelbares Feedback erreicht (Kriterium \ref{req:immediate-feedback}). Dieser Abschnitt beschäftigt sich ausschließlich mit der Beschreibung der Interaktion, die konkrete Funktionsweise der Layout-Berechnung kann in Abschnitt X nachgelesen werden.
+% TODO: Referenz Layout-Berechnung
+
+Die dritte Phase beginnt mit dem Loslassen der Maustaste. Danach springt der verschobene Knoten auf seine Zielposition hin, nämlich die Position des Platzhalters. Anschließend werden der Platzhalter sowie die temporäre Schicht entfernt und die Verschiebungsaktion wird beendet. Die Abbildung \ref{fig:movement-action-example-e} zeigt den Endzustand.
+
 \subsection{Animation der Layout-Übergänge}
 \label{subsec:animation-interaction}
 % \ref{req:mental-map}
+% und die Animation sorgt für die Erhaltung des mentalen Modells (Kriterium \ref{req:mental-map})
 
 %%%%%%%%%%%%%%%%%%%
 % Layout Patterns %
@@ -124,85 +197,6 @@ Ein einziger Vertreter der Bearbeitungsaktionen, die das Layout modifizieren, is
 \endinput 
 %%%%%%%%%
 
-\subsection{Bearbeitungsaktionen}
-\label{subsec:edit-actions}
-
-Alle interaktiven Ansätze für das Layout von Diagrammen aus dem Kapitel \ref{chapter:existing-approaches} bis auf das \enquote{Smart Layout} in MindNode (siehe Abschnitt \ref{subsubsec:smart-layout-in-mindnode}) unterstützen die \textbf{freie Positionierung} der Objekte im Diagramm. Diese Art der Bedienung wird im manuellen Layout zusätzlich um temporäre Hilfefunktionen (siehe Abschnitt \ref{sec:manual-layout}) und in Struktur-basierten benutzergesteuerten Ansätzen um Möglichkeit der Erzeugung von Strukturregeln (siehe Abschnitt \ref{subsec:structure-based-user-controlled-approaches}) erweitert. Durch diese Erweiterungen wird die freie Positionierung eingeschränkt, dass in der Regel zu einem besseren Layout des Diagramms führt. Dahingegen ist die freie Positionierung in \enquote{Smart Layout} in MindNode und dem in dieser Arbeit präsentierten Ansatz \textbf{nicht gestattet}. Somit bewirkt die Verschiebung eines Objekts im Diagramm keine direkte Anpassung seiner Position, sondern wird als eine Äußerung der gewünschten Position interpretiert.
-
-\subsection{Mechanismus der temporären Schicht}
-
-Die interaktiven Ansätze werden in Editoren eingesetzt, die in der Regel über einen \enquote{Canvas} verfügen. Der Canvas ist ein rechteckiger Bereich des Editor-Fensters, in dem das Diagramm dargestellt wird und in dem die Interaktion mit dem Diagramm stattfindet. Obwohl in den meisten Editoren die Reihenfolge der Objekte im Canvas festgelegt werden kann und der Canvas somit mehrschichtig erscheint, handelt es sich aus der Sicht der Interaktion lediglich um \textbf{eine Schicht}, in der die Bearbeitungsaktionen ausgeführt werden. Dies ist der Fall für alle im Kapitel \ref{chapter:existing-approaches} vorgestellten interaktiven Ansätze und deren Implementierungen\footnote{Eine Ausnahme bildet das Hinzufügen von Objekten durch Verschiebung aus einer Palette in Programmen wie z.B. Keynote und Visual Paradigm.}.
-
-Für die Umsetzung der Bearbeitungsaktionen unter Berücksichtigung der Einschränkung der freien Positionierung der Objekte war der Entwurf eines \textbf{neuen Bedienungsmechanismus} erforderlich. Dieser Mechanismus bildet die Grundlage des gesamten Ansatzes und wird im Folgenden anhand eines Beispiel der Verschiebungsaktion im Detail erklärt.
-
-Die Verschiebungsaktion bewirkt die Verschiebung eines Objekts im Diagramm. Sie basiert auf der Technik \textbf{\enquote{Drag and Drop}} und ist in drei Phasen aufgeteilt.
-
-Bevor die Verschiebung beginnen kann, müssen sich im Canvas einige Objekte befinden, so wie es der Fall in Abbildung \ref{fig:movement-action-example-a} ist.
-
-\begin{figure}[hbt]
-    \newcommand{\subfigurewidth}{0.28\textwidth}
-    \newcommand{\graphicsscale}{1.2}
-    \centering
-    \begin{subfigure}{\subfigurewidth}
-        \centering
-        \includegraphics[scale=\graphicsscale]{resources/movement-action-example-a}
-        \caption{}
-        \label{fig:movement-action-example-a}
-    \end{subfigure}
-    \begin{subfigure}{\subfigurewidth}
-        \centering
-        \includegraphics[scale=\graphicsscale]{resources/movement-action-example-b}
-        \caption{}
-        \label{fig:movement-action-example-b}
-    \end{subfigure}
-    \begin{subfigure}{\subfigurewidth}
-        \centering
-        \includegraphics[scale=\graphicsscale]{resources/movement-action-example-c}
-        \caption{}
-        \label{fig:movement-action-example-c}
-    \end{subfigure}
-    \begin{subfigure}{\subfigurewidth}
-        \centering
-        \includegraphics[scale=\graphicsscale]{resources/movement-action-example-d}
-        \caption{}
-        \label{fig:movement-action-example-d}
-    \end{subfigure}
-    \begin{subfigure}{\subfigurewidth}
-        \centering
-        \includegraphics[scale=\graphicsscale]{resources/movement-action-example-e}
-        \caption{}
-        \label{fig:movement-action-example-e}
-    \end{subfigure}
-    \caption{Beispiel einer Verschiebungsaktion}
-    \label{fig:movement-action-example}
-\end{figure}
-
-In der ersten Phase wird ein Objekt im Canvas angeklickt, das in Abbildung \ref{fig:movement-action-example-b} durch einen Mauszeiger gekennzeichnet ist. Dabei wird das angeklickte Objekt in eine neu eingefügte \textbf{temporäre Schicht} ausgelagert, die vor dem Canvas positioniert ist. Eine Visualisierung der Schichten ist in Abbildung \ref{fig:temporary-layer-visualization} nachzuschauen. Im Canvas wird die ursprüngliche Darstellung des verschobenen Objekts durch ein \textbf{temporäres Platzhalter-Objekt} ausgetauscht, das dem Nutzer die Zielposition des verschobenen Objekts andeutet. Das Platzhalter-Objekt ist in Abbildung \ref{fig:movement-action-example-c} durch ein Rechteck repräsentiert, das mit einer grauen gestrichelten Linie umrandet ist.
-
-% TODO: Mauszeiger hinzufügen
-\begin{figure}[hbt]
-    \newcommand{\subfigurewidth}{0.35\textwidth}
-    \newcommand{\graphicsscale}{1.2}
-    \centering
-    \begin{subfigure}{\subfigurewidth}
-        \centering
-        \includegraphics[scale=\graphicsscale]{resources/temporary-layer-visualization-a}
-        \caption{}
-    \end{subfigure}
-    \begin{subfigure}{\subfigurewidth}
-        \centering
-        \includegraphics[scale=\graphicsscale]{resources/temporary-layer-visualization-b}
-        \caption{}
-    \end{subfigure}
-    \caption{Darstellung der temporären zweiten Schicht}
-    \label{fig:temporary-layer-visualization}
-\end{figure}
-
-In der zweiten Phase findet eine Bewegung des Mauszeigers statt. Da die temporäre Schicht an den Mauszeiger gebunden ist, wird die ausgelagerte Darstellung des Objekts frei mit dem Mauszeiger bewegt, währenddessen das Platzhalter-Objekt im Canvas seine Position zunächst nicht ändert. Dies ist in Abbildung \ref{fig:movement-action-example-c} illustriert.
-
-Durch die Positionierung des Mauszeigers wird die gewünschte Position des verschobenen Objekts geäußert, die nach jeder Bewegung intern ausgewertet wird. Sobald sich der Mauszeiger in einem bestimmten Bereich befindet, für den das Layout des Diagramms geändert werden soll, wird das Layout im unterliegenden Canvas animiert angepasst. Dabei wird die Änderung der Layout-Eigenschaften des verschobenen Objekts auf das Platzhalter-Objekt angewendet, so wie es in Abbildung \ref{fig:movement-action-example-d} dargestellt ist. Durch die Anpassung des Layouts während der Interaktion wird ein unmittelbares Feedback erreicht (Kriterium \ref{req:immediate-feedback}) und die Animation sorgt für die Erhaltung des mentalen Modells (Kriterium \ref{req:mental-map}). Wie die Auswahl des Layouts intern konkret funktioniert wird im Abschnitt X beschrieben.
-
-Nach dem Loslassen der Maustaste springt das verschobene Objekt auf die Zielposition hin, die durch die Position des Platzhalter-Objekts bestimmt ist. Anschließend werden das Platzhalter-Objekt sowie die temporäre Schicht entfernt und die Verschiebungsaktion wird beendet. Die Abbildung \ref{fig:movement-action-example-e} zeigt den Endzustand.
 
 % Im Unterschied wird das Layout in MindNode erst nach dem Loslassen der Maustaste angepasst und stellt damit ein verzögertes Feedback dar.
 
@@ -214,14 +208,9 @@ Nach dem Loslassen der Maustaste springt das verschobene Objekt auf die Zielposi
 
 Nach dem Ausführen einer Bearbeitungsaktion (siehe Abschnitt \ref{subsec:edit-actions}) bzw. ihres Teils durch den Nutzer wird ein Layout-Ereignis erzeugt, das neben der Information über die manipulierten Objekte auch Parameter der Interaktion wie z.B. die Position des Mauszeigers besitzt.
 
-
 % Layout-Übergänge
-
 % Auswertung der Verschiebungsaktion
 % ursprünglicher Ansatz
-
-
-
 
 
 % Einschränkung der Aktionen, die der Nutzer ausführen kann
