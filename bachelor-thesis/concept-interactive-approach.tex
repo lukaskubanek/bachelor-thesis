@@ -257,15 +257,15 @@ Das T-Shape-Pattern erweitert das Ausrichtungspattern, indem die Reihe der unter
 \section{Berechnung des Layouts}
 \label{sec:layout-calculation}
 
-Wie bereits im Abschnitt \ref{subsec:edit-actions} erläutert wurde, werden während der Bearbeitung eines Diagramms Aktionen durch den Nutzer ausgeführt. Für die ausgeführten Bearbeitungsaktionen werden \textbf{Layout-Ereignisse} generiert, die eine Beschreibung der manipulierten bzw. geänderten Knoten und Kanten sowie die Parameter der Interaktion wie z.B. die Position des Mauszeigers beinhalten. Die \textbf{Layout-Engine}, die für die Berechnung des Layouts zuständig ist, nimmt die erzeugten Layout-Ereignisse entgegen, verarbeitet sie und passt das Layout des Diagramms an. Der Prozess der Verarbeitung der Layout-Ereignisse wird im Abschnitt \ref{subsec:processing-of-layout-events} beschrieben.
+Wie bereits im Abschnitt \ref{subsec:edit-actions} erläutert wurde, werden während der Bearbeitung eines Diagramms Aktionen durch den Nutzer ausgeführt. Für die ausgeführten Bearbeitungsaktionen werden \textbf{Layout-Ereignisse} generiert, die eine Beschreibung der manipulierten bzw. geänderten Knoten und Kanten sowie die Parameter der Interaktion wie z.B. die Position des Mauszeigers beinhalten. Die \textbf{Layout-Engine}, die für die Berechnung des Layouts zuständig ist, nimmt die erzeugten Layout-Ereignisse entgegen, verarbeitet sie und passt das Layout des Diagramms an. Mit der Layout-Engine beschäftigt sich näher der Abschnitt \ref{subsec:layout-engine}. Der Prozess der Verarbeitung der Layout-Ereignisse wird im Abschnitt \ref{subsec:processing-of-layout-events} beschrieben. 
+% TODO: Verweise auf restliche Abschnitt ergänzen!
 
 \subsection{Layout-Engine}
 \label{subsec:layout-engine}
 
-%Die Layout-Engine verwaltet intern Instanzen von expliziten Layout-Patterns (siehe Abschnitt \ref{subsec:explicit-layout-patterns}), die 
-% Layout-Patterns instanziiert in der Layout-Engine, referenzieren den Diagramm-Inhalt
+Die Layout-Engine ist ein zentraler Bestandteil des präsentierten Ansatzes. Sie ist mit dem bearbeiteten Diagramm verknüpft, dessen Layout sie verändert. Des Weiteren verwaltet sie Instanzen von expliziten Layout-Patterns (siehe Abschnitt \ref{subsec:explicit-layout-patterns}), wodurch die Struktur des Diagramms beschrieben wird. 
 
-% initialer Zustand
+Um mit dem Prozess der Verarbeitung der Layout-Ereignisse beginnen zu können, muss sich die Layout-Engine in einem \textbf{validen Zustand} befinden. Dies wird entweder durch das Speichern des Zustandes der Layout-Engine oder durch die Berechnung eines initialen Layouts gewährleistet. Die Aufgabe der zuletzt genannten Option besteht darin, die expliziten Layout-Patterns ähnlich wie in \cite{MaierMinas13A-Pattern-based} anhand des Inhalts des Diagramms automatisiert zu instanziieren.
 
 \subsection{Verarbeitung der Layout-Ereignisse}
 \label{subsec:processing-of-layout-events}
