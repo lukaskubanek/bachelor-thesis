@@ -177,18 +177,28 @@ Die impliziten Layout-Patterns beschreiben allgemeine Eigenschaften für die Lay
 
 \subsubsection{Größe der Knoten}
 
-\subsubsection{Zentrierung des Inhalts}
+In allen interaktiven Ansätzen für das Layout von Diagrammen aus dem Kapitel \ref{chapter:existing-approaches} hat der Nutzer die Möglichkeit die Größe der Objekte zu verändern. Weiterhin werden in dem allgemeinen Ansatz aus \cite{Maier12A-Pattern-based} Layout-Patterns präsentiert, die Regeln für die Größe der Objekte beschreiben. Somit ist die Größe der Objekte eine Eigenschaft, die zu einem von dem Nutzer und zu anderem von dem Layout-Algorithmus geändert werden kann.
+
+Dagegen ist die Größe der Knoten in dieser Arbeit ausschließlich durch den Inhalt des Knotens bestimmt. Sie nimmt zunächst eine minimale Größe an und wenn der Inhalt\footnote{Für eine Klasse der Notationssprache UML handelt es sich um die Bezeichnung und Liste der Attribute und Methoden.} in den Knoten mit der minimalen Größe nicht passt, wird der Knoten entsprechend erweitert. Somit kann die Größe der Knoten weder durch den Nutzer noch durch die Layout-Berechnung geändert werden. Dieses implizite Layout-Pattern fördert insbesondere die Konzentration auf den Inhalt (Kriterium \ref{req:focus-on-the-content}) und die ästhetische Gestaltung (Kriterium \ref{req:aesthetics-criteria}).
+
+\subsubsection{Verhinderung der Knoten-Überlappung}
+
+% TODO: Nach den ästhetischen Kriterien im Kapitel 2 ergänzen!
+
+\subsubsection{Zentrierung des Diagramm-Inhalts}
+
+Die Zentrierung des Diagramm-Inhalts ist ein weiteres ästhetisches Layout-Pattern, das eine eindeutige Bestimmung des Layouts ermöglicht. Die Berechnung des Layouts erfolgt relativ und wird dermaßen auf das Diagramm angewendet, so dass der Diagramm-Inhalt immer in die Mitte des Canvas platziert wird. Dies wird in Abbildung \ref{fig:alignment-pattern-centered-content} veranschaulicht.
 
 \begin{figure}[hbt]
     \centering
     \includegraphics{resources/layout-pattern-centered-content}
-    \caption{}
+    \caption{Die Zentrierung des Diagramm-Inhalts im Canvas}
     \label{fig:alignment-pattern-centered-content}
 \end{figure}
 
-\subsubsection{Gleiche Abstände}
+Dieses Layout-Pattern fördert die Ästhetik (Kriterium \ref{req:aesthetics-criteria}) und vor allem macht die Einschränkung der freien Positionierung (siehe Abschnitt \ref{subsec:temporary-layer-mechanism}) möglich.
 
-\subsubsection{Verhinderung der Knoten-Überlappung}
+\subsubsection{Gleiche Abstände}
 
 % Patterns-Variierung (z.B. Reihenfolge der Knoten kann von Nutzer festgelegt werden, das endgültige Layout wird durch die Geometrie bestimmt)
 % instanziiert in der Layout-Engine, referenzieren den Diagramm-Inhalt
@@ -204,7 +214,14 @@ Die impliziten Layout-Patterns beschreiben allgemeine Eigenschaften für die Lay
 \subsection{Explizite Layout-Patterns}
 \label{subsec:explicit-layout-patterns}
 
+% TODO: Verweis auf die implementierten Patterns im Prototypen (Kapitel 5) hinzufügen
+% Variationen der expliziten Layout-Patterns
+
 \subsubsection{Ausrichtungspattern}
+
+% siehe manuelles Layout bzw. Pattern-basierter Ansatz (Kapitel 3)
+% gleichmäßige Verteilung (Abstände gleich groß)
+% Variationen: Reihenfolge der Knoten
 
 \begin{figure}[hbt]
     \centering
@@ -221,6 +238,9 @@ Die impliziten Layout-Patterns beschreiben allgemeine Eigenschaften für die Lay
 \end{figure}
 
 \subsubsection{T-Shape-Pattern}
+
+% Variationen: Reihenfolge der Knoten im Ausrichtungs-Pattern
+% interne Wiederverwendung eines Ausrichtung-Patterns
 
 \begin{figure}[hbt]
     \centering
@@ -256,37 +276,7 @@ Die impliziten Layout-Patterns beschreiben allgemeine Eigenschaften für die Lay
 %%%%%%%%%
 \endinput 
 %%%%%%%%%
-
-\section{Layout-Patterns}
-\label{sec:layout-patterns}
-
-
-
-\subsection{Implizite Layout-Patterns}
-
-\subsubsection{Größe der Knoten}
-\subsubsection{Zentrierung des Inhalts}
-\subsubsection{Gleiche Abstände}
-\subsubsection{Verhinderung der Knoten-Überlappung}
-
-\subsection{Explizite Layout-Patterns}
-
-% TODO: Verweis auf die implementierten Patterns im Prototypen (Kapitel 5) hinzufügen
-% Variationen der expliziten Layout-Patterns
-
-\subsubsection{Ausrichtung}
-
-% siehe manuelles Layout bzw. Pattern-basierter Ansatz (Kapitel 3)
-% gleichmäßige Verteilung (Abstände gleich groß)
-% Variationen: Reihenfolge der Knoten
-
-\subsubsection{T-Shape}
-
-% Variationen: Reihenfolge der Knoten im Ausrichtungs-Pattern
-% interne Wiederverwendung eines Ausrichtung-Patterns
-
-
-%%%%%%%%
+%%%%%%%%%
 
 % TODO: Zusammenfassung schreiben
 % Der Mechanismus ist für klassische grafische Benutzeroberflächen ausgelegt und erfüllt damit das Kriterium \ref{req:gui}.
