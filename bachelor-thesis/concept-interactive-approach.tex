@@ -43,7 +43,7 @@ Im Folgenden werden Kriterien für den präsentierten Ansatz aufgestellt. Die Wa
 
 Der präsentierte Ansatz operiert auf dem Modell der konkreten Syntax einer graph-basierten visuellen Sprache und berechnet die Layout-Eigenschaften für Knoten und Kanten eines Diagramms (siehe Abschnitt \ref{subsec:graph-based-diagrams}). Die Berechnung erfolgt \textbf{halbautomatisch}, denn der Nutzer kann den Layout-Prozess durch die Interaktion mit dem Diagramm beeinflussen. Dabei wird versucht, ein optimales Verhältnis zwischen der Möglichkeit der flexiblen Modifizierung der Layout-Eigenschaften durch den Nutzer und einer automatisierten Layout-Berechnung zu erreichen. Der Ansatz kombiniert die Vorteile des manuellen und automatischen Layouts und lässt sich daher in die Gruppe der Ansätze für das interaktive halbautomatische Layout einordnen (siehe Abschnitt \ref{sec:interactive-semi-automatic-layout}).
 
-Die Interaktion des Nutzers mit dem Diagramm erfolgt durch die Ausführung von \textbf{Bearbeitungsaktionen}, die mit Hilfe von \textbf{Bedienungsmechanismen} im Diagram realisiert und veranschaulicht werden. Für jede Bearbeitungsaktion werden ein oder mehrere \textbf{Layout-Ereignisse} erzeugt, die Informationen über die manipulierten Objekte sowie über die Parameter der Interaktion wie z.B. Position des Mauszeigers kapseln. Die erzeugten Layout-Ereignisse werden durch eine \textbf{Layout-Engine} ausgewertet, die für den Typ des Diagramms speziell angepasst ist. Intern verwaltet sie Instanzen von \textbf{Layout-Patterns}, die die Struktur des Diagramms beschreiben. Anhand des aktuellen Inhalts und Layouts des Diagramms und der instanziierten Layout-Patterns wird eine Anpassung des Layouts berechnet, die auf das Diagramm angewendet wird, wobei der Layout-Übergang visualisiert wird.
+Die Interaktion des Nutzers mit dem Diagramm erfolgt durch die Ausführung von \textbf{Bearbeitungsaktionen}, die mit Hilfe von \textbf{Bedienungsmechanismen} im Diagram realisiert und veranschaulicht werden. Für jede Bearbeitungsaktion werden ein oder mehrere \textbf{Layout-Ereignisse} erzeugt, die die Änderung in dem Diagramm beschreiben. Die erzeugten Layout-Ereignisse werden durch eine \textbf{Layout-Engine} ausgewertet, die für den Typ des Diagramms speziell angepasst ist. Intern verwaltet sie Instanzen von \textbf{Layout-Patterns}, die die Struktur des Diagramms beschreiben. Anhand des aktuellen Inhalts und Layouts des Diagramms und der instanziierten Layout-Patterns wird eine Anpassung des Layouts berechnet, die auf das Diagramm angewendet wird, wobei der Layout-Übergang visualisiert wird.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % Interaction Mechanisms %
@@ -257,6 +257,48 @@ Das T-Shape-Pattern erweitert das Ausrichtungspattern, indem die Reihe der unter
 \section{Berechnung des Layouts}
 \label{sec:layout-calculation}
 
+Wie bereits im Abschnitt \ref{subsec:edit-actions} erläutert wurde, werden während der Bearbeitung eines Diagramms Aktionen durch den Nutzer ausgeführt. Für die ausgeführten Bearbeitungsaktionen werden \textbf{Layout-Ereignisse} generiert, die eine Beschreibung der manipulierten bzw. geänderten Knoten und Kanten sowie die Parameter der Interaktion wie z.B. die Position des Mauszeigers beinhalten. Die \textbf{Layout-Engine}, die für die Berechnung des Layouts zuständig ist, nimmt die erzeugten Layout-Ereignisse entgegen, verarbeitet sie und passt das Layout des Diagramms an. Der Prozess der Verarbeitung der Layout-Ereignisse wird im Abschnitt \ref{subsec:processing-of-layout-events} beschrieben.
+
+\subsection{Layout-Engine}
+\label{subsec:layout-engine}
+
+%Die Layout-Engine verwaltet intern Instanzen von expliziten Layout-Patterns (siehe Abschnitt \ref{subsec:explicit-layout-patterns}), die 
+% Layout-Patterns instanziiert in der Layout-Engine, referenzieren den Diagramm-Inhalt
+
+% initialer Zustand
+
+\subsection{Verarbeitung der Layout-Ereignisse}
+\label{subsec:processing-of-layout-events}
+
+% Eingabe für den Algorithmus: Layout-Ereignis, Inhalt des Diagramms, instanziierte Patterns, der Layout-Zustand (mögliche Layout-Übergänge vom aktuellen Zustand abhängig, nicht alle erreichbar)
+
+% berechnete Layouts = Positionen für Knoten
+% weiteres möglich wie Routen für Kanten (nicht implementiert), Animationen/Übergangsparameter für die Transitionen (nicht implementiert)
+
+% automatische Instanziierung von Patterns nach Layout-Ereignissen
+
+% Erreichbare Layouts werden berechnet und mit Hilfe der Layout-Ereignisse wird geprüft, ob ein Layout-Übergang stattfinden soll (z.B. nur die benachbarten Bereiche im horizontalen Layout-Algorithmus)
+% nach einem Layout-Übergang wird die Berechnung wiederholt
+
+% Stabilität -> Ausführen eines Layout-Übergangs nach einer deutlichen Aktion des Nutzers
+% Erreichbarkeit des Ausgangslayouts
+
+% In Rahmen der Konzeption und Entwicklung wurde zunächst ein Algorithmus entworfen, der für die Manipulation eines Knotens alle möglichen Layouts und die entsprechenden Diagramm-Bereiche für das gesamte Diagramm explizit berechnet hat. Durch eine Bewegung des Mauszeigers in einen anderen Bereich wurde jeweils ein Layout-Übergang ausgelöst. Die Berechnung wurde jedoch nicht nach jedem Layout-Übergang wiederholt und die Abbildung war oft nach dem ersten Layout-Übergang ungültig. Später wurde festgelegt, dass dieser Algorithmus nicht hinreichend ist.
+
+\subsection{Spezialisierung für Diagrammtypen}
+\label{subsec:diagram-types-specialization}
+
+% Klassendiagramme meistens weniger als 10 Klassen (Rat von Scott Ambler?)
+% Durch die Spezialisierung auf konkrete Diagramm-Typen und den Einsatz von verschiedenen Vereinfachungsmaßnahmen wie etwa Einschränkung der unterstützten Notation \cite[S.56ff]{Ambler02Agile} lassen sich Algorithmen für das Layout von Softwarediagrammen entwerfen, die zwar nicht so flexibel wie z.B. \cite{Maier12A-Pattern-based} oder \cite{Eichelberger05Aesthetics} sind, aber dafür...
+
+% Layout-Engine soll für spezielle Diagrammtypen unterschiedliches Verhalten aufweisen
+% Jeder Diagrammtyp (z.B. Klassendiagramm, Zustandsdiagramm, Flowchart usw.) hat aufgrund der Semantik- und Strukturregeln spezielle Anforderungen an das ästhetische Layout
+
+\subsection{Bespiele}
+\label{subsec:examples}
+
+% - Bild mit Instanzen von Patterns in einem Beispiel-Diagramm (kann ein Screenshot sein)
+
 %%%%%%%%%%%%%%%%%%
 % Open Questions %
 %%%%%%%%%%%%%%%%%%
@@ -274,67 +316,14 @@ Das T-Shape-Pattern erweitert das Ausrichtungspattern, indem die Reihe der unter
 
 % Patterns für Kanten
 
+% Definition auf einem Meta-Modell, speziell für Layout-Patterns
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Current Approaches Comparison %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Abgrenzung zu bestehenden Ansätzen}
 \label{sec:current-approaches-comparison}
-
-%%%%%%%%%
-\endinput 
-%%%%%%%%%
-%%%%%%%%%
-
-% TODO: Zusammenfassung schreiben
-% Der Mechanismus ist für klassische grafische Benutzeroberflächen ausgelegt und erfüllt damit das Kriterium \ref{req:gui}.
-
-
-\subsection{Layout-Engine}
-
-Nach dem Ausführen einer Bearbeitungsaktion (siehe Abschnitt \ref{subsec:edit-actions}) bzw. ihres Teils durch den Nutzer wird ein Layout-Ereignis erzeugt, das neben der Information über die manipulierten bzw. geänderten Objekte auch Parameter der Interaktion wie z.B. die Position des Mauszeigers besitzt.
-
-% Layout-Übergänge
-% Auswertung der Verschiebungsaktion
-% ursprünglicher Ansatz
-
-
-% Einschränkung der Aktionen, die der Nutzer ausführen kann
-
-% Abnehmen der Layout-Arbeit durch Einschränkung der Flexibilität
-
-% Herausforderung bei der Kombination von mehreren Kriterien (z.B. interaktive Bedienung aber gleichzeitig eine Einschränkung der Möglichkeiten)
-
-% instanziiert in der Layout-Engine, referenzieren den Diagramm-Inhalt
-% - Bild mit Instanzen von Patterns in einem Beispiel-Diagramm (kann ein Screenshot sein)
-
-%%%%%%%%%
-
-% Meta-Modell
-% Klassendiagramme meistens weniger als 10 Klassen (Rat von Scott Ambler?)
-% Durch die Spezialisierung auf konkrete Diagramm-Typen und den Einsatz von verschiedenen Vereinfachungsmaßnahmen wie etwa Einschränkung der unterstützten Notation \cite[S.56ff]{Ambler02Agile} lassen sich Algorithmen für das Layout von Softwarediagrammen entwerfen, die zwar nicht so flexibel wie z.B. \cite{Maier12A-Pattern-based} oder \cite{Eichelberger05Aesthetics} sind, aber dafür...
-
-
-
-% Layout-Engine
-% =============
-% Eingabe für den Algorithmus: Layout-Ereignis, Inhalt des Diagramms, instanziierte Patterns, der Layout-Zustand (mögliche Layout-Übergänge vom aktuellen Zustand abhängig, nicht alle erreichbar)
-% berechnete Layouts = Positionen für Knoten, Routen für Kanten (nicht implementiert), Animationen/Übergangsparameter für die Transitionen (nicht implementiert)
-% initialer Zustand
-
-% Erreichbare Layouts werden berechnet und mit Hilfe der Layout-Ereignisse wird geprüft, ob ein Layout-Übergang stattfinden soll (z.B. nur die benachbarten Bereiche im horizontalen Layout-Algorithmus)
-% nach einem Layout-Übergang wird die Berechnung wiederholt
-
-% Layout-Engine soll für spezielle Diagrammtypen unterschiedliches Verhalten aufweisen
-% Jeder Diagrammtyp (z.B. Klassendiagramm, Zustandsdiagramm, Flowchart usw.) hat aufgrund der Semantik- und Strukturregeln spezielle Anforderungen an das ästhetische Layout
-% automatische Instanziierung von Patterns nach Layout-Ereignissen
-% Neu-Berechnung nach jedem Layout-Übergang -> Performance?
-% Stabilität -> Ausführen eines Layout-Übergangs nach einer deutlichen Aktion des Nutzers
-% Erreichbarkeit des Ausgangslayouts
-
-% In Rahmen der Konzeption und Entwicklung wurde zunächst ein Algorithmus entworfen, der für die Manipulation eines Knotens alle möglichen Layouts und die entsprechenden Diagramm-Bereiche für das gesamte Diagramm explizit berechnet hat. Durch eine Bewegung des Mauszeigers in einen anderen Bereich wurde jeweils ein Layout-Übergang ausgelöst. Die Berechnung wurde jedoch nicht nach jedem Layout-Übergang wiederholt und die Abbildung war oft nach dem ersten Layout-Übergang ungültig. Später wurde festgelegt, dass dieser Algorithmus nicht hinreichend ist.
-
-\section{Abgrenzung zu bestehenden Ansätzen}
 
 % Was ist neu an dem Ansatz?
 % Vergleich zu bestehenden Ansätzen im Kapitel 3
@@ -343,3 +332,15 @@ Nach dem Ausführen einer Bearbeitungsaktion (siehe Abschnitt \ref{subsec:edit-a
 % - Kein Freihand-Editieren, sondern implizite Bereiche und Layout-Übergänge
 % - Patterns unterstützen Variierung
 % - Starke Vereinfachung der Möglichkeiten (Anpassung der Patterns aus [Maier])
+
+%%%%%%%%%%%
+% Summary %
+%%%%%%%%%%%
+
+\section{Zusammenfassung}
+\label{sec:approach-summary}
+
+% Herausforderung bei der Kombination von mehreren Kriterien (z.B. interaktive Bedienung aber gleichzeitig eine Einschränkung der Möglichkeiten)
+% Der Mechanismus ist für klassische grafische Benutzeroberflächen ausgelegt und erfüllt damit das Kriterium \ref{req:gui}.
+
+% Neu-Berechnung nach jedem Layout-Übergang -> Performance?
