@@ -216,14 +216,14 @@ Das Ausrichtungspattern beschreibt eine Reihe an Knoten und kombiniert das Ausri
 \begin{figure}[hbt]
     \centering
     \includegraphics{resources/layout-pattern-alignment-center}
-    \caption{}
+    \caption{Horizontales Ausrichtungspattern mit den Ausrichtung an die Mittelpunkte}
     \label{fig:layout-pattern-alignment-center}
 \end{figure}
 
 \begin{figure}[hbt]
     \centering
     \includegraphics{resources/layout-pattern-alignment-top}
-    \caption{}
+    \caption{Horizontales Ausrichtungspattern mit den Ausrichtung an obere Kanten}
     \label{fig:layout-pattern-alignment-top}
 \end{figure}
 
@@ -232,25 +232,23 @@ Die Variierung des Ausrichtungspatterns besteht in der Veränderung der Reihenfo
 \begin{figure}[hbt]
     \centering
     \includegraphics[scale=1.3]{resources/layout-pattern-alignment-variations}
-    \caption{}
+    \caption{Mögliche Variationen des Ausrichtungspatterns mit drei Knoten}
     \label{fig:layout-pattern-alignment-variations}
 \end{figure}
 
 \subsubsection{T-Shape-Pattern}
 \label{subsubsec:t-shape-pattern}
 
-% Wiederverwendung möglich (mehrere Instanzen in der Layout-Engine bzw. Komposition von Patterns wie T-Shape-Pattern)
-
-
-% Variationen: Reihenfolge der Knoten im Ausrichtungs-Pattern
-% interne Wiederverwendung eines Ausrichtung-Patterns
+Das T-Shape-Pattern beschreibt die Struktur von Knoten, die in die Form des Buchstabes \enquote{T} angeordnet sind. Ein Knoten hat eine spezielle Rolle und ist den anderen Knoten übergeordnet. Die untergeordneten Knoten sind ähnlich wie in dem Ausrichtungspattern gleichmäßig in einer Reihe angeordnet und an die Kanten ausgerichtet, die sich am nächsten zu dem übergeordneten Knoten befinden. Der übergeordnete Knoten befindet sich in einem definierten Abstand zu den untergeordneten Knoten und ist mittig ausgerichtet. In Abbildung \ref{fig:layout-pattern-t-shape} ist ein Beispiel des T-Shape-Patterns dargestellt, in dem der übergeordnete Knoten oben positioniert ist. Die Abstände sind mit farbigen Pfeilen und die Ausrichtung mit grauen Linien gekennzeichnet. Natürlich gibt es weitere Formen des T-Shape-Patterns, in den sich der übergeordnete Knoten links, unten oder rechts befindet.
 
 \begin{figure}[hbt]
     \centering
     \includegraphics{resources/layout-pattern-t-shape}
-    \caption{}
-    \label{fig:layout-pattenr-t-shape}
+    \caption{Das T-Shape-Pattern mit dem oben positionierten übergeordneten Knoten}
+    \label{fig:layout-pattern-t-shape}
 \end{figure}
+
+Das T-Shape-Pattern erweitert das Ausrichtungspattern, indem die Reihe der untergeordneten Knoten um einen übergeordneten Knoten ergänzt wird. Identisch wie bei dem Ausrichtungspattern lässt sich bei dem T-Shape-Pattern die Reihenfolge der untergeordneten Knoten verändern.
 
 %%%%%%%%%%%%%%%%%%%%%%
 % Layout Calculation %
@@ -273,6 +271,8 @@ Die Variierung des Ausrichtungspatterns besteht in der Veränderung der Reihenfo
 % Contraint-Solver
 
 % Instanziierung durch den Nutzer wie in [Maier] ist denkbar
+
+% Patterns für Kanten
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Current Approaches Comparison %

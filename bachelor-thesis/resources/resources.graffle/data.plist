@@ -36,7 +36,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2014-08-29 12:33:32 +0000</string>
+	<string>2014-08-29 13:02:06 +0000</string>
 	<key>Modifier</key>
 	<string>Lukas Kubanek</string>
 	<key>NotesVisible</key>
@@ -10552,7 +10552,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{272.2499852180481, 97}, {53, 43}}</string>
+					<string>{{271.1099705696106, 97}, {53, 43}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
@@ -10993,7 +10993,7 @@
 	<key>WindowInfo</key>
 	<dict>
 		<key>CurrentSheet</key>
-		<integer>15</integer>
+		<integer>16</integer>
 		<key>ExpandedCanvases</key>
 		<array/>
 		<key>Frame</key>
@@ -11013,9 +11013,9 @@
 		<key>SmallIcons</key>
 		<true/>
 		<key>VisibleRegion</key>
-		<string>{{68.5, 19.5}, {491, 311.5}}</string>
+		<string>{{-211, 0}, {982, 623}}</string>
 		<key>Zoom</key>
-		<real>2</real>
+		<real>1</real>
 		<key>ZoomValues</key>
 		<array>
 			<array>
