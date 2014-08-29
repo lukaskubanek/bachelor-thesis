@@ -179,7 +179,7 @@ Die impliziten Layout-Patterns beschreiben allgemeine Eigenschaften für die Lay
 
 In allen interaktiven Ansätzen für das Layout von Diagrammen aus dem Kapitel \ref{chapter:existing-approaches} hat der Nutzer die Möglichkeit die Größe der Objekte zu verändern. Weiterhin werden in dem allgemeinen Ansatz aus \cite{Maier12A-Pattern-based} Layout-Patterns präsentiert, die Regeln für die Größe der Objekte beschreiben. Somit ist die Größe der Objekte eine Eigenschaft, die zu einem von dem Nutzer und zu anderem von dem Layout-Algorithmus geändert werden kann.
 
-Dagegen ist die Größe der Knoten in dieser Arbeit ausschließlich durch den Inhalt des Knotens bestimmt. Sie nimmt zunächst eine minimale Größe an und wenn der Inhalt\footnote{Für eine Klasse der Notationssprache UML handelt es sich um die Bezeichnung und Liste der Attribute und Methoden.} in den Knoten mit der minimalen Größe nicht passt, wird der Knoten entsprechend erweitert. Somit kann die Größe der Knoten weder durch den Nutzer noch durch die Layout-Berechnung geändert werden. Dieses implizite Layout-Pattern fördert insbesondere die Konzentration auf den Inhalt (Kriterium \ref{req:focus-on-the-content}) und die ästhetische Gestaltung (Kriterium \ref{req:aesthetics-criteria}).
+Dagegen ist die Größe der Knoten in dieser Arbeit ausschließlich durch den Inhalt des Knotens bestimmt. Sie nimmt zunächst eine minimale Größe an und wenn der Inhalt\footnote{Für eine Klasse der Notationssprache UML handelt es sich um ihre Bezeichnung und die Liste der Attribute und Methoden.} in den Knoten mit der minimalen Größe nicht passt, wird der Knoten entsprechend erweitert. Somit kann die Größe der Knoten weder durch den Nutzer noch durch die Layout-Berechnung geändert werden. Dieses implizite Layout-Pattern fördert insbesondere die Konzentration auf den Inhalt (Kriterium \ref{req:focus-on-the-content}) und die ästhetische Gestaltung (Kriterium \ref{req:aesthetics-criteria}).
 
 \subsubsection{Verhinderung der Knoten-Überlappung}
 
@@ -198,26 +198,21 @@ Die Zentrierung des Diagramm-Inhalts ist ein weiteres ästhetisches Layout-Patte
 
 Dieses Layout-Pattern fördert die Ästhetik (Kriterium \ref{req:aesthetics-criteria}) und vor allem macht die Einschränkung der freien Positionierung (siehe Abschnitt \ref{subsec:temporary-layer-mechanism}) möglich.
 
-\subsubsection{Gleiche Abstände}
-
-% Patterns-Variierung (z.B. Reihenfolge der Knoten kann von Nutzer festgelegt werden, das endgültige Layout wird durch die Geometrie bestimmt)
-% instanziiert in der Layout-Engine, referenzieren den Diagramm-Inhalt
-% Wiederverwendung möglich (mehrere Instanzen in der Layout-Engine bzw. Komposition von Patterns wie T-Shape-Pattern)
-% Nur während Drag&Drop sichtbar -> Möglichkeit der Interaktivität der Patterns
-% interne Berechnung des relativen Layouts für enthaltene Diagramm-Objekte (Knoten)
-
-% konkrete Patterns:
-% - detaillierte Beschreibung der expliziten Layout-Patterns mit Bezug auf Arbeiten
-% - Erläutern der geometrischen Parametern mit Bildern
-% - Bild mit Instanzen von Patterns in einem Beispiel-Diagramm (kann ein Screenshot sein)
-
 \subsection{Explizite Layout-Patterns}
 \label{subsec:explicit-layout-patterns}
 
+Die expliziten Layout-Patterns referenzieren Knoten im Diagramm und beschreiben deren Struktur anhand von geometrischen Eigenschaften. Während der Erstellung eines Diagramms werden ähnlich wie in \cite{Maier12A-Pattern-based} \textbf{Instanzen der Layout-Patterns} verwaltet. Im Gegensatz zu \cite{Maier12A-Pattern-based} erfolgt die Verwaltung automatisch und basiert auf dem Inhalt des Diagramms. Der Nutzer hat daher keine Möglichkeit die Layout-Patterns selbst zu erstellen\footnote{Eine eventuelle Möglichkeit der Erstellung von Layout-Patterns durch den Nutzer wird im Abschnitt X diskutiert.}.
+
+Um eine Art der Manipulation der Knoten zu ermöglichen, wird das Konzept der \textbf{Variierung der expliziten Layout-Patterns} eingeführt. Je nach der Art des expliziten Layout-Patterns kann der Nutzer zwischen mehreren Variationen der Anordnung der Knoten (z.B. Reihenfolge) wählen. Das endgültige Layout wird jedoch durch die Geometrie bestimmt. Diese Art der Manipulation fördert die Konzentration auf den Inhalt und ergänzt die Einschränkung der freien Positionierung (Kriterium \ref{req:focus-on-the-content}).
+
+Im Folgenden werden zwei konkreten expliziten Layout-Patterns vorgestellt, nämlich das Ausrichtungspattern (siehe Abschnitt \ref{subsubsec:alignment-pattern}) und das T-Shape-Pattern (siehe Abschnitt \ref{subsubsec:t-shape-pattern}). Mit der Implementierung der expliziten Layout-Patterns im Prototypen beschäftigt sich der Abschnitt X.
 % TODO: Verweis auf die implementierten Patterns im Prototypen (Kapitel 5) hinzufügen
-% Variationen der expliziten Layout-Patterns
 
 \subsubsection{Ausrichtungspattern}
+\label{subsubsec:alignment-pattern}
+
+% - detaillierte Beschreibung der expliziten Layout-Patterns mit Bezug auf Arbeiten
+% - Erläutern der geometrischen Parametern mit Bildern
 
 % siehe manuelles Layout bzw. Pattern-basierter Ansatz (Kapitel 3)
 % gleichmäßige Verteilung (Abstände gleich groß)
@@ -238,6 +233,10 @@ Dieses Layout-Pattern fördert die Ästhetik (Kriterium \ref{req:aesthetics-crit
 \end{figure}
 
 \subsubsection{T-Shape-Pattern}
+\label{subsubsec:t-shape-pattern}
+
+% Wiederverwendung möglich (mehrere Instanzen in der Layout-Engine bzw. Komposition von Patterns wie T-Shape-Pattern)
+
 
 % Variationen: Reihenfolge der Knoten im Ausrichtungs-Pattern
 % interne Wiederverwendung eines Ausrichtung-Patterns
@@ -264,6 +263,11 @@ Dieses Layout-Pattern fördert die Ästhetik (Kriterium \ref{req:aesthetics-crit
 \label{sec:open-questions}
 
 % Visualisierung der Patterns
+% Nur während Drag&Drop sichtbar -> Möglichkeit der Interaktivität der Patterns
+
+% Verallgemeinerung
+% Contraint-Solver
+
 % Instanziierung durch den Nutzer wie in [Maier] ist denkbar
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -297,8 +301,8 @@ Nach dem Ausführen einer Bearbeitungsaktion (siehe Abschnitt \ref{subsec:edit-a
 
 % Herausforderung bei der Kombination von mehreren Kriterien (z.B. interaktive Bedienung aber gleichzeitig eine Einschränkung der Möglichkeiten)
 
-
-
+% instanziiert in der Layout-Engine, referenzieren den Diagramm-Inhalt
+% - Bild mit Instanzen von Patterns in einem Beispiel-Diagramm (kann ein Screenshot sein)
 
 %%%%%%%%%
 
