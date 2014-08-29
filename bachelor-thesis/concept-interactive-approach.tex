@@ -159,7 +159,7 @@ Die dritte Phase beginnt mit dem Loslassen der Maustaste. Danach springt der ver
 \subsection{Layout-Übergänge}
 \label{subsec:layout-transition}
 
-In vorhergehenden Abschnitten wurde beschrieben, dass nach der Änderung des Inhaltes bzw. währen der Verschiebung eines Knotens das Layout angepasst wird. Konkret handelt es sich um einen Übergang vom aktuellen zu einem neu berechneten Layout. Um diese Übergänge für den Nutzer nachvollziehbar zu machen, wird eine Animation eingesetzt, die insbesondere für die Erhaltung des mentalen Modells sorgt (Kriterium \ref{req:mental-map}).
+In vorhergehenden Abschnitten wurde beschrieben, dass nach der Änderung des Inhalts bzw. währen der Verschiebung eines Knotens das Layout angepasst wird. Konkret handelt es sich um einen Übergang vom aktuellen zu einem neu berechneten Layout. Um diese Übergänge für den Nutzer nachvollziehbar zu machen, wird eine Animation eingesetzt, die insbesondere für die Erhaltung des mentalen Modells sorgt (Kriterium \ref{req:mental-map}).
 
 %%%%%%%%%%%%%%%%%%%
 % Layout Patterns %
@@ -263,23 +263,55 @@ Wie bereits im Abschnitt \ref{subsec:edit-actions} erläutert wurde, werden wäh
 \subsection{Layout-Engine}
 \label{subsec:layout-engine}
 
-Die Layout-Engine ist ein zentraler Bestandteil des präsentierten Ansatzes. Sie ist mit dem bearbeiteten Diagramm verknüpft, dessen Layout sie verändert. Des Weiteren verwaltet sie Instanzen von expliziten Layout-Patterns (siehe Abschnitt \ref{subsec:explicit-layout-patterns}), wodurch die Struktur des Diagramms beschrieben wird. 
+Die Layout-Engine ist ein zentraler Bestandteil des präsentierten Ansatzes. Sie ist mit dem bearbeiteten Diagramm verknüpft, dessen Layout sie berechnet. Des Weiteren verwaltet sie Instanzen von expliziten Layout-Patterns (siehe Abschnitt \ref{subsec:explicit-layout-patterns}), wodurch die Struktur des Diagramms beschrieben wird.
 
 Um mit dem Prozess der Verarbeitung der Layout-Ereignisse beginnen zu können, muss sich die Layout-Engine in einem \textbf{validen Zustand} befinden. Dies wird entweder durch das Speichern des Zustandes der Layout-Engine oder durch die Berechnung eines initialen Layouts gewährleistet. Die Aufgabe der zuletzt genannten Option besteht darin, die expliziten Layout-Patterns ähnlich wie in \cite{MaierMinas13A-Pattern-based} anhand des Inhalts des Diagramms automatisiert zu instanziieren.
 
 \subsection{Verarbeitung der Layout-Ereignisse}
 \label{subsec:processing-of-layout-events}
 
-% Eingabe für den Algorithmus: Layout-Ereignis, Inhalt des Diagramms, instanziierte Patterns, der Layout-Zustand (mögliche Layout-Übergänge vom aktuellen Zustand abhängig, nicht alle erreichbar)
+Der Lebenszyklus der Layout-Engine besteht aus der sequenziellen Verarbeitung der Layout-Ereignisse, die nach bzw. während der Ausführung von Bearbeitungsaktionen erzeugt werden. Sobald die Layout-Engine ein Layout-Ereignis empfängt, verarbeitet sie dieses sofort. Der Prozess der Verarbeitung der Layout-Ereignisse besteht aus zwei Phasen und ist in Abbildung \ref{fig:processing-of-layout-events} schematisiert.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=\textwidth]{resources/processing-of-layout-events}
+    \caption{Schema der Verarbeitung der Layout-Ereignisse}
+    \label{fig:processing-of-layout-events}
+\end{figure}
+
+Je nach der Art des Layout-Ereignisses werden in der ersten Phase die Instanzen der expliziten Layout-Patterns unter Berücksichtigung des Inhalts des Diagramms, der instanziierten Layout-Patterns und des aktuellen Layout-Zustandes angepasst, indem:
+
+\begin{itemize}
+    \item neue Layout-Patterns erstellt bzw. bestehende  Layout-Patterns gelöscht,
+    \item die Referenzen auf Knoten der bestehenden Layout-Patterns erstellt bzw. gelöscht
+    \item oder die bestehenden Layout-Patterns variiert werden.
+\end{itemize}
+
+Das genaue Verhalten der Anpassung der Layout-Patterns ist von einer konkreten Layout-Engine abhängig, die für den gewählten Diagrammtyp ausgelegt sein soll. Dies wird im Abschnitt X diskutiert und im Abschnitt X werden zwei Beispiele präsentiert.
+
+
+
+% zweite Phase
+% eindeutige Bestimmung des Layouts durch die Layout-Patterns
+
+
+%Je nach der Art des Layout-Ereignisses werden  zunächst die instanziierten Layout-Patterns angepasst und anschließend ein neues Layout berechnet.
+
+
+
+
+
 
 % berechnete Layouts = Positionen für Knoten
 % weiteres möglich wie Routen für Kanten (nicht implementiert), Animationen/Übergangsparameter für die Transitionen (nicht implementiert)
+% dies wurde in dieser Arbeit aus zeitlichen Gründen jedoch nicht betrachtet
 
-% automatische Instanziierung von Patterns nach Layout-Ereignissen
+
 
 % Erreichbare Layouts werden berechnet und mit Hilfe der Layout-Ereignisse wird geprüft, ob ein Layout-Übergang stattfinden soll (z.B. nur die benachbarten Bereiche im horizontalen Layout-Algorithmus)
 % nach einem Layout-Übergang wird die Berechnung wiederholt
 
+% mögliche Layout-Übergänge vom aktuellen Zustand abhängig
 % Stabilität -> Ausführen eines Layout-Übergangs nach einer deutlichen Aktion des Nutzers
 % Erreichbarkeit des Ausgangslayouts
 
