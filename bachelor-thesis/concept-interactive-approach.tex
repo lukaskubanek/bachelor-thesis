@@ -305,21 +305,24 @@ In dem präsentierten Ansatz wird während der Ausführung einer Verschiebungsak
 
 Im Abschnitt \ref{subsec:processing-of-layout-events} wurde der Rumpf des Algorithmus für die Berechnung des Layouts vorgestellt. Dabei wurde nicht auf die interne Funktionsweise der Layout-Engine eingegangen. Das liegt daran, dass die Layout-Engine ein unterschiedliches Verhalten für verschiedene \textbf{Diagrammtypen} aufweisen soll, denn jeder Diagrammtyp (z.B. Klassendiagramm, Zustandsdiagramm, Flowchart usw.) hat aufgrund der Syntax- und Semantikregeln spezielle Anforderungen an des ästhetische Layout. Dadurch wird das Kriterium \ref{req:syntax-and-semantics} erfüllt.
 
-Die in dieser Arbeit präsentierten Algorithmen basieren auf der visuellen Sprache der Klassendiagramme der Notationssprache UML. Allerdings handelt es sich um keine allgemeine Algorithmen für das Layout von Klassendiagrammen, sondern um zwei relativ einfache Algorithmen, deren Aufgabe es ist, die eingeführten Mechanismen der Interaktion zu validieren und damit das gesamte Konzept zu prüfen. Daher wird der Einfachheit halber kein UML-Metamodell eingesetzt und die Syntax wird auf Klassen (Knoten) und Vererbungsrelation (Kanten) beschränkt.
+Die in dieser Arbeit präsentierten Algorithmen basieren auf der visuellen Sprache der Klassendiagramme der Notationssprache UML. Allerdings handelt es sich um keine allgemeine Algorithmen für das Layout von Klassendiagrammen, sondern um zwei relativ einfache Algorithmen, deren Aufgabe es ist, die eingeführten Mechanismen der Interaktion zu validieren und damit das gesamte Konzept zu prüfen. Daher wird der Einfachheit halber kein UML-Metamodell eingesetzt und die Syntax wird stark eingeschränkt. Es werden nur vereinfachte Klassen (Knoten) und Vererbungsrelation (Kanten) unterstützt.
 
 \subsubsection{Algorithmus für das horizontale Layout}
 \label{subsubsec:horizontal-layout-algorithm}
 
-% Erklären der Verschiebungsoperation
+Der Algorithmus für das horizontale Layout ordnet alle Klassen eines Klassendiagramms in eine horizontale Reihe an und lässt dabei die Vererbungsrelationen außer Acht.
+
+Die Layout-Engine, die diesen Algorithmus umsetzt, enthält intern eine Instanz des Ausrichtungspatterns (siehe Abschnitt \ref{subsubsec:alignment-pattern}), das alle Klassen des Diagramms referenziert. Dieser Algorithmus hat aus der Sicht des Nutzers keine große Bedeutung und dient ausschließlich als Grundlage für den Algorithmus für das baumbasierte Layout, mit dem sich der Abschnitt \ref{subsubsec:tree-layout-algorithm} beschäftigt.
+
+Nichtsdestotrotz macht der Algorithmus die Mechanismen der Interaktion aus dem Abschnitt \ref{sec:interaction-mechanisms} verständlich. Insbesondere zeigt die Verschiebungsaktion die Möglichkeit der Änderung der Reihenfolge der Klassen im Diagramm. Dies wird durch die Layout-Engine in eine direkte Variierung des Ausrichtungspatterns übersetzt. Eine Veranschaulichung der prototypischen Implementierung des Algorithmus für das horizontale Layout ist dem Video unter dem Pfad \texttt{Prototype/Videos/Hori\-zon\-tal-\-Lay\-out-\-De\-mo.mov} auf der unter Anhang \ref{chapter:dvd} eingereichten DVD zu entnehmen.
 
 \subsubsection{Algorithmus für das baumbasierte Layout}
 \label{subsubsec:tree-layout-algorithm}
 
-% Erklären der Verschiebungsoperation
-% Bild mit Instanzen von Patterns in einem Beispiel-Diagramm (kann ein Screenshot sein)
-% Zusammensetzung der relativen Layouts durch die Layout-Patterns bestimmt ist
-% Visualisierung der Diagramm-Erstellung? z.B. Einfügen von Knoten und Kanten in der Reihe nach
-% Verweis auf den Prototypen und Video auf der CD
+Der Algorithmus für das baumbasierte Layout ermöglicht die Modellierung von Vererbungshierarchien in einem Klassendiagramm und hält sich dabei an die im Abschnitt \ref{sec:aesthetics-criteria} beschriebene ästhetischen Kriterien.
+% TODO: Verweis auf ästhetische Kriterien aus dem Kapitel 2 überprüfen
+
+Ähnlich wie bei der Umsetzung des Algorithmus für das horizontale Layout (siehe Abschnitt \ref{subsubsec:horizontal-layout-algorithm}) enthält die Layout-Engine, die den Algorithmus für das baumbasierte Layout umsetzt, eine Instanz des horizontalen Ausrichtungspatterns, das jedoch nicht alle Klassen im Diagramm sondern nur die Wurzelklassen der Vererbungshierarchien referenziert. Durch dieses globale Ausrichtungspattern wird die Reihenfolge der Vererbungshierarchien bestimmt. Während der Erstellung von Vererbungsrelationen zwischen Klassen werden T-Shape-Patterns (siehe Abschnitt \ref{subsubsec:t-shape-pattern}) instanziiert, die die Struktur der Vererbungshierarchien beschreiben und durch die Layout-Engine verwaltet werden. In Abbildung \ref{fig:tree-based-layout} wird ein Beispiel eines Diagramms mit gekennzeichneten Layout-Patterns gezeigt. Die blaue Linie stellt das globale Ausrichtungspattern dar und mit den grünen Linien sind die instanziierten T-Shape-Patterns markiert. Die Vererbungshierarchien sind mit grauen gestrichelten Linien umrandet.
 
 \begin{figure}[hbt]
     \centering
@@ -327,6 +330,11 @@ Die in dieser Arbeit präsentierten Algorithmen basieren auf der visuellen Sprac
     \caption{Visualisierung von Instanzen der expliziten Layout-Patterns im baumbasierten Layout}
     \label{fig:tree-based-layout}
 \end{figure}
+
+Die Berechnung des endgültigen Layouts erfolgt durch die Zusammensetzung der instanziierten expliziten Layout-Patterns. Dabei wird die oben beschriebene Vereinfachung der Klassendiagramme ausgenutzt und der Algorithmus ist somit ausschließlich für diesen konkreten Fall geeignet. Die Möglichkeit der Entwicklung eines allgemeinen Algorithmus für Klassendiagramme wird im Abschnitt X diskutiert.
+% TODO: Verweis auf Ausblick
+
+Je nachdem welche Klasse verschoben wird, verhält sich die Verschiebungsaktion unterschiedlich. Das Verschieben der Wurzelklassen bewirkt die Änderung der Reihenfolge der Vererbungshierarchien. Wenn aber eine Klasse, die sich in einer Vererbungshierarchie unter der Wurzelklasse befindet, verschoben wird, wird die Reihenfolge der Geschwisterklassen angepasst, indem das zugehörige T-Shape-Pattern variiert wird (siehe Abschnitt \ref{subsubsec:t-shape-pattern}). Zum besseren Verständnis der Funktionsweise wird auf ein Video mit der Vorführung der prototypischen Implementierung verwiesen. Das Video ist unter dem Pfad \texttt{Prototype/Videos/Tree-based-Layout-\-De\-mo.mov} auf der unter Anhang \ref{chapter:dvd} eingereichten DVD zu finden.
 
 %%%%%%%%%%%%%%%%%%
 % Open Questions %
