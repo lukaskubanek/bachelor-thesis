@@ -29,7 +29,7 @@ Im Folgenden werden Kriterien für den präsentierten Ansatz aufgestellt. Die Wa
     \item \label{req:mental-map} \textbf{Erhaltung des mentalen Modells} Die Layout-Änderungen im Diagramm sollen möglichst intuitiv erfolgen, insbesondere soll das mentale Modell erhalten werden (siehe Abschnitt \ref{subsec:mental-map}).
     \item \label{req:focus-on-the-content} \textbf{Förderung der Konzentration auf den Inhalt} Der Inhalt eines Diagramms soll eine wichtigere Rolle als seine Repräsentation haben \cite[S.38ff]{Ambler02Agile}. Diese Tatsache soll in dem Ansatz berücksichtigt werden, indem der Aufwand für das Erzeugen des Layouts verringert wird. Außerdem sollen die Aktionen zur Anpassung der visuellen Eigenschaften möglichst eingeschränkt sein.
     \item \label{req:aesthetics-criteria} \textbf{Berücksichtigung der ästhetischen Prinzipien} Die Layout-Berechnung soll unter Berücksichtigung der im Abschnitt \ref{sec:aesthetics-criteria} beschriebenen ästhetischen Prinzipien für graph-basierte Softwarediagramme erfolgen.
-    \item \textbf{Berücksichtigung der Syntax und Semantik} Die Syntax- und Semantikregeln der einzelnen Diagrammtypen sollen berücksichtigt werden und die Möglichkeit der Verletzung der Regeln sollte verhindert werden.
+    \item \label{req:syntax-and-semantics} \textbf{Berücksichtigung der Syntax und Semantik} Die Syntax- und Semantikregeln der einzelnen Diagrammtypen sollen berücksichtigt werden und die Möglichkeit der Verletzung der Regeln sollte verhindert werden.
        
 %    \item \label{req:user-friendly} \textbf{Benutzerfreundlichkeit} Der Ansatz soll möglichst benutzerfreundlich sein. Insbesondere ist wichtig, dass die Einschränkungen bzgl. des Layouts nicht zur Frustration des Nutzers führen.
 \end{enumerate}
@@ -287,8 +287,7 @@ Je nach der Art des Layout-Ereignisses werden in der \textbf{ersten Phase} die I
     \item oder die bestehenden Layout-Patterns variiert werden.
 \end{itemize}
 
-Insbesondere wird dabei von dem aktuellen Zustand des Diagramms, den bereits instanziierten Layout-Patterns und der Information über die Interaktion Gebrauch gemacht. Das genaue Verhalten der Anpassung der Layout-Patterns ist jedoch von einer konkreten Layout-Engine abhängig, die für den gewählten Diagrammtyp ausgelegt ist. Im Abschnitt X wird dieser Sachverhalt diskutiert und im Abschnitt X werden zwei konkrete Beispiele präsentiert.
-% TODO: Referenzen ergänzen!
+Insbesondere wird dabei von dem aktuellen Zustand des Diagramms, den bereits instanziierten Layout-Patterns und der Information über die Interaktion Gebrauch gemacht. Das genaue Verhalten der Anpassung der Layout-Patterns ist jedoch von einer konkreten Layout-Engine abhängig, die für den gewählten Diagrammtyp ausgelegt ist. Dieser Sachverhalt wird im Abschnitt \ref{subsec:concrete-layout-algorithms} diskutiert und an konkreten Beispielen illustriert.
 
 In der \textbf{zweiten Phase} wird das \textbf{Layout} berechnet, das durch die impliziten und instanziierten expliziten Layout-Patterns eindeutig bestimmt ist und die Positionen für alle Knoten im Diagramm enthält\footnote{Es wäre möglich, auch weitere Layout-Eigenschaften wie Routen für die Kanten oder Parameter der Layout-Übergänge zu berechnen. Dies wurde in dieser Arbeit aus zeitlichen Gründen jedoch außer Acht gelassen.}. Sobald sich das neu berechnete Layout von dem aktuellen unterscheidet, wird das neue Layout auf das Diagramm angewendet und dadurch ein Layout-Übergang erzeugt (siehe Abschnitt \ref{subsec:layout-transition}). Damit wird die Verarbeitung des Layout-Ereignisses abgeschlossen und der gesamte Vorgang fängt für das nächste Layout-Ereignis von vorne an.
 
@@ -301,19 +300,33 @@ In dem präsentierten Ansatz wird während der Ausführung einer Verschiebungsak
     \item \textbf{Erreichbarkeit des Ausgangslayouts} Das Layout, das ein Diagramm annimmt, wenn die Verschiebungsaktion beginnt, soll im Verlauf der Ausführung der Verschiebungsaktion stets erreichbar sein.
 \end{itemize}
 
-\subsection{Spezialisierung für Diagrammtypen}
-\label{subsec:diagram-types-specialization}
+\subsection{Konkrete Layout-Algorithmen}
+\label{subsec:concrete-layout-algorithms}
 
-% Klassendiagramme meistens weniger als 10 Klassen (Rat von Scott Ambler?)
-% Durch die Spezialisierung auf konkrete Diagramm-Typen und den Einsatz von verschiedenen Vereinfachungsmaßnahmen wie etwa Einschränkung der unterstützten Notation \cite[S.56ff]{Ambler02Agile} lassen sich Algorithmen für das Layout von Softwarediagrammen entwerfen, die zwar nicht so flexibel wie z.B. \cite{Maier12A-Pattern-based} oder \cite{Eichelberger05Aesthetics} sind, aber dafür...
+Im Abschnitt \ref{subsec:processing-of-layout-events} wurde der Rumpf des Algorithmus für die Berechnung des Layouts vorgestellt. Dabei wurde nicht auf die interne Funktionsweise der Layout-Engine eingegangen. Das liegt daran, dass die Layout-Engine ein unterschiedliches Verhalten für verschiedene \textbf{Diagrammtypen} aufweisen soll, denn jeder Diagrammtyp (z.B. Klassendiagramm, Zustandsdiagramm, Flowchart usw.) hat aufgrund der Syntax- und Semantikregeln spezielle Anforderungen an des ästhetische Layout. Dadurch wird das Kriterium \ref{req:syntax-and-semantics} erfüllt.
 
-% Layout-Engine soll für spezielle Diagrammtypen unterschiedliches Verhalten aufweisen
-% Jeder Diagrammtyp (z.B. Klassendiagramm, Zustandsdiagramm, Flowchart usw.) hat aufgrund der Semantik- und Strukturregeln spezielle Anforderungen an das ästhetische Layout
+Die in dieser Arbeit präsentierten Algorithmen basieren auf der visuellen Sprache der Klassendiagramme der Notationssprache UML. Allerdings handelt es sich um keine allgemeine Algorithmen für das Layout von Klassendiagrammen, sondern um zwei relativ einfache Algorithmen, deren Aufgabe es ist, die eingeführten Mechanismen der Interaktion zu validieren und damit das gesamte Konzept zu prüfen. Daher wird der Einfachheit halber kein UML-Metamodell eingesetzt und die Syntax wird auf Klassen (Knoten) und Vererbungsrelation (Kanten) beschränkt.
 
-\subsection{Bespiele}
-\label{subsec:examples}
+\subsubsection{Algorithmus für das horizontale Layout}
+\label{subsubsec:horizontal-layout-algorithm}
 
-% - Bild mit Instanzen von Patterns in einem Beispiel-Diagramm (kann ein Screenshot sein)
+% Erklären der Verschiebungsoperation
+
+\subsubsection{Algorithmus für das baumbasierte Layout}
+\label{subsubsec:tree-layout-algorithm}
+
+% Erklären der Verschiebungsoperation
+% Bild mit Instanzen von Patterns in einem Beispiel-Diagramm (kann ein Screenshot sein)
+% Zusammensetzung der relativen Layouts durch die Layout-Patterns bestimmt ist
+% Visualisierung der Diagramm-Erstellung? z.B. Einfügen von Knoten und Kanten in der Reihe nach
+% Verweis auf den Prototypen und Video auf der CD
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.7\textwidth]{resources/tree-based-layout}
+    \caption{Visualisierung von Instanzen der expliziten Layout-Patterns im baumbasierten Layout}
+    \label{fig:tree-based-layout}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%
 % Open Questions %
@@ -363,3 +376,6 @@ In dem präsentierten Ansatz wird während der Ausführung einer Verschiebungsak
 % Der Mechanismus ist für klassische grafische Benutzeroberflächen ausgelegt und erfüllt damit das Kriterium \ref{req:gui}.
 
 % Neu-Berechnung nach jedem Layout-Übergang -> Performance?
+
+% Klassendiagramme meistens weniger als 10 Klassen (Rat von Scott Ambler?)
+% Durch die Spezialisierung auf konkrete Diagramm-Typen und den Einsatz von verschiedenen Vereinfachungsmaßnahmen wie etwa Einschränkung der unterstützten Notation \cite[S.56ff]{Ambler02Agile} lassen sich Algorithmen für das Layout von Softwarediagrammen entwerfen, die zwar nicht so flexibel wie z.B. \cite{Maier12A-Pattern-based} oder \cite{Eichelberger05Aesthetics} sind, aber dafür...
