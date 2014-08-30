@@ -279,43 +279,27 @@ Der Lebenszyklus der Layout-Engine besteht aus der sequenziellen Verarbeitung de
     \label{fig:processing-of-layout-events}
 \end{figure}
 
-Je nach der Art des Layout-Ereignisses werden in der ersten Phase die Instanzen der expliziten Layout-Patterns unter Berücksichtigung des Inhalts des Diagramms, der instanziierten Layout-Patterns und des aktuellen Layout-Zustandes angepasst, indem:
+Je nach der Art des Layout-Ereignisses werden in der \textbf{ersten Phase} die Instanzen der expliziten Layout-Patterns angepasst, indem:
 
 \begin{itemize}
     \item neue Layout-Patterns erstellt bzw. bestehende  Layout-Patterns gelöscht,
-    \item die Referenzen auf Knoten der bestehenden Layout-Patterns erstellt bzw. gelöscht
+    \item die Referenzen auf Knoten der bestehenden Layout-Patterns modifiziert
     \item oder die bestehenden Layout-Patterns variiert werden.
 \end{itemize}
 
-Das genaue Verhalten der Anpassung der Layout-Patterns ist von einer konkreten Layout-Engine abhängig, die für den gewählten Diagrammtyp ausgelegt sein soll. Dies wird im Abschnitt X diskutiert und im Abschnitt X werden zwei Beispiele präsentiert.
+Insbesondere wird dabei von dem aktuellen Zustand des Diagramms, den bereits instanziierten Layout-Patterns und der Information über die Interaktion Gebrauch gemacht. Das genaue Verhalten der Anpassung der Layout-Patterns ist jedoch von einer konkreten Layout-Engine abhängig, die für den gewählten Diagrammtyp ausgelegt ist. Im Abschnitt X wird dieser Sachverhalt diskutiert und im Abschnitt X werden zwei konkrete Beispiele präsentiert.
+% TODO: Referenzen ergänzen!
 
+In der \textbf{zweiten Phase} wird das \textbf{Layout} berechnet, das durch die impliziten und instanziierten expliziten Layout-Patterns eindeutig bestimmt ist und die Positionen für alle Knoten im Diagramm enthält\footnote{Es wäre möglich, auch weitere Layout-Eigenschaften wie Routen für die Kanten oder Parameter der Layout-Übergänge zu berechnen. Dies wurde in dieser Arbeit aus zeitlichen Gründen jedoch außer Acht gelassen.}. Sobald sich das neu berechnete Layout von dem aktuellen unterscheidet, wird das neue Layout auf das Diagramm angewendet und dadurch ein Layout-Übergang erzeugt (siehe Abschnitt \ref{subsec:layout-transition}). Damit wird die Verarbeitung des Layout-Ereignisses abgeschlossen und der gesamte Vorgang fängt für das nächste Layout-Ereignis von vorne an.
 
+In Rahmen der Konzeption und Entwicklung wurde zunächst ein Algorithmus entworfen, der für die Verschiebung eines Knotens alle erreichbaren Layouts berechnet hat. Weiterhin wurde der Canvas in Bereiche aufgeteilt, wobei jeder Bereich auf ein berechnetes Layout abgebildet wurde. Durch die Bewegung der Mauszeigers in einen bestimmten Bereich wurde das abgebildete Layout auf das Diagramm angewendet und dadurch ein Layout-Übergang ausgelöst. Da die Aufteilung nach jedem Layout-Übergang nicht aktualisiert wurde, war sie oft nach dem ersten Layout-Übergang ungültig. Später wurde festgelegt, dass dieser Algorithmus nicht hinreichend ist.
 
-% zweite Phase
-% eindeutige Bestimmung des Layouts durch die Layout-Patterns
+In dem präsentierten Ansatz wird während der Ausführung einer Verschiebungsaktion ein Layout-Ereignis für jede Bewegung des Mauszeigers generiert und verarbeitet. Dabei sollen bei dem Entwurf eines konkreten Algorithmus folgende Eigenschaften beachtet werden:
 
-
-%Je nach der Art des Layout-Ereignisses werden  zunächst die instanziierten Layout-Patterns angepasst und anschließend ein neues Layout berechnet.
-
-
-
-
-
-
-% berechnete Layouts = Positionen für Knoten
-% weiteres möglich wie Routen für Kanten (nicht implementiert), Animationen/Übergangsparameter für die Transitionen (nicht implementiert)
-% dies wurde in dieser Arbeit aus zeitlichen Gründen jedoch nicht betrachtet
-
-
-
-% Erreichbare Layouts werden berechnet und mit Hilfe der Layout-Ereignisse wird geprüft, ob ein Layout-Übergang stattfinden soll (z.B. nur die benachbarten Bereiche im horizontalen Layout-Algorithmus)
-% nach einem Layout-Übergang wird die Berechnung wiederholt
-
-% mögliche Layout-Übergänge vom aktuellen Zustand abhängig
-% Stabilität -> Ausführen eines Layout-Übergangs nach einer deutlichen Aktion des Nutzers
-% Erreichbarkeit des Ausgangslayouts
-
-% In Rahmen der Konzeption und Entwicklung wurde zunächst ein Algorithmus entworfen, der für die Manipulation eines Knotens alle möglichen Layouts und die entsprechenden Diagramm-Bereiche für das gesamte Diagramm explizit berechnet hat. Durch eine Bewegung des Mauszeigers in einen anderen Bereich wurde jeweils ein Layout-Übergang ausgelöst. Die Berechnung wurde jedoch nicht nach jedem Layout-Übergang wiederholt und die Abbildung war oft nach dem ersten Layout-Übergang ungültig. Später wurde festgelegt, dass dieser Algorithmus nicht hinreichend ist.
+\begin{itemize}
+    \item \textbf{Stabilität} Während der Ausführung einer Verschiebungsaktion soll ein Layout-Übergang erst nach einer deutlichen Bewegung des Mauszeigers durch den Nutzer ausgelöst werden.
+    \item \textbf{Erreichbarkeit des Ausgangslayouts} Das Layout, das ein Diagramm annimmt, wenn die Verschiebungsaktion beginnt, soll im Verlauf der Ausführung der Verschiebungsaktion stets erreichbar sein.
+\end{itemize}
 
 \subsection{Spezialisierung für Diagrammtypen}
 \label{subsec:diagram-types-specialization}
@@ -364,6 +348,9 @@ Das genaue Verhalten der Anpassung der Layout-Patterns ist von einer konkreten L
 % - Kein Freihand-Editieren, sondern implizite Bereiche und Layout-Übergänge
 % - Patterns unterstützen Variierung
 % - Starke Vereinfachung der Möglichkeiten (Anpassung der Patterns aus [Maier])
+
+% Unterschied zu visuellen automatischen Ansätzen:
+% - Interaktion und Zustand wird berücksichtigt
 
 %%%%%%%%%%%
 % Summary %

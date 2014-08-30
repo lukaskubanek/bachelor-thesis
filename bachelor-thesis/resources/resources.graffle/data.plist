@@ -36,7 +36,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2014-08-29 22:28:19 +0000</string>
+	<string>2014-08-30 09:29:35 +0000</string>
 	<key>Modifier</key>
 	<string>Lukas Kubanek</string>
 	<key>NotesVisible</key>
@@ -2159,8 +2159,8 @@
 					<integer>37</integer>
 					<key>Points</key>
 					<array>
-						<string>{295.18782102141614, 325.89034993451639}</string>
-						<string>{313.10820044007056, 360.99966471392111}</string>
+						<string>{295.1878210214162, 325.89034993451639}</string>
+						<string>{313.10820044007062, 360.99966471392111}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -2210,8 +2210,8 @@
 					<integer>34</integer>
 					<key>Points</key>
 					<array>
-						<string>{264.10820044007068, 325.89034993451639}</string>
-						<string>{246.18782102141623, 360.99966471392111}</string>
+						<string>{264.10820044007062, 325.89034993451639}</string>
+						<string>{246.18782102141614, 360.99966471392111}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -4280,8 +4280,8 @@
 					<integer>13</integer>
 					<key>Points</key>
 					<array>
-						<string>{288.88454234325718, 193.575636405485}</string>
-						<string>{273.21334462220102, 168.42436767413542}</string>
+						<string>{288.88455945013601, 193.57563623829773}</string>
+						<string>{273.21338333317271, 168.42436731105579}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -4313,8 +4313,8 @@
 					<integer>12</integer>
 					<key>Points</key>
 					<array>
-						<string>{232.71336702973144, 193.57563607019603}</string>
-						<string>{248.38451979860346, 168.42436689287268}</string>
+						<string>{232.71338417683879, 193.57563623783651}</string>
+						<string>{248.38455858421085, 168.42436728325802}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -11024,6 +11024,385 @@
 			<array>
 				<dict>
 					<key>Bounds</key>
+					<string>{{362.5, 221.82989501953125}, {10, 14}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FitText</key>
+					<string>YES</string>
+					<key>Flow</key>
+					<string>Resize</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Color</key>
+						<dict>
+							<key>b</key>
+							<string>0.999428</string>
+							<key>g</key>
+							<string>0.883484</string>
+							<key>r</key>
+							<string>0.824371</string>
+						</dict>
+						<key>Font</key>
+						<string>Verdana</string>
+						<key>Size</key>
+						<real>7</real>
+					</dict>
+					<key>ID</key>
+					<integer>161</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Pad</key>
+						<integer>2</integer>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 UniversCE-Light;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\b\fs20 \cf1 2}</string>
+						<key>VerticalPad</key>
+						<integer>2</integer>
+					</dict>
+					<key>Wrap</key>
+					<string>NO</string>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{362.5, 143.5}, {10, 14}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FitText</key>
+					<string>YES</string>
+					<key>Flow</key>
+					<string>Resize</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Color</key>
+						<dict>
+							<key>b</key>
+							<string>0.999428</string>
+							<key>g</key>
+							<string>0.883484</string>
+							<key>r</key>
+							<string>0.824371</string>
+						</dict>
+						<key>Font</key>
+						<string>Verdana</string>
+						<key>Size</key>
+						<real>7</real>
+					</dict>
+					<key>ID</key>
+					<integer>160</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Pad</key>
+						<integer>2</integer>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 UniversCE-Light;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\b\fs20 \cf1 1}</string>
+						<key>VerticalPad</key>
+						<integer>2</integer>
+					</dict>
+					<key>Wrap</key>
+					<string>NO</string>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{496.75769377692427, 191.82989501953125}, {76.000000000000043, 34}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FitText</key>
+					<string>Vertical</string>
+					<key>Flow</key>
+					<string>Resize</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Color</key>
+						<dict>
+							<key>b</key>
+							<string>0.999428</string>
+							<key>g</key>
+							<string>0.883484</string>
+							<key>r</key>
+							<string>0.824371</string>
+						</dict>
+						<key>Font</key>
+						<string>UniversCE-Light</string>
+						<key>Size</key>
+						<real>10</real>
+					</dict>
+					<key>ID</key>
+					<integer>74</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Pad</key>
+						<integer>2</integer>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 UniversCE-Light;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs20 \cf0 Instanzen der expliziten Layout-Patterns}</string>
+						<key>VerticalPad</key>
+						<integer>2</integer>
+					</dict>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{355.32721281989302, 161}, {98.42279052734375, 44}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FitText</key>
+					<string>Vertical</string>
+					<key>Flow</key>
+					<string>Resize</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Color</key>
+						<dict>
+							<key>b</key>
+							<string>0.999428</string>
+							<key>g</key>
+							<string>0.883484</string>
+							<key>r</key>
+							<string>0.824371</string>
+						</dict>
+						<key>Font</key>
+						<string>UniversCE-Light</string>
+						<key>Size</key>
+						<real>10</real>
+					</dict>
+					<key>ID</key>
+					<integer>73</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Pad</key>
+						<integer>2</integer>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 UniversCE-Light;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs20 \cf0 Anpassung der instanziierten expliziten Layout-Patterns}</string>
+						<key>VerticalPad</key>
+						<integer>2</integer>
+					</dict>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{374.53860640994651, 240.50000176889404}, {60, 24}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FitText</key>
+					<string>YES</string>
+					<key>Flow</key>
+					<string>Resize</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Color</key>
+						<dict>
+							<key>b</key>
+							<string>0.999428</string>
+							<key>g</key>
+							<string>0.883484</string>
+							<key>r</key>
+							<string>0.824371</string>
+						</dict>
+						<key>Font</key>
+						<string>UniversCE-Light</string>
+						<key>Size</key>
+						<real>10</real>
+					</dict>
+					<key>ID</key>
+					<integer>72</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Pad</key>
+						<integer>2</integer>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 UniversCE-Light;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs20 \cf0 Berechnung \
+des Layouts}</string>
+						<key>VerticalPad</key>
+						<integer>2</integer>
+					</dict>
+					<key>Wrap</key>
+					<string>NO</string>
+				</dict>
+				<dict>
+					<key>Bounds</key>
+					<string>{{93.337618426546214, 310.99998937041914}, {82.773231506347656, 34}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FitText</key>
+					<string>Vertical</string>
+					<key>Flow</key>
+					<string>Resize</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Color</key>
+						<dict>
+							<key>b</key>
+							<string>0.999428</string>
+							<key>g</key>
+							<string>0.883484</string>
+							<key>r</key>
+							<string>0.824371</string>
+						</dict>
+						<key>Font</key>
+						<string>UniversCE-Light</string>
+						<key>Size</key>
+						<real>10</real>
+					</dict>
+					<key>ID</key>
+					<integer>71</integer>
+					<key>Shape</key>
+					<string>Rectangle</string>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>Pad</key>
+						<integer>2</integer>
+						<key>Text</key>
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 UniversCE-Light;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
+
+\f0\fs20 \cf0 Visualisierung des Layout-\'dcbergangs}</string>
+						<key>VerticalPad</key>
+						<integer>2</integer>
+					</dict>
+				</dict>
+				<dict>
+					<key>Bounds</key>
 					<string>{{357, 217.32989501953125}, {21, 21}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
@@ -11039,9 +11418,9 @@
 							<string>1</string>
 						</dict>
 						<key>Font</key>
-						<string>LucidaGrande</string>
+						<string>UniversCE-Bold</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>10</real>
 					</dict>
 					<key>ID</key>
 					<integer>70</integer>
@@ -11074,16 +11453,6 @@
 							<string>NO</string>
 						</dict>
 					</dict>
-					<key>Text</key>
-					<dict>
-						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
-{\colortbl;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
-
-\f0\fs28 \cf1 2}</string>
-					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -11102,9 +11471,9 @@
 							<string>1</string>
 						</dict>
 						<key>Font</key>
-						<string>LucidaGrande</string>
+						<string>UniversCE-Bold</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>10</real>
 					</dict>
 					<key>ID</key>
 					<integer>69</integer>
@@ -11137,20 +11506,10 @@
 							<string>NO</string>
 						</dict>
 					</dict>
-					<key>Text</key>
-					<dict>
-						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
-{\colortbl;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
-
-\f0\fs28 \cf1 1}</string>
-					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{82.474224371539705, 94.546394356254055}, {102.5, 26}}</string>
+					<string>{{82.474224371539705, 94.546394356254055}, {102.5, 24}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -11169,9 +11528,9 @@
 							<string>0.824371</string>
 						</dict>
 						<key>Font</key>
-						<string>Verdana</string>
+						<string>UniversCE-Light</string>
 						<key>Size</key>
-						<real>7</real>
+						<real>10</real>
 					</dict>
 					<key>ID</key>
 					<integer>51</integer>
@@ -11201,11 +11560,11 @@
 						<integer>2</integer>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 UniversCE-Light;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\fs18 \cf0 Bearbeituns-\
+\f0\fs20 \cf0 Bearbeituns-\
 aktion}</string>
 						<key>VerticalPad</key>
 						<integer>2</integer>
@@ -11213,7 +11572,7 @@ aktion}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{223.41237000428873, 306.32988438995039}, {102.5, 26}}</string>
+					<string>{{224.41237000428873, 308.32988438995039}, {102.5, 24}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -11232,9 +11591,9 @@ aktion}</string>
 							<string>0.824371</string>
 						</dict>
 						<key>Font</key>
-						<string>Verdana</string>
+						<string>UniversCE-Light</string>
 						<key>Size</key>
-						<real>7</real>
+						<real>10</real>
 					</dict>
 					<key>ID</key>
 					<integer>50</integer>
@@ -11264,11 +11623,11 @@ aktion}</string>
 						<integer>2</integer>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 UniversCE-Light;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\fs18 \cf0 Anpassung des Layouts}</string>
+\f0\fs20 \cf0 Anpassung des Layouts}</string>
 						<key>VerticalPad</key>
 						<integer>2</integer>
 					</dict>
@@ -11276,6 +11635,13 @@ aktion}</string>
 				<dict>
 					<key>Class</key>
 					<string>LineGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>UniversCE-Light</string>
+						<key>Size</key>
+						<real>10</real>
+					</dict>
 					<key>Head</key>
 					<dict>
 						<key>ID</key>
@@ -11285,8 +11651,8 @@ aktion}</string>
 					<integer>61</integer>
 					<key>Points</key>
 					<array>
-						<string>{464.03835093710086, 210.30296895176616}</string>
-						<string>{492.87126172777778, 209.3594592532807}</string>
+						<string>{464.03837780828383, 210.40332401965406}</string>
+						<string>{492.87131192627834, 209.50844495473302}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -11322,6 +11688,13 @@ aktion}</string>
 				<dict>
 					<key>Class</key>
 					<string>LineGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>UniversCE-Light</string>
+						<key>Size</key>
+						<real>10</real>
+					</dict>
 					<key>Head</key>
 					<dict>
 						<key>ID</key>
@@ -11331,8 +11704,8 @@ aktion}</string>
 					<integer>48</integer>
 					<key>Points</key>
 					<array>
-						<string>{345.03861957296635, 212.12287313016537}</string>
-						<string>{218.1932955103488, 211.85185701656698}</string>
+						<string>{345.03861957237285, 212.123337813783}</string>
+						<string>{218.1932953591793, 211.85331233760098}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -11368,6 +11741,13 @@ aktion}</string>
 				<dict>
 					<key>Class</key>
 					<string>LineGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>UniversCE-Light</string>
+						<key>Size</key>
+						<real>10</real>
+					</dict>
 					<key>Head</key>
 					<dict>
 						<key>ID</key>
@@ -11412,6 +11792,13 @@ aktion}</string>
 				<dict>
 					<key>Class</key>
 					<string>LineGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>UniversCE-Light</string>
+						<key>Size</key>
+						<real>10</real>
+					</dict>
 					<key>Head</key>
 					<dict>
 						<key>ID</key>
@@ -11457,6 +11844,13 @@ aktion}</string>
 				<dict>
 					<key>Class</key>
 					<string>LineGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>UniversCE-Light</string>
+						<key>Size</key>
+						<real>10</real>
+					</dict>
 					<key>Head</key>
 					<dict>
 						<key>ID</key>
@@ -11509,9 +11903,9 @@ aktion}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>LucidaGrande</string>
+						<string>UniversCE-Light</string>
 						<key>Size</key>
-						<real>9</real>
+						<real>10</real>
 					</dict>
 					<key>ID</key>
 					<integer>63</integer>
@@ -11525,16 +11919,6 @@ aktion}</string>
 							<string>NO</string>
 						</dict>
 					</dict>
-					<key>Text</key>
-					<dict>
-						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
-{\colortbl;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
-
-\f0\fs18 \cf0 Berechnung des Layouts}</string>
-					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -11544,9 +11928,9 @@ aktion}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>LucidaGrande</string>
+						<string>UniversCE-Light</string>
 						<key>Size</key>
-						<real>9</real>
+						<real>10</real>
 					</dict>
 					<key>ID</key>
 					<integer>64</integer>
@@ -11560,16 +11944,6 @@ aktion}</string>
 							<string>NO</string>
 						</dict>
 					</dict>
-					<key>Text</key>
-					<dict>
-						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
-{\colortbl;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
-
-\f0\fs18 \cf0 Anpassung der instanziierten expliziten Layout-Patterns}</string>
-					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -11579,9 +11953,9 @@ aktion}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>LucidaGrande</string>
+						<string>UniversCE-Light</string>
 						<key>Size</key>
-						<real>9</real>
+						<real>10</real>
 					</dict>
 					<key>ID</key>
 					<integer>65</integer>
@@ -11595,20 +11969,10 @@ aktion}</string>
 							<string>NO</string>
 						</dict>
 					</dict>
-					<key>Text</key>
-					<dict>
-						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
-{\colortbl;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
-
-\f0\fs18 \cf0 Instanzen der expliziten Layout-Patterns}</string>
-					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{220.59146666590198, 93.058002186905981}, {102.5, 26}}</string>
+					<string>{{220.59146666590198, 93.058002186905981}, {102.5, 24}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -11627,9 +11991,9 @@ aktion}</string>
 							<string>0.824371</string>
 						</dict>
 						<key>Font</key>
-						<string>Verdana</string>
+						<string>UniversCE-Light</string>
 						<key>Size</key>
-						<real>7</real>
+						<real>10</real>
 					</dict>
 					<key>ID</key>
 					<integer>20</integer>
@@ -11659,11 +12023,11 @@ aktion}</string>
 						<integer>2</integer>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 UniversCE-Light;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\fs18 \cf0 Erzeugen eines Layout-Ereignisses}</string>
+\f0\fs20 \cf0 Erzeugen eines Layout-Ereignisses}</string>
 						<key>VerticalPad</key>
 						<integer>2</integer>
 					</dict>
@@ -11676,9 +12040,9 @@ aktion}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>LucidaGrande</string>
+						<string>UniversCE-Light</string>
 						<key>Size</key>
-						<real>9</real>
+						<real>10</real>
 					</dict>
 					<key>ID</key>
 					<integer>66</integer>
@@ -11709,7 +12073,7 @@ aktion}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{180.69330001346214, 204.32989678842529}, {53, 15}}</string>
+					<string>{{182.69330001346214, 204.32989678842529}, {54, 14}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -11728,9 +12092,9 @@ aktion}</string>
 							<string>0.824371</string>
 						</dict>
 						<key>Font</key>
-						<string>Verdana-Bold</string>
+						<string>UniversCE-Bold</string>
 						<key>Size</key>
-						<real>7</real>
+						<real>10</real>
 					</dict>
 					<key>ID</key>
 					<integer>18</integer>
@@ -11762,11 +12126,11 @@ aktion}</string>
 						<integer>2</integer>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 UniversCE-Light;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\b\fs18 \cf0 Diagramm}</string>
+\f0\b\fs20 \cf0 Diagramm}</string>
 						<key>VerticalPad</key>
 						<integer>2</integer>
 					</dict>
@@ -11775,7 +12139,7 @@ aktion}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{163.19329766236956, 204.32989502763979}, {38, 15}}</string>
+					<string>{{166.19329766236956, 204.32989502763979}, {39, 14}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -11794,9 +12158,9 @@ aktion}</string>
 							<string>0.824371</string>
 						</dict>
 						<key>Font</key>
-						<string>Verdana-Bold</string>
+						<string>UniversCE-Bold</string>
 						<key>Size</key>
-						<real>7</real>
+						<real>10</real>
 					</dict>
 					<key>ID</key>
 					<integer>17</integer>
@@ -11828,11 +12192,11 @@ aktion}</string>
 						<integer>2</integer>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 UniversCE-Light;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\b\fs18 \cf0 Canvas}</string>
+\f0\b\fs20 \cf0 Canvas}</string>
 						<key>VerticalPad</key>
 						<integer>2</integer>
 					</dict>
@@ -11841,7 +12205,7 @@ aktion}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{429.90716123580933, 64.113403916701003}, {73, 15}}</string>
+					<string>{{421.2164568901062, 64.113403916701003}, {73, 14}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -11860,9 +12224,9 @@ aktion}</string>
 							<string>0.824371</string>
 						</dict>
 						<key>Font</key>
-						<string>Verdana-Bold</string>
+						<string>UniversCE-Bold</string>
 						<key>Size</key>
-						<real>7</real>
+						<real>10</real>
 					</dict>
 					<key>ID</key>
 					<integer>67</integer>
@@ -11892,11 +12256,11 @@ aktion}</string>
 						<integer>2</integer>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
-\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
+\cocoascreenfonts1{\fonttbl\f0\fnil\fcharset0 UniversCE-Light;}
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc
 
-\f0\b\fs18 \cf0 Layout-Engine}</string>
+\f0\b\fs20 \cf0 Layout-Engine}</string>
 						<key>VerticalPad</key>
 						<integer>2</integer>
 					</dict>
@@ -11906,6 +12270,13 @@ aktion}</string>
 				<dict>
 					<key>Class</key>
 					<string>LineGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>UniversCE-Light</string>
+						<key>Size</key>
+						<real>10</real>
+					</dict>
 					<key>ID</key>
 					<integer>15</integer>
 					<key>Points</key>
@@ -11945,6 +12316,13 @@ aktion}</string>
 				<dict>
 					<key>Class</key>
 					<string>LineGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>UniversCE-Light</string>
+						<key>Size</key>
+						<real>10</real>
+					</dict>
 					<key>Head</key>
 					<dict>
 						<key>ID</key>
@@ -11989,9 +12367,9 @@ aktion}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>LucidaGrande</string>
+						<string>UniversCE-Light</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>10</real>
 					</dict>
 					<key>ID</key>
 					<integer>68</integer>
@@ -12014,6 +12392,13 @@ aktion}</string>
 				<dict>
 					<key>Class</key>
 					<string>LineGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>UniversCE-Light</string>
+						<key>Size</key>
+						<real>10</real>
+					</dict>
 					<key>ID</key>
 					<integer>12</integer>
 					<key>Points</key>
@@ -12048,6 +12433,13 @@ aktion}</string>
 				<dict>
 					<key>Class</key>
 					<string>LineGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Font</key>
+						<string>UniversCE-Light</string>
+						<key>Size</key>
+						<real>10</real>
+					</dict>
 					<key>ID</key>
 					<integer>9</integer>
 					<key>Points</key>
@@ -12087,9 +12479,9 @@ aktion}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>LucidaGrande</string>
+						<string>UniversCE-Light</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>10</real>
 					</dict>
 					<key>ID</key>
 					<integer>8</integer>
@@ -12112,9 +12504,9 @@ aktion}</string>
 					<key>FontInfo</key>
 					<dict>
 						<key>Font</key>
-						<string>LucidaGrande</string>
+						<string>UniversCE-Light</string>
 						<key>Size</key>
-						<real>14</real>
+						<real>10</real>
 					</dict>
 					<key>ID</key>
 					<integer>6</integer>
@@ -12209,7 +12601,7 @@ aktion}</string>
 		<key>SmallIcons</key>
 		<true/>
 		<key>VisibleRegion</key>
-		<string>{{13, 0}, {982, 623}}</string>
+		<string>{{0, 0}, {982, 623}}</string>
 		<key>Zoom</key>
 		<real>1</real>
 		<key>ZoomValues</key>
