@@ -5,7 +5,7 @@
 \chapter{Bestehende Ansätze für Layout von Diagrammen}
 \label{chapter:existing-approaches}
 
-Dieses Kapitel widmet sich der Vorstellung von bestehenden Ansätzen für Layout von Diagrammen. Im Abschnitt \ref{sec:categorization} werden die Ansätze zunächst kategorisiert und anschließend werden in Abschnitten \ref{sec:manual-layout}, \ref{sec:automatic-layout} und \ref{sec:interactive-semi-automatic-layout} die einzelnen Hauptkategorien ausführlich beschrieben, deren Eigenschaften aufgelistet und kurz mit dem im Kapitel \ref{chapter:interactive-approach} vorgestellten Ansatz verglichen.
+Dieses Kapitel widmet sich der Vorstellung von bestehenden Ansätzen für Layout von Diagrammen. Im Abschnitt \ref{sec:categorization} werden die Ansätze zunächst kategorisiert und anschließend werden in Abschnitten \ref{sec:manual-layout}, \ref{sec:automatic-layout} und \ref{sec:interactive-semi-automatic-layout} die einzelnen Hauptkategorien ausführlich beschrieben und deren Eigenschaften aufgelistet.
 
 \section{Kategorisierung}
 \label{sec:categorization}
@@ -13,7 +13,7 @@ Dieses Kapitel widmet sich der Vorstellung von bestehenden Ansätzen für Layout
 % TODO: Die Kategorisierung näher erklären!
 Die Ansätze für das Layout von Diagrammen lassen sich in 3 Hauptkategorien nach dem \textbf{Grad der Interaktivität} und der \textbf{Art der Layout-Unterstützung} unterteilen.
 
-Zu einem gibt es das interaktive \textbf{manuelle Layout}, das auf der Freihand-Bearbeitung basiert und dem Nutzer ermöglicht, die Layout-Eigenschaften der Objekte im Diagramm wunschgemäß unter der Möglichkeit der Annahmen von Layout-Vorschlägen zu verändern. Das manuelle Layout wird in meisten graphischen Editoren eingesetzt und wird näher im Abschnitt \ref{sec:manual-layout} erläutert.
+Zu einem gibt es das interaktive \textbf{manuelle Layout}, das auf der Freihand-Bearbeitung basiert und dem Nutzer ermöglicht, die Layout-Eigenschaften der Objekte im Diagramm wunschgemäß zu verändern, wobei dem Nutzer zusätzlich Layout-Vorschläge präsentiert werden. Das manuelle Layout wird in meisten graphischen Editoren eingesetzt und wird näher im Abschnitt \ref{sec:manual-layout} erläutert.
 
 Weiterhin gibt es Ansätze für das \textbf{vollautomatische Layout}, die optimale Layouts unter Berücksichtigung von ästhetischen Prinzipien produzieren. Sie haben einen statischen Charakter und können von dem Nutzer nur minimal beeinflusst werden. Somit sind sie nicht für interaktive Umgebungen geeignet. Mit diesen Ansätzen beschäftigt sich der Abschnitt \ref{sec:automatic-layout}.
 
@@ -22,7 +22,7 @@ Schließlich gibt es Ansätze für das \textbf{halbautomatische Layout}, die das
 \section{Manuelles Layout}
 \label{sec:manual-layout}
 
-In Anwendungen zum Erstellen von Diagrammen wie z.B. Vektorgrafik-Software, Präsentationsprogramme oder CASE-Tools wird ausschließlich das manuelle Layout unterstützt, d.h. die einzelnen Bestandteile können im Diagramm frei positioniert werden. Somit kann der Nutzer ein gewünschtes Layout erreichen, muss dafür aber viele manuellen Schritte tätigen \cite{Eichelberger05Aesthetics}. Da sich der Inhalt des Diagramms während der Erstellung ständig ändert, können die manuellen Anpassungen des Layouts zur Frustration des Nutzers führen. Um einige Hürden des manuellen Layouts zu überwinden, bieten die Anwendungen eine Reihe an Funktionen, die dem Nutzer diese Tätigkeit bequemer machen.
+In Anwendungen zum Erstellen von Diagrammen wie z.B. Vektorgrafik-Software, Präsentationsprogramme oder CASE-Tools wird ausschließlich das manuelle Layout unterstützt, d.h. die einzelnen Bestandteile können im Diagramm frei positioniert werden. Somit kann der Nutzer ein gewünschtes Layout erreichen, muss dafür aber viele manuellen Schritte tätigen \cite{Eichelberger05Aesthetics}. Da sich der Inhalt des Diagramms während der Erstellung ständig ändert, ist es notwendig, auch das Layout manuell anzupassen. Dies kann zur Frustration des Nutzers führen. Um einige Hürden des manuellen Layouts zu überwinden, bieten die Anwendungen eine Reihe an Funktionen, die dem Nutzer diese Tätigkeit bequemer machen.
 
 Da das manuelle Layout auf direkter Interaktion des Nutzers mit dem Diagramm basiert, haben auch die Hilfefunktionen einen interaktiven Charakter. Außerdem weisen sie ein temporäres Verhalten auf, d.h. bei ihrer Nutzung werden keinerlei Regeln oder Constraints erstellt, wie das meistens bei den halbautomatischen Ansätzen der Fall ist (siehe Abschnitt \ref{sec:interactive-semi-automatic-layout}). Im Detail werden die Hilfefunktionen im Abschnitt \ref{subsec:help-functions-for-manual-layout} beschrieben.
 
@@ -321,34 +321,21 @@ OmniGraffle bietet die Möglichkeit, mit Hilfe des Magnetwerkzeugs manuell die V
 
 Sobald mindestens ein Magnet dem Objekt hinzugefügt wurde, wird nicht mehr der Verknüpfungspunkt mit Hilfe des Mittelpunktes berechnet wie oben beschrieben, sondern die Verbindungslinie wird immer von dem nächsten Verknüpfungspunkt angezogen (siehe Abbildung \ref{fig:omnigraffle-magnets-example}). Alternativ kann der Nutzer ein Ende der Verbindungslinie an einen konkreten Verknüpfungspunkt binden. In dem Fall bleibt die Verbindungslinie an den gewählten Verknüpfungspunkt gebunden, auch wenn ein anderer Verknüpfungspunkt näher ist.
 
-\subsection{Eigenschaften und Vergleich}
+\subsection{Eigenschaften}
 
-% Mit dieser Funktion (manuelle Hilfslinien) ist der Nutzer in der Lage das Layout präziser zu steuern.
-% keine Unterstützung für Diagrammtypen
-% Klassenelement = Zusammenbauen von mehreren Rechtecken und Textfeldern
-% kein Metamodell hinter der graphischen Notation
-% ohne jegliche semantische Unterstützung
-% Struktur und Semantik wird von den Vektorgrafikprogrammen (Zeichentools) nicht berücksichtigt
-% Struktur- und Semantikregeln
-% die Layout-Operationen sind nicht persistent
-% mögliche Verletzung durch manuelle Aktionen
-% Unterscheidung zwischen CASE-Tools und anderen Diagrammprogrammen
-% interaktiv
-% temporär -> nicht persistent
-% nur Tools -> der Nutzer muss die ästhetischen Prinzipien "selbst einhalten"
+\subsubsection{Vorteile}
 
-% Vorteile:
-%% ermöglicht eine direkte Interaktion des Nutzers mit dem Diagramm
-%% flexibel -> Nutzer kann viel beeinflussen
-%% intuitiv
+\begin{itemize}
+    \item \textbf{Interaktion} Das manuelle Layout stellt die Interaktion des Nutzers mit dem Diagramm in den Vordergrund und ist dadurch sehr intuitiv.
+    \item \textbf{Flexibilität} Aufgrund der Möglichkeit der beliebigen Anpassung der Layout-Eigenschaften kann das manuelle Layout sehr präzis gesteuert werden. Somit hat der Nutzer einen großen Einfluss auf das resultierende Layout.
+\end{itemize}
 
-% Nachteile:
-%% viel an manueller Arbeit
+\subsubsection{Nachteile}
 
-%großen Einfluss auf das resultierende Layout des Diagramms hat
-% der Nutzer muss sich mit dem Layout viel auseinandersetzen -> Inhalt der Diagramme soll im Vordergrund stehen
-% keine semantische Unterstützung
-% Möglichkeit, Diagramme zu erstellen, die auf keiner festen Syntax basieren!
+\begin{itemize}
+    \item \textbf{Fehlende Unterstützung der Diagrammtypen} Die Tools, die das manuelle Layout einsetzen, lassen sich in zwei Gruppen unterteilen: CASE-Tools, die die grafische Notation der Diagrammtypen unterstützen und Vektorgrafik-Tools, die eine geringe bis keine Unterstützung der grafischen Notation bringen. Jedoch werden die Syntax- und Semantikregeln für die Layout-Erstellung weder in den CASE-Tools noch in den Vektorgrafik-Tools berücksichtigt und können durch den Nutzer verletzt werden.    
+    \item \textbf{Aufwand an Layout-Erstellung} Die Aktionen zur Erstellung des Layouts sind temporär und nach jeder Änderung des Inhalts eines Diagramms muss das erstellte Layout neu angepasst werden, das in der Regel mit viel Aufwand verbunden ist.
+\end{itemize}
 
 \section{Automatisches Layout}
 \label{sec:automatic-layout}
