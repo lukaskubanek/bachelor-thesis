@@ -13,7 +13,7 @@ Dieses Kapitel widmet sich der Vorstellung von bestehenden Ansätzen für Layout
 % TODO: Die Kategorisierung näher erklären!
 Die Ansätze für das Layout von Diagrammen lassen sich in 3 Hauptkategorien nach dem \textbf{Grad der Interaktivität} und der \textbf{Art der Layout-Unterstützung} unterteilen.
 
-Zu einem gibt es das interaktive \textbf{manuelle Layout}, das auf der Freihand-Bearbeitung basiert und dem Nutzer ermöglicht, die Layout-Eigenschaften der Objekte im Diagramm wunschgemäß zu verändern, wobei dem Nutzer zusätzlich Layout-Vorschläge präsentiert werden. Das manuelle Layout wird in meisten graphischen Editoren eingesetzt und wird näher im Abschnitt \ref{sec:manual-layout} erläutert.
+Zum einen gibt es das interaktive \textbf{manuelle Layout}, das auf der Freihand-Bearbeitung basiert und dem Nutzer ermöglicht, die Layout-Eigenschaften der Objekte im Diagramm wunschgemäß zu verändern, wobei dem Nutzer zusätzlich Layout-Vorschläge präsentiert werden. Das manuelle Layout wird in den meisten graphischen Editoren eingesetzt und wird näher im Abschnitt \ref{sec:manual-layout} erläutert.
 
 Weiterhin gibt es Ansätze für das \textbf{vollautomatische Layout}, die optimale Layouts unter Berücksichtigung von ästhetischen Prinzipien produzieren. Sie haben einen statischen Charakter und können von dem Nutzer nur minimal beeinflusst werden. Somit sind sie nicht für interaktive Umgebungen geeignet. Mit diesen Ansätzen beschäftigt sich der Abschnitt \ref{sec:automatic-layout}.
 
@@ -22,7 +22,7 @@ Schließlich gibt es Ansätze für das \textbf{halbautomatische Layout}, die das
 \section{Manuelles Layout}
 \label{sec:manual-layout}
 
-In Anwendungen zum Erstellen von Diagrammen wie z.B. Vektorgrafik-Software, Präsentationsprogramme oder CASE-Tools wird ausschließlich das manuelle Layout unterstützt, d.h. die einzelnen Bestandteile können im Diagramm frei positioniert werden. Somit kann der Nutzer ein gewünschtes Layout erreichen, muss dafür aber viele manuellen Schritte tätigen \cite{Eichelberger05Aesthetics}. Da sich der Inhalt des Diagramms während der Erstellung ständig ändert, ist es notwendig, auch das Layout manuell anzupassen. Dies kann zur Frustration des Nutzers führen. Um einige Hürden des manuellen Layouts zu überwinden, bieten die Anwendungen eine Reihe an Funktionen, die dem Nutzer diese Tätigkeit bequemer machen.
+In Anwendungen zum Erstellen von Diagrammen wie z.B. Vektorgrafik-Software, Präsentationsprogramme oder CASE-Tools wird ausschließlich das manuelle Layout unterstützt, d.h. die einzelnen Bestandteile können im Diagramm frei positioniert werden. Somit kann der Nutzer ein gewünschtes Layout erreichen, muss dafür aber viele manuelle Schritte tätigen \cite{Eichelberger05Aesthetics}. Da sich der Inhalt des Diagramms während der Erstellung ständig ändert, ist es notwendig, auch das Layout manuell anzupassen. Dies kann zur Frustration des Nutzers führen. Um einige Hürden des manuellen Layouts zu überwinden, bieten die Anwendungen eine Reihe an Funktionen, die dem Nutzer diese Tätigkeit bequemer machen.
 
 Da das manuelle Layout auf direkter Interaktion des Nutzers mit dem Diagramm basiert, haben auch die Hilfefunktionen einen interaktiven Charakter. Außerdem weisen sie ein temporäres Verhalten auf, d.h. bei ihrer Nutzung werden keinerlei Regeln oder Constraints erstellt, wie das meistens bei den halbautomatischen Ansätzen der Fall ist (siehe Abschnitt \ref{sec:interactive-semi-automatic-layout}). Im Detail werden die Hilfefunktionen im Abschnitt \ref{subsec:help-functions-for-manual-layout} beschrieben.
 
@@ -34,7 +34,7 @@ Im Folgenden werden drei Anwendungen vorgestellt, an den die Hilfefunktionen fü
 \subsubsection{OmniGraffle}
 \label{subsubsec:omnigraffle}
 
-Die von OmniGroup\footnote{\url{http://omnigroup.com}} entwickelte kommerzielle Anwendung OmniGraffle ist eins der einfachsten Tools zur Erstellung von Diagrammen unter Mac OS X \cite{Olsen10OmniGraffle}. OmniGraffle ist sehr flexibel und lässt sich für viele verschiedene Aufgaben einsetzen, z.B. von einem grafischen Entwurf einer Webseite bis zum Zeichnen von Klassendiagrammen. Das liegt vor allem daran, dass für die gezeichneten Diagramme kein semantisches Modell vorliegt und dass die Diagrammbestandteile als reine vektorgrafische Objekte repräsentiert werden. Detaillierte Information zu OmniGraffle können in \cite{08OmniGraffle}, \cite{Olsen10OmniGraffle} oder auf der offiziellen Webseite\footnote{\url{http://omnigroup.com/omnigraffle}} gefunden werden.
+Die von OmniGroup\footnote{\url{http://omnigroup.com}} entwickelte kommerzielle Anwendung OmniGraffle ist eins der einfachsten Tools zur Erstellung von Diagrammen unter Mac OS X \cite{Olsen10OmniGraffle}. OmniGraffle ist sehr flexibel und lässt sich für viele verschiedene Aufgaben einsetzen, z.B. von einem grafischen Entwurf einer Webseite bis zum Zeichnen von Klassendiagrammen. Das liegt vor allem daran, dass für die gezeichneten Diagramme kein semantisches Modell vorliegt und dass die Diagrammbestandteile als reine vektorgrafische Objekte repräsentiert werden. Detaillierte Informationen zu OmniGraffle können in \cite{08OmniGraffle}, \cite{Olsen10OmniGraffle} oder auf der offiziellen Webseite\footnote{\url{http://omnigroup.com/omnigraffle}} gefunden werden.
 
 Die meisten im Abschnitt \ref{subsec:help-functions-for-manual-layout} beschriebenen Hilfefunktionen für das manuelle Layout werden anhand von OmniGraffle 5\footnote{Die aktuelle Version von OmniGraffle ist 6 (\url{http://www.omnigroup.com/blog/omnigraffle-6-is-here}), die Erkenntnisse für diese Arbeit wurden allerdings mit der Version 5 gewonnen.} gezeigt. OmniGraffle bietet auch eine Unterstützung für automatisches Layout, die näher im Abschnitt \ref{subsubsec:omnigraffle-auto-layout} beschrieben wird.
 
@@ -48,7 +48,7 @@ Keynote besitzt ähnliche oder sogar identische Hilfefunktionen für das manuell
 \subsubsection{Visual Paradigm}
 \label{subsubsec:visual-paradigm}
 
-Visual Paradigm ist ein plattformunabhängiges CASE-Tool von der gleichnamigen Firma und unterstützt neben UML-Diagrammen auch weitere visuellen Sprachen \cite{14Visual}. Das Tool basiert auf einer Freihandbearbeitung und bietet neben Hilfefunktionen für das manuelle Layout (siehe Abschnitt \ref{subsec:help-functions-for-manual-layout}) auch Unterstützung für automatische Layout-Algorithmen (siehe Abschnitt \ref{subsec:visual-approaches}) \cite{Fuhrmann11On-the-Pragmatics}. Mit näheren Beschreibung von Visual Paradigm beschäftigen sich \cite{14Visual}, \cite[S.313-314]{Fuhrmann11On-the-Pragmatics} und die offizielle Webseite\footnote{\url{http://www.visual-paradigm.com}}.
+Visual Paradigm ist ein plattformunabhängiges CASE-Tool von der gleichnamigen Firma und unterstützt neben UML-Diagrammen auch weitere visuelle Sprachen \cite{14Visual}. Das Tool basiert auf einer Freihandbearbeitung und bietet neben Hilfefunktionen für das manuelle Layout (siehe Abschnitt \ref{subsec:help-functions-for-manual-layout}) auch Unterstützung für automatische Layout-Algorithmen (siehe Abschnitt \ref{subsec:visual-approaches}) \cite{Fuhrmann11On-the-Pragmatics}. Mit der näheren Beschreibung von Visual Paradigm beschäftigen sich \cite{14Visual}, \cite[S.313-314]{Fuhrmann11On-the-Pragmatics} und die offizielle Webseite\footnote{\url{http://www.visual-paradigm.com}}.
 
 % TODO: Bezug auf Anwendungen und Abschnitt 3.1.1 überprüfen
 % TODO: Unterstützte Anwendungen aus Abschnitt 3.1.1 erwähnen
@@ -58,11 +58,11 @@ Visual Paradigm ist ein plattformunabhängiges CASE-Tool von der gleichnamigen F
 \subsubsection{Raster}
 \label{subsubsec:grid}
 
-Viele Visualisierungsprogramme (unter anderem alle drei im Abschnitt \ref{subsec:applications-for-manual-layout} erwähnten) unterstützen die Aufteilung des Diagramms in einen gleichmäßigen Raster, der durch Rasterlinien dargestellt werden kann. Diese Linien können zum Ausrichten von Objekten im Diagramm verwendet werden, das vor allem dann nützlich ist, wenn die Größen der Objekte eine wichtige Rolle spielen wie z.B. Grundrisse \cite{08OmniGraffle, Olsen10OmniGraffle, 11Keynote, 14Visual}.
+Viele Visualisierungsprogramme (unter anderem alle drei im Abschnitt \ref{subsec:applications-for-manual-layout} erwähnten) unterstützen die Aufteilung des Diagramms in ein gleichmäßiges Raster, das durch Rasterlinien dargestellt werden kann. Diese Linien können zum Ausrichten von Objekten im Diagramm verwendet werden, das vor allem dann nützlich ist, wenn die Größen der Objekte eine wichtige Rolle spielen wie z.B. Grundrisse \cite{08OmniGraffle, Olsen10OmniGraffle, 11Keynote, 14Visual}.
 
 \paragraph{Snap-to-Grid}
 
-Die reguläre Verschiebungsoperation von Objekten im Diagramm funktioniert in der Regel wie folgt: Der Nutzer wählt mit dem Mauszeiger ein Objekt aus und schiebt das Objekt mit gedrückter Maustaste auf seine neue Position. Wenn die Funktion \enquote{Snap-to-Grid} nicht aktiviert ist, kann die Zielposition beliebig sein. Während der Verschiebung wird die Position des Objekts kontinuierlich angepasst, so dass der Nutzer einen visuellen Feedback bekommt. Dieser Vorgang ist in Abbildung \ref{fig:omnigraffle-snap-to-grid-off} dargestellt.
+Die reguläre Verschiebungsoperation von Objekten im Diagramm funktioniert in der Regel wie folgt: Der Nutzer wählt mit dem Mauszeiger ein Objekt aus und schiebt das Objekt mit gedrückter Maustaste auf seine neue Position. Wenn die Funktion \enquote{Snap-to-Grid} nicht aktiviert ist, kann die Zielposition beliebig sein. Während der Verschiebung wird die Position des Objekts kontinuierlich angepasst, so dass der Nutzer ein visuelles Feedback bekommt. Dieser Vorgang ist in Abbildung \ref{fig:omnigraffle-snap-to-grid-off} dargestellt.
 
 \begin{figure}[hbt]
     \newcommand{\subfigurewidth}{0.33\textwidth}
@@ -86,7 +86,7 @@ Die reguläre Verschiebungsoperation von Objekten im Diagramm funktioniert in de
     \label{fig:omnigraffle-snap-to-grid-off}
 \end{figure}
 
-Wenn die Funktion \enquote{Snap-to-Grid} nun aktiviert ist, wird im Unterschied zu dem vorigen Vorgang die Zielposition so eingeschränkt, dass das verschobene Objekt an die Rasterlinien ausgerichtet wird. Der Mauszeiger kann dabei frei positioniert werden, das Objekt nimmt aber immer die nächste ausgerichtete Position an. Dieser Vorgang ist in Abbildung \ref{fig:omnigraffle-snap-to-grid-on} dargestellt.
+Wenn die Funktion \enquote{Snap-to-Grid} nun aktiviert ist, wird im Unterschied zu dem vorigen Vorgang die Zielposition so eingeschränkt, dass das verschobene Objekt an den Rasterlinien ausgerichtet wird. Der Mauszeiger kann dabei frei positioniert werden, das Objekt nimmt aber immer die nächste ausgerichtete Position an. Dieser Vorgang ist in Abbildung \ref{fig:omnigraffle-snap-to-grid-on} dargestellt.
 
 \begin{figure}[hbt]
     \newcommand{\subfigurewidth}{0.33\textwidth}
@@ -114,12 +114,12 @@ Neben der Verschiebungsoperation wird auch die Operation der Größenänderung e
 
 \paragraph{Ausrichten im Raster}
 
-Das Ausrichten an die Rasterlinien kann auch nachträglich bewirkt werden. Dies passiert durch die Auswahl des zu ausgerichteten Objekts und dem Ausführen der Funktion \textit{Ausrichten im Raster}. Die Position und Größe des Objekts werden so angepasst, dass das Objekt an die Rasterlinien ausgerichtet wird.
+Das Ausrichten an Rasterlinien kann auch nachträglich bewirkt werden. Dies passiert durch die Auswahl des auszurichtenden Objekts und dem Ausführen der Funktion \textit{Ausrichten im Raster}. Die Position und Größe des Objekts werden so angepasst, dass das Objekt an den Rasterlinien ausgerichtet wird.
 
 \subsubsection{Ausrichten und Verteilen von Objekten in Relation zueinander}
 \label{subsubsec:alignment-and-distribution}
 
-Ähnlich wie der Raster (Abschnitt \ref{subsubsec:grid}) werden die Funktionen zum Ausrichten und Verteilen von ausgewählten Objekten häufig in Visualisierungsprogrammen eingesetzt. Sie funktionieren wie folgt: Der Nutzer wählt im Diagramm Objekte aus, an die die Funktion angewendet werden soll. Nachher wählt er eine konkrete Form der Funktion aus, die anschließend auf die ausgewählten Objekt angewendet wird \cite{11Keynote}.
+Ähnlich wie das Raster (Abschnitt \ref{subsubsec:grid}) werden die Funktionen zum Ausrichten und Verteilen von ausgewählten Objekten häufig in Visualisierungsprogrammen eingesetzt. Sie funktionieren wie folgt: Der Nutzer wählt im Diagramm Objekte aus, auf die die Funktion angewendet werden soll. Nachher wählt er eine konkrete Form der Funktion aus, die anschließend auf die ausgewählten Objekt angewendet wird \cite{11Keynote}.
 
 \paragraph{Ausrichten}
 
@@ -164,11 +164,11 @@ Wenn mindestens 3 Objekte ausgewählt werden, kann die Funktion zum gleichmäßi
 \subsubsection{Smart Guides}
 \label{subsubsec:smart-guides}
 
-Eine sehr hilfreiche Funktion, die in den meisten Grafik- und Präsentationsprogrammen unterstützt wird, sind Hilfslinien für Ausrichtung und relative Positionierung (engl. \textit{Smart Guides}) \cite{11Keynote}. Wenn diese Funktion aktiviert ist, werden während der Manipulation des ausgewählten Objekts farbige Linien im Canvas eingeblendet. Diese Linien geben dem Nutzer einen visuellen Feedback zur geeigneten Ausrichtung des manipulierten Objekts relativ zu anderen Objekten im Diagramm. Außerdem wird ähnlich wie bei der Funktion \textit{Snap-to-Grid} die freie Manipulation eingeschränkt, das in der Regel zu besseren Layout-Ergebnissen führt. Die Hilfslinien werden nach der Beendigung der Operation wieder ausgeblendet und die Position bzw. Größe des manipulierten Objektes wird angepasst. Genauso wie auch bei allen anderen Hilfefunktionen für das manuelle Layout handelt es sich bei den Hilfslinien um eine temporäre Layout-Funktion. Somit wird die Ausrichtung der Objekte nur in den Eigenschaften der Objekte (Position und Größe) ausgedrückt und es wird keine explizite Regel erstellt.
+Eine sehr hilfreiche Funktion, die in den meisten Grafik- und Präsentationsprogrammen unterstützt wird, sind Hilfslinien für Ausrichtung und relative Positionierung (engl. \textit{Smart Guides}) \cite{11Keynote}. Wenn diese Funktion aktiviert ist, werden während der Manipulation des ausgewählten Objekts farbige Linien im Canvas eingeblendet. Diese Linien geben dem Nutzer ein visuelles Feedback zur geeigneten Ausrichtung des manipulierten Objekts relativ zu anderen Objekten im Diagramm. Außerdem wird ähnlich wie bei der Funktion \textit{Snap-to-Grid} die freie Manipulation eingeschränkt, was in der Regel zu besseren Layout-Ergebnissen führt. Die Hilfslinien werden nach der Beendigung der Operation wieder ausgeblendet und die Position bzw. Größe des manipulierten Objektes wird angepasst. Genauso wie auch bei allen anderen Hilfefunktionen für das manuelle Layout handelt es sich bei den Hilfslinien um eine temporäre Layout-Funktion. Somit wird die Ausrichtung der Objekte nur in den Eigenschaften der Objekte (Position und Größe) ausgedrückt und es wird keine explizite Regel erstellt.
 
 \paragraph{Hilfslinien zur Ausrichtung (Alignment Guides)}
 
-Die erste Art der Hilfslinien ist für die Ausrichtung des verschobenen Objekts an die Kanten bzw. Mittelachsen von anderen Objekten in Diagram nützlich. Die Linien werden während der Verschiebungsoperation eingeblendet, wenn das verschobene Objekt an ein anderes Objekt ausgerichtet wird \cite{11Keynote}.
+Die erste Art der Hilfslinien ist für die Ausrichtung des verschobenen Objekts an den Kanten bzw. Mittelachsen von anderen Objekten in Diagram nützlich. Die Linien werden während der Verschiebungsoperation eingeblendet, wenn das verschobene Objekt an ein anderes Objekt ausgerichtet wird \cite{11Keynote}.
 
 \begin{figure}[hbt]
     \newcommand{\subfigurewidth}{0.5\textwidth}
@@ -211,7 +211,7 @@ Aus dem vorgestellten Beispiel folgt, dass sich um die untere Kante des inaktive
     \label{fig:omnigraffle-smart-guides-snap-area}
 \end{figure}
 
-Solche Bereiche werden für alle Kanten und Mittelachsen von nicht ausgewählten Objekten in der horizontalen und vertikalen Richtung gebildet. Wenn der Nutzer ein Objekt verschiebt und eine der Kanten oder die Mittelachse des verschobenen Objekts sich in einem der Bereichen befindet, wird seine Position ausgerichtet, ohne den Mauszeiger zu beeinflussen. Das kann auch gleichzeitig für die horizontale und vertikale Richtung der Fall sein. Somit kann z.B. ein Objekt in einem anderen Objekt zentriert werden (siehe Abbildung \ref{fig:omnigraffle-alignment-guides-centering}).
+Solche Bereiche werden für alle Kanten und Mittelachsen von nicht ausgewählten Objekten in der horizontalen und vertikalen Richtung gebildet. Wenn der Nutzer ein Objekt verschiebt und eine der Kanten oder die Mittelachse des verschobenen Objekts sich in einem der Bereiche befindet, wird seine Position ausgerichtet, ohne den Mauszeiger zu beeinflussen. Das kann auch gleichzeitig für die horizontale und vertikale Richtung der Fall sein. Somit kann z.B. ein Objekt in einem anderen Objekt zentriert werden (siehe Abbildung \ref{fig:omnigraffle-alignment-guides-centering}).
 
 \begin{figure}[hbt]
     \centering
@@ -344,7 +344,7 @@ Den graphbasierten Softwarediagrammen unterliegt die abstrakte Struktur des Grap
 
 Um während der Erstellung des Diagramms immer ein optimales Layout zu erhalten, muss der Layout-Algorithmus kontinuierlich nach jeder Änderung entweder automatisch oder manuell aufgerufen werden. Wenn eine Interaktion mit dem resultierenden Diagramm unterstützt wird, hat sie keinerlei Einwirkung auf den Algorithmus und wird bei dem nächsten Aufruf nicht berücksichtigt. In der Regel kann der Nutzer nur bestimmte Parameter des Algorithmus\footnote{z.B. minimale Länge der Kanten im zirkulären Layout-Algorithmus \lstinline{circo} aus der Bibliothek Graphviz \cite{NorthGansner14Dot-Manual}.} anpassen und hat somit nur einen geringen Einfluss auf das Ergebnis des Layout-Prozesses.
 
-Die Ansätze lassen sich in zwei Kategorien nach der Art der Sprache unterteilen, die als Eingabe für den Layout-Algorithmus verwendet wird\footnote{In der Literatur werden Ansätze für das automatische Layout meistens nach den Layout-Algorithmen kategorisiert \cite[S.39ff]{Fuhrmann11On-the-Pragmatics} \cite[S.32ff]{Eichelberger05Aesthetics}. In dieser Arbeit richtet sich die Kategorisierung danach, wie die Ansätze zu bedienen sind und welche Art der Interaktion sie unterstützen.}. Zu einem gibt es Ansätze, die aus einer Beschreibung des Diagramms in einer \textbf{textuellen Sprache} unter Anwendung des Layout-Algorithmus eine graphische Repräsentation erzeugen. Weiterhin gibt es Ansätze, die auf Diagramme angewendet werden, die in einer \textbf{visuellen Sprache} modelliert sind. Diese Ansätze verändern die Layout-Eigenschaften der Diagrammelementen direkt. Im Folgenden werden beide Kategorien behandelt.
+Die Ansätze lassen sich in zwei Kategorien nach der Art der Sprache unterteilen, die als Eingabe für den Layout-Algorithmus verwendet wird\footnote{In der Literatur werden Ansätze für das automatische Layout meistens nach den Layout-Algorithmen kategorisiert \cite[S.39ff]{Fuhrmann11On-the-Pragmatics} \cite[S.32ff]{Eichelberger05Aesthetics}. In dieser Arbeit richtet sich die Kategorisierung danach, wie die Ansätze zu bedienen sind und welche Art der Interaktion sie unterstützen.}. Zum einen gibt es Ansätze, die aus einer Beschreibung des Diagramms in einer \textbf{textuellen Sprache} unter Anwendung des Layout-Algorithmus eine graphische Repräsentation erzeugen. Zum anderen gibt es Ansätze, die auf Diagramme angewendet werden, die in einer \textbf{visuellen Sprache} modelliert sind. Diese Ansätze verändern die Layout-Eigenschaften der Diagrammelemente direkt. Im Folgenden werden beide Kategorien behandelt.
 
 % TODO: Visuelle Sprachen erklären, da [Fuhrmann] sagt, dass textuelle Sprachen auch visuelle Sprachen sind (S. 48)
 
