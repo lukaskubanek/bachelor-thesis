@@ -58,7 +58,7 @@ Visual Paradigm ist ein plattformunabhängiges CASE-Tool von der gleichnamigen F
 \subsubsection{Raster}
 \label{subsubsec:grid}
 
-Viele Visualisierungsprogramme (unter anderem alle drei im Abschnitt \ref{subsec:applications-for-manual-layout} erwähnten) unterstützen die Aufteilung des Diagramms in ein gleichmäßiges Raster, das durch Rasterlinien dargestellt werden kann. Diese Linien können zum Ausrichten von Objekten im Diagramm verwendet werden, das vor allem dann nützlich ist, wenn die Größen der Objekte eine wichtige Rolle spielen wie z.B. Grundrisse \cite{08OmniGraffle, Olsen10OmniGraffle, 11Keynote, 14Visual}.
+Viele (unter anderem alle drei im Abschnitt \ref{subsec:applications-for-manual-layout} erwähnten) Visualisierungsprogramme unterstützen die Aufteilung des Diagramms in ein gleichmäßiges Raster, das durch Rasterlinien dargestellt werden kann. Diese Linien können zum Ausrichten von Objekten im Diagramm verwendet werden, das vor allem dann nützlich ist, wenn die Größen der Objekte eine wichtige Rolle spielen wie z.B. Grundrisse \cite{08OmniGraffle, Olsen10OmniGraffle, 11Keynote, 14Visual}.
 
 \paragraph{Snap-to-Grid}
 
@@ -428,14 +428,54 @@ Die Algorithmen für das automatische Layout sind im Allgemeinen nicht ideal und
 \subsubsection{Automatisches Layout in OmniGraffle}
 \label{subsubsec:omnigraffle-auto-layout}
 
-% Graphviz Layout Engine (siehe Webseite)
-% Automatisches Layout aktivieren, Auswahl des Algorithmus, Einstellung der Parameter
-% Aufruf manuelle oder nach Hinzufügen/Löschen einer Kante
-% Animation
+Wie im Abschnitt \ref{subsubsec:graph-drawing-tools} beschrieben wurde, bietet Graphviz eine Software-Bibliothek an, die sich in Programme einbinden lässt. Das Visualisierungsprogramm OmniGraffle (siehe Abschnitt \ref{subsubsec:omnigraffle}) macht sich dies zu Nutze und bietet eine Funktion für das automatische Layout an, die Algorithmen aus Graphviz für die Layout-Berechnung verwendet, nämlich den hierarchischen, kraftbasierten, zirkulären und radialen Algorithmus \cite{Olsen10OmniGraffle}. Nachdem die Funktion des automatischen Layouts aktiviert wird, kann der Layout-Algorithmus ausgewählt und seine Parameter eingestellt werden\footnote{Die konkreten möglichen Parameter der Algorithmen sind in \cite[S.74]{08OmniGraffle} nachzuschauen.}. In Abbildung \ref{fig:omnigraffle-automatic-layout} wird ein Beispiel der Anwendung von allen verfügbaren Layout-Algorithmen auf ein Diagramm illustriert.
 
-% Wie im Abschnitt \ref{subsubsec:graph-drawing-tools} beschrieben, bietet Graphviz eine Software-Bibliothek an, die in andere Tools eingebunden werden kann.
+\begin{figure}[hbt]
+    \newcommand{\subfigureshortwidth}{0.28\textwidth}
+    \newcommand{\subfigurelongwidth}{0.40\textwidth}
+    \newcommand{\graphicsscale}{0.7}
+    \centering
+    \begin{subfigure}{\subfigureshortwidth}
+        \centering
+        \includegraphics[scale=\graphicsscale]{resources/omnigraffle-automatic-layout-a}
+        \caption{Manuell erstelltes Layout}
+        \label{fig:omnigraffle-automatic-layout-a}
+    \end{subfigure}
+    \begin{subfigure}{\subfigureshortwidth}
+        \centering
+        \includegraphics[scale=\graphicsscale]{resources/omnigraffle-automatic-layout-b}
+        \caption{Hierarchisches Layout von oben nach unten}
+        \label{fig:omnigraffle-automatic-layout-b}
+    \end{subfigure}
+    \begin{subfigure}{\subfigureshortwidth}
+        \centering
+        \includegraphics[scale=\graphicsscale]{resources/omnigraffle-automatic-layout-c}
+        \caption{Hierarchisches Layout von links nach rechts mit angepassten Ranks für einzelne Knoten}
+        \label{fig:omnigraffle-automatic-layout-c}
+    \end{subfigure}
+    \begin{subfigure}{\subfigureshortwidth}
+        \centering
+        \includegraphics[scale=\graphicsscale]{resources/omnigraffle-automatic-layout-d}
+        \caption{Kraftbasiertes Layout}
+        \label{fig:omnigraffle-automatic-layout-d}
+    \end{subfigure}
+    \begin{subfigure}{\subfigurelongwidth}
+        \centering
+        \includegraphics[scale=\graphicsscale]{resources/omnigraffle-automatic-layout-e}
+        \caption{Zirkuläres Layout}
+        \label{fig:omnigraffle-automatic-layout-e}
+    \end{subfigure}
+    \begin{subfigure}{\subfigureshortwidth}
+        \centering
+        \includegraphics[scale=\graphicsscale]{resources/omnigraffle-automatic-layout-f}
+        \caption{Radiales Layout}
+        \label{fig:omnigraffle-automatic-layout-f}
+    \end{subfigure}
+    \caption{Beispiele der Anwendung von automatischen Layout-Algorithmen in OmniGraffle}
+    \label{fig:omnigraffle-automatic-layout}
+\end{figure}
 
-% \cite[S.43]{Wybrow08Using}
+Der Layout-Algorithmus kann entweder durch die manuelle Auswahl im Menü, die Veränderung der Parametern des Algorithmus oder das Hinzufügen oder Löschen einer Kante zwischen zwei Knoten aufgerufen werden \cite[S.43]{Wybrow08Using}. Danach wird das Layout berechnet und mit Hilfe einer Animation auf das Diagramm angewendet, wobei die vorher durchgeführten manuellen Anpassungen verworfen werden. OmniGraffle erweitert die Funktion des automatischen Layouts um weitere Tools. So kann z.B. die Struktur des Diagramms parallel in einer Outline bearbeitet oder ein Werkzeug für schnelle Erstellung eines Diagramms verwendet werden \cite{08OmniGraffle}.
 
 \subsubsection{Automatisches Layout in Visual Paradigm}
 
