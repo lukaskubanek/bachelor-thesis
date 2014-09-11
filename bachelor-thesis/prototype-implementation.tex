@@ -25,7 +25,7 @@ Da keine Komponenten wiederverwendet werden konnten, wurde eine komplett neue De
 
 Der Ansatz für das interaktive und diagrammspezifische Layout von Diagrammen wurde in einem prototypischen Werkzeug für die Erstellung von einfachen Klassendiagrammen umgesetzt. Das Werkzeug unterstützt Klassen und Vererbungsrelationen und bietet somit die Möglichkeit, Vererbungshierarchien von Klassen zu modellieren.
 
-Die Benutzeroberfläche des Werkzeugfensters ist in zwei Bereiche aufgeteilt. Links befindet sich die Sidebar mit Bedienungselementen und rechts der Canvas, in dem das modellierte Diagramm dargestellt wird. Dies wird mit Hilfe eines Screenshots in Abbildung \ref{fig:prototype-screenshot} veranschaulicht.
+Die Benutzeroberfläche des Werkzeugfensters ist in zwei rechteckige Bereiche aufgeteilt. Links befindet sich die Sidebar mit Bedienungselementen und rechts der Canvas, in dem das modellierte Diagramm abgebildet wird. Die Sidebar besteht aus einer Palette mit Icons für das Hinzufügen von Klassen und Vererbungsrelationen, einem Button für das Zurücksetzen des modellierten Diagramms und einer Auswahl des verwendeten Layout-Algorithmus. Die Benutzeroberfläche der Anwendung wird mit Hilfe eines Screenshots in Abbildung \ref{fig:prototype-screenshot} veranschaulicht.
 
 \begin{figure}[hbt]
     \centering
@@ -33,8 +33,6 @@ Die Benutzeroberfläche des Werkzeugfensters ist in zwei Bereiche aufgeteilt. Li
     \caption{Ein Screenshot des prototypischen Werkzeugs}
     \label{fig:prototype-screenshot}
 \end{figure}
-
-In der Sidebar befindet sich eine Palette mit Icons für das Hinzufügen von Klassen und Vererbungsrelationen, ein Button für das Zurücksetzen des modellierten Diagramms und eine Auswahl des verwendeten Layout-Algorithmus.
 
 \subsection{Unterstützte Aktionen}
 
@@ -44,7 +42,7 @@ Der Prototyp unterstützt die grundlegenden Aktionen, die erforderlich sind, um 
     \item \textbf{Hinzufügen einer Klasse} Eine neue Klasse kann mit Hilfe von \enquote{Drag and Drop} dem Diagramm hinzugefügt werden, indem das linke Icon in der Palette angeklickt und in den Canvas gezogen wird. Nachdem der Mauszeiger den Canvas erreicht, wird die Klasse hinzugefügt, was durch einen Platzhalter gekennzeichnet wird. Danach wandelt die Aktion in eine Verschiebungsaktion um (siehe unten) und die Klasse kann an eine gewünschte Position verschoben werden.
     \item \textbf{Umbenennen einer Klasse} Durch einen Doppelklick und das Eintragen eines Namens in das angezeigte Textfeld kann eine Klasse im Diagramm umbenannt werden. Aus zeitlichen Gründen konnte die Anpassung der Größe der Klassen nach der Änderung ihren Namen nicht implementiert werden.
     \item \textbf{Verschiebung einer Klasse} Die Position einer Klasse im Diagramm kann durch den Nutzer geändert werden, indem die Klasse mit Hilfe des Mechanismus der temporären Schicht (siehe Abschnitt \ref{subsec:temporary-layer-mechanism}) verschoben wird. Dabei wird das Layout durch die ausgewählte Layout-Engine berechnet (siehe Abschnitt \ref{subsec:supported-layout-methods}).
-    \item \textbf{Erzeugen einer Vererbungsrelation zwischen zwei Klassen} Durch das Anklicken des rechten Icons in der Palette und das Ziehen eines Pfeils zwischen zwei Klassen im Diagramm wird eine Vererbungsrelation erstellt. Alternativ kann neben dem Anklicken des Icons auch die Taste \lstinline{CTRL} gedrückt werden. Wenn der Nutzer versucht, eine semantisch ungültige Vererbungsrelation zu erstellen (z.B. einen Vererbungszyklus oder eine Mehrfachvererbung\footnote{Die Mehrfachvererbung ist ein gültiges Konstrukt in Klassendiagrammen der Notationssprache UML, wird aber in meisten objekt-orientierten Sprachen nicht unterstützt \cite{ArlowNeustadt05UML-2-and-the-Unified}. Daher wird sie für die Zwecke des Prototyps nicht zugelassen.}), wird eine Fehlermeldung angezeigt und der Vorgang bricht ab. Nachdem eine Vererbungsrelation erstellt wird und die ausgewählte Layout-Engine die Vererbungsrelationen unterstützt, wird das neu berechnete Layout auf das Diagramm angewendet.
+    \item \textbf{Erzeugen einer Vererbungsrelation zwischen zwei Klassen} Durch das Anklicken des rechten Icons in der Palette und das Ziehen eines Pfeils zwischen zwei Klassen im Diagramm wird eine Vererbungsrelation erstellt. Alternativ kann neben dem Anklicken des Icons auch die Taste \texttt{CTRL} gedrückt werden. Wenn der Nutzer versucht, eine semantisch ungültige Vererbungsrelation zu erstellen (z.B. einen Vererbungszyklus oder eine Mehrfachvererbung\footnote{Die Mehrfachvererbung ist ein gültiges Konstrukt in Klassendiagrammen der Notationssprache UML, wird aber in meisten objekt-orientierten Sprachen nicht unterstützt \cite{ArlowNeustadt05UML-2-and-the-Unified}. Für die Zwecke des Prototyps wird sie nicht zugelassen.}), wird eine Fehlermeldung angezeigt und der Vorgang bricht ab. Nachdem eine Vererbungsrelation erstellt wird und die ausgewählte Layout-Engine die Vererbungsrelationen unterstützt, wird das neu berechnete Layout auf das Diagramm angewendet.
     \item \textbf{Löschen des Inhalts} Da das prototypische Werkzeug keine Möglichkeit der Auswahl von Objekten im Canvas bietet, wird das Löschen von ausgewählten bzw. einzelnen Klassen bzw. Relationen nicht unterstützt. Um trotzdem das Zurücksetzen des Diagramms zu ermöglichen, gibt es für diese Funktion ein Button in der Sidebar.
 \end{itemize}
 
@@ -55,9 +53,9 @@ Die implementierten Aktionen sind für die Validierung des umgesetzten Konzepts 
 \subsection{Unterstützte Layout-Methoden}
 \label{subsec:supported-layout-methods}
 
-% Auswahl möglich
+Der Prototyp unterstützt beide konkreten Layout-Algorithmen aus dem Abschnitt \ref{subsec:concrete-layout-algorithms}, wobei der Algorithmus für das horizontale Layout als ein Zwischenschritt für die Implementierung des Algorithmus für das baumbasierte Layout dient und bei der Layout-Berechnung keine Relationen berücksichtigt.
 
-% ein Benefit -> Berechnung des initialen Layouts
+Der aktuelle Algorithmus kann in der Sidebar ausgewählt werden und wird für die Layout-Berechnung im Diagramm verwendet. Außerdem wird bei der Änderung des Algorithmus ein initiales Layout berechnet, um das Layout des Diagramms in einen validen Zustand zu bringen (siehe Abschnitt \ref{subsec:concrete-layout-algorithms}). Für die Auswahl des Algorithmus können alternativ auch die Tastenkombinationen \texttt{CMD+1} und \texttt{CMD+2} genutzt werden.
 
 \section{Architektur}
 \label{sec:architecture}
