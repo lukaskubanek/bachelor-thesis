@@ -87,22 +87,20 @@ Die Komponente \textit{Geometry} stellt die grundlegenden \textbf{geometrischen 
 \begin{figure}[hbt]
     \centering
     \includegraphics{resources/coordinates-conversion}
-    \caption{Ein Beispiel der Koordinatenumrechnung für ein rechteckiges Objekt}
+    \caption{Ein Beispiel der Koordinatenumrechnung für ein rechteckiges Objekt mit einer festen Größe}
     \label{fig:coordinates-conversion}
 \end{figure}
 
 \subsubsection{Diagram}
 \label{subsubsec:component-diagram}
 
-% Präfix "IDL" erklären
+Das Metamodell der Diagramme und deren Elemente ist ein Bestandteil der Komponente \textit{Diagram} und wird durch die Klassen \texttt{IDLDiagram}\footnote{Das Präfix \texttt{IDL} steht für den Projektnamen \textit{Interactive Diagram Layout} und wird in Objective-C Projekten für Klassen- und Funktionsnamen verwendet, um Namenskonflikte zu vermeiden.}, \texttt{IDLNode} und \texttt{IDLEdge} repräsentiert. Durch deren Instanziierung wird ein Modell eines Klassendiagramms mit Klassen und Vererbungsrelationen erstellt, was auch die Information über das aktuelle Layout kapselt, denn die Klasse \texttt{IDLNode} die Layout-Eigenschaft der Position besitzt.
 
-% aus zeitlichen Gründen wurde die Semantik nicht tiefgründig ausgearbeitet und wurde der weiteren Forschung überlassen
-% kein Metamodell
-% keine Unterscheidung der abstrakten und konkreten Syntax
-
-% IDLEdge -> gerichtete Kanten mit max. einem Elternknoten (z.B. Vererbung in Klassendiagrammen) -> Diagramm ist also azyklisch
+Aus zeitlichen Gründen konnte diese Komponente nicht tiefgründig ausgearbeitet werden. Daher wird die abstrakte und konkrete Syntax der Elemente zusammengefasst und deren Semantik nur unvollständig unterstützt. Die mögliche Behebung dieser Schwachstelle wird im Abschnitt \ref{improvement-for-semantics-support} diskutiert.
 
 \subsubsection{Layout}
+
+Bei der Berechnung des Layouts ist es notwendig, die Layout-Eigenschaften beschreiben und auf ein Diagramm anwenden zu können. Diese Aufgaben übernimmt die Komponente \textit{Layout}, die die Klassen \texttt{IDLLayout} und \texttt{IDLLayoutApplier} zur Verfügung stellt. Die zuerst genannte Klasse beschreibt eine Abbildung von Klassen auf deren Positionen im Diagramm, ohne die eigentlichen Positionen der Klassen zu verändern. Weiterhin bietet sie die Möglichkeit der Layout-Komposition mit Hilfe einer relativen Zusammensetzung von mehreren Layouts. Um ein gegebenes Layout auf die abgebildeten Klassen anzuwenden, wird die zweitgenannte Klasse eingesetzt.
 
 \subsubsection{Patterns}
 
