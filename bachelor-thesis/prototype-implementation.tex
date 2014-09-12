@@ -69,11 +69,9 @@ Der Prototyp wurde in Form einer objekt-orientierten Anwendung implementiert und
     \label{fig:main-components}
 \end{figure}
 
-% Präfix "IDL" erklären
-
 \subsection{Layout Engine}
 
-Die Komponente \textit{Layout Engine} bildet den wesentlichen Teil der Umsetzung des interaktiven Ansatzes aus dem Kapitel \ref{chapter:interactive-approach}. Neben der Beschreibung der Layout-Eigenschaften und des Metamodells der Diagramme, verfügt diese Komponente über eine Möglichkeit der Verwaltung von Layout-Patterns, Erstellung und Verarbeitung von Layout-Ereignissen und schließlich stellt sie die Funktion der Layout-Berechnung zur Verfügung. Aufgrund der Komplexität wurde \textit{Layout Engine} in folgende Unterkomponenten aufgeteilt: \textit{Geometry}, \textit{Diagram}, \textit{Layout}, \textit{Patterns}, \textit{Events} und \textit{Engines}. Deren Beziehungen zueinander sind in einem Paketdiagramm in Abbildung \ref{fig:layout-engine-subcomponents} dargestellt.
+Die Komponente \textit{Layout Engine} bildet den wesentlichen Teil der Umsetzung des interaktiven Ansatzes aus dem Kapitel \ref{chapter:interactive-approach}. Neben der Beschreibung der Layout-Eigenschaften und des Metamodells für die Diagramme verfügt diese Komponente über die Verwaltung von Layout-Patterns, Erstellung und Verarbeitung von Layout-Ereignissen und schließlich stellt sie die Funktion der Layout-Berechnung zur Verfügung. Aufgrund der Komplexität wurde \textit{Layout Engine} in folgende Unterkomponenten aufgeteilt: \textit{Geometry}, \textit{Diagram}, \textit{Layout}, \textit{Patterns}, \textit{Events} und \textit{Engines}. Eine Übersicht der Unterkomponenten und deren Beziehungen wird in Form eines Paketdiagramms in Abbildung \ref{fig:layout-engine-subcomponents} gegeben.
 
 \begin{figure}[hbt]
     \centering
@@ -84,11 +82,19 @@ Die Komponente \textit{Layout Engine} bildet den wesentlichen Teil der Umsetzung
 
 \subsubsection{Geometry}
 
-% Koordinaten-Konversion mit Bild (NSView vs. IDLLayoutEngine)
-% zentrierte Koordinaten -> Förderung der Umsetzung des impliziten Patterns zur Zentrierung
+Die Komponente \textit{Geometry} stellt die grundlegenden \textbf{geometrischen Datentypen} wie Punkt, Größe, Rechteck und Linie und für diese ausgelegte \textbf{geometrische Funktionen} bereit. Die neu eingeführten Datentypen unterscheiden sich von den entsprechenden Datentypen aus der Standardbibliothek wie \texttt{NSPoint}, \texttt{NSSize} und \texttt{NSRect} darin, dass die Werte in ganzen Zahlen angegeben werden und dass die Position des Rechtecks seinen Mittelpunkt darstellt. Durch die letztere Eigenschaft wird die Angabe der Positionen mit Hilfe des Mittelpunktes ermöglicht. Außerdem werden die Positionen in zentrierten Koordinaten angegeben, was die Umsetzung des impliziten Patterns zur Zentrierung des Diagramm-Inhalts fördert (siehe Abschnitt \ref{subsubsec:centering-of-diagram-content}) und die relative Layout-Berechnung vereinfacht. Da in \textit{Cocoa} und insbesondere in der für die grafische Repräsentation verantwortlichen Klasse \texttt{NSView} der Koordinatenursprung standardmäßig in der linken unteren Ecke liegt, war es notwendig eine Umrechnung der beiden Koordinatensysteme zu implementieren. In Abbildung \ref{fig:coordinates-conversion} ist der Sachverhalt illustriert, wobei die zentrierten Koordinaten blau, die Standardkoordinaten rot und das Referenzrechteck schwarz dargestellt sind.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics{resources/coordinates-conversion}
+    \caption{Ein Beispiel der Koordinatenumrechnung für ein rechteckiges Objekt}
+    \label{fig:coordinates-conversion}
+\end{figure}
 
 \subsubsection{Diagram}
 \label{subsubsec:component-diagram}
+
+% Präfix "IDL" erklären
 
 % aus zeitlichen Gründen wurde die Semantik nicht tiefgründig ausgearbeitet und wurde der weiteren Forschung überlassen
 % kein Metamodell
@@ -124,6 +130,7 @@ Die Komponente \textit{Layout Engine} bildet den wesentlichen Teil der Umsetzung
 % Löschen eines (oder mehreren Elementen) im Prototypen nicht unterstützt, nur hinzufügen und "rausfahren"
 
 \subsection{Canvas View}
+\label{subsec:canvas-view}
 
 % Animation der Layout-Übergängen
 % - implizite Core Animation Animation
