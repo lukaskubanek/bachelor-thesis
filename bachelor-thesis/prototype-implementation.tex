@@ -60,13 +60,27 @@ Der aktuelle Algorithmus kann in der Sidebar ausgewählt werden und wird für di
 \section{Architektur}
 \label{sec:architecture}
 
+Der Prototyp wurde in Form einer objekt-orientierten Anwendung implementiert und ist in vier logische Komponenten aufgeteilt: \textit{Layout Engine}, \textit{Dragging Manager}, \textit{Canvas View} und \textit{Application}. Die Abhängigkeiten zwischen den Hauptkomponenten sind in Abbildung \ref{fig:main-components} in Form eines Paketdiagramms dargestellt. Zu den Verantwortlichkeiten der Komponente \textit{Layout Engine} gehört u.a. die Beschreibung des Metamodells, die Verarbeitung der Nutzer-Aktionen und vor allem die Durchführung der Layout-Berechnung. Durch die Komponente \textit{Dragging Manager} wird eine abstrahierte Schnittstelle für die \enquote{Drag and Drop} Operation bereitgestellt. Die Darstellung und Interaktion mit dem Diagramm im Canvas wird in der Komponente \textit{Canvas View} realisiert. Schließlich werden die genannten Komponenten von der Komponente \textit{Application} zu einer lauffähigen Anwendung zusammengesetzt. Auf die einzelnen Komponenten wird in folgenden Abschnitten eingegangen.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[scale=0.85]{resources/main-components}
+    \caption{Eine Übersicht der grundlegenden Komponenten des Prototyps}
+    \label{fig:main-components}
+\end{figure}
+
 % Präfix "IDL" erklären
-% Umfang der Implementierung
-% keine Frameworks, nur logische Aufteilung des Codes
 
 \subsection{Layout Engine}
 
-% Diagramm!
+Die Komponente \textit{Layout Engine} bildet den wesentlichen Teil der Umsetzung des interaktiven Ansatzes aus dem Kapitel \ref{chapter:interactive-approach}. Neben der Beschreibung der Layout-Eigenschaften und des Metamodells der Diagramme, verfügt diese Komponente über eine Möglichkeit der Verwaltung von Layout-Patterns, Erstellung und Verarbeitung von Layout-Ereignissen und schließlich stellt sie die Funktion der Layout-Berechnung zur Verfügung. Aufgrund der Komplexität wurde \textit{Layout Engine} in folgende Unterkomponenten aufgeteilt: \textit{Geometry}, \textit{Diagram}, \textit{Layout}, \textit{Patterns}, \textit{Events} und \textit{Engines}. Deren Beziehungen zueinander sind in einem Paketdiagramm in Abbildung \ref{fig:layout-engine-subcomponents} dargestellt.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[scale=0.85]{resources/layout-engine-subcomponents}
+    \caption{Eine Übersicht der Unterkomponenten der Komponente \textit{Layout Engine}}
+    \label{fig:layout-engine-subcomponents}
+\end{figure}
 
 \subsubsection{Geometry}
 
