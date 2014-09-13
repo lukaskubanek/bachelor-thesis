@@ -142,10 +142,18 @@ Die konkreten Layout-Engines besitzen eine Referenz auf den Inhalt des Diagramms
 \subsection{Canvas View}
 \label{subsec:canvas-view}
 
-% Animation der Layout-Übergängen
-% - implizite Core Animation Animation
-% - Überführen von mehreren Animationen mit POP => wichtiger in Multi-Touch-Umgebung, bei Desktop nur ein Mauszeiger, keine parallele Aktionen
+Die Komponente \textit{Canvas View} wird in die Präsentationsschicht des Design Patterns \textit{Model View Controller} eingeordnet und ist für die visuelle Repräsentation des Diagramms und die Interaktion im Canvas zuständig. Der Kern dieser Komponente bildet die Klasse \texttt{IDLCanvasView}, die ihre Oberklasse \texttt{NSView} um die Möglichkeit des Zeichnens von Diagrammen erweitert, was mit Hilfe von der Zusammensetzung von Layer aus dem Framework \textit{Core Animation} realisiert wird. Die Informationen über die einzelnen Elemente und ihre Layout-Eigenschaften werden mittels des Delegate-Patterns abgefragt, so dass die Komponente vom Rest der Anwendung abgekoppelt bleibt.
 
+ 
+
+% Koordinaten-Umrechnung
 % Vergrößerung des Fensters -> Zentrierung des Inhalts (durch die Umrechnung)
 
 % Berechnung der Start- und Endpunkte der Kanten anhand von Eigenschaften der Knoten (siehe OmniGraffle)
+
+% Interaktion
+% durch den Dragging Manager (Drag and Drop) und schicken von Delegate-Nachrichten
+
+% Animation der Layout-Übergängen
+% - implizite Core Animation Animation
+% - Überführen von mehreren Animationen mit POP => wichtiger in Multi-Touch-Umgebung, bei Desktop nur ein Mauszeiger, keine parallele Aktionen
