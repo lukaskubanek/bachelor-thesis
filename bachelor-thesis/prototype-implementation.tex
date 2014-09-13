@@ -35,6 +35,7 @@ Die Benutzeroberfläche des Werkzeugfensters ist in zwei rechteckige Bereiche au
 \end{figure}
 
 \subsection{Unterstützte Aktionen}
+\label{subsec:supported-actions}
 
 Der Prototyp unterstützt die grundlegenden Aktionen, die erforderlich sind, um ein Diagramm modellieren zu können. Insbesondere handelt es sich um die wichtigsten Bearbeitungsaktionen, die im Abschnitt \ref{subsec:edit-actions} vorgestellt wurden. Die einzelnen Aktionen werden im Folgenden aufgelistet und kurz beschrieben:
 
@@ -109,7 +110,7 @@ Die Umsetzung der Layout-Patterns aus dem Abschnitt \ref{sec:layout-patterns} er
 \begin{figure}[hbt]
     \centering
     \includegraphics[scale=0.8]{resources/layout-patterns-implementation}
-    \caption{Ein Klassendiagramm für die expliziten Layout-Patterns}
+    \caption{Ein Klassendiagramm mit einer Übersicht der expliziten Layout-Patterns}
     \label{fig:layout-patterns-implementation}
 \end{figure}
 
@@ -119,7 +120,16 @@ Ein weiterer interessanter Aspekt der implementierten Layout-Patterns ist die M�
 
 \subsubsection{Events}
 
-% Löschen nur im Modell, kein UI für die Auswahl
+Die Komponente \textit{Events} stellt Klassen für die Beschreibung von Layout-Ereignissen zur Verfügung, dessen Konzept im Abschnitt \ref{sec:layout-calculation} erläutert wurde. Im Prototyp wurden die Layout-Ereignisse implementiert, die den unterstützten Bearbeitungsaktionen aus dem Abschnitt \ref{subsec:supported-actions} entsprechen. Alle Klassen für konkrete Layout-Ereignisse erben von der Klasse \texttt{IDLLayoutEvent} und sind in einem Klassendiagramm in Abbildung \ref{fig:layout-events-implementation} veranschaulicht.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[scale=0.8]{resources/layout-events-implementation}
+    \caption{Ein Klassendiagramm mit Übersicht der unterstützten Layout-Ereignisse}
+    \label{fig:layout-events-implementation}
+\end{figure}
+
+Obwohl der Prototyp keine Möglichkeit des Löschens von einzelnen Knoten bietet, wird trotzdem das Layout-Ereignis \texttt{IDLNodeDeletionLayoutEvent} unterstützt. Es wird genau dann erzeugt und verarbeitet, wenn während der Hinzufügung eines Knotens der Mauszeiger außerhalb des Canvas bewegt wird. Dadurch wäre mit der Implementierung der Auswahl von einzelnen Knoten die Funktion des Löschens automatisch gewährleistet.
 
 \subsubsection{Engines}
 \label{subsubsec:component-engines}
