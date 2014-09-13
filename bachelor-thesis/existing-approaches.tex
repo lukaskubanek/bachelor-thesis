@@ -342,7 +342,7 @@ Sobald mindestens ein Magnet dem Objekt hinzugefügt wurde, wird nicht mehr der 
 
 Den graphbasierten Softwarediagrammen unterliegt die abstrakte Struktur des Graphen (siehe Abschnitt \ref{subsec:graph-based-diagrams}). Mit der grafischen Darstellung von Graphen beschäftigt sich die mathematische Disziplin des Graphzeichnens. Ihre Aufgabe besteht darin, Layout-Algorithmen zu entwerfen, die optimale Layouts in Hinsicht auf ästhetische Regeln erzeugen, d.h. die Layout-Eigenschaften wie Position der Knoten und Routen der Kanten berechnen \cite{Eichelberger05Aesthetics, Arvo02Techniques, Siebenhaller03Automatisches, Maier12A-Pattern-based}. Unter dem automatischen Layout für graphbasierte Diagramme sind daher vollautomatische Algorithmen zu verstehen, die für ein gegebenes Diagramm die optimalen Layout-Eigenschaften berechnen und das Diagramm entsprechend anpassen \cite{Fuhrmann11On-the-Pragmatics}.
 
-Um während der Erstellung des Diagramms immer ein optimales Layout zu erhalten, muss der Layout-Algorithmus kontinuierlich nach jeder Änderung des Inhalts entweder automatisch oder manuell aufgerufen werden. Wenn eine Interaktion mit dem resultierenden Diagramm unterstützt wird, hat sie keinerlei Einwirkung auf den Algorithmus und wird bei dem nächsten Aufruf nicht berücksichtigt. In der Regel kann der Nutzer nur bestimmte Parameter des Algorithmus\footnote{z.B. minimale Länge der Kanten im zirkulären Layout-Algorithmus \lstinline{circo} aus der Bibliothek Graphviz \cite{NorthGansner14Dot-Manual}.} anpassen und hat somit nur einen geringen Einfluss auf das Ergebnis des Layout-Prozesses.
+Um während der Erstellung des Diagramms immer ein optimales Layout zu erhalten, muss der Layout-Algorithmus kontinuierlich nach jeder Änderung des Inhalts entweder automatisch oder manuell aufgerufen werden. Wenn eine Interaktion mit dem resultierenden Diagramm unterstützt wird, hat sie keinerlei Einwirkung auf den Algorithmus und wird bei dem nächsten Aufruf nicht berücksichtigt. In der Regel kann der Nutzer nur bestimmte Parameter des Algorithmus\footnote{z.B. minimale Länge der Kanten im zirkulären Layout-Algorithmus \texttt{circo} aus der Bibliothek Graphviz \cite{NorthGansner14Dot-Manual}.} anpassen und hat somit nur einen geringen Einfluss auf das Ergebnis des Layout-Prozesses.
 
 Die Ansätze lassen sich in zwei Kategorien nach der Art der Sprache unterteilen, die als Eingabe für den Layout-Algorithmus verwendet wird\footnote{In der Literatur werden Ansätze für das automatische Layout meistens nach den Layout-Algorithmen kategorisiert \cite[S.39ff]{Fuhrmann11On-the-Pragmatics} \cite[S.32ff]{Eichelberger05Aesthetics}. In dieser Arbeit richtet sich die Kategorisierung danach, wie die Ansätze zu bedienen sind und welche Art der Interaktion sie unterstützen.}. Zum einen gibt es Ansätze, die aus einer Beschreibung des Diagramms in einer \textbf{textuellen Sprache} unter Anwendung des Layout-Algorithmus eine grafische Repräsentation erzeugen. Zum anderen gibt es Ansätze, die auf Diagramme angewendet werden, die in einer \textbf{visuellen Sprache} modelliert sind. Diese Ansätze verändern die Layout-Eigenschaften der Diagrammelemente direkt. Im Folgenden werden beide Kategorien behandelt.
 
@@ -376,21 +376,16 @@ Graphviz ist ein in der Programmiersprache C geschriebenes Tool für die Visuali
 Um einen Layout-Algorithmus auf einen Graph mit Hilfe der Komandozeilen-Tools oder der GUI-Anwendung anwenden zu können, muss der Graph in der Sprache Dot beschrieben werden. Ein Beispiel eines einfachen Graphen mit 4 Knoten und 3 Kanten ist im Quelltext \ref{lst:graphviz-dot-example-dot} gegeben.
 
 \lstinputlisting[
-    caption={Beschreibung eines Graphen in Dot (\lstinline{graphviz-dot-example.dot})},
+    caption={Beschreibung eines Graphen in Dot (\texttt{graphviz-dot-example.dot})},
     label={lst:graphviz-dot-example-dot}
 ]{resources/graphviz-dot-example.dot}
 
-Mit dem Aufruf des Befehls aus dem Quelltext \ref{lst:grapviz-dot-example-sh} wird die oben aufgelistete Dot-Quelldatei \lstinline{graphviz-dot-example.dot} eingelesen, der beschriebene Graph wird in Form eines internen Modells instanziiert und auf das Modell wird der Layout-Algorithmus \lstinline{dot} angewendet. Anschließend wird mit dem Renderer \lstinline{png} ein Resultat in der PNG-Datei \lstinline{graphviz-dot-example.png} erzeugt, das in Abbildung \ref{fig:graphviz-dot-example} dargestellt ist \cite{Gansner14Using}.
-
-\lstinputlisting[
-    caption={Aufruf des Kommandozeilen-Tools \lstinline{dot}},
-    label={lst:grapviz-dot-example-sh}
-]{resources/graphviz-dot-example.sh}
+Durch einen Aufruf des Kommandozeilenbefehls \texttt{dot} wird die oben aufgelistete Dot-Quelldatei eingelesen, der beschriebene Graph wird in Form eines internen Modells instanziiert und auf das Modell wird der Layout-Algorithmus \texttt{dot} angewendet. Anschließend wird mit einen Renderer ein Resultat in einer Datei erzeugt, das in Abbildung \ref{fig:graphviz-dot-example} dargestellt ist \cite{Gansner14Using}.
 
 \begin{figure}[hbt]
     \centering
     \includegraphics[scale=0.75]{resources/graphviz-dot-example.png}
-    \caption{Resultat des Aufrufs des Kommandozeilen-Tools \lstinline{dot}}
+    \caption{Resultat des Aufrufs des Kommandozeilen-Tools \texttt{dot}}
     \label{fig:graphviz-dot-example}
 \end{figure}
 
@@ -398,7 +393,7 @@ Alternativ kann die Dot-Quelldatei in der GUI-Anwendung geöffnet werden. In dem
 
 In dem oben diskutierten Beispiel wird sichtbar gemacht, dass das resultierende Diagramm nicht interaktiv ist. Eine Änderung des Graphen ist nur in der Quelldatei möglich und ist mit einem wiederholten Aufruf des Kommandozeilen-Tools oder Laden der Datei in der GUI-Anwendung verbunden. Diese Schwachstelle wird durch 3rd-Party Editoren mit der integrierten grafischen Ausgabe wie etwa Leonhard\footnote{Leonhard ist ein grafischer Editor für Graphviz, der unter älteren Versionen von Mac OS X funktioniert. Weitere Information sind unter \url{http://algorithmique.net/leonhard.html} und \url{https://github.com/glejeune/Leonhard} zu finden.} oder WebGraphviz\footnote{\url{http://webgraphviz.com}} verbessert. In Leonhard wird die Übersetzung nach jeder Änderung des Quelltexts sogar automatisch gestartet.
 
-Trotz der fehlenden Interaktivität des resultierenden Diagramms kann das Layout von dem Nutzer beeinflusst werden, indem der Layout-Algorithmus gewählt wird bzw. seine Parameter in der Quelldatei angepasst werden \cite{NorthGansner14Dot-Manual}. Im oben genannten Beispiel wurde der Layout-Algorithmus \lstinline{dot} verwendet und die Richtung des Graphen in der Dot-Quelldatei mit dem Befehl \lstinline{rankdir = LR} angepasst, so dass der Graph von links nach rechts gezeichnet wird.
+Trotz der fehlenden Interaktivität des resultierenden Diagramms kann das Layout von dem Nutzer beeinflusst werden, indem der Layout-Algorithmus gewählt wird bzw. seine Parameter in der Quelldatei angepasst werden \cite{NorthGansner14Dot-Manual}. Im oben genannten Beispiel wurde der Layout-Algorithmus \texttt{dot} verwendet und die Richtung des Graphen in der Dot-Quelldatei mit dem Befehl \texttt{rankdir = LR} angepasst, so dass der Graph von links nach rechts gezeichnet wird.
 
 \subsubsection{Textbasierte UML-Tools}
 
