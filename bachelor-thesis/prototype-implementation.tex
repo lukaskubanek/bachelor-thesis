@@ -61,7 +61,7 @@ Der aktuelle Algorithmus kann in der Sidebar ausgewählt werden und wird für di
 \section{Architektur}
 \label{sec:architecture}
 
-Der Prototyp wurde in Form einer objekt-orientierten Anwendung implementiert und ist in vier logische Komponenten aufgeteilt: \textit{Layout Engine}, \textit{Dragging Manager}, \textit{Canvas View} und \textit{Application}. Die Abhängigkeiten zwischen den Hauptkomponenten sind in Abbildung \ref{fig:main-components} in Form eines Paketdiagramms dargestellt. Zu den Verantwortlichkeiten der Komponente \textit{Layout Engine} gehört u.a. die Beschreibung des Metamodells, die Verarbeitung der Nutzer-Aktionen und vor allem die Durchführung der Layout-Berechnung. Durch die Komponente \textit{Dragging Manager} wird eine abstrahierte Schnittstelle für die \enquote{Drag and Drop} Operation bereitgestellt. Die Darstellung und Interaktion mit dem Diagramm im Canvas wird in der Komponente \textit{Canvas View} realisiert. Schließlich werden die genannten Komponenten von der Komponente \textit{Application} zu einer lauffähigen Anwendung zusammengesetzt. Auf die einzelnen Komponenten wird in folgenden Abschnitten eingegangen.
+Der Prototyp wurde in Form einer objekt-orientierten Anwendung implementiert und ist in vier logische Komponenten aufgeteilt: \textit{Layout Engine}, \textit{Dragging Manager}, \textit{Canvas View} und \textit{Application}. Die Abhängigkeiten zwischen den Hauptkomponenten sind in Abbildung \ref{fig:main-components} in Form eines Paketdiagramms dargestellt. Zu den Verantwortlichkeiten der Komponente \textit{Layout Engine} gehört u.a. die Beschreibung des Metamodells, die Verarbeitung der Nutzer-Aktionen und vor allem die Durchführung der Layout-Berechnung. Durch die Komponente \textit{Dragging Manager} wird eine abstrahierte Schnittstelle für die \enquote{Drag and Drop} Operation bereitgestellt. Die Darstellung und Interaktion mit dem Diagramm im Canvas wird in der Komponente \textit{Canvas View} realisiert. Schließlich werden die genannten Komponenten von der Komponente \textit{Application} zu einer lauffähigen Anwendung zusammengesetzt. Auf die wichtigsten Komponenten wird in den folgenden Abschnitten im Detail eingegangen.
 
 \begin{figure}[hbt]
     \centering
@@ -149,9 +149,3 @@ Die konkreten Layout-Engines besitzen eine Referenz auf den Inhalt des Diagramms
 % Vergrößerung des Fensters -> Zentrierung des Inhalts (durch die Umrechnung)
 
 % Berechnung der Start- und Endpunkte der Kanten anhand von Eigenschaften der Knoten (siehe OmniGraffle)
-
-\subsection{Dragging Manager}
-
-% Drag and Drop
-
-\subsection{Application}
