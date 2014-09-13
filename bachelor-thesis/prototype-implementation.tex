@@ -82,6 +82,7 @@ Die Komponente \textit{Layout Engine} bildet den wesentlichen Teil der Umsetzung
 \end{figure}
 
 \subsubsection{Geometry}
+\label{subsubsec:geometry}
 
 Die Komponente \textit{Geometry} stellt die grundlegenden \textbf{geometrischen Datentypen} wie Punkt, Größe, Rechteck und Linie und für diese ausgelegte \textbf{geometrische Funktionen} bereit. Die neu eingeführten Datentypen unterscheiden sich von den entsprechenden Datentypen aus der Standardbibliothek wie \texttt{NSPoint}, \texttt{NSSize} und \texttt{NSRect} darin, dass die Werte in ganzen Zahlen angegeben werden und dass die Position des Rechtecks seinen Mittelpunkt darstellt. Durch die letztere Eigenschaft wird die Angabe der Positionen mit Hilfe des Mittelpunktes ermöglicht. Außerdem werden die Positionen in zentrierten Koordinaten angegeben, was die Umsetzung des impliziten Patterns zur Zentrierung des Diagramm-Inhalts fördert (siehe Abschnitt \ref{subsubsec:centering-of-diagram-content}) und die relative Layout-Berechnung vereinfacht. Da in \textit{Cocoa} und insbesondere in der für die grafische Repräsentation verantwortlichen Klasse \texttt{NSView} der Koordinatenursprung standardmäßig in der linken unteren Ecke liegt, war es notwendig eine Umrechnung der beiden Koordinatensysteme zu implementieren. In Abbildung \ref{fig:coordinates-conversion} ist der Sachverhalt illustriert, wobei die zentrierten Koordinaten blau, die Standardkoordinaten rot und das Referenzrechteck schwarz dargestellt sind.
 
@@ -142,18 +143,8 @@ Die konkreten Layout-Engines besitzen eine Referenz auf den Inhalt des Diagramms
 \subsection{Canvas View}
 \label{subsec:canvas-view}
 
-Die Komponente \textit{Canvas View} wird in die Präsentationsschicht des Design Patterns \textit{Model View Controller} eingeordnet und ist für die visuelle Repräsentation des Diagramms und die Interaktion im Canvas zuständig. Der Kern dieser Komponente bildet die Klasse \texttt{IDLCanvasView}, die ihre Oberklasse \texttt{NSView} um die Möglichkeit des Zeichnens von Diagrammen erweitert, was mit Hilfe von der Zusammensetzung von Layer aus dem Framework \textit{Core Animation} realisiert wird. Die Informationen über die einzelnen Elemente und ihre Layout-Eigenschaften werden mittels des Delegate-Patterns abgefragt, so dass die Komponente vom Rest der Anwendung abgekoppelt bleibt.
+Die Komponente \textit{Canvas View} wird in die Präsentationsschicht des Design Patterns \textit{Model View Controller} eingeordnet und ist für die visuelle Repräsentation des Diagramms und die Interaktion im Canvas zuständig. Den Kern dieser Komponente bildet die Klasse \texttt{IDLCanvasView}, die ihre Oberklasse \texttt{NSView} um die Möglichkeit des Zeichnens von Diagrammen erweitert, was mit Hilfe von der Zusammensetzung von Layer aus dem Framework \textit{Core Animation} realisiert wird. Die Informationen über die einzelnen Elemente und ihre Layout-Eigenschaften werden mittels des Delegate-Patterns abgefragt, so dass die Komponente vom Rest der Anwendung und insbesondere von der Layout-Berechnung abgekoppelt bleibt.
 
- 
+Obwohl die implementierten Layout-Engines ausschließlich die Positionen der Klassen berechnen, werden von \texttt{IDLCanvasView} alle Layout-Eigenschaften benötigt, um die Klassen und Vererbungsrelationen darstellen zu können, d.h. auch die Größe der Klassen und die Start- bzw. Endpunkte der Vererbungsrelationen. Im Prototyp wird einfachheitshalber die Größe der Klassen konstant gehalten und die Start- bzw. Endpunkte ähnlich wie in OmniGraffle (siehe Abschnitt \ref{subsubsec:connection-points}) anhand der Eigenschaften der verbundenen Klassen außerhalb dieser Komponente berechnet. Da der Koordinatenursprung in \texttt{IDLCanvasView} in der linken unteren Ecke liegt, müssen alle Koordinaten zuerst umgerechnet werden (siehe Abschnitt \ref{subsubsec:geometry}). Wenn die Größe des Fensters geändert wird, erfolgt die Umrechnung erneut, so dass der Inhalt des Diagramms immer zentriert bleibt.
 
-% Koordinaten-Umrechnung
-% Vergrößerung des Fensters -> Zentrierung des Inhalts (durch die Umrechnung)
-
-% Berechnung der Start- und Endpunkte der Kanten anhand von Eigenschaften der Knoten (siehe OmniGraffle)
-
-% Interaktion
-% durch den Dragging Manager (Drag and Drop) und schicken von Delegate-Nachrichten
-
-% Animation der Layout-Übergängen
-% - implizite Core Animation Animation
-% - Überführen von mehreren Animationen mit POP => wichtiger in Multi-Touch-Umgebung, bei Desktop nur ein Mauszeiger, keine parallele Aktionen
+Die Interaktion im Canvas erfolgt durch die Ausführung von Bearbeitungsaktionen, worüber die Anwendung benachrichtigt wird. Für jede Bearbeitungsaktion werden ein oder mehrere Layout-Ereignisse erzeugt, die an die Layout-Engine übergegeben werden. Sobald sich das Layout des Diagramms ändert, wird im \textit{Canvas View} ein Layout-Übergang ausgelöst. Wie bereits im Abschnitt \ref{subsec:layout-transition} beschrieben wurde, wird an dieser Stelle eine Animation eingesetzt. Konkret handelt es sich um die implizite Animation der Properties der Layer, die durch das Framework \textit{Core Animation} bereitgestellt wird. Um die Animation flüssiger zu gestalten, wäre es denkbar, fortgeschrittene Mechanismen der Animation wie z.B. das Animations-Framework POP\footnote{\url{https://github.com/facebook/pop}} einzusetzen.
