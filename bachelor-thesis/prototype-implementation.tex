@@ -119,6 +119,7 @@ Die Klassen für die konkreten expliziten Layout-Patterns beschreiben ihre geome
 Ein weiterer interessanter Aspekt der implementierten Layout-Patterns ist die Möglichkeit ihrer Wiederverwendung und Komposition. Dem Klassendiagramm in Abbildung \ref{fig:layout-patterns-implementation} ist zu entnehmen, dass die Klasse \texttt{IDLShapePattern} intern eine Instanz der Klasse \texttt{IDLAlignmentPattern} verwendet, wodurch die untergeordneten Knoten verwaltet werden.
 
 \subsubsection{Events}
+\label{subsubsec:component-events}
 
 Die Komponente \textit{Events} stellt Klassen für die Beschreibung von Layout-Ereignissen zur Verfügung, dessen Konzept im Abschnitt \ref{sec:layout-calculation} erläutert wurde. Im Prototyp wurden die Layout-Ereignisse implementiert, die den unterstützten Bearbeitungsaktionen aus dem Abschnitt \ref{subsec:supported-actions} entsprechen. Alle Klassen für konkrete Layout-Ereignisse erben von der Klasse \texttt{IDLLayoutEvent} und sind in einem Klassendiagramm in Abbildung \ref{fig:layout-events-implementation} veranschaulicht.
 
@@ -134,11 +135,9 @@ Obwohl der Prototyp keine Möglichkeit des Löschens von einzelnen Knoten bietet
 \subsubsection{Engines}
 \label{subsubsec:component-engines}
 
-% IDLLayoutEngine & Subclasses (bzw. unterstützte Layout-Engines)
+Alle oben aufgeführten Komponenten werden durch die Komponente \textit{Engines} zusammengesetzt, um die eigentliche Layout-Berechnung zu realisieren. Zum einen verfügt die Komponente über eine abstrakte Klasse \texttt{IDLLayoutEngine} und zum anderen über zwei konkreten Unterklassen \texttt{IDLHorizontalLayoutEngine} und \texttt{IDLTreeLayoutEngine}, die die Layout-Algorithmen aus dem Abschnitt \ref{subsec:concrete-layout-algorithms} umsetzen. Wie bereits im Abschnitt \ref{subsec:supported-layout-methods} beschrieben wurde, kann die Layout-Engine zur Laufzeit des Prototyps gewählt werden.
 
-% IDLLayoutEngine besitzt intern Referenzen auf den Inhalt des Diagramms und muss daher mit dem Diagramm synchronisiert werden (manuell) mit s.g. Layout-Events
-
-% Löschen eines (oder mehreren Elementen) im Prototypen nicht unterstützt, nur hinzufügen und "rausfahren"
+Die konkreten Layout-Engines besitzen eine Referenz auf den Inhalt des Diagramms und müssen daher nach jeder Änderungen im Diagramm mit Hilfe von Layout-Ereignissen synchronisiert werden, um das Layout aktuell zu halten. Neben der Fähigkeit, alle Typen der Layout-Ereignisse aus dem Abschnitt \ref{subsubsec:component-events} zu verarbeiten, sind die Layout-Engines in der Lage, das initiale Layout zu berechnen, u.a. durch Instanziierung von expliziten Layout-Patterns, die in den Layout-Engines verwaltet werden. Während die Klasse \texttt{IDLHorizontalLayoutEngine} nur eine Instanz des Ausrichtungspatterns besitzt, werden in der Klasse \texttt{IDLTreeLayoutEngine} Layout-Patterns während der Laufzeit erzeugt und gelöscht. Dabei werden die Layout-Patterns zum Zwecke der Layout-Berechnung aufgrund der festgelegten Struktur durch einen speziellen Algorithmus zusammengesetzt. Der eventuelle Einsatz eines Constraintlösers wird im Abschnitt \ref{subsec:algorithm-generalization} diskutiert.
 
 \subsection{Canvas View}
 \label{subsec:canvas-view}
