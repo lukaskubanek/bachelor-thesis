@@ -104,22 +104,25 @@ Bei der Berechnung des Layouts ist es notwendig, die Layout-Eigenschaften beschr
 
 \subsubsection{Patterns}
 
-% nur expliziten
-% wie werden die impliziten Patterns im Prototypen implementiert -> durch die konkreten IDLLayoutEngine's
-% Wiederverwendung, Komposition in IDLTShapePattern
+Die Umsetzung der Layout-Patterns aus dem Abschnitt \ref{sec:layout-patterns} erfolgt auf zwei Wegen. Die impliziten Layout-Patterns werden nicht instanziiert und müssen von konkreten Layout-Engines eingehalten werden (siehe Abschnitt \ref{subsubsec:component-engines}). Dagegen werden von den expliziten Layout-Patterns Instanzen erstellt und in der Layout-Engine verwaltet. Zu diesem Zweck stellt die Komponente \textit{Patterns} zwei Klassen für konkrete explizite Layout-Patterns\footnote{Die implementierten expliziten Layout-Patterns unterstützen ausschließlich die Ausrichtungen, die für die Umsetzung der Layout-Algorithmen notwendig sind.} zur Verfügung, nämlich die Klasse \texttt{IDLAlignment\-Pat\-tern} für das Ausrichtungspattern und die Klasse \texttt{IDLTShapePattern} für das T-Shape-Pattern. Beide Klassen werden in einem Klassendiagramm\footnote{TODO} in Abbildung \ref{fig:layout-patterns-implementation} visualisiert.
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=\textwidth]{resources/layout-patterns-implementation}
-    \caption{}
+    \includegraphics[scale=0.8]{resources/layout-patterns-implementation}
+    \caption{Ein Klassendiagramm für die expliziten Layout-Patterns}
     \label{fig:layout-patterns-implementation}
 \end{figure}
+
+Die Klassen für die konkreten expliziten Layout-Patterns beschreiben ihre geometrischen Eigenschaften, ermöglichen die Verwaltung von verknüpften Knoten\footnote{Die Programmierschnittstellen im Prototyp verwenden die Begriffe \textit{Knoten} (engl. \textit{Node}) und \textit{Kante} (engl. \textit{Edge}) anstatt von \textit{Klasse} und \textit{Vererbungsrelation}, weil die Unterstützung für die Semantik aus zeitlichen Gründen nicht vollständig implementiert werden konnte (siehe Abschnitt \ref{subsubsec:component-diagram}).} und berechnen das relative Layout für diese. Besonders interessant sind die Methoden für die Verschiebung von einem verknüpften Knoten an eine relative Position, wodurch die Reihenfolge der Knoten beeinflusst werden kann. Somit wird die Variierung der Layout-Patterns erreicht.
+
+Ein weiterer interessanter Aspekt der implementierten Layout-Patterns ist die Möglichkeit ihrer Wiederverwendung und Komposition. Dem Klassendiagramm in Abbildung \ref{fig:layout-patterns-implementation} ist zu entnehmen, dass die Klasse \texttt{IDLShapePattern} intern eine Instanz der Klasse \texttt{IDLAlignmentPattern} verwendet, wodurch die untergeordneten Knoten verwaltet werden.
 
 \subsubsection{Events}
 
 % Löschen nur im Modell, kein UI für die Auswahl
 
 \subsubsection{Engines}
+\label{subsubsec:component-engines}
 
 % IDLLayoutEngine & Subclasses (bzw. unterstützte Layout-Engines)
 
