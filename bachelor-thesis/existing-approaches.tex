@@ -5,13 +5,12 @@
 \chapter{Bestehende Ansätze für Layout von Diagrammen}
 \label{chapter:existing-approaches}
 
-Dieses Kapitel widmet sich der Vorstellung von bestehenden Ansätzen für Layout von Diagrammen. Im Abschnitt \ref{sec:categorization} werden die Ansätze zunächst kategorisiert und anschließend werden in Abschnitten \ref{sec:manual-layout}, \ref{sec:automatic-layout} und \ref{sec:interactive-semi-automatic-layout} die einzelnen Hauptkategorien ausführlich beschrieben und deren Eigenschaften aufgelistet.
+Dieses Kapitel widmet sich der Vorstellung von bestehenden Ansätzen für Layout von Diagrammen. Im Abschnitt \ref{sec:categorization} werden die Ansätze zunächst kategorisiert und anschließend werden in Abschnitten \ref{sec:manual-layout}, \ref{sec:automatic-layout} und \ref{sec:interactive-semi-automatic-layout} die einzelnen Hauptkategorien ausführlich beschrieben und deren Eigenschaften erläutert.
 
 \section{Kategorisierung}
 \label{sec:categorization}
 
-% TODO: Die Kategorisierung näher erklären!
-Die Ansätze für das Layout von Diagrammen lassen sich in 3 Hauptkategorien nach dem \textbf{Grad der Interaktivität} und der \textbf{Art der Layout-Unterstützung} unterteilen.
+Diese Arbeit setzt sich insbesondere mit der Interaktivität der Ansätze für das Layout von Diagrammen auseinander. Aus dem Grund werden die bestehenden Ansätze nach dem \textbf{Grad der Interaktivität} und der \textbf{Art der Layout-Unterstützung} in 3 Hauptkategorien unterteilt.
 
 Zum einen gibt es das interaktive \textbf{manuelle Layout}, das auf der Freihand-Bearbeitung basiert und dem Nutzer ermöglicht, die Layout-Eigenschaften der Objekte im Diagramm wunschgemäß zu verändern, wobei dem Nutzer zusätzlich Layout-Vorschläge präsentiert werden. Das manuelle Layout wird in den meisten grafischen Editoren eingesetzt und wird näher im Abschnitt \ref{sec:manual-layout} erläutert.
 
@@ -345,7 +344,7 @@ Den graphbasierten Softwarediagrammen unterliegt die abstrakte Struktur des Grap
 
 Um während der Erstellung des Diagramms immer ein optimales Layout zu erhalten, muss der Layout-Algorithmus kontinuierlich nach jeder Änderung des Inhalts entweder automatisch oder manuell aufgerufen werden. Wenn eine Interaktion mit dem resultierenden Diagramm unterstützt wird, hat sie keinerlei Einwirkung auf den Algorithmus und wird bei dem nächsten Aufruf nicht berücksichtigt. In der Regel kann der Nutzer nur bestimmte Parameter des Algorithmus\footnote{z.B. minimale Länge der Kanten im zirkulären Layout-Algorithmus \texttt{circo} aus der Bibliothek Graphviz \cite{NorthGansner14Dot-Manual}.} anpassen und hat somit nur einen geringen Einfluss auf das Ergebnis des Layout-Prozesses.
 
-Die Ansätze lassen sich in zwei Kategorien nach der Art der Sprache unterteilen, die als Eingabe für den Layout-Algorithmus verwendet wird\footnote{In der Literatur werden Ansätze für das automatische Layout meistens nach den Layout-Algorithmen kategorisiert \cite[S.39ff]{Fuhrmann11On-the-Pragmatics} \cite[S.32ff]{Eichelberger05Aesthetics}. In dieser Arbeit richtet sich die Kategorisierung danach, wie die Ansätze zu bedienen sind und welche Art der Interaktion sie unterstützen.}. Zum einen gibt es Ansätze, die aus einer Beschreibung des Diagramms in einer \textbf{textuellen Sprache} unter Anwendung des Layout-Algorithmus eine grafische Repräsentation erzeugen. Zum anderen gibt es Ansätze, die auf Diagramme angewendet werden, die in einer \textbf{visuellen Sprache} modelliert sind. Diese Ansätze verändern die Layout-Eigenschaften der Diagrammelemente direkt. Im Folgenden werden beide Kategorien behandelt.
+Die Ansätze lassen sich in zwei Kategorien nach der Art der Sprache unterteilen, die als Eingabe für den Layout-Algorithmus verwendet wird\footnote{In der Literatur werden Ansätze für das automatische Layout meistens nach den Layout-Algorithmen kategorisiert \cite[S.39ff]{Fuhrmann11On-the-Pragmatics} \cite[S.32ff]{Eichelberger05Aesthetics}. Wie bereits im Abschnitt \ref{sec:categorization} erläutert wurde, richtet sich die Kategorisierung in dieser Arbeit danach, wie die Ansätze zu bedienen sind und welche Art der Interaktion sie unterstützen.}. Zum einen gibt es Ansätze, die aus einer Beschreibung des Diagramms in einer \textbf{textuellen Sprache} unter Anwendung des Layout-Algorithmus eine grafische Repräsentation erzeugen. Zum anderen gibt es Ansätze, die auf Diagramme angewendet werden, die in einer \textbf{visuellen Sprache} modelliert sind. Diese Ansätze verändern die Layout-Eigenschaften der Diagrammelemente direkt. Im Folgenden werden beide Kategorien behandelt.
 
 % TODO: Visuelle Sprachen erklären, da [Fuhrmann] sagt, dass textuelle Sprachen auch visuelle Sprachen sind (S. 48)
 
