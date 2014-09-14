@@ -61,10 +61,9 @@ Die Erhaltung des mentalen Modells (Kriterium \ref{req:mental-map}) wird durch e
 \subsection{Bearbeitungsaktionen}
 \label{subsec:edit-actions}
 
-Die interaktiven Ansätze werden in Editoren eingesetzt, die in der Regel über einen \enquote{Canvas} verfügen. Der Canvas ist ein rechteckiger Bereich des Editor-Fensters, in dem das Diagramm dargestellt wird und in dem die Interaktion mit dem Diagramm stattfindet. Die Interaktion setzt sich aus Bearbeitungsaktionen zusammen, die durch den Nutzer ausgeführt werden. Um das Kriterium \ref{req:gui} zu erfüllen, sollen alle Bearbeitungsaktionen auf GUI-Techniken basieren.
+Die interaktiven Ansätze werden in Editoren eingesetzt, die in der Regel über einen Canvas verfügen. Der Canvas ist ein rechteckiger Bereich des Editor-Fensters, in dem das Diagramm dargestellt wird und in dem die Interaktion mit dem Diagramm stattfindet. Die Interaktion setzt sich aus Bearbeitungsaktionen zusammen, die durch den Nutzer ausgeführt werden. Um das Kriterium \ref{req:gui} zu erfüllen, sollen alle Bearbeitungsaktionen auf GUI-Techniken basieren.
 
 In dieser Arbeit werden die grundlegenden Bearbeitungsaktionen präsentiert, die insbesondere für die Entwicklung des Prototyps (siehe Kapitel \ref{chapter:prototype}) eine wichtige Rolle spielen. Natürlich ist eine Erweiterung der unterstützten Bearbeitungsaktionen möglich.
-% TODO: Hinweis auf die unterstützten Aktionen im Prototypen
 
 Je nach der Art der Modifizierung lassen sich die Bearbeitungsaktionen in zwei Gruppen unterteilen. Zum einen sind das Aktionen, die den Inhalt des Diagramms modifizieren und zu anderem sind das Aktionen, die das Layout des Diagramms modifizieren, ohne den Inhalt zu verändern.
 
@@ -126,10 +125,9 @@ In der ersten Phase wird ein Knoten im Canvas angeklickt, das in Abbildung \ref{
     \label{fig:movement-action-example}
 \end{figure}
 
-% TODO: Mauszeiger hinzufügen
 \begin{figure}[hbt]
     \newcommand{\subfigurewidth}{0.35\textwidth}
-    \newcommand{\graphicsscale}{1.2}
+    \newcommand{\graphicsscale}{0.95}
     \centering
     \begin{subfigure}{\subfigurewidth}
         \centering
@@ -149,8 +147,7 @@ In der zweiten Phase findet eine Bewegung des Mauszeigers statt. Da die temporä
 
 Die Position des Mauszeigers wird nach jeder Bewegung ausgewertet und sobald sich der Mauszeiger in einem bestimmten Bereich des Diagramms befindet, für den das Layout geändert werden soll, wird das Layout im unterliegenden Canvas mit Hilfe einer Animation (siehe Abschnitt \ref{subsec:layout-transition}) angepasst. Dabei wird die Änderung der Layout-Eigenschaften des verschobenen Knotens auf den Platzhalter angewendet, so wie es in Abbildung \ref{fig:movement-action-example-d} dargestellt ist. Durch die Anpassung des Layouts während der Interaktion wird ein unmittelbares Feedback erreicht (Kriterium \ref{req:immediate-feedback}). Dagegen wird das Layout in \textit{MindNode} (siehe Abschnitt \ref{subsubsec:smart-layout-in-mindnode}) erst nach dem Loslassen der Maustaste angepasst und damit das Feedback verzögert.
 
-Dieser Abschnitt beschäftigt sich ausschließlich mit der Beschreibung der Interaktion, die konkrete Funktionsweise der Layout-Berechnung kann in Abschnitt X nachgelesen werden.
-% TODO: Referenz Layout-Berechnung
+Dieser Abschnitt beschäftigt sich ausschließlich mit der Beschreibung der Interaktion, die konkrete Funktionsweise der Layout-Berechnung kann in Abschnitt \ref{sec:layout-calculation} nachgelesen werden.
 
 Die dritte Phase beginnt mit dem Loslassen der Maustaste. Danach springt der verschobene Knoten auf seine Zielposition hin, nämlich die Position des Platzhalters. Anschließend werden der Platzhalter sowie die temporäre Schicht entfernt und die Verschiebungsaktion wird beendet. Die Abbildung \ref{fig:movement-action-example-e} zeigt den Endzustand.
 
@@ -200,12 +197,11 @@ Dieses Layout-Pattern fördert die Ästhetik (Kriterium \ref{req:aesthetics-crit
 \subsection{Explizite Layout-Patterns}
 \label{subsec:explicit-layout-patterns}
 
-Die expliziten Layout-Patterns referenzieren Knoten im Diagramm und beschreiben deren Struktur anhand von geometrischen Eigenschaften. Während der Erstellung eines Diagramms werden ähnlich wie in \cite{Maier12A-Pattern-based} \textbf{Instanzen der Layout-Patterns} verwaltet. Im Gegensatz zu \cite{Maier12A-Pattern-based} erfolgt die Verwaltung automatisch und basiert auf dem Inhalt des Diagramms. Der Nutzer hat daher keine Möglichkeit die Layout-Patterns selbst zu erstellen\footnote{Eine eventuelle Möglichkeit der Erstellung von Layout-Patterns durch den Nutzer wird im Abschnitt X diskutiert.}.
+Die expliziten Layout-Patterns referenzieren Knoten im Diagramm und beschreiben deren Struktur anhand von geometrischen Eigenschaften. Während der Erstellung eines Diagramms werden ähnlich wie in \cite{Maier12A-Pattern-based} \textbf{Instanzen der Layout-Patterns} verwaltet. Im Gegensatz zu \cite{Maier12A-Pattern-based} erfolgt die Verwaltung automatisch und basiert auf dem Inhalt des Diagramms. Der Nutzer hat daher keine Möglichkeit die Layout-Patterns selbst zu erstellen\footnote{Eine eventuelle Möglichkeit der Erstellung von Layout-Patterns durch den Nutzer wird im Abschnitt \ref{subsec:algorithm-generalization} diskutiert.}.
 
 Um eine Art der Manipulation der Knoten zu ermöglichen, wird das Konzept der \textbf{Variierung der expliziten Layout-Patterns} eingeführt. Je nach der Art des expliziten Layout-Patterns kann der Nutzer zwischen mehreren Variationen der Anordnung der Knoten (z.B. Reihenfolge) wählen. Das endgültige Layout wird jedoch durch die Geometrie bestimmt. Diese Art der Manipulation fördert die Konzentration auf den Inhalt und ergänzt die Einschränkung der freien Positionierung (Kriterium \ref{req:focus-on-the-content}).
 
-Im Folgenden werden zwei konkreten expliziten Layout-Patterns vorgestellt, nämlich das Ausrichtungspattern (siehe Abschnitt \ref{subsubsec:alignment-pattern}) und das T-Shape-Pattern (siehe Abschnitt \ref{subsubsec:t-shape-pattern}). Mit der Implementierung der expliziten Layout-Patterns im Prototypen beschäftigt sich der Abschnitt X.
-% TODO: Verweis auf die implementierten Patterns im Prototypen (Kapitel 5) hinzufügen
+Im Folgenden werden zwei konkreten expliziten Layout-Patterns vorgestellt, nämlich das Ausrichtungspattern (siehe Abschnitt \ref{subsubsec:alignment-pattern}) und das T-Shape-Pattern (siehe Abschnitt \ref{subsubsec:t-shape-pattern}). Mit der Implementierung der expliziten Layout-Patterns im Prototypen beschäftigt sich der Abschnitt \ref{subsubsec:patterns}.
 
 \subsubsection{Ausrichtungspattern}
 \label{subsubsec:alignment-pattern}
@@ -256,8 +252,7 @@ Das T-Shape-Pattern erweitert das Ausrichtungspattern, indem die Reihe der unter
 \section{Berechnung des Layouts}
 \label{sec:layout-calculation}
 
-Wie bereits im Abschnitt \ref{subsec:edit-actions} erläutert wurde, werden während der Bearbeitung eines Diagramms Aktionen durch den Nutzer ausgeführt. Für die ausgeführten Bearbeitungsaktionen werden \textbf{Layout-Ereignisse} generiert, die eine Beschreibung der manipulierten bzw. geänderten Knoten und Kanten sowie die Parameter der Interaktion wie z.B. die Position des Mauszeigers beinhalten. Die \textbf{Layout-Engine}, die für die Berechnung des Layouts zuständig ist, nimmt die erzeugten Layout-Ereignisse entgegen, verarbeitet sie und passt das Layout des Diagramms an. Mit der Layout-Engine beschäftigt sich näher der Abschnitt \ref{subsec:layout-engine}. Der Prozess der Verarbeitung der Layout-Ereignisse wird im Abschnitt \ref{subsec:processing-of-layout-events} beschrieben. 
-% TODO: Verweise auf restliche Abschnitt ergänzen!
+Wie bereits im Abschnitt \ref{subsec:edit-actions} erläutert wurde, werden während der Bearbeitung eines Diagramms Aktionen durch den Nutzer ausgeführt. Für die ausgeführten Bearbeitungsaktionen werden \textbf{Layout-Ereignisse} generiert, die eine Beschreibung der manipulierten bzw. geänderten Knoten und Kanten sowie die Parameter der Interaktion wie z.B. die Position des Mauszeigers beinhalten. Die \textbf{Layout-Engine}, die für die Berechnung des Layouts zuständig ist, nimmt die erzeugten Layout-Ereignisse entgegen, verarbeitet sie und passt das Layout des Diagramms an. Mit der Layout-Engine beschäftigt sich näher der Abschnitt \ref{subsec:layout-engine}. Der Prozess der Verarbeitung der Layout-Ereignisse wird im Abschnitt \ref{subsec:processing-of-layout-events} beschrieben. Schließlich werden die konkreten Layout-Algorithmen im Abschnitt \ref{subsec:concrete-layout-algorithms} vorgestellt.
 
 \subsection{Layout-Engine}
 \label{subsec:layout-engine}
@@ -302,11 +297,9 @@ In dem präsentierten Ansatz wird während der Ausführung einer Verschiebungsak
 \subsection{Konkrete Layout-Algorithmen}
 \label{subsec:concrete-layout-algorithms}
 
-Im Abschnitt \ref{subsec:processing-of-layout-events} wurde der Rumpf des Algorithmus für die Berechnung des Layouts vorgestellt. Dabei wurde nicht auf die interne Funktionsweise der Layout-Engine eingegangen. Das liegt daran, dass die Layout-Engine ein unterschiedliches Verhalten für verschiedene \textbf{Diagrammtypen} aufweisen soll, denn jeder Diagrammtyp (z.B. Klassendiagramm, Zustandsdiagramm, Flowchart usw.) hat aufgrund der Syntax- und Semantikregeln spezielle Anforderungen an des ästhetische Layout. Dadurch wird das Kriterium \ref{req:syntax-and-semantics} erfüllt.
+Im Abschnitt \ref{subsec:processing-of-layout-events} wurde der Rumpf des Algorithmus für die Berechnung des Layouts vorgestellt. Dabei wurde nicht auf die interne Funktionsweise der Layout-Engine eingegangen. Das liegt daran, dass die Layout-Engine ein unterschiedliches Verhalten für verschiedene \textbf{Diagrammtypen} aufweisen soll, denn jeder Diagrammtyp (z.B. Klassendiagramm, Zustandsdiagramm, Flowchart usw.) hat aufgrund der Syntax- und Semantikregeln spezielle Anforderungen an des ästhetische Layout. Nur dadurch kann das Kriterium \ref{req:syntax-and-semantics} erfüllt werden.
 
 Die in dieser Arbeit präsentierten Algorithmen basieren auf der visuellen Sprache der Klassendiagramme der Notationssprache UML. Allerdings handelt es sich um keine allgemeine Algorithmen für das Layout von Klassendiagrammen, sondern um zwei relativ einfache Algorithmen, deren Aufgabe es ist, die eingeführten Mechanismen der Interaktion zu validieren und damit das gesamte Konzept zu prüfen. Daher wird der Einfachheit halber kein UML-Metamodell eingesetzt und die Syntax wird stark eingeschränkt. Es werden nur vereinfachte Klassen (Knoten) und Vererbungsrelation (Kanten) unterstützt.
-
-% TODO: Vereinfachungen der Klassendiagramme näher erklären (siehe "Patterns in UML Klassendiagrammen")
 
 \subsubsection{Algorithmus für das horizontale Layout}
 \label{subsubsec:horizontal-layout-algorithm}
@@ -332,8 +325,7 @@ Der Algorithmus für das baumbasierte Layout ermöglicht die Modellierung von Ve
     \label{fig:tree-based-layout}
 \end{figure}
 
-Die Berechnung des endgültigen Layouts erfolgt durch die Zusammensetzung der instanziierten expliziten Layout-Patterns. Dabei wird die oben beschriebene Vereinfachung der Klassendiagramme ausgenutzt und der Algorithmus ist somit ausschließlich für diesen konkreten Fall geeignet. Die Möglichkeit der Entwicklung eines allgemeinen Algorithmus für Klassendiagramme wird im Abschnitt X diskutiert.
-% TODO: Verweis auf Ausblick
+Die Berechnung des endgültigen Layouts erfolgt durch die Zusammensetzung der instanziierten expliziten Layout-Patterns. Dabei wird die oben beschriebene Vereinfachung der Klassendiagramme ausgenutzt und der Algorithmus ist somit ausschließlich für diesen konkreten Fall geeignet. Die Möglichkeit der Entwicklung eines allgemeinen Algorithmus für Klassendiagramme wird im Abschnitt \ref{subsec:algorithm-generalization} diskutiert.
 
 Je nachdem welche Klasse verschoben wird, verhält sich die Verschiebungsaktion unterschiedlich. Das Verschieben der Wurzelklassen bewirkt die Änderung der Reihenfolge der Vererbungshierarchien. Wenn aber eine Klasse, die sich in einer Vererbungshierarchie unter der Wurzelklasse befindet, verschoben wird, wird die Reihenfolge der Geschwisterklassen angepasst, indem das zugehörige T-Shape-Pattern variiert wird (siehe Abschnitt \ref{subsubsec:t-shape-pattern}). Zum besseren Verständnis der Funktionsweise wird auf ein Video mit der Vorführung der prototypischen Implementierung verwiesen. Das Video ist unter dem Pfad \texttt{Prototype/Videos/Tree-based-Layout-\-De\-mo.mov} auf der unter Anhang \ref{chapter:dvd} eingereichten DVD zu finden.
 
