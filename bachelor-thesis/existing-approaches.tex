@@ -344,8 +344,6 @@ Um während der Erstellung des Diagramms immer ein optimales Layout zu erhalten,
 
 Die Ansätze lassen sich in zwei Kategorien nach der Art der Sprache unterteilen, die als Eingabe für den Layout-Algorithmus verwendet wird\footnote{In der Literatur werden Ansätze für das automatische Layout meistens nach den Layout-Algorithmen kategorisiert \cite[S.39ff]{Fuhrmann11On-the-Pragmatics} \cite[S.32ff]{Eichelberger05Aesthetics}. Wie bereits im Abschnitt \ref{sec:categorization} erläutert wurde, richtet sich die Kategorisierung in dieser Arbeit danach, wie die Ansätze zu bedienen sind und welche Art der Interaktion sie unterstützen.}. Zum einen gibt es Ansätze, die aus einer Beschreibung des Diagramms in einer \textbf{textuellen Sprache} unter Anwendung des Layout-Algorithmus eine grafische Repräsentation erzeugen. Zum anderen gibt es Ansätze, die auf Diagramme angewendet werden, die in einer \textbf{visuellen Sprache} modelliert sind. Diese Ansätze verändern die Layout-Eigenschaften der Diagrammelemente direkt. Im Folgenden werden beide Kategorien behandelt.
 
-% TODO: Visuelle Sprachen erklären, da [Fuhrmann] sagt, dass textuelle Sprachen auch visuelle Sprachen sind (S. 48)
-
 \subsection{Textbasierte Ansätze}
 \label{subsec:text-based-approaches}
 
@@ -354,11 +352,11 @@ Die textbasierten Ansätze für das automatische Layout erfordern als Eingabe ei
 \subsubsection{Graphzeichnen-Tools}
 \label{subsubsec:graph-drawing-tools}
 
-Es existiert eine Menge an Bibliotheken, die verschiedene Algorithmen für das Graphzeichnen implementieren\footnote{Insbesondere handelt es sich um hierarchische, kräftebasierte und orthogonale Algorithmen. \cite{Maier12A-Pattern-based}} und diese Funktionalität für andere Programme bereitstellen. Beispiele für solche Bibliotheken sind \textit{Graphviz}\footnote{\url{http://graphviz.org}}, yFiles\footnote{\url{http://www.yworks.com/en/products_yfiles_about.html}} oder Kieler\footnote{\url{http://www.informatik.uni-kiel.de/en/rtsys/kieler/}} \cite{Maier12A-Pattern-based}. In dieser Arbeit wird \textit{Graphviz} näher vorgestellt und insbesondere werden seine Aspekte des textbasierten und visuellen Ansatzes gezeigt.
+Es existiert eine Menge an Bibliotheken, die verschiedene Algorithmen für das Graphzeichnen implementieren\footnote{Insbesondere handelt es sich um hierarchische, kräftebasierte und orthogonale Algorithmen. \cite{Maier12A-Pattern-based}} und diese Funktionalität für andere Programme bereitstellen. Beispiele für solche Bibliotheken sind \textit{Graphviz}\footnote{\url{http://graphviz.org}}, \textit{yFiles}\footnote{\url{http://www.yworks.com/en/products_yfiles_about.html}} oder \textit{Kieler}\footnote{\url{http://www.informatik.uni-kiel.de/en/rtsys/kieler/}} \cite{Maier12A-Pattern-based}. In dieser Arbeit wird \textit{Graphviz} näher vorgestellt und insbesondere werden seine Aspekte des textbasierten und visuellen Ansatzes gezeigt.
 
 \paragraph{Graphviz}
 
-\textit{Graphviz} ist ein in der Programmiersprache C geschriebenes Tool für die Visualisierung von Graphen und wurde ursprünglich von AT\&T entwickelt. Es besteht aus folgenden Komponenten:
+\textit{Graphviz} ist ein in der Programmiersprache C geschriebenes Tool für die Visualisierung von Graphen und wurde ursprünglich von \textit{AT\&T} entwickelt. Es besteht aus folgenden Komponenten:
 
 \begin{itemize}
     \item Domänenspezifische \textbf{Sprache Dot}\footnote{Der Aufbau der Sprache wird unter \url{http://www.graphviz.org/content/dot-language} erläutert. Ein Beispiel der Beschreibung eines Graphen ist im Quelltext \ref{lst:graphviz-dot-example-dot} gegeben.} für die Beschreibung von Graphen.
@@ -378,7 +376,7 @@ Um einen Layout-Algorithmus auf einen Graph mit Hilfe der Komandozeilen-Tools od
     label={lst:graphviz-dot-example-dot}
 ]{resources/graphviz-dot-example.dot}
 
-Durch einen Aufruf des Kommandozeilenbefehls \texttt{dot} wird die oben aufgelistete Dot-Quelldatei eingelesen, der beschriebene Graph wird in Form eines internen Modells instanziiert und auf das Modell wird der Layout-Algorithmus \texttt{dot} angewendet. Anschließend wird mit einen Renderer ein Resultat in einer Datei erzeugt, das in Abbildung \ref{fig:graphviz-dot-example} dargestellt ist \cite{Gansner14Using}.
+Durch einen Aufruf des Kommandozeilen-Tools \texttt{dot} wird die oben aufgelistete Dot-Quelldatei eingelesen, der beschriebene Graph wird in Form eines internen Modells instanziiert und auf das Modell wird der Layout-Algorithmus \texttt{dot} angewendet. Anschließend wird mit einen Renderer ein Resultat in einer Datei erzeugt, das in Abbildung \ref{fig:graphviz-dot-example} dargestellt ist \cite{Gansner14Using}.
 
 \begin{figure}[hbt]
     \centering
@@ -389,7 +387,7 @@ Durch einen Aufruf des Kommandozeilenbefehls \texttt{dot} wird die oben aufgelis
 
 Alternativ kann die Dot-Quelldatei in der GUI-Anwendung geöffnet werden. In dem Fall wird das Ergebnis nicht direkt in eine Datei gespeichert, sondern als PDF in einem Fenster der Anwendung angezeigt.
 
-In dem oben diskutierten Beispiel wird sichtbar gemacht, dass das resultierende Diagramm nicht interaktiv ist. Eine Änderung des Graphen ist nur in der Quelldatei möglich und ist mit einem wiederholten Aufruf des Kommandozeilen-Tools oder Laden der Datei in der GUI-Anwendung verbunden. Diese Schwachstelle wird durch 3rd-Party Editoren mit der integrierten grafischen Ausgabe wie etwa Leonhard\footnote{Leonhard ist ein grafischer Editor für \textit{Graphviz}, der unter älteren Versionen von Mac OS X funktioniert. Weitere Information sind unter \url{http://algorithmique.net/leonhard.html} und \url{https://github.com/glejeune/Leonhard} zu finden.} oder WebGraphviz\footnote{\url{http://webgraphviz.com}} verbessert. In Leonhard wird die Übersetzung nach jeder Änderung des Quelltexts sogar automatisch gestartet.
+In dem oben diskutierten Beispiel wird sichtbar gemacht, dass das resultierende Diagramm nicht interaktiv ist. Eine Änderung des Graphen ist nur in der Quelldatei möglich und ist mit einem wiederholten Aufruf des Kommandozeilen-Tools oder Laden der Datei in der GUI-Anwendung verbunden. Diese Schwachstelle wird durch 3rd-Party Editoren mit der integrierten grafischen Ausgabe wie etwa \textit{Leonhard}\footnote{\textit{Leonhard} ist ein grafischer Editor für \textit{Graphviz}, der unter älteren Versionen von Mac OS X funktioniert. Weitere Information sind unter \url{http://algorithmique.net/leonhard.html} und \url{https://github.com/glejeune/Leonhard} zu finden.} oder \textit{WebGraphviz}\footnote{\url{http://webgraphviz.com}} verbessert. In \textit{Leonhard} wird die Übersetzung nach jeder Änderung des Quelltexts sogar automatisch gestartet.
 
 Trotz der fehlenden Interaktivität des resultierenden Diagramms kann das Layout von dem Nutzer beeinflusst werden, indem der Layout-Algorithmus gewählt wird bzw. seine Parameter in der Quelldatei angepasst werden \cite{NorthGansner14Dot-Manual}. Im oben genannten Beispiel wurde der Layout-Algorithmus \texttt{dot} verwendet und die Richtung des Graphen in der Dot-Quelldatei mit dem Befehl \texttt{rankdir = LR} angepasst, so dass der Graph von links nach rechts gezeichnet wird.
 
@@ -476,8 +474,6 @@ Der Layout-Algorithmus kann entweder durch die manuelle Auswahl im Menü, die Ve
 % semantische Unterstützung fehlt
 % manueller Aufruf [Fuhrmann]
 % verschiedene Algorithmen -> nur Verbindungen vs. alles
-
-% yEd?
 
 \subsection{Spezielle Algorithmen für Klassendiagramme}
 
