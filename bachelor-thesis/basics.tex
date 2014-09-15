@@ -4,16 +4,17 @@
 
 \chapter{Grundlagen}
 
+Dieses Kapitel beschäftigt sich mit den Grundlagen für die Problematik der Layout-Berechnung in Diagrammen. Zunächst werden in Abschnitt \ref{sec:disambiguation} die wichtigsten Begriffe eingeführt und erläutert. Anschließend werden in Abschnitt \ref{sec:aesthetics-criteria} die ästhetischen Prinzipien für das Layout von allgemeinen Graphen und Klassendiagrammen der Notationssprache UML\footnote{Unified Modeling Language (\url{http://www.uml.org})} zusammengefasst.
+
 \section{Begriffsklärung}
+\label{sec:disambiguation}
 
 \subsection{Graphbasierte Diagramme}
 \label{subsec:graph-based-diagrams}
 
-% Was ist ein graphbasiertes Diagramm? => Graph?
-% graphbasierte Diagramme
-% Node-Link Diagramme [Eic S.61]
-% bilden Graphen eine Basis für viele Typen der Softwarediagrammen.
-% Welche Diagramme z.B.? (Klassendiagramme, Objektdiagramme, Komponentendiagramme, Graphen, Bäume)
+Viele Diagramme, die sich mit einer visuellen Sprache beschreiben lassen, basieren auf der Struktur von Graphen, d.h. sie werden durch Knoten (engl. Node) und Kanten (engl. Edge bzw. Link) gebildet \cite{Eichelberger05Aesthetics}. Die grafische Repräsentation der graphbasierten Diagramme (manchmal in der Literatur auch Node-Link-Diagramme genannt) besteht aus der Zusammensetzung von Textelementen und geometrischen Objekten wie Rechtecke, Ellipsen und Linien \cite{Wybrow08Using}. Die Struktur von Graphen kann um die Möglichkeit der Verschachtelung von Knoten und deren Verbindungen durch Kanten erweitert werden \cite{Siebenhaller03Automatisches, Wybrow08Using}. Trotz des häufigen Einsatzes dieser Erweiterung in vielen Diagrammtypen wird sie für die Zwecke dieser Bachelorarbeit außer Acht gelassen.
+
+Zu den graphbasierten Diagrammen gehört eine große Anzahl an Softwarediagrammen, wie z.B. Klassendiagramme\footnote{Obwohl der UML-Standard eine Verschachtelung der Klassen in Pakete zulässt, sind an dieser Stelle einfachere Varianten der Klassendiagramme gemeint, wie z.B. die konzeptuellen Klassendiagramme nach \cite{Ambler04UML-2-Class}.}, Objektdiagramme bzw. Use-Case-Diagramme der Notationssprache UML, Netzwerkdiagramme oder Flowcharts.
 
 \subsection{Layout eines Diagramms}
 
@@ -23,6 +24,7 @@
 % Zuordnung von Layout-Eigenschaften für die Objekte eines Diagramms
 
 % Visual Language Editors [Maier 2.1]
+% Wybrow S.6
 
 \subsection{Mentales Modell}
 \label{subsec:mental-map}
@@ -30,7 +32,7 @@
 % mentales Modell eines Diagramms [Gladisch, Maier, Wybrow?]
 \cite{Branke01Dynamic} 
 
-\subsection{Layout-Patterns}
+\subsection{Layout-Patterns und Layout-Constraints}
 
 % 
 

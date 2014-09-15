@@ -2,7 +2,7 @@
 % Existing Approaches %
 %%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Bestehende Ansätze für Layout von Diagrammen}
+\chapter{Bestehende Ansätze für das Layout von Diagrammen}
 \label{chapter:existing-approaches}
 
 Dieses Kapitel widmet sich der Vorstellung von bestehenden Ansätzen für Layout von Diagrammen. Im Abschnitt \ref{sec:categorization} werden die Ansätze zunächst kategorisiert und anschließend werden in Abschnitten \ref{sec:manual-layout}, \ref{sec:automatic-layout} und \ref{sec:interactive-semi-automatic-layout} die einzelnen Hauptkategorien ausführlich beschrieben und deren Eigenschaften erläutert.
@@ -508,7 +508,7 @@ Der Layout-Algorithmus kann entweder durch die manuelle Auswahl im Menü, die Ve
 \begin{itemize}
     \item \textbf{Fehlende Interaktivität} Das automatische Layout ist für eine interaktive Bearbeitung der Diagramme nicht konzipiert, da die direkte Interaktion des Nutzers mit dem Diagramm mangelhaft oder gar nicht unterstützt wird. Obwohl sich die visuellen Ansätze in interaktiven Umgebungen wie etwa visuellen Editoren einsetzen lassen, sind sie dafür nicht geeignet \cite[S.22ff]{Maier12A-Pattern-based} \cite[S.4]{DwyerMarriott08Interactive}. Insbesondere zeichnet sich dies dadurch aus, dass der Prozess der Erstellung eines Diagramms nicht gefördert wird. Die interaktiven Änderungen des Inhalts bzw. des Layouts des Diagramms werden von dem Layout-Algorithmus nicht berücksichtigt und somit kann bei dem Aufruf des Algorithmus das mentale Modell \cite{Eiglsperger04Automatic} bzw. die sekundäre Notation \cite{SeyboldGlinz03An-Effective} zerstört werden. Des Weiteren ist es notwendig, den Algorithmus manuell nach jeder Änderung erneut zu starten. Im Unterschied zu den visuellen Ansätzen bieten die textuellen Ansätze keine direkte Form der Interaktion an, was durch die unterschiedlichen Eingabe- und Ausgabesprachen und der damit zusammenhängenden Entkoppelung der Eingabe und Ausgabe bedingt ist.
     \item \textbf{Geringer Einfluss auf das Layout} Da das automatische Layout auf statischen Algorithmen basiert, die sich in der Regel nur durch die Anpassung der Parameter beeinflussen lassen, werden die Layout-Präferenzen des Nutzers nicht berücksichtigt. Die mögliche Kontrolle des Ergebnisses des Layout-Prozesses ist somit sehr mangelhaft \cite[S.382]{GladischSchumann14Semi-Automatic}.
-    \item \textbf{Mangelhafte Berücksichtigung der Syntax- und Semantikregeln} Die syntaktischen und semantischen Layout-Regeln der konkreten Diagrammtypen werden von den allgemeinen Algorithmen für das Layout von graph-basierten Diagrammen nicht berücksichtigt und können dadurch verletzt werden.
+    \item \textbf{Mangelhafte Berücksichtigung der Syntax- und Semantikregeln} Die syntaktischen und semantischen Layout-Regeln der konkreten Diagrammtypen werden von den allgemeinen Algorithmen für das Layout von graphbasierten Diagrammen nicht berücksichtigt und können dadurch verletzt werden.
 \end{itemize}
 
 \section{Interaktives halbautomatisches Layout}
