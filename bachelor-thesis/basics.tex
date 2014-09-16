@@ -54,9 +54,35 @@ Wie bereits in Abschnitt \ref{subsec:graph-based-diagrams} erläutert wurde, bau
 \subsection{Ästhetische Prinzipien für Klassendiagramme}
 \label{subsec:aesthetics-criteria-class-diagrams}
 
-% Einführung Klassendiagramme
+Die Klassendiagramme gehören zu häufig eingesetzten Diagrammtypen der Notationssprache UML \cite{Fowler03UML-Distilled:}. Sie werden für die Beschreibung der statischen Struktur eines objekt-orientierten Systems verwendet und visualisieren die Klassen und ihre Beziehungen \cite{Siebenhaller03Automatisches, Ambler05The-Elements}. Sie können für verschiedene Zwecke eingesetzt werden, u.a. für die Untersuchung der Konzepte für die Umsetzung von Anforderungen oder für den detaillierten Entwurf eines Systems \cite{Ambler04UML-2-Class, Ambler05The-Elements}. Aufgrund der Vielseitigkeit dieses Diagrammtyps wurden die Klassendiagramme zum Schwerpunkt dieser Arbeit gewählt.
+
+Die Problematik des Layouts von Klassendiagrammen wurde in vielen Arbeiten untersucht, z.B. in \cite{Siebenhaller03Automatisches}, \cite{Eichelberger05Aesthetics} oder \cite{Eiglsperger04Automatic}. Die in diesen Arbeiten vorgestellten Layout-Algorithmen berücksichtigen ästhetische Prinzipien, die auf den semantischen Eigenschaften der Klassendiagramme basieren. Eine Auswahl der bedeutsamen Prinzipien wird im Folgenden aufgelistet:
 
 \begin{enumerate}[label={A.\arabic*}, resume]
-    \item \textbf{Darstellung der Vererbungshierarchien}
-    \item \textbf{Platzierung von verwandten Elementen}
+    \item \textbf{Richtung von Kanten} Die Kanten in Klassendiagrammen teilen sich in hierarchische und nicht-hierarchische unter \cite{Eichelberger05Aesthetics}, was von der Art der Relation abgeleitet wird, die sie repräsentieren. Die hierarchischen Kanten (wie z.B. Vererbung) sollen vertikal verlaufen, während die nicht-hierarchischen Kanten (wie z.B. Assoziation) horizontal angeordnet werden sollen \cite{EichelbergerSchmid09Guidelines, Ambler05The-Elements}. Insbesondere wichtig ist dieses Prinzip für die Vererbungshierarchien, in den die Unterklassen unter den Oberklassen abgebildet werden und somit die Kanten in einer Richtung verlaufen.
+    \item \textbf{Darstellung von Hierarchien} Durch die hierarchischen Knoten gebildete Hierarchien bilden den Gegenstand für weitere ästhetische Prinzipien. Zum einen sollen die Geschwisterknoten auf der gleichen Ebene platziert werden \cite{Siebenhaller03Automatisches}. Zum anderen sollen die Väterknoten im Bezug zu den Kinderknoten möglichst zentriert ausgerichtet werden \cite{EichelbergerSchmid09Guidelines, Siebenhaller03Automatisches}. Dies erweitert das Prinzip der Symmetrie \cite{EichelbergerSchmid09Guidelines} und wird insbesondere bei Baumstrukturen eingesetzt \cite{Siebenhaller03Automatisches}.
+    \item \textbf{Darstellung der Vererbungsrelationen} Die Vererbungsrelation kann auf zwei Arten dargestellt werden. Entweder werden wie in Abbildung \ref{fig:inheritance-representations-a} einzelne Linien für die jeweiligen Relationen verwendet oder es wird in einer \enquote{Gabelform} wie in Abbildung \ref{fig:inheritance-representations-b} dargestellt \cite{Siebenhaller03Automatisches}. Obwohl nach dem Standard beide Optionen zulässig sind, wird die zuletzt genannte Option als übersichtlicher eingeschätzt, obwohl sie zusätzliche Kantenknicke einführt \cite{EichelbergerSchmid09Guidelines, Siebenhaller03Automatisches}.
+
+\begin{figure}[hbt]
+    \newcommand{\subfigurewidth}{0.4\textwidth}
+    \newcommand{\graphicswidth}{0.95\linewidth}
+    \centering
+    \begin{subfigure}{\subfigurewidth}
+        \centering
+        \includegraphics[width=\graphicswidth]{resources/inheritance-representations-a}
+        \caption{}
+        \label{fig:inheritance-representations-a}
+    \end{subfigure}
+    \begin{subfigure}{\subfigurewidth}
+        \centering
+        \includegraphics[width=\graphicswidth]{resources/inheritance-representations-b}
+        \caption{}
+        \label{fig:inheritance-representations-b}
+    \end{subfigure}
+    \caption{Möglichkeiten der Darstellung von Vererbungsrelationen in Klassendiagrammen}
+    \label{fig:inheritance-representations}
+\end{figure}
+
+    \item \textbf{Platzierung von verwandten Elementen} Verwandte Elemente wie z.B. Pakete, durch Relationen verbundene Elemente, Vererbungshierarchien oder Design-Patterns sollen gruppiert und in der Nähe platziert werden \cite{Eichelberger05Aesthetics, Siebenhaller03Automatisches}. Weiterhin sollen die einzelnen Gruppen und insbesondere die Hierarchien im Diagramm verteilt werden \cite{Eiglsperger04Automatic}.
+    \item \textbf{Platzierung von nicht verbundenen Elementen} Die Elemente, die über keine Verbindung zu anderen Elementen verfügen, sollen an der Seite der Zeichnung positioniert werden \cite{EichelbergerSchmid09Guidelines}.
 \end{enumerate}
