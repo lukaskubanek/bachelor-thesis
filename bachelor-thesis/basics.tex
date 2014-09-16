@@ -33,22 +33,30 @@ Wenn das Inhalt bzw. das Layout des Diagramms geändert werden, muss sich der Nu
 \section{Ästhetische Prinzipien}
 \label{sec:aesthetics-criteria}
 
-% Patterns
-% Layout Pattern [Maier]
-% Layout Considerations [SKK+93]
+Die Qualität des Layouts von graphbasierten Diagrammen wird anhand von ästhetischen Prinzipien bestimmt \cite{Maier12A-Pattern-based}. Sie beschreiben die Grundsätze für die grafische Darstellung der Elemente im Diagramm und deren Einhaltung führt zu übersichtlichen und verständlichen Zeichnungen \cite{Siebenhaller03Automatisches}. Eine besonders wichtige Rolle spielen sie in automatischen Layout-Algorithmen, die im statischen Kontext eingesetzt werden \cite{Maier12A-Pattern-based}.
 
-% Hierarchie
-% Alignment (Ausrichten)
-% zentrierter Inhalt
-% Überlappen der Knoten
-% Schneiden von Kanten
+Die ästhetischen Prinzipien werden zahlreich in der Literatur z.B. in \cite{Siebenhaller03Automatisches}, \cite{EichelbergerSchmid09Guidelines}, \cite{Ambler05The-Elements}, \cite{Eichelberger05Aesthetics} und \cite{ShieberKosak93Automating} beschrieben und nach verschiedenen Faktoren kategorisiert. Für die Zwecke dieser Arbeit wurde die Unterteilung der ästhetischen Prinzipien für allgemeine Graphen und für Klassendiagramme ähnlich wie in \cite{Siebenhaller03Automatisches} gewählt. Eine Auflistung und eine kurze Zusammenfassung der bedeutsamsten Vertreter beiden Gruppen folgt in den folgenden Abschnitten.
 
-%Auflistung der Layout-Prinzipien
-%	The Elements of UML 2.0 Style
-%	Arbeiten zum automatischen Layout von Klassendiagrammen
-%	Figure “Layout Considerations” from [SKK+93]
-%allgemeine Graphen vs. Klassendiagramme
+\subsection{Ästhetische Prinzipien für Graphen}
+\label{subsec:aesthetics-criteria-graphs}
 
-% Typen von Hierarchien in Klassendiagrammen
+Wie bereits in Abschnitt \ref{subsec:graph-based-diagrams} erläutert wurde, bauen die graphbasierten Diagramme auf der Struktur der Graphen auf. Für diese Struktur lassen sich ästhetische Prinzipien aufstellen, obwohl die Graphen an sich keine semantische Information besitzen \cite{Siebenhaller03Automatisches}. Sie können in der folgenden Liste nachgelesen werden:
 
-% Ästhetische Prinzipien auflisten und zusammenfassen (Eichelberger)
+\begin{enumerate}[label={A.\arabic*}]
+    \item \textbf{Einhaltung der Abstände von Elementen} Die Elemente im Diagramm sollten nicht zu nahe aneinander liegen. Insbesondere sollten sich die Knoten nicht überlappen und die Kanten sollten keine Knoten schneiden. Die Abstände und Längen der Kanten sollten optimal gewählt werden, so dass das Diagramm übersichtlich bleibt \cite{Siebenhaller03Automatisches, Ambler05The-Elements}.
+    \item \textbf{Reduktion der Anzahl der Kantenkreuzungen} Da die allgemeinen Graphen nicht zwingend planar sind, lassen sich Kantenkreuzungen nicht vermeiden. Der Übersichtlichkeit halber sollte versucht werden, die Anzahl der Kantenkreuzungen zu minimieren \cite{Siebenhaller03Automatisches, EichelbergerSchmid09Guidelines}.
+    \item \textbf{Reduktion der Anzahl der Kantenknicke} Die Kanten können durch direkte Linien, Kurven oder eine Zusammensetzung von Liniensegmenten repräsentiert werden. Durch die Aufteilung der Kante in Segmente entsteht an jedem Verbindungspunkt von zwei Liniensegmenten ein Knick. Da der Verlauf der Kanten mit vielen Knicken schwer zu folgen ist, sollte ihre Anzahl minimiert werden \cite{Siebenhaller03Automatisches}.
+    \item \textbf{Orthogonalität der Kanten} Durch die Zusammensetzung der Kanten aus ausschließlich horizontalen und vertikalen Segmenten wird trotz der Enthaltung von Knicken die Übersichtlichkeit gefördert \cite{Siebenhaller03Automatisches}. Somit macht der Einsatz von orthogonalen Kanten durchaus Sinn. Insbesondere vermeidet dieses Prinzip unzulässige Winkel an den Kantenknicken \cite{Siebenhaller03Automatisches} oder sogar Krümmungen der Kanten \cite{Ambler05The-Elements}.
+    \item \textbf{Optimale Ausnutzung der Zeichenfläche} Um die Diagramme übersichtlicher zu gestalten, sollten die Knoten im Diagramm ausgewogen verteilt und die Gesamtfläche minimiert werden \cite{EichelbergerSchmid09Guidelines, Siebenhaller03Automatisches}.
+    \item \textbf{Symmetrie} Durch die symmetrische Anordnung von Elementen wird eine schnellere Erfassung einer Teilstruktur des Diagramms ermöglicht \cite{Eichelberger05Aesthetics, Ambler05The-Elements}. Obwohl dieses Prinzip oft mit anderen Prinzipien kollidiert, sollte es angestrebt werden \cite{Siebenhaller03Automatisches}.
+\end{enumerate}
+
+\subsection{Ästhetische Prinzipien für Klassendiagramme}
+\label{subsec:aesthetics-criteria-class-diagrams}
+
+% Einführung Klassendiagramme
+
+\begin{enumerate}[label={A.\arabic*}, resume]
+    \item \textbf{Darstellung der Vererbungshierarchien}
+    \item \textbf{Platzierung von verwandten Elementen}
+\end{enumerate}
