@@ -47,7 +47,7 @@ Die meisten im Abschnitt \ref{subsec:help-functions-for-manual-layout} beschrieb
 \subsubsection{Visual Paradigm}
 \label{subsubsec:visual-paradigm}
 
-\textit{Visual Paradigm} ist ein plattformunabhängiges CASE-Tool von der gleichnamigen Firma und unterstützt neben UML-Diagrammen auch weitere visuelle Sprachen \cite{14Visual}. Das Tool basiert auf einer Freihandbearbeitung und bietet neben Hilfefunktionen für das manuelle Layout (siehe Abschnitt \ref{subsec:help-functions-for-manual-layout}) auch Unterstützung für automatische Layout-Algorithmen (siehe Abschnitt \ref{subsec:visual-approaches}) \cite{Fuhrmann11On-the-Pragmatics}. Mit der näheren Beschreibung von \textit{Visual Paradigm} beschäftigen sich \cite{14Visual}, \cite[S.313-314]{Fuhrmann11On-the-Pragmatics} und die offizielle Webseite\footnote{\url{http://www.visual-paradigm.com}}.
+\textit{Visual Paradigm} ist ein plattformunabhängiges CASE-Tool von der gleichnamigen Firma und unterstützt neben UML-Diagrammen auch weitere visuelle Sprachen \cite{14Visual}. Das Tool basiert auf einer Freihandbearbeitung und bietet neben Hilfefunktionen für das manuelle Layout (siehe Abschnitt \ref{subsec:help-functions-for-manual-layout}) auch Unterstützung für automatische Layout-Algorithmen (siehe Abschnitt \ref{subsec:visual-approaches}) \cite{Fuhrmann11On-the-Pragmatics}. Mit einer näheren Beschreibung von \textit{Visual Paradigm} beschäftigen sich \cite{14Visual}, \cite[S.313-314]{Fuhrmann11On-the-Pragmatics} und die offizielle Webseite\footnote{\url{http://www.visual-paradigm.com}}.
 
 \subsection{Hilfefunktionen für manuelles Layout}
 \label{subsec:help-functions-for-manual-layout}
@@ -419,7 +419,7 @@ Die Algorithmen für das automatische Layout sind im Allgemeinen nicht ideal und
 \subsubsection{Automatisches Layout in OmniGraffle}
 \label{subsubsec:omnigraffle-auto-layout}
 
-Wie im Abschnitt \ref{subsubsec:graph-drawing-tools} beschrieben wurde, bietet \textit{Graphviz} eine Software-Bibliothek an, die sich in Programme einbinden lässt. Das Visualisierungsprogramm \textit{OmniGraffle} (siehe Abschnitt \ref{subsubsec:omnigraffle}) macht sich dies zu Nutze und bietet eine Funktion für das automatische Layout an, die Algorithmen aus \textit{Graphviz} für die Layout-Berechnung verwendet, nämlich den hierarchischen, kraftbasierten, zirkulären und radialen Algorithmus \cite{Olsen10OmniGraffle}. Nachdem die Funktion des automatischen Layouts aktiviert wird, kann der Layout-Algorithmus ausgewählt und seine Parameter eingestellt werden\footnote{Die konkreten möglichen Parameter der Algorithmen sind in \cite[S.74]{08OmniGraffle} nachzuschauen.}. In Abbildung \ref{fig:omnigraffle-automatic-layout} wird ein Beispiel der Anwendung von allen verfügbaren Layout-Algorithmen auf ein Diagramm illustriert.
+Wie bereits im Abschnitt \ref{subsubsec:graph-drawing-tools} beschrieben wurde, bietet \textit{Graphviz} eine Software-Bibliothek an, die sich in andere Programme einbinden lässt. Das Visualisierungsprogramm \textit{OmniGraffle} (siehe Abschnitt \ref{subsubsec:omnigraffle}) macht sich dies zu Nutze und verfügt über eine Funktion für das automatische Layout, die Algorithmen aus \textit{Graphviz} für die Layout-Berechnung verwendet, nämlich den hierarchischen, kraftbasierten, zirkulären und radialen Algorithmus \cite{Olsen10OmniGraffle}. Nachdem die Funktion des automatischen Layouts für ein Diagramm aktiviert wird, kann der Layout-Algorithmus ausgewählt und seine Parameter eingestellt werden\footnote{Die konkreten möglichen Parameter der Algorithmen sind in \cite[S.74]{08OmniGraffle} nachzuschauen.}. In Abbildung \ref{fig:omnigraffle-automatic-layout} wird ein Beispiel der Anwendung von allen verfügbaren Layout-Algorithmen auf ein Diagramm illustriert.
 
 \begin{figure}[hbt]
     \newcommand{\subfigureshortwidth}{0.28\textwidth}
@@ -466,14 +466,32 @@ Wie im Abschnitt \ref{subsubsec:graph-drawing-tools} beschrieben wurde, bietet \
     \label{fig:omnigraffle-automatic-layout}
 \end{figure}
 
-Der Layout-Algorithmus kann entweder durch die manuelle Auswahl im Menü, die Veränderung der Parametern des Algorithmus oder das Hinzufügen oder Löschen einer Kante zwischen zwei Knoten aufgerufen werden \cite[S.43]{Wybrow08Using}. Danach wird das Layout berechnet und mit Hilfe einer Animation auf das Diagramm angewendet, wobei die vorher durchgeführten manuellen Anpassungen verworfen werden. \textit{OmniGraffle} erweitert die Funktion des automatischen Layouts um weitere Tools. So kann z.B. die Struktur des Diagramms parallel in einer Outline bearbeitet oder ein Werkzeug für schnelle Erstellung eines Diagramms verwendet werden \cite{08OmniGraffle}.
+Der eingestellte Layout-Algorithmus kann entweder durch die manuelle Auswahl im Menü, die Veränderung der Parametern des Algorithmus oder das Hinzufügen oder Löschen einer Kante zwischen zwei Knoten erneut aufgerufen werden \cite[S.43]{Wybrow08Using}. Danach wird das Layout berechnet und mit Hilfe einer Animation auf das Diagramm angewendet, wobei die durchgeführten manuellen Anpassungen verworfen werden. \textit{OmniGraffle} erweitert die Funktion des automatischen Layouts um weitere Tools. So kann z.B. die Struktur des Diagramms parallel in einer Outline bearbeitet oder ein Werkzeug für schnelle Erstellung eines Diagramms verwendet werden \cite{08OmniGraffle}.
 
 \subsubsection{Automatisches Layout in Visual Paradigm}
 
-% Zusatzfunktion
-% semantische Unterstützung fehlt
-% manueller Aufruf [Fuhrmann]
-% verschiedene Algorithmen -> nur Verbindungen vs. alles
+Ähnlich wie \textit{OmniGraffle} basiert das CASE-Tool \textit{Visual Paradigm} (siehe Abschnitt \ref{subsubsec:visual-paradigm}) auf der freien Positionierung der Elemente im Diagramm und verfügt über die Funktion der automatischen Layout-Berechnung \cite{14Visual}. Der Nutzer ist mit einer Vielzahl von Layout-Algorithmen präsentiert, deren Eigenschaften wunschgemäß eingestellt werden können \cite{Fuhrmann11On-the-Pragmatics}. Im Unterschied zu der Aktivierung der automatischen Layout-Berechnung für das gesamte Diagramm in \textit{OmniGraffle} (siehe Abschnitt \ref{subsubsec:omnigraffle-auto-layout}) ist die Berechnung in \textit{Visual Paradigm} einmalig und kann auf eine Untermenge des Diagramms angewendet werden. Sie wird manuell durch eine Auswahl im Kontextmenü gestartet, wobei der konkrete Layout-Algorithmus entweder manuell oder automatisch gewählt werden kann. Aus diesem Grund versagt diese Funktion im Bereich der Interaktivität. Eine weitere Schwachstelle dieser Funktion ist die mangelhafte bis fehlende Unterstützung der Semantik der Elemente. Ein Beispiel der Anwendung der automatischen Layout-Berechnung auf ein Klassendiagramm ist in Abbildung \ref{fig:visual-paradigm-auto-layout} dargestellt.
+
+\begin{figure}[hbt]
+    \newcommand{\leftsubfigurewidth}{0.4\textwidth}
+    \newcommand{\rightsubfigurewidth}{0.59\textwidth}
+    \newcommand{\graphicsscale}{0.58}
+    \centering
+    \begin{subfigure}{\leftsubfigurewidth}
+        \centering
+        \includegraphics[scale=\graphicsscale]{resources/visual-paradigm-auto-layout-a}
+        \caption{Manuelles Layout}
+        \label{fig:visual-paradigm-auto-layout-a}
+    \end{subfigure}
+    \begin{subfigure}{\rightsubfigurewidth}
+        \centering
+        \includegraphics[scale=\graphicsscale]{resources/visual-paradigm-auto-layout-b}
+        \caption{Automatisches Layout}
+        \label{fig:visual-paradigm-auto-layout-b}
+    \end{subfigure}
+    \caption{Ein Beispiel der automatischen Layout-Berechnung für ein Klassendiagramm in \textit{Visual Paradigm}}
+    \label{fig:visual-paradigm-auto-layout}
+\end{figure}
 
 \subsection{Spezielle Algorithmen für Klassendiagramme}
 
