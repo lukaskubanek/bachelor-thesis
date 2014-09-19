@@ -506,11 +506,10 @@ Trotz der in \cite{Eiglsperger04Automatic} beschriebenen möglichen Erweiterung 
 \subsection{Zusammenfassung der Eigenschaften}
 
 \subsubsection{Vorteile}
-% TODO: Diesen Abschnitt überprüfen!
 
 \begin{itemize}
-    \item \textbf{Automatische Layout-Berechnung} Das automatische Layout, wie man dem Namen entnehmen kann, wird automatisch berechnet und spart somit die Arbeit an manueller Layout-Erstellung. In der Regel werden optimale Layouts im Bezug auf die ästhetischen Kriterien geliefert \cite{Maier12A-Pattern-based}. Durch die Spezialisierung der Algorithmen kann sogar das Einhalten der Strukturregeln der konkreten Diagrammtypen erreicht werden.
-    \item \textbf{Einhaltung der ästhetischen Prinzipien} ...
+    \item \textbf{Automatische Layout-Berechnung} Das automatische Layout, wie man dem Namen entnehmen kann, wird automatisch berechnet und spart somit die Arbeit an manueller Layout-Erstellung durch den Nutzer. 
+    \item \textbf{Einhaltung der ästhetischen Prinzipien} Die Algorithmen für das automatische Layout von Diagrammen liefern in der Regel optimale Layouts im Bezug auf die ästhetischen Prinzipien \cite{Maier12A-Pattern-based}. Durch die Spezialisierung der Algorithmen kann sogar das Einhalten der Strukturregeln der konkreten Diagrammtypen erreicht werden.
     \item \textbf{Einbinden in automatisierte Prozesse} Aufgrund des statischen Charakters und der definierten Eingabesprachen ist die automatische Layout-Berechnung für das Einbinden in automatisierte Prozesse geeignet. Beispiele dafür sind das automatisierte Generieren von Diagrammen in dem Dokumentations-Tool Doxygen\footnote{\url{http://www.stack.nl/~dimitri/doxygen/manual/diagrams.html}} oder Plugins zum Zeichnen von Diagrammen für Wiki-Seiten.
 \end{itemize}
 
@@ -519,7 +518,7 @@ Trotz der in \cite{Eiglsperger04Automatic} beschriebenen möglichen Erweiterung 
 \begin{itemize}
     \item \textbf{Fehlende Interaktivität} Das automatische Layout ist für eine interaktive Bearbeitung der Diagramme nicht konzipiert, da die direkte Interaktion des Nutzers mit dem Diagramm mangelhaft oder gar nicht unterstützt wird. Obwohl sich die visuellen Ansätze in interaktiven Umgebungen wie etwa visuellen Editoren einsetzen lassen, sind sie dafür nicht geeignet \cite[S.22ff]{Maier12A-Pattern-based} \cite[S.4]{DwyerMarriott08Interactive}. Insbesondere zeichnet sich dies dadurch aus, dass der Prozess der Erstellung eines Diagramms nicht gefördert wird. Die interaktiven Änderungen des Inhalts bzw. des Layouts des Diagramms werden von dem Layout-Algorithmus nicht berücksichtigt und somit kann bei dem Aufruf des Algorithmus das mentale Modell (siehe Abschnitt \ref{subsec:mental-map}) bzw. die sekundäre Notation (siehe Abschnitt \ref{subsec:layout}) zerstört werden \cite{Eiglsperger04Automatic}. Des Weiteren ist es notwendig, den Algorithmus manuell nach jeder Änderung erneut zu starten. Im Unterschied zu den visuellen Ansätzen bieten die textuellen Ansätze keine direkte Form der Interaktion an, was durch die unterschiedlichen Eingabe- und Ausgabesprachen und der damit zusammenhängenden Entkoppelung der Eingabe und Ausgabe bedingt ist.
     \item \textbf{Geringer Einfluss auf das Layout} Da das automatische Layout auf statischen Algorithmen basiert, die sich in der Regel nur durch die Anpassung der Parameter beeinflussen lassen, werden die Layout-Präferenzen des Nutzers nicht berücksichtigt. Die mögliche Kontrolle des Ergebnisses des Layout-Prozesses ist somit sehr mangelhaft \cite[S.382]{GladischSchumann14Semi-Automatic}.
-    \item \textbf{Mangelhafte Berücksichtigung der Syntax- und Semantikregeln} Die syntaktischen und semantischen Layout-Regeln der konkreten Diagrammtypen werden von den allgemeinen Algorithmen für das Layout von graphbasierten Diagrammen nicht berücksichtigt und können dadurch verletzt werden.
+    \item \textbf{Mangelhafte Berücksichtigung der Syntax- und Semantikregeln} Die syntaktischen und semantischen Layout-Regeln der konkreten Diagrammtypen werden von den allgemeinen Algorithmen für das Layout von graphbasierten Diagrammen nicht berücksichtigt und können dadurch verletzt werden. Diese Schwachstelle wird durch die Anpassung der Algorithmen für konkrete Diagrammtypen beseitigt.
 \end{itemize}
 
 \section{Interaktives halbautomatisches Layout}
