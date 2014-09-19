@@ -495,21 +495,13 @@ Der eingestellte Layout-Algorithmus kann entweder durch die manuelle Auswahl im 
 
 \subsection{Spezielle Algorithmen für Klassendiagramme}
 
-%Eine weitere Gruppe der Ansätze wird durch Algorithmen gebildet, die für das automatische Layout von Klassendiagrammen spezialisiert sind.
+Die Berechnung des automatischen Layouts von Klassendiagrammen bildet den Gegenstand für viele Forschungsarbeiten wie z.B. \cite{Eichelberger05Aesthetics}, \cite{Siebenhaller03Automatisches} oder \cite{Eiglsperger04Automatic}. Die darin vorgestellten Algorithmen haben den gleichen statischen Charakter wie die Algorithmen zum Graphzeichnen, sind allerdings für Klassendiagramme spezialisiert, indem deren Syntax und unter Umständen auch Semantik bei der Layout-Berechnung berücksichtigt werden. Eine grundlegende Rolle spielen für die automatischen Layout-Algorithmen die ästhetischen Prinzipien \cite{Maier12A-Pattern-based}. Da die ästhetischen Prinzipien für Graphen an dieser Stelle nicht ausreichend sind \cite[S.79]{Eichelberger05Aesthetics}, werden sie in den Arbeiten für Klassendiagramme erweitert. Ihre Zusammenfassung wurde im Abschnitt \ref{subsec:aesthetics-criteria-class-diagrams} aufgeführt.
 
-%Ähnlich wie die Algorithmen zum Graphzeichnen lassen sich diese Algorithmen in visuelle Editoren einbauen, sind allerdings für eine interaktive Nutzung nicht geeignet. % Eiglsperger beschreibt, wie der Algorithmus zu erweitern ist, um ihn interaktiv einsetzen zu können
+Die genannten Arbeiten machen sich bestehende Algorithmen zum Graphzeichnen zunutze, passen diese für die Klassendiagramme an und setzen sie in der Regel in Form einer Bibliothek um. Zu den verfügbaren algorithmischen Ansätzen gehören Topology-Shape-Metrics \cite[S.33]{Siebenhaller03Automatisches}, hierarchische Algorithmen und kraftbasierte Algorithmen \cite[S.32ff]{Eichelberger05Aesthetics}. Die Grundlage für \cite{Eichelberger05Aesthetics} bildet der hierarchische Sugiyama Algorithmus. Dagegen basieren \cite{Siebenhaller03Automatisches} und \cite{Eiglsperger04Automatic} auf dem Topology-Shape-Metrics Ansatz und teilen den Prozess der automatischen Layout-Berechnung in mehrere Schritte unter.
 
-% TODO: Speziellen Algorithmen ergänzen!
+Obwohl sich die Algorithmen in den erwähnten Arbeiten intern unter verhalten, besteht ihre Funktion in der automatischen Berechnung der Layout-Eigenschaften für die Elemente eines Klassendiagramms, was in der Regel anhand einer Instanz des UML-Metamodells beschrieben wird. Sie lassen sich zum einen in visuelle Editoren einbauen und können somit zu den visuellen Ansätzen für das automatische Layout (siehe Abschnitt \ref{subsec:visual-approaches}) eingeordnet werden. Zum anderen kann das Modell textuell in Form einer XMI-Datei\footnote{XML Metadata Interchange (\url{http://www.omg.org/spec/XMI})} repräsentiert werden. Daher ist die Einordnung zu den textuellen Ansätzen für das automatische Layout (siehe Abschnitt \ref{subsec:text-based-approaches}) ebenfalls möglich.
 
-% Traditionelle Kriterien für Graphzeichnen sind für Klassendiagramme nicht ausreichend [Eichelberger S.79]
-
-% SugiBib - ein Framework, das auf dem Sugiyama Algorithmus basiert und die Semantik und Strukturregeln berücksichtigt
-% https://wwwi2.informatik.uni-wuerzburg.de/SugiBib
-% XMI (Input siehe Eichelberger 47ff)
-
-% Kandinsky (Eiglsperger)
-
-% im Unterschied zu [Eichelberger] beschäftigt sich diese Arbeit mit interaktiven Ansätzen, da automatisches Layout gegen Agile Modeling verstößt
+Trotz der in \cite{Eiglsperger04Automatic} beschriebenen möglichen Erweiterung des Algorithmus für einen interaktiven Einsatz sind die in allen oben genannten Arbeiten vorgestellten Algorithmen prinzipiell nicht für einen interaktiven Einsatz konzipiert und fokussieren sich eindeutig auf die Umsetzung der ästhetischen Prinzipien. Insbesondere sind sie für Anwendungsfälle geeignet, in den das Klassendiagramm nicht durch den Nutzer erstellt wird, sondern für ein gegebenes Modell eines Klassendiagramms das Layout berechnet werden soll, z.B. in Dokumentationswerkzeugen oder Analyse-Werkzeugen zum Reverse Engineering \cite{Eiglsperger04Automatic}.
 
 \subsection{Zusammenfassung der Eigenschaften}
 
@@ -518,6 +510,7 @@ Der eingestellte Layout-Algorithmus kann entweder durch die manuelle Auswahl im 
 
 \begin{itemize}
     \item \textbf{Automatische Layout-Berechnung} Das automatische Layout, wie man dem Namen entnehmen kann, wird automatisch berechnet und spart somit die Arbeit an manueller Layout-Erstellung. In der Regel werden optimale Layouts im Bezug auf die ästhetischen Kriterien geliefert \cite{Maier12A-Pattern-based}. Durch die Spezialisierung der Algorithmen kann sogar das Einhalten der Strukturregeln der konkreten Diagrammtypen erreicht werden.
+    \item \textbf{Einhaltung der ästhetischen Prinzipien} ...
     \item \textbf{Einbinden in automatisierte Prozesse} Aufgrund des statischen Charakters und der definierten Eingabesprachen ist die automatische Layout-Berechnung für das Einbinden in automatisierte Prozesse geeignet. Beispiele dafür sind das automatisierte Generieren von Diagrammen in dem Dokumentations-Tool Doxygen\footnote{\url{http://www.stack.nl/~dimitri/doxygen/manual/diagrams.html}} oder Plugins zum Zeichnen von Diagrammen für Wiki-Seiten.
 \end{itemize}
 
@@ -641,6 +634,10 @@ In Abbildung \ref{fig:mindnode-smart-layout} wird die Funktionsweise der Funktio
 
 \subsection{Zusammenfassung der Eigenschaften}
 
+\subsubsection{Vorteile}
+
+\subsubsection{Nachteile}
+
 % Wahrnehmungsorganisation hat eine größere Priorität als reine Berücksichtigung der syntaktischen Ästhetik [Shieber]
 % Beides Kombinieren [Shieber]
 
@@ -650,6 +647,3 @@ In Abbildung \ref{fig:mindnode-smart-layout} wird die Funktionsweise der Funktio
 % Der Nutzer kann das Diagramm unmittelbar bearbeiten
 % das mentale Modell bleibt beibehalten [preserving the mental map (in dynamic context) instead of aesthetics (in static context)]
 % ästhetische Regeln werden nicht eingehalten
-
-% ZUSAMMENFASSUNG
-% Tabelle für den Vergleich zwischen den bestehenden Ansätzen und meinem Ansatz
