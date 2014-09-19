@@ -524,14 +524,9 @@ Trotz der in \cite{Eiglsperger04Automatic} beschriebenen möglichen Erweiterung 
 \section{Interaktives halbautomatisches Layout}
 \label{sec:interactive-semi-automatic-layout}
 
-Wie bereits in diesem Kapitel präsentiert wurde, unterstützen die meisten Editoren zur Erstellung von Diagrammen Hilfefunktionen für das manuelle Layout (Abschnitt \ref{sec:manual-layout}) und eventuell auch automatische Layout-Algorithmen (Abschnitt \ref{sec:automatic-layout}). Das manuelle Layout ist sehr intuitiv, zeichnet sich durch die direkte Interaktion des Nutzers mit dem Diagramm aus, vermisst aber eine automatisierte Layout-Berechnung und Berücksichtigung der ästhetischen Prinzipien. Dieses Problem wird durch das automatische Layout bekämpft, das aber in dem Bereich der Interaktivität versagt \cite{GladischSchumann14Semi-Automatic}. Die Vorteile der Ansätze aus beiden genannten Kategorien lassen sich kombinieren und bilden eine neue Kategorie der Ansätze für die halbautomatische Layout-Unterstützung.
+Wie bereits in diesem Kapitel präsentiert wurde, unterstützen die meisten Editoren zur Erstellung von Diagrammen Hilfefunktionen für das manuelle Layout (siehe Abschnitt \ref{sec:manual-layout}) und eventuell auch automatische Layout-Algorithmen (siehe Abschnitt \ref{sec:automatic-layout}). Das manuelle Layout ist sehr intuitiv, zeichnet sich durch die direkte Interaktion des Nutzers mit dem Diagramm aus, vermisst aber eine automatisierte Layout-Berechnung und Berücksichtigung der ästhetischen Prinzipien. Dieses Problem wird durch das automatische Layout bekämpft, was aber im Bereich der Interaktivität versagt \cite{GladischSchumann14Semi-Automatic}. Die Vorteile der Ansätze aus beiden genannten Kategorien lassen sich kombinieren und bilden eine neue Kategorie der Ansätze für die halbautomatische Layout-Unterstützung.
 
-Diese Ansätze sind für Nutzer-bedingte Änderungen ausgelegt und ermöglichen eine inkrementelle Erstellung der Diagramme mit Bezug auf das Layout. Somit sind sie insbesondere für interaktive Umgebungen geeignet \cite{Arvo02Techniques, GladischSchumann14Semi-Automatic, Wybrow08Using}.
-
-
-% dynamische Algorithmen, Sequenzen von Modifizierungen
-% Nutzer kann einige Aspekte des Layouts beeinflussen, z.B. durch direkte Positionierung der Knoten bzw. Kanten oder durch eine Form von Feedback [Arvo02]
-% inkrementelles Layout
+Diese Ansätze sind für interaktive Umgebungen ausgelegt, die eine sequenzielle Modifizierung des Diagramms durch den Nutzer unterstützen \cite{Arvo02Techniques, GladischSchumann14Semi-Automatic, Wybrow08Using}. Das Layout wird während der Erstellung des Diagramms mit Hilfe von dynamischen Algorithmen kontinuierlich berechnet und inkrementell angepasst. Neben des Inhalts kann der Nutzer auch einige Aspekte des Layouts beeinflussen, z.B. durch direkte Positionierung von Knoten bzw. Kanten oder durch eine andere Form von Feedback \cite{Arvo02Techniques}.
 
 \subsection{Struktur-basierte benutzergesteuerte Ansätze}
 \label{subsec:structure-based-user-controlled-approaches}
