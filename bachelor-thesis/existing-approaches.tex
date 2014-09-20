@@ -538,25 +538,26 @@ Die Struktur-basierten benutzergesteuerten Ansätze lassen sich in zwei Gruppen 
 \subsubsection{Constraint-basierte Ansätze}
 \label{subsubsec:constraint-based-approaches}
 
-Die Strukturregeln können mit Hilfe von Constraints umgesetzt werden. Ein valides Layout wird dadurch berechnet, indem alle Constraints im Diagramm mit einem Constraintlöser ausgewertet werden.
+Die Beschreibung der Strukturregeln kann mit Hilfe von \textbf{Constraints} erfolgen. Dies macht sich der in \cite{Wybrow08Using} beschriebene Ansatz zunutze und stellt einen Algorithmus für die kontinuierliche Layout-Berechnung in einem interaktiven Editor anhand von Constraints vor. Die Grundidee basiert darauf, dass der Nutzer persistente Constraints für die Beziehungen von ausgewählten Knoten (z.B. Verteilung oder Ausrichtung der Knoten) erstellt und somit deren Layout beschreibt. Die Einhaltung der Constraints wird durch einen \textbf{Constraintlöser}\footnote{Für eine Übersicht der Typen von Constraintlösern ist \cite[S.18ff]{Maier12A-Pattern-based} nachzuschauen.} gewährleistet, der das valide Layout anhand der Zusammensetzung von allen erstellten Constraints berechnet.
 
+Die freie Positionierung der Elemente im Diagramm ist grundsätzlich 
+möglich, wird aber durch die erstellten Constraints eingeschränkt. Das zeigt sich z.B. dadurch aus, dass bei der Bewegung eines Knotens, der mit einem oder mehreren Constraints mit anderen Knoten in Beziehung gesetzt ist, auch die zusammenhängende Knoten automatisch mitbewegt werden, so dass die Constraints eingehalten bleiben. Weiterhin können auch die Parameter der erstellten Constraints durch den Nutzer eingestellt werden. Somit zeichnet sich dieser Ansatz durch eine große Flexibilität aus.
 
+In Abbildung \ref{fig:dunnart-screenshot} ist ein Screenshot des Editors \textit{Dunnart}\footnote{\url{http://dunnart.org}} dargestellt, welcher den Ansatz aus \cite{Wybrow08Using} implementiert. Die rechte Sidebar beinhaltet eine Palette mit Buttons für die Erstellung von Constraints. In der Mitte befindet sich der Canvas, in dem ein hierarchisches Diagramm modelliert ist. Die blauen Linien um das eigentliche Diagramm dienen der Visualisierung von Constraints und ermöglichen eine Manipulation mit ihnen.
 
-% deklarativ
-% welche Regeln sollen gelten anstatt wie
-% Constraintlöser, verschiedene Typen (beschrieben in [Mai])
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.9\textwidth]{resources/dunnart-screenshot}
+    \caption{Ein Screenshot des Constraint-basierten Editors \textit{Dunnart} mit dem Beispiel eines hierarchischen Diagramms}
+    \label{fig:dunnart-screenshot}
+\end{figure}
 
-% Cassowary for layout of UI in Cocoa/iOS
-
-% Dunnart: Screenshot, http://dunnart.org
-% Nutzer kann Constraints erstellen und auf Teile des Diagramms anwenden
-
-% Probleme mit der Performance, da der Algorithmus nach jeder kleinen Änderung laufen muss
+Die Constraint-basierte Ansätze sind darüber hinaus mit Problemen verbunden. Zum einen kann die Menge der Constraints unvollständig sein oder es werden unzulässige Constraints erstellt. Dies muss in dem Editor entsprechend behandelt werden, indem ein mögliches Layout gewählt wird bzw. die unzulässigen Constraints mit einer Form von Feedback versehen werden. Zum anderen entstehen Probleme mit der Performance, da der Algorithmus und damit auch der Aufruf des Constraintlösers  nach jeder kleinen Änderung ausgeführt werden muss \cite{Maier12A-Pattern-based}.
 
 \subsubsection{Pattern-basierter Ansatz}
 \label{subsubsec:pattern-based-approach}
 
-Der in \cite{Maier12A-Pattern-based} und \cite{MaierMinas10Combination} präsentierte Pattern-basierte Ansatz für das Layout von Diagrammen drückt die Strukturregeln in Form von Layout-Patterns aus. Der Ansatz kann für beliebige visuellen Sprachen eingesetzt werden, die mit Metamodellen beschrieben werden können. Dabei besteht das sprachenspezifische Metamodell aus zwei Teilen, nämlich der Metamodelle für die abstrakte und konkrete Syntax. Das zuletzt genannte Metamodell beschreibt die visuellen Eigenschaften der Sprache und wird daher durch die Berechnung des Layouts beeinflusst.
+Der in \cite{Maier12A-Pattern-based} und \cite{MaierMinas10Combination} präsentierte Pattern-basierte Ansatz für das Layout von Diagrammen drückt die Strukturregeln in Form von \textbf{Layout-Patterns} aus. Der Ansatz kann für beliebige visuellen Sprachen eingesetzt werden, die mit Metamodellen beschrieben werden können. Dabei besteht das sprachenspezifische Metamodell aus zwei Teilen, nämlich der Metamodelle für die abstrakte und konkrete Syntax. Das zuletzt genannte Metamodell beschreibt die visuellen Eigenschaften der Sprache und wird daher durch die Berechnung des Layouts beeinflusst.
 
 Die Beschreibung der Layout-Patterns erfolgt allerdings nicht mit Hilfe der sprachenspezifischen Metamodellen, sondern mit sprachenunabhängigen Pattern-spezifischen Metamodel\-len\footnote{In \cite{Maier12A-Pattern-based} werden u.a. Pattern-spezifische Metamodelle für Mengen von Elementen, geordnete Listen von Elementen und Graphen vorgestellt.}. Bei der Instanziierung eines Layout-Patterns wird das sprachenspezifische Modell auf ein Pattern-spezifisches Modell abgebildet\footnote{Dieses Sachverhalt wird mit Hilfe eines Beispiels in \cite[S.59ff]{Maier12A-Pattern-based} anschaulich gemacht.}. Dadurch wird eine mögliche Wiederverwendung der Layout-Patterns für diverse visuellen Sprachen gewährleistet. Weiterhin zeichnet sich der Pattern-basierte Ansatz dadurch aus, dass die Layout-Patterns verschiedene Ansätze zum Layout von Diagrammen u.a. Algorithmen zum Graphenzeichnen (siehe Abschnitt \ref{subsubsec:graph-drawing-tools}) und Constraints-basierte Algorithmen (siehe Abschnitt \ref{subsubsec:constraint-based-approaches}) kombinieren und sich zunutze machen.
 
