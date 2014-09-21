@@ -30,9 +30,9 @@
 				<key>isLeftAligned</key>
 				<false/>
 				<key>location</key>
-				<string>{0, 0}</string>
+				<string>{-11.753814697265625, -6.086669921875}</string>
 				<key>nodeID</key>
-				<string>BB47304B-B1DB-48F5-B2B4-F5C014A42F05</string>
+				<string>61146211-DB37-4769-8F2A-6A1B2CF45C97</string>
 				<key>strokeColor</key>
 				<string>{0.500, 0.500, 0.500, 1.000}</string>
 				<key>strokeStyle</key>
@@ -53,9 +53,9 @@
 						<key>isLeftAligned</key>
 						<false/>
 						<key>location</key>
-						<string>{204, -5.5}</string>
+						<string>{166.24618530273438, -11.586669921875}</string>
 						<key>nodeID</key>
-						<string>BA99B4B1-2CCC-4505-B6F4-02856233948C</string>
+						<string>E21E924D-366A-4136-9599-2D136091D1B7</string>
 						<key>strokeColor</key>
 						<string>{1.000, 0.800, 0.400, 1.000}</string>
 						<key>strokeStyle</key>
@@ -76,49 +76,9 @@
 								<key>isLeftAligned</key>
 								<false/>
 								<key>location</key>
-								<string>{329, -21}</string>
+								<string>{291.24618530273438, -27.086669921875}</string>
 								<key>nodeID</key>
-								<string>614F8817-1FA6-446C-95B5-ABFB97FF7B52</string>
-								<key>strokeColor</key>
-								<string>{1.000, 0.800, 0.400, 1.000}</string>
-								<key>strokeStyle</key>
-								<integer>0</integer>
-								<key>strokeWidth</key>
-								<real>5</real>
-								<key>subnodes</key>
-								<array/>
-								<key>title</key>
-								<dict>
-									<key>constrainedWidth</key>
-									<integer>366</integer>
-									<key>htmlText</key>
-									<string>&lt;p style='color: rgba(0, 0, 0, 1.000000); font: 12px "Lucida Grande"; text-align: left; -cocoa-font-postscriptname: "LucidaGrande"; '&gt;Knoten 1.2&lt;/p&gt;</string>
-									<key>shrinkToFitContent</key>
-									<integer>1</integer>
-									<key>text</key>
-									<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
-{\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
-
-\f0\fs24 \cf2 Knoten 1.2}</string>
-								</dict>
-							</dict>
-							<dict>
-								<key>contentAlignment</key>
-								<integer>1</integer>
-								<key>fillColor</key>
-								<string>{1.000, 1.000, 1.000, 1.000}</string>
-								<key>isDecreasingBranchThickness</key>
-								<true/>
-								<key>isDrawingFill</key>
-								<false/>
-								<key>isLeftAligned</key>
-								<false/>
-								<key>location</key>
-								<string>{329, 10}</string>
-								<key>nodeID</key>
-								<string>2430788B-340A-4081-9F30-38B8F6C7F2EF</string>
+								<string>31944483-8E72-4DA4-8F3A-5A4E5117F800</string>
 								<key>strokeColor</key>
 								<string>{1.000, 0.800, 0.400, 1.000}</string>
 								<key>strokeStyle</key>
@@ -142,6 +102,46 @@
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
 
 \f0\fs24 \cf2 Knoten 1.1}</string>
+								</dict>
+							</dict>
+							<dict>
+								<key>contentAlignment</key>
+								<integer>1</integer>
+								<key>fillColor</key>
+								<string>{1.000, 1.000, 1.000, 1.000}</string>
+								<key>isDecreasingBranchThickness</key>
+								<true/>
+								<key>isDrawingFill</key>
+								<false/>
+								<key>isLeftAligned</key>
+								<false/>
+								<key>location</key>
+								<string>{291.24618530273438, 3.913330078125}</string>
+								<key>nodeID</key>
+								<string>EE4CA09A-F0DF-4D19-99EF-602050ECE9BB</string>
+								<key>strokeColor</key>
+								<string>{1.000, 0.800, 0.400, 1.000}</string>
+								<key>strokeStyle</key>
+								<integer>0</integer>
+								<key>strokeWidth</key>
+								<real>5</real>
+								<key>subnodes</key>
+								<array/>
+								<key>title</key>
+								<dict>
+									<key>constrainedWidth</key>
+									<integer>366</integer>
+									<key>htmlText</key>
+									<string>&lt;p style='color: rgba(0, 0, 0, 1.000000); font: 12px "Lucida Grande"; text-align: left; -cocoa-font-postscriptname: "LucidaGrande"; '&gt;Knoten 1.2&lt;/p&gt;</string>
+									<key>shrinkToFitContent</key>
+									<integer>1</integer>
+									<key>text</key>
+									<string>{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs24 \cf2 Knoten 1.2}</string>
 								</dict>
 							</dict>
 						</array>
@@ -174,9 +174,9 @@
 						<key>isLeftAligned</key>
 						<false/>
 						<key>location</key>
-						<string>{204, 41}</string>
+						<string>{166.24618530273438, 34.913330078125}</string>
 						<key>nodeID</key>
-						<string>C63C8128-1216-4E52-B2C2-EBDFAA432D40</string>
+						<string>C45E3FED-A141-486E-B105-3DBC0E287E1E</string>
 						<key>strokeColor</key>
 						<string>{0.800, 1.000, 0.400, 1.000}</string>
 						<key>strokeStyle</key>
@@ -208,7 +208,7 @@
 					<key>constrainedWidth</key>
 					<integer>366</integer>
 					<key>htmlText</key>
-					<string>&lt;p style='color: rgba(0, 0, 0, 1.000000); font: 14px "Lucida Grande"; text-align: left; -cocoa-font-postscriptname: "LucidaGrande"; '&gt;Zentraler Knoten&lt;/p&gt;</string>
+					<string>&lt;p style='color: rgba(0, 0, 0, 1.000000); font: 14px "Lucida Grande"; text-align: left; -cocoa-font-postscriptname: "LucidaGrande"; '&gt;Hauptknoten&lt;/p&gt;</string>
 					<key>shrinkToFitContent</key>
 					<integer>1</integer>
 					<key>text</key>
@@ -217,7 +217,7 @@
 {\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
 
-\f0\fs28 \cf2 Zentraler Knoten}</string>
+\f0\fs28 \cf2 Hauptknoten}</string>
 				</dict>
 			</dict>
 		</array>
