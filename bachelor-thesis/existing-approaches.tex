@@ -342,7 +342,9 @@ Den graphbasierten Softwarediagrammen unterliegt die abstrakte Struktur des Grap
 
 Um während der Erstellung des Diagramms immer ein optimales Layout zu erhalten, muss der Layout-Algorithmus kontinuierlich nach jeder Änderung des Inhalts entweder automatisch oder manuell aufgerufen werden. Wenn eine Interaktion mit dem resultierenden Diagramm unterstützt wird, hat sie keinerlei Einwirkung auf den Algorithmus und wird bei dem nächsten Aufruf nicht berücksichtigt. In der Regel kann der Nutzer nur bestimmte Parameter des Algorithmus\footnote{z.B. minimale Länge der Kanten im zirkulären Layout-Algorithmus \texttt{circo} aus der Bibliothek \textit{Graphviz} \cite{NorthGansner14Dot-Manual}.} anpassen und hat somit nur einen geringen Einfluss auf das Ergebnis des Layout-Prozesses.
 
-Die Ansätze lassen sich in zwei Kategorien nach der Art der Sprache unterteilen, die als Eingabe für den Layout-Algorithmus verwendet wird\footnote{In der Literatur werden Ansätze für das automatische Layout meistens nach den Layout-Algorithmen kategorisiert \cite[S.39ff]{Fuhrmann11On-the-Pragmatics} \cite[S.32ff]{Eichelberger05Aesthetics}. Wie bereits im Abschnitt \ref{sec:categorization} erläutert wurde, richtet sich die Kategorisierung in dieser Arbeit danach, wie die Ansätze zu bedienen sind und welche Art der Interaktion sie unterstützen.}. Zum einen gibt es Ansätze, die aus einer Beschreibung des Diagramms in einer \textbf{textuellen Sprache} unter Anwendung des Layout-Algorithmus eine grafische Repräsentation erzeugen. Zum anderen gibt es Ansätze, die auf Diagramme angewendet werden, die in einer \textbf{visuellen Sprache} modelliert sind. Diese Ansätze verändern die Layout-Eigenschaften der Diagrammelemente direkt. Im Folgenden werden beide Kategorien behandelt.
+Die Ansätze lassen sich in zwei Kategorien nach der Art der Sprache unterteilen, die als Eingabe für den Layout-Algorithmus verwendet wird\footnote{In der Literatur werden Ansätze für das automatische Layout meistens nach den Layout-Algorithmen kategorisiert \cite[S.39ff]{Fuhrmann11On-the-Pragmatics} \cite[S.32ff]{Eichelberger05Aesthetics}. Wie bereits im Abschnitt \ref{sec:categorization} erläutert wurde, richtet sich die Kategorisierung in dieser Arbeit danach, wie die Ansätze zu bedienen sind und welche Art der Interaktion sie unterstützen.}. Zum einen gibt es Ansätze, die aus einer Beschreibung des Diagramms in einer \textbf{textuellen Sprache} unter Anwendung des Layout-Algorithmus eine grafische Repräsentation erzeugen. Zum anderen gibt es Ansätze, die auf Diagramme angewendet werden, die in einer \textbf{visuellen Sprache} modelliert sind. Diese Ansätze verändern die Layout-Eigenschaften der Diagrammelemente direkt.
+
+Mit den textbasierten Ansätzen beschäftigt sich der Abschnitt \ref{subsec:text-based-approaches}. Die visuellen Ansätze werden in Abschnitt \ref{subsec:visual-approaches} behandelt. Den speziellen Algorithmen für Klassendiagramme widmet sich der Abschnitt \ref{subsec:special-algorithms-for-class-diagrams}. Abschließend werden die Eigenschaften der Ansätze für das automatische Layout im Abschnitt \ref{subsec:summary-automatic-layout} zusammengefasst.
 
 \subsection{Textbasierte Ansätze}
 \label{subsec:text-based-approaches}
@@ -352,22 +354,17 @@ Die textbasierten Ansätze für das automatische Layout erfordern als Eingabe ei
 \subsubsection{Graphzeichnen-Tools}
 \label{subsubsec:graph-drawing-tools}
 
-Es existiert eine Menge an Bibliotheken, die verschiedene Algorithmen für das Graphzeichnen implementieren\footnote{Insbesondere handelt es sich um hierarchische, kräftebasierte und orthogonale Algorithmen. \cite{Maier12A-Pattern-based}} und diese Funktionalität für andere Programme bereitstellen. Beispiele für solche Bibliotheken sind \textit{Graphviz}\footnote{\url{http://graphviz.org}}, \textit{yFiles}\footnote{\url{http://www.yworks.com/en/products_yfiles_about.html}} oder \textit{Kieler}\footnote{\url{http://www.informatik.uni-kiel.de/en/rtsys/kieler/}} \cite{Maier12A-Pattern-based}. In dieser Arbeit wird \textit{Graphviz} näher vorgestellt und insbesondere werden seine Aspekte des textbasierten und visuellen Ansatzes gezeigt.
+Es existiert eine Menge an Bibliotheken, die verschiedene automatische Algorithmen für das Graphzeichnen implementieren, u.a. handelt es sich um hierarchische, kräftebasierte und orthogonale Algorithmen \cite{Maier12A-Pattern-based}. Sie stellten die Funktionalität der automatischen Layout-Berechnung für Graphen bereit und können durch andere Programme verwendete werden.  Beispiele für solche Bibliotheken sind \textit{Graphviz}\footnote{\url{http://graphviz.org}}, \textit{yFiles}\footnote{\url{http://www.yworks.com/en/products_yfiles_about.html}} oder \textit{Kieler}\footnote{\url{http://www.informatik.uni-kiel.de/en/rtsys/kieler/}} \cite{Maier12A-Pattern-based}. In dieser Arbeit wird \textit{Graphviz} näher vorgestellt und insbesondere werden seine Aspekte des textbasierten und visuellen Ansatzes gezeigt.
 
-\paragraph{Graphviz}
-
-\textit{Graphviz} ist ein in der Programmiersprache C geschriebenes Tool für die Visualisierung von Graphen und wurde ursprünglich von \textit{AT\&T} entwickelt. Es besteht aus folgenden Komponenten:
+\textbf{Graphviz} ist ein in der Programmiersprache C geschriebenes Tool für die Visualisierung von Graphen und wurde ursprünglich von \textit{AT\&T} entwickelt. Es besteht aus folgenden Komponenten:
 
 \begin{itemize}
     \item Domänenspezifische \textbf{Sprache Dot}\footnote{Der Aufbau der Sprache wird unter \url{http://www.graphviz.org/content/dot-language} erläutert. Ein Beispiel der Beschreibung eines Graphen ist im Quelltext \ref{lst:graphviz-dot-example-dot} gegeben.} für die Beschreibung von Graphen.
-    % TODO: Bessere Beschreibung von verfügbaren Algorithmen
     \item Ein Satz von \textbf{Layout-Algorithmen}: u.a. \textit{dot}, \textit{neato}, \textit{fdp} oder \textit{circo} \cite{Gansner14Using, NorthGansner14Dot-Manual}
     \item Eine \textbf{Software-Bibliothek}, die die Funktionalität der Layout-Algorithmen und der grafischen Ausgabe bereitstellt und sich in andere Programme einbinden lässt \cite{Gansner14Using}.
     \item Ein Satz von \textbf{Kommandozeilen-Tools} für die Anwendung der Layout-Algorithmen und für die grafische Ausgabe \cite{NorthGansner14Dot-Manual}.
     \item Eine \textbf{GUI-Anwendung}, die über die selben Funktionen verfügt wie die Kommandozeilen-Tools.
 \end{itemize}
-
-% TODO: Algorithmen vorstellen?
 
 Um einen Layout-Algorithmus auf einen Graph mit Hilfe der Komandozeilen-Tools oder der GUI-Anwendung anwenden zu können, muss der Graph in der Sprache Dot beschrieben werden. Ein Beispiel eines einfachen Graphen mit 4 Knoten und 3 Kanten ist im Quelltext \ref{lst:graphviz-dot-example-dot} gegeben.
 
@@ -389,21 +386,16 @@ Alternativ kann die Dot-Quelldatei in der GUI-Anwendung geöffnet werden. In dem
 
 In dem oben diskutierten Beispiel wird sichtbar gemacht, dass das resultierende Diagramm nicht interaktiv ist. Eine Änderung des Graphen ist nur in der Quelldatei möglich und ist mit einem wiederholten Aufruf des Kommandozeilen-Tools oder Laden der Datei in der GUI-Anwendung verbunden. Diese Schwachstelle wird durch 3rd-Party Editoren mit der integrierten grafischen Ausgabe wie etwa \textit{Leonhard}\footnote{\textit{Leonhard} ist ein grafischer Editor für \textit{Graphviz}, der unter älteren Versionen von Mac OS X funktioniert. Weitere Information sind unter \url{http://algorithmique.net/leonhard.html} und \url{https://github.com/glejeune/Leonhard} zu finden.} oder \textit{WebGraphviz}\footnote{\url{http://webgraphviz.com}} verbessert. In \textit{Leonhard} wird die Übersetzung nach jeder Änderung des Quelltexts sogar automatisch gestartet.
 
-Trotz der fehlenden Interaktivität des resultierenden Diagramms kann das Layout von dem Nutzer beeinflusst werden, indem der Layout-Algorithmus gewählt wird bzw. seine Parameter in der Quelldatei angepasst werden \cite{NorthGansner14Dot-Manual}. Im oben genannten Beispiel wurde der Layout-Algorithmus \texttt{dot} verwendet und die Richtung des Graphen in der Dot-Quelldatei mit dem Befehl \texttt{rankdir = LR} angepasst, so dass der Graph von links nach rechts gezeichnet wird.
+Trotz der fehlenden Interaktivität des resultierenden Diagramms kann das Layout von dem Nutzer beeinflusst werden, indem der Layout-Algorithmus gewählt wird bzw. seine Parameter in der Quelldatei angepasst werden \cite{NorthGansner14Dot-Manual}. Im oben genannten Beispiel wurde der Layout-Algorithmus \texttt{dot} verwendet und die Richtung des Graphen in der Dot-Quelldatei mit dem Befehl \texttt{rankdir = LR} angepasst, so dass der Graph von links nach rechts gezeichnet wird. Die konkreten in \textit{Graphviz} unterstützten Layout-Algorithmen werden in \cite[S.22]{Gansner14Using} beschrieben und in Abschnitt \ref{subsubsec:omnigraffle-auto-layout} zum Teil visualisiert.
 
 \subsubsection{Textbasierte UML-Tools}
 
-Neben den textbasierten Tools für das Graphzeichnen gibt es Tools, die für spezifische Domänen ausgelegt sind. Im Folgenden werden 2 textbasierte UML-Tools kurz vorgestellt, die aus einer textuellen Beschreibung in einer speziellen Sprache grafische UML-Diagramme erzeugen. Für die Berechnung des Layouts benutzen beide Tools intern die oben vorgestellte Bibliothek \textit{Graphviz}.
+Neben den textbasierten Tools für das Graphzeichnen gibt es Tools, die für spezifische Domänen ausgelegt sind. An dieser Stelle werden 2 textbasierte UML-Tools kurz vorgestellt, die aus einer textuellen Beschreibung in einer speziellen Sprache grafische UML-Diagramme erzeugen und intern für die Layout-Berechnung die oben vorgestellte Bibliothek \textit{Graphviz} verwenden:
 
-\paragraph{PlantUML}
-
-\hyphenation{PlantUML}
-
-\textit{PlantUML}\footnote{\url{http://plantuml.sourceforge.net}} ist eine Java-Bibliothek, die für die Beschreibung von UML-Diagrammen die gleichnamige Sprache verwendet. Diese Sprache wird näher in \cite{Roques10Drawing} behandelt. Neben den vielen Anwendungen\footnote{Die bekannten Anwendungen sind unter \url{http://plantuml.sourceforge.net/running.html} aufgelistet.} bietet \textit{PlantUML} einen Online-Editor\footnote{\textit{PlantUML} Server: \url{http://www.plantuml.com/plantuml}} an, der es ermöglicht, UML-Diagramme direkt im Browser zu erstellen und als Bilder zu exportieren.
-
-\paragraph{yUML}
-
-\textit{yUML}\footnote{\url{http://yuml.me}} ist ein Online-Editor zum Erstellen von UML-Diagrammen im Browser. Im Unterschied zu \textit{PlantUML} verwendet \textit{yUML} eine anschauliche zeichenbasierte Sprache\footnote{Eine Übersicht der Syntax für Klassendiagramme: \url{http://yuml.me/diagram/scruffy/class/samples}}. Die Eingabe erfolgt über ein Textfeld und wird kontinuierlich in ein Bild übersetzt, das jederzeit exportiert werden kann. Alternativ kann eine URL-Adresse generiert \cite{Fuhrmann11On-the-Pragmatics} werden, unter der das gezeichnete Diagramm online verfügbar ist.
+\begin{itemize}
+    \item \textbf{PlantUML}\footnote{\url{http://plantuml.sourceforge.net}} ist eine Java-Bibliothek, die für die Beschreibung von UML-\-Dia\-grammen die gleichnamige Sprache verwendet. Diese Sprache wird näher in \cite{Roques10Drawing} behandelt. Neben den vielen Anwendungen\footnote{Die bekannten Anwendungen sind unter \url{http://plantuml.sourceforge.net/running.html} aufgelistet.} bietet \textit{PlantUML} einen Online-Editor\footnote{\textit{PlantUML} Server: \url{http://www.plantuml.com/plantuml}} an, der es ermöglicht, UML-Diagramme direkt im Browser zu erstellen und als Bilder zu exportieren.
+    \item \textbf{yUML}\footnote{\url{http://yuml.me}} ist ein Online-Editor zum Erstellen von UML-Diagrammen im Browser. Im Unterschied zu \textit{PlantUML} verwendet \textit{yUML} eine anschauliche zeichenbasierte Sprache\footnote{Eine Übersicht der Syntax für Klassendiagramme: \url{http://yuml.me/diagram/scruffy/class/samples}}. Die Eingabe erfolgt über ein Textfeld und wird kontinuierlich in ein Bild übersetzt, das jederzeit exportiert werden kann. Alternativ kann eine URL-Adresse generiert \cite{Fuhrmann11On-the-Pragmatics} werden, unter der das gezeichnete Diagramm online verfügbar ist.
+\end{itemize}
 
 \subsection{Visuelle Ansätze}
 \label{subsec:visual-approaches}
@@ -494,6 +486,7 @@ Der eingestellte Layout-Algorithmus kann entweder durch die manuelle Auswahl im 
 \end{figure}
 
 \subsection{Spezielle Algorithmen für Klassendiagramme}
+\label{subsec:special-algorithms-for-class-diagrams}
 
 Die Berechnung des automatischen Layouts von Klassendiagrammen bildet den Gegenstand für viele Forschungsarbeiten wie z.B. \cite{Eichelberger05Aesthetics}, \cite{Siebenhaller03Automatisches} oder \cite{Eiglsperger04Automatic}. Die darin vorgestellten Algorithmen haben den gleichen statischen Charakter wie die Algorithmen zum Graphzeichnen, sind allerdings für Klassendiagramme spezialisiert, indem deren Syntax und unter Umständen auch Semantik bei der Layout-Berechnung berücksichtigt werden. Eine grundlegende Rolle spielen für die automatischen Layout-Algorithmen die ästhetischen Prinzipien \cite{Maier12A-Pattern-based}. Da die ästhetischen Prinzipien für Graphen an dieser Stelle nicht ausreichend sind \cite[S.79]{Eichelberger05Aesthetics}, werden sie in den Arbeiten für Klassendiagramme erweitert. Ihre Zusammenfassung wurde im Abschnitt \ref{subsec:aesthetics-criteria-class-diagrams} aufgeführt.
 
@@ -504,6 +497,7 @@ Obwohl sich die Algorithmen in den erwähnten Arbeiten intern unter verhalten, b
 Trotz der in \cite{Eiglsperger04Automatic} beschriebenen möglichen Erweiterung des Algorithmus für einen interaktiven Einsatz sind die in allen oben genannten Arbeiten vorgestellten Algorithmen prinzipiell nicht für einen interaktiven Einsatz konzipiert und fokussieren sich eindeutig auf die Umsetzung der ästhetischen Prinzipien. Insbesondere sind sie für Anwendungsfälle geeignet, in den das Klassendiagramm nicht durch den Nutzer erstellt wird, sondern für ein gegebenes Modell eines Klassendiagramms das Layout berechnet werden soll, z.B. in Dokumentationswerkzeugen oder Analyse-Werkzeugen zum Reverse Engineering \cite{Eiglsperger04Automatic}.
 
 \subsection{Zusammenfassung der Eigenschaften}
+\label{subsec:summary-automatic-layout}
 
 \subsubsection{Vorteile}
 
@@ -569,6 +563,8 @@ Die instanziierten Layout-Patterns werden nach jeder Änderung des Diagramms dur
 
 Dieser Ansatz ist insbesondere für interaktive Umgebungen wie z.B. visuelle Editoren geeignet. Die Erstellung des Layouts wird dem Nutzer überlassen, indem er die Layout-Patterns instanziiert. Diese können entweder global oder für ausgewählten Knoten spezifiziert sein. Wenn keine Instanzen der Layout-Patterns verfügbar sind, können die Knoten im Diagram frei positioniert werden. Anderseits wird die Interaktion durch die instanziierten Layout-Patterns beeinflusst und möglicherweise eingeschränkt.
 
+Der beschriebene Ansatz wurde in Form eines Layout-Frameworks\footnote{\url{http://www.unibw.de/inf2/Personen/Wissen_Mitarbeiter/sonja/research/layoutframework}} implementiert und in visuellen Editoren eingesetzt, die mit Hilfe von \textit{DiaMeta}\footnote{Ein Framework zur Generierung von Editoren für visuelle Sprachen basierend auf Spezifikationen mittels Metamodelle. \url{http://www.unibw.de/inf2/DiaGen}} bzw. \textit{Graphical Editing Framework}\footnote{\url{http://www.eclipse.org/gef}} erzeugt wurden \cite{Maier12A-Pattern-based}.
+
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=0.9\textwidth]{resources/diameta-graph-editor-screenshot}
@@ -576,8 +572,6 @@ Dieser Ansatz ist insbesondere für interaktive Umgebungen wie z.B. visuelle Edi
     \caption[\captionvalue]{\captionvalue{ }(Quelle: \url{http://www.unibw.de/inf2/Personen/Wissen_Mitarbeiter/sonja/research/layoutframework/graphEditor.png}, Aufruf: 20.09.2014)}
     \label{fig:diameta-graph-editor-screenshot}
 \end{figure}
-
-Der beschriebene Ansatz wurde in Form eines Layout-Frameworks\footnote{\url{http://www.unibw.de/inf2/Personen/Wissen_Mitarbeiter/sonja/research/layoutframework}} implementiert und in visuellen Editoren eingesetzt, die mit Hilfe von \textit{DiaMeta}\footnote{Ein Framework zur Generierung von Editoren für visuelle Sprachen basierend auf Spezifikationen mittels Metamodelle. \url{http://www.unibw.de/inf2/DiaGen}} bzw. \textit{Graphical Editing Framework}\footnote{\url{http://www.eclipse.org/gef}} erzeugt wurden \cite{Maier12A-Pattern-based}.
 
 In Abbildung \ref{fig:diameta-graph-editor-screenshot} wird ein Screenshot des \textit{DiaMeta Graph Editors} zur Erstellung von gerichteten Graphen gezeigt. In der rechten Sidebar wird der Nutzer mit Buttons zur Instanziierung von Layout-Patterns präsentiert. In der rechten unteren Ecke sind die durch den Nutzer erstellten Layout-Patterns aufgelistet. In dem mittleren Bereich des Fensters befindet sich der Canvas, der neben der Darstellung der Knoten und Kanten auch die einzelnen instanziierten Layout-Patterns visualisiert. In dem aufgeführten Beispiel wurden Layout-Patterns für die horizontale und vertikale Ausrichtung, gleichmäßige Verteilung und hierarchisches Layout verwendet. Für eine bessere Vorstellung der Interaktion im Editor sind die offiziellen Screencasts\footnote{\textit{DiaMeta Graph Editor}: \url{http://www.sonjamaier.de/dyndraw/screencasts/graphEditor.mov}\newline\textit{DiaMeta Ecore Editor}: \url{http://www.sonjamaier.de/dyndraw/screencasts/ecoreEditor.mov}} anzuschauen.
 
