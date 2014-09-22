@@ -1,28 +1,62 @@
-%%%%%%%
-% DVD %
-%%%%%%%
+%%%%%%%%%%%%%%%
+% DVD Content %
+%%%%%%%%%%%%%%%
 
-\chapter{DVD}
-\label{chapter:dvd}
+\chapter{Inhalt der DVD}
+\label{chapter:dvd-content}
 
-\section{Liste der Dateien und Verzeichnisse}
+\newenvironment{fileslist}{
+    \renewcommand\descriptionlabel[1]{\texttt{##1}}
+    \setlength{\leftmargini}{0em}
+    \begin{description}[style=nextline]
+}{
+    \end{description}
+}
 
-\begin{description}
-    \item[\texttt{Bachelor-Thesis/bachelor-thesis.pdf}] 
-        \hfill \\ Text der Bachelor-Arbeit
-    \item[\texttt{Bachelor-Thesis/bachelor-thesis-without-task-description.pdf}] 
-        \hfill \\ Text der Bachelor-Arbeit ohne Aufgabenstellung
-    \item[\texttt{Prototype/InteractiveDiagramLayout.app}]
-        \hfill \\ Kompilierte Version des Prototyps in Version 0.1
-    \item[\texttt{Prototype/InteractiveDiagramLayout/}] 
-        \hfill \\ Xcode-Projekt und 
-Quellcode des Prototyps in Version 0.1
-    \item[\texttt{Prototype/Videos/}] 
-        \hfill \\ Videos zur Vorführung des implementierten Prototyps
-    \item[\texttt{User-Study/task-description.pdf}] 
-        \hfill \\ Aufgabenstellung für die Nutzerstudie
-    \item[\texttt{User-Study/questionnaire.pdf}]
-        \hfill \\ Fragebogen für die Nutzerstudie
-    \item[\texttt{User-Study/evaluation.pdf}]
-        \hfill \\ Auswertung der Ergebnisse der Nutzerstudie
-\end{description}
+\section{Schriftliche Arbeit}
+
+\begin{fileslist}
+
+\item[Bachelor-Thesis/bachelor-thesis.pdf] 
+Originalversion der Bachelor-Arbeit
+
+\item[Bachelor-Thesis/bachelor-thesis-print.pdf] 
+Druckversion der Bachelor-Arbeit
+
+\end{fileslist}
+
+\section{Prototyp}
+
+\begin{fileslist}
+
+\item[Prototype/InteractiveDiagramLayout.app]
+Kompilierte Version des Prototyps in Version 0.1.2
+
+\item[Prototype/InteractiveDiagramLayout/] 
+Xcode-Projekt und Quellcode des Prototyps in Version 0.1.2
+
+\item[Prototype/Videos/] 
+Videos zur Vorführung des implementierten Prototyps
+
+\end{fileslist}
+
+\section{Nutzerstudie}
+
+\begin{fileslist}
+
+\item[User-Study/task-description.pdf] 
+Aufgabenstellung für die Nutzerstudie
+
+\item[User-Study/questionnaire.pdf]
+Fragebogen für die Nutzerstudie
+
+\item[User-Study/Completed-Questionnaires/]
+Eingescannte ausgefüllte Fragebögen
+
+\item[User-Study/evaluation.numbers]
+Auswertung der Ergebnisse der Nutzerstudie als Numbers Dokument
+
+\item[User-Study/evaluation.pdf]
+Auswertung der Ergebnisse der Nutzerstudie als PDF
+
+\end{fileslist}
