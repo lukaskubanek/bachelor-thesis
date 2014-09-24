@@ -196,19 +196,14 @@ In vorhergehenden Abschnitten wurde beschrieben, dass nach der Änderung des Inh
 \section{Layout-Patterns}
 \label{sec:layout-patterns}
 
-% TODO: Layout-Patterns erklären, Hinweis auf den Pattern-basierten Ansatz
-% TODO: Ableitung der Layout-Patterns
-% - Design Patterns [Maier]
-% - Ausrichtung
-% - T-Shape für die Hierarchie
-% - zentrierter Inhalt
+Die Layout-Patterns dienen der Beschreibung der Struktur des Layouts eines Diagramms. Ähnlich wie in \cite{Maier12A-Pattern-based} handelt es sich um allgemeine wiederverwendbare Lösungen für Layout-Probleme. Die Auffassung der Layout-Patterns in dieser Arbeit ist im Vergleich zu dem Konzept aus \cite{Maier12A-Pattern-based} (siehe Abschnitt \ref{subsubsec:pattern-based-approach}) sehr vereinfacht. Zum einen werden die Layout-Patterns nicht an einem separaten Metamodell definiert, sondern direkt auf dem Metamodell der konkreten Syntax des gewählten Beispiels. Zum anderen besitzen die Layout-Patterns keine komplexe Struktur der Regelausführung wie in \cite{Maier12A-Pattern-based}.
 
-Die Layout-Patterns dienen der Beschreibung der Struktur des Layouts eines Diagramms. Die Auffassung der Layout-Patterns in dieser Arbeit ist im Vergleich zu dem Konzept aus \cite{Maier12A-Pattern-based} sehr vereinfacht. Das liegt daran, dass sich diese Arbeit hauptsächlich mit der Problematik der Interaktion beschäftigt. Zwecks Vereinfachung werden die Layout-Patterns nicht an einem separaten Metamodell definiert, sondern direkt auf dem Metamodell der konkreten Syntax des gewählten Beispiels. Dennoch stellt die Arbeit neue Konzepte für die Erweiterung der Layout-Patterns vor, wie z.B. die Aufteilung auf implizite und explizite Patterns und das Konzept der Variierung der Layout-Patterns.
+Die präsentierten Layout-Patterns wurden von den in Abschnitt \ref{sec:aesthetics-criteria} aufgeführten ästhetischen Kriterien abgeleitet und orientieren sich insbesondere an der Unterstützung der Interaktion u.a. durch das Konzept der Variierung. Des Weiteren führt diese Arbeit eine Aufteilung auf implizite und explizite Patterns ein. Die Problematik der Layout-Patterns wird im Folgenden detailiert behandelt.
 
 \subsection{Implizite Layout-Patterns}
 \label{subsec:implicit-layout-patterns}
 
-Die impliziten Layout-Patterns beschreiben allgemeine Eigenschaften für die Layout-Berechnung. Dafür werden keine expliziten Strukturregeln erzeugt, wie das der Fall bei den expliziten Layout-Patterns (siehe Abschnitt \ref{subsec:explicit-layout-patterns}) ist, sondern sie werden von dem Algorithmus der Layout-Berechnung einfach angenommen.
+Die impliziten Layout-Patterns beschreiben allgemeine Eigenschaften für die Layout-Berechnung. Dafür werden keine expliziten Strukturregeln erzeugt, wie das der Fall bei den expliziten Layout-Patterns (siehe Abschnitt \ref{subsec:explicit-layout-patterns}) ist, sondern sie werden von dem Algorithmus der Layout-Berechnung als geltend angenommen.
 
 \subsubsection{Größe der Knoten}
 
@@ -218,12 +213,12 @@ Dagegen ist die Größe der Knoten in dieser Arbeit ausschließlich durch den In
 
 \subsubsection{Verhinderung der Knoten-Überlappung}
 
-% TODO: Nach den ästhetischen Kriterien im Kapitel 2 ergänzen!
+Dadurch dass die Größe der Knoten bekannt ist und die Position der Knoten berechnet wird, kann die Knoten-Überlappung verhindert werden. Dies trägt der Ästhetik des Diagramms (Kriterium \ref{req:aesthetics-criteria}) und insbesondere der Einhaltung der Abstände zwischen den Knoten (Prinzip \ref{pri:keeping-distances}) bei.
 
 \subsubsection{Zentrierung des Diagramm-Inhalts}
 \label{subsubsec:centering-of-diagram-content}
 
-Die Zentrierung des Diagramm-Inhalts ist ein weiteres ästhetisches Layout-Pattern, das eine eindeutige Bestimmung des Layouts ermöglicht. Die Berechnung des Layouts erfolgt relativ und wird dermaßen auf das Diagramm angewendet, so dass der Diagramm-Inhalt immer in die Mitte des Canvas platziert wird. Dies wird in Abbildung \ref{fig:layout-pattern-centered-content} veranschaulicht.
+Die Zentrierung des Diagramm-Inhalts ist ein weiteres ästhetisches Layout-Pattern, das eine eindeutige Bestimmung des Layouts ermöglicht. Die Berechnung des Layouts erfolgt relativ und wird dermaßen auf das Diagramm angewendet, so dass der Diagramm-Inhalt immer in die Mitte des Canvas platziert wird und dadurch die Zeichenfläche optimal ausgenutzt wird (Prinzip \ref{pri:drawing-area-utilization}). Dies wird in Abbildung \ref{fig:layout-pattern-centered-content} veranschaulicht.
 
 \begin{figure}[hbt]
     \centering
@@ -232,7 +227,7 @@ Die Zentrierung des Diagramm-Inhalts ist ein weiteres ästhetisches Layout-Patte
     \label{fig:layout-pattern-centered-content}
 \end{figure}
 
-Dieses Layout-Pattern fördert die Ästhetik (Kriterium \ref{req:aesthetics-criteria}) und vor allem macht die Einschränkung der freien Positionierung (siehe Abschnitt \ref{subsec:temporary-layer-mechanism}) möglich.
+Neben der Förderung der Ästhetik (Kriterium \ref{req:aesthetics-criteria}) wird vor allen die Einschränkung der freien Positionierung (siehe Abschnitt \ref{subsec:temporary-layer-mechanism}) möglich gemacht.
 
 \subsection{Explizite Layout-Patterns}
 \label{subsec:explicit-layout-patterns}
@@ -274,7 +269,9 @@ Die Variierung des Ausrichtungspatterns besteht in der Veränderung der Reihenfo
 \subsubsection{T-Shape-Pattern}
 \label{subsubsec:t-shape-pattern}
 
-Das T-Shape-Pattern beschreibt die Struktur von Knoten, die in die Form des Buchstabes \enquote{T} angeordnet sind. Ein Knoten hat eine spezielle Rolle und ist den anderen Knoten übergeordnet. Die untergeordneten Knoten sind ähnlich wie in dem Ausrichtungspattern gleichmäßig in einer Reihe angeordnet und an die Kanten ausgerichtet, die sich am nächsten zu dem übergeordneten Knoten befinden. Der übergeordnete Knoten befindet sich in einem definierten Abstand zu den untergeordneten Knoten und ist mittig ausgerichtet. In Abbildung \ref{fig:layout-pattern-t-shape} ist ein Beispiel des T-Shape-Patterns dargestellt, in dem der übergeordnete Knoten oben positioniert ist. Die Abstände sind mit farbigen Pfeilen und die Ausrichtung mit grauen Linien gekennzeichnet. Natürlich gibt es weitere Formen des T-Shape-Patterns, in den sich der übergeordnete Knoten links, unten oder rechts befindet.
+Das T-Shape-Pattern beschreibt die Struktur von Knoten, die in die Form des Buchstabes \enquote{T} angeordnet sind. Dies ist insbesondere für die Darstellung von Hierarchien in Diagrammen von Bedeutung (Prinzip \ref{pri:representation-of-hierarchies}).
+
+Ein Knoten hat eine spezielle Rolle und ist den anderen Knoten übergeordnet. Die untergeordneten Knoten sind ähnlich wie in dem Ausrichtungspattern gleichmäßig in einer Reihe angeordnet und an die Kanten ausgerichtet, die sich am nächsten zu dem übergeordneten Knoten befinden. Der übergeordnete Knoten befindet sich in einem definierten Abstand zu den untergeordneten Knoten und ist mittig ausgerichtet. In Abbildung \ref{fig:layout-pattern-t-shape} ist ein Beispiel des T-Shape-Patterns dargestellt, in dem der übergeordnete Knoten oben positioniert ist. Die Abstände sind mit farbigen Pfeilen und die Ausrichtung mit grauen Linien gekennzeichnet. Natürlich gibt es weitere Formen des T-Shape-Patterns, in den sich der übergeordnete Knoten links, unten oder rechts befindet.
 
 \begin{figure}[hbt]
     \centering
@@ -283,7 +280,7 @@ Das T-Shape-Pattern beschreibt die Struktur von Knoten, die in die Form des Buch
     \label{fig:layout-pattern-t-shape}
 \end{figure}
 
-Das T-Shape-Pattern erweitert das Ausrichtungspattern, indem die Reihe der untergeordneten Knoten um einen übergeordneten Knoten ergänzt wird. Identisch wie bei dem Ausrichtungspattern lässt sich bei dem T-Shape-Pattern die Reihenfolge der untergeordneten Knoten verändern.
+Durch das T-Shape-Pattern wird das Ausrichtungspattern erweitert, indem die Reihe der untergeordneten Knoten um einen übergeordneten Knoten ergänzt wird. Identisch wie bei dem Ausrichtungspattern lässt sich bei dem T-Shape-Pattern die Reihenfolge der untergeordneten Knoten verändern.
 
 %%%%%%%%%%%%%%%%%%%%%%
 % Layout Calculation %
