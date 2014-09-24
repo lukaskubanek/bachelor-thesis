@@ -78,47 +78,49 @@ Im Anschluss wurde das Konzept durch den Teilnehmer bewertet, indem der verbleib
 
 An der Nutzerstudie haben insgesamt 7 Testpersonen teilgenommen und beide Geschlechter wurden ungefähr gleichmäßig vertreten (4 männliche und 3 weibliche Teilnehmer). Großteils handelte sich um Studenten und wissenschaftliche Arbeiter zwischen 21 und 34 Jahren. Des Weiteren waren 6 von 7 Teilnehmern im Bereich der Informatik tätig und waren daher mit der Notation von Klassendiagrammen vertraut.
 
-\begin{figure}
+Vor dem Test wurden die Teilnehmer in dem Fragebogen (siehe Abschnitt \ref{sec:user-study-material-questionnaire}) befragt, welche Werkzeuge sie zum Erstellen von Diagrammen benutzen und in welchen Maß. Die kompletten Ergebnisse sind in Form von Diagrammen in Abbildung \ref{fig:used-tools-charts} veranschaulicht. Es stellt sich heraus, dass die Teilnehmer Stift und Papier zum Zeichnen von Diagrammen am häufigsten verwenden. Das kann dadurch begründet werden, dass dies oft die einfachste Methode ist \cite{Ambler02Agile}. Die Softwarewerkzeuge werden in kleinerem Maß eingesetzt, dennoch ist deren Nutzung nicht vernachlässigbar. Überwiegend werden die Diagramme in Präsentationsprogrammen gezeichnet, es werden aber auch Diagramm-Programme und UML-Editoren zum Einsatz gebracht. Dagegen sind die Ergebnisse der Nutzung von Online-Tools eher gering. 
+
+\begin{figure}[hbt]
+\newcommand{\legendscale}{0.9}
+\newcommand{\subfigurewidth}{0.3\linewidth}
+\newcommand{\graphicsscale}{0.75}    
 \centering
 \begin{minipage}{.15\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{resources/used-tools-legend}
+    \includegraphics[scale=\legendscale]{resources/used-tools-charts-legend}
 \end{minipage}
 \begin{minipage}{.65\textwidth}
-    \newcommand{\subfigurewidth}{0.3\linewidth}
-    \newcommand{\graphicsscale}{0.8}
     \centering
-    \begin{subfigure}{\subfigurewidth}
+    \begin{subfigure}[t]{\subfigurewidth}
         \centering
         \includegraphics[scale=\graphicsscale]{resources/used-tools-charts-a}
         \caption{Diagramm-Programme}
         \label{fig:used-tools-charts-a}
     \end{subfigure}
-    \begin{subfigure}{\subfigurewidth}
+    \begin{subfigure}[t]{\subfigurewidth}
         \centering
         \includegraphics[scale=\graphicsscale]{resources/used-tools-charts-b}
         \caption{Präsentationsprogramme}
         \label{fig:used-tools-charts-b}
     \end{subfigure}
-    \begin{subfigure}{\subfigurewidth}
+    \begin{subfigure}[t]{\subfigurewidth}
         \centering
         \includegraphics[scale=\graphicsscale]{resources/used-tools-charts-c}
         \caption{Online-Tools}
         \label{fig:used-tools-charts-c}
     \end{subfigure}
-    \begin{subfigure}{\subfigurewidth}
+    \begin{subfigure}[t]{\subfigurewidth}
         \centering
         \includegraphics[scale=\graphicsscale]{resources/used-tools-charts-d}
         \caption{UML-Editoren}
         \label{fig:used-tools-charts-d}
     \end{subfigure}
-    \begin{subfigure}{\subfigurewidth}
+    \begin{subfigure}[t]{\subfigurewidth}
         \centering
         \includegraphics[scale=\graphicsscale]{resources/used-tools-charts-e}
         \caption{Stift und Papier}
         \label{fig:used-tools-charts-e}
     \end{subfigure}
-    \begin{subfigure}{\subfigurewidth}
+    \begin{subfigure}[t]{\subfigurewidth}
         \centering
         \includegraphics[scale=\graphicsscale]{resources/used-tools-charts-f}
         \caption{Whiteboard}
@@ -129,10 +131,79 @@ An der Nutzerstudie haben insgesamt 7 Testpersonen teilgenommen und beide Geschl
 \label{fig:used-tools-charts}
 \end{figure}
 
-% andere Möglichkeit: keine Erklärung, aber Anlernen notwendig
+Laut der Angaben der Teilnehmer konnten die Aufgaben in allen Fällen erfolgreich erfüllt werden (siehe Abbildung \ref{fig:evaluation-charts-a}). Weiterhin wurden die Aufgaben als nicht anstrengend eingeschätzt (siehe Abbildung \ref{fig:evaluation-charts-b}). Obwohl es eine Einführung zu dem Prototypen gab (siehe Abschnitt \ref{subsec:user-study-setup}), wurden die Teilnehmer gefragt, ob sie die Aufgaben auch ohne diese Einführung erledigen könnten. Dies wurde zum großen Teil bestätigt, dennoch waren die Ergebnisse nicht ganz eindeutig (siehe Abbildung \ref{fig:evaluation-charts-c}). Bei der Vorbereitung des Aufbaus wurde überlegt, die Einführung wegzulassen. Da es aber bei den Softwaremodellierungswerkzeugen um ein Szenario handelt, in dem in der Regel das Anlernen der Bedienung und der Funktionen notwendig ist, wurde die Variante mit der Einführung bevorzugt.
+
+\begin{figure}[!h]
+
+\newcommand{\legendscale}{0.9}
+\newcommand{\subfigurewidth}{0.2\linewidth}
+\newcommand{\graphicsscale}{0.75}    
+\centering
+
+% legend
+\begin{subfigure}[t]{\textwidth}
+    \centering
+    \includegraphics[scale=\legendscale]{resources/evaluation-charts-legend}
+    \vspace{0.5cm}
+\end{subfigure}
+
+% charts
+\foreach \i in {a,...,l}{%
+\begin{subfigure}[t]{\subfigurewidth}
+    \centering
+    \includegraphics[scale=\graphicsscale]{resources/evaluation-charts-\i}
+    \caption{}
+    \label{fig:evaluation-charts-\i}
+\end{subfigure}
+}
+
+% caption
+\newcommand{\captionvalue}{Bewertung der Aussagen bzgl. der Evaluation des Konzepts}
+\caption[\captionvalue]{
+\captionvalue
+\\\hspace{\textwidth}
+\subref{fig:evaluation-charts-a} Ich habe meiner Meinung nach alle Aufgaben erfolgreich erfüllt.
+\\\hspace{\textwidth}
+\subref{fig:evaluation-charts-b} Die Erfüllung der Aufgaben war anstrengend.
+\\\hspace{\textwidth}
+\subref{fig:evaluation-charts-c} Ich denke, dass ich die Aufgaben auch ohne vorherige Vorstellung der möglichen Aktionen des Prototyps problemlos lösen könnte.
+\\\hspace{\textwidth}
+\subref{fig:evaluation-charts-d} Ich hatte das Programm die ganze Zeit unter Kontrolle.
+\\\hspace{\textwidth}
+\subref{fig:evaluation-charts-e} Die auf \enquote{Drag and Drop} basierende Verschiebungsaktion war verständlich.
+\\\hspace{\textwidth}
+\subref{fig:evaluation-charts-f} Durch die Einschränkung der freien Positionierung wurde der Aufwand an der Erstellung des Layouts reduziert.
+\\\hspace{\textwidth}
+\subref{fig:evaluation-charts-g} Die Einschränkung der freien Positionierung fand ich irritierend.
+\\\hspace{\textwidth}
+\subref{fig:evaluation-charts-h} Für mich war jederzeit erkennbar, an welche Stelle ich die angeklickte Klasse verschieben kann.
+\\\hspace{\textwidth}
+\subref{fig:evaluation-charts-i} Die automatischen Layout-Updates haben mich in der Erstellung des Diagramms gehindert.
+\\\hspace{\textwidth}
+\subref{fig:evaluation-charts-j} Das Layout der modellierten Diagramme fand ich ästhetisch ansprechend.
+\\\hspace{\textwidth}
+\subref{fig:evaluation-charts-k} Ich konnte Fehler, die während der Erfüllung der Aufgaben gemacht wurden, korrigieren.
+\\\hspace{\textwidth}
+\subref{fig:evaluation-charts-l} Ich bin der Meinung, dass ich die Aufgaben in einer Software ohne Layout-Unterstützung schneller erledigen könnte.
+}
+\label{fig:evaluation-charts}
+
+\end{figure}
+
+Da das umgesetzte Konzept viele neue Interaktionsparadigmen einsetzt, hat die Interaktion einen wesentlichen Teil der Bewertung gebildet. Dadurch wurde ermöglicht, die Erfüllung des Kriteriums der Benutzerfreundlichkeit zu beurteilen (siehe Abschnitt \ref{eval:user-friendly}).
+
+Mehr als die Hälfte der Teilnehmer waren der Meinung, dass sie den Prototyp während der Erfüllung der Aufgaben unter Kontrolle hatten (siehe Abbildung \ref{fig:evaluation-charts-d}). Weiterhin konnte beobachtet werden, dass der in Abschnitt \ref{subsec:temporary-layer-mechanism} vorgestellte Mechanismus der temporären Schicht bzw. vereinfacht die auf \enquote{Drag and Drop} basierende Verschiebungsaktion von den Teilnehmern als intuitiv angesehen wurde. Dies wurde auch durch eine überwiegende Zustimmung im Fragebogen bestätigt (siehe Abbildung \ref{fig:evaluation-charts-e}).
+
+Da der umgesetzte Ansatz keine freie Positionierung bietet, die von Werkzeugen die ausschließlich das manuelle Layout unterstützen (siehe Abschnitt \ref{sec:manual-layout}) bekannt ist, war die Einschränkung der freien Positionierung der Gegenstand der weiteren Bewertung. Die Mehrheit der Teilnehmer hat angegeben, dass die Einschränkung der freien Positionierung den Aufwand an der Erstellung des Layouts reduziert (siehe Abbildung \ref{fig:evaluation-charts-f}). Bis auf eine Ausnahme wurden die Teilnehmer durch diesen ungewöhnlicher Aspekt der Interaktion nicht verwirrt (siehe Abbildung \ref{fig:evaluation-charts-h}).
+
+% positiv
+
+% deutet darauf hin
+% übereinstimmen
+% Zustimmung
+% haben zugestimmt
 
 % Beobachtungen
-% Ergebnisse und Auswertung des Fragebogens
 % Interpretation der Beobachtungen und Ergebnisse
 
 % Fehlende Aktionen im Prototyp
