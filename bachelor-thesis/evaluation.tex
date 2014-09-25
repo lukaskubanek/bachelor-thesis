@@ -127,11 +127,13 @@ Vor dem Test wurden die Teilnehmer in dem Fragebogen (siehe Abschnitt \ref{sec:u
         \label{fig:used-tools-charts-f}
     \end{subfigure}
 \end{minipage}
-\caption{Auswertung der verwendeten Tools zum Erstellen von Diagrammen}
+\caption{Auswertung der Verwendung von Tools zum Erstellen von Diagrammen}
 \label{fig:used-tools-charts}
 \end{figure}
 
-Laut der Angaben der Teilnehmer konnten die Aufgaben in allen Fällen erfolgreich erfüllt werden (siehe Abbildung \ref{fig:evaluation-charts-a}). Weiterhin wurden die Aufgaben als nicht anstrengend eingeschätzt (siehe Abbildung \ref{fig:evaluation-charts-b}). Obwohl es eine Einführung zu dem Prototypen gab (siehe Abschnitt \ref{subsec:user-study-setup}), wurden die Teilnehmer gefragt, ob sie die Aufgaben auch ohne diese Einführung erledigen könnten. Dies wurde zum großen Teil bestätigt, dennoch waren die Ergebnisse nicht ganz eindeutig (siehe Abbildung \ref{fig:evaluation-charts-c}). Bei der Vorbereitung des Aufbaus wurde überlegt, die Einführung wegzulassen. Da es aber bei den Softwaremodellierungswerkzeugen um ein Szenario handelt, in dem in der Regel das Anlernen der Bedienung und der Funktionen notwendig ist, wurde die Variante mit der Einführung bevorzugt.
+Laut der Angaben der Teilnehmer konnten die Aufgaben in allen Fällen erfolgreich erfüllt werden (siehe Abbildung \ref{fig:evaluation-charts-a}). Weiterhin wurden die Aufgaben als nicht anstrengend eingeschätzt (siehe Abbildung \ref{fig:evaluation-charts-b}). Dies deutet darauf hin, dass für die Nutzerstudie angemessene Aufgaben gewählt wurden.
+
+Obwohl es eine Einführung zu dem Prototypen gab (siehe Abschnitt \ref{subsec:user-study-setup}), wurden die Teilnehmer gefragt, ob sie die Aufgaben auch ohne diese Einführung erledigen könnten. Dies wurde zum großen Teil bestätigt, dennoch waren die Ergebnisse nicht ganz eindeutig (siehe Abbildung \ref{fig:evaluation-charts-c}). Bei der Vorbereitung des Aufbaus wurde überlegt, die Einführung wegzulassen. Da es sich aber bei den Softwaremodellierungswerkzeugen um ein Szenario handelt, in dem in der Regel das Anlernen der Bedienung und der Funktionen notwendig ist, wurde die Variante mit der Einführung bevorzugt.
 
 \begin{figure}[!h]
 
@@ -194,18 +196,22 @@ Da das umgesetzte Konzept viele neue Interaktionsparadigmen einsetzt, hat die In
 
 Mehr als die Hälfte der Teilnehmer waren der Meinung, dass sie den Prototyp während der Erfüllung der Aufgaben unter Kontrolle hatten (siehe Abbildung \ref{fig:evaluation-charts-d}). Weiterhin konnte beobachtet werden, dass der in Abschnitt \ref{subsec:temporary-layer-mechanism} vorgestellte Mechanismus der temporären Schicht bzw. vereinfacht die auf \enquote{Drag and Drop} basierende Verschiebungsaktion von den Teilnehmern als intuitiv angesehen wurde. Dies wurde auch durch eine überwiegende Zustimmung im Fragebogen bestätigt (siehe Abbildung \ref{fig:evaluation-charts-e}).
 
-Da der umgesetzte Ansatz keine freie Positionierung bietet, die von Werkzeugen die ausschließlich das manuelle Layout unterstützen (siehe Abschnitt \ref{sec:manual-layout}) bekannt ist, war die Einschränkung der freien Positionierung der Gegenstand der weiteren Bewertung. Die Mehrheit der Teilnehmer hat angegeben, dass die Einschränkung der freien Positionierung den Aufwand an der Erstellung des Layouts reduziert (siehe Abbildung \ref{fig:evaluation-charts-f}). Bis auf eine Ausnahme wurden die Teilnehmer durch diesen ungewöhnlicher Aspekt der Interaktion nicht verwirrt (siehe Abbildung \ref{fig:evaluation-charts-h}).
+Da der umgesetzte Ansatz keine freie Positionierung bietet, die von Werkzeugen die ausschließlich das manuelle Layout unterstützen (siehe Abschnitt \ref{sec:manual-layout}) bekannt ist, war die Einschränkung der freien Positionierung der Gegenstand der weiteren Bewertung. Die Mehrheit der Teilnehmer hat angegeben, dass die Einschränkung der freien Positionierung den Aufwand an der Erstellung des Layouts reduziert (siehe Abbildung \ref{fig:evaluation-charts-f}). Bis auf eine Ausnahme wurden die Teilnehmer durch diesen ungewöhnlicher Aspekt der Interaktion nicht verwirrt (siehe Abbildung \ref{fig:evaluation-charts-g}). Diese Resultate beweisen, dass die Einschränkung der freien Positionierung kein Problem dargestellt hat.
+
+Infolge des Einsatzes des baumbasierten Layouts hatte die Verschiebungsaktion zwei Funktionen. Einerseits konnte eine gesamte Vererbungshierarchie durch das Ziehen der Wurzelklasse verschoben werden. Anderseits konnte die Reihenfolge der Geschwisterklassen mit Hilfe der Verschiebungsaktion variiert werden. Obwohl die möglichen Zielpositionen der Verschiebung zum großen Teil für die Teilnehmer erkennbar waren (siehe Abbildung \ref{fig:evaluation-charts-h}), sind die Ergebnisse nicht überzeugend. Deshalb sollte insbesondere in einer allgemeinen Version des Algorithmus über eine potentielle Visualisierung der Verschiebungsoptionen nachgedacht werden.
+
+Die automatischen Layout-Updates haben keine Hinderung in der Erstellung des Diagramms dargestellt (siehe Abbildung \ref{fig:evaluation-charts-i}). Dagegen wurde die Ästhetik des Layouts größtenteils als ansprechend empfunden (siehe Abbildung \ref{fig:evaluation-charts-j}). Die möglichen Ursachen für eine nicht überzeugende Zustimmung sind auf die Überlappung der Pfeilspitzen bei der Vererbungsrelationen und die Umbrüche der Klassennamen zurückzuführen.
+
+Die Antworten bzgl. der Möglichkeit der Fehlerkorrektur während der Erfüllung der Aufgaben unterscheiden sich erheblich (siehe Abbildung \ref{fig:evaluation-charts-k}). Der Grund dafür war eine unterschiedliche Fehlerquote der einzelnen Teilnehmer. Wenn ein Fehler gemacht wurde, der mit Hilfe der im Prototyp verfügbaren Aktionen nicht korrigiert werden konnte, musste die Aufgabe wiederholt werden. Die fehlenden Aktionen werden im Folgenden diskutiert. Trotz der Unvollständigkeit des Prototyps waren die Teilnehmer vorwiegend der Meinung, dass die Layout-Unterstützung ein Zeitersparnis im Vergleich zu anderen Werkzeugen bringt (siehe Abbildung \ref{fig:evaluation-charts-l}). Dadurch wurde der geschaffene Mehrwert des Prototyps gezeigt.
+
+% konnte beobachtet werden
 
 % positiv
-
 % deutet darauf hin
-% übereinstimmen
-% Zustimmung
-% haben zugestimmt
 
 % Beobachtungen
 % Interpretation der Beobachtungen und Ergebnisse
 
-% Fehlende Aktionen im Prototyp
+% Vermisste Aktionen im Prototyp
 
 \section{Zusammenfassung}
