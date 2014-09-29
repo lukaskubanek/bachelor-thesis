@@ -204,21 +204,23 @@ Die automatischen Layout-Updates haben keine Hinderung in der Erstellung des Dia
 
 Die Antworten bzgl. der Möglichkeit der Fehlerkorrektur während der Erfüllung der Aufgaben unterscheiden sich erheblich (siehe Abbildung \ref{fig:evaluation-charts-k}). Der Grund dafür war eine unterschiedliche Fehlerquote der einzelnen Teilnehmer. Wenn ein Fehler gemacht wurde, der mit Hilfe der im Prototyp verfügbaren Aktionen nicht korrigiert werden konnte, musste die Aufgabe wiederholt werden. Die fehlenden Aktionen werden im Folgenden diskutiert. Trotz der Unvollständigkeit des Prototyps waren die Teilnehmer vorwiegend der Meinung, dass die Layout-Unterstützung ein Zeitersparnis im Vergleich zu anderen Werkzeugen bringt (siehe Abbildung \ref{fig:evaluation-charts-l}). Dadurch wurde der geschaffene Mehrwert des Ansatzes gezeigt.
 
-Wie bereits in Kapitel \ref{chapter:prototype} erwähnt wurde, ist der umgesetzte Prototyp nicht ausgereift, was die unterstützten Aktionen betrifft. Während der Nutzerstudie konnte beobachtet werden, welche nicht implementierte Aktionen die Teilnehmer auszuführen versucht haben. Des Weiteren wurden sie nach den vermissten Aktionen explizit gefragt. Die Ergebnisse sind in Abbildung \ref{fig:missed-prototype-actions} visualisiert.
+Wie bereits in Kapitel \ref{chapter:prototype} erwähnt wurde, ist der umgesetzte Prototyp nicht ausgereift und unterstützt viele Funktionen nicht. Die fehlenden Funktionen bilden den Gegenstand für einen weiteren Teil der Nutzerstudie. Einerseits wurde beobachtet, welche nicht implementierten Funktionen die Teilnehmer auszuführen versucht haben. Anderseits wurden die Teilnehmer explizit nach den vermissten Funktionen gefragt. Die Ergebnisse sind in Abbildung \ref{fig:missed-prototype-functions} visualisiert.
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=\textwidth]{resources/missed-prototype-actions}
-    \caption{Übersicht der vermissten Aktionen im Prototyp}
-    \label{fig:missed-prototype-actions}
+    \includegraphics[width=\textwidth]{resources/missed-prototype-functions}
+    \caption{Übersicht der vermissten Funktionen im Prototyp}
+    \label{fig:missed-prototype-functions}
 \end{figure}
 
-4 von 7 Teilnehmern haben versucht, eine neue Klasse mit einem Klick bzw. Doppelklick auf das Icon in der Sidebar hinzuzufügen. Die Einschränkung auf das \enquote{Drag and Drop} wurde als ungenügend eingeschätzt. Die Behebung dieser Schwachstelle besteht darin, beide Techniken zu unterstützen und bei dem Klick, die neue Klasse an eine vorgegebene Position zu platzieren.
+Als eine der meist vermissten Funktionen gilt die Möglichkeit des Hinzufügens einer neuen Klasse mit einem Klick bzw. Doppelklick auf das Icon in der Sidebar. Die Einschränkung auf das \enquote{Drag and Drop} wurde als ungenügend eingeschätzt, insbesondere wenn mehrere Klassen auf einmal hinzugefügt werden sollten. Die Behebung dieser Schwachstelle besteht darin, beide Techniken zu unterstützen und bei dem Klick, die neue Klasse an eine vorgegebene Position im Diagramm zu platzieren.
 
-% A.X -> P.X
-% Aktion -> Funktion
+Um die Korrektur von Fehlern zu ermöglichen, müssten Funktionen wie Löschen von Objekten, Manipulation der Vererbungsrelationen und \enquote{Undo} zur Verfügung stehen. Für die objektbezogenen Objekte ist weiterhin die Funktion deren Markierung im Canvas notwendig, die auch für eine gleichzeitige Verschiebung von mehreren Klassen eingesetzt wurde. Die genannten Funktionen bilden eine Gruppe von Standardfunktionen, die in der Regel in einer kompletten Anwendung unterstützt werden sollten und durch die Teilnehmer der Nutzerstudie vermisst wurden. Deren Implementierung im Prototyp für Zwecke dieser Arbeit wurde aus zeitlichen Gründen weggelassen. Dennoch werden alle genannten Funktionen im Konzept berücksichtigt, denn sie können mit Hilfe von Layout-Ereignissen beschrieben werden (siehe Abschnitte \ref{sec:layout-calculation} und \ref{subsubsec:component-events}).
 
-% positiv
-% ungenügend
+Die Abbildung \ref{fig:missed-prototype-functions} zeigt weiterhin zwei kleinere Probleme der Benutzeroberfläche im Prototyp. In zwei Fällen fänden die Teilnehmer intuitiver, wenn neu hinzugefügten Klassen den Fokus behalten würden, um den Klassennamen auch ohne einen zusätzlichen Doppelklick eingeben zu können. Des Weiteren wurde in einem Fall angemerkt, dass das Werkzeug für die Vererbungsrelation dauerhaft ausgewählt werden könnte. Aufgrund der Kompliziertheit mit einer ständigen Auswahl des Icons in der Sidebar hat die Mehrheit der Teilnehmer zu der Alternative mit der Taste \texttt{CTRL} (siehe Abschnitt \ref{subsec:supported-actions}) gewechselt. Beide Probleme könnten durch einfache Anpassungen im Prototyp behoben werden und haben keinen Einfluss auf das gesamte Konzept. Das Erstellen von Relationen könnte zusätzlich noch mit an die Klassen gebundenen Buttons wie in \textit{Visual Paradigm} durchgeführt werden \cite{14Visual}. Insbesondere würde dies ein angemerktes Problem mit der nicht intuitiven Positionierung von neu hinzugefügten Klassen lösen.
+
+Der Ablauf der Modellierung hat sich je nach dem Teilnehmer und der konkreten Aufgabe unterschieden. Im Wesentlichen wurden die Klassen nacheinander hinzugefügt und jede Klasse direkt umbenannt und in eine Vererbungshierarchie eingeordnet. In einigen Fällen wurde versucht, die Klassen frei zu positionieren. Die Funktionsweise wurde den Teilnehmern vor allem durch das Platzhalter-Objekt sichtbar gemacht und sie haben sich an die Einschränkung der freien Positionierung und das halbautomatische Layout angewöhnt. Ferner wurde die Zentrierung des Inhalts bei der Vergrößerung des Fensters als natürlich empfunden.
+
+Die Nutzerstudie hat bestätigt, dass der entwickelte Ansatz den Prozess der Layout-Erstellung deutlich vereinfacht. Obwohl der umgesetzte Prototyp sehr eingeschränkt war und nur die Modellierung von einfachen Aufgaben ermöglicht hat, haben sich die Möglichkeiten der Interaktion dank der eingesetzten Bedienungskonzepten als intuitiv aufgewiesen. Weiterhin wurden durch die Nutzerstudie Stellen entdeckt, die verbessert bzw. erweitern werden könnten. Die gewonnenen Informationen sind für eine weitere Entwicklung des Prototyps und vor allem des zu Grunde liegenden Ansatzes sehr hilfreich.
 
 \section{Zusammenfassung}
