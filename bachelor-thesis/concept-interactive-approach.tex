@@ -384,28 +384,25 @@ Im Folgenden wird der oben vorgestellte Ansatz mit bestehenden Ansätzen aus Kap
 \subsection{Ansätze für das manuelle Layout}
 \label{subsec:comparison-manual-layout}
 
+Die in Abschnitt \ref{sec:manual-layout} vorgestellten Ansätze für das manuelle Layout basieren darauf, dass die Layout-Eigenschaften der Objekte im Diagramm wunschgemäß durch den Nutzer angepasst werden können, was auch die Möglichkeit der freien Positionierung einschließt. Die Anpassung der Layout-Eigenschaften erfolgt in Editoren interaktiv mit Hilfe von bereitgestellten Funktionen. Zusätzlich bieten die Editoren Hilfefunktionen für die Layout-Erstellung (siehe Abschnitt \ref{subsec:help-functions-for-manual-layout}). Obwohl der präsentierte Ansatz diese Form der Interaktion nicht unterstützt und insbesondere die freie Positionierung einschränkt, führt es neue Bedienungsmechanismen ein, die eine interaktive Bearbeitung des Diagramms ermöglichen. Trotz der niedrigeren Flexibilität hat der Nutzer einen Einfluss auf das resultierende Layout. Dies geschieht nicht in Form der Anpassung des Layout-Algorithmus wie bei den automatischen Layout-Algorithmen (siehe Abschnitt \ref{sec:automatic-layout}), sondern durch eine Variierung des berechneten Layouts.
+
+Aufgrund der genannten Einschränkungen wird durch die halbautomatische Layout-Berechnung und die Überführung der temporären Hilfefunktionen in persistente Layout-Patterns der Aufwand an der Layout-Erstellung wesentlich reduziert. Des Weiteren ermöglicht der präsentierte Ansatz im Vergleich zu den Ansätzen für das manuelle Layout die Unterstützung von Diagrammtypen, indem deren strukturellen und semantischen Regeln durch den Layout-Algorithmus eingehalten werden.
+
 \subsection{Ansätze für das automatische Layout}
 \label{subsec:comparison-automatic-layout}
+
+% Unterschied zu visuellen automatischen Ansätzen:
+% - Interaktion und Zustand wird berücksichtigt
 
 \subsection{Ansätze für das interaktive halbautomatische Layout}
 \label{subsec:comparison-interactive-layout}
 
-% Kombination der Interaktion und automatischen Layout-Berechnung
-
-% Reduktion des Aufwandes an Layout-Erstellung
-% Möglichkeit der Unterstützung von Diagrammtypen
-% wenig flexibel (im Vergleich zu dem manuellen Layout)
-
 % Was ist neu an dem Ansatz?
-% Vergleich zu bestehenden Ansätzen im Kapitel 3
 % Worin unterscheidet sich mein Ansatz zu dem von Sonja Maier?
 % - \enquote{Drag and Drop} mit Visualisierung der Aktion
 % - Kein Freihand-Editieren, sondern implizite Bereiche und Layout-Übergänge
 % - Patterns unterstützen Variierung
 % - Starke Vereinfachung der Möglichkeiten (Anpassung der Patterns aus [Maier])
-
-% Unterschied zu visuellen automatischen Ansätzen:
-% - Interaktion und Zustand wird berücksichtigt
 
 %%%%%%%%%%%
 % Summary %
@@ -414,7 +411,10 @@ Im Folgenden wird der oben vorgestellte Ansatz mit bestehenden Ansätzen aus Kap
 \section{Zusammenfassung}
 \label{sec:approach-summary}
 
+% Kombination der Interaktion und automatischen Layout-Berechnung
+
 % Herausforderung bei der Kombination von mehreren Kriterien (z.B. interaktive Bedienung aber gleichzeitig eine Einschränkung der Möglichkeiten)
+
 % Der Mechanismus ist für klassische grafische Benutzeroberflächen ausgelegt und erfüllt damit das Kriterium \ref{req:gui}.
 
 % Neu-Berechnung nach jedem Layout-Übergang -> Performance?
