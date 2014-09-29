@@ -2,15 +2,18 @@
 % Preamble %
 %%%%%%%%%%%%
 
+% print version
+\input{print}
+
 % document class
+\ifx\isprintversion\undefined
+    \PassOptionsToClass{cdtitle=color}{tudscrreprt}
+\fi
 \documentclass[
     ngerman,
     toc=listof,
     toc=bibliography,
-    subjectthesis=true,
-    % comment out the following line to produce
-    % the print version of the thesis
-    cdtitle=color
+    subjectthesis=true
 ]{tudscrreprt}
 
 % encoding & language
@@ -44,14 +47,15 @@
 
 % URLs
 \usepackage[hyphens]{url}
-\usepackage[
-    % comment out the following lines to produce
-    % the print version of the thesis
-    colorlinks,
-    linkcolor=blue,
-    citecolor=blue,
-    urlcolor=magenta
-]{hyperref}
+\ifx\isprintversion\undefined
+    \PassOptionsToPackage{
+        colorlinks,
+        linkcolor=blue,
+        citecolor=blue,
+        urlcolor=magenta
+    }{hyperref}
+\fi
+\usepackage{hyperref}
 
 % figures
 \usepackage{graphicx}
@@ -74,12 +78,12 @@
 
 % blank pages
 \newcommand{\blankpage}{
-\newpage
-\thispagestyle{empty}
-\mbox{}
-\newpage
+    \newpage
+    \thispagestyle{empty}
+    \mbox{}
+    \newpage
 }
 
 % other stuff
 \usepackage{afterpage} % temporary geometry change
-\usepackage{pgffor} % for loop
+\usepackage{pgffor} % for loops
