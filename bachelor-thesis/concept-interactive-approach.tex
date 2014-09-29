@@ -350,8 +350,7 @@ Nichtsdestotrotz macht der Algorithmus die Mechanismen der Interaktion aus dem A
 \subsubsection{Algorithmus für das baumbasierte Layout}
 \label{subsubsec:tree-layout-algorithm}
 
-Der Algorithmus für das baumbasierte Layout ermöglicht die Modellierung von Vererbungshierarchien in einem Klassendiagramm und hält sich dabei an die im Abschnitt \ref{sec:aesthetics-criteria} beschriebene ästhetischen Kriterien.
-% TODO: Verweis auf ästhetische Kriterien aus dem Kapitel 2 überprüfen
+Der Algorithmus für das baumbasierte Layout ermöglicht die Modellierung von Vererbungshierarchien in einem Klassendiagramm. Dabei hält er sich an die im Abschnitt \ref{sec:aesthetics-criteria} beschriebene ästhetischen Prinzipien. Insbesondere wird das Prinzip der Darstellung von Hierarchien eingehalten (Prinzip \ref{pri:representation-of-hierarchies}).
 
 Ähnlich wie bei der Umsetzung des Algorithmus für das horizontale Layout (siehe Abschnitt \ref{subsubsec:horizontal-layout-algorithm}) enthält die Layout-Engine, die den Algorithmus für das baumbasierte Layout umsetzt, eine Instanz des horizontalen Ausrichtungspatterns, das jedoch nicht alle Klassen im Diagramm sondern nur die Wurzelklassen der Vererbungshierarchien referenziert. Durch dieses globale Ausrichtungspattern wird die Reihenfolge der Vererbungshierarchien bestimmt. Während der Erstellung von Vererbungsrelationen zwischen Klassen werden T-Shape-Patterns (siehe Abschnitt \ref{subsubsec:t-shape-pattern}) instanziiert, die die Struktur der Vererbungshierarchien beschreiben und durch die Layout-Engine verwaltet werden. In Abbildung \ref{fig:tree-based-layout} wird ein Beispiel eines Diagramms mit gekennzeichneten Layout-Patterns gezeigt. Die blaue Linie stellt das globale Ausrichtungspattern dar und mit den grünen Linien sind die instanziierten T-Shape-Patterns markiert. Die Vererbungshierarchien sind mit grauen gestrichelten Linien umrandet.
 
