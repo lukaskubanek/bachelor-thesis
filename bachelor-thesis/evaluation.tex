@@ -14,16 +14,17 @@ Im Folgenden wird auf die Kriterien aus Abschnitt \ref{sec:criteria} eingegangen
 \item
 \label{eval:gui}
 \textbf{GUI}
-Die Bearbeitung des Diagramms basiert auf Mechanismen, die für klassische grafische Benutzeroberflächen ausgelegt sind. Insbesondere ist der Einsatz des Mauszeigers von Bedeutung, wodurch eine sequenzielle Ausführung von Bearbeitungsaktionen ermöglicht wird. Somit hält sich der Ansatz an der Rahmenbedingungen aus Abschnitt \ref{sec:thesis-conditions} und erfüllt das Kriterium \ref{req:gui}.
+Die Bearbeitung des Diagramms basiert auf Mechanismen, die für klassische grafische Benutzeroberflächen ausgelegt sind. Insbesondere ist der Einsatz des Mauszeigers von Bedeutung, wodurch eine sequenzielle Ausführung von Bearbeitungsaktionen ermöglicht wird. Somit hält sich der Ansatz an den Rahmenbedingungen aus Abschnitt \ref{sec:thesis-conditions} und erfüllt das Kriterium \ref{req:gui}.
 
 \item
 \label{eval:interactivity}
 \textbf{Interaktivität}
-Das modellierte Diagramm wird in einem Canvas dargestellt, worin es unmittelbar bearbeitet werden kann. Die Grundlage dafür bilden die Bearbeitungsaktionen (siehe Abschnitt \ref{subsec:edit-actions}), die durch den Nutzer ausgeführt werden und sich zum Teil neue Bedienungsmechanismen zunutze machen (siehe Abschnitt \ref{subsec:temporary-layer-mechanism}). Während bzw. nach der Ausführung einer Bearbeitungsaktion reagiert das System, indem das Layout des Diagramms mit Hilfe von Layout-Übergängen (siehe Abschnitt \ref{subsec:layout-transitions}) angepasst wird. Dadurch dass der Prozess der Diagramm-Bearbeitung als eine Sequenz von Bearbeitungsaktionen aufgefasst werden kann, ist die Interaktivität in dem Ansatz fest verankert.
+Das modellierte Diagramm wird in einem Canvas dargestellt, worin es unmittelbar bearbeitet werden kann. Die Grundlage dafür bilden die Bearbeitungsaktionen (siehe Abschnitt \ref{subsec:edit-actions}), die durch den Nutzer ausgeführt werden. Während bzw. nach der Ausführung einer Bearbeitungsaktion reagiert das System, indem das Layout des Diagramms mit Hilfe von Layout-Übergängen (siehe Abschnitt \ref{subsec:layout-transitions}) angepasst wird. Dadurch dass der Prozess der Diagramm-Bearbeitung als eine Sequenz von Bearbeitungsaktionen aufgefasst werden kann, ist die Interaktivität in dem Ansatz fest verankert. Das Kriterium \ref{req:interactivity} wird daher ebenfalls erfüllt.
 
 \item
 \label{eval:immediate-feedback}
 \textbf{Unmittelbares Feedback}
+Wie in Abschnitt \ref{subsec:temporary-layer-mechanism} erläutert wurde, macht sich die Verschiebungsaktion den neu eingeführten Mechanismus der temporären Schicht zunutze. Während der Verschiebung wird das Layout des Diagramms kontinuierlich angepasst, wobei die Änderung anhand eines Platzhalters für den verschobenen Knoten und einer Animation des Layout-Übergangs visualisiert wird. Dem Nutzer wird im Verlauf der Aktion ständig das Ergebnis präsentiert, wodurch eine unmittelbare Feedback-Schleife erreicht wird (Kriterium \ref{req:immediate-feedback}). Da alle anderen unterstützten Bearbeitungsaktionen diskret sind, setzen sie das unmittelbare Feedback nicht ein. Dagegen wird erst nach ihrer Ausführung der Layout-Übergang initiiert. Die Eignung dieses Verhaltens wurde in der durchgeführten Nutzerstudie untersucht, deren Ergebnisse in Abschnitt \ref{subsec:user-study-evaluation} präsentiert werden.
 
 \item
 \label{eval:editing-support}
