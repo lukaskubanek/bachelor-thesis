@@ -7,18 +7,19 @@
 
 \section{Erfüllung der Kriterien}
 
-Im Folgenden wird auf die Kriterien aus Abschnitt \ref{sec:criteria} eingegangen und es wird bewertet, inwiefern diese Kriterien in dem entwickelten Ansatz erfüllt wurden.
+Im Folgenden wird auf die Kriterien aus Abschnitt \ref{sec:criteria} eingegangen und es wird bewertet, inwiefern diese Kriterien in dem entwickelten Ansatz erfüllt wurden:
 
 \begin{enumerate}[label={K.\arabic*}]
 
 \item
 \label{eval:gui}
 \textbf{GUI}
-Die interaktive Bearbeitung des Diagramms basiert auf Mechanismen, die für klassische grafische Benutzeroberflächen ausgelegt sind. Insbesondere ist der Einsatz des Mauszeigers von Bedeutung, wodurch eine sequenzielle Ausführung von Bearbeitungsaktionen ermöglicht wird. Somit hält sich der Ansatz an der Rahmenbedingungen aus Abschnitt \ref{sec:thesis-conditions} und erfüllt das Kriterium \ref{req:gui}.
+Die Bearbeitung des Diagramms basiert auf Mechanismen, die für klassische grafische Benutzeroberflächen ausgelegt sind. Insbesondere ist der Einsatz des Mauszeigers von Bedeutung, wodurch eine sequenzielle Ausführung von Bearbeitungsaktionen ermöglicht wird. Somit hält sich der Ansatz an der Rahmenbedingungen aus Abschnitt \ref{sec:thesis-conditions} und erfüllt das Kriterium \ref{req:gui}.
 
 \item
 \label{eval:interactivity}
 \textbf{Interaktivität}
+Das modellierte Diagramm wird in einem Canvas dargestellt, worin es unmittelbar bearbeitet werden kann. Die Grundlage dafür bilden die Bearbeitungsaktionen (siehe Abschnitt \ref{subsec:edit-actions}), die durch den Nutzer ausgeführt werden und sich zum Teil neue Bedienungsmechanismen zunutze machen (siehe Abschnitt \ref{subsec:temporary-layer-mechanism}). Während bzw. nach der Ausführung einer Bearbeitungsaktion reagiert das System, indem das Layout des Diagramms mit Hilfe von Layout-Übergängen (siehe Abschnitt \ref{subsec:layout-transitions}) angepasst wird. Dadurch dass der Prozess der Diagramm-Bearbeitung als eine Sequenz von Bearbeitungsaktionen aufgefasst werden kann, ist die Interaktivität in dem Ansatz fest verankert.
 
 \item
 \label{eval:immediate-feedback}
@@ -45,6 +46,8 @@ Die interaktive Bearbeitung des Diagramms basiert auf Mechanismen, die für klas
 \item
 \label{eval:syntax-and-semantics}
 \textbf{Berücksichtigung der Syntax und Semantik}
+
+% diagrammspezifischer Aspekt des Ansatzes nicht tiefgründig ausgearbeitet
 
 \item
 \label{eval:user-friendly}
