@@ -180,7 +180,7 @@ Die Nutzerstudie hat bestätigt, dass der entwickelte Ansatz den Prozess der Lay
 \section{Erfüllung der Kriterien}
 \label{sec:criteria-evaluation}
 
-Im Folgenden wird auf die Kriterien aus Abschnitt \ref{sec:criteria} eingegangen und es wird bewertet, inwiefern diese Kriterien in dem entwickelten Ansatz erfüllt wurden:
+Im Folgenden werden die Kriterien aus Abschnitt \ref{sec:criteria} einzeln aufgegriffen und deren Erfüllung in dem entwickelten Ansatz kritisch anhand von Fakten und Ergebnissen der Nutzerstudie bewertet:
 
 \begin{enumerate}[label={K.\arabic*}]
 
@@ -197,12 +197,12 @@ Das modellierte Diagramm wird in einem Canvas dargestellt, worin es unmittelbar 
 \item
 \label{eval:immediate-feedback}
 \textbf{Unmittelbares Feedback}
-Wie in Abschnitt \ref{subsec:temporary-layer-mechanism} erläutert wurde, macht sich die Verschiebungsaktion den neu eingeführten Mechanismus der temporären Schicht zunutze. Während der Verschiebung wird das Layout des Diagramms kontinuierlich angepasst, wobei die Änderung anhand eines Platzhalters für den verschobenen Knoten und einer Animation des Layout-Übergangs visualisiert wird. Dem Nutzer wird im Verlauf der Aktion ständig das Ergebnis präsentiert, wodurch eine unmittelbare Feedback-Schleife erreicht wird (Kriterium \ref{req:immediate-feedback}). Da alle anderen unterstützten Bearbeitungsaktionen diskret sind, setzen sie das unmittelbare Feedback nicht ein. Dagegen wird erst nach ihrer Ausführung der Layout-Übergang initiiert. Die Eignung dieses Verhaltens wurde in der durchgeführten Nutzerstudie untersucht, deren Ergebnisse in Abschnitt \ref{subsec:user-study-evaluation} präsentiert werden.
+Wie in Abschnitt \ref{subsec:temporary-layer-mechanism} erläutert wurde, macht sich die Verschiebungsaktion den neu eingeführten Mechanismus der temporären Schicht zunutze. Während der Verschiebung wird das Layout des Diagramms kontinuierlich angepasst, wobei die Änderung anhand eines Platzhalters für den verschobenen Knoten und einer Animation des Layout-Übergangs visualisiert wird. Dem Nutzer wird im Verlauf der Aktion ständig das Ergebnis präsentiert, wodurch eine unmittelbare Feedback-Schleife erreicht wird (Kriterium \ref{req:immediate-feedback}). Da alle anderen unterstützten Bearbeitungsaktionen diskret sind, setzen sie das unmittelbare Feedback nicht ein. Dagegen wird erst nach ihrer Ausführung der Layout-Übergang initiiert. Die Funktionsweise von beiden Arten der Bearbeitungsaktionen hat sich in der Nutzerstudie als verständlich aufgewiesen (siehe Abschnitt \ref{subsec:user-study-evaluation}).
 
 \item
 \label{eval:editing-support}
 \textbf{Förderung des Prozesses der Diagramm-Erstellung}
-Die inkrementelle Bearbeitung der Diagramme bildet eine Grundlage des präsentierten Ansatzes. Sie erfolgt durch die Ausführung von Bearbeitungsaktionen, die entweder den Inhalt oder das Layout des Diagramms modifizieren (siehe Abschnitt \ref{subsec:edit-actions}). Die Änderung des Inhalts bewirkt eine automatische Anpassung des Layouts, das wiederum durch den Nutzer mit Hilfe der Verschiebungsaktion in einem beschränkten Maß nach seinen Präferenzen verändert werden kann. Die fehlende Möglichkeit der expliziten Anpassung der Layout-Eigenschaften\footnote{Insbesondere handelt es sich an dieser Stelle um die Einschränkung der freien Positionierung.} kann den Nutzer in der Bearbeitung möglicherweise hindern. Dieses potentielle Problem wurde in der Nutzerstudie untersucht und wird in Abschnitt \ref{subsec:user-study-evaluation} ausgewertet.
+Die inkrementelle Bearbeitung der Diagramme bildet eine Grundlage des präsentierten Ansatzes. Sie erfolgt durch die Ausführung von Bearbeitungsaktionen, die entweder den Inhalt oder das Layout des Diagramms modifizieren (siehe Abschnitt \ref{subsec:edit-actions}). Die Änderung des Inhalts bewirkt eine automatische Anpassung des Layouts, welches wiederum durch den Nutzer mit Hilfe der Verschiebungsaktion in einem beschränkten Maß nach seinen Präferenzen verändert werden kann. Durch die fehlende Möglichkeit der expliziten Anpassung von Layout-Eigenschaften\footnote{Insbesondere handelt es sich an dieser Stelle um die Einschränkung der freien Positionierung.} kann sich der Nutzer in der Bearbeitung des Diagramms gehindert fühlen. Dies wurde in der Nutzerstudie untersucht und für das gewählte Beispiel hat dies kein Problem dargestellt. Eine derartige Eignung für allgemeinere Fälle wird in Abschnitt \ref{subsec:user-study-evaluation} diskutiert.
 
 \item
 \label{eval:mental-map}
