@@ -5,68 +5,10 @@
 \chapter{Evaluation}
 \label{chapter:evaluation}
 
-\section{Erfüllung der Kriterien}
-
-Im Folgenden wird auf die Kriterien aus Abschnitt \ref{sec:criteria} eingegangen und es wird bewertet, inwiefern diese Kriterien in dem entwickelten Ansatz erfüllt wurden:
-
-\begin{enumerate}[label={K.\arabic*}]
-
-\item
-\label{eval:gui}
-\textbf{GUI}
-Die Bearbeitung des Diagramms basiert auf Mechanismen, die für klassische grafische Benutzeroberflächen ausgelegt sind. Insbesondere ist der Einsatz des Mauszeigers von Bedeutung, wodurch eine sequenzielle Ausführung von Bearbeitungsaktionen ermöglicht wird. Somit hält sich der Ansatz an den Rahmenbedingungen aus Abschnitt \ref{sec:thesis-conditions} und erfüllt das Kriterium \ref{req:gui}.
-
-\item
-\label{eval:interactivity}
-\textbf{Interaktivität}
-Das modellierte Diagramm wird in einem Canvas dargestellt, worin es unmittelbar bearbeitet werden kann. Die Grundlage dafür bilden die Bearbeitungsaktionen (siehe Abschnitt \ref{subsec:edit-actions}), die durch den Nutzer ausgeführt werden. Während bzw. nach der Ausführung einer Bearbeitungsaktion reagiert das System, indem das Layout des Diagramms mit Hilfe von Layout-Übergängen (siehe Abschnitt \ref{subsec:layout-transitions}) angepasst wird. Dadurch dass der Prozess der Diagramm-Bearbeitung als eine Sequenz von Bearbeitungsaktionen aufgefasst werden kann, ist die Interaktivität in dem Ansatz fest verankert. Das Kriterium \ref{req:interactivity} wird daher ebenfalls erfüllt.
-
-\item
-\label{eval:immediate-feedback}
-\textbf{Unmittelbares Feedback}
-Wie in Abschnitt \ref{subsec:temporary-layer-mechanism} erläutert wurde, macht sich die Verschiebungsaktion den neu eingeführten Mechanismus der temporären Schicht zunutze. Während der Verschiebung wird das Layout des Diagramms kontinuierlich angepasst, wobei die Änderung anhand eines Platzhalters für den verschobenen Knoten und einer Animation des Layout-Übergangs visualisiert wird. Dem Nutzer wird im Verlauf der Aktion ständig das Ergebnis präsentiert, wodurch eine unmittelbare Feedback-Schleife erreicht wird (Kriterium \ref{req:immediate-feedback}). Da alle anderen unterstützten Bearbeitungsaktionen diskret sind, setzen sie das unmittelbare Feedback nicht ein. Dagegen wird erst nach ihrer Ausführung der Layout-Übergang initiiert. Die Eignung dieses Verhaltens wurde in der durchgeführten Nutzerstudie untersucht, deren Ergebnisse in Abschnitt \ref{subsec:user-study-evaluation} präsentiert werden.
-
-\item
-\label{eval:editing-support}
-\textbf{Förderung des Prozesses der Diagramm-Erstellung}
-Die inkrementelle Bearbeitung der Diagramme bildet eine Grundlage des präsentierten Ansatzes. Sie erfolgt durch die Ausführung von Bearbeitungsaktionen, die entweder den Inhalt oder das Layout des Diagramms modifizieren (siehe Abschnitt \ref{subsec:edit-actions}). Die Änderung des Inhalts bewirkt eine automatische Anpassung des Layouts, das wiederum durch den Nutzer mit Hilfe der Verschiebungsaktion in einem beschränkten Maß nach seinen Präferenzen verändert werden kann. Die fehlende Möglichkeit der expliziten Anpassung der Layout-Eigenschaften\footnote{Insbesondere handelt es sich an dieser Stelle um die Einschränkung der freien Positionierung.} kann den Nutzer in der Bearbeitung möglicherweise hindern. Dieses potentielle Problem wurde in der Nutzerstudie untersucht und wird in Abschnitt \ref{subsec:user-study-evaluation} ausgewertet.
-
-\item
-\label{eval:mental-map}
-\textbf{Erhaltung des mentalen Modells}
-
-% Layout-Übergänge
-% Animation
-
-\item
-\label{eval:focus-on-the-content}
-\textbf{Förderung der Konzentration auf den Inhalt}
-
-\item
-\label{eval:aesthetics-criteria}
-\textbf{Berücksichtigung der ästhetischen Prinzipien}
-
-% ästhetische Prinzipien in K.7
-
-\item
-\label{eval:syntax-and-semantics}
-\textbf{Berücksichtigung der Syntax und Semantik}
-
-% diagrammspezifischer Aspekt des Ansatzes nicht tiefgründig ausgearbeitet
-
-\item
-\label{eval:user-friendly}
-\textbf{Benutzerfreundlichkeit}
-
-% siehe Nutzerstudie
-
-\end{enumerate}
-
-% kleine Diagramme sind schnell zu zeichnen, manuelle Bearbeitung skaliert nicht mit der Größe des Diagramms \cite{Eichelberger05Aesthetics}
-% -> Problem, wenn viele Klassen im Diagramm
-% -> Skalierbarkeit
+Den Gegenstand dieses Kapitels bildet eine Evaluation des umgesetzten Konzepts, die aus zwei Teilen besteht. Zum einen wurde im Rahmen der Bachelor-Arbeit eine Nutzerstudie durchgeführt, deren Beschreibung und Auswertung sich der Abschnitt \ref{sec:user-study} widmet. Zum anderen wird in Abschnitt \ref{sec:criteria-evaluation} gezeigt, dass die für das Konzept aufgestellte Kriterien eingehalten wurden. Das Kapitel wird in Abschnitt \ref{sec:evaluation-summary} mit einer Zusammenfassung abgeschlossen.
 
 \section{Nutzerstudie}
+\label{sec:user-study}
 
 Um das umgesetzte Konzept zu validieren, wurde im Rahmen der Bachelor-Arbeit eine Nutzerstudie durchgeführt, die den Gegenstand für die folgenden Abschnitte bildet. Zunächst werden in Abschnitt \ref{subsec:user-study-setup} der Aufbau und die Durchführung im Detail erläutert. Anschließend folgt in Abschnitt \ref{subsec:user-study-evaluation} eine Auswertung der Ergebnisse.
 
@@ -235,4 +177,67 @@ Der Ablauf der Modellierung hat sich je nach dem Teilnehmer und der konkreten Au
 
 Die Nutzerstudie hat bestätigt, dass der entwickelte Ansatz den Prozess der Layout-Erstellung deutlich vereinfacht. Obwohl der umgesetzte Prototyp sehr eingeschränkt war und nur die Modellierung von einfachen Aufgaben ermöglicht hat, haben sich die Möglichkeiten der Interaktion dank der eingesetzten Bedienungskonzepten als intuitiv aufgewiesen. Weiterhin wurden durch die Nutzerstudie Stellen entdeckt, die verbessert bzw. erweitern werden könnten. Die gewonnenen Informationen sind für eine weitere Entwicklung des Prototyps und vor allem des zu Grunde liegenden Ansatzes sehr hilfreich.
 
+\section{Erfüllung der Kriterien}
+\label{sec:criteria-evaluation}
+
+Im Folgenden wird auf die Kriterien aus Abschnitt \ref{sec:criteria} eingegangen und es wird bewertet, inwiefern diese Kriterien in dem entwickelten Ansatz erfüllt wurden:
+
+\begin{enumerate}[label={K.\arabic*}]
+
+\item
+\label{eval:gui}
+\textbf{GUI}
+Die Bearbeitung des Diagramms basiert auf Mechanismen, die für klassische grafische Benutzeroberflächen ausgelegt sind. Insbesondere ist der Einsatz des Mauszeigers von Bedeutung, wodurch eine sequenzielle Ausführung von Bearbeitungsaktionen ermöglicht wird. Somit hält sich der Ansatz an den Rahmenbedingungen aus Abschnitt \ref{sec:thesis-conditions} und erfüllt das Kriterium \ref{req:gui}.
+
+\item
+\label{eval:interactivity}
+\textbf{Interaktivität}
+Das modellierte Diagramm wird in einem Canvas dargestellt, worin es unmittelbar bearbeitet werden kann. Die Grundlage dafür bilden die Bearbeitungsaktionen (siehe Abschnitt \ref{subsec:edit-actions}), die durch den Nutzer ausgeführt werden. Während bzw. nach der Ausführung einer Bearbeitungsaktion reagiert das System, indem das Layout des Diagramms mit Hilfe von Layout-Übergängen (siehe Abschnitt \ref{subsec:layout-transitions}) angepasst wird. Dadurch dass der Prozess der Diagramm-Bearbeitung als eine Sequenz von Bearbeitungsaktionen aufgefasst werden kann, ist die Interaktivität in dem Ansatz fest verankert. Das Kriterium \ref{req:interactivity} wird daher ebenfalls erfüllt.
+
+\item
+\label{eval:immediate-feedback}
+\textbf{Unmittelbares Feedback}
+Wie in Abschnitt \ref{subsec:temporary-layer-mechanism} erläutert wurde, macht sich die Verschiebungsaktion den neu eingeführten Mechanismus der temporären Schicht zunutze. Während der Verschiebung wird das Layout des Diagramms kontinuierlich angepasst, wobei die Änderung anhand eines Platzhalters für den verschobenen Knoten und einer Animation des Layout-Übergangs visualisiert wird. Dem Nutzer wird im Verlauf der Aktion ständig das Ergebnis präsentiert, wodurch eine unmittelbare Feedback-Schleife erreicht wird (Kriterium \ref{req:immediate-feedback}). Da alle anderen unterstützten Bearbeitungsaktionen diskret sind, setzen sie das unmittelbare Feedback nicht ein. Dagegen wird erst nach ihrer Ausführung der Layout-Übergang initiiert. Die Eignung dieses Verhaltens wurde in der durchgeführten Nutzerstudie untersucht, deren Ergebnisse in Abschnitt \ref{subsec:user-study-evaluation} präsentiert werden.
+
+\item
+\label{eval:editing-support}
+\textbf{Förderung des Prozesses der Diagramm-Erstellung}
+Die inkrementelle Bearbeitung der Diagramme bildet eine Grundlage des präsentierten Ansatzes. Sie erfolgt durch die Ausführung von Bearbeitungsaktionen, die entweder den Inhalt oder das Layout des Diagramms modifizieren (siehe Abschnitt \ref{subsec:edit-actions}). Die Änderung des Inhalts bewirkt eine automatische Anpassung des Layouts, das wiederum durch den Nutzer mit Hilfe der Verschiebungsaktion in einem beschränkten Maß nach seinen Präferenzen verändert werden kann. Die fehlende Möglichkeit der expliziten Anpassung der Layout-Eigenschaften\footnote{Insbesondere handelt es sich an dieser Stelle um die Einschränkung der freien Positionierung.} kann den Nutzer in der Bearbeitung möglicherweise hindern. Dieses potentielle Problem wurde in der Nutzerstudie untersucht und wird in Abschnitt \ref{subsec:user-study-evaluation} ausgewertet.
+
+\item
+\label{eval:mental-map}
+\textbf{Erhaltung des mentalen Modells}
+
+% Layout-Übergänge
+% Animation
+
+\item
+\label{eval:focus-on-the-content}
+\textbf{Förderung der Konzentration auf den Inhalt}
+
+\item
+\label{eval:aesthetics-criteria}
+\textbf{Berücksichtigung der ästhetischen Prinzipien}
+
+% ästhetische Prinzipien in K.7
+
+\item
+\label{eval:syntax-and-semantics}
+\textbf{Berücksichtigung der Syntax und Semantik}
+
+% diagrammspezifischer Aspekt des Ansatzes nicht tiefgründig ausgearbeitet
+
+\item
+\label{eval:user-friendly}
+\textbf{Benutzerfreundlichkeit}
+
+% siehe Nutzerstudie
+
+\end{enumerate}
+
+% kleine Diagramme sind schnell zu zeichnen, manuelle Bearbeitung skaliert nicht mit der Größe des Diagramms \cite{Eichelberger05Aesthetics}
+% -> Problem, wenn viele Klassen im Diagramm
+% -> Skalierbarkeit
+
 \section{Zusammenfassung}
+\label{sec:evaluation-summary}
