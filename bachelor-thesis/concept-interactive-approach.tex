@@ -396,12 +396,11 @@ Da der präsentierte Ansatz eine direkte Interaktion mit dem Diagramm unterstüt
 \subsection{Ansätze für das interaktive halbautomatische Layout}
 \label{subsec:comparison-interactive-layout}
 
-% Was ist neu an dem Ansatz?
-% Worin unterscheidet sich mein Ansatz zu dem von Sonja Maier?
-% - \enquote{Drag and Drop} mit Visualisierung der Aktion
-% - Kein Freihand-Editieren, sondern implizite Bereiche und Layout-Übergänge
-% - Patterns unterstützen Variierung
-% - Starke Vereinfachung der Möglichkeiten (Anpassung der Patterns aus [Maier])
+Der präsentierte Ansatz lässt sich in die Kategorie der Ansätze für das interaktive halbautomatische Layout einordnen und besitzt somit viele Gemeinsamkeiten mit Ansätzen, die in diese Kategorie gehören und in Abschnitt \ref{sec:interactive-semi-automatic-layout} vorgestellt wurden. Die Eigenschaft, die die Ansätze in dieser Kategorie ausmacht, ist die Unterstützung der interaktiven Bearbeitung des Diagramms. Jedoch handelt es sich bei dem präsentierten Ansatz um kein Freihand-Editieren wie bei den meisten anderen Ansätzen. Die Bearbeitungsmöglichkeiten werden eingeschränkt, so dass der Nutzer die Layout-Eigenschaften nicht explizit verändern kann und sich ausschließlich auf den Inhalt des Diagramms konzentriert. Zu diesem Zweck wird die Bedienung um neue Mechanismen der Interaktion (siehe Abschnitt erweitert \ref{sec:interaction-mechanisms}).
+
+In \cite[S.5]{Maier12A-Pattern-based} wird aufgeführt, dass die Einhaltung der ästhetischen Prinzipien im dynamischen Kontext eine geringere Rolle als die Erhaltung des mentalen Modells spielt. Der präsentierte Ansatz strebt an, diese These durch eine gleichzeitige Unterstützung beider Kriterien zu widerlegen. Die ästhetischen Prinzipien werden durch die automatische Layout-Berechnung berücksichtigt und da die Interaktion auf die Variierung des berechneten Layouts beschränkt ist, können sie durch den Nutzer nicht verletzt werden. Des Weiteren sorgen die Layout-Übergänge (siehe Abschnitt \ref{subsec:layout-transition}) für die Erhaltung des mentalen Modells.
+
+Ähnlich wie in den Struktur-basierten benutzergesteuerten Ansätzen (siehe Abschnitt \ref{subsec:structure-based-user-controlled-approaches}), wird in dem präsentierten Ansatz das Layout mit Hilfe von Strukturregeln beschrieben, die einen persistenten Charakter haben. Obwohl der Begriff der Layout-Patterns von \cite{Maier12A-Pattern-based} übernommen wurde, unterscheiden sich die Konzepte stark voneinander. Die konkreten Unterschiede werden in Abschnitt \ref{sec:layout-patterns} sowie \ref{subsec:explicit-layout-patterns} diskutiert.
 
 %%%%%%%%%%%
 % Summary %
