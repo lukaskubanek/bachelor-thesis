@@ -204,6 +204,8 @@ Wie in Abschnitt \ref{subsec:temporary-layer-mechanism} erläutert wurde, macht 
 \textbf{Förderung des Prozesses der Diagramm-Erstellung}
 Die inkrementelle Bearbeitung der Diagramme bildet eine Grundlage des präsentierten Ansatzes. Sie erfolgt durch die Ausführung von Bearbeitungsaktionen, die entweder den Inhalt oder das Layout des Diagramms modifizieren (siehe Abschnitt \ref{subsec:edit-actions}). Die Änderung des Inhalts bewirkt eine automatische Anpassung des Layouts, welches wiederum durch den Nutzer mit Hilfe der Verschiebungsaktion in einem beschränkten Maß nach seinen Präferenzen verändert werden kann. Durch die fehlende Möglichkeit der expliziten Anpassung von Layout-Eigenschaften\footnote{Insbesondere handelt es sich an dieser Stelle um die Einschränkung der freien Positionierung.} kann sich der Nutzer in der Bearbeitung des Diagramms gehindert fühlen. Dies wurde in der Nutzerstudie untersucht und für das gewählte Beispiel hat dies kein Problem dargestellt. Eine derartige Eignung für allgemeinere Fälle wird in Abschnitt \ref{subsec:user-study-evaluation} diskutiert.
 
+\newpage
+
 \item
 \label{eval:mental-map}
 \textbf{Erhaltung des mentalen Modells}
@@ -217,14 +219,19 @@ Durch die automatische Layout-Berechnung und die Einschränkung der Möglichkeit
 \item
 \label{eval:aesthetics-criteria}
 \textbf{Berücksichtigung der ästhetischen Prinzipien}
+Die ästhetischen Prinzipien aus Abschnitt \ref{sec:aesthetics-criteria} werden in dem entwickelten Ansatz durch den Algorithmus der Layout-Engine (siehe Abschnitt \ref{sec:layout-calculation}) und den Einsatz der Layout-Patterns (siehe Abschnitt \ref{sec:layout-patterns}) umgesetzt. Dadurch dass die unterstützte Notation der Klassendiagramme eingeschränkt wurde, konnte die Berücksichtigung der ästhetischen Prinzipien in dem Algorithmus für das baumbasierte Layout \ref{subsubsec:tree-layout-algorithm} deutlich vereinfacht werden. Im Folgenden wird auf die einzelnen ästhetischen Prinzipien eingegangen.
 
-% ästhetische Prinzipien in K.7
+Durch die baumbasierte Struktur und die Umsetzung des impliziten Layout-Patterns für die Verhinderung der Knoten-Überlappung (siehe Abschnitt \ref{subsubsec:prevention-of-node-overlap}) wird sichergestellt, dass sich die Klassen nicht überlappen und entsprechend voneinander entfernt sind (Prinzip \ref{pri:distances}). Die Verbindung der Klassen erfolgt ausschließlich durch die Erstellung von azyklischen Vererbungsrelationen, wodurch die Kantenkreuzungen komplett ausgeschlossen werden (Prinzip \ref{pri:edge-crossings}). Obwohl der Ansatz für die Unterstützung der \enquote{Gabelform} für Vererbungsrelationen ausgelegt ist, wurde diese aus zeitlichen Gründen im Prototyp nicht umgesetzt. Dahingegen wurde eine direkte Verbindung gewählt (Prinzip \ref{pri:inheritance-relation}). Da die Vererbung der einzige unterstützte Relationstyp ist und die Relationen durch direkte Verbindungen dargestellt werden, sind die Prinzipien \ref{pri:edge-bends} und \ref{pri:orthogonality} für das Beispiel überflüssig und wurden nicht betrachtet. Die hierarchischen Kanten der Vererbung werden aufgrund der Baumstruktur des Diagramm in einem vertikalen Verlauf dargestellt (Prinzip \ref{pri:edge-direction}). Somit können Vererbungshierarchien mit mehreren Ebenen gebildet werden, die sich nach dem Prinzip der Darstellung von Hierarchien richten (Prinzip \ref{pri:hierarchies}) und für die Positionierung der Klassen Symmetrie einsetzten (Prinzip \ref{pri:symmetry}). 
+
+Die einzelnen Vererbungshierarchien werden kompakt in einer horizontalen Linie im Diagramm angeordnet (Prinzip \ref{pri:related-elements-placement}). Auf dieser Weise werden ebenso die nicht verbundenen Klassen dargestellt. Durch den Nutzer kann ihre Reihenfolge geändert werden, so dass sie auch am Rand des Diagramms positioniert werden können (Prinzip \ref{pri:unconnencted-elements-placement}). Um den Canvas möglichst optimal auszunutzen und das Prinzip \ref{pri:drawing-area} einzuhalten, wird ein großer Wert auf die Verteilung der Objekte gelegt, u.a. durch die automatische Zentrierung des Diagramms (siehe Abschnitt \ref{subsubsec:centering-of-diagram-content}). Die horizontale Anordnung in dem Algorithmus für das baumbasierte Layout hat allerdings mit dem Problem der Skalierbarkeit zu kämpfen. Die Größe des Canvas im Prototyp ist durch die Größe des Fensters bestimmt und wird nicht erweitert, wenn der Inhalt des Diagramms nicht hineinpasst. Dies könnte durch den Einsatz eines \enquote{Scroll Views} gelöst werden. Durch mehrere vereinzelte Klassen oder Klassenhierarchien könnte trotzdem die Breite des Diagramms unangemessen zu der Höhe sein und dadurch das Prinzip \ref{pri:drawing-area} verletzen. In der Regel kommen in den Klassendiagrammen Klassen vor, die miteinander verbunden sind. Des Weiteren wird in \cite{Ambler02Agile} empfohlen, Klassendiagramme klein zu halten, so dass sie nur wenige Klassen beinhalten. Dadurch könnte das genannte Problem umgegangen werden. Für eine objektive Aussage wäre allerdings eine weitere Untersuchung notwendig.
 
 \item
 \label{eval:syntax-and-semantics}
 \textbf{Berücksichtigung der Syntax und Semantik}
 
 % diagrammspezifischer Aspekt des Ansatzes nicht tiefgründig ausgearbeitet
+
+% obwohl im Konzept, zunächst kein Metamodell vorgesehen, 
 
 \item
 \label{eval:user-friendly}

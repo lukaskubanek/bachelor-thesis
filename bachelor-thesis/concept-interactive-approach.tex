@@ -212,13 +212,14 @@ In allen interaktiven Ansätzen für das Layout von Diagrammen aus dem Kapitel \
 Dagegen ist die Größe der Knoten in dieser Arbeit ausschließlich durch den Inhalt des Knotens bestimmt. Sie nimmt zunächst eine minimale Größe an und wenn der Inhalt\footnote{Für eine Klasse der Notationssprache UML handelt es sich um ihre Bezeichnung und die Liste der Attribute und Methoden.} in den Knoten mit der minimalen Größe nicht passt, wird der Knoten entsprechend erweitert. Somit kann die Größe der Knoten weder durch den Nutzer noch durch die Layout-Berechnung geändert werden. Dieses implizite Layout-Pattern fördert insbesondere die Konzentration auf den Inhalt (Kriterium \ref{req:focus-on-the-content}) und die ästhetische Gestaltung (Kriterium \ref{req:aesthetics-criteria}).
 
 \subsubsection{Verhinderung der Knoten-Überlappung}
+\label{subsubsec:prevention-of-node-overlap}
 
-Dadurch dass die Größe der Knoten bekannt ist und die Position der Knoten berechnet wird, kann die Knoten-Überlappung verhindert werden. Dies trägt der Ästhetik des Diagramms (Kriterium \ref{req:aesthetics-criteria}) und insbesondere der Einhaltung der Abstände zwischen den Knoten (Prinzip \ref{pri:keeping-distances}) bei.
+Dadurch dass die Größe der Knoten bekannt ist und die Position der Knoten berechnet wird, kann die Knoten-Überlappung verhindert werden. Dies trägt der Ästhetik des Diagramms (Kriterium \ref{req:aesthetics-criteria}) und insbesondere der Einhaltung der Abstände zwischen den Knoten (Prinzip \ref{pri:distances}) bei.
 
 \subsubsection{Zentrierung des Diagramm-Inhalts}
 \label{subsubsec:centering-of-diagram-content}
 
-Die Zentrierung des Diagramm-Inhalts ist ein weiteres ästhetisches Layout-Pattern, das eine eindeutige Bestimmung des Layouts ermöglicht. Die Berechnung des Layouts erfolgt relativ und wird dermaßen auf das Diagramm angewendet, so dass der Diagramm-Inhalt immer in die Mitte des Canvas platziert wird und dadurch die Zeichenfläche optimal ausgenutzt wird (Prinzip \ref{pri:drawing-area-utilization}). Dies wird in Abbildung \ref{fig:layout-pattern-centered-content} veranschaulicht.
+Die Zentrierung des Diagramm-Inhalts ist ein weiteres ästhetisches Layout-Pattern, das eine eindeutige Bestimmung des Layouts ermöglicht. Die Berechnung des Layouts erfolgt relativ und wird dermaßen auf das Diagramm angewendet, so dass der Diagramm-Inhalt immer in die Mitte des Canvas platziert wird und dadurch die Zeichenfläche optimal ausgenutzt wird (Prinzip \ref{pri:drawing-area}). Dies wird in Abbildung \ref{fig:layout-pattern-centered-content} veranschaulicht.
 
 \begin{figure}[hbt]
     \centering
@@ -269,7 +270,7 @@ Die Variierung des Ausrichtungspatterns besteht in der Veränderung der Reihenfo
 \subsubsection{T-Shape-Pattern}
 \label{subsubsec:t-shape-pattern}
 
-Das T-Shape-Pattern beschreibt die Struktur von Knoten, die in die Form des Buchstabes \enquote{T} angeordnet sind. Dies ist insbesondere für die Darstellung von Hierarchien in Diagrammen von Bedeutung (Prinzip \ref{pri:representation-of-hierarchies}).
+Das T-Shape-Pattern beschreibt die Struktur von Knoten, die in die Form des Buchstabes \enquote{T} angeordnet sind. Dies ist insbesondere für die Darstellung von Hierarchien in Diagrammen von Bedeutung (Prinzip \ref{pri:hierarchies}).
 
 Ein Knoten hat eine spezielle Rolle und ist den anderen Knoten übergeordnet. Die untergeordneten Knoten sind ähnlich wie in dem Ausrichtungspattern gleichmäßig in einer Reihe angeordnet und an die Kanten ausgerichtet, die sich am nächsten zu dem übergeordneten Knoten befinden. Der übergeordnete Knoten befindet sich in einem definierten Abstand zu den untergeordneten Knoten und ist mittig ausgerichtet. In Abbildung \ref{fig:layout-pattern-t-shape} ist ein Beispiel des T-Shape-Patterns dargestellt, in dem der übergeordnete Knoten oben positioniert ist. Die Abstände sind mit farbigen Pfeilen und die Ausrichtung mit grauen Linien gekennzeichnet. Natürlich gibt es weitere Formen des T-Shape-Patterns, in den sich der übergeordnete Knoten links, unten oder rechts befindet.
 
@@ -357,7 +358,7 @@ Nichtsdestotrotz macht der Algorithmus die Mechanismen der Interaktion aus dem A
 \subsubsection{Algorithmus für das baumbasierte Layout}
 \label{subsubsec:tree-layout-algorithm}
 
-Der Algorithmus für das baumbasierte Layout ermöglicht die Modellierung von Vererbungshierarchien in einem Klassendiagramm. Dabei hält er sich an die im Abschnitt \ref{sec:aesthetics-criteria} beschriebene ästhetischen Prinzipien. Insbesondere wird das Prinzip der Darstellung von Hierarchien eingehalten (Prinzip \ref{pri:representation-of-hierarchies}).
+Der Algorithmus für das baumbasierte Layout ermöglicht die Modellierung von Vererbungshierarchien in einem Klassendiagramm. Dabei hält er sich an die im Abschnitt \ref{sec:aesthetics-criteria} beschriebene ästhetischen Prinzipien. Insbesondere wird das Prinzip der Darstellung von Hierarchien eingehalten (Prinzip \ref{pri:hierarchies}).
 
 Ähnlich wie bei der Umsetzung des Algorithmus für das horizontale Layout (siehe Abschnitt \ref{subsubsec:horizontal-layout-algorithm}) enthält die Layout-Engine, die den Algorithmus für das baumbasierte Layout umsetzt, eine Instanz des horizontalen Ausrichtungspatterns, das jedoch nicht alle Klassen im Diagramm sondern nur die Wurzelklassen der Vererbungshierarchien referenziert. Durch dieses globale Ausrichtungspattern wird die Reihenfolge der Vererbungshierarchien bestimmt. Während der Erstellung von Vererbungsrelationen zwischen Klassen werden T-Shape-Patterns (siehe Abschnitt \ref{subsubsec:t-shape-pattern}) instanziiert, die die Struktur der Vererbungshierarchien beschreiben und durch die Layout-Engine verwaltet werden. In Abbildung \ref{fig:tree-based-layout} wird ein Beispiel eines Diagramms mit gekennzeichneten Layout-Patterns gezeigt. Die blaue Linie stellt das globale Ausrichtungspattern dar und mit den grünen Linien sind die instanziierten T-Shape-Patterns markiert. Die Vererbungshierarchien sind mit grauen gestrichelten Linien umrandet.
 
@@ -419,5 +420,4 @@ In \cite[S.5]{Maier12A-Pattern-based} wird aufgeführt, dass die Einhaltung der 
 
 % Neu-Berechnung nach jedem Layout-Übergang -> Performance?
 
-% Klassendiagramme meistens weniger als 10 Klassen (Rat von Scott Ambler?)
 % Durch die Spezialisierung auf konkrete Diagramm-Typen und den Einsatz von verschiedenen Vereinfachungsmaßnahmen wie etwa Einschränkung der unterstützten Notation \cite[S.56ff]{Ambler02Agile} lassen sich Algorithmen für das Layout von Softwarediagrammen entwerfen, die zwar nicht so flexibel wie z.B. \cite{Maier12A-Pattern-based} oder \cite{Eichelberger05Aesthetics} sind, aber dafür...
