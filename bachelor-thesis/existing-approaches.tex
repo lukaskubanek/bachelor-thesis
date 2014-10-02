@@ -5,25 +5,25 @@
 \chapter{Bestehende Ansätze für das Layout von Diagrammen}
 \label{chapter:existing-approaches}
 
-Dieses Kapitel widmet sich der Vorstellung von bestehenden Ansätzen für Layout von Diagrammen. Im Abschnitt \ref{sec:categorization} werden die Ansätze zunächst kategorisiert und anschließend werden in Abschnitten \ref{sec:manual-layout}, \ref{sec:automatic-layout} und \ref{sec:interactive-semi-automatic-layout} die einzelnen Hauptkategorien ausführlich beschrieben und deren Eigenschaften erläutert.
+Dieses Kapitel widmet sich der Vorstellung von bestehenden Ansätzen für Layout von Diagrammen. In Abschnitt \ref{sec:categorization} werden die Ansätze zunächst kategorisiert und anschließend werden in Abschnitten \ref{sec:manual-layout}, \ref{sec:automatic-layout} und \ref{sec:interactive-semi-automatic-layout} die einzelnen Hauptkategorien ausführlich beschrieben und deren Eigenschaften erläutert.
 
 \section{Kategorisierung}
 \label{sec:categorization}
 
 Diese Arbeit setzt sich insbesondere mit der Interaktivität der Ansätze für das Layout von Diagrammen auseinander. Aus dem Grund werden die bestehenden Ansätze nach dem \textbf{Grad der Interaktivität} und der \textbf{Art der Layout-Unterstützung} in 3 Hauptkategorien unterteilt.
 
-Zum einen gibt es das interaktive \textbf{manuelle Layout}, das auf der Freihand-Bearbeitung basiert und dem Nutzer ermöglicht, die Layout-Eigenschaften der Objekte im Diagramm wunschgemäß zu verändern, wobei dem Nutzer zusätzlich Layout-Vorschläge präsentiert werden. Das manuelle Layout wird in den meisten grafischen Editoren eingesetzt und wird näher im Abschnitt \ref{sec:manual-layout} erläutert.
+Zum einen gibt es das interaktive \textbf{manuelle Layout}, das auf der Freihand-Bearbeitung basiert und dem Nutzer ermöglicht, die Layout-Eigenschaften der Objekte im Diagramm wunschgemäß zu verändern, wobei dem Nutzer zusätzlich Layout-Vorschläge präsentiert werden. Das manuelle Layout wird in den meisten grafischen Editoren eingesetzt und wird näher in Abschnitt \ref{sec:manual-layout} erläutert.
 
 Weiterhin gibt es Ansätze für das \textbf{vollautomatische Layout}, die optimale Layouts unter Berücksichtigung von ästhetischen Prinzipien produzieren. Sie haben einen statischen Charakter und können von dem Nutzer nur minimal beeinflusst werden. Somit sind sie nicht für interaktive Umgebungen geeignet. Mit diesen Ansätzen beschäftigt sich der Abschnitt \ref{sec:automatic-layout}.
 
-Schließlich gibt es Ansätze für das \textbf{halbautomatische Layout}, die das Layout automatisiert berechnen, lassen sich aber durch den Nutzer interaktiv beeinflussen. Demzufolge kombinieren sie die Vorteile der vorigen beiden Kategorien. Diese Ansätze werden näher im Abschnitt \ref{sec:interactive-semi-automatic-layout} beschrieben.
+Schließlich gibt es Ansätze für das \textbf{halbautomatische Layout}, die das Layout automatisiert berechnen, lassen sich aber durch den Nutzer interaktiv beeinflussen. Demzufolge kombinieren sie die Vorteile der vorigen beiden Kategorien. Diese Ansätze werden näher in Abschnitt \ref{sec:interactive-semi-automatic-layout} beschrieben.
 
 \section{Manuelles Layout}
 \label{sec:manual-layout}
 
 In Anwendungen zum Erstellen von Diagrammen wie z.B. Vektorgrafik-Software, Präsentationsprogramme oder CASE-Tools wird ausschließlich das manuelle Layout unterstützt, d.h. die einzelnen Bestandteile können im Diagramm frei positioniert werden. Somit kann der Nutzer ein gewünschtes Layout erreichen, muss dafür aber viele manuelle Schritte tätigen \cite{Eichelberger05Aesthetics}. Da sich der Inhalt des Diagramms während der Erstellung ständig ändert, ist es notwendig, auch das Layout manuell anzupassen. Dies kann zur Frustration des Nutzers führen. Um einige Hürden des manuellen Layouts zu überwinden, bieten die Anwendungen eine Reihe an Funktionen, die dem Nutzer diese Tätigkeit bequemer machen.
 
-Da das manuelle Layout auf direkter Interaktion des Nutzers mit dem Diagramm basiert, haben auch die Hilfefunktionen einen interaktiven Charakter. Außerdem weisen sie ein temporäres Verhalten auf, d.h. bei ihrer Nutzung werden keinerlei Regeln oder Constraints erstellt, wie das meistens bei den halbautomatischen Ansätzen der Fall ist (siehe Abschnitt \ref{sec:interactive-semi-automatic-layout}). Im Detail werden die Hilfefunktionen im Abschnitt \ref{subsec:help-functions-for-manual-layout} beschrieben.
+Da das manuelle Layout auf direkter Interaktion des Nutzers mit dem Diagramm basiert, haben auch die Hilfefunktionen einen interaktiven Charakter. Außerdem weisen sie ein temporäres Verhalten auf, d.h. bei ihrer Nutzung werden keinerlei Regeln oder Constraints erstellt, wie das meistens bei den halbautomatischen Ansätzen der Fall ist (siehe Abschnitt \ref{sec:interactive-semi-automatic-layout}). Im Detail werden die Hilfefunktionen in Abschnitt \ref{subsec:help-functions-for-manual-layout} beschrieben.
 
 \subsection{Anwendungen als Grundlage}
 \label{subsec:applications-for-manual-layout}
@@ -35,14 +35,14 @@ Im Folgenden werden drei Anwendungen vorgestellt, an den die Hilfefunktionen fü
 
 Die von \textit{OmniGroup}\footnote{\url{http://omnigroup.com}} entwickelte kommerzielle Anwendung \textit{OmniGraffle} ist eins der einfachsten Tools zur Erstellung von Diagrammen unter Mac OS X \cite{Olsen10OmniGraffle}. \textit{OmniGraffle} ist sehr flexibel und lässt sich für viele verschiedene Aufgaben einsetzen, z.B. von einem grafischen Entwurf einer Webseite bis zum Zeichnen von Klassendiagrammen. Das liegt vor allem daran, dass für die gezeichneten Diagramme kein semantisches Modell vorliegt und dass die Diagrammbestandteile als reine vektorgrafische Objekte repräsentiert werden. Detaillierte Informationen zu \textit{OmniGraffle} können in \cite{08OmniGraffle}, \cite{Olsen10OmniGraffle} oder auf der offiziellen Webseite\footnote{\url{http://omnigroup.com/omnigraffle}} gefunden werden.
 
-Die meisten im Abschnitt \ref{subsec:help-functions-for-manual-layout} beschriebenen Hilfefunktionen für das manuelle Layout werden anhand von \textit{OmniGraffle} 5\footnote{Die aktuelle Version von \textit{OmniGraffle} ist 6 (\url{http://www.omnigroup.com/blog/omnigraffle-6-is-here}), die Erkenntnisse für diese Arbeit wurden allerdings mit der Version 5 gewonnen.} gezeigt. \textit{OmniGraffle} bietet auch eine Unterstützung für automatisches Layout, die näher im Abschnitt \ref{subsubsec:omnigraffle-auto-layout} beschrieben wird.
+Die meisten in Abschnitt \ref{subsec:help-functions-for-manual-layout} beschriebenen Hilfefunktionen für das manuelle Layout werden anhand von \textit{OmniGraffle} 5\footnote{Die aktuelle Version von \textit{OmniGraffle} ist 6 (\url{http://www.omnigroup.com/blog/omnigraffle-6-is-here}), die Erkenntnisse für diese Arbeit wurden allerdings mit der Version 5 gewonnen.} gezeigt. \textit{OmniGraffle} bietet auch eine Unterstützung für automatisches Layout, die näher in Abschnitt \ref{subsubsec:omnigraffle-auto-layout} beschrieben wird.
 
 \subsubsection{Keynote}
 \label{subsubsec:keynote}
 
 \textit{Apple} \textit{Keynote} ist eine Anwendung zur Erstellung von Präsentationen für Mac OS X und iOS. Es bietet ähnliche Funktionen wie Microsoft PowerPoint\footnote{\url{http://office.microsoft.com/en-us/powerpoint/}} und bildet somit eine Alternative zu dem bekannten Präsentationsprogramm. Neben den Achsendiagrammen zur Visualisierung von Werten wie Linien- oder Balkendiagramme ermöglicht \textit{Keynote} mit Hilfe von vektorgrafischen Objekten einfache graphbasierte Diagramme zu erstellen. Weitere Informationen sind in \cite{11Keynote} oder auf der offiziellen Webseite\footnote{\url{http://www.apple.com/de/mac/keynote/}} zu finden. 
 
-\textit{Keynote} besitzt ähnliche oder sogar identische Hilfefunktionen für das manuelle Layout wie \textit{OmniGraffle}. Im Abschnitt \ref{subsec:help-functions-for-manual-layout} werden einige Hilfefunktionen anhand von \textit{Keynote} 6 erklärt. Das automatische Layout wird in \textit{Keynote} nicht unterstützt.
+\textit{Keynote} besitzt ähnliche oder sogar identische Hilfefunktionen für das manuelle Layout wie \textit{OmniGraffle}. In Abschnitt \ref{subsec:help-functions-for-manual-layout} werden einige Hilfefunktionen anhand von \textit{Keynote} 6 erklärt. Das automatische Layout wird in \textit{Keynote} nicht unterstützt.
 
 \subsubsection{Visual Paradigm}
 \label{subsubsec:visual-paradigm}
@@ -55,7 +55,7 @@ Die meisten im Abschnitt \ref{subsec:help-functions-for-manual-layout} beschrieb
 \subsubsection{Raster}
 \label{subsubsec:grid}
 
-Viele (unter anderem alle drei im Abschnitt \ref{subsec:applications-for-manual-layout} erwähnten) Visualisierungsprogramme unterstützen die Aufteilung des Diagramms in ein gleichmäßiges Raster, das durch Rasterlinien dargestellt werden kann. Diese Linien können zum Ausrichten von Objekten im Diagramm verwendet werden, das vor allem dann nützlich ist, wenn die Größen der Objekte eine wichtige Rolle spielen wie z.B. Grundrisse \cite{08OmniGraffle, Olsen10OmniGraffle, 11Keynote, 14Visual}.
+Viele (unter anderem alle drei in Abschnitt \ref{subsec:applications-for-manual-layout} erwähnten) Visualisierungsprogramme unterstützen die Aufteilung des Diagramms in ein gleichmäßiges Raster, das durch Rasterlinien dargestellt werden kann. Diese Linien können zum Ausrichten von Objekten im Diagramm verwendet werden, das vor allem dann nützlich ist, wenn die Größen der Objekte eine wichtige Rolle spielen wie z.B. Grundrisse \cite{08OmniGraffle, Olsen10OmniGraffle, 11Keynote, 14Visual}.
 
 \paragraph{Snap-to-Grid}
 
@@ -356,9 +356,9 @@ Den graphbasierten Softwarediagrammen unterliegt die abstrakte Struktur des Grap
 
 Um während der Erstellung des Diagramms immer ein optimales Layout zu erhalten, muss der Layout-Algorithmus kontinuierlich nach jeder Änderung des Inhalts entweder automatisch oder manuell aufgerufen werden. Wenn eine Interaktion mit dem resultierenden Diagramm unterstützt wird, hat sie keinerlei Einwirkung auf den Algorithmus und wird bei dem nächsten Aufruf nicht berücksichtigt. In der Regel kann der Nutzer nur bestimmte Parameter des Algorithmus\footnote{z.B. minimale Länge der Kanten im zirkulären Layout-Algorithmus \texttt{circo} aus der Bibliothek \textit{Graphviz} \cite{NorthGansner14Dot-Manual}.} anpassen und hat somit nur einen geringen Einfluss auf das Ergebnis des Layout-Prozesses.
 
-Die Ansätze lassen sich in zwei Kategorien nach der Art der Sprache unterteilen, die als Eingabe für den Layout-Algorithmus verwendet wird\footnote{In der Literatur werden Ansätze für das automatische Layout meistens nach den Layout-Algorithmen kategorisiert \cite[S.39ff]{Fuhrmann11On-the-Pragmatics} \cite[S.32ff]{Eichelberger05Aesthetics}. Wie bereits im Abschnitt \ref{sec:categorization} erläutert wurde, richtet sich die Kategorisierung in dieser Arbeit danach, wie die Ansätze zu bedienen sind und welche Art der Interaktion sie unterstützen.}. Zum einen gibt es Ansätze, die aus einer Beschreibung des Diagramms in einer \textbf{textuellen Sprache} unter Anwendung des Layout-Algorithmus eine grafische Repräsentation erzeugen. Zum anderen gibt es Ansätze, die auf Diagramme angewendet werden, die in einer \textbf{visuellen Sprache} modelliert sind. Diese Ansätze verändern die Layout-Eigenschaften der Diagrammelemente direkt.
+Die Ansätze lassen sich in zwei Kategorien nach der Art der Sprache unterteilen, die als Eingabe für den Layout-Algorithmus verwendet wird\footnote{In der Literatur werden Ansätze für das automatische Layout meistens nach den Layout-Algorithmen kategorisiert \cite[S.39ff]{Fuhrmann11On-the-Pragmatics} \cite[S.32ff]{Eichelberger05Aesthetics}. Wie bereits in Abschnitt \ref{sec:categorization} erläutert wurde, richtet sich die Kategorisierung in dieser Arbeit danach, wie die Ansätze zu bedienen sind und welche Art der Interaktion sie unterstützen.}. Zum einen gibt es Ansätze, die aus einer Beschreibung des Diagramms in einer \textbf{textuellen Sprache} unter Anwendung des Layout-Algorithmus eine grafische Repräsentation erzeugen. Zum anderen gibt es Ansätze, die auf Diagramme angewendet werden, die in einer \textbf{visuellen Sprache} modelliert sind. Diese Ansätze verändern die Layout-Eigenschaften der Diagrammelemente direkt.
 
-Mit den textbasierten Ansätzen beschäftigt sich der Abschnitt \ref{subsec:text-based-approaches}. Die visuellen Ansätze werden in Abschnitt \ref{subsec:visual-approaches} behandelt. Den speziellen Algorithmen für Klassendiagramme widmet sich der Abschnitt \ref{subsec:special-algorithms-for-class-diagrams}. Abschließend werden die Eigenschaften der Ansätze für das automatische Layout im Abschnitt \ref{subsec:summary-automatic-layout} zusammengefasst.
+Mit den textbasierten Ansätzen beschäftigt sich der Abschnitt \ref{subsec:text-based-approaches}. Die visuellen Ansätze werden in Abschnitt \ref{subsec:visual-approaches} behandelt. Den speziellen Algorithmen für Klassendiagramme widmet sich der Abschnitt \ref{subsec:special-algorithms-for-class-diagrams}. Abschließend werden die Eigenschaften der Ansätze für das automatische Layout in Abschnitt \ref{subsec:summary-automatic-layout} zusammengefasst.
 
 \subsection{Textbasierte Ansätze}
 \label{subsec:text-based-approaches}
@@ -425,7 +425,7 @@ Die Algorithmen für das automatische Layout sind im Allgemeinen nicht ideal und
 \subsubsection{Automatisches Layout in OmniGraffle}
 \label{subsubsec:omnigraffle-auto-layout}
 
-Wie bereits im Abschnitt \ref{subsubsec:graph-drawing-tools} beschrieben wurde, bietet \textit{Graphviz} eine Software-Bibliothek an, die sich in andere Programme einbinden lässt. Das Visualisierungsprogramm \textit{OmniGraffle} (siehe Abschnitt \ref{subsubsec:omnigraffle}) macht sich dies zu Nutze und verfügt über eine Funktion für das automatische Layout, die Algorithmen aus \textit{Graphviz} für die Layout-Berechnung verwendet, nämlich den hierarchischen, kraftbasierten, zirkulären und radialen Algorithmus \cite{Olsen10OmniGraffle}. Nachdem die Funktion des automatischen Layouts für ein Diagramm aktiviert wird, kann der Layout-Algorithmus ausgewählt und seine Parameter eingestellt werden\footnote{Die konkreten möglichen Parameter der Algorithmen sind in \cite[S.74]{08OmniGraffle} nachzuschauen.}. In Abbildung \ref{fig:omnigraffle-automatic-layout} wird ein Beispiel der Anwendung von allen verfügbaren Layout-Algorithmen auf ein Diagramm illustriert.
+Wie bereits in Abschnitt \ref{subsubsec:graph-drawing-tools} beschrieben wurde, bietet \textit{Graphviz} eine Software-Bibliothek an, die sich in andere Programme einbinden lässt. Das Visualisierungsprogramm \textit{OmniGraffle} (siehe Abschnitt \ref{subsubsec:omnigraffle}) macht sich dies zu Nutze und verfügt über eine Funktion für das automatische Layout, die Algorithmen aus \textit{Graphviz} für die Layout-Berechnung verwendet, nämlich den hierarchischen, kraftbasierten, zirkulären und radialen Algorithmus \cite{Olsen10OmniGraffle}. Nachdem die Funktion des automatischen Layouts für ein Diagramm aktiviert wird, kann der Layout-Algorithmus ausgewählt und seine Parameter eingestellt werden\footnote{Die konkreten möglichen Parameter der Algorithmen sind in \cite[S.74]{08OmniGraffle} nachzuschauen.}. In Abbildung \ref{fig:omnigraffle-automatic-layout} wird ein Beispiel der Anwendung von allen verfügbaren Layout-Algorithmen auf ein Diagramm illustriert.
 
 \begin{figure}[hbt]
     \newcommand{\subfigureshortwidth}{0.28\textwidth}
@@ -563,7 +563,7 @@ Diese Ansätze sind für interaktive Umgebungen ausgelegt, die eine sequenzielle
 \subsection{Struktur-basierte benutzergesteuerte Ansätze}
 \label{subsec:structure-based-user-controlled-approaches}
 
-Die erste Kategorie der Ansätze für das interaktive halbautomatische Layout bilden die Struktur-basierten benutzergesteuerten Ansätze, die dem Nutzer ermöglichen, das Layout des Diagramms durch Erstellung und Verwaltung von Strukturregeln\footnote{Ein Beispiel für eine solche Strukturregel ist die im Abschnitt \ref{subsubsec:alignment-and-distribution} beschriebene gleichmäßige Verteilung der ausgewählten Objekte in Relation zueinander.} zu beeinflussen. Diese Strukturregeln erinnern an die Hilfefunktionen für das manuelle Layout (siehe Abschnitt \ref{subsec:help-functions-for-manual-layout}), sind aber dahingegen persistent \cite{Wybrow08Using}. Sie werden bei der Berechnung des Layouts durch einen dynamischen Layout-Algorithmus berücksichtigt und eingehalten.
+Die erste Kategorie der Ansätze für das interaktive halbautomatische Layout bilden die Struktur-basierten benutzergesteuerten Ansätze, die dem Nutzer ermöglichen, das Layout des Diagramms durch Erstellung und Verwaltung von Strukturregeln\footnote{Ein Beispiel für eine solche Strukturregel ist die in Abschnitt \ref{subsubsec:alignment-and-distribution} beschriebene gleichmäßige Verteilung der ausgewählten Objekte in Relation zueinander.} zu beeinflussen. Diese Strukturregeln erinnern an die Hilfefunktionen für das manuelle Layout (siehe Abschnitt \ref{subsec:help-functions-for-manual-layout}), sind aber dahingegen persistent \cite{Wybrow08Using}. Sie werden bei der Berechnung des Layouts durch einen dynamischen Layout-Algorithmus berücksichtigt und eingehalten.
 
 Die Struktur-basierten benutzergesteuerten Ansätze lassen sich in zwei Gruppen unterteilen: in Constraint-basierte und Pattern-basierte Ansätze. Beide Gruppen werden im Folgenden vorgestellt.
 
@@ -615,7 +615,7 @@ In Abbildung \ref{fig:diameta-graph-editor-screenshot} wird ein Screenshot des \
 
 \subsection{Anwendungsspezifische Ansätze}
 
-Die Struktur-basierten benutzergesteuerten Ansätze für das halbautomatische Layout, die im Abschnitt \ref{subsec:structure-based-user-controlled-approaches} beschrieben wurden, sind sehr universell und können in Editoren für verschiedene visuellen Sprachen eingesetzt werden. Aus diesem Grund können die syntaktischen und semantischen Eigenschaften der Sprachen nicht gründlich in den Algorithmen berücksichtigt werden. Dahingegen gibt es anwendungsspezifische Ansätze, deren Algorithmen für konkrete visuelle Sprachen entworfen sind. Diese werden im Folgenden vorgestellt.
+Die Struktur-basierten benutzergesteuerten Ansätze für das halbautomatische Layout, die in Abschnitt \ref{subsec:structure-based-user-controlled-approaches} beschrieben wurden, sind sehr universell und können in Editoren für verschiedene visuellen Sprachen eingesetzt werden. Aus diesem Grund können die syntaktischen und semantischen Eigenschaften der Sprachen nicht gründlich in den Algorithmen berücksichtigt werden. Dahingegen gibt es anwendungsspezifische Ansätze, deren Algorithmen für konkrete visuelle Sprachen entworfen sind. Diese werden im Folgenden vorgestellt.
 
 \subsubsection{Smart Layout in MindNode}
 \label{subsubsec:smart-layout-in-mindnode}
