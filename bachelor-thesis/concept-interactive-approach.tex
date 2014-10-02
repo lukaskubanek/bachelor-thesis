@@ -102,7 +102,7 @@ Je nach der Art der Modifizierung lassen sich die Bearbeitungsaktionen in zwei G
 
 \subsubsection{Bearbeitungsaktionen zur Modifizierung des Inhalts}
 
-Zu den Bearbeitungsaktionen, die den Inhalt verändern, gehört das Hinzufügen und Löschen von Knoten bzw. Kanten und die Veränderung ihrer Eigenschaften wie z.B. das Umbenennen der Knoten. Da die Intention für die Ausführung dieser Aktionen nicht die Anpassung des Layouts ist, weisen diese Aktionen ein verzögertes Feedback auf, d.h. das Layout wird erst nach der Beendigung der Bearbeitung angepasst\footnote{Eine Ausnahme bildet das Hinzufügen eines neuen Knoten, das sich ähnlich wie die Verschiebungsaktion aus dem Abschnitt \ref{subsubsec:edit-action-for-modifying-layout} verhält.}.
+Zu den Bearbeitungsaktionen, die den Inhalt verändern, gehört das Hinzufügen und Löschen von Knoten bzw. Kanten und die Veränderung ihrer Eigenschaften wie z.B. das Umbenennen der Knoten. Da die Intention für die Ausführung dieser Aktionen nicht die Anpassung des Layouts ist, weisen diese Aktionen ein verzögertes Feedback auf, d.h. das Layout wird erst nach der Beendigung der Bearbeitung angepasst\footnote{Eine Ausnahme bildet das Hinzufügen eines neuen Knoten, das sich ähnlich wie die Verschiebungsaktion aus Abschnitt \ref{subsubsec:edit-action-for-modifying-layout} verhält.}.
 
 \subsubsection{Bearbeitungsaktionen zur Modifizierung des Layouts}
 \label{subsubsec:edit-action-for-modifying-layout}
@@ -353,7 +353,7 @@ Der Algorithmus für das horizontale Layout ordnet alle Klassen eines Klassendia
 
 Die Layout-Engine, die diesen Algorithmus umsetzt, enthält intern eine Instanz des Ausrichtungspatterns (siehe Abschnitt \ref{subsubsec:alignment-pattern}), das alle Klassen des Diagramms referenziert. Dieser Algorithmus hat aus der Sicht des Nutzers keine große Bedeutung und dient ausschließlich als Grundlage für den Algorithmus für das baumbasierte Layout, mit dem sich der Abschnitt \ref{subsubsec:tree-layout-algorithm} beschäftigt.
 
-Nichtsdestotrotz macht der Algorithmus die Mechanismen der Interaktion aus dem Abschnitt \ref{sec:interaction-mechanisms} verständlich. Insbesondere zeigt die Verschiebungsaktion die Möglichkeit der Änderung der Reihenfolge der Klassen im Diagramm. Dies wird durch die Layout-Engine in eine direkte Variierung des Ausrichtungspatterns übersetzt. Eine Veranschaulichung der prototypischen Implementierung des Algorithmus für das horizontale Layout ist dem Video unter dem Pfad \texttt{Prototype/Videos/Hori\-zon\-tal-\-Lay\-out-\-De\-mo.mov} auf der unter Anhang \ref{chapter:dvd-content} eingereichten DVD zu entnehmen.
+Nichtsdestotrotz macht der Algorithmus die Mechanismen der Interaktion aus Abschnitt \ref{sec:interaction-mechanisms} verständlich. Insbesondere zeigt die Verschiebungsaktion die Möglichkeit der Änderung der Reihenfolge der Klassen im Diagramm. Dies wird durch die Layout-Engine in eine direkte Variierung des Ausrichtungspatterns übersetzt. Eine Veranschaulichung der prototypischen Implementierung des Algorithmus für das horizontale Layout ist dem Video unter dem Pfad \texttt{Prototype/Videos/Hori\-zon\-tal-\-Lay\-out-\-De\-mo.mov} auf der unter Anhang \ref{chapter:dvd-content} eingereichten DVD zu entnehmen.
 
 \subsubsection{Algorithmus für das baumbasierte Layout}
 \label{subsubsec:tree-layout-algorithm}
