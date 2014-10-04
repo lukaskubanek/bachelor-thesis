@@ -6,7 +6,7 @@
 \chapter{Ansatz für das interaktive und diagrammspezifische Layout von graphbasierten Softwarediagrammen}
 \label{chapter:interactive-approach}
 
-In diesem Kapitel wird ein Ansatz für das interaktive und diagrammspezifische Layout von graphbasierten Diagrammen präsentiert. Zunächst werden in Abschnitt \ref{sec:criteria} die Kriterien für den Entwurf des Ansatzes aufgestellt. Eine kurze Übersicht der Funktionsweise wird in Abschnitt \ref{sec:functionality-overview} gegeben. In Abschnitt \ref{sec:interaction-mechanisms} werden die eingesetzten Mechanismen der Interaktion näher erläutert. Eine detaillierte Beschreibung der Layout-Patterns und deren Rolle in dem präsentierten Ansatz folgt in Abschnitt \ref{sec:layout-patterns}. In Abschnitt \ref{sec:layout-calculation} wird erklärt, wie die Layout-Berechnung im Detail funktioniert. In Abschnitt \ref{sec:current-approaches-comparison} wird der präsentierte Ansatz von den bestehenden Ansätzen abgegrenzt und mit ihnen verglichen. Das Kapitel wird mit einer Zusammenfassung in Abschnitt \ref{sec:approach-summary} abgeschlossen.
+In diesem Kapitel wird ein Ansatz für das interaktive und diagrammspezifische Layout von graphbasierten Softwarediagrammen präsentiert. Zunächst werden in Abschnitt \ref{sec:criteria} die Kriterien für den Entwurf des Ansatzes aufgestellt. Eine kurze Übersicht der Funktionsweise wird in Abschnitt \ref{sec:functionality-overview} gegeben. In Abschnitt \ref{sec:interaction-mechanisms} werden die eingesetzten Mechanismen der Interaktion näher erläutert. Eine detaillierte Beschreibung der Layout-Patterns und deren Rolle in dem präsentierten Ansatz folgt in Abschnitt \ref{sec:layout-patterns}. In Abschnitt \ref{sec:layout-calculation} wird erklärt, wie die Layout-Berechnung im Detail funktioniert. In Abschnitt \ref{sec:current-approaches-comparison} wird der präsentierte Ansatz von den bestehenden Ansätzen abgegrenzt und mit ihnen verglichen. Das Kapitel wird mit einer Zusammenfassung in Abschnitt \ref{sec:approach-summary} abgeschlossen.
 
 \section{Kriterien}
 \label{sec:criteria}
@@ -335,7 +335,7 @@ Das Layout, das ein Diagramm annimmt, wenn die Verschiebungsaktion beginnt, soll
 
 In Abschnitt \ref{subsec:processing-of-layout-events} wurde der Rumpf des Algorithmus für die Berechnung des Layouts vorgestellt. Dabei wurde nicht auf die interne Funktionsweise der Layout-Engine eingegangen. Das liegt daran, dass die Layout-Engine ein unterschiedliches Verhalten für verschiedene \textbf{Diagrammtypen} aufweisen soll, denn jeder Diagrammtyp (z.B. Klassendiagramm, Zustandsdiagramm, Flowchart usw.) hat aufgrund der Syntax- und Semantikregeln spezielle Anforderungen an das ästhetische Layout. Nur dadurch kann das Kriterium \ref{req:syntax-and-semantics} erfüllt werden.
 
-Die in dieser Arbeit präsentierten Algorithmen basieren auf der visuellen Sprache der Klassendiagramme der Notationssprache UML. Allerdings handelt es sich um keine allgemeinen Algorithmen für das Layout von Klassendiagrammen, sondern um zwei relativ einfache Algorithmen, deren Aufgabe es ist, die eingeführten Mechanismen der Interaktion zu validieren und damit das gesamte Konzept zu prüfen. Daher wird der Einfachheit halber kein UML-Metamodell eingesetzt und die Syntax wird stark eingeschränkt. Es werden nur vereinfachte Klassen (Knoten) und Vererbungsrelationen (Kanten) unterstützt.
+Die in dieser Arbeit präsentierten Algorithmen basieren auf der visuellen Sprache der Klassendiagramme der Notationssprache UML. Allerdings handelt es sich um keine vollständigen Algorithmen für das Layout von Klassendiagrammen, sondern um zwei relativ einfache Algorithmen, deren Aufgabe es ist, die eingeführten Mechanismen der Interaktion zu validieren und damit das gesamte Konzept zu prüfen. Daher wird der Einfachheit halber kein UML-Metamodell eingesetzt und die Syntax wird stark eingeschränkt. Es werden nur vereinfachte Klassen (Knoten) und Vererbungsrelationen (Kanten) unterstützt.
 
 \subsubsection{Algorithmus für das horizontale Layout}
 \label{subsubsec:horizontal-layout-algorithm}
@@ -360,7 +360,7 @@ Der Algorithmus für das baumbasierte Layout ermöglicht die Modellierung von Ve
     \label{fig:tree-based-layout}
 \end{figure}
 
-Die Berechnung des endgültigen Layouts erfolgt durch die Zusammensetzung der instanziierten expliziten Layout-Patterns. Dabei wird die oben beschriebene Vereinfachung der Klassendiagramme ausgenutzt und der Algorithmus ist somit ausschließlich für diesen konkreten Fall geeignet. Die Möglichkeit der Entwicklung eines allgemeinen Algorithmus für Klassendiagramme wird in Abschnitt \ref{sec:outlook} diskutiert.
+Die Berechnung des endgültigen Layouts erfolgt durch die Zusammensetzung der instanziierten expliziten Layout-Patterns. Dabei wird die oben beschriebene Vereinfachung der Klassendiagramme ausgenutzt und der Algorithmus ist somit ausschließlich für diesen konkreten Fall geeignet. Die Möglichkeit der Entwicklung eines vollständigen Algorithmus für Klassendiagramme wird in Abschnitt \ref{sec:outlook} diskutiert.
 
 Je nachdem welche Klasse verschoben wird, verhält sich die Verschiebungsaktion unterschiedlich. Das Verschieben der Wurzelklassen bewirkt die Änderung der Reihenfolge der Vererbungshierarchien. Im Fall der Verschiebung einer Klasse, die sich in einer Vererbungshierarchie unter der Wurzelklasse befindet, wird die Reihenfolge der Geschwisterklassen angepasst. Dies erfolgt durch die Variierung des zugehörigen T-Shape-Patterns (siehe Abschnitt \ref{subsubsec:t-shape-pattern}). Zum besseren Verständnis der Funktionsweise dieses Algorithmus wird auf ein Video mit der Vorführung der prototypischen Implementierung verwiesen. Das Video ist unter dem Pfad \texttt{Prototype/Videos/Tree-based\--Lay\-out-\-De\-mo.mov} auf der eingereichten CD zu finden.
 
@@ -393,10 +393,12 @@ In \cite[S.5]{Maier12A-Pattern-based} wird aufgeführt, dass die Einhaltung der 
 \section{Zusammenfassung}
 \label{sec:approach-summary}
 
-% Kombination der Interaktion und automatischen Layout-Berechnung
+In diesem Kapitel wurde das Konzept eines neuartigen interaktiven Ansatzes für das Layout in graphbasierten Diagrammen vorgestellt. Dieser Ansatz ist insbesondere für visuelle Editoren geeignet, die eine agile Form der Softwaremodellierung unterstützen. Der Entwurf baut auf Kriterien auf, die am Anfang dieses Kapitels aufgestellt wurden.
 
-% Herausforderung bei der Kombination von mehreren Kriterien (z.B. interaktive Bedienung aber gleichzeitig eine Einschränkung der Möglichkeiten)
+Das entworfene Konzept schematisiert den Bearbeitungsprozess und den Ablauf der Layout-Berechnung. Da die Interaktion des Nutzers mit dem Diagramm in dem Ansatz eine wesentliche Rolle spielt und in die Layout-Berechnung einbezogen wird, wurden neue Bedienungsmechanismen entwickelt, die den präsentierten Ansatz ausmachen und ihn von anderen Ansätzen unterscheiden.
 
-% Neu-Berechnung nach jedem Layout-Übergang -> Performance?
+Die Layout-Berechnung wird durch einen Layout-Algorithmus ausgeführt, der im Idealfall für den Diagrammtyp angepasst ist uns seine Layout-Anforderungen berücksichtigt. In diesem Kapitel wurden zwei vereinfachte Algorithmen für das Layout von eingeschränkten Klassendiagrammen präsentiert, die den Gegenstand für die prototypische Implementierung bilden. Obwohl die Syntax- und Semantik-Beschreibung nicht formalisiert wurde, schafft das allgemeine Konzept eine Grundlage für die Erweiterung um mächtigere Layout-Algorithmen. Diese Problematik wird in Abschnitt \ref{sec:outlook} thematisiert.
 
-% Durch die Spezialisierung auf konkrete Diagramm-Typen und den Einsatz von verschiedenen Vereinfachungsmaßnahmen wie etwa Einschränkung der unterstützten Notation \cite[S.56ff]{Ambler02Agile} lassen sich Algorithmen für das Layout von Softwarediagrammen entwerfen, die zwar nicht so flexibel wie z.B. \cite{Maier12A-Pattern-based} oder \cite{Eichelberger05Aesthetics} sind, aber dafür...
+Außerdem stellt dieses Kapitel weitere Bestandteile des Konzeptes vor, die in der Layout-Berechnung eingesetzt werden, nämlich die Layout-Ereignisse für die Repräsentation der Interaktion und Layout-Patterns für die Beschreibung der Struktur des Diagramms.
+
+Nachdem der Ansatz in diesem Kapitel entworfen wurde, folgt in Kapitel \ref{chapter:prototype} dessen Umsetzung in Form eines Prototyps. Anschließend wird der Ansatz in Kapitel \ref{chapter:evaluation} anhand des prototypischen Implementierung evaluiert.
