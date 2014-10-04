@@ -6,11 +6,7 @@
 \chapter{Ansatz für das interaktive und diagrammspezifische Layout von graphbasierten Softwarediagrammen}
 \label{chapter:interactive-approach}
 
-In diesem Kapitel wird ein Ansatz für das interaktive und diagrammspezifische Layout von graphbasierten Diagrammen präsentiert. Zunächst werden in Abschnitt \ref{sec:criteria} die Kriterien für den Entwurf des Ansatzes aufgestellt. Eine kurze Übersicht der Funktionsweise wird in Abschnitt \ref{sec:functionality-overview} gegeben. In Abschnitt \ref{sec:interaction-mechanisms} werden die eingesetzten Mechanismen der Interaktion näher erläutert. Eine detaillierte Beschreibung der Layout-Patterns und deren Rolle in dem präsentierten Ansatz folgt in Abschnitt \ref{sec:layout-patterns}. In Abschnitt \ref{sec:layout-calculation} wird erklärt, wie die Layout-Berechnung funktioniert. In Abschnitt \ref{sec:current-approaches-comparison} wird der präsentierte Ansatz von den bestehenden Ansätzen abgegrenzt und mit ihnen verglichen. Das Kapitel wird mit einer Zusammenfassung in Abschnitt \ref{sec:approach-summary} abgeschlossen.
-
-%%%%%%%%%%%
-% Critera %
-%%%%%%%%%%%
+In diesem Kapitel wird ein Ansatz für das interaktive und diagrammspezifische Layout von graphbasierten Diagrammen präsentiert. Zunächst werden in Abschnitt \ref{sec:criteria} die Kriterien für den Entwurf des Ansatzes aufgestellt. Eine kurze Übersicht der Funktionsweise wird in Abschnitt \ref{sec:functionality-overview} gegeben. In Abschnitt \ref{sec:interaction-mechanisms} werden die eingesetzten Mechanismen der Interaktion näher erläutert. Eine detaillierte Beschreibung der Layout-Patterns und deren Rolle in dem präsentierten Ansatz folgt in Abschnitt \ref{sec:layout-patterns}. In Abschnitt \ref{sec:layout-calculation} wird erklärt, wie die Layout-Berechnung im Detail funktioniert. In Abschnitt \ref{sec:current-approaches-comparison} wird der präsentierte Ansatz von den bestehenden Ansätzen abgegrenzt und mit ihnen verglichen. Das Kapitel wird mit einer Zusammenfassung in Abschnitt \ref{sec:approach-summary} abgeschlossen.
 
 \section{Kriterien}
 \label{sec:criteria}
@@ -22,12 +18,12 @@ Im Folgenden werden Kriterien für den präsentierten Ansatz aufgestellt. Die Wa
 \item
 \label{req:gui}
 \textbf{GUI}
-Wie bereits in Abschnitt \ref{sec:thesis-conditions} erwähnt wurde, beschäftigt sich diese Arbeit ausschließlich mit Mechanismen für das Layout von Diagrammen, die in Tools für klassische grafische Benutzeroberflächen eingesetzt werden. Daher soll der Ansatz für klassische grafische Benutzeroberflächen ausgelegt sein und von üblichen GUI-basierten Bedientechniken wie z.B. \enquote{Drag and Drop} Gebrauch machen.
+Wie bereits in Abschnitt \ref{sec:thesis-conditions} erwähnt wurde, beschäftigt sich diese Arbeit ausschließlich mit Mechanismen für das Layout von Diagrammen, die in Tools für klassische grafische Benutzeroberflächen eingesetzt werden. Daher soll der entwickelte Ansatz für klassische grafische Benutzeroberflächen ausgelegt sein und von üblichen GUI-basierten Bedientechniken Gebrauch machen.
 
 \item
 \label{req:interactivity}
 \textbf{Interaktivität}
-Die Manipulation mit dem Diagramm soll interaktiv erfolgen. Der Nutzer soll in der Lage sein, mit dem Diagramm unmittelbar interagieren zu können und die Layout-Anpassungen sollen eine direkte Auswirkung auf das manipulierte Diagramm haben. Demzufolge soll die Eingabe mit der Ausgabe fest gekoppelt sein\footnote{Die Kopplung bezieht sich auf den Mauszeiger und den darunterliegenden Canvas. Aus der Sicht der Mensch-Computer-Interaktion ist die Nutzung der Maus als Eingabegerät von der Ausgabe am Monitor stets entkoppelt.}.
+Die Manipulation mit dem Diagramm soll interaktiv erfolgen. Der Nutzer soll in der Lage sein, mit dem Diagramm unmittelbar interagieren zu können und die Layout-Anpassungen sollen eine direkte Auswirkung auf das manipulierte Diagramm haben. Demzufolge soll die Eingabe mit der Ausgabe fest gekoppelt sein\footnote{Die Kopplung bezieht sich auf den Mauszeiger und den darunter liegenden Canvas. Aus der Sicht der Mensch-Computer-Interaktion ist die Nutzung der Maus als Eingabegerät von der Ausgabe am Monitor stets entkoppelt.}.
 
 \item
 \label{req:immediate-feedback}
@@ -67,10 +63,6 @@ Der Ansatz soll möglichst benutzerfreundlich sein. Insbesondere ist wichtig, di
 
 \end{enumerate}
 
-%%%%%%%%%%%%%%%%%
-% Functionality %
-%%%%%%%%%%%%%%%%%
-
 \section{Funktionsweise}
 \label{sec:functionality-overview}
 
@@ -83,11 +75,7 @@ Der präsentierte Ansatz operiert auf dem Modell der konkreten Syntax einer grap
     \label{fig:interaction-loop}
 \end{figure}
 
-Den Kern des Ansatzes bildet eine Interaktionsschleife, die sich aus mehreren Schritten zusammensetzt und in Abbildung \ref{fig:interaction-loop} illustriert ist. Zunächst befindet sich das bearbeitete Diagramm in einem stabilen Zustand und nimmt ein berechnetes Layout an (Schritt 1). Der Nutzer kann die Interaktion auslösen, indem er eine \textbf{Bearbeitungsaktion} ausführt, die mit Hilfe von \textbf{Bedienungsmechanismen} im Diagramm realisiert und veranschaulicht wird (Schritt 2). Für jede Bearbeitungsaktion werden ein oder mehrere \textbf{Layout-Ereignisse} erzeugt, die die Änderung in dem Diagramm beschreiben (Schritt 3). Diese Layout-Ereignisse werden durch eine \textbf{Layout-Engine} verarbeitet, die für den Typ des Diagramms speziell angepasst ist (Schritt 4). Die Layout-Engine verwaltet intern Instanzen von \textbf{Layout-Patterns}, die die Struktur des Diagramms beschreiben. Neben der instanziierten Layout-Patterns bilden auch der aktuelle Inhalt und das Layout des Diagramms die Grundlage für die Layout-Berechnung. Diese wird im nächsten Schritt durchgeführt (Schritt 5). Anschließend wird das neu berechnete Layout auf das Diagramm angewendet und mit Hilfe eines \textbf{Layout-Übergangs} visualisiert (Schritt 6). Darauf folgend kann der beschriebene Ablauf wiederholt werden, wodurch der Bearbeitungsprozess des Diagramms entsteht. Im Detail werden die einzelnen Bestandteile des Ansatzes und die Phasen der Layout-Berechnung in weiteren Abschnitten erläutert.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Interaction Mechanisms %
-%%%%%%%%%%%%%%%%%%%%%%%%%%
+Den Kern des Ansatzes bildet eine Interaktionsschleife, die sich aus mehreren Schritten zusammensetzt und in Abbildung \ref{fig:interaction-loop} illustriert ist. Zunächst befindet sich das bearbeitete Diagramm in einem stabilen Zustand und nimmt ein berechnetes Layout an (Schritt 1). Der Nutzer kann die Interaktion auslösen, indem er eine \textbf{Bearbeitungsaktion} ausführt, die mit Hilfe von \textbf{Bedienungsmechanismen} im Diagramm realisiert und veranschaulicht wird (Schritt 2). Für jede Bearbeitungsaktion werden ein oder mehrere \textbf{Layout-Ereignisse} erzeugt, die die bewirkte Änderung im Diagramm beschreiben (Schritt 3). Diese Layout-Ereignisse werden durch eine \textbf{Layout-Engine} verarbeitet, die für den Typ des Diagramms speziell angepasst ist (Schritt 4). Die Layout-Engine verwaltet intern Instanzen von \textbf{Layout-Patterns}, die die Struktur des Diagramms beschreiben. Neben der instanziierten Layout-Patterns bilden auch der aktuelle Inhalt und das Layout des Diagramms die Grundlage für die Layout-Berechnung. Diese wird im nächsten Schritt durchgeführt (Schritt 5). Anschließend wird das neu berechnete Layout auf das Diagramm angewendet und mit Hilfe eines \textbf{Layout-Übergangs} visualisiert (Schritt 6). Durch die Wiederholung dieser Schritte entsteht der gesamte Bearbeitungsprozess. Die einzelnen genannten Bestandteile und Phasen der Layout-Berechnung werden in weiteren Abschnitten im Detail erläutert.
 
 \section{Mechanismen der Interaktion}
 \label{sec:interaction-mechanisms}
@@ -96,7 +84,7 @@ Das Kriterium \ref{req:editing-support} erfordert eine Möglichkeit der Bearbeit
 
 Weiterhin sollen die Möglichkeiten der Interaktion eingeschränkt werden, um das Ablenken durch die eventuellen Layout-Anpassungen zu minimieren (Kriterium \ref{req:focus-on-the-content}). Dies wird durch die Einschränkung der aus den manuellen Layout-Ansätzen (siehe Abschnitt \ref{sec:manual-layout}) bekannten freien Positionierung der Knoten und den Einsatz eines \textbf{neuen Bedienungsmechanismus} für die Verschiebungsaktion erreicht, dem sich der Abschnitt \ref{subsec:temporary-layer-mechanism} widmet.
 
-Die Erhaltung des mentalen Modells (Kriterium \ref{req:mental-map}) wird durch eine \textbf{Animation der Layout-Übergänge} gefördert, womit sich der Abschnitt \ref{subsec:layout-transitions} beschäftigt.
+Die Erhaltung des mentalen Modells (Kriterium \ref{req:mental-map}) wird durch eine \textbf{Animation der Layout-Übergänge} gewährleistet. Dies wird in Abschnitt \ref{subsec:layout-transitions} thematisiert.
 
 \subsection{Bearbeitungsaktionen}
 \label{subsec:edit-actions}
@@ -105,7 +93,7 @@ Die interaktiven Ansätze werden in Editoren eingesetzt, die in der Regel über 
 
 In dieser Arbeit werden die grundlegenden Bearbeitungsaktionen präsentiert, die insbesondere für die Entwicklung des Prototyps (siehe Kapitel \ref{chapter:prototype}) eine wichtige Rolle spielen. Natürlich ist eine Erweiterung der unterstützten Bearbeitungsaktionen möglich.
 
-Je nach der Art der Modifizierung lassen sich die Bearbeitungsaktionen in zwei Gruppen unterteilen. Zum einen sind das Aktionen, die den Inhalt des Diagramms modifizieren und zu anderem sind das Aktionen, die das Layout des Diagramms modifizieren, ohne den Inhalt zu verändern.
+Je nach der Art der Modifizierung lassen sich die Bearbeitungsaktionen in zwei Gruppen unterteilen. Zum einen sind das Aktionen, die den Inhalt des Diagramms modifizieren und zum anderen sind das Aktionen, die das Layout des Diagramms modifizieren, ohne den Inhalt zu verändern.
 
 \subsubsection{Bearbeitungsaktionen zur Modifizierung des Inhalts}
 
@@ -114,18 +102,18 @@ Zu den Bearbeitungsaktionen, die den Inhalt verändern, gehört das Hinzufügen 
 \subsubsection{Bearbeitungsaktionen zur Modifizierung des Layouts}
 \label{subsubsec:edit-action-for-modifying-layout}
 
-Ein einziger Vertreter der Bearbeitungsaktionen, die ausschließlich das Layout modifizieren, ist die Verschiebung eines Knotens. Aufgrund der Einschränkung der freien Positionierung wird durch die Verschiebung eine Empfehlung für die Position eines Knotens angegeben. Diese Aktion macht sich einen neuen Bedienungsmechanismus zunutze, der ein unmittelbares Feedback aufweist und näher in Abschnitt \ref{subsec:temporary-layer-mechanism} beschrieben wird. Dieser Mechanismus bildet die Grundlage des gesamten Ansatzes.
+Der einzige Vertreter der Bearbeitungsaktionen, die ausschließlich das Layout modifizieren, ist die Verschiebung eines Knotens. Aufgrund der Einschränkung der freien Positionierung wird durch die Verschiebung eine Empfehlung für die Position eines Knotens angegeben. Diese Aktion macht sich einen neuen Bedienungsmechanismus zunutze, der ein unmittelbares Feedback aufweist und näher in Abschnitt \ref{subsec:temporary-layer-mechanism} beschrieben wird. Dieser Mechanismus bildet die Grundlage des gesamten Ansatzes.
 
 \subsection{Mechanismus der temporären Schicht}
 \label{subsec:temporary-layer-mechanism}
 
 Alle interaktiven Ansätze für das Layout von Diagrammen aus dem Kapitel \ref{chapter:existing-approaches} bis auf das \enquote{Smart Layout} in \textit{MindNode} (siehe Abschnitt \ref{subsubsec:smart-layout-in-mindnode}) unterstützen \textbf{freie Positionierung} der Objekte im Diagramm. Diese Art der Bedienung wird im manuellen Layout zusätzlich um temporäre Hilfefunktionen (siehe Abschnitt \ref{sec:manual-layout}) und in Struktur-basierten benutzergesteuerten Ansätzen um Möglichkeit der Erzeugung von Strukturregeln (siehe Abschnitt \ref{subsec:structure-based-user-controlled-approaches}) erweitert. Durch diese Erweiterungen wird die freie Positionierung eingeschränkt, wodurch in der Regel ein besseres Layout des Diagramms erreicht werden kann. Dahingegen ist die freie Positionierung in \enquote{Smart Layout} in \textit{MindNode} und dem in dieser Arbeit präsentierten Ansatz \textbf{nicht gestattet}. Stattdessen wird durch die Verschiebung der Objekte ihre ungefähre Position angegeben, die intern ausgewertet wird und eine Anpassung des Layouts bewirkt.
 
-Dieses Verhalten wird für die Verschiebungsaktion der Knoten eingesetzt, indem bei der Verschiebung eines Knotens eine temporäre Schicht erzeugt wird, in der sich der Knoten frei positionieren lässt. Im Diagramm wird der manipulierte Knoten durch einen Platzhalter repräsentiert, der nur erlaubte Positionen annehmen kann. Dieser Mechanismus basiert auf der Technik \textbf{\enquote{Drag and Drop}} und ist in drei Phasen aufgeteilt. Im Folgendem wird er an einem Beispiel detailliert erklärt.
+Dieses Verhalten wird für die Verschiebungsaktion der Knoten eingesetzt, indem bei der Verschiebung eines Knotens eine temporäre Schicht erzeugt wird, in der sich der Knoten frei positionieren lässt. Im Diagramm wird der manipulierte Knoten durch einen Platzhalter repräsentiert, der nur zulässige Positionen annehmen kann. Dieser Mechanismus basiert auf der Technik \textbf{\enquote{Drag and Drop}} und ist in drei Phasen aufgeteilt. Im Folgendem wird er an einem Beispiel detailliert erklärt.
 
 Bevor die Verschiebungsaktion beginnen kann, müssen sich im Canvas einige Knoten befinden, so wie es der Fall in Abbildung \ref{fig:movement-action-example-a} ist.
 
-In der ersten Phase wird ein Knoten im Canvas angeklickt, das in Abbildung \ref{fig:movement-action-example-b} durch einen Mauszeiger gekennzeichnet ist. Dabei wird der angeklickte Knoten in eine neu eingefügte \textbf{temporäre Schicht} ausgelagert, die vor dem Canvas positioniert ist, so wie es in Abbildung \ref{fig:temporary-layer-visualization} skizziert ist. Im Canvas wird die ursprüngliche Darstellung des verschobenen Knotens durch einen \textbf{temporären Platzhalter} ersetzt, das dem Nutzer die Zielposition des Knotens andeutet. Der Platzhalter ist in Abbildungen \ref{fig:movement-action-example-c} und \ref{fig:temporary-layer-visualization} durch ein Rechteck repräsentiert, das mit einer grauen gestrichelten Linie umrandet ist.
+In der ersten Phase wird ein Knoten im Canvas angeklickt, was in Abbildung \ref{fig:movement-action-example-b} durch einen Mauszeiger gekennzeichnet ist. Dabei wird der angeklickte Knoten in eine neu eingefügte \textbf{temporäre Schicht} ausgelagert, die vor dem Canvas positioniert ist, so wie es in Abbildung \ref{fig:temporary-layer-visualization} skizziert ist. Im Canvas wird die ursprüngliche Darstellung des verschobenen Knotens durch einen \textbf{temporären Platzhalter} ersetzt, welcher dem Nutzer die Zielposition des Knotens andeutet. Der Platzhalter ist in Abbildungen \ref{fig:movement-action-example-c} und \ref{fig:temporary-layer-visualization} durch ein Rechteck repräsentiert, das mit einer grauen gestrichelten Linie umrandet ist.
 
 \begin{figure}[hbt]
     \newcommand{\subfigurewidth}{0.28\textwidth}
@@ -196,10 +184,6 @@ Die dritte Phase beginnt mit dem Loslassen der Maustaste. Danach springt der ver
 
 In vorhergehenden Abschnitten wurde beschrieben, dass nach der Änderung des Inhalts bzw. währen der Verschiebung eines Knotens das Layout angepasst wird. Konkret handelt es sich um einen Übergang vom aktuellen zu einem neu berechneten Layout. Um diese Übergänge für den Nutzer nachvollziehbar zu machen, wird eine Animation eingesetzt, die insbesondere für die Erhaltung des mentalen Modells sorgt (Kriterium \ref{req:mental-map}).
 
-%%%%%%%%%%%%%%%%%%%
-% Layout Patterns %
-%%%%%%%%%%%%%%%%%%%
-
 \section{Layout-Patterns}
 \label{sec:layout-patterns}
 
@@ -235,7 +219,7 @@ Die Zentrierung des Diagramm-Inhalts ist ein weiteres ästhetisches Layout-Patte
     \label{fig:layout-pattern-centered-content}
 \end{figure}
 
-Neben der Förderung der Ästhetik (Kriterium \ref{req:aesthetics-criteria}) wird vor allen die Einschränkung der freien Positionierung (siehe Abschnitt \ref{subsec:temporary-layer-mechanism}) möglich gemacht.
+Neben der Förderung der Ästhetik (Kriterium \ref{req:aesthetics-criteria}) wird vor allem die Einschränkung der freien Positionierung (siehe Abschnitt \ref{subsec:temporary-layer-mechanism}) möglich gemacht.
 
 \subsection{Explizite Layout-Patterns}
 \label{subsec:explicit-layout-patterns}
@@ -244,28 +228,30 @@ Die expliziten Layout-Patterns referenzieren Knoten im Diagramm und beschreiben 
 
 Um eine Art der Manipulation der Knoten zu ermöglichen, wird das Konzept der \textbf{Variierung der expliziten Layout-Patterns} eingeführt. Je nach der Art des expliziten Layout-Patterns kann der Nutzer zwischen mehreren Variationen der Anordnung der Knoten (z.B. Reihenfolge) wählen. Das endgültige Layout wird jedoch durch die Geometrie bestimmt. Diese Art der Manipulation fördert die Konzentration auf den Inhalt und ergänzt die Einschränkung der freien Positionierung (Kriterium \ref{req:focus-on-the-content}).
 
-Im Folgenden werden zwei konkreten expliziten Layout-Patterns vorgestellt, nämlich das Ausrichtungspattern (siehe Abschnitt \ref{subsubsec:alignment-pattern}) und das T-Shape-Pattern (siehe Abschnitt \ref{subsubsec:t-shape-pattern}). Mit der Implementierung der expliziten Layout-Patterns im Prototyp beschäftigt sich der Abschnitt \ref{subsubsec:patterns}.
+Im Folgenden werden zwei konkrete explizite Layout-Patterns vorgestellt, nämlich das Ausrichtungspattern (siehe Abschnitt \ref{subsubsec:alignment-pattern}) und das T-Shape-Pattern (siehe Abschnitt \ref{subsubsec:t-shape-pattern}). Mit der Implementierung der expliziten Layout-Patterns im Prototyp beschäftigt sich der Abschnitt \ref{subsubsec:patterns}.
 
 \subsubsection{Ausrichtungspattern}
 \label{subsubsec:alignment-pattern}
 
-Das Ausrichtungspattern beschreibt eine Reihe an Knoten und kombiniert das Ausrichten und Verteilen der Knoten aus dem manuellen Layout (siehe Abschnitt \ref{subsubsec:alignment-and-distribution}) bzw. die Layout-Patterns zum Ausrichten und Verteilen aus \cite[S.143ff und S.136ff]{Maier12A-Pattern-based}. Die Knoten werden in eine horizontale oder vertikale Reihe gleichmäßig verteilt und an die Kanten bzw. Mittelpunkte ausgerichtet. In den Abbildungen \ref{fig:layout-pattern-alignment-center} und \ref{fig:layout-pattern-alignment-top} werden zwei Beispiele für das horizontale Verteilen mit der Ausrichtung an die oberen Kanten bzw. Mittelpunkte. Die gleichen Abstände sind mit roten Pfeilen und die Anordnung durch eine graue Linie gekennzeichnet.
+Das Ausrichtungspattern beschreibt eine Reihe an Knoten und kombiniert die Ausrichtung und Verteilung der Knoten aus dem manuellen Layout (siehe Abschnitt \ref{subsubsec:alignment-and-distribution}) bzw. die Layout-Patterns zum Ausrichten und Verteilen aus \cite[S.143ff und S.136ff]{Maier12A-Pattern-based}. Die Knoten werden in einer horizontalen oder vertikalen Reihe gleichmäßig verteilt und an die Kanten bzw. Mittelpunkte ausgerichtet. In den Abbildungen \ref{fig:layout-pattern-alignment-center} und \ref{fig:layout-pattern-alignment-top} werden zwei Beispiele für das horizontale Verteilen mit der Ausrichtung an die oberen Kanten bzw. Mittelpunkte gezeigt. Die gleichen Abstände sind mit roten Pfeilen und die Anordnung durch eine graue Linie gekennzeichnet.
 
 \begin{figure}[hbt]
     \centering
     \includegraphics{resources/layout-pattern-alignment-center}
-    \caption{Horizontales Ausrichtungspattern mit den Ausrichtung an die Mittelpunkte}
+    \caption{Horizontales Ausrichtungspattern mit der Ausrichtung an die Mittelpunkte}
     \label{fig:layout-pattern-alignment-center}
 \end{figure}
 
 \begin{figure}[hbt]
     \centering
     \includegraphics{resources/layout-pattern-alignment-top}
-    \caption{Horizontales Ausrichtungspattern mit den Ausrichtung an obere Kanten}
+    \caption{Horizontales Ausrichtungspattern mit der Ausrichtung an die oberen Kanten}
     \label{fig:layout-pattern-alignment-top}
 \end{figure}
 
 Die Variierung des Ausrichtungspatterns besteht in der Veränderung der Reihenfolge der ausgerichteten Knoten. Somit hat ein Ausrichtungspattern mit drei Knoten sechs möglichen Variationen. Dies ist in Abbildung \ref{fig:layout-pattern-alignment-variations} veranschaulicht.
+
+\vspace{0.5cm}
 
 \begin{figure}[hbt]
     \centering
@@ -277,7 +263,7 @@ Die Variierung des Ausrichtungspatterns besteht in der Veränderung der Reihenfo
 \subsubsection{T-Shape-Pattern}
 \label{subsubsec:t-shape-pattern}
 
-Das T-Shape-Pattern beschreibt die Struktur von Knoten, die in die Form des Buchstabes \enquote{T} angeordnet sind. Dies ist insbesondere für die Darstellung von Hierarchien in Diagrammen von Bedeutung (Prinzip \ref{pri:hierarchies}).
+Das T-Shape-Pattern beschreibt die Struktur von Knoten, die in der Form des Buchstabes \enquote{T} angeordnet sind. Dies ist insbesondere für die Darstellung von Hierarchien in Diagrammen von Bedeutung (Prinzip \ref{pri:hierarchies}).
 
 Ein Knoten hat eine spezielle Rolle und ist den anderen Knoten übergeordnet. Die untergeordneten Knoten sind ähnlich wie in dem Ausrichtungspattern gleichmäßig in einer Reihe angeordnet und an die Kanten ausgerichtet, die sich am nächsten zu dem übergeordneten Knoten befinden. Der übergeordnete Knoten befindet sich in einem definierten Abstand zu den untergeordneten Knoten und ist mittig ausgerichtet. In Abbildung \ref{fig:layout-pattern-t-shape} ist ein Beispiel des T-Shape-Patterns dargestellt, in dem der übergeordnete Knoten oben positioniert ist. Die Abstände sind mit farbigen Pfeilen und die Ausrichtung mit grauen Linien gekennzeichnet. Natürlich gibt es weitere Formen des T-Shape-Patterns, in den sich der übergeordnete Knoten links, unten oder rechts befindet.
 
@@ -290,10 +276,6 @@ Ein Knoten hat eine spezielle Rolle und ist den anderen Knoten übergeordnet. Di
 
 Durch das T-Shape-Pattern wird das Ausrichtungspattern erweitert, indem die Reihe der untergeordneten Knoten um einen übergeordneten Knoten ergänzt wird. Identisch wie bei dem Ausrichtungspattern lässt sich bei dem T-Shape-Pattern die Reihenfolge der untergeordneten Knoten verändern.
 
-%%%%%%%%%%%%%%%%%%%%%%
-% Layout Calculation %
-%%%%%%%%%%%%%%%%%%%%%%
-
 \section{Berechnung des Layouts}
 \label{sec:layout-calculation}
 
@@ -304,7 +286,7 @@ Wie bereits in Abschnitt \ref{subsec:edit-actions} erläutert wurde, werden wäh
 
 Die Layout-Engine ist ein zentraler Bestandteil des präsentierten Ansatzes. Sie ist mit dem bearbeiteten Diagramm verknüpft, dessen Layout sie berechnet. Des Weiteren verwaltet sie Instanzen von expliziten Layout-Patterns (siehe Abschnitt \ref{subsec:explicit-layout-patterns}), wodurch die Struktur des Diagramms beschrieben wird.
 
-Um mit dem Prozess der Verarbeitung der Layout-Ereignisse beginnen zu können, muss sich die Layout-Engine in einem \textbf{validen Zustand} befinden. Dies wird entweder durch das Speichern des Zustandes der Layout-Engine oder durch die Berechnung eines initialen Layouts gewährleistet. Die Aufgabe der zuletzt genannten Option besteht darin, die expliziten Layout-Patterns ähnlich wie in \cite{MaierMinas13A-Pattern-based} anhand des Inhalts des Diagramms automatisiert zu instanziieren.
+Damit der Prozess der Verarbeitung von Layout-Ereignissen beginnen kann, muss sich die Layout-Engine in einem \textbf{validen Zustand} befinden. Dies wird entweder durch das Speichern des Zustandes der Layout-Engine oder durch die Berechnung eines initialen Layouts gewährleistet. Die Aufgabe der zuletzt genannten Option besteht darin, die expliziten Layout-Patterns ähnlich wie in \cite{MaierMinas13A-Pattern-based} anhand des Inhalts des Diagramms automatisiert zu instanziieren.
 
 \subsection{Verarbeitung der Layout-Ereignisse}
 \label{subsec:processing-of-layout-events}
@@ -328,17 +310,19 @@ Je nach der Art des Layout-Ereignisses werden in der \textbf{ersten Phase} die I
 
 Insbesondere wird dabei von dem aktuellen Zustand des Diagramms, den bereits instanziierten Layout-Patterns und der Information über die Interaktion Gebrauch gemacht. Das genaue Verhalten der Anpassung der Layout-Patterns ist jedoch von einer konkreten Layout-Engine abhängig, die für den gewählten Diagrammtyp ausgelegt ist. Dieser Sachverhalt wird in Abschnitt \ref{subsec:concrete-layout-algorithms} diskutiert und an konkreten Beispielen illustriert.
 
-In der \textbf{zweiten Phase} wird das \textbf{Layout} berechnet, das durch die impliziten und instanziierten expliziten Layout-Patterns eindeutig bestimmt ist und die Positionen für alle Knoten im Diagramm enthält\footnote{Es wäre möglich, auch weitere Layout-Eigenschaften wie Routen für die Kanten oder Parameter der Layout-Übergänge zu berechnen. Dies wurde in dieser Arbeit aus zeitlichen Gründen jedoch außer Acht gelassen.}. Sobald sich das neu berechnete Layout von dem aktuellen unterscheidet, wird das neue Layout auf das Diagramm angewendet und dadurch ein Layout-Übergang erzeugt (siehe Abschnitt \ref{subsec:layout-transitions}). Damit wird die Verarbeitung des Layout-Ereignisses abgeschlossen und der gesamte Vorgang fängt für das nächste Layout-Ereignis von vorne an.
+In der \textbf{zweiten Phase} wird das \textbf{Layout} berechnet, welches durch die impliziten und instanziierten expliziten Layout-Patterns eindeutig bestimmt ist und die Positionen für alle Knoten im Diagramm enthält\footnote{Es wäre möglich, auch weitere Layout-Eigenschaften wie Routen für die Kanten oder Parameter der Layout-Übergänge zu berechnen. Dies wurde in dieser Arbeit aus zeitlichen Gründen jedoch außer Acht gelassen.}. Sofern sich das neu berechnete Layout von dem aktuellen unterscheidet, wird das neue Layout auf das Diagramm angewendet und dadurch ein Layout-Übergang erzeugt (siehe Abschnitt \ref{subsec:layout-transitions}). Damit wird die Verarbeitung des Layout-Ereignisses abgeschlossen und der gesamte Vorgang fängt für das nächste Layout-Ereignis von vorne an.
 
-Im Rahmen der Konzeption und Entwicklung wurde zunächst ein Algorithmus entworfen, der für die Verschiebung eines Knotens alle erreichbaren Layouts berechnet hat. Weiterhin wurde der Canvas in Bereiche aufgeteilt, wobei jeder Bereich auf ein berechnetes Layout abgebildet wurde. Durch die Bewegung der Mauszeigers in einen bestimmten Bereich wurde das abgebildete Layout auf das Diagramm angewendet und dadurch ein Layout-Übergang ausgelöst. Da die Aufteilung nach jedem Layout-Übergang nicht aktualisiert wurde, war sie oft nach dem ersten Layout-Übergang ungültig. Später wurde festgelegt, dass dieser Algorithmus nicht hinreichend ist.
+Im Rahmen der Konzeption und Entwicklung wurde zunächst ein Algorithmus entworfen, der für die Verschiebung eines Knotens alle erreichbaren Layouts berechnet hat. Des Weiteren wurde der Canvas in Bereiche aufgeteilt. Dabei wurde jeder Bereich auf ein berechnetes Layout abgebildet. Während der Ausführung der Verschiebungsaktion wurde ein Layout-Übergang genau dann ausgelöst, wenn der Mauszeiger in einen anderen Bereich bewegt wurde. Da die Aufteilung der Bereiche nach jedem Layout-Übergang nicht aktualisiert wurde, war sie oft nach dem ersten Layout-Übergang ungültig. Später wurde festgelegt, dass dieser Algorithmus nicht hinreichend ist.
 
-In dem präsentierten Ansatz wird während der Ausführung einer Verschiebungsaktion ein Layout-Ereignis für jede Bewegung des Mauszeigers generiert und verarbeitet. Dabei sollen bei dem Entwurf eines konkreten Algorithmus folgende Eigenschaften beachtet werden:
+In dem präsentierten Ansatz wird für die Verschiebungsaktion ein Layout-Ereignis für jede Bewegung des Mauszeigers generiert und verarbeitet. Dabei sollen bei dem Entwurf eines konkreten Algorithmus folgende Eigenschaften beachtet werden:
+
+\newpage
 
 \begin{itemize}
 
 \item
 \textbf{Stabilität}
-Während der Ausführung einer Verschiebungsaktion soll ein Layout-Übergang erst nach einer deutlichen Bewegung des Mauszeigers durch den Nutzer ausgelöst werden.
+Während der Ausführung der Verschiebungsaktion soll ein Layout-Übergang erst nach einer deutlichen Bewegung des Mauszeigers durch den Nutzer ausgelöst werden.
 
 \item
 \textbf{Erreichbarkeit des Ausgangslayouts}
@@ -349,9 +333,9 @@ Das Layout, das ein Diagramm annimmt, wenn die Verschiebungsaktion beginnt, soll
 \subsection{Konkrete Layout-Algorithmen}
 \label{subsec:concrete-layout-algorithms}
 
-In Abschnitt \ref{subsec:processing-of-layout-events} wurde der Rumpf des Algorithmus für die Berechnung des Layouts vorgestellt. Dabei wurde nicht auf die interne Funktionsweise der Layout-Engine eingegangen. Das liegt daran, dass die Layout-Engine ein unterschiedliches Verhalten für verschiedene \textbf{Diagrammtypen} aufweisen soll, denn jeder Diagrammtyp (z.B. Klassendiagramm, Zustandsdiagramm, Flowchart usw.) hat aufgrund der Syntax- und Semantikregeln spezielle Anforderungen an des ästhetische Layout. Nur dadurch kann das Kriterium \ref{req:syntax-and-semantics} erfüllt werden.
+In Abschnitt \ref{subsec:processing-of-layout-events} wurde der Rumpf des Algorithmus für die Berechnung des Layouts vorgestellt. Dabei wurde nicht auf die interne Funktionsweise der Layout-Engine eingegangen. Das liegt daran, dass die Layout-Engine ein unterschiedliches Verhalten für verschiedene \textbf{Diagrammtypen} aufweisen soll, denn jeder Diagrammtyp (z.B. Klassendiagramm, Zustandsdiagramm, Flowchart usw.) hat aufgrund der Syntax- und Semantikregeln spezielle Anforderungen an das ästhetische Layout. Nur dadurch kann das Kriterium \ref{req:syntax-and-semantics} erfüllt werden.
 
-Die in dieser Arbeit präsentierten Algorithmen basieren auf der visuellen Sprache der Klassendiagramme der Notationssprache UML. Allerdings handelt es sich um keine allgemeine Algorithmen für das Layout von Klassendiagrammen, sondern um zwei relativ einfache Algorithmen, deren Aufgabe es ist, die eingeführten Mechanismen der Interaktion zu validieren und damit das gesamte Konzept zu prüfen. Daher wird der Einfachheit halber kein UML-Metamodell eingesetzt und die Syntax wird stark eingeschränkt. Es werden nur vereinfachte Klassen (Knoten) und Vererbungsrelation (Kanten) unterstützt.
+Die in dieser Arbeit präsentierten Algorithmen basieren auf der visuellen Sprache der Klassendiagramme der Notationssprache UML. Allerdings handelt es sich um keine allgemeinen Algorithmen für das Layout von Klassendiagrammen, sondern um zwei relativ einfache Algorithmen, deren Aufgabe es ist, die eingeführten Mechanismen der Interaktion zu validieren und damit das gesamte Konzept zu prüfen. Daher wird der Einfachheit halber kein UML-Metamodell eingesetzt und die Syntax wird stark eingeschränkt. Es werden nur vereinfachte Klassen (Knoten) und Vererbungsrelationen (Kanten) unterstützt.
 
 \subsubsection{Algorithmus für das horizontale Layout}
 \label{subsubsec:horizontal-layout-algorithm}
@@ -360,7 +344,7 @@ Der Algorithmus für das horizontale Layout ordnet alle Klassen eines Klassendia
 
 Die Layout-Engine, die diesen Algorithmus umsetzt, enthält intern eine Instanz des Ausrichtungspatterns (siehe Abschnitt \ref{subsubsec:alignment-pattern}), das alle Klassen des Diagramms referenziert. Dieser Algorithmus hat aus der Sicht des Nutzers keine große Bedeutung und dient ausschließlich als Grundlage für den Algorithmus für das baumbasierte Layout, mit dem sich der Abschnitt \ref{subsubsec:tree-layout-algorithm} beschäftigt.
 
-Nichtsdestotrotz macht der Algorithmus die Mechanismen der Interaktion aus Abschnitt \ref{sec:interaction-mechanisms} verständlich. Insbesondere zeigt die Verschiebungsaktion die Möglichkeit der Änderung der Reihenfolge der Klassen im Diagramm. Dies wird durch die Layout-Engine in eine direkte Variierung des Ausrichtungspatterns übersetzt. Eine Veranschaulichung der prototypischen Implementierung des Algorithmus für das horizontale Layout ist dem Video unter dem Pfad \texttt{Prototype/Videos/Hori\-zon\-tal-\-Lay\-out-\-De\-mo.mov} auf der eingereichten CD zu entnehmen.
+Nichtsdestotrotz macht der Algorithmus die Mechanismen der Interaktion aus Abschnitt \ref{sec:interaction-mechanisms} verständlich. Insbesondere zeigt die Verschiebungsaktion die Möglichkeit der Änderung der Reihenfolge der Klassen im Diagramm. Dies wird durch die Layout-Engine in eine direkte Variierung des Ausrichtungspatterns übersetzt. Die prototypische Implementierung dieses Algorithmus wird in einem Video unter dem Pfad \texttt{Prototype/Videos/Hori\-zon\-tal-\-Lay\-out-\-De\-mo.mov} auf der eingereichten CD veranschaulicht.
 
 \subsubsection{Algorithmus für das baumbasierte Layout}
 \label{subsubsec:tree-layout-algorithm}
@@ -378,11 +362,7 @@ Der Algorithmus für das baumbasierte Layout ermöglicht die Modellierung von Ve
 
 Die Berechnung des endgültigen Layouts erfolgt durch die Zusammensetzung der instanziierten expliziten Layout-Patterns. Dabei wird die oben beschriebene Vereinfachung der Klassendiagramme ausgenutzt und der Algorithmus ist somit ausschließlich für diesen konkreten Fall geeignet. Die Möglichkeit der Entwicklung eines allgemeinen Algorithmus für Klassendiagramme wird in Abschnitt \ref{subsec:algorithm-generalization} diskutiert.
 
-Je nachdem welche Klasse verschoben wird, verhält sich die Verschiebungsaktion unterschiedlich. Das Verschieben der Wurzelklassen bewirkt die Änderung der Reihenfolge der Vererbungshierarchien. Wenn aber eine Klasse, die sich in einer Vererbungshierarchie unter der Wurzelklasse befindet, verschoben wird, wird die Reihenfolge der Geschwisterklassen angepasst, indem das zugehörige T-Shape-Pattern variiert wird (siehe Abschnitt \ref{subsubsec:t-shape-pattern}). Zum besseren Verständnis der Funktionsweise wird auf ein Video mit der Vorführung der prototypischen Implementierung verwiesen. Das Video ist unter dem Pfad \texttt{Prototype/Videos/Tree-based-Layout-\-De\-mo.mov} auf eingereichten CD zu finden.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Current Approaches Comparison %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Je nachdem welche Klasse verschoben wird, verhält sich die Verschiebungsaktion unterschiedlich. Das Verschieben der Wurzelklassen bewirkt die Änderung der Reihenfolge der Vererbungshierarchien. Im Fall der Verschiebung einer Klasse, die sich in einer Vererbungshierarchie unter der Wurzelklasse befindet, wird die Reihenfolge der Geschwisterklassen angepasst. Dies erfolgt durch die Variierung des zugehörigen T-Shape-Patterns (siehe Abschnitt \ref{subsubsec:t-shape-pattern}). Zum besseren Verständnis der Funktionsweise dieses Algorithmus wird auf ein Video mit der Vorführung der prototypischen Implementierung verwiesen. Das Video ist unter dem Pfad \texttt{Prototype/Videos/Tree-based\--Lay\-out-\-De\-mo.mov} auf der eingereichten CD zu finden.
 
 \section{Abgrenzung zu bestehenden Ansätzen}
 \label{sec:current-approaches-comparison}
@@ -392,29 +372,23 @@ Im Folgenden wird der oben vorgestellte Ansatz mit bestehenden Ansätzen aus Kap
 \subsection{Abgrenzung zu den Ansätzen für das manuelle Layout}
 \label{subsec:comparison-manual-layout}
 
-Die in Abschnitt \ref{sec:manual-layout} vorgestellten Ansätze für das manuelle Layout basieren darauf, dass die Layout-Eigenschaften der Objekte im Diagramm wunschgemäß durch den Nutzer angepasst werden können, was auch die Möglichkeit der freien Positionierung einschließt. Die Anpassung der Layout-Eigenschaften erfolgt in Editoren interaktiv mit Hilfe von bereitgestellten Funktionen. Zusätzlich bieten die Editoren Hilfefunktionen für die Layout-Erstellung (siehe Abschnitt \ref{subsec:help-functions-for-manual-layout}). Obwohl der präsentierte Ansatz diese Form der Interaktion nicht unterstützt und insbesondere die freie Positionierung einschränkt, führt es neue Bedienungsmechanismen ein, die eine interaktive Bearbeitung des Diagramms ermöglichen. Trotz der niedrigeren Flexibilität hat der Nutzer einen Einfluss auf das resultierende Layout. Dies geschieht nicht in Form der Anpassung des Layout-Algorithmus wie bei den automatischen Layout-Algorithmen (siehe Abschnitt \ref{sec:automatic-layout}), sondern durch eine Variierung des berechneten Layouts.
-
-Aufgrund der genannten Einschränkungen wird durch die halbautomatische Layout-Berechnung und die Überführung der temporären Hilfefunktionen in persistente Layout-Patterns der Aufwand an der Layout-Erstellung wesentlich reduziert. Des Weiteren ermöglicht der präsentierte Ansatz im Vergleich zu den Ansätzen für das manuelle Layout die Unterstützung von Diagrammtypen, indem deren strukturellen und semantischen Regeln durch den Layout-Algorithmus eingehalten werden.
+Die fundamentale Eigenschaft der Ansätze für das manuelle Layout, die in Abschnitt \ref{sec:manual-layout} vorgestellt wurden, ist die Unterstützung der Freihand-Bearbeitung. Dadurch kann der Nutzer die Layout-Eigenschaften der Objekte im Diagramm wunschgemäß anpassen. Insbesondere schließt dies die freie Positionierung ein. Die Bearbeitung erfolgt interaktiv und die Editoren stellen in der Regel zusätzliche Hilfefunktionen für die Layout-Erstellung zur Verfügung (siehe Abschnitt \ref{subsec:help-functions-for-manual-layout}). Obwohl der präsentierte Ansatz keine Freihand-Bearbeitung unterstützt und speziell die freie Positionierung einschränkt, werden neue Bedienungsmechanismen für die interaktive Bearbeitung des Diagramms eingeführt. Im Vergleich zu den Ansätzen für das manuelle Layout ist der präsentierte Ansatz weniger flexibel, dennoch kann das resultierende Layout durch den Nutzer beeinflusst werden, indem es variiert wird. Diese Einschränkungen in Kombination mit der halbautomatischen Berechnung führen dazu, dass der Aufwand an der Layout-Erstellung wesentlich reduziert wird. Des Weiteren ist es möglich, die syntaktischen und semantischen Regeln der konkreten Diagrammtypen durch den Layout-Algorithmus einzuhalten.
 
 \subsection{Abgrenzung zu den Ansätzen für das automatische Layout}
 \label{subsec:comparison-automatic-layout}
 
-Da der präsentierte Ansatz eine direkte Interaktion mit dem Diagramm unterstützt, erfolgt die Eingabe ähnlich wie bei den visuellen Ansätzen für das automatische Layout (siehe Abschnitt \ref{subsec:visual-approaches}) in einer visuellen Sprache. Eine weitere Gemeinsamkeit besteht darin, dass das Layout automatisch berechnet wird. Die Layout-Berechnung wird durch einen Algorithmus durchgeführt, dessen Aufgabe es ist, die Layout-Eigenschaften für die im Diagramm enthaltene Objekte zu bestimmen. Der Layout-Algorithmus in dem präsentierten Ansatz geht einen Schritt weiter und ist zusätzlich für die Verarbeitung der Interaktion ausgelegt (siehe Abschnitt \ref{subsec:processing-of-layout-events}). Dadurch ist der Ansatz im Unterschied zu den Ansätzen für das automatische Layout für interaktive Umgebungen geeignet, denn er ermöglicht eine Anpassung des berechneten Layouts nach den Nutzerpräferenzen. Weiterhin wird durch die Layout-Übergänge das mentale Modell erhalten (siehe Abschnitt \ref{subsec:layout-transitions}). Der Einfluss auf das Layout besteht daher in der Variierung anstatt der Einstellung der Parameter des Layout-Algorithmus, wie das der Fall bei den Ansätzen für das automatische Layout ist. Obwohl der präsentierte Ansatz eine Berechnung des initialen Layouts unterstützt (siehe Abschnitt \ref{subsec:layout-engine}), wird die Möglichkeit der Einbindung in automatisierte Prozesse aufgrund des interaktiven Charakters ausgeschlossen.
+Da der präsentierte Ansatz eine direkte Interaktion mit dem Diagramm unterstützt, erfolgt die Eingabe ähnlich wie bei den visuellen Ansätzen für das automatische Layout (siehe Abschnitt \ref{subsec:visual-approaches}) in einer visuellen Sprache. Eine weitere Gemeinsamkeit besteht darin, dass das Layout automatisch berechnet wird. Die Layout-Berechnung wird durch einen Algorithmus durchgeführt, dessen Aufgabe es ist, die Layout-Eigenschaften für die im Diagramm enthaltene Objekte zu bestimmen. Der Layout-Algorithmus in dem präsentierten Ansatz ist zusätzlich für die Verarbeitung der Interaktion ausgelegt (siehe Abschnitt \ref{subsec:processing-of-layout-events}). Dadurch ist der Ansatz im Unterschied zu den Ansätzen für das automatische Layout für interaktive Umgebungen geeignet, denn er ermöglicht eine Anpassung des berechneten Layouts nach den Nutzerpräferenzen. Der Einfluss auf das Layout besteht daher in der Variierung anstatt der Einstellung der Parameter des Layout-Algorithmus, wie das der Fall bei den Ansätzen für das automatische Layout ist. Weiterhin wird durch die Layout-Übergänge das mentale Modell erhalten (siehe Abschnitt \ref{subsec:layout-transitions}). Obwohl der präsentierte Ansatz eine Berechnung des initialen Layouts unterstützt (siehe Abschnitt \ref{subsec:layout-engine}), wird die Möglichkeit der Einbindung in automatisierte Prozesse aufgrund des interaktiven Charakters ausgeschlossen.
 
 Da sich diese Arbeit insbesondere mit den interaktiven Aspekten des Ansatzes beschäftigt, legt sie einen großen Wert auf die Einhaltung der ästhetischen Prinzipien sowohl für Graphen als auch für Klassendiagramme. Im Unterschied zu den speziellen Algorithmen für die Klassendiagramme (siehe Abschnitt \ref{subsec:special-algorithms-for-class-diagrams}) wird deren Unterstützung nur partiell ausgearbeitet und wird der weiteren Forschung überlassen. Diese Problematik wird in Abschnitt \ref{sec:outlook} aufgegriffen.
 
 \subsection{Abgrenzung zu den Ansätzen für das interaktive halbautomatische Layout}
 \label{subsec:comparison-interactive-layout}
 
-Der präsentierte Ansatz lässt sich in die Kategorie der Ansätze für das interaktive halbautomatische Layout einordnen und besitzt somit viele Gemeinsamkeiten mit Ansätzen, die in diese Kategorie gehören und in Abschnitt \ref{sec:interactive-semi-automatic-layout} vorgestellt wurden. Die Eigenschaft, die die Ansätze in dieser Kategorie ausmacht, ist die Unterstützung der interaktiven Bearbeitung des Diagramms. Jedoch handelt es sich bei dem präsentierten Ansatz um kein Freihand-Editieren wie bei den meisten anderen Ansätzen. Die Bearbeitungsmöglichkeiten werden eingeschränkt, so dass der Nutzer die Layout-Eigenschaften nicht explizit verändern kann und sich ausschließlich auf den Inhalt des Diagramms konzentriert. Zu diesem Zweck wird die Bedienung um neue Mechanismen der Interaktion (siehe Abschnitt erweitert \ref{sec:interaction-mechanisms}).
+Der präsentierte Ansatz lässt sich in die Kategorie der Ansätze für das interaktive halbautomatische Layout einordnen (siehe Abschnitt \ref{sec:interactive-semi-automatic-layout}) und besitzt somit viele Gemeinsamkeiten mit Ansätzen aus dieser Kategorie. Die Eigenschaft, die diese Ansätze ausmacht, ist die Unterstützung der interaktiven Bearbeitung des Diagramms. Jedoch kann das Diagramm in dem präsentierten Ansatz durch den Nutzer nicht frei bearbeitet werden. Insbesondere wird die Anpassung der Layout-Eigenschaften nicht gestattet. Dagegen werden neue Mechanismen der Interaktion eingeführt (siehe Abschnitt \ref{sec:interaction-mechanisms}), die die Bearbeitungsmöglichkeiten einschränken und die Konzentration auf den Inhalt fördern.
 
 In \cite[S.5]{Maier12A-Pattern-based} wird aufgeführt, dass die Einhaltung der ästhetischen Prinzipien im dynamischen Kontext eine geringere Rolle als die Erhaltung des mentalen Modells spielt. Der präsentierte Ansatz strebt an, diese These durch eine gleichzeitige Unterstützung beider Kriterien zu widerlegen. Die ästhetischen Prinzipien werden durch die automatische Layout-Berechnung berücksichtigt und da die Interaktion auf die Variierung des berechneten Layouts beschränkt ist, können sie durch den Nutzer nicht verletzt werden. Des Weiteren sorgen die Layout-Übergänge (siehe Abschnitt \ref{subsec:layout-transitions}) für die Erhaltung des mentalen Modells.
 
 Ähnlich wie in den Struktur-basierten benutzergesteuerten Ansätzen (siehe Abschnitt \ref{subsec:structure-based-user-controlled-approaches}), wird in dem präsentierten Ansatz das Layout mit Hilfe von Strukturregeln beschrieben, die einen persistenten Charakter haben. Obwohl der Begriff der Layout-Patterns von \cite{Maier12A-Pattern-based} übernommen wurde, unterscheiden sich die Konzepte stark voneinander. Die konkreten Unterschiede werden in Abschnitt \ref{sec:layout-patterns} sowie \ref{subsec:explicit-layout-patterns} diskutiert.
-
-%%%%%%%%%%%
-% Summary %
-%%%%%%%%%%%
 
 \section{Zusammenfassung}
 \label{sec:approach-summary}
@@ -422,8 +396,6 @@ In \cite[S.5]{Maier12A-Pattern-based} wird aufgeführt, dass die Einhaltung der 
 % Kombination der Interaktion und automatischen Layout-Berechnung
 
 % Herausforderung bei der Kombination von mehreren Kriterien (z.B. interaktive Bedienung aber gleichzeitig eine Einschränkung der Möglichkeiten)
-
-
 
 % Neu-Berechnung nach jedem Layout-Übergang -> Performance?
 
