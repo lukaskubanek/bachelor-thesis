@@ -169,4 +169,12 @@ Die Interaktion mit dem Canvas besteht in der Ausführung von Bearbeitungsaktion
 \section{Zusammenfassung}
 \label{sec:prototype-summary}
 
-% Limitierungen
+Das in Kapitel \ref{chapter:interactive-approach} entworfene Konzept für das Layout von Diagrammen wurde in Form eines Werkzeugs zur Erstellung von vereinfachten Klassendiagrammen prototypisch umgesetzt.
+
+Es handelt sich um eine objekt-orientierte Anwendung für das Betriebsystem \textit{Mac OS X}, die in der Programmiersprache \textit{Objective-C} geschrieben ist. Da in der Vorbereitungsphase festgestellt wurde, dass für die Umsetzung des Konzeptes keine bestehende Bibliothek eingesetzt werden kann, wurde entschieden, eine ganz neue Anwendung zu implementieren. Diese verwendet ausschließlich die Standardbibliotheken der Mac Plattform. Der Quellcode sowie die kompilierte Version der Anwendung sind auf der beigelegten CD zu finden (für die konkreten Pfade siehe Abschnitt \ref{sec:cd-content-prototype}).
+
+Das implementierte Werkzeug unterstützt Basisfunktionen, die für die Erstellung und Bearbeitung eines vereinfachten Klassendiagramms notwendig sind. Dies ermöglicht das praktische Testen des vorgestellten Konzeptes in einem realen Anwendungsfall. Dennoch konnten in der initialen Version des Prototyps viele nützliche Funktionen aus zeitlichen Gründen nicht implementiert werden. Des Weiteren wurden in dem Prototyp beide konkreten Algorithmen aus Abschnitt \ref{subsec:concrete-layout-algorithms} umgesetzt, zwischen den zur Laufzeit umgeschaltet werden kann.
+
+Während der Entwicklung der Anwendung wurde auf eine saubere architektonische Trennung geachtet. Die Architektur ist in mehrere Komponenten aufgeteilt, deren Abhängigkeiten untereinander minimiert sind. Insbesondere ist die Layout-Berechnung in der Komponente \textit{Layout Engine} von dem Rest der Anwendung gekapselt und in weitere Unterkomponenten aufgeteilt. Die entworfene Mechanismen der Interaktion wurden in der Komponente \textit{Canvas View} umgesetzt. Eine detaillierte Beschreibung der Architektur kann in diesem Kapitel nachgelesen werden.
+
+Der wesentliche Teil des entworfenen Konzeptes konnte erfolgreich in dem Prototyp umgesetzt werden. Mit einer gründlichen Evaluation beschäftigt sich allerdings das Kapitel \ref{chapter:evaluation}. Unter anderem werden in dem Kapitel Ergebnisse einer Nutzerstudie präsentiert, für die der implementierte Prototyp die Grundlage bildet.
