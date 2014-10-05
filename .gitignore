@@ -34,8 +34,8 @@
 !tud-koma-script/**/*
 
 ## Resources
-!bachelor-thesis/resources/**/*.pdf
-!user-study-exercises/resources/**/*.pdf
+!bachelor-thesis/assets/**/*.pdf
+!user-study-exercises/assets/**/*.pdf
 
 ## Auxiliary and intermediate files from other packages:
 
