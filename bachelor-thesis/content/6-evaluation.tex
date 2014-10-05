@@ -40,43 +40,43 @@ Vor dem Test wurden die Teilnehmer in dem Fragebogen (siehe Abschnitt \ref{sec:u
 \newcommand{\graphicsscale}{0.75}    
 \centering
 \begin{minipage}{.15\textwidth}
-    \includegraphics[scale=\legendscale]{resources/used-tools-charts-legend}
+    \includegraphics[scale=\legendscale]{assets/used-tools-charts-legend}
 \end{minipage}
 \begin{minipage}{.65\textwidth}
     \centering
     \begin{subfigure}[t]{\subfigurewidth}
         \centering
-        \includegraphics[scale=\graphicsscale]{resources/used-tools-charts-a}
+        \includegraphics[scale=\graphicsscale]{assets/used-tools-charts-a}
         \caption{Diagramm-Programme}
         \label{fig:used-tools-charts-a}
     \end{subfigure}
     \begin{subfigure}[t]{\subfigurewidth}
         \centering
-        \includegraphics[scale=\graphicsscale]{resources/used-tools-charts-b}
+        \includegraphics[scale=\graphicsscale]{assets/used-tools-charts-b}
         \caption{Präsentationsprogramme}
         \label{fig:used-tools-charts-b}
     \end{subfigure}
     \begin{subfigure}[t]{\subfigurewidth}
         \centering
-        \includegraphics[scale=\graphicsscale]{resources/used-tools-charts-c}
+        \includegraphics[scale=\graphicsscale]{assets/used-tools-charts-c}
         \caption{Online-Tools}
         \label{fig:used-tools-charts-c}
     \end{subfigure}
     \begin{subfigure}[t]{\subfigurewidth}
         \centering
-        \includegraphics[scale=\graphicsscale]{resources/used-tools-charts-d}
+        \includegraphics[scale=\graphicsscale]{assets/used-tools-charts-d}
         \caption{UML-Editoren}
         \label{fig:used-tools-charts-d}
     \end{subfigure}
     \begin{subfigure}[t]{\subfigurewidth}
         \centering
-        \includegraphics[scale=\graphicsscale]{resources/used-tools-charts-e}
+        \includegraphics[scale=\graphicsscale]{assets/used-tools-charts-e}
         \caption{Stift und Papier}
         \label{fig:used-tools-charts-e}
     \end{subfigure}
     \begin{subfigure}[t]{\subfigurewidth}
         \centering
-        \includegraphics[scale=\graphicsscale]{resources/used-tools-charts-f}
+        \includegraphics[scale=\graphicsscale]{assets/used-tools-charts-f}
         \caption{Whiteboard}
         \label{fig:used-tools-charts-f}
     \end{subfigure}
@@ -99,7 +99,7 @@ Obwohl es eine Einführung zu dem Prototypen gab (siehe Abschnitt \ref{subsec:us
 % legend
 \begin{subfigure}[t]{\textwidth}
     \centering
-    \includegraphics[scale=\legendscale]{resources/evaluation-charts-legend}
+    \includegraphics[scale=\legendscale]{assets/evaluation-charts-legend}
     \vspace{0.5cm}
 \end{subfigure}
 
@@ -107,7 +107,7 @@ Obwohl es eine Einführung zu dem Prototypen gab (siehe Abschnitt \ref{subsec:us
 \foreach \i in {a,...,l}{%
 \begin{subfigure}[t]{\subfigurewidth}
     \centering
-    \includegraphics[scale=\graphicsscale]{resources/evaluation-charts-\i}
+    \includegraphics[scale=\graphicsscale]{assets/evaluation-charts-\i}
     \caption{}
     \label{fig:evaluation-charts-\i}
 \end{subfigure}
@@ -162,7 +162,7 @@ Wie bereits in Kapitel \ref{chapter:prototype} erwähnt wurde, ist der umgesetzt
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=\textwidth]{resources/missed-prototype-functions}
+    \includegraphics[width=\textwidth]{assets/missed-prototype-functions}
     \caption{Übersicht der vermissten Funktionen im Prototyp}
     \label{fig:missed-prototype-functions}
 \end{figure}
@@ -209,7 +209,7 @@ Die inkrementelle Bearbeitung der Diagramme bildet eine Grundlage des präsentie
 \item
 \label{eval:mental-map}
 \textbf{Erhaltung des mentalen Modells}
-Wie in Kapitel \ref{chapter:interactive-approach} erläutert wurde, werden während der Bearbeitung des Diagramms Layout-Änderungen berechnet und auf das Diagramm angewendet. Dabei wird es angestrebt, sie minimal zu halten. Des Weiteren werden die Layout-Änderungen in sequenzielle Layout-Übergänge gekapselt (siehe Abschnitt \ref{subsec:layout-transitions}), wodurch eine getrennte Wahrnehmung durch den Nutzer erreicht wird. Zudem werden die Layout-Übergänge animiert, so dass die neuen Positionen der Objekte ermittelt werden können. Diese Maßnahmen sorgen für die Erhaltung des mentalen Modells (Kriterium \ref{req:mental-map}).
+Wie in Kapitel \ref{chapter:presented-approach} erläutert wurde, werden während der Bearbeitung des Diagramms Layout-Änderungen berechnet und auf das Diagramm angewendet. Dabei wird es angestrebt, sie minimal zu halten. Des Weiteren werden die Layout-Änderungen in sequenzielle Layout-Übergänge gekapselt (siehe Abschnitt \ref{subsec:layout-transitions}), wodurch eine getrennte Wahrnehmung durch den Nutzer erreicht wird. Zudem werden die Layout-Übergänge animiert, so dass die neuen Positionen der Objekte ermittelt werden können. Diese Maßnahmen sorgen für die Erhaltung des mentalen Modells (Kriterium \ref{req:mental-map}).
 
 \item
 \label{eval:focus-on-the-content}

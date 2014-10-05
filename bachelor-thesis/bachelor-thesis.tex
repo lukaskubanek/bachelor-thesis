@@ -6,21 +6,36 @@
 % Lukas Kubanek ~ TU Dresden ~ 2014      %                                
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{preamble}
+% To produce the print version uncomment this line:
+%\def\isprintversion{}
+
+\input{content/preamble}
 
 \begin{document}
 
 \pagestyle{empty}
 
-\input{title-page}
-\input{task-description}
-\input{confirmation}
+\input{content/title-page}
+\input{content/task-description}
+\input{content/confirmation}
 
 \pagestyle{plain}
 
-\input{table-of-contents}
-\input{content}
-\input{lists}
-\input{bibliography}
+\input{content/table-of-contents}
+
+\input{content/1-introduction}
+\input{content/2-basics}
+\input{content/3-existing-approaches}
+\input{content/4-presented-approach}
+\input{content/5-prototype}
+\input{content/6-evaluation}
+\input{content/7-summary}
+
+\appendix
+\input{content/a-user-study-material}
+\input{content/b-cd-content}
+
+\input{content/lists}
+\input{content/bibliography}
 
 \end{document}

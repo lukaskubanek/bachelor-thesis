@@ -5,7 +5,7 @@
 \chapter{Prototyp-Implementierung}
 \label{chapter:prototype}
 
-Um den in Kapitel \ref{chapter:interactive-approach} vorgestellten Ansatz für das interaktive Layout von Diagrammen und insbesondere die neu eingeführten Mechanismen für die Interaktion zu validieren, wurde im Rahmen der Bachelor-Arbeit ein Prototyp entwickelt. Mit der Beschreibung des Prototyps beschäftigt sich dieses Kapitel. In Abschnitt \ref{sec:technologies} wird auf die gewählten Technologien eingegangen. Die Benutzeroberfläche und die unterstützten Funktionen werden in Abschnitt \ref{sec:functions} vorgestellt. In Abschnitt \ref{sec:architecture} wird die Architektur des Prototyps thematisiert und es werden einzelnen Komponenten beschrieben. Schließlich folgt in Abschnitt \ref{sec:prototype-summary} eine Zusammenfassung.
+Um den in Kapitel \ref{chapter:presented-approach} vorgestellten Ansatz für das interaktive Layout von Diagrammen und insbesondere die neu eingeführten Mechanismen für die Interaktion zu validieren, wurde im Rahmen der Bachelor-Arbeit ein Prototyp entwickelt. Mit der Beschreibung des Prototyps beschäftigt sich dieses Kapitel. In Abschnitt \ref{sec:technologies} wird auf die gewählten Technologien eingegangen. Die Benutzeroberfläche und die unterstützten Funktionen werden in Abschnitt \ref{sec:functions} vorgestellt. In Abschnitt \ref{sec:architecture} wird die Architektur des Prototyps thematisiert und es werden einzelnen Komponenten beschrieben. Schließlich folgt in Abschnitt \ref{sec:prototype-summary} eine Zusammenfassung.
 
 \section{Technologie}
 \label{sec:technologies}
@@ -29,7 +29,7 @@ Die Benutzeroberfläche des Werkzeugfensters ist in zwei rechteckige Bereiche au
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[scale=0.6]{resources/prototype-screenshot}
+    \includegraphics[scale=0.6]{assets/prototype-screenshot}
     \caption{Ein Screenshot des prototypischen Werkzeugs}
     \label{fig:prototype-screenshot}
 \end{figure}
@@ -81,18 +81,18 @@ Der Prototyp wurde in Form einer objekt-orientierten Anwendung implementiert und
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[scale=0.85]{resources/main-components}
+    \includegraphics[scale=0.85]{assets/main-components}
     \caption{Eine Übersicht der grundlegenden Komponenten des Prototyps}
     \label{fig:main-components}
 \end{figure}
 
 \subsection{Layout Engine}
 
-Die Komponente \textit{Layout Engine} bildet den wesentlichen Teil der Umsetzung des interaktiven Ansatzes aus dem Kapitel \ref{chapter:interactive-approach}. Neben der Beschreibung der Layout-Eigenschaften und des Metamodells für die Diagramme verfügt diese Komponente über die Verwaltung von Layout-Patterns, Erstellung und Verarbeitung von Layout-Ereignissen und schließlich stellt sie die Funktion der Layout-Berechnung zur Verfügung. Aufgrund der Komplexität wurde \textit{Layout Engine} in folgende Unterkomponenten aufgeteilt: \textit{Geometry}, \textit{Diagram}, \textit{Layout}, \textit{Patterns}, \textit{Events} und \textit{Engines}. Eine Übersicht der Unterkomponenten und deren Beziehungen wird in Form eines Paketdiagramms in Abbildung \ref{fig:layout-engine-subcomponents} gegeben.
+Die Komponente \textit{Layout Engine} bildet den wesentlichen Teil der Umsetzung des interaktiven Ansatzes aus dem Kapitel \ref{chapter:presented-approach}. Neben der Beschreibung der Layout-Eigenschaften und des Metamodells für die Diagramme verfügt diese Komponente über die Verwaltung von Layout-Patterns, Erstellung und Verarbeitung von Layout-Ereignissen und schließlich stellt sie die Funktion der Layout-Berechnung zur Verfügung. Aufgrund der Komplexität wurde \textit{Layout Engine} in folgende Unterkomponenten aufgeteilt: \textit{Geometry}, \textit{Diagram}, \textit{Layout}, \textit{Patterns}, \textit{Events} und \textit{Engines}. Eine Übersicht der Unterkomponenten und deren Beziehungen wird in Form eines Paketdiagramms in Abbildung \ref{fig:layout-engine-subcomponents} gegeben.
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[scale=0.85]{resources/layout-engine-subcomponents}
+    \includegraphics[scale=0.85]{assets/layout-engine-subcomponents}
     \caption{Eine Übersicht der Unterkomponenten der Komponente \textit{Layout Engine}}
     \label{fig:layout-engine-subcomponents}
 \end{figure}
@@ -104,7 +104,7 @@ Die Komponente \textit{Geometry} stellt die grundlegenden \textbf{geometrischen 
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics{resources/coordinates-conversion}
+    \includegraphics{assets/coordinates-conversion}
     \caption{Ein Beispiel der Koordinatenumrechnung für ein rechteckiges Objekt mit einer festen Größe}
     \label{fig:coordinates-conversion}
 \end{figure}
@@ -127,7 +127,7 @@ Die Umsetzung der Layout-Patterns aus Abschnitt \ref{sec:layout-patterns} erfolg
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[scale=0.8]{resources/layout-patterns-implementation}
+    \includegraphics[scale=0.8]{assets/layout-patterns-implementation}
     \caption{Ein Klassendiagramm mit einer Übersicht der expliziten Layout-Patterns}
     \label{fig:layout-patterns-implementation}
 \end{figure}
@@ -143,7 +143,7 @@ Die Komponente \textit{Events} stellt Klassen für die \textbf{Beschreibung von 
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[scale=0.8]{resources/layout-events-implementation}
+    \includegraphics[scale=0.8]{assets/layout-events-implementation}
     \caption{Ein Klassendiagramm mit Übersicht der unterstützten Layout-Ereignisse}
     \label{fig:layout-events-implementation}
 \end{figure}
@@ -169,7 +169,7 @@ Die Interaktion mit dem Canvas besteht in der Ausführung von Bearbeitungsaktion
 \section{Zusammenfassung}
 \label{sec:prototype-summary}
 
-Das in Kapitel \ref{chapter:interactive-approach} entworfene Konzept für das Layout von Diagrammen wurde in Form eines Werkzeugs zur Erstellung von vereinfachten Klassendiagrammen prototypisch umgesetzt.
+Das in Kapitel \ref{chapter:presented-approach} entworfene Konzept für das Layout von Diagrammen wurde in Form eines Werkzeugs zur Erstellung von vereinfachten Klassendiagrammen prototypisch umgesetzt.
 
 Es handelt sich um eine objekt-orientierte Anwendung für das Betriebsystem \textit{Mac OS X}, die in der Programmiersprache \textit{Objective-C} geschrieben ist. Da in der Vorbereitungsphase festgestellt wurde, dass für die Umsetzung des Konzeptes keine bestehende Bibliothek eingesetzt werden kann, wurde entschieden, eine ganz neue Anwendung zu implementieren. Diese verwendet ausschließlich die Standardbibliotheken der Mac Plattform. Der Quellcode sowie die kompilierte Version der Anwendung sind auf der beigelegten CD zu finden (für die konkreten Pfade siehe Abschnitt \ref{sec:cd-content-prototype}).
 
