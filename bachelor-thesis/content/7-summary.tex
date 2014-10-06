@@ -7,26 +7,23 @@
 
 \section{Fazit}
 
-% Kombination der Interaktion und automatischen Layout-Berechnung
-% In dieser Arbeit wurde kein vollständiger Ansatz gezeigt, sondern eine Richtung für eine mögliche Implementierung...
-% Probleme mit Skalierbarkeit
-% kein allgemeiner Ansatz, bildet eine Grundlage und präsentiert mögliche Bedienungsmechanismen für die Entwicklung eines allgemeinen Ansatzes
-% Dies wird der weiteren Forschung überlassen.
-% basiert auf Einschränkungen der Möglichkeiten, die der Nutzer ausführen kann
-% dadurch ist es möglich für konkrete Diagrammtypen spezielle Algorithmen einzusetzen
-% Contributions
+Diese Arbeit setzt sich mit der Problematik der \textbf{Layout-Berechnung in Diagrammen} auseinander und betrachtet diese aus der Sicht der Interaktion und der Art der Layout-Unterstützung. Zu Beginn wurden bestehende Ansätze für das Layout von Diagrammen ausführlich untersucht und bzgl. der genannten Aspekte kategorisiert. Die durchgeführte Analyse und die Aufstellung der Anforderung zur Eignung für \textbf{agile Modellierung} haben eine Grundlage für einen neuartigen Ansatz geschaffen, dessen Entwicklung den Schwerpunkt dieser Arbeit bildet.
 
-% dessen Einsatz in einem Werkzeug für agile Softwaremodellierung prinzipiell möglich ist
+Es handelt sich um einen Ansatz für Editoren zur Modellierung von graphbasierten Diagrammen, der die \textbf{interaktive Bearbeitung} des Diagramms mit der \textbf{automatischen Layout-Be\-rech\-nung} kombiniert. Dies konnte dadurch erreicht werden, indem die Möglichkeit der expliziten Einstellung von Layout-Eigenschaften durch den Nutzer eingeschränkt wurde, ohne auf die Interaktivität komplett verzichten zu müssen. Dafür war allerdings der Einsatz von speziellen Bedienungsmechanismen notwendig, die das besondere Merkmal des präsentierten Ansatzes bilden.
+
+Das in dieser Arbeit entwickelte Konzept beschreibt die allgemeine Funktionsweise des Ansatzes und dessen Bestandteile, u.a. die Interaktionsschleife, die Bedienungsmechanismen und die eigentliche Layout-Berechnung. Allerdings ist dieser Ansatz nicht universell einsetzbar und erfordert eine Anpassung für konkrete Diagrammtypen. Im Rahmen dieser Arbeit wurden zwei Layout-Algorithmen für \textbf{vereinfachte Klassendiagramme} entworfen, an den der Ansatz getestet wurde. Die Vertiefung bzw. der Entwurf von neuen Layout-Algorithmen stellen Gegenstände für weitere Forschung dar und werden in Abschnitt \ref{sec:outlook} diskutiert.
+
+Schließlich wurde das entworfene Konzept in Form eines Werkzeugs für die Erstellung von Klassendiagrammen prototypisch umgesetzt. Des Weiteren wurde der Prototyp in einer Nutzerstudie an realen Nutzern evaluiert. Diese hat im Großen und Ganzen positive Ergebnisse geliefert. Insbesondere wurde gezeigt, dass die halbautomatische Layout-Berechnung einen Mehrwert schafft und dass die eingesetzten Mechanismen der Interaktion verständlich sind. Dadurch stellt sich heraus, dass der Ansatz ein Potenzial besitzt und prinzipiell in Werkzeugen für agile Modellierung eingesetzt werden könnte. Dafür wäre allerdings eine eventuelle Weiterentwicklung und eine Anpassung für konkrete Anwendungsfälle notwendig.
 
 \section{Ausblick}
 \label{sec:outlook}
 
+% Es handelt sich um ein initiales Konzept
+% viele Möglichkeiten der Erweiterung bzw. Verbesserung - insbesondere in der Evaluation
 
-% Definition auf einem Metamodell, speziell für Layout-Patterns
+% wäre wünschenswert
 
-%%%
-%%% Implementierung der wichtigen Aktionen im Prototyp
-%%%
+\subsection{Implementierung der wichtigen Aktionen im Prototyp}
 
 % Auswahl von Elementen (Problem mit Verschiebung von mehreren Elementen gleichzeitig)
 % Undo
@@ -34,17 +31,16 @@
 % Ändern der Knoten für eine Kante
 % Speichern und Öffnen
 
-%%%
-%%% Verbesserung der Unterstützung von Semantik der Elemente
-%%%
+\subsection{Verbesserung der Unterstützung von Semantik der Elemente}
 
 % Metamodell im Prototyp
 % Metamodell auch für Layout-Patterns wie in [Maier] -> Wiederverwendung für mehrere Diagramm-Typen
 
-%%%
-%%% Erweiterung zu einem allgemeinen Algorithmus 
-%%% für Klassendiagramme
-%%%
+% Definition auf einem Metamodell, speziell für Layout-Patterns
+
+% notwendig Formalisierung der Syntax und Semantik zu schaffen und Layout-Algorithmen für konkrete Diagrammtypen zu entwerfen
+
+\subsection{Erweiterung zu einem allgemeinen Algorithmus für Klassendiagramme}
 
 % Einsatz eines Constraintlösers oder eines ausgereiften Algorithmus wie [Maier]
 % Constraintlöser für Patterns, da bestehende Layout-Engines zu spezifisch -> soll allgemein sein und ein richtiger Constraintlöser sein
