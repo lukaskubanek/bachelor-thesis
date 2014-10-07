@@ -28,25 +28,10 @@ In dem Prototyp wurden ausschließlich die Funktionen implementiert, die das Val
 
 Durch das Aufstellen des Kriteriums \ref{req:syntax-and-semantics} wurde gefordert, dass der entworfene Ansatz die Syntax und Semantik der Diagramme berücksichtigt. Diese Anforderung ist insbesondere wichtig, um die Anpassung der Layout-Berechnung für einzelne Diagrammtypen zu ermöglichen. Obwohl dieses Kriterium in den präsentierten konkreten Layout-Algorithmen eingehalten wurde, ist für die Weiterentwicklung der Algorithmen bzw. den Entwurf von neuen Algorithmen für weitere Diagrammtypen notwendig, eine Formalisierung der Syntax und Semantik einzuführen. Dafür müsste ein Metamodell für die Beschreibung der abstrakten und konkreten Syntax der visuellen Sprachen eingesetzt werden. Des Weiteren könnten die Layout-Patterns ähnlich wie in \cite{Maier12A-Pattern-based} anhand von Patterns-spezifischen Metamodellen definiert werden, um deren Wiederverwendung in Layout-Algorithmen für unterschiedliche Diagrammtypen zu gewährleisten.
 
-\subsection{Erweiterung zu einem allgemeinen Algorithmus für Klassendiagramme}
+\subsection{Verallgemeinerung des Layout-Algorithmus für Klassendiagramme}
 
-% Einsatz eines Constraintlösers oder eines ausgereiften Algorithmus wie [Maier]
-% Constraintlöser für Patterns, da bestehende Layout-Engines zu spezifisch -> soll allgemein sein und ein richtiger Constraintlöser sein
-% Pattern-Abhängigkeiten müssen manuell verwaltet werden
-% IDLPatternsSolver mit einem Constraintlöser
-% Prototyp: Implementierung der impliziten Layout-Patterns (für den Constraintlöser)
+Der in Abschnitt \ref{subsubsec:tree-layout-algorithm} vorgestellte baumbasierte Layout-Algorithmus ist für vereinfachte Klassendiagramme ausgelegt und unterstützt ausschließlich die Modellierung von Vererbungshierarchien. Die Beschränkung der Struktur auf Bäume konnte für die Implementierung des Algorithmus ausgenutzt werden. Damit ist eine Erweiterung für vollständige Klassendiagramme mit weiteren Maßnahmen verbunden. Insbesondere müsste die Zusammensetzung der Layout-Patterns überarbeitet werden, möglicherweise durch den Einsatz eines \textbf{Constraintlösers}. Dafür wäre es notwendig, sowohl die expliziten als auch die impliziten Layout-Patterns in Form von Constraints ausdrücken zu können. Wie zu erwarten müsste in diesem Fall auf den Aspekt der Performance geachtet werden.
 
-% Neu-Berechnung nach jedem Layout-Übergang -> Performance?
+Da es sich bei den vollständigen Klassendiagrammen aufgrund der Erweiterung der unterstützten Notation um komplexere graphbasierte Strukturen handelt, wäre eventuell eine Anpassung der \textbf{Behandlung von Layout-Patterns} notwendig. Es wäre denkbar, die Layout-Patterns während der Bearbeitung zu visualisieren\footnote{Um das Diagramm übersichtlich zu halten, könnten die Layout-Patterns nur während der Verschiebungsaktion eingeblendet werden.}. Des Weiteren könnte eine direkte Interaktion mit den Layout-Patterns unterstützt werden, z.B. durch die Verschiebung einer Klasse auf die visuelle Repräsentation des Layout-Patterns für das Hinzufügen der Klasse zu dem Layout-Pattern. Obwohl der in dieser Arbeit vorgestellte Ansatz eine vollautomatische Verwaltung von Layout-Patterns durch die Layout-Algorithmen vorsieht, könnte aufgrund der komplexeren Struktur der Diagramme sogar die Möglichkeit der Erstellung von Layout-Patterns durch den Nutzer\footnote{Je nach Semantik könnte dies mit der automatischen Erstellung von Layout-Patterns kombiniert werden.} ähnlich wie in \cite{Maier12A-Pattern-based} benötigt werden. Weiterhin führt die Unterstützung von mehreren Relationstypen zu der Notwendigkeit der Einführung von Layout-Patterns für Kanten, wodurch deren Routen bestimmt würden.
 
-% unterstützte Notation erweitern
-% Unterstützung von sekundären Knoten für UML-Notizen
-
-% Möglichkeit der Interaktivität der Patterns (Visualisierung - z.B. nur während Drag&Drop sichtbar, Erstellen durch den Nutzer wie ein [Maier] ist denkbar)
-% Patterns für Kanten
-% Erlauben dem Nutzer selbst Patterns zu erstellen (Kombinieren mit automatischen je nach Semantik)
-
-% Unterstützung für Cluster/Zonen
-% Historie der Layouts für weitere Berechnungen
-% weitere Eigenschaften der Mausbewegung wie Richtung/Geschwindigkeit
-
-%  ~~~ Unterstützung für Multi-Touch wäre denkbar
+Außerdem ist es denkbar, den Ansatz um weitere Eingabequellen für die Layout-Algorithmen zu erweitern. Dazu zählen Eigenschaften der Mausbewegung wie z.B. die Richtung oder Geschwindigkeit oder eine Verwaltung der Historie von angewendeten Layouts.
