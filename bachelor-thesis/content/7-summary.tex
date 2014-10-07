@@ -21,14 +21,17 @@ Schließlich wurde das entworfene Konzept in Form eines Werkzeugs für die Erste
 In dieser Arbeit wurde ein initiales Konzept vorgestellt, welches in vielen Richtungen verbessert und erweitert werden kann. Insbesondere durch die Evaluation wurden Stellen entdeckt, die in der weiteren Entwicklung aufgearbeitet werden können. Sie werden in diesem Abschnitt im Detail dokumentiert.
 
 \subsection{Implementierung von erweiterten Funktionen im Prototyp}
+\label{subsec:extension-of-the-prototype}
 
 In dem Prototyp wurden ausschließlich die Funktionen implementiert, die das Validieren des Konzeptes ermöglicht haben. Das Ziel war es nicht, ein vollständiges Modellierungswerkzeug zu entwickeln. Natürlich bedeutet dies, dass der Prototyp viele Funktionen vermisst, die aus anderen Programmen bekannt sind. Wie bereits in Abschnitt \ref{subsec:user-study-evaluation} aufgeführt wurde, hat die Nutzerstudie gezeigt, welche Funktionen den Teilnehmern am meisten gefehlt haben. Im Einzelnen handelte es sich um weitere Möglichkeiten der Manipulation mit Elementen im Diagramm und um Funktionen zur Verbesserung der Benutzerfreundlichkeit. Eine Übersicht der Ergebnisse wurde in Abbildung \ref{fig:missed-prototype-functions} illustriert. Des Weiteren wäre die Möglichkeit des Speicherns von Dokumenten sehr nützlich. Obwohl die genannten Funktionen nicht direkt mit dem eigentlichen Konzept verbunden sind, wäre deren Implementierung in dem Prototyp wünschenswert.
 
 \subsection{Verbesserung der Unterstützung der Syntax und Semantik}
+\label{subsec:syntax-and-semantics-support-improvements}
 
 Durch das Aufstellen des Kriteriums \ref{req:syntax-and-semantics} wurde gefordert, dass der entworfene Ansatz die Syntax und Semantik der Diagramme berücksichtigt. Diese Anforderung ist insbesondere wichtig, um die Anpassung der Layout-Berechnung für einzelne Diagrammtypen zu ermöglichen. Obwohl dieses Kriterium in den präsentierten konkreten Layout-Algorithmen eingehalten wurde, ist für die Weiterentwicklung der Algorithmen bzw. den Entwurf von neuen Algorithmen für weitere Diagrammtypen notwendig, eine Formalisierung der Syntax und Semantik einzuführen. Dafür müsste ein Metamodell für die Beschreibung der abstrakten und konkreten Syntax der visuellen Sprachen eingesetzt werden. Des Weiteren könnten die Layout-Patterns ähnlich wie in \cite{Maier12A-Pattern-based} anhand von Patterns-spezifischen Metamodellen definiert werden, um deren Wiederverwendung in Layout-Algorithmen für unterschiedliche Diagrammtypen zu gewährleisten.
 
 \subsection{Verallgemeinerung des Layout-Algorithmus für Klassendiagramme}
+\label{subsec:generalization-for-class-diagrams}
 
 Der in Abschnitt \ref{subsubsec:tree-layout-algorithm} vorgestellte baumbasierte Layout-Algorithmus ist für vereinfachte Klassendiagramme ausgelegt und unterstützt ausschließlich die Modellierung von Vererbungshierarchien. Die Beschränkung der Struktur auf Bäume konnte für die Implementierung des Algorithmus ausgenutzt werden. Damit ist eine Erweiterung für vollständige Klassendiagramme mit weiteren Maßnahmen verbunden. Insbesondere müsste die Zusammensetzung der Layout-Patterns überarbeitet werden, möglicherweise durch den Einsatz eines \textbf{Constraintlösers}. Dafür wäre es notwendig, sowohl die expliziten als auch die impliziten Layout-Patterns in Form von Constraints ausdrücken zu können. Wie zu erwarten müsste in diesem Fall auf den Aspekt der Performance geachtet werden.
 
