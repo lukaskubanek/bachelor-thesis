@@ -24,14 +24,9 @@ In dieser Arbeit wurde ein initiales Konzept vorgestellt, welches in vielen Rich
 
 In dem Prototyp wurden ausschließlich die Funktionen implementiert, die das Validieren des Konzeptes ermöglicht haben. Das Ziel war es nicht, ein vollständiges Modellierungswerkzeug zu entwickeln. Natürlich bedeutet dies, dass der Prototyp viele Funktionen vermisst, die aus anderen Programmen bekannt sind. Wie bereits in Abschnitt \ref{subsec:user-study-evaluation} aufgeführt wurde, hat die Nutzerstudie gezeigt, welche Funktionen den Teilnehmern am meisten gefehlt haben. Im Einzelnen handelte es sich um weitere Möglichkeiten der Manipulation mit Elementen im Diagramm und um Funktionen zur Verbesserung der Benutzerfreundlichkeit. Eine Übersicht der Ergebnisse wurde in Abbildung \ref{fig:missed-prototype-functions} illustriert. Des Weiteren wäre die Möglichkeit des Speicherns von Dokumenten sehr nützlich. Obwohl die genannten Funktionen nicht direkt mit dem eigentlichen Konzept verbunden sind, wäre deren Implementierung in dem Prototyp wünschenswert.
 
-\subsection{Verbesserung der Unterstützung von Semantik der Elemente}
+\subsection{Verbesserung der Unterstützung der Syntax und Semantik}
 
-% Metamodell im Prototyp
-% Metamodell auch für Layout-Patterns wie in [Maier] -> Wiederverwendung für mehrere Diagramm-Typen
-
-% Definition auf einem Metamodell, speziell für Layout-Patterns
-
-% notwendig Formalisierung der Syntax und Semantik zu schaffen und Layout-Algorithmen für konkrete Diagrammtypen zu entwerfen
+Durch das Aufstellen des Kriteriums \ref{req:syntax-and-semantics} wurde gefordert, dass der entworfene Ansatz die Syntax und Semantik der Diagramme berücksichtigt. Diese Anforderung ist insbesondere wichtig, um die Anpassung der Layout-Berechnung für einzelne Diagrammtypen zu ermöglichen. Obwohl dieses Kriterium in den präsentierten konkreten Layout-Algorithmen eingehalten wurde, ist für die Weiterentwicklung der Algorithmen bzw. den Entwurf von neuen Algorithmen für weitere Diagrammtypen notwendig, eine Formalisierung der Syntax und Semantik einzuführen. Dafür müsste ein Metamodell für die Beschreibung der abstrakten und konkreten Syntax der visuellen Sprachen eingesetzt werden. Des Weiteren könnten die Layout-Patterns ähnlich wie in \cite{Maier12A-Pattern-based} anhand von Patterns-spezifischen Metamodellen definiert werden, um deren Wiederverwendung in Layout-Algorithmen für unterschiedliche Diagrammtypen zu gewährleisten.
 
 \subsection{Erweiterung zu einem allgemeinen Algorithmus für Klassendiagramme}
 
@@ -54,4 +49,4 @@ In dem Prototyp wurden ausschließlich die Funktionen implementiert, die das Val
 % Historie der Layouts für weitere Berechnungen
 % weitere Eigenschaften der Mausbewegung wie Richtung/Geschwindigkeit
 
-% Unterstützung für Multi-Touch wäre denkbar
+%  ~~~ Unterstützung für Multi-Touch wäre denkbar
