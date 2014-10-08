@@ -23,7 +23,7 @@ Wie bereits in Abschnitt \ref{sec:thesis-conditions} erwähnt wurde, beschäftig
 \item
 \label{req:interactivity}
 \textbf{Interaktivität}
-Die Manipulation mit dem Diagramm soll interaktiv erfolgen. Der Nutzer soll in der Lage sein, mit dem Diagramm unmittelbar interagieren zu können und die Layout-Anpassungen sollen eine direkte Auswirkung auf das manipulierte Diagramm haben. Demzufolge soll die Eingabe mit der Ausgabe fest gekoppelt sein\footnote{Die Kopplung bezieht sich auf den Mauszeiger und den darunter liegenden Canvas. Aus der Sicht der Mensch-Computer-Interaktion ist die Nutzung der Maus als Eingabegerät von der Ausgabe am Monitor stets entkoppelt.}.
+Die Manipulation von Diagrammen soll interaktiv erfolgen. Der Nutzer soll in der Lage sein, mit dem Diagramm unmittelbar interagieren zu können und die Layout-Anpassungen sollen eine direkte Auswirkung auf das manipulierte Diagramm haben. Demzufolge soll die Eingabe mit der Ausgabe fest gekoppelt sein\footnote{Die Kopplung bezieht sich auf den Mauszeiger und den darunter liegenden Canvas. Aus der Sicht der Mensch-Computer-Interaktion ist die Nutzung der Maus als Eingabegerät von der Ausgabe am Monitor stets entkoppelt.}.
 
 \item
 \label{req:immediate-feedback}
@@ -82,7 +82,7 @@ Den Kern des Ansatzes bildet eine Interaktionsschleife, die sich aus mehreren Sc
 
 Das Kriterium \ref{req:editing-support} erfordert eine Möglichkeit der Bearbeitung des Diagramms. Der Nutzer soll in der Lage sein, neue Knoten und Kanten hinzuzufügen und bestehende Knoten und Kanten zu manipulieren bzw. zu löschen. Durch das Kriterium \ref{req:interactivity} wird gefordert, dass die Bearbeitung interaktiv erfolgt. Dies wird durch die Unterstützung von \textbf{Bearbeitungsaktionen} gewährleistet, die die Grundlage der Interaktion bilden. Die Bearbeitungsaktionen werden in Abschnitt \ref{subsec:edit-actions} im Detail beschrieben.
 
-Weiterhin sollen die Möglichkeiten der Interaktion eingeschränkt werden, um das Ablenken durch die eventuellen Layout-Anpassungen zu minimieren (Kriterium \ref{req:focus-on-the-content}). Dies wird durch die Einschränkung der aus den manuellen Layout-Ansätzen (siehe Abschnitt \ref{sec:manual-layout}) bekannten freien Positionierung der Knoten und den Einsatz eines \textbf{neuen Bedienungsmechanismus} für die Verschiebungsaktion erreicht, dem sich der Abschnitt \ref{subsec:temporary-layer-mechanism} widmet.
+Weiterhin sollen die Möglichkeiten der Manipulation mit den Objekten eingeschränkt werden, um das Ablenken durch manuelle Layout-Anpassungen zu minimieren (Kriterium \ref{req:focus-on-the-content}). Dies wird durch die Einschränkung der aus den manuellen Layout-Ansätzen (siehe Abschnitt \ref{sec:manual-layout}) bekannten freien Positionierung der Knoten und den Einsatz eines \textbf{neuen Bedienungsmechanismus} für die Verschiebungsaktion erreicht, dem sich der Abschnitt \ref{subsec:temporary-layer-mechanism} widmet.
 
 Die Erhaltung des mentalen Modells (Kriterium \ref{req:mental-map}) wird durch eine \textbf{Animation der Layout-Übergänge} gewährleistet. Dies wird in Abschnitt \ref{subsec:layout-transitions} thematisiert.
 
@@ -111,7 +111,7 @@ Alle interaktiven Ansätze für das Layout von Diagrammen aus dem Kapitel \ref{c
 
 Dieses Verhalten wird für die Verschiebungsaktion der Knoten eingesetzt, indem bei der Verschiebung eines Knotens eine temporäre Schicht erzeugt wird, in der sich der Knoten frei positionieren lässt. Im Diagramm wird der manipulierte Knoten durch einen Platzhalter repräsentiert, der nur zulässige Positionen annehmen kann. Dieser Mechanismus basiert auf der Technik \textbf{\enquote{Drag and Drop}} und ist in drei Phasen aufgeteilt. Im Folgendem wird er an einem Beispiel detailliert erklärt.
 
-Bevor die Verschiebungsaktion beginnen kann, müssen sich im Canvas einige Knoten befinden, so wie es der Fall in Abbildung \ref{fig:movement-action-example-a} ist.
+Bevor die Verschiebungsaktion beginnen kann, müssen sich im Canvas einige Knoten befinden, so wie es in Abbildung \ref{fig:movement-action-example-a} der Fall ist.
 
 In der ersten Phase wird ein Knoten im Canvas angeklickt, was in Abbildung \ref{fig:movement-action-example-b} durch einen Mauszeiger gekennzeichnet ist. Dabei wird der angeklickte Knoten in eine neu eingefügte \textbf{temporäre Schicht} ausgelagert, die vor dem Canvas positioniert ist, so wie es in Abbildung \ref{fig:temporary-layer-visualization} skizziert ist. Im Canvas wird die ursprüngliche Darstellung des verschobenen Knotens durch einen \textbf{temporären Platzhalter} ersetzt, welcher dem Nutzer die Zielposition des Knotens andeutet. Der Platzhalter ist in Abbildungen \ref{fig:movement-action-example-c} und \ref{fig:temporary-layer-visualization} durch ein Rechteck repräsentiert, das mit einer grauen gestrichelten Linie umrandet ist.
 
@@ -212,7 +212,7 @@ Dadurch dass die Größe der Knoten bekannt ist und die Position der Knoten bere
 \subsubsection{Zentrierung des Diagramm-Inhalts}
 \label{subsubsec:centering-of-diagram-content}
 
-Die Zentrierung des Diagramm-Inhalts ist ein weiteres ästhetisches Layout-Pattern, das eine eindeutige Bestimmung des Layouts ermöglicht. Die Berechnung des Layouts erfolgt relativ und wird dermaßen auf das Diagramm angewendet, so dass der Diagramm-Inhalt immer in die Mitte des Canvas platziert wird und dadurch die Zeichenfläche optimal ausgenutzt wird (Prinzip \ref{pri:drawing-area}). Dies wird in Abbildung \ref{fig:layout-pattern-centered-content} veranschaulicht.
+Die Zentrierung des Diagramm-Inhalts ist ein weiteres ästhetisches Layout-Pattern, das eine eindeutige Bestimmung des Layouts ermöglicht. Die Berechnung des Layouts erfolgt relativ und wird so auf das Diagramm angewendet, dass der Diagramm-Inhalt immer in die Mitte des Canvas platziert wird und dadurch die Zeichenfläche optimal ausgenutzt wird (Prinzip \ref{pri:drawing-area}). Dies wird in Abbildung \ref{fig:layout-pattern-centered-content} veranschaulicht.
 
 \begin{figure}[hbt]
     \centering
@@ -235,7 +235,7 @@ Im Folgenden werden zwei konkrete explizite Layout-Patterns vorgestellt, nämlic
 \subsubsection{Ausrichtungspattern}
 \label{subsubsec:alignment-pattern}
 
-Das Ausrichtungspattern beschreibt eine Reihe an Knoten und kombiniert die Ausrichtung und Verteilung der Knoten aus dem manuellen Layout (siehe Abschnitt \ref{subsubsec:alignment-and-distribution}) bzw. die Layout-Patterns zum Ausrichten und Verteilen aus \cite[S.143ff und S.136ff]{Maier12A-Pattern-based}. Die Knoten werden in einer horizontalen oder vertikalen Reihe gleichmäßig verteilt und an die Kanten bzw. Mittelpunkte ausgerichtet. In den Abbildungen \ref{fig:layout-pattern-alignment-center} und \ref{fig:layout-pattern-alignment-top} werden zwei Beispiele für das horizontale Verteilen mit der Ausrichtung an die oberen Kanten bzw. Mittelpunkte gezeigt. Die gleichen Abstände sind mit roten Pfeilen und die Anordnung durch eine graue Linie gekennzeichnet.
+Das Ausrichtungspattern beschreibt eine Reihe an Knoten und kombiniert die Ausrichtung und Verteilung der Knoten aus dem manuellen Layout (siehe Abschnitt \ref{subsubsec:alignment-and-distribution}) bzw. die Layout-Patterns zum Ausrichten und Verteilen aus \cite[S.143ff und S.136ff]{Maier12A-Pattern-based}. Die Knoten werden in einer horizontalen oder vertikalen Reihe gleichmäßig verteilt und an die Kanten bzw. Mittelpunkte ausgerichtet. In den Abbildungen \ref{fig:layout-pattern-alignment-center} und \ref{fig:layout-pattern-alignment-top} werden zwei Beispiele für das horizontale Verteilen mit der Ausrichtung an die oberen Kanten bzw. Mittelpunkte dargestellt. Die gleichen Abstände sind mit roten Pfeilen und die Anordnung durch eine graue Linie gekennzeichnet.
 
 \begin{figure}[hbt]
     \centering
@@ -265,9 +265,9 @@ Die Variierung des Ausrichtungspatterns besteht in der Veränderung der Reihenfo
 \subsubsection{T-Shape-Pattern}
 \label{subsubsec:t-shape-pattern}
 
-Das T-Shape-Pattern beschreibt die Struktur von Knoten, die in der Form des Buchstabes \enquote{T} angeordnet sind. Dies ist insbesondere für die Darstellung von Hierarchien in Diagrammen von Bedeutung (Prinzip \ref{pri:hierarchies}).
+Das T-Shape-Pattern beschreibt die Struktur von Knoten, die in der Form des Buchstabens \enquote{T} angeordnet sind. Dies ist insbesondere für die Darstellung von Hierarchien in Diagrammen von Bedeutung (Prinzip \ref{pri:hierarchies}).
 
-Ein Knoten hat eine spezielle Rolle und ist den anderen Knoten übergeordnet. Die untergeordneten Knoten sind ähnlich wie in dem Ausrichtungspattern gleichmäßig in einer Reihe angeordnet und an die Kanten ausgerichtet, die sich am nächsten zu dem übergeordneten Knoten befinden. Der übergeordnete Knoten befindet sich in einem definierten Abstand zu den untergeordneten Knoten und ist mittig ausgerichtet. In Abbildung \ref{fig:layout-pattern-t-shape} ist ein Beispiel des T-Shape-Patterns dargestellt, in dem der übergeordnete Knoten oben positioniert ist. Die Abstände sind mit farbigen Pfeilen und die Ausrichtung mit grauen Linien gekennzeichnet. Natürlich gibt es weitere Formen des T-Shape-Patterns, in den sich der übergeordnete Knoten links, unten oder rechts befindet.
+Ein Knoten hat eine spezielle Rolle und ist den anderen Knoten übergeordnet. Die untergeordneten Knoten sind ähnlich wie in dem Ausrichtungspattern gleichmäßig in einer Reihe angeordnet und an die Kanten ausgerichtet, die sich am nächsten zu dem übergeordneten Knoten befinden. Der übergeordnete Knoten befindet sich in einem definierten Abstand zu den untergeordneten Knoten und ist mittig ausgerichtet. In Abbildung \ref{fig:layout-pattern-t-shape} ist ein Beispiel des T-Shape-Patterns dargestellt, in dem der übergeordnete Knoten oben positioniert ist. Die Abstände sind mit farbigen Pfeilen und die Ausrichtung mit grauen Linien gekennzeichnet. Natürlich gibt es weitere Formen des T-Shape-Patterns, in denen sich der übergeordnete Knoten links, unten oder rechts befindet.
 
 \begin{figure}[hbt]
     \centering
@@ -281,7 +281,7 @@ Durch das T-Shape-Pattern wird das Ausrichtungspattern erweitert, indem die Reih
 \section{Berechnung des Layouts}
 \label{sec:layout-calculation}
 
-Wie bereits in Abschnitt \ref{subsec:edit-actions} erläutert wurde, werden während der Bearbeitung eines Diagramms Aktionen durch den Nutzer ausgeführt. Für die ausgeführten Bearbeitungsaktionen werden \textbf{Layout-Ereignisse} generiert, die eine Beschreibung der manipulierten bzw. geänderten Knoten und Kanten sowie die Parameter der Interaktion wie z.B. die Position des Mauszeigers beinhalten. Die \textbf{Layout-Engine}, die für die Berechnung des Layouts zuständig ist, nimmt die erzeugten Layout-Ereignisse entgegen, verarbeitet sie und passt das Layout des Diagramms an. Mit der Layout-Engine beschäftigt sich näher der Abschnitt \ref{subsec:layout-engine}. Der Prozess der Verarbeitung der Layout-Ereignisse wird in Abschnitt \ref{subsec:processing-of-layout-events} beschrieben. Schließlich werden die konkreten Layout-Algorithmen in Abschnitt \ref{subsec:concrete-layout-algorithms} vorgestellt.
+Wie bereits in Abschnitt \ref{subsec:edit-actions} erläutert wurde, werden während der Bearbeitung eines Diagramms Aktionen durch den Nutzer ausgeführt. Für die ausgeführten Bearbeitungsaktionen werden \textbf{Layout-Ereignisse} generiert, die eine Beschreibung der manipulierten bzw. geänderten Knoten und Kanten sowie die Parameter der Interaktion wie z.B. die Position des Mauszeigers beinhalten. Die \textbf{Layout-Engine}, die für die Berechnung des Layouts zuständig ist, nimmt die erzeugten Layout-Ereignisse entgegen, verarbeitet sie und passt das Layout des Diagramms an. Mit der Layout-Engine beschäftigt sich der Abschnitt \ref{subsec:layout-engine} näher. Der Prozess der Verarbeitung der Layout-Ereignisse wird in Abschnitt \ref{subsec:processing-of-layout-events} beschrieben. Schließlich werden die konkreten Layout-Algorithmen in Abschnitt \ref{subsec:concrete-layout-algorithms} vorgestellt.
 
 \subsection{Layout-Engine}
 \label{subsec:layout-engine}
@@ -342,7 +342,7 @@ Die in dieser Arbeit präsentierten Algorithmen basieren auf der visuellen Sprac
 \subsubsection{Algorithmus für das horizontale Layout}
 \label{subsubsec:horizontal-layout-algorithm}
 
-Der Algorithmus für das horizontale Layout ordnet alle Klassen eines Klassendiagramms in eine horizontale Reihe an und lässt dabei die Vererbungsrelationen außer Acht.
+Der Algorithmus für das horizontale Layout ordnet alle Klassen eines Klassendiagramms in einer horizontalen Reihe an und lässt dabei die Vererbungsrelationen außer Acht.
 
 Die Layout-Engine, die diesen Algorithmus umsetzt, enthält intern eine Instanz des Ausrichtungspatterns (siehe Abschnitt \ref{subsubsec:alignment-pattern}), das alle Klassen des Diagramms referenziert. Dieser Algorithmus hat aus der Sicht des Nutzers keine große Bedeutung und dient ausschließlich als Grundlage für den Algorithmus für das baumbasierte Layout, mit dem sich der Abschnitt \ref{subsubsec:tree-layout-algorithm} beschäftigt.
 
@@ -351,7 +351,7 @@ Nichtsdestotrotz macht der Algorithmus die Mechanismen der Interaktion aus Absch
 \subsubsection{Algorithmus für das baumbasierte Layout}
 \label{subsubsec:tree-layout-algorithm}
 
-Der Algorithmus für das baumbasierte Layout ermöglicht die Modellierung von Vererbungshierarchien in einem Klassendiagramm. Dabei hält er sich an die in Abschnitt \ref{sec:aesthetics-criteria} beschriebene ästhetischen Prinzipien. Insbesondere wird das Prinzip der Darstellung von Hierarchien eingehalten (Prinzip \ref{pri:hierarchies}).
+Der Algorithmus für das baumbasierte Layout ermöglicht die Modellierung von Vererbungshierarchien in einem Klassendiagramm. Dabei hält er sich an die in Abschnitt \ref{sec:aesthetics-criteria} beschriebenen ästhetischen Prinzipien. Insbesondere wird das Prinzip der Darstellung von Hierarchien eingehalten (Prinzip \ref{pri:hierarchies}).
 
 Ähnlich wie bei der Umsetzung des Algorithmus für das horizontale Layout (siehe Abschnitt \ref{subsubsec:horizontal-layout-algorithm}) enthält die Layout-Engine, die den Algorithmus für das baumbasierte Layout umsetzt, eine Instanz des horizontalen Ausrichtungspatterns, das jedoch nicht alle Klassen im Diagramm sondern nur die Wurzelklassen der Vererbungshierarchien referenziert. Durch dieses globale Ausrichtungspattern wird die Reihenfolge der Vererbungshierarchien bestimmt. Während der Erstellung von Vererbungsrelationen zwischen Klassen werden T-Shape-Patterns (siehe Abschnitt \ref{subsubsec:t-shape-pattern}) instanziiert, die die Struktur der Vererbungshierarchien beschreiben und durch die Layout-Engine verwaltet werden. In Abbildung \ref{fig:tree-based-layout} wird ein Beispiel eines Diagramms mit gekennzeichneten Layout-Patterns gezeigt. Die blaue Linie stellt das globale Ausrichtungspattern dar und mit den grünen Linien sind die instanziierten T-Shape-Patterns markiert. Die Vererbungshierarchien sind mit grauen gestrichelten Linien umrandet.
 
