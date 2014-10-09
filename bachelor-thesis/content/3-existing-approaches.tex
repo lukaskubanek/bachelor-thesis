@@ -163,7 +163,7 @@ Wenn mindestens drei Objekte ausgewählt werden, kann die Funktion zum gleichmä
 \subsubsection{Smart Guides}
 \label{subsubsec:smart-guides}
 
-Eine sehr hilfreiche Funktion, die in den meisten Grafik- und Präsentationsprogrammen unterstützt wird, sind Hilfslinien für Ausrichtung und relative Positionierung (engl.: \enquote{Smart Guides}) \cite{11Keynote}. Wenn diese Funktion aktiviert ist, werden während der Manipulation des ausgewählten Objekts farbige Linien im Canvas eingeblendet. Diese Linien geben dem Nutzer ein visuelles Feedback zur geeigneten Ausrichtung des manipulierten Objekts relativ zu anderen Objekten im Diagramm. Außerdem wird ähnlich wie bei der Funktion \textit{Snap-to-Grid} die freie Manipulation eingeschränkt, was in der Regel zu besseren Layout-Ergebnissen führt. Die Hilfslinien werden nach der Beendigung der Aktion wieder ausgeblendet und die Position bzw. Größe des manipulierten Objekts wird angepasst. Genauso wie auch bei allen anderen Hilfsfunktionen für das manuelle Layout handelt es sich bei den Hilfslinien um eine temporäre Layout-Funktion. Somit wird die Ausrichtung der Objekte nur in den Eigenschaften der Objekte (Position und Größe) ausgedrückt und es wird keine explizite Regel erstellt.
+Eine sehr hilfreiche Funktion, die in den meisten Grafik- und Präsentationsprogrammen unterstützt wird, sind Hilfslinien für Ausrichtung und relative Positionierung (engl.: \enquote{Smart Guides}) \cite{11Keynote}. Wenn diese Funktion aktiviert ist, werden während der Manipulation des ausgewählten Objekts farbige Linien eingeblendet. Diese Linien geben dem Nutzer ein visuelles Feedback zur geeigneten Ausrichtung des manipulierten Objekts relativ zu anderen Objekten im Diagramm. Außerdem wird ähnlich wie bei der Funktion \textit{Snap-to-Grid} die freie Manipulation eingeschränkt, was in der Regel zu besseren Layout-Ergebnissen führt. Die Hilfslinien werden nach der Beendigung der Aktion wieder ausgeblendet und die Position bzw. Größe des manipulierten Objekts wird angepasst. Genauso wie auch bei allen anderen Hilfsfunktionen für das manuelle Layout handelt es sich bei den Hilfslinien um eine temporäre Layout-Funktion. Somit wird die Ausrichtung der Objekte nur in den Eigenschaften der Objekte (Position und Größe) ausgedrückt und es wird keine explizite Regel erstellt.
 
 \paragraph{Hilfslinien zur Ausrichtung (engl.: \enquote{Alignment Guides})}
 
@@ -578,7 +578,7 @@ Die Beschreibung der Strukturregeln kann mithilfe von \textbf{Constraints} erfol
 Die freie Positionierung der Elemente im Diagramm ist grundsätzlich 
 möglich, wird aber durch die erstellten Constraints eingeschränkt. Das zeichnet sich z.B. dadurch aus, dass bei der Bewegung eines Knotens, der mit einem oder mehreren Constraints mit anderen Knoten in Beziehung gesetzt ist, auch die zusammenhängende Knoten automatisch mitbewegt werden, sodass die Constraints eingehalten bleiben. Weiterhin können auch die Parameter der erstellten Constraints durch den Nutzer eingestellt werden. Somit zeichnet sich dieser Ansatz durch eine große Flexibilität aus.
 
-In Abbildung \ref{fig:dunnart-screenshot} ist ein Screenshot des Editors \textit{Dunnart}\footnote{\url{http://dunnart.org}} dargestellt, welcher den Ansatz aus \cite{Wybrow08Using} implementiert. Die rechte Sidebar beinhaltet eine Palette mit Buttons für die Erstellung von Constraints. In der Mitte befindet sich der Canvas, in dem ein hierarchisches Diagramm modelliert ist. Die blauen Linien um das eigentliche Diagramm dienen der Visualisierung von erstellten Constraints und ermöglichen eine Manipulation mit ihnen.
+In Abbildung \ref{fig:dunnart-screenshot} ist ein Screenshot des Editors \textit{Dunnart}\footnote{\url{http://dunnart.org}} dargestellt, welcher den Ansatz aus \cite{Wybrow08Using} implementiert. Die rechte Sidebar beinhaltet eine Palette mit Buttons für die Erstellung von Constraints. In der Mitte befindet sich der Canvas, in dem ein hierarchisches Diagramm modelliert ist. Die blauen Linien um das eigentliche Diagramm dienen der Visualisierung von erstellten Constraints und ermöglichen deren Manipulation.
 
 \begin{figure}[hbt]
     \centering
@@ -636,7 +636,7 @@ Die Struktur-basierten benutzergesteuerten Ansätze für das halbautomatische La
     \label{fig:mindnode-example}
 \end{figure}
 
-\textit{MindNode} stellt eine interaktive Funktion für eine halbautomatische Layout-Unterstützung namens \enquote{Smart Layout} bereit \cite{14MindNode}. Wenn diese Funktion ausgeschaltet ist, können einzelne Knoten der Mindmap frei positioniert werden. Dahingegen, wenn die Funktion eingeschaltet ist, nimmt die Mindmap eine vorgerechnete Baumstruktur an und die Verschiebungsaktion eines Knotens drückt in diesem Fall die Absicht einer Layout-Modifikation aus.
+\textit{MindNode} stellt eine interaktive Funktion für eine halbautomatische Layout-Unterstützung namens \enquote{Smart Layout} bereit \cite{14MindNode}. Wenn diese Funktion ausgeschaltet ist, können einzelne Knoten der Mindmap frei positioniert werden. Dahingegen nimmt die Mindmap, wenn die Funktion eingeschaltet ist, eine vorgerechnete Baumstruktur an und die Verschiebungsaktion eines Knotens drückt in diesem Fall die Absicht einer Layout-Modifikation aus.
 
 \begin{figure}[hbt]
     \newcommand{\subfigurewidth}{\textwidth}
@@ -693,6 +693,6 @@ Da die Wahrnehmungsorganisation in den interaktiven Umgebungen eine große Bedeu
 
 \item
 \textbf{Fehlende Einhaltung der ästhetischen Prinzipien}
-Aufgrund der Überlassung der Strukturbeschreibung dem Nutzer können die ästhetischen Prinzipien verletzt werden. Insbesondere die allgemeinen Ansätze besitzen eine mangelhafte bis keine Unterstützung der syntaktischen und semantischen Regeln von konkreten Diagrammtypen.
+Da der Nutzer für die Strukturbeschreibung verantwortlich ist, können die ästhetischen Prinzipien verletzt werden. Insbesondere die allgemeinen Ansätze besitzen eine mangelhafte bis keine Unterstützung der syntaktischen und semantischen Regeln von konkreten Diagrammtypen.
 
 \end{itemize}
