@@ -5,9 +5,9 @@
 \chapter{Grundlagen}
 \label{chapter:basics}
 
-Dieses Kapitel beschäftigt sich mit den Grundlagen für die Problematik der Layout-Be\-rech\-nung in Diagrammen. Zunächst werden in Abschnitt \ref{sec:disambiguation} die wichtigsten Begriffe eingeführt und erläutert. Anschließend werden in Abschnitt \ref{sec:aesthetics-criteria} die ästhetischen Prinzipien für das Layout von allgemeinen Graphen und Klassendiagrammen der Notationssprache UML\footnote{Unified Modeling Language (\url{http://www.uml.org})} zusammengefasst.
+Dieses Kapitel beschäftigt sich mit den Grundlagen, die für das Verständnis der Problematik der Layout-Berechnung in Diagrammen notwendig sind. Zunächst werden in Abschnitt \ref{sec:disambiguation} die grundlegenden Begriffe eingeführt und erläutert. Anschließend werden in Abschnitt \ref{sec:aesthetics-criteria} die ästhetischen Prinzipien für das Layout von allgemeinen Graphen und Klassendiagrammen der Notationssprache UML\footnote{Unified Modeling Language (\url{http://www.uml.org})} zusammengefasst.
 
-\section{Begriffsklärung}
+\section{Grundlegende Begriffe}
 \label{sec:disambiguation}
 
 \subsection{Graphbasierte Diagramme}
@@ -20,7 +20,7 @@ Zu den graphbasierten Diagrammen gehört eine große Anzahl an Softwarediagramme
 \subsection{Layout}
 \label{subsec:layout}
 
-Durch die Spezifikationen der konkreten Diagrammtypen wird in der Regel ausschließlich die Struktur und die grafische Repräsentation festgelegt. Dagegen wird die Bestimmung der konkreten Eigenschaften der geometrischen Objekte wie z.B. ihre Anordnung nicht spezifiziert. Diese kann sich nach Konventionen, den Präferenzen der Nutzer bzw. nach ästhetischen Prinzipien richten \cite{Maier12A-Pattern-based, Wybrow08Using}. Durch eine Anpassung dieser Eigenschaften kann zum einen die Lesbarkeit des Diagramms verbessert werden und zum anderen können bestimmte Eigenschaften des Diagramms hervorgehoben werden \cite{Maier12A-Pattern-based}. Weiterhin kann durch das Layout eine sekundäre Notation geschaffen werden, die dem Diagramm eine zusätzliche Bedeutung gibt \cite{SeyboldGlinz03An-Effective}. In den meisten Diagramm-Editoren ist die Erstellung des Layouts dem Nutzer überlassen, sie können aber auch durch einen automatischen Algorithmus berechnet werden \cite{Maier12A-Pattern-based}. Die einzelnen Ansätze für das Layout von Diagrammen werden in Kapitel \ref{chapter:existing-approaches} vorgestellt.
+Durch die Spezifikationen der konkreten Diagrammtypen wird in der Regel ausschließlich die Struktur und die grafische Repräsentation festgelegt. Dagegen wird die Bestimmung der konkreten Eigenschaften der geometrischen Objekte wie z.B. ihre Anordnung nicht spezifiziert. Diese kann sich nach Konventionen, den Präferenzen der Nutzer bzw. nach ästhetischen Prinzipien richten \cite{Maier12A-Pattern-based, Wybrow08Using}. Durch eine Anpassung dieser Eigenschaften kann zum einen die Lesbarkeit des Diagramms verbessert werden und zum anderen können bestimmte Eigenschaften des Diagramms hervorgehoben werden \cite{Maier12A-Pattern-based}. Weiterhin kann durch das Layout eine sekundäre Notation geschaffen werden, die dem Diagramm eine zusätzliche Bedeutung gibt \cite{SeyboldGlinz03An-Effective}. In den meisten Diagramm-Editoren ist die Erstellung des Layouts dem Nutzer überlassen. Das Layout kann aber auch durch einen automatischen Algorithmus berechnet werden \cite{Maier12A-Pattern-based}. Die einzelnen Ansätze für das Layout von Diagrammen werden in Kapitel \ref{chapter:existing-approaches} vorgestellt.
 
 Das Layout eines Diagramms wird als eine Zuordnung von Layout-Eigenschaften zu den Objekten des Diagramms definiert. Zu den bedeutsamen Layout-Eigenschaften der graphbasierten Diagramme (siehe Abschnitt \ref{subsec:graph-based-diagrams}) gehören vor allem die Positionen und Größen der Knoten und Routen der Kanten.
 
@@ -29,7 +29,7 @@ Das Layout eines Diagramms wird als eine Zuordnung von Layout-Eigenschaften zu d
 
 Während der Arbeit mit einem Diagramm wird ein mentales Modell (engl.: \enquote{mental map}) entwickelt, welches beschreibt, wie die Struktur und die Bedeutung des Diagramms durch den Nutzer wahrgenommen werden \cite{Branke01Dynamic, GladischSchumann14Semi-Automatic}.
 
-Wenn der Inhalt bzw. das Layout des Diagramms geändert werden, muss sich der Nutzer an diese Änderung anpassen. Insbesondere in dem Fall einer automatischen Änderung ist es sehr wichtig, diese für den Nutzer möglichst nachvollziehbar durchzuführen, so dass das mentale Modell erhalten bleibt \cite{Branke01Dynamic, Maier12A-Pattern-based}. Dies kann auf zwei Wegen erreicht werden. Entweder wird es versucht, die Änderungen zu minimalisieren oder hervorzuheben (z.B. mit einer Animation oder weiteren visuellen Elementen) \cite{Maier12A-Pattern-based}.
+Wenn der Inhalt bzw. das Layout des Diagramms geändert werden, muss sich der Nutzer an diese Änderung anpassen. Insbesondere in dem Fall einer automatischen Änderung ist es sehr wichtig, diese für den Nutzer möglichst nachvollziehbar durchzuführen, sodass das mentale Modell erhalten bleibt \cite{Branke01Dynamic, Maier12A-Pattern-based}. Dies kann auf zwei Wegen erreicht werden. Entweder wird versucht die Änderungen zu minimalisieren oder sie hervorzuheben (z.B. mit einer Animation oder weiteren visuellen Elementen) \cite{Maier12A-Pattern-based}.
 
 \section{Ästhetische Prinzipien}
 \label{sec:aesthetics-criteria}
@@ -49,7 +49,7 @@ Wie bereits in Abschnitt \ref{subsec:graph-based-diagrams} erläutert wurde, bau
 \item
 \label{pri:distances}
 \textbf{Einhaltung der Abstände von Elementen}
-Die Elemente im Diagramm sollen nicht zu nahe aneinander liegen. Insbesondere sollen sich die Knoten nicht überlappen und die Kanten sollen keine Knoten schneiden. Die Abstände und Längen der Kanten sollen optimal gewählt werden, so dass das Diagramm übersichtlich bleibt \cite{Siebenhaller03Automatisches, Ambler05The-Elements}.
+Die Elemente im Diagramm sollen nicht zu nahe aneinander liegen. Insbesondere sollen sich die Knoten nicht überlappen und die Kanten sollen keine Knoten schneiden. Die Abstände und Längen der Kanten sollen optimal gewählt werden, sodass das Diagramm übersichtlich bleibt \cite{Siebenhaller03Automatisches, Ambler05The-Elements}.
 
 \item
 \label{pri:edge-crossings}
@@ -90,17 +90,12 @@ Die Problematik des Layouts von Klassendiagrammen wurde in vielen Arbeiten unter
 \item
 \label{pri:edge-direction}
 \textbf{Richtung von Kanten}
-Die Kanten in Klassendiagrammen teilen sich in hierarchische und nicht-hierarchische unter \cite{Eichelberger05Aesthetics}, was von der Art der Relation abgeleitet wird, die sie repräsentieren. Die hierarchischen Kanten (wie z.B. Vererbung) sollen vertikal verlaufen, während die nicht-hierarchischen Kanten (wie z.B. Assoziation) horizontal angeordnet werden sollen \cite{EichelbergerSchmid09Guidelines, Ambler05The-Elements}. Insbesondere wichtig ist dieses Prinzip für die Vererbungshierarchien, in den die Unterklassen unter den Oberklassen abgebildet werden, wodurch die Richtung der Kanten festgelegt wird.
+Die Kanten in Klassendiagrammen lassen sich in hierarchische und nicht-hierarchische unterteilen \cite{Eichelberger05Aesthetics}, was von der Art der Relation abgeleitet wird, die sie repräsentieren. Die hierarchischen Kanten (wie z.B. Vererbung) sollen vertikal verlaufen, während die nicht-hierarchischen Kanten (wie z.B. Assoziation) horizontal angeordnet werden sollen \cite{EichelbergerSchmid09Guidelines, Ambler05The-Elements}. Insbesondere wichtig ist dieses Prinzip für die Vererbungshierarchien, in den die Unterklassen unter den Oberklassen abgebildet werden, wodurch die Richtung der Kanten festgelegt wird.
 
 \item
 \label{pri:hierarchies}
 \textbf{Darstellung von Hierarchien}
 Durch die hierarchischen Knoten gebildete Hierarchien bilden den Gegenstand für weitere ästhetische Prinzipien. Zum einen sollen die Geschwisterknoten auf der gleichen Ebene platziert werden \cite{Siebenhaller03Automatisches}. Zum anderen sollen die Väterknoten im Bezug zu den Kinderknoten möglichst zentriert ausgerichtet werden \cite{EichelbergerSchmid09Guidelines, Siebenhaller03Automatisches}. Dies erweitert das Prinzip der Symmetrie \cite{EichelbergerSchmid09Guidelines} und wird insbesondere bei den Baumstrukturen eingesetzt \cite{Siebenhaller03Automatisches}.
-
-\item
-\label{pri:inheritance-relation}
-\textbf{Darstellung der Vererbungsrelationen}
-Die Vererbungsrelation kann auf zwei Arten dargestellt werden. Entweder werden wie in Abbildung \ref{fig:inheritance-representations-a} einzelne Linien für die jeweiligen Relationen verwendet oder sie werden in einer \enquote{Gabelform} wie in Abbildung \ref{fig:inheritance-representations-b} dargestellt \cite{Siebenhaller03Automatisches}. Obwohl nach dem Standard beide Optionen zulässig sind, wird die zuletzt genannte Option trotz der Einführung von zusätzliche Kantenknicke als übersichtlicher eingeschätzt \cite{EichelbergerSchmid09Guidelines, Siebenhaller03Automatisches}.
 
 \vspace{0.5cm}
 
@@ -124,7 +119,10 @@ Die Vererbungsrelation kann auf zwei Arten dargestellt werden. Entweder werden w
     \label{fig:inheritance-representations}
 \end{figure}
 
-\newpage
+\item
+\label{pri:inheritance-relation}
+\textbf{Darstellung der Vererbungsrelationen}
+Die Vererbungsrelation kann auf zwei Arten dargestellt werden. Entweder werden wie in Abbildung \ref{fig:inheritance-representations-a} einzelne Linien für die jeweiligen Relationen verwendet oder sie werden in einer \enquote{Gabelform} wie in Abbildung \ref{fig:inheritance-representations-b} dargestellt \cite{Siebenhaller03Automatisches}. Obwohl nach dem Standard beide Optionen zulässig sind, wird die zuletzt genannte Option trotz der Einführung von zusätzliche Kantenknicke als übersichtlicher eingeschätzt \cite{EichelbergerSchmid09Guidelines, Siebenhaller03Automatisches}.
 
 \item
 \label{pri:related-elements-placement}
