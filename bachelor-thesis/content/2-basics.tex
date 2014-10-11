@@ -13,7 +13,7 @@ Dieses Kapitel beschäftigt sich mit den Grundlagen, die für das Verständnis d
 \subsection{Graphbasierte Diagramme}
 \label{subsec:graph-based-diagrams}
 
-Viele Diagramme, die sich mit einer visuellen Sprache beschreiben lassen, basieren auf der Struktur von Graphen und werden durch Knoten (engl.: \enquote{node}) und Kanten (engl.: \enquote{edge} bzw. \enquote{link}) gebildet \cite{Eichelberger05Aesthetics}. Die grafische Repräsentation der graphbasierten Diagramme (manchmal in der Literatur auch Node-Link-Diagramme genannt) besteht aus der Zusammensetzung von Textelementen und geometrischen Objekten wie Rechtecke, Ellipsen und Linien \cite{Wybrow08Using}. Die Struktur von Graphen kann um die Möglichkeit der Verschachtelung von Knoten und deren Verbindungen durch Kanten erweitert werden \cite{Siebenhaller03Automatisches, Wybrow08Using}. Trotz des häufigen Einsatzes dieser Erweiterung in vielen Diagrammtypen wird sie für die Zwecke dieser Bachelor-Arbeit außer Acht gelassen.
+Viele Diagramme, die sich mit einer visuellen Sprache beschreiben lassen, basieren auf der Struktur von Graphen und werden durch Knoten (engl.: \enquote{node}) und Kanten (engl.: \enquote{edge} bzw. \enquote{link}) gebildet \cite{Eichelberger05Aesthetics}. Die grafische Repräsentation der graphbasierten Diagramme (manchmal in der Literatur auch Node-Link-Diagramme genannt) besteht aus der Zusammensetzung von Textelementen und geometrischen Objekten wie Rechtecken, Ellipsen und Linien \cite{Wybrow08Using}. Die Struktur von Graphen kann um die Möglichkeit der Verschachtelung von Knoten und deren Verbindungen durch Kanten erweitert werden \cite{Siebenhaller03Automatisches, Wybrow08Using}. Trotz des häufigen Einsatzes dieser Erweiterung in vielen Diagrammtypen wird sie für die Zwecke dieser Bachelor-Arbeit außer Acht gelassen.
 
 Zu den graphbasierten Diagrammen gehört eine große Anzahl an Softwarediagrammen, wie z.B. Klassendiagramme\footnote{Obwohl der UML-Standard eine Verschachtelung der Klassen in Pakete zulässt, sind an dieser Stelle einfachere Varianten der Klassendiagramme gemeint, wie z.B. die konzeptuellen Klassendiagramme nach \cite{Ambler04UML-2-Class}.}, Objektdiagramme bzw. Use-Case-Diagramme der Notationssprache UML, Netzwerkdiagramme sowie Flowcharts.
 
@@ -64,7 +64,7 @@ Die Kanten können durch direkte Linien, Kurven oder eine Zusammensetzung von Li
 \item
 \label{pri:orthogonality}
 \textbf{Orthogonalität der Kanten}
-Durch die Zusammensetzung der Kanten aus ausschließlich horizontalen und vertikalen Segmenten wird trotz der Enthaltung von Knicken die Übersichtlichkeit gefördert \cite{Siebenhaller03Automatisches}. Somit macht der Einsatz von orthogonalen Kanten durchaus Sinn. Insbesondere vermeidet dieses Prinzip unzulässige Winkel an den Kantenknicken \cite{Siebenhaller03Automatisches} sowie Krümmungen der Kanten \cite{Ambler05The-Elements}.
+Durch die Zusammensetzung der Kanten aus ausschließlich horizontalen und vertikalen Segmenten wird trotz des Vorhandenseins von Knicken die Übersichtlichkeit gefördert \cite{Siebenhaller03Automatisches}. Somit macht der Einsatz von orthogonalen Kanten durchaus Sinn. Insbesondere vermeidet dieses Prinzip unzulässige Winkel an den Kantenknicken \cite{Siebenhaller03Automatisches} sowie Krümmungen der Kanten \cite{Ambler05The-Elements}.
 
 \item
 \label{pri:drawing-area}
@@ -74,14 +74,14 @@ Um die Diagramme übersichtlicher zu gestalten, sollen die Knoten im Diagramm au
 \item
 \label{pri:symmetry}
 \textbf{Symmetrie}
-Durch die symmetrische Anordnung von Elementen wird eine schnellere Erfassung einer Teilstruktur des Diagramms ermöglicht \cite{Eichelberger05Aesthetics, Ambler05The-Elements}. Obwohl dieses Prinzip oft mit anderen Prinzipien kollidiert, soll es angestrebt werden \cite{Siebenhaller03Automatisches}.
+Durch die symmetrische Anordnung von Elementen wird eine schnellere Erfassung einer Teilstruktur des Diagramms ermöglicht \cite{Eichelberger05Aesthetics, Ambler05The-Elements}. Obwohl dieses Prinzip oft mit anderen Prinzipien kollidiert, sollte es angestrebt werden \cite{Siebenhaller03Automatisches}.
 
 \end{enumerate}
 
 \subsection{Ästhetische Prinzipien für Klassendiagramme}
 \label{subsec:aesthetics-criteria-class-diagrams}
 
-Die Klassendiagramme gehören zu häufig eingesetzten Diagrammtypen der Notationssprache UML \cite{Fowler03UML-Distilled:}. Sie beschreiben die Struktur eines objekt-orientierten Systems und visualisieren Klassen und ihre Beziehungen \cite{Siebenhaller03Automatisches, Ambler05The-Elements}. Sie können für verschiedene Zwecke eingesetzt werden, u.a. für die Untersuchung der Konzepte für die Umsetzung von Anforderungen oder für den detaillierten Entwurf eines Systems \cite{Ambler04UML-2-Class, Ambler05The-Elements}. Aufgrund der Vielseitigkeit dieses Diagrammtyps wurden die Klassendiagramme zum Schwerpunkt dieser Arbeit gewählt.
+Die Klassendiagramme gehören zu häufig eingesetzten Diagrammtypen der Notationssprache UML \cite{Fowler03UML-Distilled:}. Sie beschreiben die Struktur eines objektorientierten Systems und visualisieren Klassen und ihre Beziehungen \cite{Siebenhaller03Automatisches, Ambler05The-Elements}. Sie können für verschiedene Zwecke eingesetzt werden, u.a. für die Untersuchung der Konzepte für die Umsetzung von Anforderungen oder für den detaillierten Entwurf eines Systems \cite{Ambler04UML-2-Class, Ambler05The-Elements}. Aufgrund der Vielseitigkeit dieses Diagrammtyps wurden die Klassendiagramme zum Schwerpunkt dieser Arbeit gewählt.
 
 Die Problematik des Layouts von Klassendiagrammen wurde in vielen Arbeiten untersucht, z.B. in \cite{Siebenhaller03Automatisches}, \cite{Eichelberger05Aesthetics} sowie \cite{Eiglsperger04Automatic}. Die in diesen Arbeiten vorgestellten Layout-Algorithmen berücksichtigen ästhetische Prinzipien, die auf den semantischen Eigenschaften der Klassendiagramme basieren. Eine Auswahl der bedeutsamen Prinzipien wird im Folgenden aufgelistet:
 
@@ -90,12 +90,12 @@ Die Problematik des Layouts von Klassendiagrammen wurde in vielen Arbeiten unter
 \item
 \label{pri:edge-direction}
 \textbf{Richtung von Kanten}
-Die Kanten in Klassendiagrammen lassen sich in hierarchische und nicht-hierarchische unterteilen \cite{Eichelberger05Aesthetics}, was von der Art der Relation abgeleitet wird, die sie repräsentieren. Die hierarchischen Kanten (wie z.B. Vererbung) sollen vertikal verlaufen, während die nicht-hierarchischen Kanten (wie z.B. Assoziation) horizontal angeordnet werden sollen \cite{EichelbergerSchmid09Guidelines, Ambler05The-Elements}. Insbesondere wichtig ist dieses Prinzip für die Vererbungshierarchien, in den die Unterklassen unter den Oberklassen abgebildet werden, wodurch die Richtung der Kanten festgelegt wird.
+Die Kanten in Klassendiagrammen lassen sich in hierarchische und nicht-hierarchische unterteilen \cite{Eichelberger05Aesthetics}, was von der Art der Relation abgeleitet wird, die sie repräsentieren. Die hierarchischen Kanten (wie z.B. Vererbung) sollen vertikal verlaufen, während die nicht-hierarchischen Kanten (wie z.B. Assoziation) horizontal angeordnet werden sollen \cite{EichelbergerSchmid09Guidelines, Ambler05The-Elements}. Wichtig ist dieses Prinzip insbesondere für die Vererbungshierarchien, in den die Unterklassen unter den Oberklassen abgebildet werden, wodurch die Richtung der Kanten festgelegt wird.
 
 \item
 \label{pri:hierarchies}
 \textbf{Darstellung von Hierarchien}
-Durch die hierarchischen Knoten gebildete Hierarchien bilden den Gegenstand für weitere ästhetische Prinzipien. Zum einen sollen die Geschwisterknoten auf der gleichen Ebene platziert werden \cite{Siebenhaller03Automatisches}. Zum anderen sollen die Väterknoten im Bezug zu den Kinderknoten möglichst zentriert ausgerichtet werden \cite{EichelbergerSchmid09Guidelines, Siebenhaller03Automatisches}. Dies erweitert das Prinzip der Symmetrie \cite{EichelbergerSchmid09Guidelines} und wird insbesondere bei den Baumstrukturen eingesetzt \cite{Siebenhaller03Automatisches}.
+Die durch die hierarchischen Knoten dargestellte Rangordnung bildet den Gegenstand für weitere ästhetische Prinzipien. Zum einen sollen die Geschwisterknoten auf der gleichen Ebene platziert werden \cite{Siebenhaller03Automatisches}. Zum anderen sollen die Vaterknoten im Bezug zu den Kinderknoten möglichst zentriert ausgerichtet werden \cite{EichelbergerSchmid09Guidelines, Siebenhaller03Automatisches}. Dies erweitert das Prinzip der Symmetrie \cite{EichelbergerSchmid09Guidelines} und wird insbesondere bei den Baumstrukturen eingesetzt \cite{Siebenhaller03Automatisches}.
 
 \vspace{0.5cm}
 
@@ -122,7 +122,7 @@ Durch die hierarchischen Knoten gebildete Hierarchien bilden den Gegenstand für
 \item
 \label{pri:inheritance-relation}
 \textbf{Darstellung der Vererbungsrelationen}
-Die Vererbungsrelation kann auf zwei Arten dargestellt werden. Entweder werden wie in Abbildung \ref{fig:inheritance-representations-a} einzelne Linien für die jeweiligen Relationen verwendet oder sie werden in einer \enquote{Gabelform} wie in Abbildung \ref{fig:inheritance-representations-b} dargestellt \cite{Siebenhaller03Automatisches}. Obwohl nach dem Standard beide Optionen zulässig sind, wird die zuletzt genannte Option trotz der Einführung von zusätzliche Kantenknicke als übersichtlicher eingeschätzt \cite{EichelbergerSchmid09Guidelines, Siebenhaller03Automatisches}.
+Die Vererbungsrelation kann auf zwei Arten dargestellt werden. Entweder werden wie in Abbildung \ref{fig:inheritance-representations-a} einzelne Linien für die jeweiligen Relationen verwendet oder sie werden in einer \enquote{Gabelform} wie in Abbildung \ref{fig:inheritance-representations-b} dargestellt \cite{Siebenhaller03Automatisches}. Obwohl nach dem Standard beide Optionen zulässig sind, wird die zuletzt genannte Option trotz der Einführung von zusätzlichen Kantenknicken als übersichtlicher eingeschätzt \cite{EichelbergerSchmid09Guidelines, Siebenhaller03Automatisches}.
 
 \item
 \label{pri:related-elements-placement}
