@@ -5,7 +5,13 @@
 \afterpage{
 \newgeometry{top=0.8cm, left=0.4cm, right=1.25cm}
 
-\includegraphics[width=\textwidth]{assets/task-description}
+\ifx\isprintversion\undefined
+    \newcommand{\assetname}{task-description-low-quality}
+\else
+    \newcommand{\assetname}{task-description}
+\fi
+
+\includegraphics[width=\textwidth]{assets/\assetname}
 
 \clearpage
 \restoregeometry
