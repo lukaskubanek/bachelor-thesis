@@ -5,7 +5,7 @@
 \chapter{Prototyp-Implementierung}
 \label{chapter:prototype}
 
-Um den in Kapitel \ref{chapter:presented-approach} vorgestellten Ansatz für das interaktive Layout von Diagrammen und insbesondere die neu eingeführten Mechanismen für die Interaktion zu validieren, wurde im Rahmen der Bachelor-Arbeit ein Prototyp entwickelt. Mit der Beschreibung des Prototyps beschäftigt sich dieses Kapitel. In Abschnitt \ref{sec:technologies} wird auf die gewählten Technologien eingegangen. Die Benutzeroberfläche und die unterstützten Funktionen werden in Abschnitt \ref{sec:functions} vorgestellt. In Abschnitt \ref{sec:architecture} wird die Architektur des Prototyps thematisiert und es werden einzelnen Komponenten beschrieben. Schließlich folgt in Abschnitt \ref{sec:prototype-summary} eine Zusammenfassung.
+Um den in Kapitel \ref{chapter:presented-approach} vorgestellten Ansatz für das interaktive Layout von Diagrammen und insbesondere die neu eingeführten Mechanismen für die Interaktion zu validieren, wurde im Rahmen der Bachelor-Arbeit ein Prototyp entwickelt. Mit der Beschreibung des Prototyps beschäftigt sich dieses Kapitel. In Abschnitt \ref{sec:technologies} wird auf die gewählten Technologien eingegangen. Die Benutzeroberfläche und die unterstützten Funktionen werden in Abschnitt \ref{sec:functions} vorgestellt. In Abschnitt \ref{sec:architecture} wird die Architektur des Prototyps thematisiert und die einzelnen Komponenten beschrieben. Schließlich folgt in Abschnitt \ref{sec:prototype-summary} eine Zusammenfassung.
 
 \section{Technologie}
 \label{sec:technologies}
@@ -18,12 +18,12 @@ Es wäre denkbar, das \textbf{Layout-Framework aus \cite{Maier12A-Pattern-based}
 
 Aufgrund der Konzentration auf die Mechanismen der Interaktion und die Bestandteile der Layout-Berechnung wurde das bearbeitete Modell einfach gehalten. Dies wurde bereits in Abschnitt \ref{subsec:concrete-layout-algorithms} zur Vorstellung der konkreten Layout-Algorithmen beschrieben. Deshalb war es nicht notwendig, eine verfügbare Implementierung des \textbf{UML-Metamodells} (z.B. Ecore\footnote{\url{http://www.eclipse.org/modeling/emf}}) zu verwenden.
 
-Da keine Komponenten wiederverwendet werden konnten, wurde eine komplett neue Desktop-Anwendung entwickelt. Es handelt sich um eine native \textbf{\textit{Mac OS X} Anwendung}, die in der Programmiersprache \textit{Objective-C} entwickelt wurde. Sie verwendet ausschließlich die Standardbibliotheken \textit{Cocoa} und \textit{Quartz} und besitzt keine weiteren Abhängigkeiten.
+Da keine Komponenten wiederverwendet werden konnten, wurde eine komplett neue Desktop-Anwendung entwickelt. Es handelt sich um eine native \textbf{Mac OS X Anwendung}, die in der Programmiersprache \textit{Objective-C} entwickelt wurde. Sie verwendet ausschließlich die Standardbibliotheken \textit{Cocoa}\footnote{\url{http://developer.apple.com/technologies/mac/cocoa.html}} und \textit{Core Animation}\footnote{\url{http://developer.apple.com/technologies/mac/graphics-and-animation.html}} und besitzt keine weiteren Abhängigkeiten.
 
 \section{Funktionen}
 \label{sec:functions}
 
-Der Ansatz für das interaktive und diagrammspezifische Layout von Diagrammen wurde in einem prototypischen Werkzeug für die Erstellung von einfachen Klassendiagrammen umgesetzt. Das Werkzeug unterstützt Klassen und Vererbungsrelationen und bietet somit die Möglichkeit, Vererbungshierarchien von Klassen zu modellieren.
+Der Ansatz für das interaktive und diagrammspezifische Layout von Diagrammen wurde in Form eines prototypischen Werkzeugs für die Erstellung von einfachen Klassendiagrammen umgesetzt. Das Werkzeug unterstützt Klassen und Vererbungsrelationen und bietet somit die Möglichkeit, Vererbungshierarchien von Klassen zu modellieren.
 
 Die Benutzeroberfläche des Werkzeugfensters ist in zwei rechteckige Bereiche aufgeteilt. Links befindet sich die Sidebar mit Bedienungselementen und rechts der Canvas, in dem das modellierte Diagramm abgebildet wird. Die Sidebar besteht aus einer Palette mit Icons für das Hinzufügen von Klassen und Vererbungsrelationen, einem Button für das Zurücksetzen des modellierten Diagramms und einer Auswahl des verwendeten Layout-Algorithmus. Die Benutzeroberfläche der Anwendung wird mithilfe eines Screenshots in Abbildung \ref{fig:prototype-screenshot} veranschaulicht.
 
@@ -43,15 +43,15 @@ Der Prototyp unterstützt die grundlegenden Aktionen, die erforderlich sind, um 
 
 \item
 \textbf{Hinzufügen einer Klasse}
-Eine neue Klasse kann mithilfe von \enquote{Drag and Drop} dem Diagramm hinzugefügt werden, indem das linke Icon in der Palette angeklickt und in den Canvas gezogen wird. Nachdem der Mauszeiger den Canvas erreicht, wird die Klasse hinzugefügt, was durch einen Platzhalter gekennzeichnet wird. Danach wandelt die Aktion in eine Verschiebungsaktion um (siehe unten) und die Klasse kann an eine gewünschte Position verschoben werden.
-
-\item
-\textbf{Umbenennen einer Klasse}
-Durch einen Doppelklick und das Eintragen eines Namens in das angezeigte Textfeld kann eine Klasse im Diagramm umbenannt werden. Aus zeitlichen Gründen konnte die Anpassung der Größe der Klassen nach der Änderung des Namens nicht implementiert werden.
+Eine neue Klasse kann mithilfe von \enquote{Drag and Drop} dem Diagramm hinzugefügt werden, indem das linke Icon in der Palette angeklickt und in den Canvas gezogen wird. Nachdem der Mauszeiger den Canvas erreicht, wird die Klasse hinzugefügt, was durch einen Platzhalter gekennzeichnet wird. Danach wandelt die Aktion in eine Verschiebungsaktion um (siehe unten), wodurch die Position der hinzugefügten Klasse bestimmt werden kann.
 
 \item
 \textbf{Verschiebung einer Klasse}
 Die Position einer Klasse im Diagramm kann durch den Nutzer geändert werden, indem die Klasse mithilfe des Mechanismus der temporären Schicht (siehe Abschnitt \ref{subsec:temporary-layer-mechanism}) verschoben wird. Dabei wird das Layout durch die ausgewählte Layout-Engine berechnet (siehe Abschnitt \ref{subsec:supported-layout-methods}).
+
+\item
+\textbf{Umbenennen einer Klasse}
+Durch einen Doppelklick und das Eintragen eines Namens in das angezeigte Textfeld kann eine Klasse im Diagramm umbenannt werden. Aus zeitlichen Gründen konnte die Anpassung der Größe der Klassen nach der Änderung des Namens nicht implementiert werden.
 
 \item
 \textbf{Erzeugen einer Vererbungsrelation zwischen zwei Klassen}
@@ -93,7 +93,7 @@ Die Komponente \textit{Layout Engine} bildet den wesentlichen Teil der Umsetzung
 \begin{figure}[hbt]
     \centering
     \includegraphics[scale=0.85]{assets/layout-engine-subcomponents}
-    \caption{Eine Übersicht der Unterkomponenten der Komponente \textit{Layout Engine}}
+    \caption{Eine Übersicht der Unterkomponenten von \textit{Layout Engine}}
     \label{fig:layout-engine-subcomponents}
 \end{figure}
 
@@ -112,7 +112,7 @@ Die Komponente \textit{Geometry} stellt die grundlegenden \textbf{geometrischen 
 \subsubsection{Diagram}
 \label{subsubsec:component-diagram}
 
-Das \textbf{Metamodell der Diagramme} ist ein Bestandteil der Komponente \textit{Diagram} und wird durch die Klassen \texttt{IDLDiagram}\footnote{Das Präfix \texttt{IDL} steht für den Projektnamen \textit{Interactive Diagram Layout} und wird in Objective-C Projekten für Klassen- und Funktionsnamen verwendet, um Namenskonflikte zu vermeiden.}, \texttt{IDLNode} und \texttt{IDLEdge} repräsentiert. Durch deren Instanziierung wird ein Modell eines Klassendiagramms mit Klassen und Vererbungsrelationen erstellt. Die Klasse \texttt{IDLNode} beschreibt weiterhin ihre Position im Diagramm. Dadurch wird gewährleistet, dass das Modell auch die Information über das aktuelle Layout enthält.
+Das \textbf{Metamodell der Diagramme} ist ein Bestandteil der Komponente \textit{Diagram} und wird durch die Klassen \texttt{IDLDiagram}\footnote{Das Präfix \texttt{IDL} steht für den Projektnamen \textit{Interactive Diagram Layout} und wird in \textit{Objective-C} Projekten für Klassen- und Funktionsnamen verwendet, um Namenskonflikte zu vermeiden.}, \texttt{IDLNode} und \texttt{IDLEdge} repräsentiert. Durch deren Instanziierung wird ein Modell eines Klassendiagramms mit Klassen und Vererbungsrelationen erstellt. Die Klasse \texttt{IDLNode} beschreibt weiterhin ihre Position im Diagramm. Dadurch wird gewährleistet, dass das Modell auch die Information über das aktuelle Layout enthält.
 
 Aus zeitlichen Gründen konnte diese Komponente nicht tiefgründig ausgearbeitet werden. Daher wird die abstrakte und konkrete Syntax der Elemente zusammengefasst und deren Semantik nur unvollständig unterstützt. Die mögliche Behebung dieser Schwachstelle wird in Abschnitt \ref{subsec:syntax-and-semantics-support-improvements} diskutiert.
 
@@ -123,7 +123,7 @@ Bei der Berechnung des Layouts ist es notwendig, die \textbf{Layout-Eigenschafte
 \subsubsection{Patterns}
 \label{subsubsec:patterns}
 
-Die Umsetzung der Layout-Patterns aus Abschnitt \ref{sec:layout-patterns} erfolgt auf zwei Wegen. Die impliziten Layout-Patterns werden nicht instanziiert und müssen von konkreten Layout-Engines eingehalten werden (siehe Abschnitt \ref{subsubsec:component-engines}). Dagegen werden von den expliziten Layout-Patterns Instanzen erstellt und in der Layout-Engine verwaltet. Zu diesem Zweck stellt die Komponente \textit{Patterns} zwei Klassen für \textbf{konkrete explizite Layout-Patterns}\footnote{Die implementierten expliziten Layout-Patterns unterstützen ausschließlich die Ausrichtungen, die für die Umsetzung der Layout-Algorithmen notwendig sind.} zur Verfügung, nämlich die Klasse \texttt{IDLAlignment\-Pat\-tern} für das Ausrichtungspattern und die Klasse \texttt{IDLTShapePattern} für das T-Shape-Pattern. Beide Klassen werden in einem Klassendiagramm\footnote{Da die Programmiersprache Objective-C spezielle Konstrukte aufweist, ist eine standardkonforme Abbildung von Objective-C Klassen in Klassendiagrammen der Notationssprache UML nicht möglich.} in Abbildung \ref{fig:layout-patterns-implementation} visualisiert.
+Die Umsetzung der Layout-Patterns aus Abschnitt \ref{sec:layout-patterns} erfolgt auf zwei Wegen. Die impliziten Layout-Patterns werden nicht instanziiert und müssen von konkreten Layout-Engines eingehalten werden (siehe Abschnitt \ref{subsubsec:component-engines}). Dagegen werden von den expliziten Layout-Patterns Instanzen erstellt und in der Layout-Engine verwaltet. Zu diesem Zweck stellt die Komponente \textit{Patterns} zwei Klassen für \textbf{konkrete explizite Layout-Patterns}\footnote{Die implementierten expliziten Layout-Patterns unterstützen ausschließlich die Ausrichtungen, die für die Umsetzung der Layout-Algorithmen notwendig sind.} zur Verfügung, nämlich die Klasse \texttt{IDLAlignment\-Pat\-tern} für das Ausrichtungspattern und die Klasse \texttt{IDLTShapePattern} für das T-Shape-Pattern. Beide Klassen werden in einem Klassendiagramm\footnote{Da die Programmiersprache \textit{Objective-C} spezielle Konstrukte aufweist, ist eine standardkonforme Abbildung von \textit{Objective-C} Klassen in Klassendiagrammen der Notationssprache UML nicht möglich.} in Abbildung \ref{fig:layout-patterns-implementation} visualisiert.
 
 \begin{figure}[hbt]
     \centering
@@ -157,7 +157,7 @@ Alle oben aufgeführten Komponenten werden durch die Komponente \textit{Engines}
 
 Die konkreten Layout-Engines besitzen eine Referenz auf den Inhalt des Diagramms und müssen daher nach jeder Änderungen im Diagramm mithilfe von Layout-Ereignissen synchronisiert werden, um das Layout aktuell zu halten. Neben der Fähigkeit, alle Typen der Layout-Ereignisse aus Abschnitt \ref{subsubsec:component-events} zu verarbeiten, sind die Layout-Engines in der Lage, das initiale Layout zu berechnen, u.a. durch Instanziierung von expliziten Layout-Patterns, die in den Layout-Engines verwaltet werden. Die Klasse \texttt{IDLHorizontalLayoutEngine} besitzt nur eine Instanz des Ausrichtungspatterns. Dagegen werden in der Klasse \texttt{IDLTreeLayoutEngine} während der Laufzeit die Layout-Patterns dynamisch erzeugt und gelöscht. Bevor die Layout-Patterns verwendet werden können, müssen ihre geometrischen Parameter konfiguriert werden (siehe Abschnitte \ref{subsec:explicit-layout-patterns} und \ref{subsubsec:patterns}). Die in den Implementierungen der konkreten Algorithmen verwendete Werte wurden beispielhaft gewählt. Idealerweise sollten die passenden Werte für die Algorithmen anhand von geeigneten Methoden ermittelt und festgelegt werden, wobei es nicht ausgeschlossen wird, die Einstellung von einigen Eigenschaften des Algorithmus dem Nutzer zu überlassen, um den Algorithmus nach seinen Wünschen zu konfigurieren.
 
-Das Layout wird in dem Algorithmus durch die Zusammensetzung der instanziierten Layout-Patterns berechnet. Dies ist nur möglich, weil die Algorithmen für die festgelegte Struktur der Diagramme angepasst sind. Der eventuelle Einsatz eines Constraintlösers und eine Verallgemeinerung der Layout-Algorithmen wird in Abschnitt \ref{subsec:generalization-for-class-diagrams} diskutiert.
+Das Layout wird in dem Algorithmus durch die Zusammensetzung der instanziierten Layout-Patterns berechnet. Dies ist nur möglich, weil die Algorithmen für die festgelegte Struktur der Diagramme angepasst sind. Eine Verallgemeinerung der Layout-Algorithmen u.a. durch den eventuellen Einsatz eines Constraintlösers wird in Abschnitt \ref{subsec:generalization-for-class-diagrams} diskutiert.
 
 \subsection{Canvas View}
 \label{subsec:canvas-view}
