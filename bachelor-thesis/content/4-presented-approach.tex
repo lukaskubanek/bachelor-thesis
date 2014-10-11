@@ -13,6 +13,8 @@ In diesem Kapitel wird ein Ansatz für das interaktive und diagrammspezifische L
 
 Im Folgenden werden Kriterien für den präsentierten Ansatz aufgestellt. Die Wahl der Kriterien stützt sich in erster Linie auf die Prinzipien für die agile Modellierung aus \cite{Ambler02Agile}. Weiterhin orientieren sich die Kriterien an den in Kapitel \ref{chapter:existing-approaches} vorgestellten Ansätzen, deren positiven Eigenschaften in die Auswahl einfließen.   Schließlich haben auch die ästhetischen Prinzipien (siehe Abschnitt \ref{sec:aesthetics-criteria}) sowie die Rahmenbedingungen dieser Arbeit (siehe Abschnitt \ref{sec:thesis-conditions}) einen Einfluss auf die gewählten Kriterien.
 
+\newpage
+
 \begin{enumerate}[label={K.\arabic*}]
 
 \item
@@ -317,8 +319,6 @@ In der \textbf{zweiten Phase} wird das \textbf{Layout} berechnet, welches durch 
 Im Rahmen der Konzeption und Entwicklung wurde zunächst ein Algorithmus entworfen, der für die Verschiebung eines Knotens alle erreichbaren Layouts berechnet. Des Weiteren wurde der Canvas in Bereiche aufgeteilt. Dabei wurde jeder Bereich auf ein berechnetes Layout abgebildet. Während der Ausführung der Verschiebungsaktion wurde ein Layout-Übergang genau dann ausgelöst, wenn der Mauszeiger in einen anderen Bereich bewegt wurde. Da die Aufteilung der Bereiche nach jedem Layout-Übergang nicht aktualisiert wurde, war sie oft nach dem ersten Layout-Übergang ungültig. Später wurde festgelegt, dass dieser Algorithmus nicht hinreichend ist.
 
 In dem präsentierten Ansatz wird für die Verschiebungsaktion ein Layout-Ereignis für jede Bewegung des Mauszeigers generiert und verarbeitet. Dabei sollen bei dem Entwurf eines konkreten Algorithmus folgende Eigenschaften beachtet werden:
-
-\newpage
 
 \begin{itemize}
 

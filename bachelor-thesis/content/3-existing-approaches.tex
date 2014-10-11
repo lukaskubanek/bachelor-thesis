@@ -385,6 +385,8 @@ Es existiert eine Menge an Bibliotheken, die verschiedene automatische Algorithm
 
 Um einen Layout-Algorithmus auf einen Graphen mithilfe der Komandozeilen-Tools oder der GUI-Anwendung anwenden zu können, muss der Graph in der Sprache Dot beschrieben werden. Ein Beispiel eines einfachen Graphen mit vier Knoten und drei Kanten ist im Quelltext \ref{lst:graphviz-dot-example-dot} gegeben.
 
+\newpage
+
 \lstinputlisting[
     caption={Beschreibung eines Graphen in Dot (\texttt{graphviz-dot-example.dot})},
     label={lst:graphviz-dot-example-dot}
@@ -430,6 +432,8 @@ Die Algorithmen für das automatische Layout sind im Allgemeinen nicht ideal und
 
 Wie bereits in Abschnitt \ref{subsubsec:graph-drawing-tools} beschrieben wurde, bietet \textit{Graphviz} eine Software-Bibliothek an, die sich in andere Programme einbinden lässt. Das Visualisierungsprogramm \textit{OmniGraffle} (siehe Abschnitt \ref{subsubsec:omnigraffle}) macht sich dies zunutze und verfügt über eine Funktion für das automatische Layout, die für die Layout-Berechnung Algorithmen aus \textit{Graphviz} verwendet, nämlich den hierarchischen, kraftbasierten, zirkulären und radialen Algorithmus \cite{Olsen10OmniGraffle}. Nachdem die Funktion des automatischen Layouts für ein Diagramm aktiviert wird, kann der Layout-Algorithmus ausgewählt und seine Parameter eingestellt werden\footnote{Die konkreten möglichen Parameter der Algorithmen sind in \cite[S.74]{08OmniGraffle} nachzulesen.}. In Abbildung \ref{fig:omnigraffle-automatic-layout} wird ein Beispiel der Anwendung von allen verfügbaren Layout-Algorithmen auf ein Diagramm illustriert.
 
+\vspace{0.5cm}
+
 \begin{figure}[hbt]
     \newcommand{\subfigureshortwidth}{0.28\textwidth}
     \newcommand{\subfigurelongwidth}{0.40\textwidth}
@@ -444,6 +448,7 @@ Wie bereits in Abschnitt \ref{subsubsec:graph-drawing-tools} beschrieben wurde, 
     \begin{subfigure}{\subfigureshortwidth}
         \centering
         \includegraphics[scale=\graphicsscale]{assets/omnigraffle-automatic-layout-b}
+        \captionsetup{width=0.8\textwidth}
         \caption{Hierarchisches Layout von oben nach unten}
         \label{fig:omnigraffle-automatic-layout-b}
     \end{subfigure}
@@ -453,6 +458,9 @@ Wie bereits in Abschnitt \ref{subsubsec:graph-drawing-tools} beschrieben wurde, 
         \caption{Hierarchisches Layout von links nach rechts mit angepassten \enquote{Ranks} für einzelne Knoten}
         \label{fig:omnigraffle-automatic-layout-c}
     \end{subfigure}
+    
+    \vspace{0.5cm}
+    
     \begin{subfigure}{\subfigureshortwidth}
         \centering
         \includegraphics[scale=\graphicsscale]{assets/omnigraffle-automatic-layout-d}
@@ -480,6 +488,8 @@ Der eingestellte Layout-Algorithmus kann entweder durch die manuelle Auswahl im 
 \subsubsection{Automatisches Layout in Visual Paradigm}
 
 Ähnlich wie \textit{OmniGraffle} basiert das CASE-Tool \textit{Visual Paradigm} (siehe Abschnitt \ref{subsubsec:visual-paradigm}) auf der freien Positionierung der Elemente im Diagramm und verfügt über die Funktion der automatischen Layout-Berechnung \cite{14Visual}. Dem Nutzer steht eine Vielzahl von Layout-Algorithmen zur Verfügung, deren Eigenschaften wunschgemäß eingestellt werden können \cite{Fuhrmann11On-the-Pragmatics}. Im Unterschied zu der Aktivierung der automatischen Layout-Berechnung für das gesamte Diagramm in \textit{OmniGraffle} (siehe Abschnitt \ref{subsubsec:omnigraffle-auto-layout}) ist die Berechnung in \textit{Visual Paradigm} einmalig und kann auch auf eine Untermenge des Diagramms angewendet werden. Sie wird manuell durch eine Auswahl im Kontextmenü gestartet, wobei der konkrete Layout-Algorithmus entweder manuell oder automatisch gewählt werden kann. Aus diesem Grund versagt diese Funktion im Bereich der Interaktivität. Eine weitere Schwachstelle dieser Funktion ist die mangelhafte bis fehlende Unterstützung der Semantik der Elemente. Ein Beispiel der Anwendung der automatischen Layout-Berechnung auf ein einfaches Klassendiagramm ist in Abbildung \ref{fig:visual-paradigm-auto-layout} dargestellt.
+
+\vspace{0.5cm}
 
 \begin{figure}[hbt]
     \newcommand{\leftsubfigurewidth}{0.4\textwidth}
@@ -603,6 +613,8 @@ Weiterhin enthalten die Layout-Patterns Prädikate, die für ein valides Layout 
 Die instanziierten Layout-Patterns werden nach jeder Änderung des Diagramms durch einen Kontroll-Algorithmus ausgewertet, dessen Aufgabe es ist, alle Prädikate der Layout-Constraints zu erfüllen und damit ein valides Layout für das Diagramm zu berechnen.
 
 Dieser Ansatz ist insbesondere für interaktive Umgebungen wie z.B. visuelle Editoren geeignet. Die Erstellung des Layouts wird dem Nutzer überlassen, indem er die Layout-Patterns instanziiert. Diese können entweder global oder für ausgewählten Knoten spezifiziert sein. Wenn keine Instanzen der Layout-Patterns verfügbar sind, können die Knoten im Diagramm frei positioniert werden. Anderseits wird die Interaktion durch die instanziierten Layout-Patterns beeinflusst und möglicherweise eingeschränkt.
+
+\newpage
 
 Der beschriebene Ansatz wurde in Form eines Layout-Frameworks\footnote{\url{http://www.unibw.de/inf2/Personen/Wissen_Mitarbeiter/sonja/research/layoutframework}} implementiert und in visuellen Editoren eingesetzt, die mithilfe von \textit{DiaMeta}\footnote{Ein Framework zur Generierung von Editoren für visuelle Sprachen basierend auf Spezifikationen mittels Metamodelle. \url{http://www.unibw.de/inf2/DiaGen}} bzw. \textit{Graphical Editing Framework}\footnote{\url{http://www.eclipse.org/gef}} erzeugt wurden \cite{Maier12A-Pattern-based}.
 

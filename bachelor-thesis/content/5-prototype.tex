@@ -53,6 +53,8 @@ Die Position einer Klasse im Diagramm kann durch den Nutzer geändert werden, in
 \textbf{Umbenennen einer Klasse}
 Durch einen Doppelklick und das Eintragen eines Namens in das angezeigte Textfeld kann eine Klasse im Diagramm umbenannt werden. Aus zeitlichen Gründen konnte die Anpassung der Größe der Klassen nach der Änderung des Namens nicht implementiert werden.
 
+\newpage
+
 \item
 \textbf{Erzeugen einer Vererbungsrelation zwischen zwei Klassen}
 Durch das Anklicken des rechten Icons in der Palette und das Ziehen eines Pfeils zwischen zwei Klassen im Diagramm wird eine Vererbungsrelation erstellt. Alternativ kann neben dem Anklicken des Icons auch die Taste \texttt{CTRL} gedrückt werden. Wenn der Nutzer versucht, eine semantisch ungültige Vererbungsrelation zu erstellen (z.B. einen Vererbungszyklus oder eine Mehrfachvererbung\footnote{Die Mehrfachvererbung ist ein gültiges Konstrukt in Klassendiagrammen der Notationssprache UML, wird aber in meisten objektorientierten Sprachen nicht unterstützt \cite{ArlowNeustadt05UML-2-and-the-Unified}. Für die Zwecke des Prototyps wird sie nicht zugelassen.}), wird eine Fehlermeldung angezeigt und der Vorgang bricht ab. Nachdem eine Vererbungsrelation erstellt wird und die ausgewählte Layout-Engine die Vererbungsrelationen unterstützt, wird das neu berechnete Layout auf das Diagramm angewendet.
