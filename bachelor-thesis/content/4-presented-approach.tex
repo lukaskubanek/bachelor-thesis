@@ -11,7 +11,7 @@ In diesem Kapitel wird ein Ansatz für das interaktive und diagrammspezifische L
 \section{Kriterien}
 \label{sec:criteria}
 
-Im Folgenden werden Kriterien für den präsentierten Ansatz aufgestellt. Die Wahl der Kriterien stützt sich in erster Linie auf die Prinzipien für die agile Modellierung aus \cite{Ambler02Agile}. Weiterhin orientieren sich die Kriterien an den in Kapitel \ref{chapter:existing-approaches} vorgestellten Ansätzen, deren positiven Eigenschaften in die Auswahl einfließen.   Schließlich haben auch die ästhetischen Prinzipien (siehe Abschnitt \ref{sec:aesthetics-criteria}) sowie die Rahmenbedingungen dieser Arbeit (siehe Abschnitt \ref{sec:thesis-conditions}) einen Einfluss auf die gewählten Kriterien.
+Im Folgenden werden Kriterien für den präsentierten Ansatz aufgestellt. Die Wahl der Kriterien stützt sich in erster Linie auf die Prinzipien für die agile Modellierung aus \cite{Ambler02Agile}. Weiterhin orientieren sich die Kriterien an den in Kapitel \ref{chapter:existing-approaches} vorgestellten Ansätzen, deren positive Eigenschaften in die Auswahl einfließen.   Schließlich haben auch die ästhetischen Prinzipien (siehe Abschnitt \ref{sec:aesthetics-criteria}) sowie die Rahmenbedingungen dieser Arbeit (siehe Abschnitt \ref{sec:thesis-conditions}) einen Einfluss auf die gewählten Kriterien.
 
 \newpage
 
@@ -181,7 +181,7 @@ Die Position des Mauszeigers wird nach jeder Bewegung ausgewertet und sobald sic
 
 Dieser Abschnitt beschäftigt sich ausschließlich mit der Beschreibung der Interaktion, die konkrete Funktionsweise der Layout-Berechnung kann in Abschnitt \ref{sec:layout-calculation} nachgelesen werden.
 
-Die dritte Phase beginnt mit dem Loslassen der Maustaste. Danach springt der verschobene Knoten auf seine Zielposition hin, nämlich die Position des Platzhalters. Anschließend werden der Platzhalter sowie die temporäre Schicht entfernt und die Verschiebungsaktion wird beendet. Die Abbildung \ref{fig:movement-action-example-e} zeigt den Endzustand.
+Die dritte Phase beginnt mit dem Loslassen der Maustaste. Danach springt der verschobene Knoten auf seine Zielposition, nämlich die Position des Platzhalters. Anschließend werden der Platzhalter sowie die temporäre Schicht entfernt und die Verschiebungsaktion wird beendet. Die Abbildung \ref{fig:movement-action-example-e} zeigt den Endzustand.
 
 \subsection{Layout-Übergänge}
 \label{subsec:layout-transitions}
@@ -209,7 +209,7 @@ Dagegen ist die Größe der Knoten in dieser Arbeit ausschließlich durch den In
 \subsubsection{Verhinderung der Knoten-Überlappung}
 \label{subsubsec:prevention-of-node-overlap}
 
-Dadurch dass die Größe der Knoten bekannt ist und die Position der Knoten berechnet wird, kann die Knoten-Überlappung verhindert werden. Dies trägt der Ästhetik des Diagramms (Kriterium \ref{req:aesthetics-criteria}) und insbesondere der Einhaltung der Abstände zwischen den Knoten (Prinzip \ref{pri:distances}) bei.
+Dadurch, dass die Größe der Knoten bekannt ist und die Position der Knoten berechnet wird, kann die Knoten-Überlappung verhindert werden. Dies trägt zur Ästhetik des Diagramms (Kriterium \ref{req:aesthetics-criteria}) und insbesondere der Einhaltung der Abstände zwischen den Knoten (Prinzip \ref{pri:distances}) bei.
 
 \subsubsection{Zentrierung des Diagramm-Inhalts}
 \label{subsubsec:centering-of-diagram-content}
@@ -237,23 +237,23 @@ Im Folgenden werden zwei konkrete explizite Layout-Patterns vorgestellt, nämlic
 \subsubsection{Ausrichtungspattern}
 \label{subsubsec:alignment-pattern}
 
-Das Ausrichtungspattern beschreibt eine Reihe an Knoten und kombiniert die Ausrichtung und Verteilung der Knoten aus dem manuellen Layout (siehe Abschnitt \ref{subsubsec:alignment-and-distribution}) bzw. die Layout-Patterns zum Ausrichten und Verteilen aus \cite[S.143ff und S.136ff]{Maier12A-Pattern-based}. Die Knoten werden in einer horizontalen oder vertikalen Reihe gleichmäßig verteilt und an die Kanten bzw. Mittelachsen ausgerichtet. In den Abbildungen \ref{fig:layout-pattern-alignment-center} und \ref{fig:layout-pattern-alignment-top} werden zwei Beispiele für das horizontale Verteilen mit der Ausrichtung an die oberen Kanten bzw. Mittelachsen dargestellt. Die gleichen Abstände sind mit roten Pfeilen und die Anordnung durch eine graue Linie gekennzeichnet.
+Das Ausrichtungspattern beschreibt eine Reihe an Knoten und kombiniert die Ausrichtung und Verteilung der Knoten aus dem manuellen Layout (siehe Abschnitt \ref{subsubsec:alignment-and-distribution}) bzw. die Layout-Patterns zum Ausrichten und Verteilen aus \cite[S.143ff und S.136ff]{Maier12A-Pattern-based}. Die Knoten werden in einer horizontalen oder vertikalen Reihe gleichmäßig verteilt und an den Kanten bzw. Mittelachsen ausgerichtet. In den Abbildungen \ref{fig:layout-pattern-alignment-center} und \ref{fig:layout-pattern-alignment-top} werden zwei Beispiele für das horizontale Verteilen mit der Ausrichtung an den oberen Kanten bzw. Mittelachsen dargestellt. Die gleichen Abstände sind mit roten Pfeilen und die Anordnung durch eine graue Linie gekennzeichnet.
 
 \begin{figure}[hbt]
     \centering
     \includegraphics{assets/layout-pattern-alignment-center}
-    \caption{Horizontales Ausrichtungspattern mit der Ausrichtung an die Mittelachsen}
+    \caption{Horizontales Ausrichtungspattern mit der Ausrichtung an den Mittelachsen}
     \label{fig:layout-pattern-alignment-center}
 \end{figure}
 
 \begin{figure}[hbt]
     \centering
     \includegraphics{assets/layout-pattern-alignment-top}
-    \caption{Horizontales Ausrichtungspattern mit der Ausrichtung an die oberen Kanten}
+    \caption{Horizontales Ausrichtungspattern mit der Ausrichtung an den oberen Kanten}
     \label{fig:layout-pattern-alignment-top}
 \end{figure}
 
-Die Variierung des Ausrichtungspatterns besteht in der Veränderung der Reihenfolge der ausgerichteten Knoten. Dies erfolgt mithilfe der Verschiebung eines Knoten auf die Position eines anderen Knoten und basiert auf dem Mechanismus der temporären Schicht (siehe Abschnitt \ref{subsec:temporary-layer-mechanism}). Ein Ausrichtungspattern mit drei zugeordneten Knoten hat somit sechs möglichen Variationen, die in Abbildung \ref{fig:layout-pattern-alignment-variations} veranschaulicht werden.
+Die Variation des Ausrichtungspatterns besteht in der Veränderung der Reihenfolge der ausgerichteten Knoten. Dies erfolgt mithilfe der Verschiebung eines Knoten auf die Position eines anderen und basiert auf dem Mechanismus der temporären Schicht (siehe Abschnitt \ref{subsec:temporary-layer-mechanism}). Ein Ausrichtungspattern mit drei zugeordneten Knoten hat somit sechs möglichen Variationen, die in Abbildung \ref{fig:layout-pattern-alignment-variations} veranschaulicht werden.
 
 \vspace{0.5cm}
 
@@ -269,7 +269,7 @@ Die Variierung des Ausrichtungspatterns besteht in der Veränderung der Reihenfo
 
 Das T-Shape-Pattern beschreibt die Struktur von Knoten, die in der Form des Buchstabens \enquote{T} angeordnet sind. Dies ist insbesondere für die Darstellung von Hierarchien in Diagrammen von Bedeutung (Prinzip \ref{pri:hierarchies}).
 
-Einer der Knoten hat eine spezielle Rolle und ist den anderen Knoten übergeordnet. Die untergeordneten Knoten sind ähnlich wie in dem Ausrichtungspattern gleichmäßig in einer Reihe angeordnet und an die Kanten ausgerichtet, die sich am nächsten zu dem übergeordneten Knoten befinden. Der übergeordnete Knoten befindet sich in einem definierten Abstand zu den untergeordneten Knoten und ist mittig ausgerichtet. In Abbildung \ref{fig:layout-pattern-t-shape} ist ein Beispiel des T-Shape-Patterns dargestellt, in dem der übergeordnete Knoten oben positioniert ist. Die Abstände sind mit farbigen Pfeilen und die Ausrichtung mit grauen Linien gekennzeichnet. Natürlich gibt es weitere Formen des T-Shape-Patterns, in denen sich der übergeordnete Knoten links, unten oder rechts befindet.
+Einer der Knoten hat eine spezielle Rolle und ist den anderen Knoten übergeordnet. Die untergeordneten Knoten sind ähnlich wie in dem Ausrichtungspattern gleichmäßig in einer Reihe angeordnet und an den Kanten ausgerichtet, die sich am nächsten zu dem übergeordneten Knoten befinden. Der übergeordnete Knoten befindet sich in einem definierten Abstand zu den untergeordneten Knoten und ist mittig ausgerichtet. In Abbildung \ref{fig:layout-pattern-t-shape} ist ein Beispiel des T-Shape-Patterns dargestellt, in dem der übergeordnete Knoten oben positioniert ist. Die Abstände sind mit farbigen Pfeilen und die Ausrichtung mit grauen Linien gekennzeichnet. Natürlich gibt es weitere Formen des T-Shape-Patterns, in denen sich der übergeordnete Knoten links, unten oder rechts befindet.
 
 \begin{figure}[hbt]
     \centering
