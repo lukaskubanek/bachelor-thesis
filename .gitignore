@@ -30,9 +30,6 @@
 ## Texpad Temporary Output
 .texpadtmp/
 
-## tudsrc Latex Templates
-!tud-koma-script/**/*
-
 ## Resources
 !bachelor-thesis/assets/**/*.pdf
 !user-study-exercises/assets/**/*.pdf
