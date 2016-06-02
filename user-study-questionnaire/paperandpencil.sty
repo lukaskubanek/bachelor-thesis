@@ -16,7 +16,7 @@
 \parindent0cm 
 \pagestyle{empty}
 
-\renewcommand*\thechapter{\bf{\arabic{chapter}.}}
+\renewcommand*\thechapter{\textbf{\arabic{chapter}.}}
 \catcode `@11
 \def\question{\@startsection {chapter}{1}{\z@}{-3.5ex plus
 -1ex minus  -.2ex}{1.5ex plus .2ex}{}}
@@ -806,7 +806,7 @@
 \newcommand{\semseven}[2]{\multicolumn{1}{|c|}{#1} &&&&&&&& \multicolumn{1}{c|}{#2}\\\hline}
 
 \newenvironment{ranking}{\begin{center}\begin{tabular}{lp{0.1cm}l}}{\end{tabular}\end{center}}
-\newcommand{\categories}[2]{{\bf #1}&& {\bf #2}\\[0.2cm]}
+\newcommand{\categories}[2]{{\textbf #1}&& {\textbf #2}\\[0.2cm]}
 \newcommand{\rankbracket}[1]{#1&&[\ \ ]\\[0.1cm]}
 \newcommand{\rankbox}[1]{#1&&$\rbox$\\[0.1cm]}
 \newcommand{\rankopen}[1]{\linetext{}&& #1\\[0.2cm]}
